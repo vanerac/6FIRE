@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "paths": {
+      "@config/*": [
+        "shared/config/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@services/*": [
+        "shared/services/*"
+      ],
+      "@api/*": [
+        "app/api/*"
+      ],
+      "@client/*": [
+        "app/client/*"
+      ],
+      "@dashboard/*": [
+        "app/dashboard/*"
+      ],
+    }
+  }
+}

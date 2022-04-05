@@ -1,0 +1,7 @@
+{
+  "schemas": {
+    "User": {
+      "$ref": "./user/user.components.json#/schemas/User"
+    }
+  }
+}

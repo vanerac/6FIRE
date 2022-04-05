@@ -1,0 +1,28 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Title",
+    "description": "Title",
+    "version": "3.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api"
+    }
+  ],
+  "paths": {
+    "/user/": {
+      "$ref": "./user/user.path.json#/user/post"
+    },
+    "/user/:id": {
+      "$ref": "./user/user.path.json#/user"
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "$ref": "./openapi.components.json#/schemas/User"
+      }
+    }
+  }
+}

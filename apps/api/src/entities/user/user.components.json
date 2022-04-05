@@ -1,0 +1,49 @@
+{
+  "schemas": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "required": true
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
+        "countryId": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "isAdmin": {
+          "type": "boolean"
+        },
+        "verifiedEmail": {
+          "type": "boolean"
+        },
+        "verifiedPhone": {
+          "type": "boolean"
+        },
+        "banned": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
