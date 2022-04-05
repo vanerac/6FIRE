@@ -5,5 +5,7 @@ node_modules
 *.js
 *.map
 
-./build/
+build/
 !next.config.js
+data/
+!.prettierrc.js

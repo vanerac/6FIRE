@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "outDir": "../../build/api",
-  }
+    "outDir": "../../build/api"
+  },
+  "compileOnSave": false
 }

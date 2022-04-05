@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum VerificationType {
+  EMAIL
+  PHONE
+}
+
+model User {
+  id                Int                 @id
+  firstName         String
+  lastName          String
+  email             String
+  password          String
+  telephone         String
+  country           Country             @relation(fields: [countryId], references: [id])
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @default(now())
+  isAdmin           Boolean             @default(false)
+  verifiedEmail     Boolean             @default(false)
+  verifiedPhone     Boolean             @default(false)
+  banned            Boolean             @default(false)
+  countryId         Int
+  VerificationCodes VerificationCodes[]
+}
+
+model VerificationCodes {
+  id        Int              @id
+  userId    Int
+  code      String
+  type      VerificationType
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @default(now())
+  User      User             @relation(fields: [userId], references: [id])
+}
+
+model Subscription {
+  id          Int      @id
+  name        String
+  description String
+  price       Int
+  level       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+}
+
+model Theme {
+  id                Int       @id
+  name              String
+  subscriptionLevel Int
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @default(now())
+  Article           Article[]
+}
+
+model Article {
+  id        Int      @id
+  title     String
+  content   String
+  hidden    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  themesId  Int
+  Theme     Theme    @relation(fields: [themesId], references: [id])
+
+}
+
+model Country {
+  id        Int      @id
+  name      String
+  code      String
+  enabled   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  User      User[]
+}
