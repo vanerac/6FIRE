@@ -43,7 +43,7 @@
     "eslint-plugin-import": "^2.25.4",
     "openapi-typescript": "^5.2.0",
     "openapi-typescript-codegen": "^0.20.1",
-    "prettier": "^2.6.1",
+    "prettier": "^2.6.2",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   },
