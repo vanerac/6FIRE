@@ -1,0 +1,29 @@
+:root { 
+  --onyx: #3a3a3d;
+  --white: #ffffff;
+ 
+  --font-size-l: 14px;
+  --font-size-m: 12px;
+  --font-size-xl: 18px;
+ 
+  --font-family-lato: "Lato", Helvetica;
+}
+.lato-normal-white-12px {
+  color: var(--white);
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.lato-normal-white-14px {
+  color: var(--white);
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.border-1px-white {
+  border: 1px solid var(--white);
+}
