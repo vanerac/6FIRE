@@ -14,7 +14,7 @@
     "/user/": {
       "$ref": "./user/user.path.json#/createUser"
     },
-    "/user/:id": {
+    "/user/{id}": {
       "$ref": "./user/user.path.json#/user"
     }
   },
@@ -22,6 +22,9 @@
     "schemas": {
       "User": {
         "$ref": "./openapi.components.json#/schemas/User"
+      },
+      "Error": {
+        "$ref": "./openapi.components.json#/schemas/Error"
       }
     }
   }

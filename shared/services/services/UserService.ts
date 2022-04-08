@@ -12,12 +12,12 @@ export class UserService {
 
     /**
      * @param requestBody
-     * @returns any successful operation
+     * @returns User successful operation
      * @throws ApiError
      */
     public createUser(
         requestBody: User,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/user/',
@@ -31,40 +31,54 @@ export class UserService {
     }
 
     /**
-     * @param id ID of user to fetch
-     * @returns any successful operation
+     * @returns User successful operation
      * @throws ApiError
      */
-    public getUsers(
-        id?: any,
-    ): CancelablePromise<any> {
+    public getUsers(): CancelablePromise<Array<User>> {
         return this.httpRequest.request({
             method: 'GET',
-            url: '/user/:id',
-            path: {
-                'id': id,
-            },
+            url: '/user/',
             errors: {
-                400: `Invalid ID supplied`,
-                404: `User not found`,
+                400: `Invalid user supplied`,
                 500: `Internal server error`,
             },
         });
     }
 
     /**
-     * @param id ID of user to update
+     * @param id ID of user to fetch
+     * @returns User A single user item
+     * @throws ApiError
+     */
+    public getUser(
+        id: number,
+    ): CancelablePromise<User> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/user/{id}',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * @param id ID of user to fetch
      * @param requestBody
-     * @returns any successful operation
+     * @returns User successful operation
      * @throws ApiError
      */
     public updateUser(
-        id: any,
+        id: number,
         requestBody: User,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'PUT',
-            url: '/user/:id',
+            url: '/user/{id}',
             path: {
                 'id': id,
             },
@@ -72,29 +86,27 @@ export class UserService {
             mediaType: 'application/json',
             errors: {
                 400: `Invalid user supplied`,
-                404: `User not found`,
                 500: `Internal server error`,
             },
         });
     }
 
     /**
-     * @param id ID of user to delete
-     * @returns void
+     * @param id ID of user to fetch
+     * @returns User successful operation
      * @throws ApiError
      */
     public deleteUser(
-        id: any,
-    ): CancelablePromise<void> {
+        id: number,
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'DELETE',
-            url: '/user/:id',
+            url: '/user/{id}',
             path: {
                 'id': id,
             },
             errors: {
-                400: `Invalid ID supplied`,
-                404: `User not found`,
+                400: `Invalid user supplied`,
                 500: `Internal server error`,
             },
         });

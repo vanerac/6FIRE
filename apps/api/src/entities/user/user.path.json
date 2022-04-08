@@ -1,34 +1,52 @@
 {
   "user": {
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "description": "ID of user to fetch",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    ],
     "get": {
-      "operationId": "getUsers",
+      "operationId": "getUser",
       "tags": [
         "User"
       ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "ID of user to fetch",
-          "required": false,
-          "type": "integer"
-        }
-      ],
       "responses": {
         "200": {
-          "description": "successful operation",
-          "schema": {
-            "$ref": "../openapi.components.json#/schemas/User"
+          "description": "A single user item",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/User"
+              }
+            }
           }
         },
         "400": {
-          "description": "Invalid ID supplied"
-        },
-        "404": {
-          "description": "User not found"
+          "description": "Invalid user supplied",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
         },
         "500": {
-          "description": "Internal server error"
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
         }
       }
     },
@@ -37,15 +55,7 @@
       "tags": [
         "User"
       ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "ID of user to update",
-          "required": true,
-          "type": "integer"
-        }
-      ],
+
       "requestBody": {
         "content": {
           "application/json": {
@@ -58,19 +68,34 @@
       },
       "responses": {
         "200": {
-          "description": "successful operation",
-          "schema": {
-            "$ref": "../openapi.components.json#/schemas/User"
-          }
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/User"
+              }
+            }
+          },
+          "description": "successful operation"
         },
         "400": {
-          "description": "Invalid user supplied"
-        },
-        "404": {
-          "description": "User not found"
+          "description": "Invalid user supplied",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
         },
         "500": {
-          "description": "Internal server error"
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
         }
       }
     },
@@ -79,27 +104,37 @@
       "tags": [
         "User"
       ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "ID of user to delete",
-          "required": true,
-          "type": "integer"
-        }
-      ],
+
       "responses": {
-        "204": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/User"
+              }
+            }
+          },
           "description": "successful operation"
         },
         "400": {
-          "description": "Invalid ID supplied"
-        },
-        "404": {
-          "description": "User not found"
+          "description": "Invalid user supplied",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
         },
         "500": {
-          "description": "Internal server error"
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
         }
       }
     }
@@ -122,16 +157,75 @@
       },
       "responses": {
         "201": {
-          "description": "successful operation",
-          "schema": {
-            "$ref": "../openapi.components.json#/schemas/User"
-          }
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/User"
+              }
+            }
+          },
+          "description": "successful operation"
         },
         "400": {
-          "description": "Invalid user supplied"
+          "description": "Invalid user supplied",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
         },
         "500": {
-          "description": "Internal server error"
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
+        }
+      }
+    },
+    "get": {
+      "operationId": "getUsers",
+      "tags": [
+        "User"
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "../openapi.components.json#/schemas/User"
+                }
+              }
+            }
+          },
+          "description": "successful operation"
+        },
+        "400": {
+          "description": "Invalid user supplied",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
         }
       }
     }
