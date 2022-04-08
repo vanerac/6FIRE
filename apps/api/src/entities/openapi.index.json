@@ -12,7 +12,7 @@
   ],
   "paths": {
     "/user/": {
-      "$ref": "./user/user.path.json#/user/post"
+      "$ref": "./user/user.path.json#/createUser"
     },
     "/user/:id": {
       "$ref": "./user/user.path.json#/user"

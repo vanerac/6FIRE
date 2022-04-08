@@ -11,6 +11,26 @@ export class UserService {
     constructor(public readonly httpRequest: BaseHttpRequest) {}
 
     /**
+     * @param requestBody
+     * @returns any successful operation
+     * @throws ApiError
+     */
+    public createUser(
+        requestBody: User,
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/user/',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
      * @param id ID of user to fetch
      * @returns any successful operation
      * @throws ApiError
@@ -27,26 +47,6 @@ export class UserService {
             errors: {
                 400: `Invalid ID supplied`,
                 404: `User not found`,
-                500: `Internal server error`,
-            },
-        });
-    }
-
-    /**
-     * @param requestBody
-     * @returns any successful operation
-     * @throws ApiError
-     */
-    public createUser(
-        requestBody: User,
-    ): CancelablePromise<any> {
-        return this.httpRequest.request({
-            method: 'POST',
-            url: '/user/:id',
-            body: requestBody,
-            mediaType: 'application/json',
-            errors: {
-                400: `Invalid user supplied`,
                 500: `Internal server error`,
             },
         });

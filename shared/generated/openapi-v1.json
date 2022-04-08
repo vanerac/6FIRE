@@ -12,7 +12,36 @@
   ],
   "paths": {
     "/user/": {
-      "$ref": "#/paths/~1user~1%3Aid/post"
+      "post": {
+        "operationId": "createUser",
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/components/schemas/User"
+            }
+          },
+          "400": {
+            "description": "Invalid user supplied"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
     },
     "/user/:id": {
       "get": {
@@ -41,36 +70,6 @@
           },
           "404": {
             "description": "User not found"
-          },
-          "500": {
-            "description": "Internal server error"
-          }
-        }
-      },
-      "post": {
-        "operationId": "createUser",
-        "tags": [
-          "User"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/components/schemas/User"
-            }
-          },
-          "400": {
-            "description": "Invalid user supplied"
           },
           "500": {
             "description": "Internal server error"

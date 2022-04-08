@@ -32,36 +32,6 @@
         }
       }
     },
-    "post": {
-      "operationId": "createUser",
-      "tags": [
-        "User"
-      ],
-      "requestBody": {
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "../openapi.components.json#/schemas/User"
-            }
-          }
-        },
-        "required": true
-      },
-      "responses": {
-        "201": {
-          "description": "successful operation",
-          "schema": {
-            "$ref": "../openapi.components.json#/schemas/User"
-          }
-        },
-        "400": {
-          "description": "Invalid user supplied"
-        },
-        "500": {
-          "description": "Internal server error"
-        }
-      }
-    },
     "put": {
       "operationId": "updateUser",
       "tags": [
@@ -127,6 +97,38 @@
         },
         "404": {
           "description": "User not found"
+        },
+        "500": {
+          "description": "Internal server error"
+        }
+      }
+    }
+  },
+  "createUser": {
+    "post": {
+      "operationId": "createUser",
+      "tags": [
+        "User"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../openapi.components.json#/schemas/User"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "201": {
+          "description": "successful operation",
+          "schema": {
+            "$ref": "../openapi.components.json#/schemas/User"
+          }
+        },
+        "400": {
+          "description": "Invalid user supplied"
         },
         "500": {
           "description": "Internal server error"
