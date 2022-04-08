@@ -6,6 +6,7 @@ import type { OpenAPIConfig } from './core/OpenAPI';
 import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
 import { AuthService } from './services/AuthService';
+import { ThemesService } from './services/ThemesService';
 import { UserService } from './services/UserService';
 
 type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
@@ -13,6 +14,7 @@ type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
 export class ApiClient {
 
     public readonly auth: AuthService;
+    public readonly themes: ThemesService;
     public readonly user: UserService;
 
     public readonly request: BaseHttpRequest;
@@ -31,6 +33,7 @@ export class ApiClient {
         });
 
         this.auth = new AuthService(this.request);
+        this.themes = new ThemesService(this.request);
         this.user = new UserService(this.request);
     }
 }

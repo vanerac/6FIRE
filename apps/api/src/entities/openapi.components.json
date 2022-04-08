@@ -3,6 +3,9 @@
     "User": {
       "$ref": "./user/user.components.json#/schemas/User"
     },
+    "Theme": {
+      "$ref": "./theme/theme.components.json#/schemas/Theme"
+    },
     "Error": {
       "type": "object",
       "properties": {

@@ -25,12 +25,21 @@
     },
     "/auth/register": {
       "$ref": "./auth/auth.path.json#/register"
+    },
+    "/theme": {
+      "$ref": "./theme/theme.path.json#/themes"
+    },
+    "/theme/{id}": {
+      "$ref": "./theme/theme.path.json#/themesId"
     }
   },
   "components": {
     "schemas": {
       "User": {
         "$ref": "./openapi.components.json#/schemas/User"
+      },
+      "Theme": {
+        "$ref": "./openapi.components.json#/schemas/Theme"
       },
       "Error": {
         "$ref": "./openapi.components.json#/schemas/Error"
