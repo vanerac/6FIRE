@@ -1,7 +1,6 @@
 on: [workflow_call, workflow_dispatch]
 jobs:
   lint:
-    needs: [ install ]
     name: Lint code
     strategy:
       matrix:
