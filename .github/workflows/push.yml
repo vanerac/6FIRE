@@ -1,0 +1,12 @@
+on: push
+name: Push CI
+jobs:
+  install:
+    name: Install dependencies
+    uses: vanerac/6FIRE/.github/workflows/install_job.yml@main
+  lint:
+    needs: [install]
+    uses: vanerac/6FIRE/.github/workflows/lint_job.yml@main
+  openapi:
+    needs: [install]
+    uses: vanerac/6FIRE/.github/workflows/openapi_job.yml@main
