@@ -1,4 +1,4 @@
-on: push
+on: pull_request
 name: Push CI
 jobs:
   install:
@@ -10,3 +10,9 @@ jobs:
   openapi:
     needs: [install]
     uses: vanerac/6FIRE/.github/workflows/openapi_job.yml@main
+  compile:
+    needs: [lint, openapi]
+    uses: vanerac/6FIRE/.github/workflows/compile_job.yml@main
+  test:
+    needs: [lint, openapi, compile]
+    uses: vanerac/6FIRE/.github/workflows/test_job.yml@main
