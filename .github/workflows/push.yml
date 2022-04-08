@@ -23,6 +23,7 @@ jobs:
         if: steps.base-cache.outputs.cache-hit != 'true'
         name: install
   lint:
+    needs: [install]
     name: Lint code
     strategy:
       matrix:
