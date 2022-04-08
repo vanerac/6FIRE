@@ -12,4 +12,5 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 export type { Error } from './models/Error';
 export type { User } from './models/User';
 
+export { AuthService } from './services/AuthService';
 export { UserService } from './services/UserService';

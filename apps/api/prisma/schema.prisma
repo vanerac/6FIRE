@@ -16,25 +16,26 @@ enum VerificationType {
 }
 
 model User {
-  id                Int                 @id
+  id                Int                 @id @default(autoincrement())
+  userId            String              @unique @default(uuid())
   firstName         String
   lastName          String
   email             String
   password          String
   telephone         String
-  country           Country             @relation(fields: [countryId], references: [id])
+  countryId         Int
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @default(now())
   isAdmin           Boolean             @default(false)
   verifiedEmail     Boolean             @default(false)
   verifiedPhone     Boolean             @default(false)
   banned            Boolean             @default(false)
-  countryId         Int
+  country           Country             @relation(fields: [countryId], references: [id])
   VerificationCodes VerificationCodes[]
 }
 
 model VerificationCodes {
-  id        Int              @id
+  id        Int              @id @default(autoincrement())
   userId    Int
   code      String
   type      VerificationType
@@ -44,7 +45,7 @@ model VerificationCodes {
 }
 
 model Subscription {
-  id          Int      @id
+  id          Int      @id @default(autoincrement())
   name        String
   description String
   price       Int
@@ -54,7 +55,7 @@ model Subscription {
 }
 
 model Theme {
-  id                Int       @id
+  id                Int       @id @default(autoincrement())
   name              String
   subscriptionLevel Int
   createdAt         DateTime  @default(now())
@@ -63,7 +64,7 @@ model Theme {
 }
 
 model Article {
-  id        Int      @id
+  id        Int      @id @default(autoincrement())
   title     String
   content   String
   hidden    Boolean  @default(false)
@@ -75,7 +76,7 @@ model Article {
 }
 
 model Country {
-  id        Int      @id
+  id        Int      @id @default(autoincrement())
   name      String
   code      String
   enabled   Boolean  @default(true)

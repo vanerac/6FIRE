@@ -2,6 +2,7 @@ import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import Routes from './entities/routes';
 import * as OpenApiValidator from 'express-openapi-validator';
+import { User } from '@shared/types';
 
 const app = express();
 
@@ -39,6 +40,13 @@ app.use(
         // },
     }),
 );
+
+declare module 'express-session' {
+    export interface SessionData {
+        user: User;
+        [key: string]: any;
+    }
+}
 
 app.use(Routes);
 

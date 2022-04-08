@@ -11,6 +11,12 @@
       "@services/*": [
         "shared/services/*"
       ],
+      "@shared/types": [
+        "shared/services"
+      ],
+      "@shared/types/*": [
+        "shared/services/models/*"
+      ],
       "@api/*": [
         "app/api/*"
       ],

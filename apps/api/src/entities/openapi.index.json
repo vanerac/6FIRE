@@ -16,6 +16,15 @@
     },
     "/user/{id}": {
       "$ref": "./user/user.path.json#/user"
+    },
+    "/auth/login": {
+      "$ref": "./auth/auth.path.json#/login"
+    },
+    "/auth/logout": {
+      "$ref": "./auth/auth.path.json#/logout"
+    },
+    "/auth/register": {
+      "$ref": "./auth/auth.path.json#/register"
     }
   },
   "components": {
