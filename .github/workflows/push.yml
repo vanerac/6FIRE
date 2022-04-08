@@ -49,4 +49,4 @@ jobs:
         with:
           node-version: '16'
       - run: npm run lint
-        working-directory: apps/${{ matrix.directories }}
+        working-directory: ${{ matrix.directories }}
