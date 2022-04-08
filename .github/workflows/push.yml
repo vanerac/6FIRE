@@ -7,3 +7,6 @@ jobs:
   lint:
     needs: [install]
     uses: vanerac/6FIRE/.github/workflows/lint_job.yml@main
+  compile:
+    needs: [lint]
+    uses: vanerac/6FIRE/.github/workflows/compile_job.yml@main
