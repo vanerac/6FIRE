@@ -9,10 +9,12 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
+export type { CryptoHolding } from './models/CryptoHolding';
 export type { Error } from './models/Error';
 export type { Theme } from './models/Theme';
 export type { User } from './models/User';
 
 export { AuthService } from './services/AuthService';
+export { CryptoService } from './services/CryptoService';
 export { ThemesService } from './services/ThemesService';
 export { UserService } from './services/UserService';

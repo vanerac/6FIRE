@@ -1,0 +1,25 @@
+{
+  "schemas": {
+    "CryptoHolding": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "price_usd": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

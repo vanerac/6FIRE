@@ -16,7 +16,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 app.use(
     OpenApiValidator.middleware({
-        apiSpec: '../../shared/generated/openapi-v1.json',
+        apiSpec: '../../../shared/generated/openapi-v1.json',
         validateRequests: {
             removeAdditional: 'failing',
             allowUnknownQueryParameters: false,
@@ -44,6 +44,7 @@ app.use(
 declare module 'express-session' {
     export interface SessionData {
         user: User;
+
         [key: string]: any;
     }
 }

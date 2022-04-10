@@ -17,6 +17,9 @@
           "type": "string"
         }
       }
+    },
+    "CryptoHolding": {
+      "$ref": "./crypto/crypto.components.json#/schemas/CryptoHolding"
     }
   }
 }
