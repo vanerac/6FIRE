@@ -19,13 +19,15 @@ const Home: NextPage = () => {
                     Rejoignez 6FIRE - Club Privé d’investisseur
                 </div>
                 <div className="newsletter-WxaGAS">
-                    <div className="rectangle-3473-ctfCRZ border-1px-white"></div>
+                    {/* <div className="rectangle-3473-ctfCRZ border-1px-white"></div> */}
+                    <input type="checkbox" id="actu6fire" name="actu6fire" />
                     <div className="je-souhaite-recevoir-lactualit-6-fire-ctfCRZ lato-normal-white-12px">
                         Je souhaite recevoir l’actualité 6FIRE
                     </div>
                 </div>
                 <div className="cgu-rgpd-WxaGAS">
-                    <div className="rectangle-3474-qVPDai border-1px-white"></div>
+                    {/* <div className="rectangle-3474-qVPDai border-1px-white"></div> */}
+                    <input type="checkbox" id="cgu" name="cgu" />
                     <div className="en-crant-un-compte-v-qVPDai">
                         <span className="span0-qb1m9I lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
@@ -57,7 +59,9 @@ const Home: NextPage = () => {
                 </div>
                 <div className="button-sign-in-WxaGAS">
                     <div className="button-cration-de-compte-43BKS5">
-                        <div className="rectangle-3470-C8EDSj"></div>
+                        <div
+                            onClick={() => console.log('button créer un compte clicked')}
+                            className="rectangle-3470-C8EDSj"></div>
                         <div className="crer-un-compte-C8EDSj">Créer un compte</div>
                     </div>
                 </div>

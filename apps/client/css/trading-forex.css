@@ -1,0 +1,2895 @@
+/* screen - trading-forex */
+
+.trading-forex {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100vh;
+  margin: 0px;
+  min-height: 1372px;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+#overlay-trading-forex {
+  background-color: transparent;
+}
+
+.overlay .trading-forex {
+  background-color: #00000000;
+}
+
+.trading-forex .background-GY9xoT {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 965px;
+  left: 0px;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.trading-forex .article-GY9xoT {
+  background-color: transparent;
+  height: 212px;
+  left: 197px;
+  opacity: 0;
+  position: absolute;
+  top: calc(39.05% - 83px);
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-324-6ArdAu {
+  background-color: transparent;
+  height: calc(100.00% - 61px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-6ArdAu {
+  background-color: transparent;
+  bottom: calc(15.54% - 3px);
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 46px;
+}
+
+.trading-forex .ligne-15-6ArdAu {
+  background-color: transparent;
+  bottom: 32px;
+  height: 17px;
+  left: 47px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-tCFXiL {
+  background-color: transparent;
+  bottom: calc(15.54% - 3px);
+  height: 19px;
+  left: calc(28.00% - 28px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-3KmkC2 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .icon-twitter-6ArdAu {
+  background-color: transparent;
+  height: 47px;
+  left: calc(18.84% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(43.30% - 20px);
+  width: 47px;
+}
+
+.trading-forex .rectangle-3502-6ArdAu {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 61px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .footer-GY9xoT {
+  background-color: transparent;
+  bottom: 0px;
+  height: 210px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-forex .background-MA8arR {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .menu-footer-MA8arR {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: 185px;
+  top: calc(47.37% - 9px);
+  width: 470px;
+}
+
+.trading-forex .mentions-lgales-va7xFI {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 70px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.trading-forex .cgu-va7xFI {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: calc(45.12% - 13px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.trading-forex .cgv-va7xFI {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(44.47% - 12px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.trading-forex .politique-de-confidentialit-va7xFI {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading-forex .politique-de-confidentialit-G30tHZ {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 0px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading-forex .contact-va7xFI {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.trading-forex .x2022-6-fire-invest-MA8arR {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.88% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.trading-forex .logo-MA8arR {
+  background-color: transparent;
+  height: 58px;
+  left: 191px;
+  position: absolute;
+  top: calc(33.01% - 19px);
+  width: 199px;
+}
+
+.trading-forex .groupe-2-FQgwq7 {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.trading-forex .groupe-1-rETACH {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .effect-FQgwq7 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.trading-forex .ligne-31-MA8arR {
+  background-color: transparent;
+  bottom: 31.58%;
+  height: 1px;
+  left: 72px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 143px);
+}
+
+.trading-forex .groupe-3011-MA8arR {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: 215px;
+  top: calc(26.53% - 6px);
+  width: 21px;
+}
+
+.trading-forex .ellipse-17695-VhmydZ {
+  background-color: var(--milano-red);
+  border-radius: 22px;
+  height: calc(100.00% + 23px);
+  left: -12px;
+  opacity: 0;
+  position: absolute;
+  top: -11px;
+  width: calc(100.00% + 23px);
+}
+
+.trading-forex .icon-instagram-VhmydZ {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-forex .groupe-3010-MA8arR {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 185px;
+  top: calc(26.87% - 5px);
+  width: 16px;
+}
+
+.trading-forex .ellipse-17696-bghyxS {
+  background-color: var(--milano-red);
+  border-radius: 22px;
+  height: calc(100.00% + 26px);
+  left: -14px;
+  opacity: 0;
+  position: absolute;
+  top: -13px;
+  width: calc(100.00% + 28px);
+}
+
+.trading-forex .icon-simple-tiktok-bghyxS {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-forex .header-GY9xoT {
+  background-color: transparent;
+  height: 144px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .rectangle-3483-L6n4D5 {
+  background-color: var(--midnight-moss);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .logo-L6n4D5 {
+  background-color: transparent;
+  height: 59px;
+  left: calc(50.00% - 44px);
+  position: absolute;
+  top: 17px;
+  width: 88px;
+}
+
+.trading-forex .groupe-1483-yivaYZ {
+  background-color: transparent;
+  bottom: -93px;
+  height: 36px;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% - 9px);
+}
+
+.trading-forex .groupe-1482-ExixzL {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-forex .effect-yivaYZ {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .thme-sombre-L6n4D5 {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: calc(18.74% - 9px);
+  top: calc(30.33% - 4px);
+  width: 48px;
+}
+
+.trading-forex .icon-ionic-ios-moon-kns6sT {
+  background-color: transparent;
+  height: 100%;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+
+.trading-forex .toogle-button-kns6sT {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 25px;
+}
+
+.trading-forex .rectangle-3485-iRxQNh {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .ellipse-17688-iRxQNh {
+  background-color: var(--cape-cod);
+  border-radius: 5px;
+  height: calc(100.00% - 4px);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 10px;
+}
+
+.trading-forex .menu-L6n4D5 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 51px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-forex .rectangle-3484-v70c02 {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .espace-trading-crypto-v70c02 {
+  background-color: transparent;
+  height: 17px;
+  left: 197px;
+  position: absolute;
+  top: calc(45.59% - 8px);
+  width: 152px;
+}
+
+.trading-forex .formations-mTh6Aa {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .ligne-8-mTh6Aa {
+  background-color: transparent;
+  bottom: -18px;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 4px);
+}
+
+.trading-forex .formations-v70c02 {
+  background-color: transparent;
+  height: 20px;
+  left: calc(29.94% - 29px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 98px;
+}
+
+.trading-forex .formations-bsBGaP {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 72px;
+}
+
+.trading-forex .ligne-8-bsBGaP {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 35px);
+}
+
+.trading-forex .icon-actif-bsBGaP {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .ellipse-17693-xckKPE {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .font-awsome-graduation-cap-xckKPE {
+  background-color: transparent;
+  bottom: 7px;
+  height: 7px;
+  object-fit: cover;
+  position: absolute;
+  right: 3px;
+  width: 15px;
+}
+
+.trading-forex .forex-v70c02 {
+  background-color: transparent;
+  bottom: 1px;
+  height: 35px;
+  left: calc(39.31% - 29px);
+  position: absolute;
+  width: 72px;
+}
+
+.trading-forex .club-premium-WM46my {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 7px;
+  text-align: left;
+  top: calc(6.25% - 1px);
+  width: 37px;
+}
+
+.trading-forex .ligne-8-WM46my {
+  background-color: transparent;
+  bottom: -1px;
+  height: 3px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.trading-forex .icon-actif-WM46my {
+  background-color: transparent;
+  height: calc(100.00% - 15px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .ellipse-17693-BAFETY {
+  background-color: var(--milano-red);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .font-awsome-dollar-sign-WM46my {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 60px;
+  top: 5px;
+  width: 6px;
+}
+
+.trading-forex .crypto-wallet-v70c02 {
+  background-color: transparent;
+  height: 20px;
+  left: calc(48.14% - 55px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.trading-forex .formations-uVQV3K {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.trading-forex .ligne-8-uVQV3K {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 19px);
+}
+
+.trading-forex .icon-actif-uVQV3K {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .ellipse-17693-rUgkyx {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .font-awsome-wallet-rUgkyx {
+  background-color: transparent;
+  bottom: 5px;
+  height: 9px;
+  left: 5px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 10px);
+}
+
+.trading-forex .bot-trading-v70c02 {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: calc(40.27% - 46px);
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.trading-forex .formations-dXwPMr {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.trading-forex .ligne-8-dXwPMr {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 19px);
+}
+
+.trading-forex .icon-actif-dXwPMr {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .ellipse-17693-xxPtSQ {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .icon-awesome-robot-xxPtSQ {
+  background-color: transparent;
+  height: calc(100.00% - 10px);
+  left: 4px;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: calc(100.00% - 8px);
+}
+
+.trading-forex .trading-v70c02 {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: calc(27.69% - 36px);
+  top: 0px;
+  width: 131px;
+}
+
+.trading-forex .rectangle-3556-Bcumww {
+  background-color: var(--milano-red);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .trading-Bcumww {
+  background-color: transparent;
+  bottom: calc(44.83% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 14px;
+  text-align: left;
+  width: 70px;
+}
+
+.trading-forex .icon-actif-Bcumww {
+  background-color: transparent;
+  height: calc(100.00% - 31px);
+  left: 17px;
+  position: absolute;
+  top: 16px;
+  width: 20px;
+}
+
+.trading-forex .ellipse-17693-Wh483o {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-forex .icon-simple-graphcool-Wh483o {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 9px;
+}
+
+.trading-forex .espace-membre-L6n4D5 {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 112px;
+  top: calc(29.92% - 5px);
+  width: 83px;
+}
+
+.trading-forex .connexion-jM9FxC {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-c0NkEr {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .ligne-8-c0NkEr {
+  background-color: transparent;
+  bottom: -5px;
+  height: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  right: 2px;
+  width: 64px;
+}
+
+.trading-forex .menu-2-L6n4D5 {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 50px;
+  top: calc(31.11% - 3px);
+  width: 27px;
+}
+
+.trading-forex .icon-ionic-ios-menu-LHM1Rk {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .trac-1-exo7Pv {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .trac-2-exo7Pv {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.trading-forex .menu-2-LHM1Rk {
+  background-color: transparent;
+  height: calc(100.00% + 759px);
+  left: -310px;
+  opacity: 0;
+  position: absolute;
+  top: -42px;
+  width: calc(100.00% + 360px);
+}
+
+.trading-forex .background-DD1tfU {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .groupe-1487-DD1tfU {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 37px;
+  top: 28px;
+  width: 13px;
+}
+
+.trading-forex .ligne-10-tUPydb {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.trading-forex .ligne-11-tUPydb {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.trading-forex .numro-de-tlphone-DD1tfU {
+  background-color: transparent;
+  height: 59px;
+  position: absolute;
+  right: 37px;
+  top: 114px;
+  width: 210px;
+}
+
+.trading-forex .ligne-6-j2wquS {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: 100%;
+}
+
+.trading-forex .mes-donnes-personnelles-j2wquS {
+  background-color: transparent;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% - 24px);
+}
+
+.trading-forex .ma-licence-j2wquS {
+  background-color: transparent;
+  bottom: -2px;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  width: calc(100.00% - 26px);
+}
+
+.trading-forex .search-bar-L6n4D5 {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: 87px;
+  top: calc(30.33% - 4px);
+  width: 14px;
+}
+
+.trading-forex .icon-search-HDkRwP {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .search-bar-HDkRwP {
+  background-color: transparent;
+  height: calc(100.00% + 78px);
+  left: -1264px;
+  opacity: 0;
+  position: absolute;
+  top: -39px;
+  width: calc(100.00% + 1352px);
+}
+
+.trading-forex .rectangle-3603-irddok {
+  background-color: var(--black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .search-bar-irddok {
+  background-color: transparent;
+  height: 42px;
+  position: absolute;
+  right: calc(49.95% - 184px);
+  top: calc(50.00% - 21px);
+  width: 369px;
+}
+
+.trading-forex .rectangle-3604-xpN0yu {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 40px);
+}
+
+.trading-forex .rectangle-3605-xpN0yu {
+  background-color: transparent;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 41px;
+}
+
+.trading-forex .rechercher-xpN0yu {
+  background-color: transparent;
+  bottom: calc(43.48% - 8px);
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 270px;
+}
+
+.trading-forex .icon-search-xpN0yu {
+  background-color: transparent;
+  bottom: calc(50.00% - 8px);
+  height: 16px;
+  object-fit: cover;
+  position: absolute;
+  right: 12px;
+  width: 16px;
+}
+
+.trading-forex .groupe-1487-irddok {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 90px;
+  top: calc(50.00% - 6px);
+  width: 13px;
+}
+
+.trading-forex .ligne-10-VpDGbn {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.trading-forex .ligne-11-VpDGbn {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.trading-forex .prvisualisation-articles-GY9xoT {
+  background-color: transparent;
+  height: 713px;
+  left: 197px;
+  position: absolute;
+  top: 180px;
+  width: calc(100.00% - 394px);
+}
+
+.trading-forex .article-vOxpDG {
+  background-color: transparent;
+  bottom: 0px;
+  height: 205px;
+  left: 0px;
+  position: absolute;
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-321-o2OUYT {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-o2OUYT {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-12-o2OUYT {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-bHcEox {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-SZGDvm {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3498-o2OUYT {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .article-ZpuHyM {
+  background-color: transparent;
+  bottom: 0px;
+  height: 205px;
+  left: calc(50.00% - 150px);
+  position: absolute;
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-322-Taicq0 {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-Taicq0 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-13-Taicq0 {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-Vn6yTd {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-KTr35q {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3500-Taicq0 {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .article-x4Fbci {
+  background-color: transparent;
+  bottom: 0px;
+  height: 205px;
+  position: absolute;
+  right: 0px;
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-323-kxPs2c {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-kxPs2c {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-14-kxPs2c {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-0S8pSy {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-GdMLg7 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3501-kxPs2c {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .article-paFDq8 {
+  background-color: transparent;
+  height: 205px;
+  left: 0px;
+  position: absolute;
+  top: calc(50.00% - 102px);
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-321-OQJ0bC {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-OQJ0bC {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-12-OQJ0bC {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-8flXgU {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-da8PLc {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3498-OQJ0bC {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .article-x5pMpk {
+  background-color: transparent;
+  height: 205px;
+  left: calc(50.00% - 150px);
+  position: absolute;
+  top: calc(50.00% - 102px);
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-322-Dh6k4h {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-Dh6k4h {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-13-Dh6k4h {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-d6wup0 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-K2xskp {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3500-Dh6k4h {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .article-FMStxK {
+  background-color: transparent;
+  height: 205px;
+  position: absolute;
+  right: 0px;
+  top: calc(50.00% - 102px);
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-323-StJoNQ {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-StJoNQ {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-14-StJoNQ {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-1jkg4V {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-mEKac7 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3501-StJoNQ {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .article-8vawgc {
+  background-color: transparent;
+  height: 205px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-321-EW2Mvz {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-EW2Mvz {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-12-EW2Mvz {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-xifxod {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-hglxwj {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3498-EW2Mvz {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .article-xIPdub {
+  background-color: transparent;
+  height: 205px;
+  left: calc(50.00% - 150px);
+  position: absolute;
+  top: 0px;
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-322-z6xHMK {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-z6xHMK {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-13-z6xHMK {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-32RTZk {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-9UEivZ {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3500-z6xHMK {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .article-qEDcz1 {
+  background-color: transparent;
+  height: 205px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 300px;
+}
+
+.trading-forex .groupe-de-masques-323-AhDR5W {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .club-premium-AhDR5W {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex .ligne-14-AhDR5W {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex .club-premium-9laQ3D {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-forex .club-premium-T2DF3C {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex .rectangle-3501-AhDR5W {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex .button-signin-GY9xoT {
+  background-color: transparent;
+  bottom: calc(27.72% - 11px);
+  height: 40px;
+  left: calc(50.00% - 95px);
+  position: absolute;
+  width: 190px;
+}
+
+.trading-forex .button-cration-de-compte-CK2ejX {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .rectangle-3470-tMZS2c {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .voir-plus-tMZS2c {
+  background-color: transparent;
+  bottom: calc(44.44% - 10px);
+  height: 22px;
+  left: calc(44.42% - 27px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: 60px;
+}
+
+.trading-forex .icon-ionic-ios-arrow-forward-CK2ejX {
+  background-color: transparent;
+  height: 6px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(32.15% - 3px);
+  top: calc(50.00% - 3px);
+  width: 10px;
+}
+
+.trading-forex .avertissement-GY9xoT {
+  background-color: transparent;
+  bottom: 210px;
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-forex .groupe-3020-pKxBil {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .rectangle-3606-HCOteM {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex .les-investissements-HCOteM {
+  background-color: transparent;
+  height: 35px;
+  left: 135px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  width: calc(100.00% - 268px);
+}
+
+.trading-forex .span0-3FIxFe {
+}
+
+.trading-forex .span1-3FIxFe {
+}
+
+.trading-forex .ligne-41-pKxBil {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+/* screen - trading-forex-mobile */
+
+.trading-forex-mobile {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 2176px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.trading-forex-mobile .background-B8d21u {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: calc(100.00% - 319px);
+  left: 0px;
+  position: absolute;
+  top: 153px;
+  width: 100%;
+}
+
+.trading-forex-mobile .article-B8d21u {
+  background-color: transparent;
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  top: 179px;
+  width: calc(100.00% - 74px);
+}
+
+.trading-forex-mobile .groupe-de-masques-321-IG8Jsa {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .club-premium-IG8Jsa {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 66px;
+}
+
+.trading-forex-mobile .ligne-12-IG8Jsa {
+  background-color: transparent;
+  bottom: 27px;
+  height: 15px;
+  left: 19.69%;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex-mobile .club-premium-UBQ6eC {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(31.43% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 109px;
+}
+
+.trading-forex-mobile .club-premium-rCYbHX {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex-mobile .rectangle-3498-IG8Jsa {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex-mobile .article-kIt21l {
+  background-color: transparent;
+  height: 244px;
+  left: 37px;
+  position: absolute;
+  top: calc(22.67% - 55px);
+  width: calc(100.00% - 74px);
+}
+
+.trading-forex-mobile .groupe-de-masques-322-1KECiX {
+  background-color: transparent;
+  height: calc(100.00% - 55px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .club-premium-1KECiX {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex-mobile .rectangle-3500-1KECiX {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 55px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex-mobile .club-premium-DYYkNr {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 72px;
+}
+
+.trading-forex-mobile .ligne-33-1KECiX {
+  background-color: transparent;
+  bottom: 27px;
+  height: 15px;
+  left: 21.34%;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex-mobile .club-premium-03IkES {
+  background-color: transparent;
+  bottom: 26px;
+  height: 17px;
+  left: calc(34.03% - 37px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 110px;
+}
+
+.trading-forex-mobile .article-RkF1mW {
+  background-color: transparent;
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  top: calc(36.18% - 87px);
+  width: calc(100.00% - 74px);
+}
+
+.trading-forex-mobile .groupe-de-masques-323-ehZ9JJ {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .club-premium-ehZ9JJ {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex-mobile .ligne-14-ehZ9JJ {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex-mobile .club-premium-xiyzvd {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(21.67% - 25px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 114px;
+}
+
+.trading-forex-mobile .club-premium-K1OSlh {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex-mobile .rectangle-3501-ehZ9JJ {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex-mobile .article-hNiITB {
+  background-color: transparent;
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  top: calc(49.56% - 119px);
+  width: calc(100.00% - 74px);
+}
+
+.trading-forex-mobile .groupe-de-masques-324-hqzGZO {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .club-premium-hqzGZO {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 78px;
+}
+
+.trading-forex-mobile .ligne-15-hqzGZO {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 23.19%;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex-mobile .club-premium-bk2xF5 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(36.63% - 41px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 111px;
+}
+
+.trading-forex-mobile .club-premium-a0YJpM {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex-mobile .icon-twitter-hqzGZO {
+  background-color: transparent;
+  height: 47px;
+  left: calc(18.87% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(45.22% - 21px);
+  width: 47px;
+}
+
+.trading-forex-mobile .rectangle-3502-hqzGZO {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex-mobile .avertissement-B8d21u {
+  background-color: transparent;
+  bottom: 203px;
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-forex-mobile .groupe-3020-ziEuQM {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .rectangle-3606-2p2nox {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .les-investissements-2p2nox {
+  background-color: transparent;
+  height: 79px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 17px;
+  width: calc(100.00% - 52px);
+}
+
+.trading-forex-mobile .span0-0Jrzz3 {
+}
+
+.trading-forex-mobile .span1-0Jrzz3 {
+}
+
+.trading-forex-mobile .ligne-41-ziEuQM {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .footer-B8d21u {
+  background-color: transparent;
+  bottom: 0px;
+  height: 203px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-forex-mobile .background-LP3m4M {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .menu-footer-LP3m4M {
+  background-color: transparent;
+  bottom: calc(40.37% - 17px);
+  height: 42px;
+  left: calc(50.00% - 108px);
+  position: absolute;
+  width: 216px;
+}
+
+.trading-forex-mobile .mentions-lgales-I0HR4b {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(40.97% - 45px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.trading-forex-mobile .cgu-I0HR4b {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 4px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.trading-forex-mobile .cgv-I0HR4b {
+  background-color: transparent;
+  bottom: -3px;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.trading-forex-mobile .politique-de-confidentialit-I0HR4b {
+  background-color: transparent;
+  bottom: -5px;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading-forex-mobile .contact-I0HR4b {
+  background-color: transparent;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.trading-forex-mobile .x2022-6-fire-invest-LP3m4M {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.46% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.trading-forex-mobile .logo-LP3m4M {
+  background-color: transparent;
+  height: 58px;
+  left: 10px;
+  position: absolute;
+  top: 18px;
+  width: 199px;
+}
+
+.trading-forex-mobile .groupe-2-w6XbMr {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.trading-forex-mobile .groupe-1-Wq9uCr {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .effect-w6XbMr {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.trading-forex-mobile .ligne-31-LP3m4M {
+  background-color: transparent;
+  bottom: 26.73%;
+  height: 1px;
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 76px);
+}
+
+.trading-forex-mobile .groupe-3011-LP3m4M {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: calc(22.45% - 5px);
+  top: calc(20.19% - 4px);
+  width: 21px;
+}
+
+.trading-forex-mobile .icon-instagram-3LZ4IB {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-forex-mobile .groupe-3010-LP3m4M {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 61px;
+  top: calc(20.64% - 4px);
+  width: 16px;
+}
+
+.trading-forex-mobile .icon-simple-tiktok-xxTQwN {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-forex-mobile .icon-paper_plane-LP3m4M {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 25px;
+  top: calc(20.64% - 4px);
+  width: 21px;
+}
+
+.trading-forex-mobile .header-B8d21u {
+  background-color: transparent;
+  height: 153px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .rectangle-3484-iFw9sa {
+  background-color: var(--black-3);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .logo-iFw9sa {
+  background-color: transparent;
+  height: 86px;
+  position: absolute;
+  right: calc(49.68% - 64px);
+  top: 4px;
+  width: 128px;
+}
+
+.trading-forex-mobile .effect-8j36hR {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-forex-mobile .toogle-button-iFw9sa {
+  background-color: transparent;
+  height: 18px;
+  left: 37px;
+  position: absolute;
+  top: calc(28.31% - 5px);
+  width: 58px;
+}
+
+.trading-forex-mobile .icon-ionic-ios-moon-ubf6zL {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 17px;
+}
+
+.trading-forex-mobile .toogle-button-ubf6zL {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 32px;
+}
+
+.trading-forex-mobile .rectangle-3485-Vzdjy0 {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .ellipse-17688-Vzdjy0 {
+  background-color: var(--cape-cod);
+  border-radius: 6.41px;
+  height: calc(100.00% - 5px);
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 13px;
+}
+
+.trading-forex-mobile .search-bar-iFw9sa {
+  background-color: transparent;
+  height: 22px;
+  position: absolute;
+  right: 37px;
+  top: calc(26.28% - 6px);
+  width: 22px;
+}
+
+.trading-forex-mobile .icon-search-m6F9CI {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .rectangle-3607-iFw9sa {
+  background-color: var(--licorice);
+  bottom: 0px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-forex-mobile .menu-iFw9sa {
+  background-color: transparent;
+  bottom: calc(17.71% - 2px);
+  height: 9px;
+  position: absolute;
+  right: 37px;
+  width: 27px;
+}
+
+.trading-forex-mobile .icon-ionic-ios-menu-xAe6PG {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .trac-1-lycP8C {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .trac-2-lycP8C {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.trading-forex-mobile .espace-trading-crypto-iFw9sa {
+  background-color: transparent;
+  bottom: 20px;
+  height: 17px;
+  left: 16px;
+  position: absolute;
+  width: 152px;
+}
+
+.trading-forex-mobile .formations-Tl7rzh {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex-mobile .article-UWD1S0 {
+  background-color: transparent;
+  bottom: calc(37.05% - 89px);
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  width: calc(100.00% - 74px);
+}
+
+.trading-forex-mobile .groupe-de-masques-324-lP6bgW {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .club-premium-lP6bgW {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 78px;
+}
+
+.trading-forex-mobile .ligne-15-lP6bgW {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 23.19%;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex-mobile .club-premium-ZW6aZP {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(36.63% - 41px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 111px;
+}
+
+.trading-forex-mobile .club-premium-6iMolW {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex-mobile .icon-twitter-lP6bgW {
+  background-color: transparent;
+  height: 47px;
+  left: calc(18.87% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(45.22% - 21px);
+  width: 47px;
+}
+
+.trading-forex-mobile .rectangle-3502-lP6bgW {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex-mobile .article-QlHGIm {
+  background-color: transparent;
+  bottom: calc(23.67% - 57px);
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  width: calc(100.00% - 74px);
+}
+
+.trading-forex-mobile .groupe-de-masques-323-Y5Aele {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .club-premium-Y5Aele {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-forex-mobile .ligne-14-Y5Aele {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-forex-mobile .club-premium-hkxUaO {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(21.67% - 25px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 114px;
+}
+
+.trading-forex-mobile .club-premium-RAs8p8 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-forex-mobile .rectangle-3501-Y5Aele {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-forex-mobile .button-signin-B8d21u {
+  background-color: transparent;
+  bottom: 377px;
+  height: 40px;
+  left: calc(50.00% - 95px);
+  position: absolute;
+  width: 190px;
+}
+
+.trading-forex-mobile .button-cration-de-compte-92VH7M {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .rectangle-3470-leu5ok {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-forex-mobile .voir-plus-leu5ok {
+  background-color: transparent;
+  bottom: calc(44.44% - 10px);
+  height: 22px;
+  left: calc(44.42% - 27px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: 60px;
+}
+
+.trading-forex-mobile .icon-ionic-ios-arrow-forward-92VH7M {
+  background-color: transparent;
+  height: 6px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(32.15% - 3px);
+  top: calc(50.00% - 3px);
+  width: 10px;
+}
+@media screen and (max-width: 1365px) {
+  .screen.trading-forex { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) {
+  .screen.trading-forex-mobile { 
+    display: none;
+   }
+}

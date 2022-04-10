@@ -1,0 +1,3136 @@
+/* screen - crypto-wallet */
+
+.crypto-wallet {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100vh;
+  margin: 0px;
+  min-height: 1306px;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+#overlay-crypto-wallet {
+  background-color: transparent;
+}
+
+.overlay .crypto-wallet {
+  background-color: #00000000;
+}
+
+.crypto-wallet .background-XPwy4i {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 899px;
+  left: 0px;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.crypto-wallet .h1-XPwy4i {
+  background-color: transparent;
+  height: 26px;
+  left: calc(30.72% - 79px);
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  top: calc(20.90% - 5px);
+  width: 257px;
+}
+
+.crypto-wallet .date-XPwy4i {
+  background-color: transparent;
+  height: 21px;
+  left: calc(30.72% - 79px);
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  top: calc(23.06% - 5px);
+  width: 257px;
+}
+
+.crypto-wallet .cercle-XPwy4i {
+  background-color: transparent;
+  height: 283px;
+  position: absolute;
+  right: calc(33.22% - 95px);
+  top: 174px;
+  width: 286px;
+}
+
+.crypto-wallet .graph-3-Iu9ljH {
+  background-color: transparent;
+  height: 239px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 240px;
+}
+
+.crypto-wallet .oval-16-l8FK0N {
+  background: linear-gradient(180deg, #95989a 0%, #393939 36.28%, #4b4c4d 100%);
+  background-color: transparent;
+  border-radius: 119.94px/119.39px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .animation-l8FK0N {
+  background-color: transparent;
+  height: 21px;
+  opacity: 0;
+  position: absolute;
+  right: 166px;
+  top: calc(11.94% - 3px);
+  width: 71px;
+}
+
+.crypto-wallet .rectangle-3573-xurQbd {
+  background-color: var(--mine-shaft);
+  height: 100%;
+  left: 0px;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .eth-20-xurQbd {
+  background-color: transparent;
+  bottom: calc(25.00% - 4px);
+  height: 17px;
+  left: 10px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 17px);
+}
+
+.crypto-wallet .graph-2-Iu9ljH {
+  background-color: transparent;
+  height: calc(100.00% - 49px);
+  left: 0px;
+  position: absolute;
+  top: 7px;
+  width: 240px;
+}
+
+.crypto-wallet .trac-1025-bPlr5T {
+  background-color: transparent;
+  height: calc(100.00% + 18px);
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.crypto-wallet .animation-bPlr5T {
+  background-color: transparent;
+  bottom: calc(31.71% - 7px);
+  height: 21px;
+  opacity: 0;
+  position: absolute;
+  right: 204px;
+  width: 71px;
+}
+
+.crypto-wallet .rectangle-3573-Ffy16J {
+  background-color: var(--mine-shaft);
+  height: 100%;
+  left: 0px;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .btc-60-Ffy16J {
+  background-color: transparent;
+  bottom: calc(25.00% - 4px);
+  height: 17px;
+  left: 10px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 17px);
+}
+
+.crypto-wallet .graph-1-Iu9ljH {
+  background-color: transparent;
+  height: calc(100.00% - 21px);
+  left: 3px;
+  position: absolute;
+  top: 21px;
+  width: calc(100.00% - 3px);
+}
+
+.crypto-wallet .oval-15-Nr0iuw {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.crypto-wallet .animation-Nr0iuw {
+  background-color: transparent;
+  bottom: calc(25.99% - 5px);
+  height: 21px;
+  opacity: 0;
+  position: absolute;
+  right: 206px;
+  width: 71px;
+}
+
+.crypto-wallet .rectangle-3573-CETFKo {
+  background-color: var(--mine-shaft);
+  height: 100%;
+  left: 0px;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .sol-5-CETFKo {
+  background-color: transparent;
+  bottom: calc(25.00% - 4px);
+  height: 17px;
+  left: 10px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 17px);
+}
+
+.crypto-wallet .graph-Iu9ljH {
+  background-color: transparent;
+  height: calc(100.00% - 42px);
+  position: absolute;
+  right: calc(31.61% - 47px);
+  top: 0px;
+  width: 150px;
+}
+
+.crypto-wallet .oval-15-HjsIhi {
+  background-color: transparent;
+  height: calc(100.00% + 18px);
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.crypto-wallet .animation-HjsIhi {
+  background-color: transparent;
+  bottom: calc(17.00% - 4px);
+  height: 21px;
+  opacity: 0;
+  position: absolute;
+  right: -17px;
+  width: 71px;
+}
+
+.crypto-wallet .rectangle-3573-ihNVG3 {
+  background-color: var(--mine-shaft);
+  height: 100%;
+  left: 0px;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .btc-60-ihNVG3 {
+  background-color: transparent;
+  bottom: calc(25.00% - 4px);
+  height: 17px;
+  left: 10px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 17px);
+}
+
+.crypto-wallet .oval-16-Iu9ljH {
+  background-color: var(--white);
+  border-radius: 68.97px/68.65px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 137px;
+  left: calc(34.35% - 47px);
+  position: absolute;
+  top: calc(34.86% - 48px);
+  width: 138px;
+}
+
+.crypto-wallet .font-awsome-wallet-Iu9ljH {
+  background-color: transparent;
+  bottom: 144px;
+  height: 38px;
+  left: 98px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 243px);
+}
+
+.crypto-wallet .bar-crypto-icon-XPwy4i {
+  background-color: transparent;
+  height: 121px;
+  left: 194px;
+  position: absolute;
+  top: calc(38.53% - 47px);
+  width: calc(100.00% - 387px);
+}
+
+.crypto-wallet .rectangle-3566-xqiOBD {
+  background-color: var(--licorice);
+  border-radius: 10px;
+  height: 100%;
+  left: 0px;
+  opacity: 0.49;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .avax-xqiOBD {
+  background-color: transparent;
+  height: 42px;
+  position: absolute;
+  right: calc(45.54% - 41px);
+  top: calc(23.38% - 10px);
+  width: 90px;
+}
+
+.crypto-wallet .avalanche-avax-logo-xzVrvc {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 42px;
+}
+
+.crypto-wallet .rectangle-3565-QR9tk6 {
+  background-color: var(--white);
+  height: 23px;
+  left: 8px;
+  position: absolute;
+  top: calc(39.06% - 9px);
+  width: calc(100.00% - 16px);
+}
+
+.crypto-wallet .trac-1026-QR9tk6 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.crypto-wallet .oval-16-xzVrvc {
+  background: linear-gradient(154.83deg, #e84142 13.61%, #742121 74.75%);
+  background-color: transparent;
+  border-radius: 7px;
+  bottom: -1px;
+  height: 16px;
+  left: calc(34.52% - 6px);
+  position: absolute;
+  width: 16px;
+}
+
+.crypto-wallet .club-premium-xzVrvc {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 2px;
+  width: 38px;
+}
+
+.crypto-wallet .club-premium-EgJ6er {
+  background-color: transparent;
+  bottom: 4px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 3px;
+  text-align: left;
+  width: 35px;
+}
+
+.crypto-wallet .avax-1VwJyY {
+  background-color: transparent;
+  height: 42px;
+  left: calc(25.21% - 25px);
+  position: absolute;
+  top: calc(23.46% - 10px);
+  width: 98px;
+}
+
+.crypto-wallet .club-premium-aCEkYu {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 2px;
+  width: 46px;
+}
+
+.crypto-wallet .club-premium-s4BgfB {
+  background-color: transparent;
+  bottom: 4px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 11px;
+  text-align: left;
+  width: 35px;
+}
+
+.crypto-wallet .layer_x0020_1-aCEkYu {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 42px;
+}
+
+.crypto-wallet .x1421344023328-6MMkG3 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .trac-1027-k9m6xt {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .trac-1028-k9m6xt {
+  background-color: transparent;
+  height: calc(100.00% - 15px);
+  left: calc(46.65% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: 7px;
+  width: 20px;
+}
+
+.crypto-wallet .oval-16-aCEkYu {
+  background: linear-gradient(143.64deg, #f7931a 8.93%, #c76d00 76.75%);
+  background-color: transparent;
+  border-radius: 7px;
+  bottom: 0px;
+  height: 16px;
+  left: calc(30.54% - 5px);
+  position: absolute;
+  width: 16px;
+}
+
+.crypto-wallet .avax-xXHQVx {
+  background-color: transparent;
+  height: 42px;
+  position: absolute;
+  right: calc(31.26% - 28px);
+  top: calc(23.50% - 10px);
+  width: 90px;
+}
+
+.crypto-wallet .avalanche-avax-logo-cUbV0V {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 42px;
+}
+
+.crypto-wallet .ellipse-17694-2c9lA5 {
+  background-color: var(--white);
+  border-radius: 21px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .solana-sol-logo-2c9lA5 {
+  background-color: transparent;
+  height: 19px;
+  left: calc(50.00% - 12px);
+  position: absolute;
+  top: calc(50.00% - 9px);
+  width: 24px;
+}
+
+.crypto-wallet .trac-1029-sxxHx9 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 5px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet .trac-1030-sxxHx9 {
+  background-color: transparent;
+  height: 5px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.crypto-wallet .trac-1031-sxxHx9 {
+  background-color: transparent;
+  height: 5px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(49.68% - 2px);
+  width: 100%;
+}
+
+.crypto-wallet .oval-16-cUbV0V {
+  background: linear-gradient(154.83deg, #c833f7 13.61%, #28d9b3 74.75%);
+  background-color: transparent;
+  border-radius: 7px;
+  bottom: 1px;
+  height: 16px;
+  left: calc(34.44% - 6px);
+  position: absolute;
+  width: 16px;
+}
+
+.crypto-wallet .club-premium-cUbV0V {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 2px;
+  width: 38px;
+}
+
+.crypto-wallet .club-premium-HrHDVW {
+  background-color: transparent;
+  bottom: 4px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 3px;
+  text-align: left;
+  width: 35px;
+}
+
+.crypto-wallet .avax-596mbO {
+  background-color: transparent;
+  height: 42px;
+  left: calc(40.18% - 36px);
+  position: absolute;
+  top: calc(23.33% - 10px);
+  width: 90px;
+}
+
+.crypto-wallet .avalanche-avax-logo-NTnKVu {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 42px;
+}
+
+.crypto-wallet .ellipse-17694-0Fktxs {
+  background-color: var(--white);
+  border-radius: 21px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .layer_x0020_1-0Fktxs {
+  background-color: transparent;
+  height: 26px;
+  position: absolute;
+  right: calc(50.00% - 8px);
+  top: calc(49.99% - 13px);
+  width: 16px;
+}
+
+.crypto-wallet .x1421394342400-QS8jFz {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .groupe-1509-sSCTnu {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .trac-1032-l8EsG4 {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 8px;
+}
+
+.crypto-wallet .trac-1033-l8EsG4 {
+  background-color: transparent;
+  height: 18px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 8px;
+}
+
+.crypto-wallet .trac-1034-l8EsG4 {
+  background-color: transparent;
+  bottom: 1px;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 0px;
+  width: 8px;
+}
+
+.crypto-wallet .trac-1035-l8EsG4 {
+  background-color: transparent;
+  bottom: 1px;
+  height: 11px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: 8px;
+}
+
+.crypto-wallet .trac-1036-l8EsG4 {
+  background-color: transparent;
+  bottom: calc(45.55% - 4px);
+  height: 8px;
+  object-fit: cover;
+  position: absolute;
+  right: 1px;
+  width: 8px;
+}
+
+.crypto-wallet .trac-1037-l8EsG4 {
+  background-color: transparent;
+  bottom: calc(45.55% - 4px);
+  height: 8px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: 8px;
+}
+
+.crypto-wallet .oval-16-NTnKVu {
+  background: linear-gradient(154.83deg, #757779 13.61%, #393939 74.75%);
+  background-color: transparent;
+  border-radius: 7px;
+  bottom: 1px;
+  height: 16px;
+  left: calc(34.44% - 6px);
+  position: absolute;
+  width: 16px;
+}
+
+.crypto-wallet .club-premium-NTnKVu {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 2px;
+  width: 38px;
+}
+
+.crypto-wallet .club-premium-BuFzFS {
+  background-color: transparent;
+  bottom: 4px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 3px;
+  text-align: left;
+  width: 35px;
+}
+
+.crypto-wallet .rectangle-3586-xqiOBD {
+  background-color: transparent;
+  border-radius: 6px;
+  bottom: 8px;
+  height: 27px;
+  left: 14px;
+  position: absolute;
+  width: 27px;
+}
+
+.crypto-wallet .text_label-xqiOBD {
+  background-color: transparent;
+  bottom: 11px;
+  color: var(--manatee);
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+  height: 19px;
+  left: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 11px;
+}
+
+.crypto-wallet .rectangle-3587-xqiOBD {
+  background-color: var(--white);
+  border-radius: 6px;
+  bottom: 8px;
+  height: 27px;
+  left: 46px;
+  opacity: 0.19;
+  position: absolute;
+  width: 89px;
+}
+
+.crypto-wallet .rectangle-3588-xqiOBD {
+  background-color: transparent;
+  border-radius: 6px;
+  bottom: 8px;
+  height: 27px;
+  left: 14px;
+  position: absolute;
+  width: 27px;
+}
+
+.crypto-wallet .mon-capital-xqiOBD {
+  background-color: transparent;
+  bottom: 12px;
+  height: 16px;
+  left: 56px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: 74px;
+}
+
+.crypto-wallet .historique-XPwy4i {
+  background-color: transparent;
+  bottom: calc(35.93% - 141px);
+  height: 392px;
+  left: 194px;
+  position: absolute;
+  width: calc(100.00% - 387px);
+}
+
+.crypto-wallet .rectangle-3567-2VlAVP {
+  background-color: var(--cape-cod);
+  border-radius: 10px;
+  height: 100%;
+  left: 0px;
+  opacity: 0.49;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .fixe-2VlAVP {
+  background-color: transparent;
+  bottom: 0px;
+  height: 37px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet .rectangle-3568-TEfqQu {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .club-premium-TEfqQu {
+  background-color: transparent;
+  bottom: calc(48.15% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.79% - 137px);
+  text-align: center;
+  width: 275px;
+}
+
+.crypto-wallet .club-premium-2VlAVP {
+  background-color: transparent;
+  height: 307px;
+  left: 44px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: calc(34.55% - 106px);
+  width: calc(100.00% - 85px);
+}
+
+.crypto-wallet .span0-uiCSUd {
+}
+
+.crypto-wallet .span1-uiCSUd {
+}
+
+.crypto-wallet .footer-XPwy4i {
+  background-color: transparent;
+  bottom: 0px;
+  height: 210px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet .background-1KzJpa {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .menu-footer-1KzJpa {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: 185px;
+  top: calc(47.37% - 9px);
+  width: 470px;
+}
+
+.crypto-wallet .mentions-lgales-dKw8vr {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 70px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.crypto-wallet .cgu-dKw8vr {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: calc(45.12% - 13px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.crypto-wallet .cgv-dKw8vr {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(44.47% - 12px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.crypto-wallet .politique-de-confidentialit-dKw8vr {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.crypto-wallet .politique-de-confidentialit-T8CBm0 {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 0px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.crypto-wallet .contact-dKw8vr {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.crypto-wallet .x2022-6-fire-invest-1KzJpa {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.88% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.crypto-wallet .logo-1KzJpa {
+  background-color: transparent;
+  height: 58px;
+  left: 191px;
+  position: absolute;
+  top: calc(33.01% - 19px);
+  width: 199px;
+}
+
+.crypto-wallet .groupe-2-GmUeld {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.crypto-wallet .groupe-1-d5AwTm {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .effect-GmUeld {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.crypto-wallet .ligne-31-1KzJpa {
+  background-color: transparent;
+  bottom: 31.58%;
+  height: 1px;
+  left: 72px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 143px);
+}
+
+.crypto-wallet .groupe-3011-1KzJpa {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: 215px;
+  top: calc(26.53% - 6px);
+  width: 21px;
+}
+
+.crypto-wallet .ellipse-17695-v7gikA {
+  background-color: var(--milano-red);
+  border-radius: 22px;
+  height: calc(100.00% + 23px);
+  left: -12px;
+  opacity: 0;
+  position: absolute;
+  top: -11px;
+  width: calc(100.00% + 23px);
+}
+
+.crypto-wallet .icon-instagram-v7gikA {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .groupe-3010-1KzJpa {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 185px;
+  top: calc(26.87% - 5px);
+  width: 16px;
+}
+
+.crypto-wallet .ellipse-17696-zjNoSr {
+  background-color: var(--milano-red);
+  border-radius: 22px;
+  height: calc(100.00% + 26px);
+  left: -14px;
+  opacity: 0;
+  position: absolute;
+  top: -13px;
+  width: calc(100.00% + 28px);
+}
+
+.crypto-wallet .icon-simple-tiktok-zjNoSr {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.crypto-wallet .header-XPwy4i {
+  background-color: transparent;
+  height: 144px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .rectangle-3483-P2FJgl {
+  background-color: var(--midnight-moss);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .logo-P2FJgl {
+  background-color: transparent;
+  height: 59px;
+  left: calc(50.00% - 44px);
+  position: absolute;
+  top: 17px;
+  width: 88px;
+}
+
+.crypto-wallet .groupe-1483-Mf9t8i {
+  background-color: transparent;
+  bottom: -93px;
+  height: 36px;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% - 9px);
+}
+
+.crypto-wallet .groupe-1482-PR043A {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .effect-Mf9t8i {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .thme-sombre-P2FJgl {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: calc(18.74% - 9px);
+  top: calc(30.33% - 4px);
+  width: 48px;
+}
+
+.crypto-wallet .icon-ionic-ios-moon-TXAl0J {
+  background-color: transparent;
+  height: 100%;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+
+.crypto-wallet .toogle-button-TXAl0J {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 25px;
+}
+
+.crypto-wallet .rectangle-3485-bUqpCN {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .ellipse-17688-bUqpCN {
+  background-color: var(--cape-cod);
+  border-radius: 5px;
+  height: calc(100.00% - 4px);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 10px;
+}
+
+.crypto-wallet .menu-P2FJgl {
+  background-color: transparent;
+  bottom: 0px;
+  height: 51px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet .rectangle-3484-izuuFL {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .espace-trading-crypto-izuuFL {
+  background-color: transparent;
+  height: 17px;
+  left: 197px;
+  position: absolute;
+  top: calc(45.59% - 8px);
+  width: 152px;
+}
+
+.crypto-wallet .formations-DoXA0r {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.crypto-wallet .ligne-8-DoXA0r {
+  background-color: transparent;
+  bottom: -18px;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 4px);
+}
+
+.crypto-wallet .formations-izuuFL {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  left: calc(29.94% - 29px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 98px;
+}
+
+.crypto-wallet .formations-D3SZeP {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 72px;
+}
+
+.crypto-wallet .ligne-8-D3SZeP {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 35px);
+}
+
+.crypto-wallet .icon-actif-D3SZeP {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .ellipse-17693-hDrVnx {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .font-awsome-graduation-cap-hDrVnx {
+  background-color: transparent;
+  bottom: 7px;
+  height: 7px;
+  object-fit: cover;
+  position: absolute;
+  right: 3px;
+  width: 15px;
+}
+
+.crypto-wallet .forex-izuuFL {
+  background-color: transparent;
+  height: 20px;
+  left: calc(39.04% - 25px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 64px;
+}
+
+.crypto-wallet .formations-5UPxOu {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 37px;
+}
+
+.crypto-wallet .ligne-8-5UPxOu {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 70px);
+}
+
+.crypto-wallet .icon-actif-5UPxOu {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .ellipse-17693-xTAm9w {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .font-awsome-dollar-sign-xTAm9w {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 7px;
+  top: 5px;
+  width: 6px;
+}
+
+.crypto-wallet .crypto-wallet-izuuFL {
+  background-color: transparent;
+  bottom: 1px;
+  height: 35px;
+  left: calc(48.53% - 60px);
+  position: absolute;
+  width: 124px;
+}
+
+.crypto-wallet .club-premium-8iF6ou {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 7px;
+  text-align: left;
+  top: calc(6.25% - 1px);
+  width: 89px;
+}
+
+.crypto-wallet .ligne-8-8iF6ou {
+  background-color: transparent;
+  bottom: -1px;
+  height: 3px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.crypto-wallet .icon-actif-8iF6ou {
+  background-color: transparent;
+  height: calc(100.00% - 15px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .ellipse-17693-2DG3xx {
+  background-color: var(--milano-red);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .font-awsome-wallet-2DG3xx {
+  background-color: transparent;
+  bottom: 5px;
+  height: 9px;
+  left: 5px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 10px);
+}
+
+.crypto-wallet .bot-trading-izuuFL {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: calc(40.27% - 46px);
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.crypto-wallet .formations-30M2f8 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.crypto-wallet .ligne-8-30M2f8 {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 19px);
+}
+
+.crypto-wallet .icon-actif-30M2f8 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .ellipse-17693-yRUv62 {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .icon-awesome-robot-yRUv62 {
+  background-color: transparent;
+  height: calc(100.00% - 10px);
+  left: 4px;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: calc(100.00% - 8px);
+}
+
+.crypto-wallet .trading-izuuFL {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: calc(27.69% - 36px);
+  top: 0px;
+  width: 131px;
+}
+
+.crypto-wallet .rectangle-3556-GE8E7j {
+  background-color: var(--milano-red);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .trading-GE8E7j {
+  background-color: transparent;
+  bottom: calc(44.83% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 14px;
+  text-align: left;
+  width: 70px;
+}
+
+.crypto-wallet .icon-actif-GE8E7j {
+  background-color: transparent;
+  height: calc(100.00% - 31px);
+  left: 17px;
+  position: absolute;
+  top: 16px;
+  width: 20px;
+}
+
+.crypto-wallet .ellipse-17693-6A4EEv {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.crypto-wallet .icon-simple-graphcool-6A4EEv {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 9px;
+}
+
+.crypto-wallet .espace-membre-P2FJgl {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 112px;
+  top: calc(29.92% - 5px);
+  width: 83px;
+}
+
+.crypto-wallet .connexion-famnLU {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .club-premium-D83CQa {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.crypto-wallet .ligne-8-D83CQa {
+  background-color: transparent;
+  bottom: -5px;
+  height: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  right: 2px;
+  width: 64px;
+}
+
+.crypto-wallet .menu-2-P2FJgl {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 50px;
+  top: calc(31.11% - 3px);
+  width: 27px;
+}
+
+.crypto-wallet .icon-ionic-ios-menu-WakCzF {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .trac-1-ZcsST0 {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .trac-2-ZcsST0 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.crypto-wallet .menu-2-WakCzF {
+  background-color: transparent;
+  height: calc(100.00% + 759px);
+  left: -310px;
+  opacity: 0;
+  position: absolute;
+  top: -42px;
+  width: calc(100.00% + 360px);
+}
+
+.crypto-wallet .background-cGZ274 {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .groupe-1487-cGZ274 {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 37px;
+  top: 28px;
+  width: 13px;
+}
+
+.crypto-wallet .ligne-10-67Ixsr {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.crypto-wallet .ligne-11-67Ixsr {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.crypto-wallet .numro-de-tlphone-cGZ274 {
+  background-color: transparent;
+  height: 59px;
+  position: absolute;
+  right: 37px;
+  top: 114px;
+  width: 210px;
+}
+
+.crypto-wallet .ligne-6-nx0UNh {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: 100%;
+}
+
+.crypto-wallet .mes-donnes-personnelles-nx0UNh {
+  background-color: transparent;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% - 24px);
+}
+
+.crypto-wallet .ma-licence-nx0UNh {
+  background-color: transparent;
+  bottom: -2px;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  width: calc(100.00% - 26px);
+}
+
+.crypto-wallet .search-bar-P2FJgl {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: 87px;
+  top: calc(30.33% - 4px);
+  width: 14px;
+}
+
+.crypto-wallet .icon-search-d52WLF {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .search-bar-d52WLF {
+  background-color: transparent;
+  height: calc(100.00% + 78px);
+  left: -1264px;
+  opacity: 0;
+  position: absolute;
+  top: -39px;
+  width: calc(100.00% + 1352px);
+}
+
+.crypto-wallet .rectangle-3603-i8frgx {
+  background-color: var(--black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .search-bar-i8frgx {
+  background-color: transparent;
+  height: 42px;
+  position: absolute;
+  right: calc(49.95% - 184px);
+  top: calc(50.00% - 21px);
+  width: 369px;
+}
+
+.crypto-wallet .rectangle-3604-uV95cC {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 40px);
+}
+
+.crypto-wallet .rectangle-3605-uV95cC {
+  background-color: transparent;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 41px;
+}
+
+.crypto-wallet .rechercher-uV95cC {
+  background-color: transparent;
+  bottom: calc(43.48% - 8px);
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 270px;
+}
+
+.crypto-wallet .icon-search-uV95cC {
+  background-color: transparent;
+  bottom: calc(50.00% - 8px);
+  height: 16px;
+  object-fit: cover;
+  position: absolute;
+  right: 12px;
+  width: 16px;
+}
+
+.crypto-wallet .groupe-1487-i8frgx {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 90px;
+  top: calc(50.00% - 6px);
+  width: 13px;
+}
+
+.crypto-wallet .ligne-10-4NeRWS {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.crypto-wallet .ligne-11-4NeRWS {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.crypto-wallet .trac-1042-XPwy4i {
+  background-color: transparent;
+  height: 1px;
+  left: 194px;
+  object-fit: cover;
+  position: absolute;
+  top: 40.77%;
+  width: calc(100.00% - 387px);
+}
+
+.crypto-wallet .bouton-affi-XPwy4i {
+  background-color: transparent;
+  height: 39px;
+  position: absolute;
+  right: 778px;
+  top: calc(26.72% - 10px);
+  width: 247px;
+}
+
+.crypto-wallet .rectangle-8-9pCLeb {
+  background-color: var(--bright-sun);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .binance-svgrepo-com-9pCLeb {
+  background-color: transparent;
+  bottom: calc(50.00% - 9px);
+  height: 18px;
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  width: 18px;
+}
+
+.crypto-wallet .ouvrir-un-compte-binance-9pCLeb {
+  background-color: transparent;
+  bottom: calc(45.24% - 8px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(42.50% - 74px);
+  text-align: left;
+  width: 173px;
+}
+
+.crypto-wallet .icon-ionic-ios-arrow-round-forward-9pCLeb {
+  background-color: transparent;
+  height: 8px;
+  object-fit: cover;
+  position: absolute;
+  right: 15px;
+  top: calc(50.00% - 4px);
+  width: 12px;
+}
+
+.crypto-wallet .avertissement-XPwy4i {
+  background-color: transparent;
+  bottom: calc(16.76% - 9px);
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet .groupe-3020-0Hq04G {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .rectangle-3606-110DgH {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet .les-investissements-110DgH {
+  background-color: transparent;
+  height: 35px;
+  left: 135px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  width: calc(100.00% - 268px);
+}
+
+.crypto-wallet .span0-xsDfvw {
+}
+
+.crypto-wallet .span1-xsDfvw {
+}
+
+.crypto-wallet .ligne-41-0Hq04G {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+/* screen - crypto-wallet-mobile */
+
+.crypto-wallet-mobile {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 1915px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .avertissement-i4rvow {
+  background-color: transparent;
+  bottom: 199px;
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .groupe-3020-jSOO73 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .rectangle-3606-9PE78U {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .les-investissements-9PE78U {
+  background-color: transparent;
+  height: 79px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 17px;
+  width: calc(100.00% - 52px);
+}
+
+.crypto-wallet-mobile .span0-s0d0o6 {
+}
+
+.crypto-wallet-mobile .span1-s0d0o6 {
+}
+
+.crypto-wallet-mobile .ligne-41-jSOO73 {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .footer-i4rvow {
+  background-color: transparent;
+  bottom: -4px;
+  height: 203px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .background-qn57LN {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .menu-footer-qn57LN {
+  background-color: transparent;
+  bottom: calc(40.37% - 17px);
+  height: 42px;
+  left: calc(50.00% - 108px);
+  position: absolute;
+  width: 216px;
+}
+
+.crypto-wallet-mobile .mentions-lgales-UYxhFz {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(40.97% - 45px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.crypto-wallet-mobile .cgu-UYxhFz {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 4px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.crypto-wallet-mobile .cgv-UYxhFz {
+  background-color: transparent;
+  bottom: -3px;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.crypto-wallet-mobile .politique-de-confidentialit-UYxhFz {
+  background-color: transparent;
+  bottom: -5px;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.crypto-wallet-mobile .contact-UYxhFz {
+  background-color: transparent;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.crypto-wallet-mobile .x2022-6-fire-invest-qn57LN {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.46% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.crypto-wallet-mobile .logo-qn57LN {
+  background-color: transparent;
+  height: 58px;
+  left: 10px;
+  position: absolute;
+  top: 18px;
+  width: 199px;
+}
+
+.crypto-wallet-mobile .groupe-2-EHGxWS {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.crypto-wallet-mobile .groupe-1-xcHicz {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .effect-EHGxWS {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.crypto-wallet-mobile .ligne-31-qn57LN {
+  background-color: transparent;
+  bottom: 26.73%;
+  height: 1px;
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 76px);
+}
+
+.crypto-wallet-mobile .groupe-3011-qn57LN {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: calc(22.45% - 5px);
+  top: calc(20.19% - 4px);
+  width: 21px;
+}
+
+.crypto-wallet-mobile .icon-instagram-WHmfJk {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .groupe-3010-qn57LN {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 61px;
+  top: calc(20.64% - 4px);
+  width: 16px;
+}
+
+.crypto-wallet-mobile .icon-simple-tiktok-Osu8dK {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .icon-paper_plane-qn57LN {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 25px;
+  top: calc(20.64% - 4px);
+  width: 21px;
+}
+
+.crypto-wallet-mobile .header-i4rvow {
+  background-color: transparent;
+  height: 153px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .rectangle-3484-Fl0GWn {
+  background-color: var(--black-3);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .logo-Fl0GWn {
+  background-color: transparent;
+  height: 86px;
+  position: absolute;
+  right: calc(49.68% - 64px);
+  top: 4px;
+  width: 128px;
+}
+
+.crypto-wallet-mobile .effect-abxaeW {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .toogle-button-Fl0GWn {
+  background-color: transparent;
+  height: 18px;
+  left: 37px;
+  position: absolute;
+  top: calc(28.31% - 5px);
+  width: 58px;
+}
+
+.crypto-wallet-mobile .icon-ionic-ios-moon-mvrPB0 {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 17px;
+}
+
+.crypto-wallet-mobile .toogle-button-mvrPB0 {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 32px;
+}
+
+.crypto-wallet-mobile .rectangle-3485-YqQekU {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .ellipse-17688-YqQekU {
+  background-color: var(--cape-cod);
+  border-radius: 6.41px;
+  height: calc(100.00% - 5px);
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 13px;
+}
+
+.crypto-wallet-mobile .search-bar-Fl0GWn {
+  background-color: transparent;
+  height: 22px;
+  position: absolute;
+  right: 37px;
+  top: calc(26.28% - 6px);
+  width: 22px;
+}
+
+.crypto-wallet-mobile .icon-search-muNowR {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .rectangle-3607-Fl0GWn {
+  background-color: var(--licorice);
+  bottom: 0px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .menu-Fl0GWn {
+  background-color: transparent;
+  bottom: calc(17.71% - 2px);
+  height: 9px;
+  position: absolute;
+  right: 37px;
+  width: 27px;
+}
+
+.crypto-wallet-mobile .icon-ionic-ios-menu-KwZCwP {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .trac-1-42GKEC {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .trac-2-42GKEC {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.crypto-wallet-mobile .espace-trading-crypto-Fl0GWn {
+  background-color: transparent;
+  bottom: 20px;
+  height: 17px;
+  left: 16px;
+  position: absolute;
+  width: 152px;
+}
+
+.crypto-wallet-mobile .formations-PJQRwq {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.crypto-wallet-mobile .background-i4rvow {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 1453px;
+  left: 0px;
+  position: absolute;
+  top: 153px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .h1-i4rvow {
+  background-color: transparent;
+  height: 26px;
+  left: 86px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  top: 189px;
+  width: calc(100.00% - 171px);
+}
+
+.crypto-wallet-mobile .date-i4rvow {
+  background-color: transparent;
+  height: 21px;
+  left: 86px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  top: 217px;
+  width: calc(100.00% - 171px);
+}
+
+.crypto-wallet-mobile .groupe-3025-i4rvow {
+  background-color: transparent;
+  height: 45px;
+  left: 55px;
+  position: absolute;
+  top: 267px;
+  width: calc(100.00% - 109px);
+}
+
+.crypto-wallet-mobile .bouton-affi-lnhvZx {
+  background-color: transparent;
+  height: 45px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 319px;
+}
+
+.crypto-wallet-mobile .rectangle-8-GUzm2T {
+  background-color: var(--bright-sun);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .binance-svgrepo-com-GUzm2T {
+  background-color: transparent;
+  height: 21px;
+  left: 18px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(50.00% - 11px);
+  width: 21px;
+}
+
+.crypto-wallet-mobile .c-rer-un-compte-binance-GUzm2T {
+  background-color: transparent;
+  bottom: calc(45.87% - 10px);
+  height: 21px;
+  left: calc(48.04% - 92px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 191px;
+}
+
+.crypto-wallet-mobile .icon-ionic-ios-arrow-round-forward-GUzm2T {
+  background-color: transparent;
+  height: 9px;
+  object-fit: cover;
+  position: absolute;
+  right: 32px;
+  top: calc(50.00% - 5px);
+  width: 14px;
+}
+
+.crypto-wallet-mobile .cercle-i4rvow {
+  background-color: transparent;
+  height: 283px;
+  position: absolute;
+  right: 55px;
+  top: calc(21.32% - 60px);
+  width: 286px;
+}
+
+.crypto-wallet-mobile .graph-3-jrwYKd {
+  background-color: transparent;
+  height: 239px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 240px;
+}
+
+.crypto-wallet-mobile .oval-16-WPSpxa {
+  background: linear-gradient(180deg, #95989a 0%, #393939 36.28%, #4b4c4d 100%);
+  background-color: transparent;
+  border-radius: 119.94px/119.39px;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .graph-2-jrwYKd {
+  background-color: transparent;
+  height: calc(100.00% - 49px);
+  left: 0px;
+  position: absolute;
+  top: 7px;
+  width: 240px;
+}
+
+.crypto-wallet-mobile .trac-1025-JINpAu {
+  background-color: transparent;
+  height: calc(100.00% + 18px);
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.crypto-wallet-mobile .graph-1-jrwYKd {
+  background-color: transparent;
+  height: calc(100.00% - 21px);
+  left: 3px;
+  position: absolute;
+  top: 21px;
+  width: calc(100.00% - 3px);
+}
+
+.crypto-wallet-mobile .oval-15-cx02vp {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .graph-jrwYKd {
+  background-color: transparent;
+  height: calc(100.00% - 42px);
+  position: absolute;
+  right: calc(31.61% - 47px);
+  top: 0px;
+  width: 150px;
+}
+
+.crypto-wallet-mobile .oval-15-kXKxbK {
+  background-color: transparent;
+  height: calc(100.00% + 18px);
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.crypto-wallet-mobile .oval-16-jrwYKd {
+  background-color: var(--white);
+  border-radius: 68.97px/68.65px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 137px;
+  left: calc(34.35% - 47px);
+  position: absolute;
+  top: calc(34.86% - 48px);
+  width: 138px;
+}
+
+.crypto-wallet-mobile .font-awsome-wallet-jrwYKd {
+  background-color: transparent;
+  bottom: 144px;
+  height: 38px;
+  left: 98px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 243px);
+}
+
+.crypto-wallet-mobile .bar-crypto-icon-i4rvow {
+  background-color: transparent;
+  height: 219px;
+  left: 11px;
+  position: absolute;
+  top: calc(37.46% - 82px);
+  width: calc(100.00% - 22px);
+}
+
+.crypto-wallet-mobile .rectangle-3566-QPYmWF {
+  background-color: var(--licorice);
+  border-radius: 10px;
+  height: 100%;
+  left: 0px;
+  opacity: 0.49;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .avax-QPYmWF {
+  background-color: transparent;
+  height: 83px;
+  position: absolute;
+  right: calc(40.81% - 17px);
+  top: 21px;
+  width: 42px;
+}
+
+.crypto-wallet-mobile .avalanche-avax-logo-949jKd {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .rectangle-3565-JMADFm {
+  background-color: var(--white);
+  height: 23px;
+  left: 8px;
+  position: absolute;
+  top: calc(39.06% - 9px);
+  width: calc(100.00% - 16px);
+}
+
+.crypto-wallet-mobile .trac-1026-JMADFm {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .oval-16-949jKd {
+  background: linear-gradient(154.83deg, #e84142 13.61%, #742121 74.75%);
+  background-color: transparent;
+  border-radius: 7px;
+  height: 16px;
+  position: absolute;
+  right: 0px;
+  top: calc(39.46% - 6px);
+  width: 16px;
+}
+
+.crypto-wallet-mobile .club-premium-949jKd {
+  background-color: transparent;
+  bottom: calc(23.59% - 4px);
+  height: 19px;
+  left: 3px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 4px);
+}
+
+.crypto-wallet-mobile .club-premium-gDtlt3 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 19px;
+  left: 4px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 7px);
+}
+
+.crypto-wallet-mobile .avax-SzqRoZ {
+  background-color: transparent;
+  height: 83px;
+  left: calc(17.05% - 8px);
+  position: absolute;
+  top: 20px;
+  width: 44px;
+}
+
+.crypto-wallet-mobile .club-premium-iNCU9c {
+  background-color: transparent;
+  bottom: calc(23.44% - 4px);
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% + 2px);
+}
+
+.crypto-wallet-mobile .club-premium-vx46hp {
+  background-color: transparent;
+  bottom: -2px;
+  height: 19px;
+  left: 6px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 11px);
+}
+
+.crypto-wallet-mobile .layer_x0020_1-iNCU9c {
+  background-color: transparent;
+  height: 42px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 4px);
+}
+
+.crypto-wallet-mobile .x1421344023328-iBPxBo {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .trac-1027-Kl1ZK2 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .trac-1028-Kl1ZK2 {
+  background-color: transparent;
+  height: calc(100.00% - 15px);
+  left: calc(46.65% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: 7px;
+  width: 20px;
+}
+
+.crypto-wallet-mobile .oval-16-iNCU9c {
+  background: linear-gradient(143.64deg, #f7931a 8.93%, #c76d00 76.75%);
+  background-color: transparent;
+  border-radius: 7px;
+  height: 16px;
+  position: absolute;
+  right: 3px;
+  top: calc(39.21% - 6px);
+  width: 16px;
+}
+
+.crypto-wallet-mobile .avax-JBw8iB {
+  background-color: transparent;
+  height: 84px;
+  position: absolute;
+  right: calc(19.98% - 8px);
+  top: 21px;
+  width: 42px;
+}
+
+.crypto-wallet-mobile .avalanche-avax-logo-szX92g {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .ellipse-17694-M3xVaQ {
+  background-color: var(--white);
+  border-radius: 21px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .solana-sol-logo-M3xVaQ {
+  background-color: transparent;
+  height: 19px;
+  left: calc(50.00% - 12px);
+  position: absolute;
+  top: calc(50.00% - 9px);
+  width: 24px;
+}
+
+.crypto-wallet-mobile .trac-1029-Vc6jUG {
+  background-color: transparent;
+  bottom: 0px;
+  height: 5px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .trac-1030-Vc6jUG {
+  background-color: transparent;
+  height: 5px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .trac-1031-Vc6jUG {
+  background-color: transparent;
+  height: 5px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(49.68% - 2px);
+  width: 100%;
+}
+
+.crypto-wallet-mobile .oval-16-szX92g {
+  background: linear-gradient(154.83deg, #c833f7 13.61%, #28d9b3 74.75%);
+  background-color: transparent;
+  border-radius: 7px;
+  height: 16px;
+  position: absolute;
+  right: 1px;
+  top: calc(38.38% - 6px);
+  width: 16px;
+}
+
+.crypto-wallet-mobile .club-premium-szX92g {
+  background-color: transparent;
+  bottom: calc(23.18% - 4px);
+  height: 19px;
+  left: 3px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 4px);
+}
+
+.crypto-wallet-mobile .club-premium-huTvGK {
+  background-color: transparent;
+  bottom: -2px;
+  height: 19px;
+  left: 4px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 7px);
+}
+
+.crypto-wallet-mobile .avax-0R1kkT {
+  background-color: transparent;
+  height: 84px;
+  left: calc(38.38% - 16px);
+  position: absolute;
+  top: 20px;
+  width: 42px;
+}
+
+.crypto-wallet-mobile .avalanche-avax-logo-Yv9nmI {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .ellipse-17694-kWCqea {
+  background-color: var(--white);
+  border-radius: 21px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .layer_x0020_1-kWCqea {
+  background-color: transparent;
+  height: 26px;
+  position: absolute;
+  right: calc(50.00% - 8px);
+  top: calc(49.99% - 13px);
+  width: 16px;
+}
+
+.crypto-wallet-mobile .x1421394342400-xwxorX {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .groupe-1509-CO9txP {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .trac-1032-W5OGJz {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 8px;
+}
+
+.crypto-wallet-mobile .trac-1033-W5OGJz {
+  background-color: transparent;
+  height: 18px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 8px;
+}
+
+.crypto-wallet-mobile .trac-1034-W5OGJz {
+  background-color: transparent;
+  bottom: 1px;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 0px;
+  width: 8px;
+}
+
+.crypto-wallet-mobile .trac-1035-W5OGJz {
+  background-color: transparent;
+  bottom: 1px;
+  height: 11px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: 8px;
+}
+
+.crypto-wallet-mobile .trac-1036-W5OGJz {
+  background-color: transparent;
+  bottom: calc(45.55% - 4px);
+  height: 8px;
+  object-fit: cover;
+  position: absolute;
+  right: 1px;
+  width: 8px;
+}
+
+.crypto-wallet-mobile .trac-1037-W5OGJz {
+  background-color: transparent;
+  bottom: calc(45.55% - 4px);
+  height: 8px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: 8px;
+}
+
+.crypto-wallet-mobile .oval-16-Yv9nmI {
+  background: linear-gradient(154.83deg, #757779 13.61%, #393939 74.75%);
+  background-color: transparent;
+  border-radius: 7px;
+  height: 16px;
+  position: absolute;
+  right: 1px;
+  top: calc(38.38% - 6px);
+  width: 16px;
+}
+
+.crypto-wallet-mobile .club-premium-Yv9nmI {
+  background-color: transparent;
+  bottom: calc(23.18% - 4px);
+  height: 19px;
+  left: 3px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 4px);
+}
+
+.crypto-wallet-mobile .club-premium-SnAfAv {
+  background-color: transparent;
+  bottom: -2px;
+  height: 19px;
+  left: 3px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 7px);
+}
+
+.crypto-wallet-mobile .text_label-QPYmWF {
+  background-color: transparent;
+  bottom: 23px;
+  color: var(--manatee);
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+  height: 21px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: 11px;
+}
+
+.crypto-wallet-mobile .rectangle-3587-QPYmWF {
+  background-color: var(--white);
+  border-radius: 6px;
+  bottom: 17px;
+  height: 36px;
+  left: 56px;
+  opacity: 0.19;
+  position: absolute;
+  width: calc(100.00% - 75px);
+}
+
+.crypto-wallet-mobile .rectangle-3588-QPYmWF {
+  background-color: transparent;
+  border-radius: 6px;
+  bottom: 17px;
+  height: 36px;
+  left: 14px;
+  position: absolute;
+  width: 36px;
+}
+
+.crypto-wallet-mobile .mon-capital-QPYmWF {
+  background-color: transparent;
+  bottom: 25px;
+  height: 18px;
+  left: calc(31.72% - 53px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  width: 168px;
+}
+
+.crypto-wallet-mobile .historique-i4rvow {
+  background-color: transparent;
+  bottom: calc(30.17% - 200px);
+  height: 662px;
+  left: 11px;
+  position: absolute;
+  width: calc(100.00% - 22px);
+}
+
+.crypto-wallet-mobile .rectangle-3567-c53V7q {
+  background-color: var(--cape-cod);
+  border-radius: 10px;
+  height: 100%;
+  left: 0px;
+  opacity: 0.49;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .fixe-c53V7q {
+  background-color: transparent;
+  bottom: 0px;
+  height: 37px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .rectangle-3568-XmoMMT {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.crypto-wallet-mobile .club-premium-XmoMMT {
+  background-color: transparent;
+  bottom: calc(48.15% - 8px);
+  height: 17px;
+  left: 67px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 131px);
+}
+
+.crypto-wallet-mobile .club-premium-c53V7q {
+  background-color: transparent;
+  height: 576px;
+  left: 18px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 20px;
+  width: calc(100.00% - 33px);
+}
+
+.crypto-wallet-mobile .span0-xtxV5Q {
+}
+
+.crypto-wallet-mobile .span1-xtxV5Q {
+}
+@media screen and (max-width: 1365px) {
+  .screen.crypto-wallet { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) {
+  .screen.crypto-wallet-mobile { 
+    display: none;
+   }
+}

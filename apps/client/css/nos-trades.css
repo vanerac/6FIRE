@@ -1,0 +1,1596 @@
+/* screen - nos-trades */
+
+.nos-trades {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100vh;
+  margin: 0px;
+  min-height: 986px;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.nos-trades .background-kCjjkp {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 337px;
+  left: 0px;
+  position: absolute;
+  top: 137px;
+  width: 100%;
+}
+
+.nos-trades .footer-kCjjkp {
+  background-color: transparent;
+  bottom: 0px;
+  height: 210px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.nos-trades .background-WTxHBw {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .menu-footer-WTxHBw {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: 185px;
+  top: calc(47.37% - 9px);
+  width: 470px;
+}
+
+.nos-trades .mentions-lgales-3zsThR {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 70px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.nos-trades .cgu-3zsThR {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: calc(45.12% - 13px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.nos-trades .cgv-3zsThR {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(44.47% - 12px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.nos-trades .politique-de-confidentialit-3zsThR {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.nos-trades .politique-de-confidentialit-kGOUce {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 0px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.nos-trades .contact-3zsThR {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.nos-trades .x2022-6-fire-invest-WTxHBw {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.88% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.nos-trades .logo-WTxHBw {
+  background-color: transparent;
+  height: 58px;
+  left: 191px;
+  position: absolute;
+  top: calc(33.01% - 19px);
+  width: 199px;
+}
+
+.nos-trades .groupe-2-o3c6f2 {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.nos-trades .groupe-1-b2PYR3 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .effect-o3c6f2 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.nos-trades .ligne-31-WTxHBw {
+  background-color: transparent;
+  bottom: 31.58%;
+  height: 1px;
+  left: 72px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 143px);
+}
+
+.nos-trades .groupe-3011-WTxHBw {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: 215px;
+  top: calc(26.53% - 6px);
+  width: 21px;
+}
+
+.nos-trades .icon-instagram-qHYfna {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .groupe-3010-WTxHBw {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 185px;
+  top: calc(26.87% - 5px);
+  width: 16px;
+}
+
+.nos-trades .icon-simple-tiktok-VcGkLM {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.nos-trades .header-kCjjkp {
+  background-color: transparent;
+  height: 144px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .rectangle-3483-1LFFtq {
+  background-color: var(--midnight-moss);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .logo-1LFFtq {
+  background-color: transparent;
+  height: 59px;
+  left: calc(50.00% - 44px);
+  position: absolute;
+  top: 17px;
+  width: 88px;
+}
+
+.nos-trades .effect-g88I8b {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .thme-sombre-1LFFtq {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: calc(18.74% - 9px);
+  top: calc(30.33% - 4px);
+  width: 48px;
+}
+
+.nos-trades .icon-ionic-ios-moon-v1oxaV {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+
+.nos-trades .toogle-button-v1oxaV {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 25px;
+}
+
+.nos-trades .rectangle-3485-K7FBta {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .ellipse-17688-K7FBta {
+  background-color: var(--cape-cod);
+  border-radius: 5px;
+  height: calc(100.00% - 4px);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 10px;
+}
+
+.nos-trades .menu-1LFFtq {
+  background-color: transparent;
+  bottom: 0px;
+  height: 51px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.nos-trades .rectangle-3484-7BBE5X {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .espace-trading-crypto-7BBE5X {
+  background-color: transparent;
+  height: 17px;
+  left: 197px;
+  position: absolute;
+  top: calc(45.59% - 8px);
+  width: 152px;
+}
+
+.nos-trades .formations-OHaYLu {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.nos-trades .formations-7BBE5X {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  left: calc(29.94% - 29px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 98px;
+}
+
+.nos-trades .formations-2oasNW {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 72px;
+}
+
+.nos-trades .icon-actif-2oasNW {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .ellipse-17693-fiT2xd {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .font-awsome-graduation-cap-fiT2xd {
+  background-color: transparent;
+  bottom: 7px;
+  height: 7px;
+  object-fit: cover;
+  position: absolute;
+  right: 3px;
+  width: 15px;
+}
+
+.nos-trades .forex-7BBE5X {
+  background-color: transparent;
+  height: 20px;
+  left: calc(39.04% - 25px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 64px;
+}
+
+.nos-trades .formations-DGZWGl {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 37px;
+}
+
+.nos-trades .icon-actif-DGZWGl {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .ellipse-17693-x8zRLV {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .font-awsome-dollar-sign-x8zRLV {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 7px;
+  top: 5px;
+  width: 6px;
+}
+
+.nos-trades .crypto-wallet-7BBE5X {
+  background-color: transparent;
+  height: 20px;
+  left: calc(48.14% - 55px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.nos-trades .formations-3VWF6Y {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.nos-trades .icon-actif-3VWF6Y {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .ellipse-17693-Maotxw {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .font-awsome-wallet-Maotxw {
+  background-color: transparent;
+  bottom: 5px;
+  height: 9px;
+  left: 5px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 10px);
+}
+
+.nos-trades .bot-trading-7BBE5X {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: calc(40.27% - 46px);
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.nos-trades .formations-PPydfz {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.nos-trades .icon-actif-PPydfz {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .ellipse-17693-1z4n4Z {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .icon-awesome-robot-1z4n4Z {
+  background-color: transparent;
+  height: calc(100.00% - 10px);
+  left: 4px;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: calc(100.00% - 8px);
+}
+
+.nos-trades .trading-7BBE5X {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: calc(27.69% - 36px);
+  top: 0px;
+  width: 131px;
+}
+
+.nos-trades .rectangle-3556-uyyFGK {
+  background-color: var(--milano-red);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .trading-uyyFGK {
+  background-color: transparent;
+  bottom: calc(44.83% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 14px;
+  text-align: left;
+  width: 70px;
+}
+
+.nos-trades .icon-actif-uyyFGK {
+  background-color: transparent;
+  height: calc(100.00% - 31px);
+  left: 17px;
+  position: absolute;
+  top: 16px;
+  width: 20px;
+}
+
+.nos-trades .ellipse-17693-XITx4I {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.nos-trades .icon-simple-graphcool-XITx4I {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 9px;
+}
+
+.nos-trades .espace-membre-1LFFtq {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 112px;
+  top: calc(29.92% - 5px);
+  width: 83px;
+}
+
+.nos-trades .connexion-iuHSqU {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .club-premium-78Vfwm {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.nos-trades .menu-2-1LFFtq {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 50px;
+  top: calc(31.11% - 3px);
+  width: 27px;
+}
+
+.nos-trades .icon-ionic-ios-menu-kKaJtG {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .trac-1-UrtSQL {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .trac-2-UrtSQL {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.nos-trades .search-bar-1LFFtq {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: 87px;
+  top: calc(30.33% - 4px);
+  width: 14px;
+}
+
+.nos-trades .icon-search-tsS3Eo {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .background-DslP8q {
+  background-color: var(--black);
+  bottom: calc(35.69% - 89px);
+  height: 249px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.nos-trades .club-premium-kCjjkp {
+  background-color: transparent;
+  height: 21px;
+  left: 196px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  top: 178px;
+  width: 564px;
+}
+
+.nos-trades .club-premium-DslP8q {
+  background-color: transparent;
+  height: 60px;
+  left: 196px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(21.92% - 13px);
+  width: 522px;
+}
+
+.nos-trades .button-cration-de-compte-kCjjkp {
+  background-color: transparent;
+  bottom: calc(36.50% - 15px);
+  height: 40px;
+  left: calc(40.92% - 79px);
+  position: absolute;
+  width: 193px;
+}
+
+.nos-trades .rectangle-3470-mXV13V {
+  background-color: var(--cerulean);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .support-telegram-mXV13V {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 26px;
+  text-align: left;
+  top: 10px;
+  width: 112px;
+}
+
+.nos-trades .icon-awesome-telegram-mXV13V {
+  background-color: transparent;
+  height: calc(100.00% - 19px);
+  left: 28px;
+  object-fit: cover;
+  position: absolute;
+  top: 9px;
+  width: 21px;
+}
+
+.nos-trades .button-cration-de-compte-DslP8q {
+  background-color: transparent;
+  bottom: calc(36.50% - 15px);
+  height: 40px;
+  position: absolute;
+  right: calc(40.92% - 79px);
+  width: 193px;
+}
+
+.nos-trades .trac-1041-ZEscP5 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .support-whats-app-ZEscP5 {
+  background-color: transparent;
+  bottom: calc(44.44% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 21px;
+  text-align: left;
+  width: 123px;
+}
+
+.nos-trades .icon-ionic-logo-whatsapp-ZEscP5 {
+  background-color: transparent;
+  height: calc(100.00% - 19px);
+  left: 23px;
+  object-fit: cover;
+  position: absolute;
+  top: 9px;
+  width: 21px;
+}
+
+.nos-trades .img_0-b6-ced63-dd0-f-1-kCjjkp {
+  background-color: transparent;
+  border-radius: 10px;
+  height: 70px;
+  object-fit: cover;
+  position: absolute;
+  right: 163px;
+  top: calc(24.13% - 17px);
+  width: 307px;
+}
+
+.nos-trades .club-premium-hR8D7z {
+  background-color: transparent;
+  bottom: calc(42.36% - 9px);
+  height: 21px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(49.88% - 281px);
+  text-align: center;
+  width: 564px;
+}
+
+.nos-trades .icon-ionic-ios-arrow-down-kCjjkp {
+  background-color: transparent;
+  height: 14px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(50.00% - 12px);
+  top: calc(44.73% - 6px);
+  width: 24px;
+}
+
+.nos-trades .avertissement-kCjjkp {
+  background-color: transparent;
+  bottom: calc(22.51% - 12px);
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.nos-trades .groupe-3020-yUOFAt {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .rectangle-3606-Qv6TZF {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades .les-investissements-Qv6TZF {
+  background-color: transparent;
+  height: 35px;
+  left: 135px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  width: calc(100.00% - 268px);
+}
+
+.nos-trades .span0-mZjxLD {
+}
+
+.nos-trades .span1-mZjxLD {
+}
+
+.nos-trades .ligne-41-yUOFAt {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.nos-trades .club-premium-ywKi5n {
+  background-color: transparent;
+  height: 58px;
+  left: 196px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(30.06% - 17px);
+  width: 547px;
+}
+
+.nos-trades .club-premium-YxxGbq {
+  background-color: transparent;
+  height: 41px;
+  left: 196px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(37.35% - 15px);
+  width: 547px;
+}
+/* screen - nos-trades-mobile */
+
+.nos-trades-mobile {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 1214px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.nos-trades-mobile .avertissement-rYj0qk {
+  background-color: transparent;
+  bottom: calc(18.21% - 20px);
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.nos-trades-mobile .groupe-3020-52LYc4 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .rectangle-3606-w7Ol80 {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .les-investissements-w7Ol80 {
+  background-color: transparent;
+  height: 79px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 17px;
+  width: calc(100.00% - 52px);
+}
+
+.nos-trades-mobile .span0-qYN3dR {
+}
+
+.nos-trades-mobile .span1-qYN3dR {
+}
+
+.nos-trades-mobile .ligne-41-52LYc4 {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .footer-rYj0qk {
+  background-color: transparent;
+  bottom: -2px;
+  height: 203px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.nos-trades-mobile .background-rjIifx {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .menu-footer-rjIifx {
+  background-color: transparent;
+  bottom: calc(40.37% - 17px);
+  height: 42px;
+  left: calc(50.00% - 108px);
+  position: absolute;
+  width: 216px;
+}
+
+.nos-trades-mobile .mentions-lgales-9U2x43 {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(40.97% - 45px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.nos-trades-mobile .cgu-9U2x43 {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 4px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.nos-trades-mobile .cgv-9U2x43 {
+  background-color: transparent;
+  bottom: -3px;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.nos-trades-mobile .politique-de-confidentialit-9U2x43 {
+  background-color: transparent;
+  bottom: -5px;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.nos-trades-mobile .contact-9U2x43 {
+  background-color: transparent;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.nos-trades-mobile .x2022-6-fire-invest-rjIifx {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.46% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.nos-trades-mobile .logo-rjIifx {
+  background-color: transparent;
+  height: 58px;
+  left: 10px;
+  position: absolute;
+  top: 18px;
+  width: 199px;
+}
+
+.nos-trades-mobile .groupe-2-T2wxQu {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.nos-trades-mobile .groupe-1-UX29cx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .effect-T2wxQu {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.nos-trades-mobile .ligne-31-rjIifx {
+  background-color: transparent;
+  bottom: 26.73%;
+  height: 1px;
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 76px);
+}
+
+.nos-trades-mobile .groupe-3011-rjIifx {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: calc(22.45% - 5px);
+  top: calc(20.19% - 4px);
+  width: 21px;
+}
+
+.nos-trades-mobile .icon-instagram-OFk1iw {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .groupe-3010-rjIifx {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 61px;
+  top: calc(20.64% - 4px);
+  width: 16px;
+}
+
+.nos-trades-mobile .icon-simple-tiktok-JxqPYV {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.nos-trades-mobile .icon-paper_plane-rjIifx {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 25px;
+  top: calc(20.64% - 4px);
+  width: 21px;
+}
+
+.nos-trades-mobile .header-rYj0qk {
+  background-color: transparent;
+  height: 153px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .rectangle-3484-aIn9bj {
+  background-color: var(--black-3);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .logo-aIn9bj {
+  background-color: transparent;
+  height: 86px;
+  position: absolute;
+  right: calc(49.68% - 64px);
+  top: 4px;
+  width: 128px;
+}
+
+.nos-trades-mobile .effect-cd1nGx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .toogle-button-aIn9bj {
+  background-color: transparent;
+  height: 18px;
+  left: 37px;
+  position: absolute;
+  top: calc(28.31% - 5px);
+  width: 58px;
+}
+
+.nos-trades-mobile .icon-ionic-ios-moon-iHmlk1 {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 17px;
+}
+
+.nos-trades-mobile .toogle-button-iHmlk1 {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 32px;
+}
+
+.nos-trades-mobile .rectangle-3485-HblK5r {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .ellipse-17688-HblK5r {
+  background-color: var(--cape-cod);
+  border-radius: 6.41px;
+  height: calc(100.00% - 5px);
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 13px;
+}
+
+.nos-trades-mobile .search-bar-aIn9bj {
+  background-color: transparent;
+  height: 22px;
+  position: absolute;
+  right: 37px;
+  top: calc(26.28% - 6px);
+  width: 22px;
+}
+
+.nos-trades-mobile .icon-search-3VsLWy {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .rectangle-3607-aIn9bj {
+  background-color: var(--licorice);
+  bottom: 0px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.nos-trades-mobile .menu-aIn9bj {
+  background-color: transparent;
+  bottom: calc(17.71% - 2px);
+  height: 9px;
+  position: absolute;
+  right: 37px;
+  width: 27px;
+}
+
+.nos-trades-mobile .icon-ionic-ios-menu-zgZfui {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .trac-1-rxnc31 {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .trac-2-rxnc31 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.nos-trades-mobile .espace-trading-crypto-aIn9bj {
+  background-color: transparent;
+  bottom: 20px;
+  height: 17px;
+  left: 16px;
+  position: absolute;
+  width: 152px;
+}
+
+.nos-trades-mobile .formations-uNxd2m {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.nos-trades-mobile .h1-rYj0qk {
+  background-color: transparent;
+  height: 26px;
+  left: 86px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  top: 189px;
+  width: calc(100.00% - 171px);
+}
+
+.nos-trades-mobile .date-rYj0qk {
+  background-color: transparent;
+  height: 21px;
+  left: 86px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  top: 217px;
+  width: calc(100.00% - 171px);
+}
+
+.nos-trades-mobile .background-rYj0qk {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 457px;
+  left: 0px;
+  position: absolute;
+  top: 153px;
+  width: 100%;
+}
+
+.nos-trades-mobile .club-premium-rYj0qk {
+  background-color: transparent;
+  height: 21px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 181px;
+  width: calc(100.00% - 56px);
+}
+
+.nos-trades-mobile .club-premium-U7QrOX {
+  background-color: transparent;
+  height: 60px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  top: calc(17.85% - 11px);
+  width: calc(100.00% - 56px);
+}
+
+.nos-trades-mobile .club-premium-ohXxbH {
+  background-color: transparent;
+  height: 87px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: calc(24.40% - 21px);
+  width: calc(100.00% - 56px);
+}
+
+.nos-trades-mobile .club-premium-72GHbx {
+  background-color: transparent;
+  height: 54px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: calc(32.41% - 18px);
+  width: calc(100.00% - 56px);
+}
+
+.nos-trades-mobile .img_0-b6-ced63-dd0-f-1-rYj0qk {
+  background-color: transparent;
+  border-radius: 10px;
+  height: 6.26%;
+  left: 10.98%;
+  object-fit: cover;
+  position: absolute;
+  top: 37.97%;
+  width: 78.27%;
+}
+
+.nos-trades-mobile .icon-ionic-ios-arrow-down-rYj0qk {
+  background-color: transparent;
+  height: 14px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(50.00% - 12px);
+  top: calc(47.31% - 6px);
+  width: 24px;
+}
+
+.nos-trades-mobile .background-U7QrOX {
+  background-color: var(--black);
+  bottom: calc(33.80% - 99px);
+  height: 294px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.nos-trades-mobile .groupe-3026-rYj0qk {
+  background-color: transparent;
+  bottom: calc(44.73% - 17px);
+  height: 38px;
+  left: calc(50.00% - 146px);
+  position: absolute;
+  width: 292px;
+}
+
+.nos-trades-mobile .club-premium-OB3xso {
+  background-color: transparent;
+  height: 40px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.nos-trades-mobile .button-cration-de-compte-rYj0qk {
+  background-color: transparent;
+  bottom: calc(38.34% - 18px);
+  height: 47px;
+  left: calc(49.89% - 114px);
+  position: absolute;
+  width: 228px;
+}
+
+.nos-trades-mobile .rectangle-3470-jxkbTR {
+  background-color: var(--cerulean);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.nos-trades-mobile .support-telegram-jxkbTR {
+  background-color: transparent;
+  bottom: calc(46.24% - 10px);
+  height: 21px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(35.07% - 39px);
+  text-align: left;
+  width: 112px;
+}
+
+.nos-trades-mobile .icon-awesome-telegram-jxkbTR {
+  background-color: transparent;
+  height: calc(100.00% - 22px);
+  left: calc(21.07% - 5px);
+  object-fit: cover;
+  position: absolute;
+  top: 11px;
+  width: 25px;
+}
+
+.nos-trades-mobile .button-cration-de-compte-U7QrOX {
+  background-color: transparent;
+  bottom: calc(32.43% - 15px);
+  height: 47px;
+  position: absolute;
+  right: calc(49.89% - 114px);
+  width: 228px;
+}
+
+.nos-trades-mobile .trac-1041-q15fcv {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.nos-trades-mobile .support-whats-app-q15fcv {
+  background-color: transparent;
+  bottom: calc(46.51% - 9px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  right: calc(33.85% - 41px);
+  text-align: left;
+  width: 123px;
+}
+
+.nos-trades-mobile .icon-ionic-logo-whatsapp-q15fcv {
+  background-color: transparent;
+  height: calc(100.00% - 22px);
+  left: calc(18.52% - 5px);
+  object-fit: cover;
+  position: absolute;
+  top: 11px;
+  width: 25px;
+}
+@media screen and (max-width: 1365px) {
+  .screen.nos-trades { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) {
+  .screen.nos-trades-mobile { 
+    display: none;
+   }
+}
