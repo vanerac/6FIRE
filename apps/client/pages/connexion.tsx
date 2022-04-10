@@ -1,26 +1,36 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import logo from './../img/effect-1@1x.png';
+import SIXFIRELOGO from './../img/group-1-1@1x.png';
+import arrow from './../img/group-1485-1@1x.png';
+import line_1 from './../img/path-1-10@1x.png';
+import line_2 from './../img/path-2-10@1x.png';
+import SIXFIREPNG from './../img/effect-10@1x.png';
 
 const HomePage: NextPage = () => {
     return (
         <body style={{ margin: 0 }}>
             <input type="hidden" id="anPageName" name="page" value="connexion" />
-            <div className="connexion screen" onClick={() => window.open('javascript:history.back()', '_self')}>
+            <div className="connexion screen">
                 <div className="background-4LKPG8"></div>
                 <div className="club-priv-dinvestisseur-4LKPG8 lato-light-manatee-18px">Club privé d’investisseur</div>
                 <div className="logo-4LKPG8">
                     <div className="groupe-2-5T1Sji">
-                        <img className="groupe-1-wmQwHv" src="img/group-1-1@1x.png" />
+                        <div className="groupe-1-wmQwHv">
+                            <Image layout="fill" src={SIXFIRELOGO} />
+                        </div>
                     </div>
-                    <img className="effect-5T1Sji" src="img/effect-10@1x.png" />
+                    <div className="effect-5T1Sji" >
+                        <Image layout="fill" src={SIXFIREPNG} />
+                    </div>
                 </div>
                 <div className="button-nous-rejoindre-4LKPG8">
                     <div className="rectangle-3470-MO4nd3"></div>
                     <div className="nous-rejoindre-MO4nd3 lato-normal-black-16px">Nous rejoindre</div>
                     <div className="groupe-1486-MO4nd3">
-                        <img className="groupe-1485-olUB6s" src="img/group-1485-1@1x.png" />
+                        <div className="groupe-1485-olUB6s">
+                            <Image src={arrow} />
+                        </div>
                     </div>
                 </div>
                 <div className="connexion-4LKPG8">
@@ -28,15 +38,19 @@ const HomePage: NextPage = () => {
                     <img className="ligne-8-YFvGoG" src="img/line-8-10@1x.png" />
                 </div>
                 <div className="icon-ionic-ios-menu-4LKPG8">
-                    <img className="trac-1-2GsN9o" src="img/path-1-10@1x.png" />
-                    <img className="trac-2-2GsN9o" src="img/path-2-10@1x.png" />
+                    <div className="trac-1-2GsN9o">
+                        <Image src={line_1} />
+                    </div>
+                    <div className="trac-2-2GsN9o">
+                        <Image src={line_2} />
+                    </div>
                 </div>
                 {/* <div className="background-b56baA"></div> */}
-                <img className="ligne-9-4LKPG8" src="img/line-9-3@1x.png" />
-                <div className="groupe-1487-4LKPG8">
+                {/* <img className="ligne-9-4LKPG8" src="img/line-9-3@1x.png" /> */}
+                {/* <div className="groupe-1487-4LKPG8">
                     <img className="ligne-10-ydUzbM" src="img/line-10-10@1x.png" />
                     <img className="ligne-11-ydUzbM" src="img/line-11-10@1x.png" />
-                </div>
+                </div> */}
                 {/* <nav className="nav__cont">
                     <ul className="nav"></ul>
                 </nav> */}

@@ -1,909 +1,916 @@
 /* screen - register-mobile */
 
 .register-mobile {
-  background-color: var(--white);
-  height: 100vh;
-  margin: 0px;
-  min-height: 926px;
-  min-width: 428px;
-  overflow: hidden;
-  overflow-x: hidden;
-  position: relative;
-  width: 100%;
+    background-color: var(--white);
+    height: 100vh;
+    margin: 0px;
+    min-height: 926px;
+    min-width: 428px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .register-mobile .background-qfTrnm {
-  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .register-mobile .logo-qfTrnm {
-  background-color: transparent;
-  height: 81px;
-  position: absolute;
-  right: calc(49.84% - 60px);
-  top: calc(18.70% - 15px);
-  width: 121px;
+    background-color: transparent;
+    height: 81px;
+    position: absolute;
+    right: calc(49.84% - 60px);
+    top: calc(18.7% - 15px);
+    width: 121px;
 }
 
 .register-mobile .effect-YcCH73 {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .register-mobile .crer-votre-compte-sur-6-firecom-qfTrnm {
-  background-color: transparent;
-  color: var(--white);
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-xl);
-  font-style: normal;
-  font-weight: 700;
-  height: 24px;
-  left: 50px;
-  letter-spacing: 0.00px;
-  line-height: 18px;
-  position: absolute;
-  text-align: center;
-  top: calc(29.10% - 7px);
-  width: calc(100.00% - 98px);
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 700;
+    height: 24px;
+    left: 50px;
+    letter-spacing: 0px;
+    line-height: 18px;
+    position: absolute;
+    text-align: center;
+    top: calc(29.1% - 7px);
+    width: calc(100% - 98px);
 }
 
 .register-mobile .rejoignez-6-fire-club-priv-dinvestisseur-qfTrnm {
-  background-color: transparent;
-  color: #7d7d81;
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 300;
-  height: 19px;
-  left: 32px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: center;
-  top: calc(31.81% - 6px);
-  width: calc(100.00% - 62px);
+    background-color: transparent;
+    color: #7d7d81;
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 300;
+    height: 19px;
+    left: 32px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: center;
+    top: calc(31.81% - 6px);
+    width: calc(100% - 62px);
 }
 
 .register-mobile .newsletter-qfTrnm {
-  background-color: transparent;
-  bottom: calc(35.46% - 5px);
-  height: 15px;
-  left: 52px;
-  position: absolute;
-  width: 268px;
+    background-color: transparent;
+    bottom: calc(35.46% - 5px);
+    height: 15px;
+    left: 52px;
+    position: absolute;
+    width: 268px;
 }
 
 .register-mobile .rectangle-3473-eM3wxq {
-  background-color: transparent;
-  height: calc(100.00% - 2px);
-  left: 0px;
-  position: absolute;
-  top: 1px;
-  width: 13px;
+    background-color: transparent;
+    height: calc(100% - 2px);
+    left: 0px;
+    position: absolute;
+    top: 1px;
+    width: 13px;
 }
 
 .register-mobile .je-souhaite-recevoir-lactualit-6-fire-eM3wxq {
-  background-color: transparent;
-  height: 17px;
-  left: 28px;
-  letter-spacing: 0.00px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 26px);
+    background-color: transparent;
+    height: 17px;
+    left: 28px;
+    letter-spacing: 0px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 26px);
 }
 
 .register-mobile .cgu-rgpd-qfTrnm {
-  background-color: transparent;
-  bottom: calc(27.83% - 17px);
-  height: 60px;
-  left: 52px;
-  position: absolute;
-  width: calc(100.00% - 104px);
+    background-color: transparent;
+    bottom: calc(27.83% - 17px);
+    height: 60px;
+    left: 52px;
+    position: absolute;
+    width: calc(100% - 104px);
 }
 
 .register-mobile .rectangle-3474-XHhUEC {
-  background-color: transparent;
-  height: 13px;
-  left: 0px;
-  position: absolute;
-  top: 1px;
-  width: 13px;
+    background-color: transparent;
+    height: 13px;
+    left: 0px;
+    position: absolute;
+    top: 1px;
+    width: 13px;
 }
 
 .register-mobile .en-crant-un-compte-v-XHhUEC {
-  background-color: transparent;
-  color: var(--white);
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-m);
-  font-weight: 400;
-  height: 62px;
-  left: 28px;
-  letter-spacing: 0.00px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 26px);
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    height: 62px;
+    left: 28px;
+    letter-spacing: 0px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 26px);
 }
 
 .register-mobile .span0-J4Md4x {
 }
 
 .register-mobile .span1-J4Md4x {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .register-mobile .span2-J4Md4x {
 }
 
 .register-mobile .span3-J4Md4x {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .register-mobile .span4-J4Md4x {
 }
 
 .register-mobile .nom-qfTrnm {
-  background-color: transparent;
-  height: 23px;
-  left: 52px;
-  position: absolute;
-  top: calc(37.45% - 9px);
-  width: calc(100.00% - 105px);
+    background-color: transparent;
+    height: 23px;
+    left: 52px;
+    position: absolute;
+    top: calc(37.45% - 9px);
+    width: calc(100% - 105px);
 }
 
 .register-mobile .ligne-1-vdEIbT {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-mobile .nom-vdEIbT {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-mobile .prnom-qfTrnm {
-  background-color: transparent;
-  height: 23px;
-  left: 52px;
-  position: absolute;
-  top: calc(42.99% - 10px);
-  width: calc(100.00% - 105px);
+    background-color: transparent;
+    height: 23px;
+    left: 52px;
+    position: absolute;
+    top: calc(42.99% - 10px);
+    width: calc(100% - 105px);
 }
 
 .register-mobile .ligne-5-6mOLtL {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-mobile .prnom-6mOLtL {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-mobile .numro-de-tlphone-qfTrnm {
-  background-color: transparent;
-  bottom: calc(45.93% - 11px);
-  height: 23px;
-  left: 52px;
-  position: absolute;
-  width: calc(100.00% - 105px);
+    background-color: transparent;
+    bottom: calc(45.93% - 11px);
+    height: 23px;
+    left: 52px;
+    position: absolute;
+    width: calc(100% - 105px);
 }
 
 .register-mobile .ligne-6-Glkvq0 {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-mobile .numro-de-tlphone-Glkvq0 {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-mobile .mot-de-passe-qfTrnm {
-  background-color: transparent;
-  bottom: calc(40.39% - 9px);
-  height: 23px;
-  left: 52px;
-  position: absolute;
-  width: calc(100.00% - 105px);
+    background-color: transparent;
+    bottom: calc(40.39% - 9px);
+    height: 23px;
+    left: 52px;
+    position: absolute;
+    width: calc(100% - 105px);
 }
 
 .register-mobile .icon-ionic-md-eye-off-WPm9xl {
-  background-color: transparent;
-  height: 12px;
-  object-fit: cover;
-  position: absolute;
-  right: 11px;
-  top: 3px;
-  width: 13px;
+    background-color: transparent;
+    height: 12px;
+    object-fit: cover;
+    position: absolute;
+    right: 11px;
+    top: 3px;
+    width: 13px;
 }
 
 .register-mobile .ligne-7-WPm9xl {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-mobile .mot-de-passe-WPm9xl {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-mobile .button-sign-in-qfTrnm {
-  background-color: transparent;
-  bottom: calc(18.17% - 7px);
-  height: 40px;
-  position: absolute;
-  right: calc(49.79% - 95px);
-  width: 190px;
+    background-color: transparent;
+    bottom: calc(18.17% - 7px);
+    height: 40px;
+    position: absolute;
+    right: calc(49.79% - 95px);
+    width: 190px;
 }
 
 .register-mobile .button-cration-de-compte-TU0AFD {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: relative;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
 }
 
 .register-mobile .rectangle-3470-1QO1gL {
-  background-color: transparent;
-  border: 1px solid var(--onyx);
-  border-radius: 20px;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--onyx);
+    border-radius: 20px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .register-mobile .crer-un-compte-1QO1gL {
-  background-color: transparent;
-  bottom: calc(42.86% - 8px);
-  color: var(--onyx);
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 400;
-  height: 19px;
-  left: 20px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: center;
-  width: calc(100.00% - 37px);
+    background-color: transparent;
+    bottom: calc(42.86% - 8px);
+    color: var(--onyx);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+    height: 19px;
+    left: 20px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: center;
+    width: calc(100% - 37px);
 }
 
 .register-mobile .dj-inscrit-connectez-vous-qfTrnm {
-  background-color: transparent;
-  bottom: 114px;
-  color: var(--white);
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 300;
-  height: 19px;
-  left: 32px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: center;
-  text-decoration: underline;
-  width: calc(100.00% - 62px);
+    background-color: transparent;
+    bottom: 114px;
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 300;
+    height: 19px;
+    left: 32px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: center;
+    text-decoration: underline;
+    width: calc(100% - 62px);
 }
 
 .register-mobile .connexion-qfTrnm {
-  background-color: transparent;
-  height: 17px;
-  position: absolute;
-  right: 35px;
-  top: 75px;
-  width: 129px;
+    background-color: transparent;
+    height: 17px;
+    position: absolute;
+    right: 35px;
+    top: 75px;
+    width: 129px;
 }
 
 .register-mobile .connexion-YLoUqo {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: relative;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
 }
 
 .register-mobile .connexion-1aVEbJ {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 83px;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 83px;
 }
 
 .register-mobile .club-premium-MoQQxl {
-  background-color: transparent;
-  height: 19px;
-  left: 0px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: right;
-  top: 0px;
-  width: calc(100.00% + 2px);
+    background-color: transparent;
+    height: 19px;
+    left: 0px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: right;
+    top: 0px;
+    width: calc(100% + 2px);
 }
 
 .register-mobile .icon-ionic-ios-menu-1aVEbJ {
-  background-color: transparent;
-  height: 9px;
-  position: absolute;
-  right: 0px;
-  top: calc(50.00% - 4px);
-  width: 27px;
+    background-color: transparent;
+    height: 9px;
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 4px);
+    width: 27px;
 }
 
 .register-mobile .trac-1-l9Kpxb {
-  background-color: transparent;
-  height: 2px;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 2px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .register-mobile .trac-2-l9Kpxb {
-  background-color: transparent;
-  bottom: 0px;
-  height: 2px;
-  left: 3px;
-  object-fit: cover;
-  position: absolute;
-  width: calc(100.00% - 3px);
+    background-color: transparent;
+    bottom: 0px;
+    height: 2px;
+    left: 3px;
+    object-fit: cover;
+    position: absolute;
+    width: calc(100% - 3px);
 }
 
 .register-mobile .numro-de-tlphone-511QbH {
-  background-color: transparent;
-  height: 23px;
-  left: 52px;
-  position: absolute;
-  top: calc(48.53% - 11px);
-  width: calc(100.00% - 105px);
+    background-color: transparent;
+    height: 23px;
+    left: 52px;
+    position: absolute;
+    top: calc(48.53% - 11px);
+    width: calc(100% - 105px);
 }
 
 .register-mobile .ligne-6-DzMs4Y {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-mobile .email-DzMs4Y {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 /* screen - register-web */
 
 .register-web {
-  background-color: transparent;
-  height: 100vh;
-  margin: 0px;
-  min-height: 768px;
-  min-width: 1366px;
-  overflow: hidden;
-  overflow-x: hidden;
-  position: relative;
-  width: 100%;
+    background-color: transparent;
+    height: 100vh;
+    margin: 0px;
+    min-height: 768px;
+    min-width: 1366px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .register-web .background-WxaGAS {
-  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .register-web .logo-WxaGAS {
-  background-color: transparent;
-  height: 81px;
-  position: absolute;
-  right: calc(49.96% - 60px);
-  top: 48px;
-  width: 121px;
+    background-color: transparent;
+    height: 81px;
+    position: absolute;
+    right: calc(49.96% - 60px);
+    top: 48px;
+    width: 121px;
 }
 
 .register-web .effect-ReYaAa {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .register-web .crer-votre-compte-sur-6-firecom-WxaGAS {
-  background-color: transparent;
-  color: var(--white);
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-xl);
-  font-style: normal;
-  font-weight: 700;
-  height: 24px;
-  letter-spacing: 0.00px;
-  line-height: 18px;
-  position: absolute;
-  right: calc(49.90% - 165px);
-  text-align: center;
-  top: calc(20.50% - 5px);
-  width: 330px;
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 700;
+    height: 24px;
+    letter-spacing: 0px;
+    line-height: 18px;
+    position: absolute;
+    right: calc(49.9% - 165px);
+    text-align: center;
+    top: calc(20.5% - 5px);
+    width: 330px;
 }
 
 .register-web .rejoignez-6-fire-club-priv-dinvestisseur-WxaGAS {
-  background-color: transparent;
-  color: #7d7d81;
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 300;
-  height: 19px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  right: calc(49.90% - 183px);
-  text-align: center;
-  top: calc(23.83% - 5px);
-  width: 366px;
+    background-color: transparent;
+    color: #7d7d81;
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 300;
+    height: 19px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(49.9% - 183px);
+    text-align: center;
+    top: calc(23.83% - 5px);
+    width: 366px;
 }
 
 .register-web .newsletter-WxaGAS {
-  background-color: transparent;
-  bottom: calc(36.52% - 5px);
-  height: 15px;
-  left: calc(47.45% - 127px);
-  position: absolute;
-  width: 268px;
+    background-color: transparent;
+    bottom: calc(36.52% - 5px);
+    height: 15px;
+    left: calc(50% - 162px);
+    position: absolute;
+    width: 268px;
 }
 
 .register-web .rectangle-3473-ctfCRZ {
-  background-color: transparent;
-  height: calc(100.00% - 2px);
-  left: 0px;
-  position: absolute;
-  top: 1px;
-  width: 13px;
+    background-color: transparent;
+    height: calc(100% - 2px);
+    left: 0px;
+    position: absolute;
+    top: 1px;
+    width: 13px;
 }
 
 .register-web .je-souhaite-recevoir-lactualit-6-fire-ctfCRZ {
-  background-color: transparent;
-  height: 17px;
-  left: 28px;
-  letter-spacing: 0.00px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 26px);
+    background-color: transparent;
+    height: 17px;
+    left: 28px;
+    letter-spacing: 0px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 26px);
 }
 
 .register-web .cgu-rgpd-WxaGAS {
-  background-color: transparent;
-  bottom: calc(27.26% - 16px);
-  height: 60px;
-  left: calc(50.00% - 162px);
-  position: absolute;
-  width: 324px;
+    background-color: transparent;
+    bottom: calc(27.26% - 16px);
+    height: 60px;
+    left: calc(50% - 162px);
+    position: absolute;
+    width: 324px;
 }
 
 .register-web .rectangle-3474-qVPDai {
-  background-color: transparent;
-  height: 13px;
-  left: 0px;
-  position: absolute;
-  top: 1px;
-  width: 13px;
+    background-color: transparent;
+    height: 13px;
+    left: 0px;
+    position: absolute;
+    top: 1px;
+    width: 13px;
 }
 
 .register-web .en-crant-un-compte-v-qVPDai {
-  background-color: transparent;
-  color: var(--white);
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-m);
-  font-weight: 400;
-  height: 62px;
-  left: 28px;
-  letter-spacing: 0.00px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 26px);
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    height: 62px;
+    left: 28px;
+    letter-spacing: 0px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 26px);
 }
 
 .register-web .span0-qb1m9I {
 }
 
 .register-web .span1-qb1m9I {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .register-web .span2-qb1m9I {
 }
 
 .register-web .span3-qb1m9I {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .register-web .span4-qb1m9I {
 }
 
+input {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    border: none;
+}
+
 .register-web .nom-WxaGAS {
-  background-color: transparent;
-  height: 23px;
-  left: calc(50.00% - 162px);
-  position: absolute;
-  top: calc(30.62% - 7px);
-  width: 323px;
+    background-color: transparent;
+    height: 23px;
+    left: calc(50% - 162px);
+    position: absolute;
+    top: calc(30.62% - 7px);
+    width: 323px;
 }
 
 .register-web .ligne-1-Ay5Yag {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-web .nom-Ay5Yag {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-web .prnom-WxaGAS {
-  background-color: transparent;
-  height: 23px;
-  left: calc(50.00% - 162px);
-  position: absolute;
-  top: calc(37.34% - 9px);
-  width: 323px;
+    background-color: transparent;
+    height: 23px;
+    left: calc(50% - 162px);
+    position: absolute;
+    top: calc(37.34% - 9px);
+    width: 323px;
 }
 
 .register-web .ligne-5-e5KgX3 {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-web .prnom-e5KgX3 {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-web .numro-de-tlphone-WxaGAS {
-  background-color: transparent;
-  height: 23px;
-  left: calc(50.00% - 162px);
-  position: absolute;
-  top: calc(44.06% - 10px);
-  width: 323px;
+    background-color: transparent;
+    height: 23px;
+    left: calc(50% - 162px);
+    position: absolute;
+    top: calc(44.06% - 10px);
+    width: 323px;
 }
 
 .register-web .ligne-6-00Xwqx {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-web .email-00Xwqx {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-web .mot-de-passe-WxaGAS {
-  background-color: transparent;
-  bottom: calc(42.51% - 10px);
-  height: 23px;
-  left: calc(50.00% - 162px);
-  position: absolute;
-  width: 323px;
+    background-color: transparent;
+    bottom: calc(42.51% - 10px);
+    height: 23px;
+    left: calc(50% - 162px);
+    position: absolute;
+    width: 323px;
 }
 
 .register-web .icon-ionic-md-eye-off-YId6x8 {
-  background-color: transparent;
-  height: 12px;
-  object-fit: cover;
-  position: absolute;
-  right: 11px;
-  top: 3px;
-  width: 13px;
+    background-color: transparent;
+    height: 12px;
+    object-fit: cover;
+    position: absolute;
+    right: 11px;
+    top: 3px;
+    width: 13px;
 }
 
 .register-web .ligne-7-YId6x8 {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-web .mot-de-passe-YId6x8 {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-web .button-sign-in-WxaGAS {
-  background-color: transparent;
-  bottom: 113px;
-  height: 40px;
-  left: calc(50.00% - 95px);
-  position: absolute;
-  width: 190px;
+    background-color: transparent;
+    bottom: 113px;
+    height: 40px;
+    left: calc(50% - 95px);
+    position: absolute;
+    width: 190px;
 }
 
 .register-web .button-cration-de-compte-43BKS5 {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: relative;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
 }
 
 .register-web .rectangle-3470-C8EDSj {
-  background-color: transparent;
-  border: 1px solid var(--onyx);
-  border-radius: 20px;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--onyx);
+    border-radius: 20px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .register-web .crer-un-compte-C8EDSj {
-  /* background-color: transparent; */
-  bottom: calc(42.86% - 8px);
-  color: var(--onyx);
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 400;
-  height: 19px;
-  left: 20px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  /* position: absolute; */
-  text-align: center;
-  /* width: calc(100.00% - 37px); */
+    /* background-color: transparent; */
+    bottom: calc(42.86% - 8px);
+    color: var(--onyx);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+    height: 19px;
+    left: 20px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    /* position: absolute; */
+    text-align: center;
+    /* width: calc(100.00% - 37px); */
 }
 
 .register-web .dj-inscrit-connectez-vous-WxaGAS {
-  background-color: transparent;
-  bottom: 66px;
-  color: var(--white);
-  font-family: var(--font-family-lato);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 300;
-  height: 19px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  right: calc(49.90% - 183px);
-  text-align: center;
-  text-decoration: underline;
-  width: 366px;
+    background-color: transparent;
+    bottom: 66px;
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 300;
+    height: 19px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(49.9% - 183px);
+    text-align: center;
+    text-decoration: underline;
+    width: 366px;
 }
 
 .register-web .numro-de-tlphone-Ae6KpX {
-  background-color: transparent;
-  bottom: calc(49.23% - 12px);
-  height: 23px;
-  left: calc(50.00% - 162px);
-  position: absolute;
-  width: 323px;
+    background-color: transparent;
+    bottom: calc(49.23% - 12px);
+    height: 23px;
+    left: calc(50% - 162px);
+    position: absolute;
+    width: 323px;
 }
 
 .register-web .ligne-6-562Wrx {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .register-web .numro-de-tlphone-562Wrx {
-  background-color: transparent;
-  height: 19px;
-  left: 27px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 50px);
+    background-color: transparent;
+    height: 19px;
+    left: 27px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100% - 50px);
 }
 
 .register-web .connexion-WxaGAS {
-  background-color: transparent;
-  height: 17px;
-  position: absolute;
-  right: 80px;
-  top: 56px;
-  width: 129px;
+    background-color: transparent;
+    height: 17px;
+    position: absolute;
+    cursor: pointer;
+    right: 80px;
+    top: 56px;
+    width: 129px;
 }
 
 .register-web .connexion-zebl9P {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 83px;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 83px;
 }
 
 .register-web .club-premium-RhkVlt {
-  background-color: transparent;
-  height: 19px;
-  left: 0px;
-  letter-spacing: 0.00px;
-  line-height: 14px;
-  position: absolute;
-  text-align: right;
-  top: 0px;
-  width: calc(100.00% + 2px);
+    background-color: transparent;
+    height: 19px;
+    left: 0px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    position: absolute;
+    text-align: right;
+    top: 0px;
+    width: calc(100% + 2px);
 }
 
 .register-web .icon-ionic-ios-menu-zebl9P {
-  background-color: transparent;
-  height: 9px;
-  position: absolute;
-  right: 0px;
-  top: calc(50.00% - 4px);
-  width: 27px;
+    background-color: transparent;
+    height: 9px;
+    position: absolute;
+    right: 0px;
+    top: calc(0% - 10px);
+    width: 27px;
 }
 
 .register-web .trac-1-mD2maU {
-  background-color: transparent;
-  height: 2px;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 2px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .register-web .trac-2-mD2maU {
-  background-color: transparent;
-  bottom: 0px;
-  height: 2px;
-  left: 3px;
-  object-fit: cover;
-  position: absolute;
-  width: calc(100.00% - 3px);
+    background-color: transparent;
+    bottom: 0px;
+    height: 2px;
+    left: 3px;
+    object-fit: cover;
+    position: absolute;
+    width: calc(100% - 3px);
 }
 @media screen and (max-width: 1365px) {
-  .screen.register-web { 
-    display: none;
-   }
+    .screen.register-web {
+        display: none;
+    }
 }
 @media screen and (min-width: 1366px) {
-  .screen.register-mobile { 
-    display: none;
-   }
+    .screen.register-mobile {
+        display: none;
+    }
 }

@@ -2,8 +2,11 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import logo from './../img/effect-1@1x.png';
+import line from './../img/ligne-1-1@1x.png';
+import trac_1 from './../img/trac--1-1@1x.png';
+import trac_2 from './../img/trac--2-1@1x.png';
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
     return (
         <body style={{ margin: 0 }}>
             <input type="hidden" id="anPageName" name="page" value="register-web" />
@@ -41,21 +44,30 @@ const Home: NextPage = () => {
                     </div>
                 </div>
                 <div className="nom-WxaGAS">
-                    <img className="ligne-1-Ay5Yag" src="img/ligne-1-1@1x.png" />
-                    <div className="nom-Ay5Yag lato-normal-white-14px">* Nom</div>
+                    <div className="ligne-1-Ay5Yag">
+                        <Image src={line} />
+                    </div>
+                    <input placeholder="*Nom" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
                 </div>
                 <div className="prnom-WxaGAS">
-                    <img className="ligne-5-e5KgX3" src="img/ligne-1-1@1x.png" />
-                    <div className="prnom-e5KgX3 lato-normal-white-14px">* Prénom</div>
+                    <div className="ligne-1-Ay5Yag">
+                        <Image src={line} />
+                    </div>
+                    <input placeholder="*Prénom" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
                 </div>
                 <div className="numro-de-tlphone-WxaGAS">
-                    <img className="ligne-6-00Xwqx" src="img/ligne-1-1@1x.png" />
-                    <div className="email-00Xwqx lato-normal-white-14px">* Email</div>
+                    <div className="ligne-1-Ay5Yag">
+                        <Image src={line} />
+                    </div>
+                    <input placeholder="*Email" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
                 </div>
                 <div className="mot-de-passe-WxaGAS">
+                    <div className="ligne-1-Ay5Yag">
+                        <Image src={line} />
+                    </div>
+                    <input placeholder="* Mot de passe" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
+
                     <img className="icon-ionic-md-eye-off-YId6x8" src="img/icon-ionic-md-eye-off-1@1x.png" />
-                    <img className="ligne-7-YId6x8" src="img/ligne-1-1@1x.png" />
-                    <div className="mot-de-passe-YId6x8 lato-normal-white-14px">* Mot de passe</div>
                 </div>
                 <div className="button-sign-in-WxaGAS">
                     <div className="button-cration-de-compte-43BKS5">
@@ -65,18 +77,34 @@ const Home: NextPage = () => {
                         <div className="crer-un-compte-C8EDSj">Créer un compte</div>
                     </div>
                 </div>
-                <div className="dj-inscrit-connectez-vous-WxaGAS">Déjà inscrit ? Connectez vous</div>
-                <div className="numro-de-tlphone-Ae6KpX">
-                    <img className="ligne-6-562Wrx" src="img/ligne-1-1@1x.png" />
-                    <div className="numro-de-tlphone-562Wrx lato-normal-white-14px">* Numéro de téléphone</div>
+                <div className="dj-inscrit-connectez-vous-WxaGAS">
+                    <a style={{ color: 'white' }} href="/connexion">Déjà inscrit ? Connectez vous</a>
                 </div>
-                <div className="connexion-WxaGAS">
+                <div className="numro-de-tlphone-Ae6KpX">
+                    <div className="ligne-1-Ay5Yag">
+                        <Image src={line} />
+                    </div>
+                    <input
+                        placeholder="*Numéro de téléphone"
+                        className="nom-Ay5Yag lato-normal-white-14px"
+                        type="text"
+                    />
+                </div>
+                <div
+                    onClick={() => {
+                        props.useStateOpenSideBar(true);
+                    }}
+                    className="connexion-WxaGAS">
                     <div className="connexion-zebl9P">
                         <div className="club-premium-RhkVlt lato-normal-white-14px">Club Privé</div>
                     </div>
                     <div className="icon-ionic-ios-menu-zebl9P">
-                        <img className="trac-1-mD2maU" src="img/trac--1-1@1x.png" />
-                        <img className="trac-2-mD2maU" src="img/trac--2-1@1x.png" />
+                        <div className="trac-1-mD2maU">
+                            <Image src={trac_1} />
+                        </div>
+                        <div className="trac-2-mD2maU">
+                            <Image src={trac_2} />
+                        </div>
                     </div>
                 </div>
             </div>

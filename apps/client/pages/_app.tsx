@@ -8,7 +8,6 @@ import '../css/homepage-1.css';
 import '../css/articles-details.css';
 import '../css/articles-details-entreprise.css';
 import '../css/trading.css';
-import '../css/SideBar.css';
 import '../css/prices-page.css';
 import '../css/trading-formations.css';
 import '../css/trading-forex.css';
@@ -16,9 +15,20 @@ import '../css/bot-trading.css';
 import '../css/bot-trading-traders.css';
 import '../css/crypto-wallet.css';
 import '../css/nos-trades.css';
+import { useState } from 'react';
+import Sidebar from './components/sideBar';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />;
+    const [isOpenSideBar, setIsOpenSideBar] = useState(true);
+
+    return (
+        // <div style={{backgroundColor: 'black'}}>
+        <>
+            <Component {...pageProps} useStateOpenSideBar={setIsOpenSideBar} />
+            <Sidebar sideBarState={isOpenSideBar} setIsOpenSideBar={setIsOpenSideBar} />
+        </>
+        // </div>
+    );
 }
 
 export default MyApp;
