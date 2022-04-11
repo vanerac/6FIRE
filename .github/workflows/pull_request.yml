@@ -1,5 +1,5 @@
 on: pull_request
-name: Push CI
+name: PR CI
 jobs:
   install:
     name: Install dependencies
