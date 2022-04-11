@@ -30,5 +30,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
-          name: ${{ matrix.directories }}:${{GITHUB_SHA}}
+          name: ${{ matrix.directories }}
           path: ${{ matrix.directories }}${{ steps.vars.outputs.tag }}.tar
