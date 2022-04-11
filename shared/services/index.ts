@@ -11,8 +11,10 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { Error } from './models/Error';
 export type { Theme } from './models/Theme';
+export type { Trader } from './models/Trader';
 export type { User } from './models/User';
 
 export { AuthService } from './services/AuthService';
 export { ThemesService } from './services/ThemesService';
+export { TradersService } from './services/TradersService';
 export { UserService } from './services/UserService';

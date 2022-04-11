@@ -32,6 +32,7 @@ model User {
   banned            Boolean             @default(false)
   country           Country             @relation(fields: [countryId], references: [id])
   VerificationCodes VerificationCodes[]
+  TraderFollows     TraderFollows[]
 }
 
 model VerificationCodes {
@@ -83,4 +84,25 @@ model Country {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   User      User[]
+}
+
+model CuratedTrader {
+  id            Int             @id @default(autoincrement())
+  name          String
+  rank          Int
+  clientId      String
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @default(now())
+  displayed     Boolean         @default(true)
+  TraderFollows TraderFollows[]
+}
+
+model TraderFollows {
+  id            Int           @id @default(autoincrement())
+  userId        Int
+  traderId      Int
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @default(now())
+  User          User          @relation(fields: [userId], references: [id])
+  CuratedTrader CuratedTrader @relation(fields: [traderId], references: [id])
 }
