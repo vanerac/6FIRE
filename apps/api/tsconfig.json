@@ -2,7 +2,12 @@
   "extends": "../../shared/config/tsconfig.json",
   "compilerOptions": {
     "esModuleInterop": true,
-    "outDir": "../../build/api"
+    "outDir": "../../build/api",
+    "paths": {
+      "@api/types/*": [
+        "./src/types/*"
+      ]
+    }
   },
   "compileOnSave": false
 }
