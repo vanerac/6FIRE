@@ -78,7 +78,9 @@ const Home: NextPage = (props) => {
                     </div>
                 </div>
                 <div className="dj-inscrit-connectez-vous-WxaGAS">
-                    <a style={{ color: 'white' }} href="/connexion">Déjà inscrit ? Connectez vous</a>
+                    <a style={{ color: 'white' }} href="/connexion">
+                        Déjà inscrit ? Connectez vous
+                    </a>
                 </div>
                 <div className="numro-de-tlphone-Ae6KpX">
                     <div className="ligne-1-Ay5Yag">
@@ -92,6 +94,7 @@ const Home: NextPage = (props) => {
                 </div>
                 <div
                     onClick={() => {
+                        // console.log('clciclcl');
                         props.useStateOpenSideBar(true);
                     }}
                     className="connexion-WxaGAS">

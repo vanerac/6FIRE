@@ -24,8 +24,6 @@ const SidebarWrapper = styled.div`
 
 const CloseIcon = styled.div`
     position: absolute;
-    top: 0;
-    right: 0;
     cursor: pointer;
     padding: 10px 35px 16px 0px;
 

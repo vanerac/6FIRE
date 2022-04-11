@@ -19,7 +19,7 @@ import { useState } from 'react';
 import Sidebar from './components/sideBar';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const [isOpenSideBar, setIsOpenSideBar] = useState(true);
+    const [isOpenSideBar, setIsOpenSideBar] = useState(false);
 
     return (
         // <div style={{backgroundColor: 'black'}}>
