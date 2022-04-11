@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Subscription } from '../models/Subscription';
 import type { User } from '../models/User';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -102,6 +103,76 @@ export class UserService {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/user/{id}',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * get user subscription
+     * @param id ID of the user to subscribe
+     * @returns Subscription successful operation
+     * @throws ApiError
+     */
+    public getUserSubscription(
+        id: string,
+    ): CancelablePromise<Subscription> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/user/{id}/subscription',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * update user subscription
+     * @param id ID of the user to subscribe
+     * @param requestBody
+     * @returns Subscription successful operation
+     * @throws ApiError
+     */
+    public updateUserSubscription(
+        id: string,
+        requestBody: Subscription,
+    ): CancelablePromise<Subscription> {
+        return this.httpRequest.request({
+            method: 'PUT',
+            url: '/user/{id}/subscription',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * delete user subscription
+     * @param id ID of the user to subscribe
+     * @returns Subscription successful operation
+     * @throws ApiError
+     */
+    public deleteUserSubscription(
+        id: string,
+    ): CancelablePromise<Subscription> {
+        return this.httpRequest.request({
+            method: 'DELETE',
+            url: '/user/{id}/subscription',
             path: {
                 'id': id,
             },
