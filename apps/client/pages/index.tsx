@@ -6,7 +6,7 @@ import line from './../img/ligne-1-1@1x.png';
 import trac_1 from './../img/trac--1-1@1x.png';
 import trac_2 from './../img/trac--2-1@1x.png';
 
-const Home: NextPage = (props) => {
+const Home: NextPage = (props: any) => {
     return (
         <body style={{ margin: 0 }}>
             <input type="hidden" id="anPageName" name="page" value="register-web" />
@@ -94,7 +94,6 @@ const Home: NextPage = (props) => {
                 </div>
                 <div
                     onClick={() => {
-                        // console.log('clciclcl');
                         props.useStateOpenSideBar(true);
                     }}
                     className="connexion-WxaGAS">
