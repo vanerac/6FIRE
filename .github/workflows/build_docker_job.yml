@@ -1,5 +1,5 @@
 # triggered github action that start build of all docker images
-on: [ workflow_call, workflow_call ]
+on: [ workflow_call, workflow_dispatch ]
 name: Build Docker images job
 jobs:
   build:
