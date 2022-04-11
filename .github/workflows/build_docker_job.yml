@@ -8,9 +8,9 @@ jobs:
     strategy:
       matrix:
         directories:
-          - docker/api/Dockerfile
-          - docker/client/Dockerfile
-          - docker/dashboard/Dockerfile
+          - api
+          - client
+          - dashboard
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,13 +22,13 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
       - name: Build the tagged Docker image
-        run: docker build . --file ${{ matrix.directories }}
+        id: build
+        run: docker build . --file docker/${{ matrix.directories }}/Dockerfile -t ${{ matrix.directories }}
       - name: Export Image
         id: export
-        run: docker save -o ${{ matrix.directories }}/${{ steps.vars.outputs.tag }}.tar ${{ steps.build.outputs.image }}
+        run: docker save -o docker/${{ matrix.directories }}${{ steps.vars.outputs.tag }}.tar ${{ matrix.directories }}
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
-          name: ${{ steps.build.outputs.image }}
-          path: ${{ matrix.directories }}/${{ steps.vars.outputs.tag }}.tar
-          mime-type: application/gzip
+          name: ${{ matrix.directories }}
+          path: docker/${{ matrix.directories }}${{ steps.vars.outputs.tag }}.tar
