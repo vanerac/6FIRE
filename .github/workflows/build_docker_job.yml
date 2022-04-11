@@ -1,5 +1,5 @@
 # triggered github action that start build of all docker images
-on: [ workflow_call, workflow_call ]
+on: [ workflow_call, workflow_dispatch ]
 name: Build Docker images job
 jobs:
   build:
@@ -25,4 +25,10 @@ jobs:
         run: docker build . --file ${{ matrix.directories }}
       - name: Export Image
         id: export
-        run: docker save -o ${{ matrix.directories }}/{{ steps.vars.outputs.tag }}.tar ${{ steps.build.outputs.image }}
+        run: docker save -o ${{ matrix.directories }}/${{ steps.vars.outputs.tag }}.tar ${{ steps.build.outputs.image }}
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ steps.build.outputs.image }}
+          path: ${{ matrix.directories }}/${{ steps.vars.outputs.tag }}.tar
+          mime-type: application/gzip
