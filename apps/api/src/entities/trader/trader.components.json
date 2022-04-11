@@ -1,0 +1,29 @@
+{
+  "schemas": {
+    "Trader": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "nullable": false
+        },
+        "name": {
+          "type": "string",
+          "nullable": false
+        },
+        "displayed": {
+          "type": "boolean",
+          "nullable": true
+        },
+        "createdAt": {
+          "type": "string",
+          "nullable": true
+        },
+        "updatedAt": {
+          "type": "string",
+          "nullable": true
+        }
+      }
+    }
+  }
+}

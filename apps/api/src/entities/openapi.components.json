@@ -6,6 +6,9 @@
     "Theme": {
       "$ref": "./theme/theme.components.json#/schemas/Theme"
     },
+    "Trader": {
+      "$ref": "./trader/trader.components.json#/schemas/Trader"
+    },
     "Error": {
       "type": "object",
       "properties": {

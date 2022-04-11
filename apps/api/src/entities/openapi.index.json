@@ -40,6 +40,24 @@
     },
     "/crypto/message": {
       "$ref": "./crypto/crypto.path.json#/setMessage"
+    },
+    "/trader/curation": {
+      "$ref": "./trader/trader.path.json#/curation"
+    },
+    "/trader/trader/{id}/follow": {
+      "$ref": "./trader/trader.path.json#/follow"
+    },
+    "/trader/trader/following": {
+      "$ref": "./trader/trader.path.json#/traderFollowing"
+    },
+    "/trader/trader/{id}/followers": {
+      "$ref": "./trader/trader.path.json#/traderFollowers"
+    },
+    "/trader/curation/top": {
+      "$ref": "./trader/trader.path.json#/scrapeTop"
+    },
+    "/trader/curation/search": {
+      "$ref": "./trader/trader.path.json#/searchTrader"
     }
   },
   "components": {
@@ -55,6 +73,9 @@
       },
       "CryptoHolding": {
         "$ref": "./openapi.components.json#/schemas/CryptoHolding"
+      },
+      "Trader": {
+        "$ref": "./openapi.components.json#/schemas/Trader"
       }
     }
   }
