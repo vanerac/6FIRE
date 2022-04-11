@@ -33,6 +33,7 @@ model User {
   country           Country             @relation(fields: [countryId], references: [id])
   VerificationCodes VerificationCodes[]
   TraderFollows     TraderFollows[]
+  UserSubscription  UserSubscription[]
 }
 
 model VerificationCodes {
@@ -46,13 +47,24 @@ model VerificationCodes {
 }
 
 model Subscription {
-  id          Int      @id @default(autoincrement())
-  name        String
-  description String
-  price       Int
-  level       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
+  id               Int                @id @default(autoincrement())
+  name             String
+  description      String
+  price            Int
+  level            Int                @default(0)
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @default(now())
+  UserSubscription UserSubscription[]
+}
+
+model UserSubscription {
+  id             Int          @id @default(autoincrement())
+  userId         Int
+  subscriptionId Int
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @default(now())
+  User           User         @relation(fields: [userId], references: [id])
+  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
 }
 
 model Theme {
