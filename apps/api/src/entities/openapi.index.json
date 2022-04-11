@@ -17,6 +17,9 @@
     "/user/{id}": {
       "$ref": "./user/user.path.json#/user"
     },
+    "/user/{id}/subscription": {
+      "$ref": "./user/user.path.json#/subscription"
+    },
     "/auth/login": {
       "$ref": "./auth/auth.path.json#/login"
     },
