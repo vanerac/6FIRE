@@ -13,6 +13,3 @@ jobs:
   prisma:
     needs: [ install ]
     uses: vanerac/6FIRE/.github/workflows/prisma_job.yml@main
-  build_docker:
-    needs: [ install ]
-    uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
