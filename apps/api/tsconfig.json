@@ -4,5 +4,9 @@
     "esModuleInterop": true,
     "outDir": "../../build/api"
   },
-  "compileOnSave": false
+  "compileOnSave": false,
+  "include": [
+    "src/**/*",
+    "src/*"
+  ]
 }

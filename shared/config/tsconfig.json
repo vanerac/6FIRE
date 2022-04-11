@@ -31,7 +31,7 @@
     },
     "baseUrl": "../../"
   },
-  "exclude": [
-    "../services/**/*"
-  ]
+//  "exclude": [
+//    "../services/**/*"
+//  ]
 }
