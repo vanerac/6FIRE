@@ -26,6 +26,9 @@
     },
     "CryptoHolding": {
       "$ref": "./crypto/crypto.components.json#/schemas/CryptoHolding"
+    },
+    "Subscription": {
+      "$ref": "./subscription/subscription.components.json#/schemas/Subscription"
     }
   }
 }
