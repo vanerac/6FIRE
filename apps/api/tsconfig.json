@@ -2,7 +2,15 @@
   "extends": "../../shared/config/tsconfig.json",
   "compilerOptions": {
     "esModuleInterop": true,
-    "outDir": "../../build/api"
+    "outDir": "../../build",
+    "module": "commonjs"
   },
-  "compileOnSave": false
+  "compileOnSave": false,
+  "include": [
+    "src/**/*",
+    "src/*",
+    "../../shared/generated/openapi-v1.json"
+  ],
+  "exclude": [
+  ]
 }

@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Subscription } from '../models/Subscription';
 import type { User } from '../models/User';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -11,38 +12,16 @@ export class UserService {
     constructor(public readonly httpRequest: BaseHttpRequest) {}
 
     /**
-     * @param id ID of user to fetch
-     * @returns any successful operation
-     * @throws ApiError
-     */
-    public getUsers(
-        id?: any,
-    ): CancelablePromise<any> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/user/:id',
-            path: {
-                'id': id,
-            },
-            errors: {
-                400: `Invalid ID supplied`,
-                404: `User not found`,
-                500: `Internal server error`,
-            },
-        });
-    }
-
-    /**
      * @param requestBody
-     * @returns any successful operation
+     * @returns User successful operation
      * @throws ApiError
      */
     public createUser(
         requestBody: User,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'POST',
-            url: '/user/:id',
+            url: '/user/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -53,18 +32,54 @@ export class UserService {
     }
 
     /**
-     * @param id ID of user to update
+     * @returns User successful operation
+     * @throws ApiError
+     */
+    public getUsers(): CancelablePromise<Array<User>> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/user/',
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * @param id ID of user to fetch
+     * @returns User A single user item
+     * @throws ApiError
+     */
+    public getUser(
+        id: number,
+    ): CancelablePromise<User> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/user/{id}',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * @param id ID of user to fetch
      * @param requestBody
-     * @returns any successful operation
+     * @returns User successful operation
      * @throws ApiError
      */
     public updateUser(
-        id: any,
+        id: number,
         requestBody: User,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'PUT',
-            url: '/user/:id',
+            url: '/user/{id}',
             path: {
                 'id': id,
             },
@@ -72,29 +87,97 @@ export class UserService {
             mediaType: 'application/json',
             errors: {
                 400: `Invalid user supplied`,
-                404: `User not found`,
                 500: `Internal server error`,
             },
         });
     }
 
     /**
-     * @param id ID of user to delete
-     * @returns void
+     * @param id ID of user to fetch
+     * @returns User successful operation
      * @throws ApiError
      */
     public deleteUser(
-        id: any,
-    ): CancelablePromise<void> {
+        id: number,
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'DELETE',
-            url: '/user/:id',
+            url: '/user/{id}',
             path: {
                 'id': id,
             },
             errors: {
-                400: `Invalid ID supplied`,
-                404: `User not found`,
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * get user subscription
+     * @param id ID of the user to subscribe
+     * @returns Subscription successful operation
+     * @throws ApiError
+     */
+    public getUserSubscription(
+        id: string,
+    ): CancelablePromise<Subscription> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/user/{id}/subscription',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * update user subscription
+     * @param id ID of the user to subscribe
+     * @param requestBody
+     * @returns Subscription successful operation
+     * @throws ApiError
+     */
+    public updateUserSubscription(
+        id: string,
+        requestBody: Subscription,
+    ): CancelablePromise<Subscription> {
+        return this.httpRequest.request({
+            method: 'PUT',
+            url: '/user/{id}/subscription',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * delete user subscription
+     * @param id ID of the user to subscribe
+     * @returns Subscription successful operation
+     * @throws ApiError
+     */
+    public deleteUserSubscription(
+        id: string,
+    ): CancelablePromise<Subscription> {
+        return this.httpRequest.request({
+            method: 'DELETE',
+            url: '/user/{id}/subscription',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Invalid user supplied`,
                 500: `Internal server error`,
             },
         });

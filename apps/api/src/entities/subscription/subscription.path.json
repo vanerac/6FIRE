@@ -1,0 +1,130 @@
+{
+  "byId": {
+    "parameters": [
+      {
+        "description": "Subscription id",
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "get": {
+      "tags": [
+        "Subscription"
+      ],
+      "description": "Get a subscription by id",
+      "operationId": "getSubscriptionById",
+      "responses": {
+        "200": {
+          "description": "A single subscription",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Subscription"
+              }
+            }
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Subscription"
+      ],
+      "description": "Update a subscription by id",
+      "operationId": "updateSubscriptionById",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../openapi.components.json#/schemas/Subscription"
+            }
+          }
+        },
+        "description": "Subscription object that needs to be updated",
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "Successful operation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Subscription"
+              }
+            }
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Subscription"
+      ],
+      "description": "Delete a subscription by id",
+      "operationId": "deleteSubscriptionById",
+      "responses": {
+        "204": {
+          "description": "Successfully deleted"
+        }
+      }
+    }
+  },
+  "noId": {
+    "post": {
+      "tags": [
+        "Subscription"
+      ],
+      "description": "Create a subscription",
+      "operationId": "createSubscription",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../openapi.components.json#/schemas/Subscription"
+            }
+          }
+        },
+        "description": "Subscription object that needs to be created",
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "Successfully created",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Subscription"
+              }
+            }
+          }
+        }
+      }
+    },
+    "get": {
+      "tags": [
+        "Subscription"
+      ],
+      "description": "Get all subscriptions",
+      "operationId": "getSubscriptions",
+      "responses": {
+        "200": {
+          "description": "List of subscriptions",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "../openapi.components.json#/schemas/Subscription"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

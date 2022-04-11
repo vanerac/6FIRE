@@ -16,25 +16,28 @@ enum VerificationType {
 }
 
 model User {
-  id                Int                 @id
+  id                Int                 @id @default(autoincrement())
+  userId            String              @unique @default(uuid())
   firstName         String
   lastName          String
   email             String
   password          String
   telephone         String
-  country           Country             @relation(fields: [countryId], references: [id])
+  countryId         Int
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @default(now())
   isAdmin           Boolean             @default(false)
   verifiedEmail     Boolean             @default(false)
   verifiedPhone     Boolean             @default(false)
   banned            Boolean             @default(false)
-  countryId         Int
+  country           Country             @relation(fields: [countryId], references: [id])
   VerificationCodes VerificationCodes[]
+  TraderFollows     TraderFollows[]
+  UserSubscription  UserSubscription[]
 }
 
 model VerificationCodes {
-  id        Int              @id
+  id        Int              @id @default(autoincrement())
   userId    Int
   code      String
   type      VerificationType
@@ -44,17 +47,28 @@ model VerificationCodes {
 }
 
 model Subscription {
-  id          Int      @id
-  name        String
-  description String
-  price       Int
-  level       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
+  id               Int                @id @default(autoincrement())
+  name             String
+  description      String
+  price            Int
+  level            Int                @default(0)
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @default(now())
+  UserSubscription UserSubscription[]
+}
+
+model UserSubscription {
+  id             Int          @id @default(autoincrement())
+  userId         Int
+  subscriptionId Int
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @default(now())
+  User           User         @relation(fields: [userId], references: [id])
+  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
 }
 
 model Theme {
-  id                Int       @id
+  id                Int       @id @default(autoincrement())
   name              String
   subscriptionLevel Int
   createdAt         DateTime  @default(now())
@@ -63,7 +77,7 @@ model Theme {
 }
 
 model Article {
-  id        Int      @id
+  id        Int      @id @default(autoincrement())
   title     String
   content   String
   hidden    Boolean  @default(false)
@@ -75,11 +89,46 @@ model Article {
 }
 
 model Country {
-  id        Int      @id
+  id        Int      @id @default(autoincrement())
   name      String
   code      String
   enabled   Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   User      User[]
+}
+
+model CryptoHolding {
+  id     Int      @id @default(autoincrement())
+  token  String
+  amount Int
+  date   DateTime @default(now())
+}
+
+model CryptoJournal {
+  id      Int      @id @default(autoincrement())
+  message DateTime @default(now())
+  date    DateTime @default(now())
+}
+
+model CuratedTrader {
+  id            Int             @id @default(autoincrement())
+  name          String
+  rank          Int
+  clientId      String
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @default(now())
+  displayed     Boolean         @default(true)
+  TraderFollows TraderFollows[]
+}
+
+model TraderFollows {
+  id            Int           @id @default(autoincrement())
+  userId        Int
+  traderId      Int
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @default(now())
+  User          User          @relation(fields: [userId], references: [id])
+  CuratedTrader CuratedTrader @relation(fields: [traderId], references: [id])
+
 }

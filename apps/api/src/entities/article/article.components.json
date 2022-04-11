@@ -1,0 +1,30 @@
+{
+  "schemas": {
+    "Article": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "themeId": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

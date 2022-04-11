@@ -5,7 +5,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "required": true
+          "nullable": false
         },
         "firstName": {
           "type": "string"

@@ -23,8 +23,8 @@ services:
 
   api:
     build:
-      context: apps/api
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: docker/api/Dockerfile
     ports:
       - "8080:8080"
     depends_on:
@@ -39,10 +39,10 @@ services:
 
   client:
     build:
-      context: apps/client
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: docker/client/Dockerfile
     ports:
-      - "8080:8080"
+      - "3000:3000"
     depends_on:
       - api
     links:
@@ -51,10 +51,10 @@ services:
 
   dashboard:
     build:
-      context: apps/dashboard
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: docker/dashboard/Dockerfile
     ports:
-      - "8080:8080"
+      - "3000:3001"
     depends_on:
       - api
     links:
@@ -63,8 +63,8 @@ services:
 
   bot:
     build:
-      context: apps/bot
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: docker/bot/Dockerfile
     ports:
       - "8080:8080"
     depends_on:

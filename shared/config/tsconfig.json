@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "node",
     "paths": {
       "@config/*": [
         "shared/config/*"
@@ -11,6 +13,12 @@
       "@services/*": [
         "shared/services/*"
       ],
+      "@shared/types": [
+        "shared/services"
+      ],
+      "@shared/types/*": [
+        "shared/services/models/*"
+      ],
       "@api/*": [
         "app/api/*"
       ],
@@ -19,7 +27,11 @@
       ],
       "@dashboard/*": [
         "app/dashboard/*"
-      ],
-    }
-  }
+      ]
+    },
+    "baseUrl": "../../"
+  },
+//  "exclude": [
+//    "../services/**/*"
+//  ]
 }

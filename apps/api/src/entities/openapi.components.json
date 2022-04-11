@@ -2,6 +2,33 @@
   "schemas": {
     "User": {
       "$ref": "./user/user.components.json#/schemas/User"
+    },
+    "Theme": {
+      "$ref": "./theme/theme.components.json#/schemas/Theme"
+    },
+    "Trader": {
+      "$ref": "./trader/trader.components.json#/schemas/Trader"
+    },
+    "Article": {
+      "$ref": "./article/article.components.json#/schemas/Article"
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "CryptoHolding": {
+      "$ref": "./crypto/crypto.components.json#/schemas/CryptoHolding"
+    },
+    "Subscription": {
+      "$ref": "./subscription/subscription.components.json#/schemas/Subscription"
     }
   }
 }
