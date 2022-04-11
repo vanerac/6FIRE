@@ -2,7 +2,7 @@ on: [ workflow_call, workflow_dispatch ]
 name: Validate Prisma Job
 jobs:
   lint:
-    name: Validate OpenAPI
+    name: Validate Prisma
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
