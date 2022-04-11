@@ -2,12 +2,13 @@
   "name": "api",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "predev": "npx prisma generate",
     "dev": "npx nodemon src/index.ts",
     "lint": "eslint src/**/*.ts",
-    "build": "npx tsc",
+    "build": "npx tsc --build --verbose",
     "lint:fix": "eslint --fix src/**/*.ts"
   },
   "keywords": [],
@@ -26,6 +27,7 @@
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.3.0",
     "pg": "^8.7.3",
+    "prisma": "^3.12.0",
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
