@@ -31,5 +31,5 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: ${{ steps.build.outputs.image }}
-          path: ${{ matrix.directories }}/${{ steps.vars.outputs.tag }}.tar
+          path: ${{ matrix.directories }}${{ steps.vars.outputs.tag }}.tar
           mime-type: application/tar
