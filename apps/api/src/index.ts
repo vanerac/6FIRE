@@ -2,7 +2,8 @@ import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import Routes from './entities/routes';
 import * as OpenApiValidator from 'express-openapi-validator';
-import { User } from '@shared/types';
+import { User } from '../../../shared/services/models/User';
+import configuration from '../configuration';
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 app.use(
     OpenApiValidator.middleware({
-        apiSpec: '../../../shared/generated/openapi-v1.json',
+        apiSpec: configuration.OPENAPI_SPEC_DEFINITION,
         validateRequests: {
             removeAdditional: 'failing',
             allowUnknownQueryParameters: false,
