@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import logo from './../img/effect-1@1x.png';
+import Link from 'next/link';
 
 const HomePage: NextPage = () => {
     return (
@@ -38,7 +36,7 @@ const HomePage: NextPage = () => {
                     </div>
                 </div>
                 <div className="connexion-zYNucu">
-                    <a href="/connexion">
+                    <Link href="/connexion">
                         <div className="connexion-LAc7m9">
                             <div className="connexion-FL6OPd">
                                 <div className="club-premium-5UOfx0 lato-normal-white-14px">Club Privé</div>
@@ -49,7 +47,7 @@ const HomePage: NextPage = () => {
                                 <img className="trac-2-oIJAsx" src="img/path-2-10@1x.png" />
                             </div>
                         </div>
-                    </a>
+                    </Link>
                     <div className="connexion-5l40sx hidden">
                         <div className="background-ODVNCb"></div>
                         <div className="groupe-1487-ODVNCb">
@@ -115,7 +113,7 @@ const HomePage: NextPage = () => {
                     <div className="nous-rejoindre-vZJ39L lato-normal-white-16px">Nous rejoindre</div>
                 </div>
                 <div className="connexion-UwGJ9Z">
-                    <a href="/connexion">
+                    <Link href="/connexion">
                         <div className="connexion-hN5F23">
                             <div className="connexion-PcGe0o">
                                 <div className="club-premium-SvYIWK lato-normal-white-14px">Club Privé</div>
@@ -125,7 +123,7 @@ const HomePage: NextPage = () => {
                                 <img className="trac-2-dcgJp9" src="img/path-2-10@1x.png" />
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="visionner-la-vido-ob-UwGJ9Z lato-bold-white-16px">
                     Visionner la vidéo obligatoire pour comprendre le club privé 6FIRE

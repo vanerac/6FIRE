@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import logo from './../img/effect-1@1x.png';
 import line from './../img/ligne-1-1@1x.png';
 import trac_1 from './../img/trac--1-1@1x.png';
 import trac_2 from './../img/trac--2-1@1x.png';
+import Link from 'next/link';
 
 const Home: NextPage = (props: any) => {
     return (
@@ -78,9 +78,9 @@ const Home: NextPage = (props: any) => {
                     </div>
                 </div>
                 <div className="dj-inscrit-connectez-vous-WxaGAS">
-                    <a style={{ color: 'white' }} href="/connexion">
-                        Déjà inscrit ? Connectez vous
-                    </a>
+                    <Link href="/connexion">
+                        <a style={{ color: 'white' }}>Déjà inscrit ? Connectez vous</a>
+                    </Link>
                 </div>
                 <div className="numro-de-tlphone-Ae6KpX">
                     <div className="ligne-1-Ay5Yag">

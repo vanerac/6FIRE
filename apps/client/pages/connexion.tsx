@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import SIXFIRELOGO from './../img/group-1-1@1x.png';
 import arrow from './../img/group-1485-1@1x.png';
@@ -20,7 +19,7 @@ const HomePage: NextPage = () => {
                             <Image layout="fill" src={SIXFIRELOGO} />
                         </div>
                     </div>
-                    <div className="effect-5T1Sji" >
+                    <div className="effect-5T1Sji">
                         <Image layout="fill" src={SIXFIREPNG} />
                     </div>
                 </div>

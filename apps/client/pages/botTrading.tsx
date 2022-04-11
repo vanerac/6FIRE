@@ -1,7 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import logo from './../img/effect-1@1x.png';
 
 const BotTrading: NextPage = () => {
     return (
@@ -69,7 +66,7 @@ const BotTrading: NextPage = () => {
                             Activer le Bot Telegram
                         </div>
                         <div className="cliquez-sur-le-bouto-iz5Vdo lato-normal-white-14px">
-                            Cliquez sur le bouton « Rejoindre le BOT » puis envoyez START/
+                            Cliquez sur le bouton «Rejoindre le BOT» puis envoyez START/
                             <br />
                             Vous allez recevoir ensuite un message du Bot et vous devrez coller votre identifiant que
                             vous avez déjà copié à l’étape 1.
@@ -93,7 +90,7 @@ const BotTrading: NextPage = () => {
                                 Vous avez reçu un mail de confirmation suite à l’envoi de votre identifiant au Bot
                                 Telegram lors de l’étape 2.
                                 <br />
-                                Cliquez sur le bouton « Confirmer mon accès au Bot » sur le mail.
+                                Cliquez sur le bouton «Confirmer mon accès au Bot» sur le mail.
                                 <br />
                                 <br />
                             </span>
@@ -126,7 +123,7 @@ const BotTrading: NextPage = () => {
                             </div>
                         </div>
                         <div className="choisissez-jusqu-3-t-Uha3jl lato-bold-white-14px">
-                            Choisissez jusqu’à 3 Traders sur la partie « Traders » de cette page
+                            Choisissez jusqu’à 3 Traders sur la partie «Traders» de cette page
                         </div>
                         <div className="retrouvez-sur-la-pag-Uha3jl lato-normal-white-14px">
                             Retrouvez sur la page Traders différents profiles Binance et leurs résultats. Vous pouvez
@@ -442,7 +439,7 @@ const BotTrading: NextPage = () => {
                 <div className="etape-2-Pj5fjx">
                     <div className="activer-le-bot-telegram-MZKr6a lato-bold-white-14px">Activer le Bot Telegram</div>
                     <div className="cliquez-sur-le-bouto-MZKr6a lato-normal-white-14px">
-                        Cliquez sur le bouton « Rejoindre le BOT » puis envoyez START/
+                        Cliquez sur le bouton «Rejoindre le BOT» puis envoyez START/
                         <br />
                         Vous allez recevoir ensuite un message du Bot et vous devrez coller votre identifiant que vous
                         avez déjà copié à l’étape 1.
@@ -466,7 +463,7 @@ const BotTrading: NextPage = () => {
                             Vous avez reçu un mail de confirmation suite à l’envoi de votre identifiant au Bot Telegram
                             lors de l’étape 2.
                             <br />
-                            Cliquez sur le bouton « Confirmer mon accès au Bot » sur le mail.
+                            Cliquez sur le bouton «Confirmer mon accès au Bot» sur le mail.
                             <br />
                             <br />
                         </span>
@@ -498,7 +495,7 @@ const BotTrading: NextPage = () => {
                         </div>
                     </div>
                     <div className="choisissez-jusqu-3-t-TUeErg lato-bold-white-14px">
-                        Choisissez jusqu’à 3 Traders sur la partie « Traders » de cette page
+                        Choisissez jusqu’à 3 Traders sur la partie «Traders» de cette page
                     </div>
                     <div className="retrouvez-sur-la-pag-TUeErg lato-normal-white-14px">
                         Retrouvez sur la page Traders différents profiles Binance et leurs résultats. Vous pouvez suivre

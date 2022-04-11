@@ -1,7 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import logo from './../img/effect-1@1x.png';
 
 const TradingFormations: NextPage = () => {
     return (
