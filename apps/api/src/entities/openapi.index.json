@@ -64,6 +64,12 @@
     },
     "/article/{id}": {
       "$ref": "./article/article.path.json#/byId"
+    },
+    "/subscription/": {
+      "$ref": "./subscription/subscription.path.json#/noId"
+    },
+    "/subscription/{id}": {
+      "$ref": "./subscription/subscription.path.json#/byId"
     }
   },
   "components": {
@@ -85,6 +91,9 @@
       },
       "Article": {
         "$ref": "./openapi.components.json#/schemas/Article"
+      },
+      "Subscription": {
+        "$ref": "./openapi.components.json#/schemas/Subscription"
       }
     }
   }
