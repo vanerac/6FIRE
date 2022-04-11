@@ -7,6 +7,7 @@ import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
 import { AuthService } from './services/AuthService';
 import { ThemesService } from './services/ThemesService';
+import { TradersService } from './services/TradersService';
 import { UserService } from './services/UserService';
 
 type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
@@ -15,6 +16,7 @@ export class ApiClient {
 
     public readonly auth: AuthService;
     public readonly themes: ThemesService;
+    public readonly traders: TradersService;
     public readonly user: UserService;
 
     public readonly request: BaseHttpRequest;
@@ -34,6 +36,7 @@ export class ApiClient {
 
         this.auth = new AuthService(this.request);
         this.themes = new ThemesService(this.request);
+        this.traders = new TradersService(this.request);
         this.user = new UserService(this.request);
     }
 }
