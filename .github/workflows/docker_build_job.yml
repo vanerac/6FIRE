@@ -1,0 +1,25 @@
+# triggered github action that start build of all docker images
+on: [ workflow_call, workflow_call ]
+name: Build Docker images job
+jobs:
+  build:
+    name: Build docker Images
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directories:
+          - docker/api/Dockerfile
+          - docker/client/Dockerfile
+          - docker/dashboard/Dockerfile
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      #      - name: Get the version
+      #        id: vars
+      #        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+      - name: Build the tagged Docker image
+        run: docker build . --file ${{ matrix.directories }}
