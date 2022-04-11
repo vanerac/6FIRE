@@ -58,6 +58,12 @@
     },
     "/trader/curation/search": {
       "$ref": "./trader/trader.path.json#/searchTrader"
+    },
+    "/article/": {
+      "$ref": "./article/article.path.json#/noId"
+    },
+    "/article/{id}": {
+      "$ref": "./article/article.path.json#/byId"
     }
   },
   "components": {
@@ -76,6 +82,9 @@
       },
       "Trader": {
         "$ref": "./openapi.components.json#/schemas/Trader"
+      },
+      "Article": {
+        "$ref": "./openapi.components.json#/schemas/Article"
       }
     }
   }

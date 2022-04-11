@@ -5,6 +5,7 @@ import type { BaseHttpRequest } from './core/BaseHttpRequest';
 import type { OpenAPIConfig } from './core/OpenAPI';
 import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
+import { ArticleService } from './services/ArticleService';
 import { AuthService } from './services/AuthService';
 import { CryptoService } from './services/CryptoService';
 import { ThemesService } from './services/ThemesService';
@@ -15,6 +16,7 @@ type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
 
 export class ApiClient {
 
+    public readonly article: ArticleService;
     public readonly auth: AuthService;
     public readonly crypto: CryptoService;
     public readonly themes: ThemesService;
@@ -36,6 +38,7 @@ export class ApiClient {
             ENCODE_PATH: config?.ENCODE_PATH,
         });
 
+        this.article = new ArticleService(this.request);
         this.auth = new AuthService(this.request);
         this.crypto = new CryptoService(this.request);
         this.themes = new ThemesService(this.request);

@@ -9,6 +9,9 @@
     "Trader": {
       "$ref": "./trader/trader.components.json#/schemas/Trader"
     },
+    "Article": {
+      "$ref": "./article/article.components.json#/schemas/Article"
+    },
     "Error": {
       "type": "object",
       "properties": {
