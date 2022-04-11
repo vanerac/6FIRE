@@ -10,9 +10,12 @@ jobs:
   openapi:
     needs: [ install ]
     uses: vanerac/6FIRE/.github/workflows/openapi_job.yml@main
+  prisma:
+    needs: [ install ]
+    uses: vanerac/6FIRE/.github/workflows/prisma_job.yml@main
   compile:
-    needs: [ lint, openapi ]
+    needs: [ lint, openapi, prisma ]
     uses: vanerac/6FIRE/.github/workflows/compile_job.yml@main
   test:
-    needs: [ lint, openapi, compile ]
+    needs: [ lint, openapi, compile, prisma ]
     uses: vanerac/6FIRE/.github/workflows/test_job.yml@main
