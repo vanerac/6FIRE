@@ -9,3 +9,6 @@ build/
 !next.config.js
 data/
 !.prettierrc.js
+
+.terraform*
+.env
