@@ -1,7 +1,7 @@
 on: [ workflow_call, workflow_dispatch ]
 name: Validate Terraform Job
 jobs:
-  lint:
+  validate:
     name: Validate Terraform
     runs-on: ubuntu-latest
     steps:

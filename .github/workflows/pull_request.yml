@@ -19,8 +19,11 @@ jobs:
   test:
     needs: [ lint, openapi, compile, prisma ]
     uses: vanerac/6FIRE/.github/workflows/test_job.yml@main
-  terraform:
+  terraform_validate:
     uses: vanerac/6FIRE/.github/workflows/terraform_validate_job.yml@main
+  terraform_plan:
+    needs: [ lint, openapi, compile, prisma, terraform_validate ]
+    uses: vanerac/6FIRE/.github/workflows/terraform_plan_job.yml@main
 #   build_docker:
 #     needs: [ test, lint, openapi, compile, prisma ]
 #     uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
