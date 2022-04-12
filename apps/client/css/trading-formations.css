@@ -1,0 +1,2887 @@
+/* screen - trading-formations */
+
+.trading-formations {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 1403px;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.trading-formations .background-L4Kmv7 {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 996px;
+  left: 0px;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.trading-formations .article-L4Kmv7 {
+  background-color: transparent;
+  height: 212px;
+  left: 197px;
+  opacity: 0;
+  position: absolute;
+  top: calc(38.04% - 81px);
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-324-I1nHFm {
+  background-color: transparent;
+  height: calc(100.00% - 61px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-I1nHFm {
+  background-color: transparent;
+  bottom: calc(15.54% - 3px);
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 46px;
+}
+
+.trading-formations .ligne-15-I1nHFm {
+  background-color: transparent;
+  bottom: 32px;
+  height: 17px;
+  left: 47px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-nNHwpn {
+  background-color: transparent;
+  bottom: calc(15.54% - 3px);
+  height: 19px;
+  left: calc(28.00% - 28px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-a003g8 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .icon-twitter-I1nHFm {
+  background-color: transparent;
+  height: 47px;
+  left: calc(18.84% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(43.30% - 20px);
+  width: 47px;
+}
+
+.trading-formations .rectangle-3502-I1nHFm {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 61px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .footer-L4Kmv7 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 210px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-formations .background-5O9Pml {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .menu-footer-5O9Pml {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: 185px;
+  top: calc(47.37% - 9px);
+  width: 470px;
+}
+
+.trading-formations .mentions-lgales-dpqGqt {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 70px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.trading-formations .cgu-dpqGqt {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: calc(45.12% - 13px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.trading-formations .cgv-dpqGqt {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(44.47% - 12px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.trading-formations .politique-de-confidentialit-dpqGqt {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading-formations .politique-de-confidentialit-8QbL7k {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 0px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading-formations .contact-dpqGqt {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.trading-formations .x2022-6-fire-invest-5O9Pml {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.88% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.trading-formations .logo-5O9Pml {
+  background-color: transparent;
+  height: 58px;
+  left: 191px;
+  position: absolute;
+  top: calc(33.01% - 19px);
+  width: 199px;
+}
+
+.trading-formations .groupe-2-yYiS5q {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.trading-formations .groupe-1-1PbFDC {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .effect-yYiS5q {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.trading-formations .ligne-31-5O9Pml {
+  background-color: transparent;
+  bottom: 31.58%;
+  height: 1px;
+  left: 72px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 143px);
+}
+
+.trading-formations .groupe-3011-5O9Pml {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: 215px;
+  top: calc(26.53% - 6px);
+  width: 21px;
+}
+
+.trading-formations .ellipse-17695-GVH5d3 {
+  background-color: var(--milano-red);
+  border-radius: 22px;
+  height: calc(100.00% + 23px);
+  left: -12px;
+  opacity: 0;
+  position: absolute;
+  top: -11px;
+  width: calc(100.00% + 23px);
+}
+
+.trading-formations .icon-instagram-GVH5d3 {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-formations .groupe-3010-5O9Pml {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 185px;
+  top: calc(26.87% - 5px);
+  width: 16px;
+}
+
+.trading-formations .ellipse-17696-EFvSk5 {
+  background-color: var(--milano-red);
+  border-radius: 22px;
+  height: calc(100.00% + 26px);
+  left: -14px;
+  opacity: 0;
+  position: absolute;
+  top: -13px;
+  width: calc(100.00% + 28px);
+}
+
+.trading-formations .icon-simple-tiktok-EFvSk5 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-formations .header-L4Kmv7 {
+  background-color: transparent;
+  height: 144px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .rectangle-3483-7V8uSq {
+  background-color: var(--midnight-moss);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .logo-7V8uSq {
+  background-color: transparent;
+  height: 59px;
+  left: calc(50.00% - 44px);
+  position: absolute;
+  top: 17px;
+  width: 88px;
+}
+
+.trading-formations .groupe-1483-1mrxpX {
+  background-color: transparent;
+  bottom: -93px;
+  height: 36px;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% - 9px);
+}
+
+.trading-formations .groupe-1482-VsxwSQ {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-formations .effect-1mrxpX {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .thme-sombre-7V8uSq {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: calc(18.74% - 9px);
+  top: calc(30.33% - 4px);
+  width: 48px;
+}
+
+.trading-formations .icon-ionic-ios-moon-xT4xmf {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+
+.trading-formations .toogle-button-xT4xmf {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 25px;
+}
+
+.trading-formations .rectangle-3485-L40rJi {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .ellipse-17688-L40rJi {
+  background-color: var(--cape-cod);
+  border-radius: 5px;
+  height: calc(100.00% - 4px);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 10px;
+}
+
+.trading-formations .menu-7V8uSq {
+  background-color: transparent;
+  bottom: 0px;
+  height: 51px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-formations .rectangle-3484-LdomJT {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .espace-trading-crypto-LdomJT {
+  background-color: transparent;
+  height: 17px;
+  left: 197px;
+  position: absolute;
+  top: calc(45.59% - 8px);
+  width: 152px;
+}
+
+.trading-formations .formations-8XkrAY {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .ligne-8-8XkrAY {
+  background-color: transparent;
+  bottom: -18px;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 4px);
+}
+
+.trading-formations .formations-LdomJT {
+  background-color: transparent;
+  bottom: 1px;
+  height: 34px;
+  left: calc(30.13% - 32px);
+  position: absolute;
+  width: 106px;
+}
+
+.trading-formations .club-premium-hbskOF {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 6px;
+  text-align: left;
+  top: calc(6.45% - 1px);
+  width: 72px;
+}
+
+.trading-formations .ligne-8-hbskOF {
+  background-color: transparent;
+  bottom: -1px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.trading-formations .icon-actif-hbskOF {
+  background-color: transparent;
+  height: calc(100.00% - 14px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .ellipse-17693-hleXe8 {
+  background-color: var(--milano-red);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .font-awsome-graduation-cap-hleXe8 {
+  background-color: transparent;
+  bottom: 7px;
+  height: 7px;
+  object-fit: cover;
+  position: absolute;
+  right: 3px;
+  width: 15px;
+}
+
+.trading-formations .forex-LdomJT {
+  background-color: transparent;
+  height: 20px;
+  left: calc(39.04% - 25px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 64px;
+}
+
+.trading-formations .formations-mrKxvG {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 37px;
+}
+
+.trading-formations .ligne-8-mrKxvG {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 70px);
+}
+
+.trading-formations .icon-actif-mrKxvG {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .ellipse-17693-c2xpkG {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .font-awsome-dollar-sign-c2xpkG {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 7px;
+  top: 5px;
+  width: 6px;
+}
+
+.trading-formations .crypto-wallet-LdomJT {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  left: calc(48.14% - 55px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.trading-formations .formations-YzLUiC {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.trading-formations .ligne-8-YzLUiC {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 19px);
+}
+
+.trading-formations .icon-actif-YzLUiC {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .ellipse-17693-ijtOC6 {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .font-awsome-wallet-ijtOC6 {
+  background-color: transparent;
+  bottom: 5px;
+  height: 9px;
+  left: 5px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 10px);
+}
+
+.trading-formations .bot-trading-LdomJT {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: calc(40.27% - 46px);
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.trading-formations .formations-RVZ8dC {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.trading-formations .ligne-8-RVZ8dC {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 19px);
+}
+
+.trading-formations .icon-actif-RVZ8dC {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .ellipse-17693-uCqR6W {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .icon-awesome-robot-uCqR6W {
+  background-color: transparent;
+  height: calc(100.00% - 10px);
+  left: 4px;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: calc(100.00% - 8px);
+}
+
+.trading-formations .trading-LdomJT {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: calc(27.69% - 36px);
+  top: 0px;
+  width: 131px;
+}
+
+.trading-formations .rectangle-3556-Bi3V6Y {
+  background-color: var(--milano-red);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .trading-Bi3V6Y {
+  background-color: transparent;
+  bottom: calc(44.83% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 14px;
+  text-align: left;
+  width: 70px;
+}
+
+.trading-formations .icon-actif-Bi3V6Y {
+  background-color: transparent;
+  height: calc(100.00% - 31px);
+  left: 17px;
+  position: absolute;
+  top: 16px;
+  width: 20px;
+}
+
+.trading-formations .ellipse-17693-qYW5AI {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading-formations .icon-simple-graphcool-qYW5AI {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 9px;
+}
+
+.trading-formations .espace-membre-7V8uSq {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 112px;
+  top: calc(29.92% - 5px);
+  width: 83px;
+}
+
+.trading-formations .connexion-pr8zKI {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-njjt6O {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .ligne-8-njjt6O {
+  background-color: transparent;
+  bottom: -5px;
+  height: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  right: 2px;
+  width: 64px;
+}
+
+.trading-formations .menu-2-7V8uSq {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 50px;
+  top: calc(31.11% - 3px);
+  width: 27px;
+}
+
+.trading-formations .icon-ionic-ios-menu-JrJAhg {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .trac-1-SqsBqJ {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .trac-2-SqsBqJ {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.trading-formations .menu-2-JrJAhg {
+  background-color: transparent;
+  height: calc(100.00% + 759px);
+  left: -310px;
+  opacity: 0;
+  position: absolute;
+  top: -42px;
+  width: calc(100.00% + 360px);
+}
+
+.trading-formations .background-EYhnnV {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .groupe-1487-EYhnnV {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 37px;
+  top: 28px;
+  width: 13px;
+}
+
+.trading-formations .ligne-10-hxDXPz {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.trading-formations .ligne-11-hxDXPz {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.trading-formations .numro-de-tlphone-EYhnnV {
+  background-color: transparent;
+  height: 59px;
+  position: absolute;
+  right: 37px;
+  top: 114px;
+  width: 210px;
+}
+
+.trading-formations .ligne-6-XN1DNT {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: 100%;
+}
+
+.trading-formations .mes-donnes-personnelles-XN1DNT {
+  background-color: transparent;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% - 24px);
+}
+
+.trading-formations .ma-licence-XN1DNT {
+  background-color: transparent;
+  bottom: -2px;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  width: calc(100.00% - 26px);
+}
+
+.trading-formations .search-bar-7V8uSq {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: 87px;
+  top: calc(30.33% - 4px);
+  width: 14px;
+}
+
+.trading-formations .icon-search-R6BjOl {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .search-bar-R6BjOl {
+  background-color: transparent;
+  height: calc(100.00% + 78px);
+  left: -1264px;
+  opacity: 0;
+  position: absolute;
+  top: -39px;
+  width: calc(100.00% + 1352px);
+}
+
+.trading-formations .rectangle-3603-7nNyQ7 {
+  background-color: var(--black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .search-bar-7nNyQ7 {
+  background-color: transparent;
+  height: 42px;
+  position: absolute;
+  right: calc(49.95% - 184px);
+  top: calc(50.00% - 21px);
+  width: 369px;
+}
+
+.trading-formations .rectangle-3604-1Uhmoo {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 40px);
+}
+
+.trading-formations .rectangle-3605-1Uhmoo {
+  background-color: transparent;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 41px;
+}
+
+.trading-formations .rechercher-1Uhmoo {
+  background-color: transparent;
+  bottom: calc(43.48% - 8px);
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 270px;
+}
+
+.trading-formations .icon-search-1Uhmoo {
+  background-color: transparent;
+  bottom: calc(50.00% - 8px);
+  height: 16px;
+  object-fit: cover;
+  position: absolute;
+  right: 12px;
+  width: 16px;
+}
+
+.trading-formations .groupe-1487-7nNyQ7 {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 90px;
+  top: calc(50.00% - 6px);
+  width: 13px;
+}
+
+.trading-formations .ligne-10-APALnB {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.trading-formations .ligne-11-APALnB {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.trading-formations .prvisualisation-articles-L4Kmv7 {
+  background-color: transparent;
+  height: 713px;
+  left: 197px;
+  position: absolute;
+  top: 180px;
+  width: calc(100.00% - 394px);
+}
+
+.trading-formations .article-nOHLIk {
+  background-color: transparent;
+  bottom: 0px;
+  height: 205px;
+  left: 0px;
+  position: absolute;
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-321-KUkK6l {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-KUkK6l {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-12-KUkK6l {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-hFfMEs {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-MJtAEp {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3498-KUkK6l {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .article-dNUrwn {
+  background-color: transparent;
+  bottom: 0px;
+  height: 205px;
+  left: calc(50.00% - 150px);
+  position: absolute;
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-322-5ZOULA {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-5ZOULA {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-13-5ZOULA {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-eZbm8p {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-mbTJUx {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3500-5ZOULA {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .article-FmDlCq {
+  background-color: transparent;
+  bottom: 0px;
+  height: 205px;
+  position: absolute;
+  right: 0px;
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-323-AytNIC {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-AytNIC {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-14-AytNIC {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-YkG83U {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-hEez54 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3501-AytNIC {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .article-Qx0D4e {
+  background-color: transparent;
+  height: 205px;
+  left: 0px;
+  position: absolute;
+  top: calc(50.00% - 102px);
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-321-43FEOx {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-43FEOx {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-12-43FEOx {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-AClsMI {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-YOOAsc {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3498-43FEOx {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .article-xKnm3b {
+  background-color: transparent;
+  height: 205px;
+  left: calc(50.00% - 150px);
+  position: absolute;
+  top: calc(50.00% - 102px);
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-322-WyA1nk {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-WyA1nk {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-13-WyA1nk {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-8rE0p9 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-rrFHyg {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3500-WyA1nk {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .article-azdTPj {
+  background-color: transparent;
+  height: 205px;
+  position: absolute;
+  right: 0px;
+  top: calc(50.00% - 102px);
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-323-csywA2 {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-csywA2 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-14-csywA2 {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-HJToAb {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-GD8pxM {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3501-csywA2 {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .article-Fx3xZ4 {
+  background-color: transparent;
+  height: 205px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-321-R2AE0l {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-R2AE0l {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-12-R2AE0l {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-wQxifb {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-bgGwXK {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3498-R2AE0l {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .article-XbBeE5 {
+  background-color: transparent;
+  height: 205px;
+  left: calc(50.00% - 150px);
+  position: absolute;
+  top: 0px;
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-322-3RLnD6 {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-3RLnD6 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-13-3RLnD6 {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-0SZH4g {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-EFx1ZM {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3500-3RLnD6 {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .article-NT5gbh {
+  background-color: transparent;
+  height: 205px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 300px;
+}
+
+.trading-formations .groupe-de-masques-323-orxhf6 {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .club-premium-orxhf6 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations .ligne-14-orxhf6 {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations .club-premium-u1GZWF {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(26.00% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}
+
+.trading-formations .club-premium-0Ua0xK {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations .rectangle-3501-orxhf6 {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations .button-signin-L4Kmv7 {
+  background-color: transparent;
+  bottom: calc(29.37% - 12px);
+  height: 40px;
+  left: calc(50.00% - 95px);
+  position: absolute;
+  width: 190px;
+}
+
+.trading-formations .button-cration-de-compte-dr47Wx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .rectangle-3470-mSnI3C {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .voir-plus-mSnI3C {
+  background-color: transparent;
+  bottom: calc(44.44% - 10px);
+  height: 22px;
+  left: calc(44.42% - 27px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: 60px;
+}
+
+.trading-formations .icon-ionic-ios-arrow-forward-dr47Wx {
+  background-color: transparent;
+  height: 6px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(32.15% - 3px);
+  top: calc(50.00% - 3px);
+  width: 10px;
+}
+
+.trading-formations .avertissement-L4Kmv7 {
+  background-color: transparent;
+  bottom: 210px;
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-formations .groupe-3020-hJ5gjz {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .rectangle-3606-qDT0rf {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations .les-investissements-qDT0rf {
+  background-color: transparent;
+  height: 35px;
+  left: 135px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  width: calc(100.00% - 268px);
+}
+
+.trading-formations .span0-nVxLE5 {
+}
+
+.trading-formations .span1-nVxLE5 {
+}
+
+.trading-formations .ligne-41-hJ5gjz {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+/* screen - trading-formations-mobile */
+
+.trading-formations-mobile {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 2176px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.trading-formations-mobile .background-R4fmnF {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: calc(100.00% - 319px);
+  left: 0px;
+  position: absolute;
+  top: 153px;
+  width: 100%;
+}
+
+.trading-formations-mobile .article-R4fmnF {
+  background-color: transparent;
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  top: 179px;
+  width: calc(100.00% - 74px);
+}
+
+.trading-formations-mobile .groupe-de-masques-321-GQAGmo {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .club-premium-GQAGmo {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 66px;
+}
+
+.trading-formations-mobile .ligne-12-GQAGmo {
+  background-color: transparent;
+  bottom: 27px;
+  height: 15px;
+  left: 19.69%;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations-mobile .club-premium-Re7Txd {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(31.43% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 109px;
+}
+
+.trading-formations-mobile .club-premium-vbEkPA {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations-mobile .rectangle-3498-GQAGmo {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations-mobile .article-TM7eWU {
+  background-color: transparent;
+  height: 244px;
+  left: 37px;
+  position: absolute;
+  top: calc(22.67% - 55px);
+  width: calc(100.00% - 74px);
+}
+
+.trading-formations-mobile .groupe-de-masques-322-CQ6zNu {
+  background-color: transparent;
+  height: calc(100.00% - 55px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .club-premium-CQ6zNu {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations-mobile .rectangle-3500-CQ6zNu {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 55px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations-mobile .club-premium-FTAnWA {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 72px;
+}
+
+.trading-formations-mobile .ligne-33-CQ6zNu {
+  background-color: transparent;
+  bottom: 27px;
+  height: 15px;
+  left: 21.34%;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations-mobile .club-premium-LOcUIr {
+  background-color: transparent;
+  bottom: 26px;
+  height: 17px;
+  left: calc(34.03% - 37px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 110px;
+}
+
+.trading-formations-mobile .article-KWvOWn {
+  background-color: transparent;
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  top: calc(36.18% - 87px);
+  width: calc(100.00% - 74px);
+}
+
+.trading-formations-mobile .groupe-de-masques-323-x2ywKA {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .club-premium-x2ywKA {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations-mobile .ligne-14-x2ywKA {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations-mobile .club-premium-MxdoFU {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(21.67% - 25px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 114px;
+}
+
+.trading-formations-mobile .club-premium-5OPZPW {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations-mobile .rectangle-3501-x2ywKA {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations-mobile .article-6Tg0k1 {
+  background-color: transparent;
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  top: calc(49.56% - 119px);
+  width: calc(100.00% - 74px);
+}
+
+.trading-formations-mobile .groupe-de-masques-324-YfwhxC {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .club-premium-YfwhxC {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 78px;
+}
+
+.trading-formations-mobile .ligne-15-YfwhxC {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 23.19%;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations-mobile .club-premium-wS0pi2 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(36.63% - 41px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 111px;
+}
+
+.trading-formations-mobile .club-premium-dVwos6 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations-mobile .icon-twitter-YfwhxC {
+  background-color: transparent;
+  height: 47px;
+  left: calc(18.87% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(45.22% - 21px);
+  width: 47px;
+}
+
+.trading-formations-mobile .rectangle-3502-YfwhxC {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations-mobile .avertissement-R4fmnF {
+  background-color: transparent;
+  bottom: 203px;
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-formations-mobile .groupe-3020-fUSics {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .rectangle-3606-FqWs05 {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .les-investissements-FqWs05 {
+  background-color: transparent;
+  height: 79px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 17px;
+  width: calc(100.00% - 52px);
+}
+
+.trading-formations-mobile .span0-MzIBuW {
+}
+
+.trading-formations-mobile .span1-MzIBuW {
+}
+
+.trading-formations-mobile .ligne-41-fUSics {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .footer-R4fmnF {
+  background-color: transparent;
+  bottom: 0px;
+  height: 203px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-formations-mobile .background-ipw7Mh {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .menu-footer-ipw7Mh {
+  background-color: transparent;
+  bottom: calc(40.37% - 17px);
+  height: 42px;
+  left: calc(50.00% - 108px);
+  position: absolute;
+  width: 216px;
+}
+
+.trading-formations-mobile .mentions-lgales-5Q5kdb {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(40.97% - 45px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.trading-formations-mobile .cgu-5Q5kdb {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 4px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.trading-formations-mobile .cgv-5Q5kdb {
+  background-color: transparent;
+  bottom: -3px;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.trading-formations-mobile .politique-de-confidentialit-5Q5kdb {
+  background-color: transparent;
+  bottom: -5px;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading-formations-mobile .contact-5Q5kdb {
+  background-color: transparent;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.trading-formations-mobile .x2022-6-fire-invest-ipw7Mh {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.46% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.trading-formations-mobile .logo-ipw7Mh {
+  background-color: transparent;
+  height: 58px;
+  left: 10px;
+  position: absolute;
+  top: 18px;
+  width: 199px;
+}
+
+.trading-formations-mobile .groupe-2-80gqKq {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.trading-formations-mobile .groupe-1-GNpPO0 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .effect-80gqKq {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.trading-formations-mobile .ligne-31-ipw7Mh {
+  background-color: transparent;
+  bottom: 26.73%;
+  height: 1px;
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 76px);
+}
+
+.trading-formations-mobile .groupe-3011-ipw7Mh {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: calc(22.45% - 5px);
+  top: calc(20.19% - 4px);
+  width: 21px;
+}
+
+.trading-formations-mobile .icon-instagram-sQ3j23 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-formations-mobile .groupe-3010-ipw7Mh {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 61px;
+  top: calc(20.64% - 4px);
+  width: 16px;
+}
+
+.trading-formations-mobile .icon-simple-tiktok-pgXoOi {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-formations-mobile .icon-paper_plane-ipw7Mh {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 25px;
+  top: calc(20.64% - 4px);
+  width: 21px;
+}
+
+.trading-formations-mobile .header-R4fmnF {
+  background-color: transparent;
+  height: 153px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .rectangle-3484-kLJMNz {
+  background-color: var(--black-3);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .logo-kLJMNz {
+  background-color: transparent;
+  height: 86px;
+  position: absolute;
+  right: calc(49.68% - 64px);
+  top: 4px;
+  width: 128px;
+}
+
+.trading-formations-mobile .effect-L8itxG {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-formations-mobile .toogle-button-kLJMNz {
+  background-color: transparent;
+  height: 18px;
+  left: 37px;
+  position: absolute;
+  top: calc(28.31% - 5px);
+  width: 58px;
+}
+
+.trading-formations-mobile .icon-ionic-ios-moon-hy62rb {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 17px;
+}
+
+.trading-formations-mobile .toogle-button-hy62rb {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 32px;
+}
+
+.trading-formations-mobile .rectangle-3485-CFQQp0 {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .ellipse-17688-CFQQp0 {
+  background-color: var(--cape-cod);
+  border-radius: 6.41px;
+  height: calc(100.00% - 5px);
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 13px;
+}
+
+.trading-formations-mobile .search-bar-kLJMNz {
+  background-color: transparent;
+  height: 22px;
+  position: absolute;
+  right: 37px;
+  top: calc(26.28% - 6px);
+  width: 22px;
+}
+
+.trading-formations-mobile .icon-search-5xEh9o {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .rectangle-3607-kLJMNz {
+  background-color: var(--licorice);
+  bottom: 0px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-formations-mobile .menu-kLJMNz {
+  background-color: transparent;
+  bottom: calc(17.71% - 2px);
+  height: 9px;
+  position: absolute;
+  right: 37px;
+  width: 27px;
+}
+
+.trading-formations-mobile .icon-ionic-ios-menu-xkttAO {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .trac-1-1YpcI8 {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .trac-2-1YpcI8 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.trading-formations-mobile .espace-trading-crypto-kLJMNz {
+  background-color: transparent;
+  bottom: 20px;
+  height: 17px;
+  left: 16px;
+  position: absolute;
+  width: 152px;
+}
+
+.trading-formations-mobile .formations-4gym5x {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations-mobile .article-NfVqYx {
+  background-color: transparent;
+  bottom: calc(37.05% - 89px);
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  width: calc(100.00% - 74px);
+}
+
+.trading-formations-mobile .groupe-de-masques-324-Il8n6n {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .club-premium-Il8n6n {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 78px;
+}
+
+.trading-formations-mobile .ligne-15-Il8n6n {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 23.19%;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations-mobile .club-premium-r4hE9T {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(36.63% - 41px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 111px;
+}
+
+.trading-formations-mobile .club-premium-mLZsrE {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations-mobile .icon-twitter-Il8n6n {
+  background-color: transparent;
+  height: 47px;
+  left: calc(18.87% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(45.22% - 21px);
+  width: 47px;
+}
+
+.trading-formations-mobile .rectangle-3502-Il8n6n {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations-mobile .article-r7knbe {
+  background-color: transparent;
+  bottom: calc(23.67% - 57px);
+  height: 241px;
+  left: 37px;
+  position: absolute;
+  width: calc(100.00% - 74px);
+}
+
+.trading-formations-mobile .groupe-de-masques-323-epKMxz {
+  background-color: transparent;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .club-premium-epKMxz {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 39px;
+}
+
+.trading-formations-mobile .ligne-14-epKMxz {
+  background-color: transparent;
+  bottom: 26px;
+  height: 15px;
+  left: 43px;
+  object-fit: cover;
+  position: absolute;
+  width: 1px;
+}
+
+.trading-formations-mobile .club-premium-14Ofw5 {
+  background-color: transparent;
+  bottom: 25px;
+  height: 17px;
+  left: calc(21.67% - 25px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 114px;
+}
+
+.trading-formations-mobile .club-premium-mBOFKu {
+  background-color: transparent;
+  bottom: -2px;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% + 2px);
+}
+
+.trading-formations-mobile .rectangle-3501-epKMxz {
+  background: linear-gradient(180deg, rgba(214, 29, 0, 0.29) 0%, rgba(110, 110, 110, 0.09) 100%);
+  background-color: transparent;
+  border-radius: 10px;
+  height: calc(100.00% - 54px);
+  left: 0px;
+  opacity: 0.3;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 2px);
+}
+
+.trading-formations-mobile .button-signin-R4fmnF {
+  background-color: transparent;
+  bottom: 377px;
+  height: 40px;
+  left: calc(50.00% - 95px);
+  position: absolute;
+  width: 190px;
+}
+
+.trading-formations-mobile .button-cration-de-compte-uIv0e6 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .rectangle-3470-0vXemT {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-formations-mobile .voir-plus-0vXemT {
+  background-color: transparent;
+  bottom: calc(44.44% - 10px);
+  height: 22px;
+  left: calc(44.42% - 27px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: 60px;
+}
+
+.trading-formations-mobile .icon-ionic-ios-arrow-forward-uIv0e6 {
+  background-color: transparent;
+  height: 6px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(32.15% - 3px);
+  top: calc(50.00% - 3px);
+  width: 10px;
+}
+@media screen and (max-width: 1365px) {
+  .screen.trading-formations { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) {
+  .screen.trading-formations-mobile { 
+    display: none;
+   }
+}

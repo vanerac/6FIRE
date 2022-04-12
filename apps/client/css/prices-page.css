@@ -1,0 +1,4160 @@
+/* screen - prices-page */
+
+.prices-page {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 1631px;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.prices-page .footer-bAAl1m {
+  background-color: transparent;
+  bottom: 3px;
+  height: 210px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.prices-page .background-TaM7Yn {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .menu-footer-TaM7Yn {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: 185px;
+  top: calc(47.37% - 9px);
+  width: 470px;
+}
+
+.prices-page .mentions-lgales-IPxenx {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 70px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.prices-page .cgu-IPxenx {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: calc(45.12% - 13px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.prices-page .cgv-IPxenx {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(44.47% - 12px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.prices-page .politique-de-confidentialit-IPxenx {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.prices-page .politique-de-confidentialit-fGxoDM {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 0px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.prices-page .contact-IPxenx {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.prices-page .x2022-6-fire-invest-TaM7Yn {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.88% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.prices-page .logo-TaM7Yn {
+  background-color: transparent;
+  height: 58px;
+  left: 191px;
+  position: absolute;
+  top: calc(33.01% - 19px);
+  width: 199px;
+}
+
+.prices-page .groupe-2-tbH7j8 {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.prices-page .groupe-1-5GsK0f {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.prices-page .effect-tbH7j8 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.prices-page .ligne-31-TaM7Yn {
+  background-color: transparent;
+  bottom: 31.58%;
+  height: 1px;
+  left: 72px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 143px);
+}
+
+.prices-page .groupe-3011-TaM7Yn {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: 215px;
+  top: calc(26.53% - 6px);
+  width: 21px;
+}
+
+.prices-page .icon-instagram-lHJxZt {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .groupe-3010-TaM7Yn {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 185px;
+  top: calc(26.87% - 5px);
+  width: 16px;
+}
+
+.prices-page .icon-simple-tiktok-qQp3TQ {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.prices-page .avertissement-bAAl1m {
+  background-color: transparent;
+  bottom: 213px;
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.prices-page .groupe-3020-R9yMUv {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .rectangle-3606-CczUp1 {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .les-investissements-CczUp1 {
+  background-color: transparent;
+  height: 35px;
+  left: 135px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  width: calc(100.00% - 268px);
+}
+
+.prices-page .span0-VYxIJF {
+}
+
+.prices-page .span1-VYxIJF {
+}
+
+.prices-page .ligne-41-R9yMUv {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.prices-page .background-bAAl1m {
+  background: linear-gradient(179.54deg, #020202 3.14%, #212121 55.96%);
+  background-color: transparent;
+  height: 767px;
+  left: 0px;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.prices-page .groupe-de-masques-331-bAAl1m {
+  background-color: transparent;
+  height: 767px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.prices-page .votre-licence-6-fire-invest-bAAl1m {
+  background-color: transparent;
+  height: 24px;
+  letter-spacing: 0.54px;
+  line-height: 18px;
+  position: absolute;
+  right: calc(49.88% - 282px);
+  text-align: center;
+  top: 192px;
+  width: 566px;
+}
+
+.prices-page .laccs-au-club-6-fire-bAAl1m {
+  background-color: transparent;
+  height: 42px;
+  letter-spacing: 0.42px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  right: calc(49.87% - 296px);
+  text-align: center;
+  top: 222px;
+  width: 594px;
+}
+
+.prices-page .bloc-offre-bAAl1m {
+  background-color: transparent;
+  height: 536px;
+  left: calc(28.21% - 64px);
+  position: absolute;
+  top: calc(28.40% - 152px);
+  width: 228px;
+}
+
+.prices-page .rectangle-3592-Y3qnBR {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .rectangle-3593-Y3qnBR {
+  background-color: transparent;
+  height: 74px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page .novice-Y3qnBR {
+  background-color: transparent;
+  height: 24px;
+  letter-spacing: 0.54px;
+  line-height: 18px;
+  position: absolute;
+  right: calc(48.94% - 43px);
+  text-align: center;
+  top: 11px;
+  width: 87px;
+}
+
+.prices-page .x4999-Y3qnBR {
+  background-color: transparent;
+  height: 34px;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  position: absolute;
+  right: calc(49.28% - 44px);
+  text-align: center;
+  top: calc(16.14% - 5px);
+  width: 90px;
+}
+
+.prices-page .mois-Y3qnBR {
+  background-color: transparent;
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.67% - 38px);
+  text-align: center;
+  top: calc(21.77% - 4px);
+  width: 77px;
+}
+
+.prices-page .button-commencer-Y3qnBR {
+  background-color: transparent;
+  height: 34px;
+  left: 18px;
+  position: absolute;
+  top: calc(30.68% - 10px);
+  width: calc(100.00% - 36px);
+}
+
+.prices-page .rectangle-3594-eZzVdP {
+  background-color: transparent;
+  border: 1px solid var(--milano-red);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .commencer-eZzVdP {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.12% - 38px);
+  text-align: center;
+  width: 78px;
+}
+
+.prices-page .ligne-35-Y3qnBR {
+  background-color: transparent;
+  height: 1px;
+  left: 18px;
+  object-fit: cover;
+  position: absolute;
+  top: 37.38%;
+  width: calc(100.00% - 36px);
+}
+
+.prices-page .groupe-3017-Y3qnBR {
+  background-color: transparent;
+  bottom: calc(43.57% - 71px);
+  height: 162px;
+  left: 18px;
+  position: absolute;
+  width: calc(100.00% - 35px);
+}
+
+.prices-page .icon-check_mark-TS7YxV {
+  background-color: transparent;
+  height: 6px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(41.78% - 3px);
+  width: 9px;
+}
+
+.prices-page .licence-6-fire-TS7YxV {
+  background-color: transparent;
+  height: 14px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 140px;
+}
+
+.prices-page .icon-check_mark-2D58IN {
+  background-color: transparent;
+  bottom: calc(46.01% - 3px);
+  height: 6px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.prices-page .accs-tous-les-articl-TS7YxV {
+  background-color: transparent;
+  height: 38px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: 19px;
+  width: calc(100.00% - 17px);
+}
+
+.prices-page .icon-check_mark-1GPg7b {
+  background-color: transparent;
+  height: 6px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 6px;
+  width: 9px;
+}
+
+.prices-page .accs-aux-bons-plans-TS7YxV {
+  background-color: transparent;
+  height: 14px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(42.58% - 6px);
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .icon-check_mark-3UqB83 {
+  background-color: transparent;
+  height: 6px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 25px;
+  width: 9px;
+}
+
+.prices-page .accs-aux-articles-pe-TS7YxV {
+  background-color: transparent;
+  bottom: calc(26.77% - 13px);
+  height: 50px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .icon-check_mark-KVAgRN {
+  background-color: transparent;
+  bottom: 16px;
+  height: 6px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.prices-page .accs-aux-rencontres-TS7YxV {
+  background-color: transparent;
+  bottom: -2px;
+  height: 26px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .offre-sans-engagemen-Y3qnBR {
+  background-color: transparent;
+  bottom: 11px;
+  height: 26px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 52px);
+}
+
+.prices-page .pour-les-dbutantsfrileux-Y3qnBR {
+  background-color: transparent;
+  height: 13px;
+  left: 25px;
+  object-fit: cover;
+  position: absolute;
+  top: 33px;
+  width: calc(100.00% - 50px);
+}
+
+.prices-page .bloc-offre-YYWFTn {
+  background-color: transparent;
+  height: 537px;
+  left: calc(50.00% - 114px);
+  position: absolute;
+  top: calc(28.34% - 152px);
+  width: 228px;
+}
+
+.prices-page .rectangle-3589-xzlH1J {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .rectangle-3591-xzlH1J {
+  background-color: transparent;
+  height: 74px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page .intermdiaire-xzlH1J {
+  background-color: transparent;
+  height: 21px;
+  letter-spacing: 0.48px;
+  line-height: 16px;
+  position: absolute;
+  right: 31px;
+  text-align: center;
+  top: 11px;
+  width: 162px;
+}
+
+.prices-page .x9999-xzlH1J {
+  background-color: transparent;
+  color: var(--milano-red);
+  font-family: var(--font-family-lato);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  height: 34px;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  position: absolute;
+  right: calc(49.28% - 44px);
+  text-align: center;
+  top: calc(16.10% - 5px);
+  width: 90px;
+}
+
+.prices-page .mois-xzlH1J {
+  background-color: transparent;
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.01% - 38px);
+  text-align: center;
+  top: calc(21.73% - 4px);
+  width: 77px;
+}
+
+.prices-page .button-commencer-xzlH1J {
+  background-color: transparent;
+  height: 34px;
+  left: 18px;
+  position: absolute;
+  top: calc(30.62% - 10px);
+  width: calc(100.00% - 35px);
+}
+
+.prices-page .rectangle-3590-mKNhOZ {
+  background-color: var(--milano-red);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .commencer-mKNhOZ {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.13% - 38px);
+  text-align: center;
+  width: 78px;
+}
+
+.prices-page .ligne-34-xzlH1J {
+  background-color: transparent;
+  height: 1px;
+  left: 18px;
+  object-fit: cover;
+  position: absolute;
+  top: 37.31%;
+  width: calc(100.00% - 36px);
+}
+
+.prices-page .groupe-3016-xzlH1J {
+  background-color: transparent;
+  bottom: 61px;
+  height: 261px;
+  left: 18px;
+  position: absolute;
+  width: calc(100.00% - 35px);
+}
+
+.prices-page .accs-aux-options-de-la-licence-novice-bVOQH1 {
+  background-color: transparent;
+  height: 14px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 17px);
+}
+
+.prices-page .icon-check_mark-bVOQH1 {
+  background-color: transparent;
+  height: 6px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 6px;
+  width: 9px;
+}
+
+.prices-page .accs-au-bot-trading-bVOQH1 {
+  background-color: transparent;
+  height: 38px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: 30px;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .accs-nos-analyses-sur-les-marchs-bVOQH1 {
+  background-color: transparent;
+  height: 14px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(29.34% - 4px);
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .accs-notre-portefeui-bVOQH1 {
+  background-color: transparent;
+  height: 38px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(40.60% - 15px);
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .accs-aux-signaux-for-bVOQH1 {
+  background-color: transparent;
+  bottom: calc(37.18% - 19px);
+  height: 50px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .accs-nos-rsultats-bVOQH1 {
+  background-color: transparent;
+  bottom: calc(24.34% - 3px);
+  height: 14px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .accs-nos-outils-dana-bVOQH1 {
+  background-color: transparent;
+  bottom: 30px;
+  height: 26px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .icon-feather-plus-bVOQH1 {
+  background-color: transparent;
+  height: 6px;
+  left: 0px;
+  position: absolute;
+  top: 34px;
+  width: 6px;
+}
+
+.prices-page .trac-1043-CsSGUO {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-CsSGUO {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .icon-feather-plus-J7DsPQ {
+  background-color: transparent;
+  height: 6px;
+  left: 0px;
+  position: absolute;
+  top: calc(29.61% - 2px);
+  width: 6px;
+}
+
+.prices-page .trac-1043-GyuJoj {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-GyuJoj {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .icon-feather-plus-iNVTub {
+  background-color: transparent;
+  height: 6px;
+  left: 0px;
+  position: absolute;
+  top: calc(37.07% - 2px);
+  width: 6px;
+}
+
+.prices-page .trac-1043-dIhvxx {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-dIhvxx {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .icon-feather-plus-WhBiYh {
+  background-color: transparent;
+  bottom: calc(46.57% - 3px);
+  height: 6px;
+  left: 1px;
+  position: absolute;
+  width: 6px;
+}
+
+.prices-page .trac-1043-9thswo {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-9thswo {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .icon-feather-plus-rsxxv1 {
+  background-color: transparent;
+  bottom: calc(25.37% - 1px);
+  height: 6px;
+  left: 1px;
+  position: absolute;
+  width: 6px;
+}
+
+.prices-page .trac-1043-UTQSuu {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-UTQSuu {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .icon-feather-plus-09LitM {
+  background-color: transparent;
+  bottom: calc(18.69% - 1px);
+  height: 6px;
+  left: 1px;
+  position: absolute;
+  width: 6px;
+}
+
+.prices-page .trac-1043-OUxG1x {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-OUxG1x {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .support-24h24-et-7j7-pour-les-membres-bVOQH1 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 26px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .icon-feather-plus-TJzdUE {
+  background-color: transparent;
+  bottom: 16px;
+  height: 6px;
+  left: 1px;
+  position: absolute;
+  width: 6px;
+}
+
+.prices-page .trac-1043-akaEWI {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-akaEWI {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .offre-sans-engagemen-xzlH1J {
+  background-color: transparent;
+  bottom: 11px;
+  height: 26px;
+  left: 28px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 52px);
+}
+
+.prices-page .pour-les-ambitieux-qui-veulent-trader-xzlH1J {
+  background-color: transparent;
+  height: 17px;
+  left: 5px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  width: calc(100.00% - 7px);
+}
+
+.prices-page .bloc-offre-KaUxf6 {
+  background-color: transparent;
+  height: 537px;
+  position: absolute;
+  right: calc(28.21% - 64px);
+  top: calc(28.34% - 152px);
+  width: 228px;
+}
+
+.prices-page .rectangle-3597-lVuQRq {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .rectangle-3598-lVuQRq {
+  background-color: transparent;
+  height: 74px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page .partenaire-6-fire-lVuQRq {
+  background-color: transparent;
+  height: 21px;
+  left: 34px;
+  letter-spacing: 0.48px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 18px;
+  width: calc(100.00% - 66px);
+}
+
+.prices-page .x19999-lVuQRq {
+  background-color: transparent;
+  height: 34px;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  position: absolute;
+  right: calc(49.19% - 51px);
+  text-align: center;
+  top: calc(16.10% - 5px);
+  width: 104px;
+}
+
+.prices-page .mois-lVuQRq {
+  background-color: transparent;
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.67% - 38px);
+  text-align: center;
+  top: calc(21.73% - 4px);
+  width: 77px;
+}
+
+.prices-page .button-commencer-lVuQRq {
+  background-color: transparent;
+  height: 34px;
+  left: 18px;
+  position: absolute;
+  top: calc(30.62% - 10px);
+  width: calc(100.00% - 36px);
+}
+
+.prices-page .rectangle-3599-8mPhsu {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .commencer-8mPhsu {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.12% - 38px);
+  text-align: center;
+  width: 78px;
+}
+
+.prices-page .ligne-36-lVuQRq {
+  background-color: transparent;
+  height: 1px;
+  left: 18px;
+  object-fit: cover;
+  position: absolute;
+  top: 37.31%;
+  width: calc(100.00% - 36px);
+}
+
+.prices-page .groupe-3018-lVuQRq {
+  background-color: transparent;
+  bottom: calc(36.13% - 45px);
+  height: 125px;
+  left: 18px;
+  position: absolute;
+  width: calc(100.00% - 35px);
+}
+
+.prices-page .accs-aux-options-de-spCXWt {
+  background-color: transparent;
+  height: 26px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 17px);
+}
+
+.prices-page .icon-check_mark-spCXWt {
+  background-color: transparent;
+  height: 6px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 6px;
+  width: 9px;
+}
+
+.prices-page .accs-au-groupe-whats-spCXWt {
+  background-color: transparent;
+  height: 26px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(30.71% - 8px);
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .contact-en-temps-rel-spCXWt {
+  background-color: transparent;
+  bottom: calc(31.90% - 12px);
+  height: 38px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .un-call-une-fois-par-spCXWt {
+  background-color: transparent;
+  bottom: -2px;
+  height: 26px;
+  left: 19px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 19px);
+}
+
+.prices-page .icon-feather-plus-spCXWt {
+  background-color: transparent;
+  height: 6px;
+  left: 0px;
+  position: absolute;
+  top: calc(29.01% - 2px);
+  width: 6px;
+}
+
+.prices-page .trac-1043-qrzrdL {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-qrzrdL {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .icon-feather-plus-1Kxi7O {
+  background-color: transparent;
+  bottom: calc(47.72% - 3px);
+  height: 6px;
+  left: 0px;
+  position: absolute;
+  width: 6px;
+}
+
+.prices-page .trac-1043-dzYaDs {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-dzYaDs {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .icon-feather-plus-q6xcLh {
+  background-color: transparent;
+  bottom: 14px;
+  height: 6px;
+  left: 0px;
+  position: absolute;
+  width: 6px;
+}
+
+.prices-page .trac-1043-ZBFSSw {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page .trac-1044-ZBFSSw {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page .offre-sans-engagemen-lVuQRq {
+  background-color: transparent;
+  bottom: 10px;
+  height: 26px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 52px);
+}
+
+.prices-page .x20-lVuQRq {
+  background-color: transparent;
+  color: var(--milano-red);
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 700;
+  height: 29px;
+  left: 18px;
+  letter-spacing: 0.66px;
+  line-height: 22px;
+  position: absolute;
+  text-align: left;
+  top: calc(42.38% - 12px);
+  width: 30px;
+}
+
+.prices-page .places-disponiblesuniquement-lVuQRq {
+  background-color: transparent;
+  height: 34px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 25px;
+  text-align: left;
+  top: calc(42.74% - 15px);
+  width: 151px;
+}
+
+.prices-page .toogle-button-bAAl1m {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: calc(18.74% - 9px);
+  top: 39px;
+  width: 48px;
+}
+
+.prices-page .icon-ionic-ios-moon-ftiHd7 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+
+.prices-page .toogle-button-ftiHd7 {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 25px;
+}
+
+.prices-page .rectangle-3485-rvY402 {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .ellipse-17688-rvY402 {
+  background-color: var(--cape-cod);
+  border-radius: 5px;
+  height: calc(100.00% - 4px);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 10px;
+}
+
+.prices-page .background-YYWFTn {
+  background-color: var(--licorice);
+  bottom: calc(22.60% - 103px);
+  height: 454px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.prices-page .offre-annuelle-bAAl1m {
+  background-color: transparent;
+  bottom: calc(39.95% - 10px);
+  height: 24px;
+  letter-spacing: 0.54px;
+  line-height: 18px;
+  position: absolute;
+  right: calc(49.88% - 282px);
+  text-align: center;
+  width: 566px;
+}
+
+.prices-page .bloc-offre-H8HPgL {
+  background-color: transparent;
+  bottom: calc(24.57% - 60px);
+  height: 243px;
+  left: calc(29.88% - 65px);
+  position: absolute;
+  width: 218px;
+}
+
+.prices-page .rectangle-3592-zjfnR2 {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .rectangle-3593-zjfnR2 {
+  background-color: transparent;
+  height: 74px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page .novice-zjfnR2 {
+  background-color: transparent;
+  height: 24px;
+  letter-spacing: 0.54px;
+  line-height: 18px;
+  position: absolute;
+  right: calc(48.89% - 41px);
+  text-align: center;
+  top: 11px;
+  width: 83px;
+}
+
+.prices-page .x55999-zjfnR2 {
+  background-color: transparent;
+  height: 34px;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  position: absolute;
+  right: calc(48.74% - 48px);
+  text-align: center;
+  top: calc(38.76% - 13px);
+  width: 99px;
+}
+
+.prices-page .pour-un-an-zjfnR2 {
+  background-color: transparent;
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.31% - 36px);
+  text-align: center;
+  top: calc(50.00% - 8px);
+  width: 74px;
+}
+
+.prices-page .button-commencer-zjfnR2 {
+  background-color: transparent;
+  bottom: 17px;
+  height: 34px;
+  left: 17px;
+  position: absolute;
+  width: calc(100.00% - 33px);
+}
+
+.prices-page .rectangle-3594-HOEtpc {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .commencer-HOEtpc {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.07% - 38px);
+  text-align: center;
+  width: 78px;
+}
+
+.prices-page .conomisez-50-euros-e-zjfnR2 {
+  background-color: transparent;
+  bottom: calc(29.03% - 8px);
+  height: 26px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 50px);
+}
+
+.prices-page .licence-annuelle-zjfnR2 {
+  background-color: transparent;
+  height: 13px;
+  left: 24px;
+  object-fit: cover;
+  position: absolute;
+  top: 33px;
+  width: calc(100.00% - 48px);
+}
+
+.prices-page .bloc-offre-4pS4ZF {
+  background-color: transparent;
+  bottom: calc(24.93% - 66px);
+  height: 263px;
+  left: calc(50.00% - 109px);
+  position: absolute;
+  width: 218px;
+}
+
+.prices-page .rectangle-3592-x0xE9o {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: calc(100.00% - 20px);
+  left: 0px;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+}
+
+.prices-page .rectangle-3593-x0xE9o {
+  background-color: transparent;
+  height: 74px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: 14px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page .inter-mdiaire-x0xE9o {
+  background-color: transparent;
+  height: 24px;
+  left: 36px;
+  letter-spacing: 0.54px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  top: 31px;
+  width: calc(100.00% - 70px);
+}
+
+.prices-page .x59999-x0xE9o {
+  background-color: transparent;
+  height: 34px;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  position: absolute;
+  right: calc(48.74% - 48px);
+  text-align: center;
+  top: calc(44.10% - 15px);
+  width: 99px;
+}
+
+.prices-page .pour-un-an-x0xE9o {
+  background-color: transparent;
+  bottom: calc(45.93% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.31% - 36px);
+  text-align: center;
+  width: 74px;
+}
+
+.prices-page .button-commencer-x0xE9o {
+  background-color: transparent;
+  bottom: 17px;
+  height: 34px;
+  left: 17px;
+  position: absolute;
+  width: calc(100.00% - 33px);
+}
+
+.prices-page .rectangle-3594-D9s3vG {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .commencer-D9s3vG {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.07% - 38px);
+  text-align: center;
+  width: 78px;
+}
+
+.prices-page .conomisez-600-euros-x0xE9o {
+  background-color: transparent;
+  bottom: calc(26.58% - 7px);
+  color: var(--milano-red);
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 700;
+  height: 26px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 50px);
+}
+
+.prices-page .licence-annuelle-x0xE9o {
+  background-color: transparent;
+  height: 13px;
+  left: 24px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(21.20% - 3px);
+  width: calc(100.00% - 48px);
+}
+
+.prices-page .rectangle-3608-x0xE9o {
+  background: linear-gradient(102.24deg, #ffee7e 10.73%, #feda28 24.68%, #fdbe00 49.34%, #e1872f 86.96%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: calc(100.00% - 236px);
+  left: 57px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 113px);
+}
+
+.prices-page .best-seller-x0xE9o {
+  background-color: transparent;
+  height: 33px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(49.61% - 45px);
+  top: 0px;
+  width: 91px;
+}
+
+.prices-page .bloc-offre-J10C6m {
+  background-color: transparent;
+  bottom: calc(25.07% - 66px);
+  height: 263px;
+  position: absolute;
+  right: calc(29.88% - 65px);
+  width: 218px;
+}
+
+.prices-page .rectangle-3592-Q775IJ {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: calc(100.00% - 20px);
+  left: 0px;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+}
+
+.prices-page .rectangle-3593-Q775IJ {
+  background-color: transparent;
+  height: 74px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: 14px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page .partenaire-Q775IJ {
+  background-color: transparent;
+  height: 24px;
+  left: 36px;
+  letter-spacing: 0.54px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  top: 31px;
+  width: calc(100.00% - 70px);
+}
+
+.prices-page .x79999-Q775IJ {
+  background-color: transparent;
+  height: 34px;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  position: absolute;
+  right: calc(48.74% - 48px);
+  text-align: center;
+  top: calc(44.10% - 15px);
+  width: 99px;
+}
+
+.prices-page .pour-un-an-Q775IJ {
+  background-color: transparent;
+  bottom: calc(45.93% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.31% - 36px);
+  text-align: center;
+  width: 74px;
+}
+
+.prices-page .button-commencer-Q775IJ {
+  background-color: transparent;
+  bottom: 17px;
+  height: 34px;
+  left: 17px;
+  position: absolute;
+  width: calc(100.00% - 33px);
+}
+
+.prices-page .rectangle-3594-i0jpqR {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .commencer-i0jpqR {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.07% - 38px);
+  text-align: center;
+  width: 78px;
+}
+
+.prices-page .conomisez-1600-euros-Q775IJ {
+  background-color: transparent;
+  bottom: calc(26.58% - 7px);
+  color: var(--milano-red);
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 700;
+  height: 26px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 50px);
+}
+
+.prices-page .licence-annuelle-Q775IJ {
+  background-color: transparent;
+  height: 13px;
+  left: 24px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(21.20% - 3px);
+  width: calc(100.00% - 48px);
+}
+
+.prices-page .rectangle-3608-Q775IJ {
+  background: linear-gradient(102.24deg, #ffee7e 10.73%, #feda28 24.68%, #fdbe00 49.34%, #e1872f 86.96%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: calc(100.00% - 236px);
+  left: 57px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 113px);
+}
+
+.prices-page .best-seller-Q775IJ {
+  background-color: transparent;
+  height: 33px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(49.22% - 44px);
+  top: 1px;
+  width: 90px;
+}
+
+.prices-page .header-bAAl1m {
+  background-color: transparent;
+  height: 144px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .rectangle-3483-dHGHFp {
+  background-color: var(--midnight-moss);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .logo-dHGHFp {
+  background-color: transparent;
+  height: 59px;
+  left: calc(50.00% - 44px);
+  position: absolute;
+  top: 17px;
+  width: 88px;
+}
+
+.prices-page .effect-auvAAe {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .menu-dHGHFp {
+  background-color: transparent;
+  bottom: 0px;
+  height: 51px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.prices-page .rectangle-3484-Ku6QyB {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .cryptommonnaies-Ku6QyB {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 19px;
+  left: 198px;
+  position: absolute;
+  width: 136px;
+}
+
+.prices-page .club-premium-SoEy5v {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 5.90%;
+  width: 110px;
+}
+
+.prices-page .icon-actif-SoEy5v {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 19px;
+}
+
+.prices-page .groupe-1490-qqcC8T {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .nft-Ku6QyB {
+  background-color: transparent;
+  height: 19px;
+  left: calc(27.49% - 16px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 56px;
+}
+
+.prices-page .trading-jhcjGn {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 5.26%;
+  width: 31px;
+}
+
+.prices-page .icon-jhcjGn {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 19px;
+}
+
+.prices-page .ellipse-17691-FsEpJA {
+  background-color: var(--white);
+  border-radius: 9.5px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .nft-FsEpJA {
+  background-color: transparent;
+  height: calc(100.00% - 9px);
+  left: 4px;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: calc(100.00% - 9px);
+}
+
+.prices-page .play-to-earn-Ku6QyB {
+  background-color: transparent;
+  height: 19px;
+  left: calc(35.03% - 36px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 102px;
+}
+
+.prices-page .trading-gx95Ld {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 5.26%;
+  width: 76px;
+}
+
+.prices-page .icon-gx95Ld {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 19px;
+}
+
+.prices-page .ellipse-17691-7NZdmG {
+  background-color: var(--white);
+  border-radius: 9.5px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .gamepad-7NZdmG {
+  background-color: transparent;
+  height: 7px;
+  left: calc(50.00% - 5px);
+  position: absolute;
+  top: calc(50.00% - 3px);
+  width: 11px;
+}
+
+.prices-page .trac-1021-DC2RoI {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .immobiler-Ku6QyB {
+  background-color: transparent;
+  height: 19px;
+  left: calc(44.91% - 42px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 94px;
+}
+
+.prices-page .trading-qlWKq2 {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 5.26%;
+  width: 69px;
+}
+
+.prices-page .icon-qlWKq2 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 19px;
+}
+
+.prices-page .ellipse-17691-OFZb9J {
+  background-color: var(--white);
+  border-radius: 9.5px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .groupe-1502-OFZb9J {
+  background-color: transparent;
+  height: 10px;
+  left: calc(50.00% - 4px);
+  position: absolute;
+  top: calc(44.44% - 4px);
+  width: 9px;
+}
+
+.prices-page .groupe-1504-7AUK81 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .e-commerce-Ku6QyB {
+  background-color: transparent;
+  height: 19px;
+  position: absolute;
+  right: calc(44.93% - 49px);
+  top: calc(50.00% - 10px);
+  width: 110px;
+}
+
+.prices-page .trading-lx3HTx {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 4.54%;
+  width: 84px;
+}
+
+.prices-page .icon-lx3HTx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 19px;
+}
+
+.prices-page .ellipse-17692-jb5j5D {
+  background-color: var(--romance);
+  border-radius: 9.5px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .website-jb5j5D {
+  background-color: transparent;
+  bottom: calc(50.00% - 4px);
+  height: 8px;
+  left: 4px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 8px);
+}
+
+.prices-page .autres-thmes-Ku6QyB {
+  background-color: transparent;
+  bottom: calc(50.00% - 8px);
+  height: 17px;
+  position: absolute;
+  right: calc(33.39% - 41px);
+  width: 123px;
+}
+
+.prices-page .autres-thmatiques-B8zC1O {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .trading-Vigwwk {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.prices-page .trading-Ku6QyB {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 174px;
+  top: 0px;
+  width: 131px;
+}
+
+.prices-page .rectangle-3556-jY7BYl {
+  background-color: var(--milano-red);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .trading-jY7BYl {
+  background-color: transparent;
+  bottom: calc(42.86% - 16px);
+  height: 37px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  width: 109px;
+}
+
+.prices-page .espace-membre-dHGHFp {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 112px;
+  top: calc(29.92% - 5px);
+  width: 83px;
+}
+
+.prices-page .connexion-BJQ5d9 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .club-premium-Z2L3JY {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.prices-page .menu-2-dHGHFp {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 50px;
+  top: calc(31.11% - 3px);
+  width: 27px;
+}
+
+.prices-page .icon-ionic-ios-menu-xfOAAj {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .trac-1-sHtRgC {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page .trac-2-sHtRgC {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.prices-page .icon-search-dHGHFp {
+  background-color: transparent;
+  height: 14px;
+  object-fit: cover;
+  position: absolute;
+  right: 87px;
+  top: calc(30.33% - 4px);
+  width: 14px;
+}
+/* screen - prices-page-mobile */
+
+.prices-page-mobile {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 3953px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.prices-page-mobile .background-IrLseF {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 2187px;
+  left: 0px;
+  position: absolute;
+  top: 153px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3484-IrLseF {
+  background-color: var(--black-3);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .logo-IrLseF {
+  background-color: transparent;
+  height: 86px;
+  position: absolute;
+  right: calc(49.68% - 64px);
+  top: 4px;
+  width: 128px;
+}
+
+.prices-page-mobile .effect-XM5JVa {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .toogle-button-IrLseF {
+  background-color: transparent;
+  height: 18px;
+  left: 37px;
+  position: absolute;
+  top: 38px;
+  width: 58px;
+}
+
+.prices-page-mobile .icon-ionic-ios-moon-tHuFf4 {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 17px;
+}
+
+.prices-page-mobile .toogle-button-tHuFf4 {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 32px;
+}
+
+.prices-page-mobile .rectangle-3485-bTajvo {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .ellipse-17688-bTajvo {
+  background-color: var(--cape-cod);
+  border-radius: 6.41px;
+  height: calc(100.00% - 5px);
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 13px;
+}
+
+.prices-page-mobile .search-bar-IrLseF {
+  background-color: transparent;
+  height: 22px;
+  position: absolute;
+  right: 37px;
+  top: 35px;
+  width: 22px;
+}
+
+.prices-page-mobile .icon-search-hEJLRx {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3607-IrLseF {
+  background-color: var(--licorice);
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  top: 93px;
+  width: 100%;
+}
+
+.prices-page-mobile .groupe-3022-IrLseF {
+  background-color: transparent;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  top: 93px;
+  width: 183px;
+}
+
+.prices-page-mobile .rectangle-3556-CYVHm3 {
+  background-color: var(--milano-red);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .trading-CYVHm3 {
+  background-color: transparent;
+  bottom: calc(47.50% - 10px);
+  height: 20px;
+  left: 15px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 28px);
+}
+
+.prices-page-mobile .menu-IrLseF {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 37px;
+  top: 118px;
+  width: 27px;
+}
+
+.prices-page-mobile .icon-ionic-ios-menu-Cxma7A {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .trac-1-uCdRrx {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .trac-2-uCdRrx {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.prices-page-mobile .avertissement-IrLseF {
+  background-color: transparent;
+  bottom: 203px;
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.prices-page-mobile .groupe-3020-z8LLUF {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3606-ujLJaA {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .les-investissements-ujLJaA {
+  background-color: transparent;
+  height: 79px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 17px;
+  width: calc(100.00% - 52px);
+}
+
+.prices-page-mobile .span0-ojdTJv {
+}
+
+.prices-page-mobile .span1-ojdTJv {
+}
+
+.prices-page-mobile .footer-IrLseF {
+  background-color: transparent;
+  bottom: 0px;
+  height: 203px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.prices-page-mobile .background-ntrUqU {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .menu-footer-ntrUqU {
+  background-color: transparent;
+  bottom: calc(40.37% - 17px);
+  height: 42px;
+  left: calc(50.00% - 108px);
+  position: absolute;
+  width: 216px;
+}
+
+.prices-page-mobile .mentions-lgales-uRrx0Y {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(40.97% - 45px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.prices-page-mobile .cgu-uRrx0Y {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 4px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.prices-page-mobile .cgv-uRrx0Y {
+  background-color: transparent;
+  bottom: -3px;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.prices-page-mobile .politique-de-confidentialit-uRrx0Y {
+  background-color: transparent;
+  bottom: -5px;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.prices-page-mobile .contact-uRrx0Y {
+  background-color: transparent;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.prices-page-mobile .x2022-6-fire-invest-ntrUqU {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.46% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.prices-page-mobile .logo-ntrUqU {
+  background-color: transparent;
+  height: 58px;
+  left: 10px;
+  position: absolute;
+  top: 18px;
+  width: 199px;
+}
+
+.prices-page-mobile .groupe-2-aqErwE {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.prices-page-mobile .groupe-1-tcJCVq {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .effect-aqErwE {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.prices-page-mobile .ligne-31-ntrUqU {
+  background-color: transparent;
+  bottom: 26.73%;
+  height: 1px;
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 76px);
+}
+
+.prices-page-mobile .groupe-3011-ntrUqU {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: calc(22.45% - 5px);
+  top: calc(20.19% - 4px);
+  width: 21px;
+}
+
+.prices-page-mobile .icon-instagram-WNSJgL {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.prices-page-mobile .groupe-3010-ntrUqU {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 61px;
+  top: calc(20.64% - 4px);
+  width: 16px;
+}
+
+.prices-page-mobile .icon-simple-tiktok-DQvXxp {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .icon-paper_plane-ntrUqU {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 25px;
+  top: calc(20.64% - 4px);
+  width: 21px;
+}
+
+.prices-page-mobile .groupe-de-masques-331-IrLseF {
+  background-color: transparent;
+  height: 767px;
+  left: -469px;
+  object-fit: cover;
+  position: absolute;
+  top: 153px;
+  width: calc(100.00% + 938px);
+}
+
+.prices-page-mobile .votre-licence-6-fire-invest-IrLseF {
+  background-color: transparent;
+  height: 24px;
+  left: -68px;
+  letter-spacing: 0.54px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  top: 193px;
+  width: calc(100.00% + 138px);
+}
+
+.prices-page-mobile .laccs-au-club-6-fire-IrLseF {
+  background-color: transparent;
+  height: 71px;
+  left: 22px;
+  letter-spacing: 0.42px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  top: 223px;
+  width: calc(100.00% - 41px);
+}
+
+.prices-page-mobile .bloc-offre-IrLseF {
+  background-color: transparent;
+  height: 586px;
+  left: 37px;
+  position: absolute;
+  top: 332px;
+  width: calc(100.00% - 74px);
+}
+
+.prices-page-mobile .rectangle-3592-GnWIh1 {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3593-GnWIh1 {
+  background-color: transparent;
+  height: 85px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page-mobile .novice-GnWIh1 {
+  background-color: transparent;
+  height: 26px;
+  letter-spacing: 0.60px;
+  line-height: 20px;
+  position: absolute;
+  right: calc(49.09% - 66px);
+  text-align: center;
+  top: 15px;
+  width: 134px;
+}
+
+.prices-page-mobile .x4999-GnWIh1 {
+  background-color: transparent;
+  height: 41px;
+  letter-spacing: 0.00px;
+  line-height: 32px;
+  position: absolute;
+  right: calc(49.30% - 69px);
+  text-align: center;
+  top: calc(17.06% - 7px);
+  width: 139px;
+}
+
+.prices-page-mobile .mois-GnWIh1 {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.58% - 58px);
+  text-align: center;
+  top: calc(23.28% - 4px);
+  width: 118px;
+}
+
+.prices-page-mobile .button-commencer-GnWIh1 {
+  background-color: transparent;
+  height: 53px;
+  left: 28px;
+  position: absolute;
+  top: calc(32.83% - 17px);
+  width: calc(100.00% - 56px);
+}
+
+.prices-page-mobile .rectangle-3609-wMvdjy {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .commencer-wMvdjy {
+  background-color: transparent;
+  bottom: calc(46.73% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(49.44% - 59px);
+  text-align: center;
+  width: 120px;
+}
+
+.prices-page-mobile .ligne-35-GnWIh1 {
+  background-color: transparent;
+  height: 1px;
+  left: 28px;
+  object-fit: cover;
+  position: absolute;
+  top: 41.97%;
+  width: calc(100.00% - 55px);
+}
+
+.prices-page-mobile .groupe-3017-GnWIh1 {
+  background-color: transparent;
+  bottom: calc(32.80% - 63px);
+  height: 193px;
+  left: 27px;
+  position: absolute;
+  width: calc(100.00% - 55px);
+}
+
+.prices-page-mobile .icon-check_mark-itEkx4 {
+  background-color: transparent;
+  height: 9px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(41.80% - 4px);
+  width: 13px;
+}
+
+.prices-page-mobile .licence-6-fire-itEkx4 {
+  background-color: transparent;
+  height: 17px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 216px;
+}
+
+.prices-page-mobile .icon-check_mark-ScsxiR {
+  background-color: transparent;
+  bottom: calc(40.53% - 4px);
+  height: 9px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  width: 13px;
+}
+
+.prices-page-mobile .accs-tous-les-articl-itEkx4 {
+  background-color: transparent;
+  height: 32px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.33% - 6px);
+  width: calc(100.00% - 27px);
+}
+
+.prices-page-mobile .icon-check_mark-ztEdif {
+  background-color: transparent;
+  height: 9px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 3px;
+  width: 13px;
+}
+
+.prices-page-mobile .accs-aux-bons-plans-itEkx4 {
+  background-color: transparent;
+  height: 17px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: calc(42.05% - 7px);
+  width: calc(100.00% - 29px);
+}
+
+.prices-page-mobile .icon-check_mark-uj2xEz {
+  background-color: transparent;
+  height: 9px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(18.45% - 2px);
+  width: 13px;
+}
+
+.prices-page-mobile .accs-aux-articles-pe-itEkx4 {
+  background-color: transparent;
+  bottom: calc(29.11% - 14px);
+  height: 47px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 29px);
+}
+
+.prices-page-mobile .icon-check_mark-WoI413 {
+  background-color: transparent;
+  bottom: 15px;
+  height: 9px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  width: 13px;
+}
+
+.prices-page-mobile .accs-aux-rencontres-itEkx4 {
+  background-color: transparent;
+  bottom: -2px;
+  height: 32px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 29px);
+}
+
+.prices-page-mobile .offre-sans-engagemen-GnWIh1 {
+  background-color: transparent;
+  bottom: 15px;
+  height: 32px;
+  left: 42px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 82px);
+}
+
+.prices-page-mobile .pour-les-dbutantsfrileux-GnWIh1 {
+  background-color: transparent;
+  height: 15px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(49.76% - 72px);
+  top: 39px;
+  width: 145px;
+}
+
+.prices-page-mobile .bloc-offre-8jsUKr {
+  background-color: transparent;
+  height: 657px;
+  left: 37px;
+  position: absolute;
+  top: calc(28.97% - 190px);
+  width: calc(100.00% - 74px);
+}
+
+.prices-page-mobile .rectangle-3589-rHLQVK {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3591-rHLQVK {
+  background-color: transparent;
+  height: 88px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page-mobile .intermdiaire-rHLQVK {
+  background-color: transparent;
+  height: 26px;
+  left: 53px;
+  letter-spacing: 0.60px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  width: calc(100.00% - 104px);
+}
+
+.prices-page-mobile .x9999-rHLQVK {
+  background-color: transparent;
+  height: 41px;
+  letter-spacing: 0.00px;
+  line-height: 32px;
+  position: absolute;
+  right: calc(49.30% - 69px);
+  text-align: center;
+  top: 98px;
+  width: 139px;
+}
+
+.prices-page-mobile .mois-rHLQVK {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.58% - 58px);
+  text-align: center;
+  top: calc(21.47% - 4px);
+  width: 118px;
+}
+
+.prices-page-mobile .button-commencer-rHLQVK {
+  background-color: transparent;
+  height: 53px;
+  left: 27px;
+  position: absolute;
+  top: calc(28.48% - 15px);
+  width: calc(100.00% - 54px);
+}
+
+.prices-page-mobile .rectangle-3590-7Y4M7a {
+  background-color: var(--milano-red);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .commencer-7Y4M7a {
+  background-color: transparent;
+  bottom: calc(46.73% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(49.44% - 59px);
+  text-align: center;
+  width: 120px;
+}
+
+.prices-page-mobile .ligne-34-rHLQVK {
+  background-color: transparent;
+  height: 1px;
+  left: 28px;
+  object-fit: cover;
+  position: absolute;
+  top: 37.62%;
+  width: calc(100.00% - 55px);
+}
+
+.prices-page-mobile .groupe-3016-rHLQVK {
+  background-color: transparent;
+  bottom: 87px;
+  height: 300px;
+  left: 27px;
+  position: absolute;
+  width: calc(100.00% - 54px);
+}
+
+.prices-page-mobile .accs-aux-options-de-la-licence-novice-Kk8PxH {
+  background-color: transparent;
+  height: 17px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 28px);
+}
+
+.prices-page-mobile .icon-check_mark-Kk8PxH {
+  background-color: transparent;
+  height: 9px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 3px;
+  width: 13px;
+}
+
+.prices-page-mobile .accs-au-bot-trading-Kk8PxH {
+  background-color: transparent;
+  height: 47px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 28px;
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .accs-nos-analyses-sur-les-marchs-Kk8PxH {
+  background-color: transparent;
+  height: 17px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: calc(30.29% - 5px);
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .accs-notre-portefeui-Kk8PxH {
+  background-color: transparent;
+  height: 32px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: calc(42.38% - 14px);
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .accs-aux-signaux-for-Kk8PxH {
+  background-color: transparent;
+  bottom: calc(38.17% - 18px);
+  height: 47px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .accs-nos-rsultats-Kk8PxH {
+  background-color: transparent;
+  bottom: calc(24.28% - 4px);
+  height: 17px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .accs-nos-outils-dana-Kk8PxH {
+  background-color: transparent;
+  bottom: 26px;
+  height: 32px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .icon-feather-plus-Kk8PxH {
+  background-color: transparent;
+  height: 9px;
+  left: 1px;
+  position: absolute;
+  top: 30px;
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-vIqYuj {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-vIqYuj {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .icon-feather-plus-okJcls {
+  background-color: transparent;
+  height: 9px;
+  left: 1px;
+  position: absolute;
+  top: calc(30.48% - 3px);
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-gb4bvP {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-gb4bvP {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .icon-feather-plus-aAnN36 {
+  background-color: transparent;
+  height: 9px;
+  left: 1px;
+  position: absolute;
+  top: calc(40.11% - 4px);
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-2HpzMV {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-2HpzMV {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .icon-feather-plus-aA2esr {
+  background-color: transparent;
+  bottom: calc(45.00% - 4px);
+  height: 9px;
+  left: 1px;
+  position: absolute;
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-N5oGTg {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-N5oGTg {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .icon-feather-plus-1Wk4Db {
+  background-color: transparent;
+  bottom: calc(25.33% - 2px);
+  height: 9px;
+  left: 1px;
+  position: absolute;
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-UzyNzd {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-UzyNzd {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .icon-feather-plus-YeDBhL {
+  background-color: transparent;
+  bottom: 46px;
+  height: 9px;
+  left: 1px;
+  position: absolute;
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-71Z9UQ {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-71Z9UQ {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .support-24h24-et-7j7-pour-les-membres-Kk8PxH {
+  background-color: transparent;
+  bottom: -2px;
+  height: 17px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .icon-feather-plus-3kvZxX {
+  background-color: transparent;
+  bottom: 3px;
+  height: 9px;
+  left: 0px;
+  position: absolute;
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-wR4UZs {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-wR4UZs {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .offre-sans-engagemen-rHLQVK {
+  background-color: transparent;
+  bottom: 12px;
+  height: 32px;
+  left: 42px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 82px);
+}
+
+.prices-page-mobile .pour-les-ambitieux-qui-veulent-trader-rHLQVK {
+  background-color: transparent;
+  height: 18px;
+  left: 75px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  top: 39px;
+  width: calc(100.00% - 147px);
+}
+
+.prices-page-mobile .bloc-offre-hma2Iq {
+  background-color: transparent;
+  height: 625px;
+  left: 37px;
+  position: absolute;
+  top: calc(49.55% - 310px);
+  width: calc(100.00% - 74px);
+}
+
+.prices-page-mobile .rectangle-3597-pvIpeS {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3598-pvIpeS {
+  background-color: transparent;
+  height: 87px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page-mobile .partenaire-6-fire-pvIpeS {
+  background-color: transparent;
+  height: 26px;
+  left: 53px;
+  letter-spacing: 0.60px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 23px;
+  width: calc(100.00% - 104px);
+}
+
+.prices-page-mobile .x19999-pvIpeS {
+  background-color: transparent;
+  height: 41px;
+  letter-spacing: 0.00px;
+  line-height: 32px;
+  position: absolute;
+  right: calc(49.48% - 79px);
+  text-align: center;
+  top: calc(16.61% - 7px);
+  width: 160px;
+}
+
+.prices-page-mobile .mois-pvIpeS {
+  background-color: transparent;
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.58% - 59px);
+  text-align: center;
+  top: calc(22.37% - 4px);
+  width: 118px;
+}
+
+.prices-page-mobile .ligne-36-pvIpeS {
+  background-color: transparent;
+  height: 1px;
+  left: 28px;
+  object-fit: cover;
+  position: absolute;
+  top: 41.15%;
+  width: calc(100.00% - 55px);
+}
+
+.prices-page-mobile .groupe-3018-pvIpeS {
+  background-color: transparent;
+  bottom: calc(25.67% - 41px);
+  height: 159px;
+  left: 27px;
+  position: absolute;
+  width: calc(100.00% - 54px);
+}
+
+.prices-page-mobile .accs-aux-options-de-jyUEwT {
+  background-color: transparent;
+  height: 32px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 28px);
+}
+
+.prices-page-mobile .icon-check_mark-jyUEwT {
+  background-color: transparent;
+  height: 9px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 4px;
+  width: 13px;
+}
+
+.prices-page-mobile .accs-au-groupe-whats-jyUEwT {
+  background-color: transparent;
+  height: 32px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.07% - 11px);
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .contact-en-temps-rel-jyUEwT {
+  background-color: transparent;
+  bottom: calc(32.26% - 11px);
+  height: 35px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .un-call-une-fois-par-jyUEwT {
+  background-color: transparent;
+  bottom: -2px;
+  height: 32px;
+  left: 30px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 30px);
+}
+
+.prices-page-mobile .icon-feather-plus-jyUEwT {
+  background-color: transparent;
+  height: 9px;
+  left: 0px;
+  position: absolute;
+  top: calc(30.36% - 3px);
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-WEwQLo {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-WEwQLo {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .icon-feather-plus-8GBn3H {
+  background-color: transparent;
+  bottom: calc(41.52% - 4px);
+  height: 9px;
+  left: 0px;
+  position: absolute;
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-Xuxr58 {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-Xuxr58 {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .icon-feather-plus-UMZO1Y {
+  background-color: transparent;
+  bottom: 19px;
+  height: 9px;
+  left: 0px;
+  position: absolute;
+  width: 9px;
+}
+
+.prices-page-mobile .trac-1043-iuNXTp {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 50.00%;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+.prices-page-mobile .trac-1044-iuNXTp {
+  background-color: transparent;
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: calc(100.00% + 1px);
+}
+
+.prices-page-mobile .offre-sans-engagemen-pvIpeS {
+  background-color: transparent;
+  bottom: 18px;
+  height: 26px;
+  left: 42px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 82px);
+}
+
+.prices-page-mobile .x20-pvIpeS {
+  background-color: transparent;
+  height: 41px;
+  left: 27px;
+  letter-spacing: 0.96px;
+  line-height: 32px;
+  position: absolute;
+  text-align: left;
+  top: calc(48.79% - 20px);
+  width: 45px;
+}
+
+.prices-page-mobile .places-disponiblesuniquement-pvIpeS {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 400;
+  height: 52px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  right: 40px;
+  text-align: left;
+  top: calc(48.77% - 25px);
+  width: 234px;
+}
+
+.prices-page-mobile .button-commencer-pvIpeS {
+  background-color: transparent;
+  height: 53px;
+  left: 28px;
+  position: absolute;
+  top: calc(31.82% - 17px);
+  width: calc(100.00% - 56px);
+}
+
+.prices-page-mobile .rectangle-3609-ZHfbXM {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .commencer-ZHfbXM {
+  background-color: transparent;
+  bottom: calc(46.73% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(49.44% - 59px);
+  text-align: center;
+  width: 120px;
+}
+
+.prices-page-mobile .background-8jsUKr {
+  background-color: var(--licorice);
+  bottom: 313px;
+  height: 1300px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.prices-page-mobile .offre-annuelle-IrLseF {
+  background-color: transparent;
+  bottom: calc(39.09% - 10px);
+  height: 26px;
+  left: 69px;
+  letter-spacing: 0.60px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 136px);
+}
+
+.prices-page-mobile .bloc-offre-37TfT9 {
+  background-color: transparent;
+  bottom: calc(32.38% - 103px);
+  height: 318px;
+  left: 37px;
+  position: absolute;
+  width: calc(100.00% - 74px);
+}
+
+.prices-page-mobile .rectangle-3592-encbbU {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3593-encbbU {
+  background-color: transparent;
+  height: 84px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: -6px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page-mobile .novice-encbbU {
+  background-color: transparent;
+  height: 26px;
+  letter-spacing: 0.60px;
+  line-height: 20px;
+  position: absolute;
+  right: calc(48.87% - 65px);
+  text-align: center;
+  top: 13px;
+  width: 133px;
+}
+
+.prices-page-mobile .x55999-encbbU {
+  background-color: transparent;
+  height: 41px;
+  letter-spacing: 0.00px;
+  line-height: 32px;
+  position: absolute;
+  right: calc(49.23% - 78px);
+  text-align: center;
+  top: calc(33.94% - 14px);
+  width: 159px;
+}
+
+.prices-page-mobile .pour-un-an-encbbU {
+  background-color: transparent;
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.58% - 58px);
+  text-align: center;
+  top: calc(44.19% - 8px);
+  width: 118px;
+}
+
+.prices-page-mobile .conomisez-50-euros-e-encbbU {
+  background-color: transparent;
+  bottom: calc(39.72% - 14px);
+  height: 36px;
+  left: 42px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 82px);
+}
+
+.prices-page-mobile .licence-annuelle-encbbU {
+  background-color: transparent;
+  height: 17px;
+  left: 39px;
+  object-fit: cover;
+  position: absolute;
+  top: 37px;
+  width: calc(100.00% - 78px);
+}
+
+.prices-page-mobile .button-commencer-encbbU {
+  background-color: transparent;
+  bottom: 28px;
+  height: 53px;
+  left: 28px;
+  position: absolute;
+  width: calc(100.00% - 56px);
+}
+
+.prices-page-mobile .rectangle-3609-wkOENT {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .commencer-wkOENT {
+  background-color: transparent;
+  bottom: calc(46.73% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(49.44% - 59px);
+  text-align: center;
+  width: 120px;
+}
+
+.prices-page-mobile .bloc-offre-rm2NvY {
+  background-color: transparent;
+  bottom: calc(21.79% - 76px);
+  height: 350px;
+  left: 37px;
+  position: absolute;
+  width: calc(100.00% - 74px);
+}
+
+.prices-page-mobile .rectangle-3592-53FdLF {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: calc(100.00% - 32px);
+  left: 0px;
+  position: absolute;
+  top: 32px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3593-53FdLF {
+  background-color: transparent;
+  height: 89px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: 26px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page-mobile .inter-mdiaire-53FdLF {
+  background-color: transparent;
+  height: 26px;
+  left: 59px;
+  letter-spacing: 0.60px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 52px;
+  width: calc(100.00% - 115px);
+}
+
+.prices-page-mobile .x59999-53FdLF {
+  background-color: transparent;
+  height: 41px;
+  letter-spacing: 0.00px;
+  line-height: 32px;
+  position: absolute;
+  right: calc(49.48% - 79px);
+  text-align: center;
+  top: calc(42.39% - 17px);
+  width: 160px;
+}
+
+.prices-page-mobile .pour-un-an-53FdLF {
+  background-color: transparent;
+  bottom: calc(48.95% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.79% - 59px);
+  text-align: center;
+  width: 119px;
+}
+
+.prices-page-mobile .conomisez-600-euros-53FdLF {
+  background-color: transparent;
+  bottom: calc(29.62% - 11px);
+  height: 36px;
+  left: 42px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 82px);
+}
+
+.prices-page-mobile .licence-annuelle-53FdLF {
+  background-color: transparent;
+  height: 15px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(49.47% - 81px);
+  top: calc(22.69% - 3px);
+  width: 164px;
+}
+
+.prices-page-mobile .rectangle-3608-53FdLF {
+  background: linear-gradient(100.68deg, #ffee7e 10.7%, #feda28 24.68%, #fdbe00 49.39%, #e1872f 87.09%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: calc(100.00% - 312px);
+  left: 93px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 184px);
+}
+
+.prices-page-mobile .best-seller-53FdLF {
+  background-color: transparent;
+  height: 38px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(49.58% - 58px);
+  top: 3px;
+  width: 116px;
+}
+
+.prices-page-mobile .button-commencer-53FdLF {
+  background-color: transparent;
+  bottom: 22px;
+  height: 53px;
+  left: 28px;
+  position: absolute;
+  width: calc(100.00% - 56px);
+}
+
+.prices-page-mobile .rectangle-3609-0YzsLD {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .commencer-0YzsLD {
+  background-color: transparent;
+  bottom: calc(46.73% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(49.44% - 59px);
+  text-align: center;
+  width: 120px;
+}
+
+.prices-page-mobile .bloc-offre-qJdcxZ {
+  background-color: transparent;
+  bottom: 393px;
+  height: 350px;
+  left: 37px;
+  position: absolute;
+  width: calc(100.00% - 74px);
+}
+
+.prices-page-mobile .rectangle-3592-uzZnKO {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: calc(100.00% - 32px);
+  left: 0px;
+  position: absolute;
+  top: 32px;
+  width: 100%;
+}
+
+.prices-page-mobile .rectangle-3593-uzZnKO {
+  background-color: transparent;
+  height: 91px;
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: 26px;
+  width: calc(100.00% + 18px);
+}
+
+.prices-page-mobile .partenaire-uzZnKO {
+  background-color: transparent;
+  height: 26px;
+  left: 59px;
+  letter-spacing: 0.60px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 48px;
+  width: calc(100.00% - 115px);
+}
+
+.prices-page-mobile .x79999-uzZnKO {
+  background-color: transparent;
+  height: 41px;
+  letter-spacing: 0.00px;
+  line-height: 32px;
+  position: absolute;
+  right: calc(48.97% - 78px);
+  text-align: center;
+  top: calc(42.72% - 18px);
+  width: 160px;
+}
+
+.prices-page-mobile .pour-un-an-uzZnKO {
+  background-color: transparent;
+  bottom: calc(48.65% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.36% - 59px);
+  text-align: center;
+  width: 119px;
+}
+
+.prices-page-mobile .conomisez-1600-euros-uzZnKO {
+  background-color: transparent;
+  bottom: calc(27.07% - 10px);
+  height: 36px;
+  left: 42px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 82px);
+}
+
+.prices-page-mobile .licence-annuelle-uzZnKO {
+  background-color: transparent;
+  height: 17px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(49.43% - 45px);
+  top: calc(21.62% - 4px);
+  width: 91px;
+}
+
+.prices-page-mobile .rectangle-3610-uzZnKO {
+  background: linear-gradient(100.68deg, #ffee7e 10.7%, #feda28 24.68%, #fdbe00 49.39%, #e1872f 87.09%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: calc(100.00% - 312px);
+  left: 92px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 184px);
+}
+
+.prices-page-mobile .best-seller-uzZnKO {
+  background-color: transparent;
+  height: 38px;
+  left: calc(50.00% - 58px);
+  object-fit: cover;
+  position: absolute;
+  top: 3px;
+  width: 116px;
+}
+
+.prices-page-mobile .button-commencer-uzZnKO {
+  background-color: transparent;
+  bottom: 16px;
+  height: 53px;
+  left: 28px;
+  position: absolute;
+  width: calc(100.00% - 56px);
+}
+
+.prices-page-mobile .rectangle-3609-x91oWC {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.prices-page-mobile .commencer-x91oWC {
+  background-color: transparent;
+  bottom: calc(46.73% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(49.44% - 59px);
+  text-align: center;
+  width: 120px;
+}
+@media screen and (max-width: 1365px) {
+  .screen.prices-page { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) {
+  .screen.prices-page-mobile { 
+    display: none;
+   }
+}

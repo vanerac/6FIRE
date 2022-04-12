@@ -1,0 +1,2519 @@
+/* screen - trading */
+
+.trading {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 1382px;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.trading .groupe-de-masques-333-3LBGsu {
+  background-color: transparent;
+  height: 153px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.trading .background-3LBGsu {
+  background: linear-gradient(98.53deg, rgba(179, 15, 16, 0.6) 18.39%, rgba(154, 4, 2, 0.6) 43.91%);
+  background-color: transparent;
+  height: 153px;
+  left: 0px;
+  opacity: 0.6;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.trading .background-wsIV14 {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 89.61%);
+  background-color: transparent;
+  bottom: calc(46.87% - 386px);
+  height: 823px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading .footer-3LBGsu {
+  background-color: transparent;
+  bottom: 0px;
+  height: 210px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading .background-d1QyT8 {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .menu-footer-d1QyT8 {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: 185px;
+  top: calc(47.37% - 9px);
+  width: 470px;
+}
+
+.trading .mentions-lgales-5TxomC {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 70px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.trading .cgu-5TxomC {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: calc(45.12% - 13px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.trading .cgv-5TxomC {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(44.47% - 12px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.trading .politique-de-confidentialit-5TxomC {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading .politique-de-confidentialit-akcOt5 {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 0px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading .contact-5TxomC {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.trading .x2022-6-fire-invest-d1QyT8 {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.88% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.trading .logo-d1QyT8 {
+  background-color: transparent;
+  height: 58px;
+  left: 191px;
+  position: absolute;
+  top: calc(33.01% - 19px);
+  width: 199px;
+}
+
+.trading .groupe-2-bdR4xa {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.trading .groupe-1-qHE9Ze {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .effect-bdR4xa {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.trading .ligne-31-d1QyT8 {
+  background-color: transparent;
+  bottom: 31.58%;
+  height: 1px;
+  left: 72px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 143px);
+}
+
+.trading .groupe-3011-d1QyT8 {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: 215px;
+  top: calc(26.53% - 6px);
+  width: 21px;
+}
+
+.trading .icon-instagram-T7a3oB {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading .groupe-3010-d1QyT8 {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 185px;
+  top: calc(26.87% - 5px);
+  width: 16px;
+}
+
+.trading .icon-simple-tiktok-NVC3AW {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading .header-3LBGsu {
+  background-color: transparent;
+  height: 144px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .rectangle-3483-6cQg9k {
+  background-color: var(--midnight-moss);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .logo-6cQg9k {
+  background-color: transparent;
+  cursor: pointer;
+  height: 59px;
+  left: calc(50.00% - 44px);
+  position: absolute;
+  top: 17px;
+  width: 88px;
+}
+
+.trading .effect-OoFcV0 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .thme-sombre-6cQg9k {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: calc(18.74% - 9px);
+  top: calc(30.33% - 4px);
+  width: 48px;
+}
+
+.trading .icon-ionic-ios-moon-DstnpQ {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+
+.trading .toogle-button-DstnpQ {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 25px;
+}
+
+.trading .rectangle-3485-n8TF81 {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .ellipse-17688-n8TF81 {
+  background-color: var(--cape-cod);
+  border-radius: 5px;
+  height: calc(100.00% - 4px);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 10px;
+}
+
+.trading .menu-6cQg9k {
+  background-color: transparent;
+  bottom: 0px;
+  height: 51px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading .rectangle-3484-ClRQwi {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .espace-trading-crypto-ClRQwi {
+  background-color: transparent;
+  height: 17px;
+  left: 197px;
+  position: absolute;
+  top: calc(45.59% - 8px);
+  width: 152px;
+}
+
+.trading .formations-44lpWH {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.trading .ligne-8-44lpWH {
+  background-color: transparent;
+  bottom: -18px;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% + 4px);
+}
+
+.trading .formations-ClRQwi {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  left: calc(29.94% - 29px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 98px;
+}
+
+.trading .formations-mZuVQC {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 72px;
+}
+
+.trading .icon-actif-mZuVQC {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .ellipse-17693-qUpmzN {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .font-awsome-graduation-cap-qUpmzN {
+  background-color: transparent;
+  bottom: 7px;
+  height: 7px;
+  object-fit: cover;
+  position: absolute;
+  right: 3px;
+  width: 15px;
+}
+
+.trading .forex-ClRQwi {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  left: calc(39.04% - 25px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 64px;
+}
+
+.trading .formations-EcY8hl {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 37px;
+}
+
+.trading .icon-actif-EcY8hl {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .ellipse-17693-Cr03Va {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .font-awsome-dollar-sign-Cr03Va {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 7px;
+  top: 5px;
+  width: 6px;
+}
+
+.trading .crypto-wallet-ClRQwi {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  left: calc(48.14% - 55px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.trading .formations-NFBClv {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.trading .icon-actif-NFBClv {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .ellipse-17693-Cjx5Iy {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .font-awsome-wallet-Cjx5Iy {
+  background-color: transparent;
+  bottom: 5px;
+  height: 9px;
+  left: 5px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 10px);
+}
+
+.trading .bot-trading-ClRQwi {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  position: absolute;
+  right: calc(40.27% - 46px);
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.trading .formations-wZIZgl {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.trading .icon-actif-wZIZgl {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .ellipse-17693-lbc4XJ {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .icon-awesome-robot-lbc4XJ {
+  background-color: transparent;
+  height: calc(100.00% - 10px);
+  left: 4px;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: calc(100.00% - 8px);
+}
+
+.trading .trading-ClRQwi {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: calc(27.69% - 36px);
+  top: 0px;
+  width: 131px;
+}
+
+.trading .rectangle-3556-ktIixg {
+  background-color: var(--milano-red);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .trading-ktIixg {
+  background-color: transparent;
+  bottom: calc(44.83% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 14px;
+  text-align: left;
+  width: 70px;
+}
+
+.trading .icon-actif-ktIixg {
+  background-color: transparent;
+  height: calc(100.00% - 31px);
+  left: 17px;
+  position: absolute;
+  top: 16px;
+  width: 20px;
+}
+
+.trading .ellipse-17693-71gOqs {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.trading .icon-simple-graphcool-71gOqs {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 9px;
+}
+
+.trading .espace-membre-6cQg9k {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 112px;
+  top: calc(29.92% - 5px);
+  width: 83px;
+}
+
+.trading .connexion-nsoLx4 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .club-premium-uUcr3T {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.trading .menu-2-6cQg9k {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 50px;
+  top: calc(31.11% - 3px);
+  width: 27px;
+}
+
+.trading .icon-ionic-ios-menu-iVxI5x {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .trac-1-iD03l0 {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .trac-2-iD03l0 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.trading .search-bar-6cQg9k {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: 87px;
+  top: calc(30.33% - 4px);
+  width: 14px;
+}
+
+.trading .icon-search-7x903f {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .h2-3LBGsu {
+  background-color: transparent;
+  height: 42px;
+  left: 196px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  top: 181px;
+  width: 460px;
+}
+
+.trading .paragraph-3LBGsu {
+  background-color: transparent;
+  height: 56px;
+  left: 196px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  top: 221px;
+  width: 460px;
+}
+
+.trading .button-cration-de-compte-3LBGsu {
+  background-color: transparent;
+  height: 40px;
+  position: absolute;
+  right: calc(29.51% - 57px);
+  top: 200px;
+  width: 193px;
+}
+
+.trading .rectangle-3470-JJ0G8n {
+  background-color: transparent;
+  border: 0.8px solid var(--white);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .support-telegram-JJ0G8n {
+  background-color: transparent;
+  bottom: calc(45.65% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.65% - 35px);
+  text-align: left;
+  width: 97px;
+}
+
+.trading .icon-awesome-telegram-JJ0G8n {
+  background-color: transparent;
+  height: 17px;
+  left: calc(21.17% - 4px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(50.00% - 9px);
+  width: 17px;
+}
+
+.trading .button-cration-de-compte-wsIV14 {
+  background-color: transparent;
+  height: 40px;
+  position: absolute;
+  right: 141px;
+  top: 200px;
+  width: 193px;
+}
+
+.trading .trac-1041-eLBtOU {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .support-whats-app-eLBtOU {
+  background-color: transparent;
+  bottom: calc(45.01% - 9px);
+  height: 20px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(34.86% - 37px);
+  text-align: left;
+  width: 106px;
+}
+
+.trading .icon-ionic-logo-whatsapp-eLBtOU {
+  background-color: transparent;
+  bottom: calc(50.00% - 8px);
+  height: 16px;
+  left: calc(18.28% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 16px;
+}
+
+.trading .icon-actif-3LBGsu {
+  background-color: transparent;
+  height: calc(100.00% - 1343px);
+  left: 519px;
+  position: absolute;
+  top: 506px;
+  width: 39px;
+}
+
+.trading .ellipse-17693-HY07wG {
+  background-color: var(--white);
+  border-radius: 19.48px;
+  height: 39px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading .font-awsome-graduation-cap-HY07wG {
+  background-color: transparent;
+  bottom: 13px;
+  height: 13px;
+  object-fit: cover;
+  position: absolute;
+  right: 5px;
+  width: 29px;
+}
+
+.trading .avertissement-3LBGsu {
+  background-color: transparent;
+  bottom: 210px;
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading .groupe-3020-oVxWK7 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .rectangle-3606-IAQthO {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .les-investissements-IAQthO {
+  background-color: transparent;
+  height: 35px;
+  left: 135px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  width: calc(100.00% - 268px);
+}
+
+.trading .span0-1O0YCE {
+}
+
+.trading .span1-1O0YCE {
+}
+
+.trading .ligne-41-oVxWK7 {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading .ellipse-17698-3LBGsu {
+  background-color: transparent;
+  border-radius: 189.5px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 379px;
+  position: absolute;
+  right: calc(49.75% - 189px);
+  top: calc(47.06% - 178px);
+  width: 379px;
+}
+
+.trading .paragraph-wsIV14 {
+  background-color: transparent;
+  height: 19px;
+  left: 140px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(36.10% - 7px);
+  width: 358px;
+}
+
+.trading .icon-actif-wsIV14 {
+  background-color: transparent;
+  height: calc(100.00% - 1343px);
+  left: 470px;
+  position: absolute;
+  top: 685px;
+  width: 39px;
+}
+
+.trading .ellipse-17693-9XUwTz {
+  background-color: var(--white);
+  border-radius: 19.48px;
+  height: 39px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading .font-awsome-dollar-sign-9XUwTz {
+  background-color: transparent;
+  height: 20px;
+  object-fit: cover;
+  position: absolute;
+  right: 14px;
+  top: 9px;
+  width: 12px;
+}
+
+.trading .paragraph-WACo3F {
+  background-color: transparent;
+  bottom: calc(47.29% - 25px);
+  height: 53px;
+  left: 196px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 265px;
+}
+
+.trading .paragraph-CYhAka {
+  background-color: transparent;
+  height: 66px;
+  left: 140px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: calc(39.44% - 26px);
+  width: 350px;
+}
+
+.trading .ligne-37-3LBGsu {
+  background-color: transparent;
+  bottom: 870px;
+  height: 2px;
+  left: 140px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1292px);
+}
+
+.trading .paragraph-8BChM2 {
+  background-color: transparent;
+  height: 19px;
+  left: 196px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(49.56% - 9px);
+  width: 62px;
+}
+
+.trading .ligne-38-3LBGsu {
+  background-color: transparent;
+  bottom: 686px;
+  height: 2px;
+  left: 196px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1333px);
+}
+
+.trading .icon-actif-WACo3F {
+  background-color: transparent;
+  height: calc(100.00% - 1344px);
+  left: 842px;
+  position: absolute;
+  top: 544px;
+  width: 38px;
+}
+
+.trading .ellipse-17693-Y55Uhp {
+  background-color: var(--white);
+  border-radius: 19.25px;
+  height: 38px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 38px;
+}
+
+.trading .font-awsome-wallet-Y55Uhp {
+  background-color: transparent;
+  bottom: 10px;
+  height: 18px;
+  left: 9px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 18px);
+}
+
+.trading .paragraph-Jqjrbf {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 108px;
+  text-align: left;
+  top: calc(38.52% - 7px);
+  width: 358px;
+}
+
+.trading .paragraph-wmWWGn {
+  background-color: transparent;
+  height: 65px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  right: 108px;
+  text-align: left;
+  top: calc(41.91% - 27px);
+  width: 358px;
+}
+
+.trading .ligne-39-3LBGsu {
+  background-color: transparent;
+  bottom: 837px;
+  height: 2px;
+  left: 900px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1292px);
+}
+
+.trading .icon-actif-CYhAka {
+  background-color: transparent;
+  height: calc(100.00% - 1343px);
+  left: 827px;
+  position: absolute;
+  top: 761px;
+  width: 39px;
+}
+
+.trading .ellipse-17693-eZI6fo {
+  background-color: var(--white);
+  border-radius: 19.48px;
+  height: 39px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading .icon-awesome-robot-eZI6fo {
+  background-color: transparent;
+  height: calc(100.00% - 20px);
+  left: 8px;
+  object-fit: cover;
+  position: absolute;
+  top: 10px;
+  width: calc(100.00% - 16px);
+}
+
+.trading .paragraph-cxW2ZF {
+  background-color: transparent;
+  bottom: calc(43.95% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 123px;
+  text-align: left;
+  width: 358px;
+}
+
+.trading .paragraph-V9zAaz {
+  background-color: transparent;
+  bottom: calc(39.20% - 32px);
+  height: 81px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 108px;
+  text-align: left;
+  width: 373px;
+}
+
+.trading .ligne-40-3LBGsu {
+  background-color: transparent;
+  bottom: 598px;
+  height: 2px;
+  left: 885px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1292px);
+}
+
+.trading .logo-3LBGsu {
+  background-color: transparent;
+  height: 154px;
+  position: absolute;
+  right: calc(49.82% - 116px);
+  top: calc(47.64% - 73px);
+  width: 232px;
+}
+
+.trading .effect-nP8fOC {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .h2-wsIV14 {
+  background-color: transparent;
+  height: 20px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  right: calc(49.85% - 196px);
+  text-align: center;
+  top: calc(25.18% - 5px);
+  width: 393px;
+}
+
+.trading .paragraph-AmCkS5 {
+  background-color: transparent;
+  height: 50px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(49.88% - 259px);
+  text-align: center;
+  top: calc(27.55% - 14px);
+  width: 520px;
+}
+
+.trading .bouton-affi-3LBGsu {
+  background-color: transparent;
+  bottom: calc(23.83% - 9px);
+  height: 39px;
+  position: absolute;
+  right: 421px;
+  width: 247px;
+}
+
+.trading .rectangle-8-uw4ETs {
+  background-color: var(--bright-sun);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .binance-svgrepo-com-uw4ETs {
+  background-color: transparent;
+  height: 18px;
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(50.00% - 9px);
+  width: 18px;
+}
+
+.trading .c-rer-un-compte-binance-uw4ETs {
+  background-color: transparent;
+  bottom: calc(45.24% - 8px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(42.50% - 74px);
+  text-align: left;
+  width: 173px;
+}
+
+.trading .icon-ionic-ios-arrow-round-forward-uw4ETs {
+  background-color: transparent;
+  height: 8px;
+  object-fit: cover;
+  position: absolute;
+  right: 15px;
+  top: calc(50.00% - 4px);
+  width: 12px;
+}
+
+.trading .bouton-affi-wsIV14 {
+  background-color: transparent;
+  bottom: calc(23.83% - 9px);
+  height: 39px;
+  position: absolute;
+  right: 697px;
+  width: 247px;
+}
+
+.trading .rectangle-8-B3xtBx {
+  background-color: var(--blue-ribbon);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .crer-un-compte-puprime-B3xtBx {
+  background-color: transparent;
+  bottom: calc(45.24% - 8px);
+  color: var(--white);
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 700;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(16.74% - 33px);
+  text-align: left;
+  width: 196px;
+}
+
+.trading .icon-ionic-ios-arrow-round-forward-B3xtBx {
+  background-color: transparent;
+  height: 8px;
+  object-fit: cover;
+  position: absolute;
+  right: 15px;
+  top: calc(50.00% - 4px);
+  width: 12px;
+}
+
+.trading .groupe-3019-B3xtBx {
+  background-color: transparent;
+  bottom: calc(50.00% - 9px);
+  height: 18px;
+  left: 19px;
+  position: absolute;
+  width: 18px;
+}
+
+.trading .groupe-3019-MO4hLn {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading .icon-actif-8BChM2 {
+  background-color: transparent;
+  height: calc(100.00% - 1343px);
+  left: 587px;
+  position: absolute;
+  top: 826px;
+  width: 39px;
+}
+
+.trading .ellipse-17693-UNuVUC {
+  background-color: var(--white);
+  border-radius: 19.5px;
+  height: 39px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading .icon-simple-graphcool-UNuVUC {
+  background-color: transparent;
+  height: 21px;
+  object-fit: cover;
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  width: 18px;
+}
+
+.trading .paragraph-NYxpqZ {
+  background-color: transparent;
+  bottom: calc(36.54% - 7px);
+  height: 19px;
+  left: calc(34.52% - 124px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 358px;
+}
+
+.trading .paragraph-ax1V3m {
+  background-color: transparent;
+  bottom: calc(32.27% - 21px);
+  height: 65px;
+  left: calc(34.52% - 124px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 358px;
+}
+
+.trading .ligne-41-3LBGsu {
+  background-color: transparent;
+  bottom: 497px;
+  height: 2px;
+  left: 348px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1292px);
+}
+/* screen - trading-mobile */
+
+.trading-mobile {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 1755px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.trading-mobile .avertissement-vUb3bC {
+  background-color: transparent;
+  bottom: 202px;
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-mobile .groupe-3020-lgq5el {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .rectangle-3606-dXcxo5 {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .les-investissements-dXcxo5 {
+  background-color: transparent;
+  height: 79px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 17px;
+  width: calc(100.00% - 52px);
+}
+
+.trading-mobile .span0-nCIvo6 {
+}
+
+.trading-mobile .span1-nCIvo6 {
+}
+
+.trading-mobile .ligne-41-lgq5el {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .footer-vUb3bC {
+  background-color: transparent;
+  bottom: -1px;
+  height: 203px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-mobile .background-8P3C0B {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .menu-footer-8P3C0B {
+  background-color: transparent;
+  bottom: calc(40.37% - 17px);
+  height: 42px;
+  left: calc(50.00% - 108px);
+  position: absolute;
+  width: 216px;
+}
+
+.trading-mobile .mentions-lgales-ewEpRC {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(40.97% - 45px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.trading-mobile .cgu-ewEpRC {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 4px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.trading-mobile .cgv-ewEpRC {
+  background-color: transparent;
+  bottom: -3px;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.trading-mobile .politique-de-confidentialit-ewEpRC {
+  background-color: transparent;
+  bottom: -5px;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.trading-mobile .contact-ewEpRC {
+  background-color: transparent;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.trading-mobile .x2022-6-fire-invest-8P3C0B {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.46% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.trading-mobile .logo-8P3C0B {
+  background-color: transparent;
+  height: 58px;
+  left: 10px;
+  position: absolute;
+  top: 18px;
+  width: 199px;
+}
+
+.trading-mobile .groupe-2-VHUnz2 {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.trading-mobile .groupe-1-6af2Ca {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .effect-VHUnz2 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.trading-mobile .ligne-31-8P3C0B {
+  background-color: transparent;
+  bottom: 26.73%;
+  height: 1px;
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 76px);
+}
+
+.trading-mobile .groupe-3011-8P3C0B {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: calc(22.45% - 5px);
+  top: calc(20.19% - 4px);
+  width: 21px;
+}
+
+.trading-mobile .icon-instagram-Zw9ntt {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-mobile .groupe-3010-8P3C0B {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 61px;
+  top: calc(20.64% - 4px);
+  width: 16px;
+}
+
+.trading-mobile .icon-simple-tiktok-9g9uxN {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-mobile .icon-paper_plane-8P3C0B {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 25px;
+  top: calc(20.64% - 4px);
+  width: 21px;
+}
+
+.trading-mobile .background-vUb3bC {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 89.61%);
+  background-color: transparent;
+  bottom: calc(46.09% - 497px);
+  height: 1078px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-mobile .groupe-de-masques-333-vUb3bC {
+  background-color: transparent;
+  height: 245px;
+  left: -327px;
+  object-fit: cover;
+  position: absolute;
+  top: 153px;
+  width: calc(100.00% + 938px);
+}
+
+.trading-mobile .background-538M6x {
+  background: linear-gradient(127.48deg, rgba(179, 15, 16, 0.6) 17.69%, rgba(154, 4, 2, 0.6) 45.7%);
+  background-color: transparent;
+  height: 245px;
+  left: 0px;
+  opacity: 0.6;
+  position: absolute;
+  top: 153px;
+  width: 100%;
+}
+
+.trading-mobile .h2-vUb3bC {
+  background-color: transparent;
+  height: 41px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  top: 183px;
+  width: calc(100.00% - 55px);
+}
+
+.trading-mobile .paragraph-vUb3bC {
+  background-color: transparent;
+  height: 75px;
+  left: 29px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 228px;
+  width: calc(100.00% - 55px);
+}
+
+.trading-mobile .button-cration-de-compte-vUb3bC {
+  background-color: transparent;
+  height: 40px;
+  left: 15px;
+  position: absolute;
+  top: calc(18.60% - 7px);
+  width: 193px;
+}
+
+.trading-mobile .rectangle-3470-nPLtda {
+  background-color: transparent;
+  border: 0.8px solid var(--white);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .support-telegram-nPLtda {
+  background-color: transparent;
+  bottom: calc(45.65% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.65% - 35px);
+  text-align: left;
+  width: 97px;
+}
+
+.trading-mobile .icon-awesome-telegram-nPLtda {
+  background-color: transparent;
+  height: 17px;
+  left: calc(21.17% - 4px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(50.00% - 9px);
+  width: 17px;
+}
+
+.trading-mobile .button-cration-de-compte-538M6x {
+  background-color: transparent;
+  height: 40px;
+  position: absolute;
+  right: 15px;
+  top: calc(18.60% - 7px);
+  width: 193px;
+}
+
+.trading-mobile .trac-1041-ISpbmZ {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .support-whats-app-ISpbmZ {
+  background-color: transparent;
+  bottom: calc(45.01% - 9px);
+  height: 20px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(34.86% - 37px);
+  text-align: left;
+  width: 106px;
+}
+
+.trading-mobile .icon-ionic-logo-whatsapp-ISpbmZ {
+  background-color: transparent;
+  bottom: calc(50.00% - 8px);
+  height: 16px;
+  left: calc(18.28% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 16px;
+}
+
+.trading-mobile .header-vUb3bC {
+  background-color: transparent;
+  height: 153px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .rectangle-3484-839stC {
+  background-color: var(--black-3);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .logo-839stC {
+  background-color: transparent;
+  height: 86px;
+  position: absolute;
+  right: calc(49.68% - 64px);
+  top: 4px;
+  width: 128px;
+}
+
+.trading-mobile .effect-vJpkXv {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.trading-mobile .toogle-button-839stC {
+  background-color: transparent;
+  height: 18px;
+  left: 37px;
+  position: absolute;
+  top: calc(28.31% - 5px);
+  width: 58px;
+}
+
+.trading-mobile .icon-ionic-ios-moon-8UAiU3 {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 17px;
+}
+
+.trading-mobile .toogle-button-8UAiU3 {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 32px;
+}
+
+.trading-mobile .rectangle-3485-Ezm9dF {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .ellipse-17688-Ezm9dF {
+  background-color: var(--cape-cod);
+  border-radius: 6.41px;
+  height: calc(100.00% - 5px);
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 13px;
+}
+
+.trading-mobile .search-bar-839stC {
+  background-color: transparent;
+  height: 22px;
+  position: absolute;
+  right: 37px;
+  top: calc(26.28% - 6px);
+  width: 22px;
+}
+
+.trading-mobile .icon-search-e7K3Dx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .rectangle-3607-839stC {
+  background-color: var(--licorice);
+  bottom: 0px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-mobile .menu-839stC {
+  background-color: transparent;
+  bottom: calc(17.71% - 2px);
+  height: 9px;
+  position: absolute;
+  right: 37px;
+  width: 27px;
+}
+
+.trading-mobile .icon-ionic-ios-menu-8z3wcR {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .trac-1-jvpYHI {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .trac-2-jvpYHI {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.trading-mobile .espace-trading-crypto-839stC {
+  background-color: transparent;
+  bottom: 1px;
+  height: 37px;
+  left: 16px;
+  position: absolute;
+  width: 158px;
+}
+
+.trading-mobile .formations-N4t7Oo {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 4px);
+}
+
+.trading-mobile .ligne-8-N4t7Oo {
+  background-color: transparent;
+  bottom: -1px;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.trading-mobile .titre-vUb3bC {
+  background-color: transparent;
+  height: 115px;
+  left: 29px;
+  position: absolute;
+  top: calc(26.10% - 30px);
+  width: calc(100.00% - 57px);
+}
+
+.trading-mobile .h2-RtJyXd {
+  background-color: transparent;
+  height: 41px;
+  left: 40px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: calc(100.00% - 79px);
+}
+
+.trading-mobile .paragraph-RtJyXd {
+  background-color: transparent;
+  bottom: -2px;
+  height: 72px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% + 2px);
+}
+
+.trading-mobile .formation-vUb3bC {
+  background-color: transparent;
+  height: 114px;
+  left: 29px;
+  position: absolute;
+  top: calc(35.57% - 41px);
+  width: calc(100.00% - 56px);
+}
+
+.trading-mobile .icon-actif-cxqxnJ {
+  background-color: transparent;
+  height: calc(100.00% - 76px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading-mobile .ellipse-17693-ZPYA8R {
+  background-color: var(--white);
+  border-radius: 19.48px;
+  height: 39px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading-mobile .font-awsome-graduation-cap-ZPYA8R {
+  background-color: transparent;
+  bottom: 13px;
+  height: 13px;
+  object-fit: cover;
+  position: absolute;
+  right: 5px;
+  width: 29px;
+}
+
+.trading-mobile .paragraph-cxqxnJ {
+  background-color: transparent;
+  height: 19px;
+  left: 51px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 1px;
+  width: calc(100.00% - 60px);
+}
+
+.trading-mobile .paragraph-gstgbR {
+  background-color: transparent;
+  height: 89px;
+  left: 51px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 28px;
+  width: calc(100.00% - 49px);
+}
+
+.trading-mobile .ligne-37-cxqxnJ {
+  background-color: transparent;
+  bottom: 94px;
+  height: 2px;
+  left: 51px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 300px);
+}
+
+.trading-mobile .paragraph-538M6x {
+  background-color: transparent;
+  height: 53px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(44.86% - 24px);
+  width: calc(100.00% - 105px);
+}
+
+.trading-mobile .paragraph-NapEEx {
+  background-color: transparent;
+  height: 19px;
+  left: calc(22.10% - 14px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(42.54% - 8px);
+  width: 62px;
+}
+
+.trading-mobile .ligne-38-vUb3bC {
+  background-color: transparent;
+  bottom: 996px;
+  height: 2px;
+  left: 81px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 393px);
+}
+
+.trading-mobile .icon-actif-vUb3bC {
+  background-color: transparent;
+  height: calc(100.00% - 1716px);
+  left: 29px;
+  position: absolute;
+  top: 738px;
+  width: 39px;
+}
+
+.trading-mobile .ellipse-17693-uahhzG {
+  background-color: var(--white);
+  border-radius: 19.48px;
+  height: 39px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading-mobile .font-awsome-dollar-sign-uahhzG {
+  background-color: transparent;
+  height: 20px;
+  object-fit: cover;
+  position: absolute;
+  right: 14px;
+  top: 9px;
+  width: 12px;
+}
+
+.trading-mobile .trac-1047-vUb3bC {
+  background-color: transparent;
+  height: 0px;
+  left: 48px;
+  object-fit: cover;
+  position: absolute;
+  top: 42.08%;
+  width: 0px;
+}
+
+.trading-mobile .trac-1048-vUb3bC {
+  background-color: transparent;
+  height: 119px;
+  left: 39px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(37.94% - 45px);
+  width: 17px;
+}
+
+.trading-mobile .paragraph-k7d0T5 {
+  background-color: transparent;
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(49.25% - 9px);
+  width: calc(100.00% - 105px);
+}
+
+.trading-mobile .paragraph-xGh1VB {
+  background-color: transparent;
+  bottom: calc(47.41% - 37px);
+  height: 78px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 105px);
+}
+
+.trading-mobile .ligne-39-vUb3bC {
+  background-color: transparent;
+  bottom: 880px;
+  height: 2px;
+  left: 81px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 354px);
+}
+
+.trading-mobile .icon-actif-538M6x {
+  background-color: transparent;
+  height: calc(100.00% - 1716px);
+  left: 29px;
+  position: absolute;
+  top: 855px;
+  width: 38px;
+}
+
+.trading-mobile .ellipse-17693-TxP6I6 {
+  background-color: var(--white);
+  border-radius: 19.25px;
+  height: 38px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 38px;
+}
+
+.trading-mobile .font-awsome-wallet-TxP6I6 {
+  background-color: transparent;
+  bottom: 10px;
+  height: 18px;
+  left: 9px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 18px);
+}
+
+.trading-mobile .trac-1049-vUb3bC {
+  background-color: transparent;
+  height: 88px;
+  left: 39px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(46.28% - 41px);
+  width: 12px;
+}
+
+.trading-mobile .paragraph-DACJjQ {
+  background-color: transparent;
+  bottom: calc(42.45% - 8px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 120px);
+}
+
+.trading-mobile .paragraph-ryXihF {
+  background-color: transparent;
+  bottom: calc(38.27% - 36px);
+  height: 93px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 105px);
+}
+
+.trading-mobile .ligne-40-vUb3bC {
+  background-color: transparent;
+  bottom: 736px;
+  height: 2px;
+  left: 81px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 350px);
+}
+
+.trading-mobile .icon-actif-NapEEx {
+  background-color: transparent;
+  height: calc(100.00% - 1716px);
+  left: 28px;
+  position: absolute;
+  top: 999px;
+  width: 39px;
+}
+
+.trading-mobile .ellipse-17693-9jdzlZ {
+  background-color: var(--white);
+  border-radius: 19.48px;
+  height: 39px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading-mobile .icon-awesome-robot-9jdzlZ {
+  background-color: transparent;
+  height: calc(100.00% - 20px);
+  left: 8px;
+  object-fit: cover;
+  position: absolute;
+  top: 10px;
+  width: calc(100.00% - 16px);
+}
+
+.trading-mobile .trac-1050-vUb3bC {
+  background-color: transparent;
+  bottom: calc(45.71% - 50px);
+  height: 110px;
+  left: 37px;
+  object-fit: cover;
+  position: absolute;
+  width: 20px;
+}
+
+.trading-mobile .paragraph-tcOBY5 {
+  background-color: transparent;
+  bottom: calc(33.29% - 6px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 105px);
+}
+
+.trading-mobile .paragraph-sp5Z9D {
+  background-color: transparent;
+  bottom: calc(29.92% - 19px);
+  height: 64px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 105px);
+}
+
+.trading-mobile .ligne-41-vUb3bC {
+  background-color: transparent;
+  bottom: 577px;
+  height: 2px;
+  left: 81px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 362px);
+}
+
+.trading-mobile .icon-actif-k7d0T5 {
+  background-color: transparent;
+  height: calc(100.00% - 1716px);
+  left: 29px;
+  position: absolute;
+  top: 1158px;
+  width: 39px;
+}
+
+.trading-mobile .ellipse-17693-mxJxCK {
+  background-color: var(--white);
+  border-radius: 19.5px;
+  height: 39px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 39px;
+}
+
+.trading-mobile .icon-simple-graphcool-mxJxCK {
+  background-color: transparent;
+  height: 21px;
+  object-fit: cover;
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  width: 18px;
+}
+
+.trading-mobile .trac-1051-vUb3bC {
+  background-color: transparent;
+  bottom: calc(36.32% - 46px);
+  height: 127px;
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  width: 19px;
+}
+
+.trading-mobile .groupe-3023-vUb3bC {
+  background-color: transparent;
+  bottom: calc(22.00% - 23px);
+  height: 104px;
+  left: 55px;
+  position: absolute;
+  width: calc(100.00% - 109px);
+}
+
+.trading-mobile .bouton-affi-k9GuBK {
+  background-color: transparent;
+  bottom: 0px;
+  height: 45px;
+  position: absolute;
+  right: 0px;
+  width: 319px;
+}
+
+.trading-mobile .rectangle-8-YMiqxi {
+  background-color: var(--bright-sun);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .binance-svgrepo-com-YMiqxi {
+  background-color: transparent;
+  height: 21px;
+  left: 18px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(50.00% - 11px);
+  width: 21px;
+}
+
+.trading-mobile .c-rer-un-compte-binance-YMiqxi {
+  background-color: transparent;
+  bottom: calc(45.87% - 10px);
+  height: 21px;
+  left: calc(48.04% - 92px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 191px;
+}
+
+.trading-mobile .icon-ionic-ios-arrow-round-forward-YMiqxi {
+  background-color: transparent;
+  height: 9px;
+  object-fit: cover;
+  position: absolute;
+  right: 32px;
+  top: calc(50.00% - 5px);
+  width: 14px;
+}
+
+.trading-mobile .bouton-affi-OMO7DK {
+  background-color: transparent;
+  height: 45px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 319px;
+}
+
+.trading-mobile .rectangle-8-IWBYmA {
+  background-color: var(--blue-ribbon);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.trading-mobile .crer-un-compte-puprime-IWBYmA {
+  background-color: transparent;
+  bottom: calc(45.87% - 10px);
+  color: var(--white);
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+  height: 21px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.21% - 94px);
+  text-align: left;
+  width: 192px;
+}
+
+.trading-mobile .icon-ionic-ios-arrow-round-forward-IWBYmA {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 9px;
+  object-fit: cover;
+  position: absolute;
+  right: 29px;
+  width: 14px;
+}
+
+.trading-mobile .groupe-3019-IWBYmA {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  left: 22px;
+  position: absolute;
+  width: 20px;
+}
+
+.trading-mobile .groupe-3019-hwP9My {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+@media screen and (max-width: 1365px) {
+  .screen.trading { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) {
+  .screen.trading-mobile { 
+    display: none;
+   }
+}
