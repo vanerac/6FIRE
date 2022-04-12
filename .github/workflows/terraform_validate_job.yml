@@ -1,0 +1,15 @@
+on: [ workflow_call, workflow_dispatch ]
+name: Validate Terraform Job
+jobs:
+  lint:
+    name: Validate Terraform
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
+      - run: terraform init
+        working-directory: terraform/
+        name: terraform init
+      - run: terraform validate
+        working-directory: terraform/
+        name: terraform validate
