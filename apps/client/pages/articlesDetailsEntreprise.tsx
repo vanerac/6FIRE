@@ -1,13 +1,16 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 
 const HomePage: NextPage = () => {
     return (
         <body style={{ margin: 0, background: '#ffffff' }}>
             <input type="hidden" id="anPageName" name="page" value="articles-details-entreprise" />
             <div className="articles-details-entreprise screen">
-                <div className="background-pYC6Z9"></div>
+                <div className="background-pYC6Z9" />
                 <div className="photography-pYC6Z9">
-                    <img className="groupe-de-masques-326-hN4iYT" src="img/mask-group-326-2@1x.png" />
+                    <div className="groupe-de-masques-326-hN4iYT">
+                        <Image src="/img/mask-group-326-2@1x.png" layout="fill" objectFit="cover" />
+                    </div>
                     <div className="rectangle-3501-hN4iYT"></div>
                 </div>
                 <div className="articles-pYC6Z9">
@@ -37,7 +40,9 @@ const HomePage: NextPage = () => {
                     </div>
                     <div className="paragraphe-mL2Mzq lato-light-manatee-14px">Source : Cryptovantage</div>
                     <div className="logo-thmatique-oPk1gG">
-                        <img className="groupe-1501-scRhdd" src="img/group-1501-1@1x.png" />
+                        <div className="groupe-1501-scRhdd">
+                            <Image layout="fill" src="/img/group-1501-1@1x.png" />
+                        </div>
                     </div>
                     <div className="paragraphe-b5nvOG lato-normal-white-14px-2">
                         <span className="span0-U5r6KB lato-bold-white-14px">
@@ -105,13 +110,19 @@ const HomePage: NextPage = () => {
                         </span>
                         <span className="span1-yzk5Xo lato-normal-white-14px">2018</span>
                     </div>
-                    <img className="image-883-oPk1gG" src="img/image-883-1@1x.png" />
+                    <div className="image-883-oPk1gG">
+                        <Image layout="fill" src="/img/image-883-1@1x.png" />
+                    </div>
                 </div>
                 <div className="articles-suggrs-pYC6Z9">
                     <div className="article-9VcorZ">
-                        <img className="groupe-de-masques-321-ODgvb0" src="img/mask-group-321-1@1x.png" />
+                        <div className="groupe-de-masques-321-ODgvb0">
+                            <Image layout="fill" src="/img/mask-group-321-1@1x.png" />
+                        </div>
                         <div className="club-premium-ODgvb0 lato-normal-grenadier-14px">Crypto</div>
-                        <img className="ligne-12-ODgvb0" src="img/line-15-2@1x.png" />
+                        <div className="ligne-12-ODgvb0">
+                            <Image layout="fill" src="/img/line-15-2@1x.png" />
+                        </div>
                         <div className="club-premium-b9RU8U lato-light-manatee-14px">Il y a 2 heures</div>
                         <div className="club-premium-SskDad lato-bold-white-16px">
                             Les cryptomonaies, par où commencer ?
@@ -119,17 +130,25 @@ const HomePage: NextPage = () => {
                         <div className="rectangle-3498-ODgvb0"></div>
                     </div>
                     <div className="article-G8XiCr">
-                        <img className="groupe-de-masques-322-Bwewb5" src="img/mask-group-322-1@1x.png" />
+                        <div className="groupe-de-masques-322-Bwewb5">
+                            <Image layout="fill" src="/img/mask-group-322-1@1x.png" />
+                        </div>
                         <div className="club-premium-Bwewb5 lato-normal-grenadier-14px">Crypto</div>
-                        <img className="ligne-13-Bwewb5" src="img/line-15-2@1x.png" />
+                        <div className="ligne-13-Bwewb5">
+                            <Image layout="fill" src="/img/line-15-2@1x.png" />
+                        </div>
                         <div className="club-premium-h2BJkl lato-light-manatee-14px">19 février 2022</div>
                         <div className="club-premium-XPKVWG lato-bold-white-16px">Pourquoi investir dans l’AVAX ?</div>
                         <div className="rectangle-3500-Bwewb5"></div>
                     </div>
                     <div className="article-wM8vZQ">
-                        <img className="groupe-de-masques-323-7VMJx4" src="img/mask-group-323-1@1x.png" />
+                        <div className="groupe-de-masques-323-7VMJx4">
+                            <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
+                        </div>
                         <div className="club-premium-7VMJx4 lato-normal-grenadier-14px">Crypto</div>
-                        <img className="ligne-14-7VMJx4" src="img/line-15-2@1x.png" />
+                        <div className="ligne-14-7VMJx4">
+                            <Image layout="fill" src="/img/line-15-2@1x.png" />
+                        </div>
                         <div className="club-premium-FPYQ25 lato-light-manatee-14px">19 février 2022</div>
                         <div className="club-premium-0vdrJU lato-bold-white-16px">Les 5 erreurs à éviter en crypto</div>
                         <div className="rectangle-3501-7VMJx4"></div>
@@ -156,25 +175,39 @@ const HomePage: NextPage = () => {
                     </div>
                     <div className="logo-xESAN9">
                         <div className="groupe-2-xM1yEt">
-                            <img className="groupe-1-812EKB" src="img/group-1-9@1x.png" />
+                            <div className="groupe-1-812EKB">
+                                <Image layout="fill" src="/img/group-1-9@1x.png" />
+                            </div>
                         </div>
-                        <img className="effect-xM1yEt" src="img/effect-12@1x.png" />
+                        <div className="effect-xM1yEt">
+                            <Image layout="fill" src="/img/effect-12@1x.png" />
+                        </div>
                     </div>
-                    <img className="ligne-31-xESAN9" src="img/line-31-1@1x.png" />
+                    <div className="ligne-31-xESAN9">
+                        <Image layout="fill" src="/img/line-31-1@1x.png" />
+                    </div>
                     <div className="groupe-3011-xESAN9">
-                        <img className="icon-instagram-vxhDy3" src="img/fontawsome--instagram--8@1x.png" />
+                        <div className="icon-instagram-vxhDy3">
+                            <Image layout="fill" src="/img/fontawsome--instagram--8@1x.png" />
+                        </div>
                     </div>
                     <div className="groupe-3010-xESAN9">
-                        <img className="icon-simple-tiktok-OerTqJ" src="img/icon-simple-tiktok-1@1x.png" />
+                        <div className="icon-simple-tiktok-OerTqJ">
+                            <Image layout="fill" src="/img/icon-simple-tiktok-1@1x.png" />
+                        </div>
                     </div>
                 </div>
                 <div className="header-pYC6Z9">
                     <div className="rectangle-3483-n2HFDc"></div>
                     <div className="logo-n2HFDc">
-                        <img className="effect-AL4Lcx" src="img/effect-13@1x.png" />
+                        <div className="effect-AL4Lcx">
+                            <Image layout="fill" src="/img/effect-13@1x.png" />
+                        </div>
                     </div>
                     <div className="thme-sombre-n2HFDc">
-                        <img className="icon-ionic-ios-moon-s9EYwt" src="img/icon-ionic-ios-moon-1@1x.png" />
+                        <div className="icon-ionic-ios-moon-s9EYwt">
+                            <Image layout="fill" src="/img/icon-ionic-ios-moon-1@1x.png" />
+                        </div>
                         <div className="toogle-button-s9EYwt">
                             <div className="rectangle-3485-xwnxG8"></div>
                             <div className="ellipse-17688-xwnxG8"></div>
@@ -188,12 +221,18 @@ const HomePage: NextPage = () => {
                         </div>
                         <div className="menu-2-f0xP5E">
                             <div className="icon-ionic-ios-menu-xcqESx">
-                                <img className="trac-1-5hYTkF" src="img/path-1-10@1x.png" />
-                                <img className="trac-2-5hYTkF" src="img/path-2-10@1x.png" />
+                                <div className="trac-1-5hYTkF">
+                                    <Image layout="fill" src="/img/path-1-10@1x.png" />
+                                </div>
+                                <div className="trac-2-5hYTkF">
+                                    <Image layout="fill" src="/img/path-2-10@1x.png" />
+                                </div>
                             </div>
                         </div>
                         <div className="search-bar-f0xP5E">
-                            <img className="icon-search-mDO8rZ" src="img/icon-ionic-ios-search-11@1x.png" />
+                            <div className="icon-search-mDO8rZ">
+                                <Image layout="fill" src="/img/icon-ionic-ios-search-11@1x.png" />
+                            </div>
                         </div>
                     </div>
                     <div className="menu-n2HFDc">
@@ -201,14 +240,18 @@ const HomePage: NextPage = () => {
                         <div className="cryptommonnaies-Lnx6ti">
                             <div className="club-premium-bsdNxy lato-normal-white-14px">Cryptommonaies</div>
                             <div className="icon-actif-bsdNxy">
-                                <img className="groupe-1490-UxdmIl" src="img/group-1490-1@1x.png" />
+                                <div className="groupe-1490-UxdmIl">
+                                    <Image layout="fill" src="/img/group-1490-1@1x.png" />
+                                </div>
                             </div>
                         </div>
                         <div className="nft-Lnx6ti">
                             <div className="trading-lxNxJI lato-normal-white-14px">NFT</div>
                             <div className="icon-lxNxJI">
                                 <div className="ellipse-17691-K3LjwD"></div>
-                                <img className="nft-K3LjwD" src="img/nft-1@1x.png" />
+                                <div className="nft-K3LjwD">
+                                    <Image layout="fill" src="/img/nft-1@1x.png" />
+                                </div>
                             </div>
                         </div>
                         <div className="play-to-earn-Lnx6ti">
@@ -216,7 +259,9 @@ const HomePage: NextPage = () => {
                             <div className="icon-hxe8YI">
                                 <div className="ellipse-17691-CtOo9a"></div>
                                 <div className="gamepad-CtOo9a">
-                                    <img className="trac-1021-xZlR4W" src="img/path-1021@1x.png" />
+                                    <div className="trac-1021-xZlR4W">
+                                        <Image layout="fill" src="/img/path-1021@1x.png" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +270,9 @@ const HomePage: NextPage = () => {
                             <div className="icon-68WRso">
                                 <div className="ellipse-17691-H3Zfxb"></div>
                                 <div className="groupe-1502-H3Zfxb">
-                                    <img className="groupe-1504-YfczOP" src="img/group-1504-3@1x.png" />
+                                    <div className="groupe-1504-YfczOP">
+                                        <Image layout="fill" src="/img/group-1504-3@1x.png" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +280,9 @@ const HomePage: NextPage = () => {
                             <div className="trading-YtFWbi lato-normal-white-14px">E-Commerce</div>
                             <div className="icon-YtFWbi">
                                 <div className="ellipse-17692-YQzl1x"></div>
-                                <img className="website-YQzl1x" src="img/website-1@1x.png" />
+                                <div className="website-YQzl1x">
+                                    <Image layout="fill" src="/img/website-1@1x.png" />
+                                </div>
                             </div>
                         </div>
                         <div className="autres-thmes-Lnx6ti">
@@ -253,7 +302,9 @@ const HomePage: NextPage = () => {
                     </div>
                 </div>
                 <div className="bandeau-call-to-action-pYC6Z9">
-                    <img className="groupe-de-masques-329-f6PEkN" src="img/mask-group-329-1@1x.png" />
+                    <div className="groupe-de-masques-329-f6PEkN">
+                        <Image layout="fill" src="/img/mask-group-329-1@1x.png" />
+                    </div>
                     <div className="club-premium-f6PEkN lato-bold-white-18px">OFFRE TRADING</div>
                     <div className="club-premium-Kjbbz9 lato-normal-white-14px">+ Stratégies d’investissement</div>
                     <div className="club-premium-CtN09x lato-normal-white-14px">+ Canal privé Telegram</div>
@@ -277,18 +328,24 @@ const HomePage: NextPage = () => {
                             </span>
                         </div>
                     </div>
-                    <img className="ligne-41-NTsxb4" src="img/line-41-2@1x.png" />
+                    <div className="ligne-41-NTsxb4">
+                        <Image layout="fill" src="/img/line-41-2@1x.png" />
+                    </div>
                 </div>
             </div>
             <div className="articles-details-entreprise-mobile screen">
                 <div className="background-gHf5I6"></div>
                 <div className="rectangle-3484-gHf5I6"></div>
                 <div className="photography-gHf5I6">
-                    <img className="groupe-de-masques-326-ngQ0AP" src="img/groupe-de-masques-326-6@1x.png" />
+                    <div className="groupe-de-masques-326-ngQ0AP">
+                        <Image layout="fill" src="/img/groupe-de-masques-326-6@1x.png" objectFit="cover" />
+                    </div>
                     <div className="rectangle-3501-ngQ0AP"></div>
                 </div>
                 <div className="toogle-button-gHf5I6">
-                    <img className="icon-ionic-ios-moon-CQWJjF" src="img/icon-ionic-ios-moon-15@1x.png" />
+                    <div className="icon-ionic-ios-moon-CQWJjF">
+                        <Image layout="fill" src="/img/icon-ionic-ios-moon-15@1x.png" />
+                    </div>
                     <div className="toogle-button-CQWJjF">
                         <div className="rectangle-3485-J5jY58"></div>
                         <div className="ellipse-17688-J5jY58"></div>
@@ -307,7 +364,9 @@ const HomePage: NextPage = () => {
                             </span>
                         </div>
                     </div>
-                    <img className="ligne-41-ZLVfWk" src="img/ligne-41-15@1x.png" />
+                    <div className="ligne-41-ZLVfWk">
+                        <Image layout="fill" src="/img/ligne-41-15@1x.png" />
+                    </div>
                 </div>
                 <div className="footer-gHf5I6">
                     <div className="background-3acehH"></div>
@@ -327,18 +386,30 @@ const HomePage: NextPage = () => {
                     </div>
                     <div className="logo-3acehH">
                         <div className="groupe-2-HKX5L7">
-                            <img className="groupe-1-kRCzg0" src="img/group-1-9@1x.png" />
+                            <div className="groupe-1-kRCzg0">
+                                <Image layout="fill" src="/img/group-1-9@1x.png" />
+                            </div>
                         </div>
-                        <img className="effect-HKX5L7" src="img/effect-12@1x.png" />
+                        <div className="effect-HKX5L7">
+                            <Image layout="fill" src="/img/effect-12@1x.png" />
+                        </div>
                     </div>
-                    <img className="ligne-31-3acehH" src="img/ligne-31-14@1x.png" />
+                    <div className="ligne-31-3acehH">
+                        <Image layout="fill" src="/img/ligne-31-14@1x.png" />
+                    </div>
                     <div className="groupe-3011-3acehH">
-                        <img className="icon-instagram-ysQR5T" src="img/fontawsome--instagram--8@1x.png" />
+                        <div className="icon-instagram-ysQR5T">
+                            <Image layout="fill" src="/img/fontawsome--instagram--8@1x.png" />
+                        </div>
                     </div>
                     <div className="groupe-3010-3acehH">
-                        <img className="icon-simple-tiktok-rItbZo" src="img/icon-simple-tiktok-1@1x.png" />
+                        <div className="icon-simple-tiktok-rItbZo">
+                            <Image layout="fill" src="/img/icon-simple-tiktok-1@1x.png" />
+                        </div>
                     </div>
-                    <img className="icon-paper_plane-3acehH" src="img/icon-awesome-telegram-plane-1@1x.png" />
+                    <div className="icon-paper_plane-3acehH">
+                        <Image layout="fill" src="/img/icon-awesome-telegram-plane-1@1x.png" />
+                    </div>
                 </div>
                 <div className="articles-gHf5I6">
                     <div className="background-AKDF04"></div>
@@ -362,7 +433,9 @@ const HomePage: NextPage = () => {
                     </div>
                     <div className="paragraphe-eeROcA lato-light-manatee-14px">Source : Cryptovantage</div>
                     <div className="logo-thmatique-AKDF04">
-                        <img className="groupe-1501-ijqWWZ" src="img/group-1501-1@1x.png" />
+                        <div className="groupe-1501-ijqWWZ">
+                            <Image layout="fill" src="/img/group-1501-1@1x.png" />
+                        </div>
                     </div>
                     <div className="titre-AKDF04 lato-bold-white-22px">Axie Infinity</div>
                     <div className="paragraphe-489EdE">
@@ -435,13 +508,19 @@ const HomePage: NextPage = () => {
                         </span>
                         <span className="span1-jpX4Go lato-normal-white-14px">9 millions $</span>
                     </div>
-                    <img className="image-883-AKDF04" src="img/image-883-2@1x.png" />
+                    <div className="image-883-AKDF04">
+                        <Image layout="fill" src="/img/image-883-2@1x.png" />
+                    </div>
                 </div>
                 <div className="articles-suggrs-gHf5I6">
                     <div className="article-WWyidW">
-                        <img className="groupe-de-masques-321-IQF6Pb" src="img/groupe-de-masques-321-17@1x.png" />
+                        <div className="groupe-de-masques-321-IQF6Pb">
+                            <Image layout="fill" src="/img/groupe-de-masques-321-17@1x.png" />
+                        </div>
                         <div className="club-premium-IQF6Pb lato-normal-milano-red-12px">Crypto</div>
-                        <img className="ligne-12-IQF6Pb" src="img/ligne-12-18@1x.png" />
+                        <div className="ligne-12-IQF6Pb">
+                            <Image layout="fill" src="/img/ligne-12-18@1x.png" />
+                        </div>
                         <div className="club-premium-4aBjtX lato-light-manatee-12px">Il y a 2 heures</div>
                         <div className="club-premium-JBMz2x lato-bold-white-16px">
                             Les cryptomonaies, par où commencer ?
@@ -449,17 +528,25 @@ const HomePage: NextPage = () => {
                         <div className="rectangle-3498-IQF6Pb"></div>
                     </div>
                     <div className="article-bhbOKv">
-                        <img className="groupe-de-masques-322-sjFomq" src="img/groupe-de-masques-322-17@1x.png" />
+                        <div className="groupe-de-masques-322-sjFomq">
+                            <Image layout="fill" src="/img/groupe-de-masques-322-17@1x.png" />
+                        </div>
                         <div className="club-premium-sjFomq lato-normal-milano-red-12px">Crypto</div>
-                        <img className="ligne-13-sjFomq" src="img/ligne-13-14@1x.png" />
+                        <div className="ligne-13-sjFomq">
+                            <Image layout="fill" src="/img/ligne-13-14@1x.png" />
+                        </div>
                         <div className="club-premium-Oz5hDb lato-light-manatee-12px">19 février 2022</div>
                         <div className="club-premium-9h4AG1 lato-bold-white-16px">Pourquoi investir dans l’AVAX ?</div>
                         <div className="rectangle-3500-sjFomq"></div>
                     </div>
                     <div className="article-0ilyF3">
-                        <img className="groupe-de-masques-323-BIp9bm" src="img/groupe-de-masques-323-17@1x.png" />
+                        <div className="groupe-de-masques-323-BIp9bm">
+                            <Image layout="fill" src="/img/groupe-de-masques-323-17@1x.png" />
+                        </div>
                         <div className="club-premium-BIp9bm lato-normal-milano-red-12px">Crypto</div>
-                        <img className="ligne-14-BIp9bm" src="img/ligne-14-17@1x.png" />
+                        <div className="ligne-14-BIp9bm">
+                            <Image layout="fill" src="/img/ligne-14-17@1x.png" />
+                        </div>
                         <div className="club-premium-6a9obM lato-light-manatee-12px">19 février 2022</div>
                         <div className="club-premium-eZANFJ lato-bold-white-16px">Les 5 erreurs à éviter en crypto</div>
                         <div className="rectangle-3501-BIp9bm"></div>
@@ -468,7 +555,9 @@ const HomePage: NextPage = () => {
                     <div className="dans-la-mme-catgorie-WWyidW lato-bold-white-16px">DANS LA MÊME CATÉGORIE</div>
                 </div>
                 <div className="call-to-action-gHf5I6">
-                    <img className="groupe-de-masques-328-6XqzRr" src="img/groupe-de-masques-328-1@1x.png" />
+                    <div className="groupe-de-masques-328-6XqzRr">
+                        <Image layout="fill" src="/img/groupe-de-masques-328-1@1x.png" />
+                    </div>
                     <div className="club-premium-6XqzRr lato-bold-white-18px">OFFRE TRADING</div>
                     <div className="club-premium-uQXx6t lato-normal-white-14px">+ Stratégies d’investissement</div>
                     <div className="club-premium-LGM1xS lato-normal-white-14px">+ Canal privé Telegram</div>
@@ -480,7 +569,9 @@ const HomePage: NextPage = () => {
                     </div>
                 </div>
                 <div className="search-bar-gHf5I6">
-                    <img className="icon-search-ju6dFa" src="img/icon-ionic-ios-search-27@1x.png" />
+                    <div className="icon-search-ju6dFa">
+                        <Image layout="fill" src="/img/icon-ionic-ios-search-27@1x.png" />
+                    </div>
                 </div>
                 <div className="rectangle-3607-gHf5I6"></div>
                 <div className="groupe-3022-gHf5I6">
@@ -489,12 +580,18 @@ const HomePage: NextPage = () => {
                 </div>
                 <div className="menu-gHf5I6">
                     <div className="icon-ionic-ios-menu-RexYWB">
-                        <img className="trac-1-iXOvRV" src="img/path-1-10@1x.png" />
-                        <img className="trac-2-iXOvRV" src="img/path-2-10@1x.png" />
+                        <div className="trac-1-iXOvRV">
+                            <Image layout="fill" src="/img/path-1-10@1x.png" />
+                        </div>
+                        <div className="trac-2-iXOvRV">
+                            <Image layout="fill" src="/img/path-2-10@1x.png" />
+                        </div>
                     </div>
                 </div>
                 <div className="logo-gHf5I6">
-                    <img className="effect-oedgVX" src="img/effect-47@1x.png" />
+                    <div className="effect-oedgVX">
+                        <Image layout="fill" src="/img/effect-47@1x.png" />
+                    </div>
                 </div>
             </div>
         </body>
