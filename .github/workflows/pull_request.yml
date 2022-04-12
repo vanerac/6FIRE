@@ -19,6 +19,6 @@ jobs:
   test:
     needs: [ lint, openapi, compile, prisma ]
     uses: vanerac/6FIRE/.github/workflows/test_job.yml@main
-  build_docker:
-    needs: [ test, lint, openapi, compile, prisma ]
-    uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
+#   build_docker:
+#     needs: [ test, lint, openapi, compile, prisma ]
+#     uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
