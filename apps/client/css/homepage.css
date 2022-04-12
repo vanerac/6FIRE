@@ -1,0 +1,1018 @@
+/* screen - homepage */
+
+.homepage {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 1533px;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.homepage .background-zYNucu {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 768px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .rejoindre-le-club-dinvestisseur-zYNucu {
+  background-color: transparent;
+  height: 24px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  right: calc(49.91% - 123px);
+  text-align: center;
+  top: calc(26.48% - 6px);
+  width: 247px;
+}
+
+.homepage .logo-zYNucu {
+  background-color: transparent;
+  height: 200px;
+  position: absolute;
+  right: calc(50.00% - 129px);
+  top: 194px;
+  width: 259px;
+}
+
+.homepage .groupe-2-XjUoLl {
+  background-color: transparent;
+  bottom: 0px;
+  height: 41px;
+  left: 16px;
+  position: absolute;
+  width: calc(100.00% - 32px);
+}
+
+.homepage .groupe-1-fG9TNr {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .groupe-1483-XjUoLl {
+  background-color: transparent;
+  bottom: calc(47.44% - 20px);
+  height: 43px;
+  left: calc(49.70% - 47px);
+  opacity: 0;
+  position: absolute;
+  width: 94px;
+}
+
+.homepage .groupe-1482-pxRMuX {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.homepage .effect-XjUoLl {
+  background-color: transparent;
+  height: calc(100.00% - 28px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .background-9y9vaA {
+  background-color: var(--licorice);
+  bottom: 0px;
+  height: 765px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.homepage .groupe-de-masques-332-zYNucu {
+  background-color: transparent;
+  bottom: 60px;
+  height: 649px;
+  left: 113px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 225px);
+}
+
+.homepage .visionner-la-vido-ob-zYNucu {
+  background-color: transparent;
+  height: 21px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(49.80% - 299px);
+  text-align: center;
+  top: calc(43.58% - 9px);
+  width: 601px;
+}
+
+.homepage .icon-material-keyboard-arrow-down-zYNucu {
+  background-color: transparent;
+  height: 11px;
+  left: calc(50.00% - 9px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(45.47% - 5px);
+  width: 18px;
+}
+
+.homepage .button-nous-rejoindre-zYNucu {
+  background-color: transparent;
+  height: 48px;
+  position: absolute;
+  right: calc(49.96% - 113px);
+  top: calc(33.40% - 16px);
+  width: 227px;
+}
+
+.homepage .rectangle-3470-f3cQ2w {
+  background-color: transparent;
+  border: 1px solid #f7f7f7;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .nous-rejoindre-f3cQ2w {
+  background-color: transparent;
+  bottom: calc(46.30% - 10px);
+  height: 21px;
+  left: 54px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 106px);
+}
+
+.homepage .groupe-1486-f3cQ2w {
+  background-color: transparent;
+  bottom: calc(42.92% - 6px);
+  height: 14px;
+  opacity: 0;
+  position: absolute;
+  right: calc(24.11% - 3px);
+  width: 13px;
+}
+
+.homepage .groupe-1485-Jzdzun {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .connexion-zYNucu {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 80px;
+  top: 56px;
+  width: 129px;
+}
+
+.homepage .connexion-LAc7m9 {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .connexion-FL6OPd {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 83px;
+}
+
+.homepage .club-premium-5UOfx0 {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.homepage .ligne-8-5UOfx0 {
+  background-color: transparent;
+  bottom: -5px;
+  height: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  right: 2px;
+  width: 64px;
+}
+
+.homepage .icon-ionic-ios-menu-FL6OPd {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 0px;
+  top: calc(50.00% - 4px);
+  width: 27px;
+}
+
+.homepage .trac-1-oIJAsx {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .trac-2-oIJAsx {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.homepage .connexion-5l40sx {
+  background-color: transparent;
+  height: calc(100.00% + 751px);
+  left: -280px;
+  opacity: 0;
+  position: absolute;
+  top: -56px;
+  width: calc(100.00% + 360px);
+}
+
+.homepage .background-ODVNCb {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 496px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .groupe-1487-ODVNCb {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 37px;
+  top: 28px;
+  width: 13px;
+}
+
+.homepage .ligne-10-nseAnb {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.homepage .ligne-11-nseAnb {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.homepage .se-connecter-ODVNCb {
+  background-color: transparent;
+  height: 21px;
+  left: 122px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  width: calc(100.00% - 242px);
+}
+
+.homepage .pour-accder-votre-compte-ODVNCb {
+  background-color: transparent;
+  height: 21px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.38% - 122px);
+  text-align: center;
+  top: 127px;
+  width: 247px;
+}
+
+.homepage .numro-de-tlphone-ODVNCb {
+  background-color: transparent;
+  height: 23px;
+  position: absolute;
+  right: calc(49.70% - 161px);
+  top: calc(26.06% - 6px);
+  width: 323px;
+}
+
+.homepage .ligne-6-HimZiw {
+  background-color: transparent;
+  bottom: 0px;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.homepage .email-HimZiw {
+  background-color: transparent;
+  height: 19px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 50px);
+}
+
+.homepage .mot-de-passe-ODVNCb {
+  background-color: transparent;
+  height: 23px;
+  position: absolute;
+  right: calc(49.70% - 161px);
+  top: calc(32.77% - 8px);
+  width: 323px;
+}
+
+.homepage .icon-ionic-md-eye-off-XfPo7s {
+  background-color: transparent;
+  height: 12px;
+  object-fit: cover;
+  position: absolute;
+  right: 11px;
+  top: 3px;
+  width: 13px;
+}
+
+.homepage .ligne-7-XfPo7s {
+  background-color: transparent;
+  bottom: 0px;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.homepage .mot-de-passe-XfPo7s {
+  background-color: transparent;
+  height: 19px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 50px);
+}
+
+.homepage .icon-ionic-ios-eye-XfPo7s {
+  background-color: transparent;
+  height: 10px;
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  width: 16px;
+}
+
+.homepage .icon-eye-eaGtxE {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .trac-986-eaGtxE {
+  background-color: transparent;
+  height: 4px;
+  left: calc(49.99% - 2px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(49.99% - 2px);
+  width: 4px;
+}
+
+.homepage .mot-de-passe-oubli-ODVNCb {
+  background-color: transparent;
+  height: 19px;
+  left: 62px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  text-decoration: underline;
+  top: calc(39.25% - 7px);
+  width: calc(100.00% - 123px);
+}
+
+.homepage .button-login-ODVNCb {
+  background-color: transparent;
+  height: 40px;
+  position: absolute;
+  right: calc(49.83% - 95px);
+  top: calc(47.53% - 19px);
+  width: 190px;
+}
+
+.homepage .button-cration-de-compte-0UxE4r {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .rectangle-3470-PBpI75 {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .me-connecter-PBpI75 {
+  background-color: transparent;
+  bottom: calc(42.86% - 8px);
+  height: 19px;
+  left: 20px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 37px);
+}
+
+.homepage .button-cration-de-compte-QPuJAm {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .rectangle-3470-JwgKxT {
+  background-color: var(--white);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .crer-un-compte-JwgKxT {
+  background-color: transparent;
+  bottom: calc(42.86% - 8px);
+  height: 19px;
+  left: 20px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 37px);
+}
+
+.homepage .rectangle-3476-ODVNCb {
+  background-color: var(--licorice);
+  bottom: 0px;
+  height: 272px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.homepage .vous-navez-pas-de-compte-ODVNCb {
+  background-color: transparent;
+  bottom: calc(21.11% - 4px);
+  height: 21px;
+  left: 122px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 242px);
+}
+
+.homepage .button-signin-ODVNCb {
+  background-color: transparent;
+  bottom: 93px;
+  height: 40px;
+  position: absolute;
+  right: calc(49.83% - 95px);
+  width: 190px;
+}
+
+.homepage .button-cration-de-compte-4yIfHQ {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .rectangle-3470-0UZQRZ {
+  background-color: var(--white);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage .crer-un-compte-0UZQRZ {
+  background-color: transparent;
+  bottom: calc(42.86% - 8px);
+  height: 19px;
+  left: 20px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 37px);
+}
+/* screen - homepage-2 */
+
+.homepage-2 {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 926px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.homepage-2 .background-UwGJ9Z {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-2 .club-priv-dinvestisseur-UwGJ9Z {
+  background-color: transparent;
+  bottom: calc(45.28% - 11px);
+  height: 24px;
+  left: 92px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 181px);
+}
+
+.homepage-2 .logo-UwGJ9Z {
+  background-color: transparent;
+  height: 200px;
+  left: calc(50.00% - 130px);
+  position: absolute;
+  top: calc(39.68% - 79px);
+  width: 259px;
+}
+
+.homepage-2 .groupe-2-xV9lcf {
+  background-color: transparent;
+  bottom: 0px;
+  height: 41px;
+  left: 16px;
+  position: absolute;
+  width: calc(100.00% - 32px);
+}
+
+.homepage-2 .groupe-1-rCurPx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-2 .effect-xV9lcf {
+  background-color: transparent;
+  height: calc(100.00% - 28px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-2 .icon-ionic-ios-menu-UwGJ9Z {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 38px;
+  top: 79px;
+  width: 27px;
+}
+
+.homepage-2 .trac-1-3BLpSU {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-2 .trac-2-3BLpSU {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.homepage-2 .button-nous-rejoindre-UwGJ9Z {
+  background-color: transparent;
+  bottom: calc(32.80% - 16px);
+  height: 48px;
+  left: 101px;
+  position: absolute;
+  width: calc(100.00% - 201px);
+}
+
+.homepage-2 .rectangle-3470-vZJ39L {
+  background-color: transparent;
+  border: 1px solid #f7f7f7;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-2 .nous-rejoindre-vZJ39L {
+  background-color: transparent;
+  bottom: calc(46.30% - 10px);
+  height: 21px;
+  left: 54px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 106px);
+}
+
+.homepage-2 .connexion-UwGJ9Z {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 35px;
+  top: 75px;
+  width: 129px;
+}
+
+.homepage-2 .connexion-hN5F23 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-2 .connexion-PcGe0o {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 83px;
+}
+
+.homepage-2 .club-premium-SvYIWK {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.homepage-2 .icon-ionic-ios-menu-PcGe0o {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 0px;
+  top: calc(50.00% - 4px);
+  width: 27px;
+}
+
+.homepage-2 .trac-1-dcgJp9 {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-2 .trac-2-dcgJp9 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.homepage-2 .visionner-la-vido-ob-UwGJ9Z {
+  background-color: transparent;
+  bottom: 62px;
+  height: 40px;
+  left: 40px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 78px);
+}
+
+.homepage-2 .icon-material-keyboard-arrow-down-UwGJ9Z {
+  background-color: transparent;
+  bottom: 43px;
+  height: 11px;
+  left: calc(50.00% - 9px);
+  object-fit: cover;
+  position: absolute;
+  width: 18px;
+}
+/* screen - homepage-button-animation */
+
+.homepage-button-animation {
+  background-color: transparent;
+  height: 100vh;
+  margin: 0px;
+  min-height: 926px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.homepage-button-animation .background-cB6ICl {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-button-animation .club-priv-dinvestisseur-cB6ICl {
+  background-color: transparent;
+  bottom: calc(45.28% - 11px);
+  height: 24px;
+  left: 92px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 181px);
+}
+
+.homepage-button-animation .logo-cB6ICl {
+  background-color: transparent;
+  height: 200px;
+  left: calc(50.00% - 130px);
+  position: absolute;
+  top: calc(39.68% - 79px);
+  width: 259px;
+}
+
+.homepage-button-animation .groupe-2-KG15NJ {
+  background-color: transparent;
+  bottom: 0px;
+  height: 41px;
+  left: 16px;
+  position: absolute;
+  width: calc(100.00% - 32px);
+}
+
+.homepage-button-animation .groupe-1-xxawnC {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-button-animation .effect-KG15NJ {
+  background-color: transparent;
+  height: calc(100.00% - 28px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-button-animation .icon-ionic-ios-menu-cB6ICl {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 38px;
+  top: 79px;
+  width: 27px;
+}
+
+.homepage-button-animation .trac-1-572WhD {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-button-animation .trac-2-572WhD {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.homepage-button-animation .button-nous-rejoindre-cB6ICl {
+  background-color: transparent;
+  bottom: calc(32.80% - 16px);
+  height: 48px;
+  position: absolute;
+  right: calc(49.75% - 113px);
+  width: 227px;
+}
+
+.homepage-button-animation .rectangle-3470-m6f9GA {
+  background-color: var(--white);
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-button-animation .nous-rejoindre-m6f9GA {
+  background-color: transparent;
+  bottom: calc(46.30% - 10px);
+  height: 21px;
+  left: calc(41.23% - 50px);
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  width: 121px;
+}
+
+.homepage-button-animation .groupe-1486-m6f9GA {
+  background-color: transparent;
+  bottom: calc(42.92% - 6px);
+  height: 14px;
+  position: absolute;
+  right: calc(24.11% - 3px);
+  width: 13px;
+}
+
+.homepage-button-animation .groupe-1485-e9gjSa {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-button-animation .connexion-cB6ICl {
+  background-color: transparent;
+  height: 22px;
+  position: absolute;
+  right: calc(22.35% - 19px);
+  top: 75px;
+  width: 84px;
+}
+
+.homepage-button-animation .club-premium-kgPGf2 {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.homepage-button-animation .ligne-8-kgPGf2 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 1px;
+  object-fit: cover;
+  position: absolute;
+  right: 2px;
+  width: 64px;
+}
+@media screen and (max-width: 427px) {
+  .screen.homepage { 
+    display: none;
+   }
+  .screen.homepage-2 { 
+    display: none;
+   }
+  .screen.homepage-button-animation { 
+    display: none;
+   }
+}
+@media screen and (min-width: 428px) and (max-width: 1365px) {
+  .screen.homepage { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) {
+  .screen.homepage-2 { 
+    display: none;
+   }
+  .screen.homepage-button-animation { 
+    display: none;
+   }
+}

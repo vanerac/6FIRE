@@ -1,0 +1,6058 @@
+/* screen - bot-trading-traders */
+
+.bot-trading-traders {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 2293px;
+  min-width: 1366px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.bot-trading-traders .background-4cm5Mv {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 1690px;
+  left: 0px;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.bot-trading-traders .groupe-de-masques-327-4cm5Mv {
+  background-color: transparent;
+  height: 195px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3558-4cm5Mv {
+  background: linear-gradient(102.9deg, rgba(214, 29, 0, 0.2) 4.08%, rgba(179, 15, 16, 0.2) 27.35%);
+  background-color: transparent;
+  height: 196px;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.bot-trading-traders .h1-4cm5Mv {
+  background-color: transparent;
+  height: 24px;
+  left: 270px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  top: 188px;
+  width: calc(100.00% - 538px);
+}
+
+.bot-trading-traders .paragraph-4cm5Mv {
+  background-color: transparent;
+  height: 21px;
+  left: 270px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 216px;
+  width: calc(100.00% - 538px);
+}
+
+.bot-trading-traders .groupe-1508-4cm5Mv {
+  background-color: transparent;
+  height: 41px;
+  left: calc(50.00% - 156px);
+  position: absolute;
+  top: 261px;
+  width: 312px;
+}
+
+.bot-trading-traders .groupe-1507-iFPLNu {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 156px;
+}
+
+.bot-trading-traders .rectangle-3559-xJeFal {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .club-premium-xJeFal {
+  background-color: transparent;
+  bottom: calc(45.45% - 9px);
+  height: 19px;
+  left: 18px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 34px);
+}
+
+.bot-trading-traders .groupe-1506-iFPLNu {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 156px;
+}
+
+.bot-trading-traders .rectangle-3560-retqjK {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .club-premium-retqjK {
+  background-color: transparent;
+  bottom: calc(45.45% - 9px);
+  height: 19px;
+  left: 18px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 34px);
+}
+
+.bot-trading-traders .h2-4cm5Mv {
+  background-color: transparent;
+  height: 19px;
+  left: 197px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 365px;
+  width: 901px;
+}
+
+.bot-trading-traders .paragraph-9VxHL3 {
+  background-color: transparent;
+  height: 32px;
+  left: 197px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 390px;
+  width: 901px;
+}
+
+.bot-trading-traders .grid-table-4cm5Mv {
+  background-color: transparent;
+  height: 1165px;
+  left: 197px;
+  position: absolute;
+  top: calc(39.54% - 461px);
+  width: 963px;
+}
+
+.bot-trading-traders .header-table-dxtpyk {
+  background-color: transparent;
+  height: 41px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3561-2EazQx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .club-premium-2EazQx {
+  background-color: transparent;
+  bottom: calc(45.83% - 8px);
+  height: 17px;
+  left: 25px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 46px;
+}
+
+.bot-trading-traders .club-premium-WdxhGU {
+  background-color: transparent;
+  bottom: calc(45.83% - 8px);
+  height: 17px;
+  left: calc(39.79% - 46px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 116px;
+}
+
+.bot-trading-traders .club-premium-FZQG8P {
+  background-color: transparent;
+  bottom: calc(45.83% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(37.24% - 25px);
+  text-align: left;
+  width: 66px;
+}
+
+.bot-trading-traders .club-premium-mQplT6 {
+  background-color: transparent;
+  bottom: calc(45.83% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 38px;
+  text-align: left;
+  width: 102px;
+}
+
+.bot-trading-traders .row-1-dxtpyk {
+  background-color: transparent;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-iPAi0H {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-iPAi0H {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-iPAi0H {
+  background-color: transparent;
+  bottom: calc(35.71% - 7px);
+  height: 19px;
+  left: 103px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-iPAi0H {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .top-trader-iPAi0H {
+  background-color: transparent;
+  height: 14px;
+  left: 103px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(36.07% - 5px);
+  width: 77px;
+}
+
+.bot-trading-traders .font-awsome-crown-iPAi0H {
+  background-color: transparent;
+  height: 7px;
+  left: 168px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(36.05% - 2px);
+  width: 9px;
+}
+
+.bot-trading-traders .x149544-iPAi0H {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-iPAi0H {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-iPAi0H {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .x1-iPAi0H {
+  background-color: transparent;
+  height: 15px;
+  left: 9px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  top: calc(26.67% - 4px);
+  width: 10px;
+}
+
+.bot-trading-traders .ligne-30-iPAi0H {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: 20px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 9px;
+}
+
+.bot-trading-traders .button-cration-de-compte-iPAi0H {
+  background-color: transparent;
+  height: 30px;
+  position: absolute;
+  right: 44px;
+  top: calc(42.22% - 13px);
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-8HcugA {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-8HcugA {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-8HcugA {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-2-dxtpyk {
+  background-color: transparent;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  top: 115px;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-e1VsR0 {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-881-e1VsR0 {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-e1VsR0 {
+  background-color: transparent;
+  bottom: calc(35.71% - 7px);
+  height: 19px;
+  left: 103px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-e1VsR0 {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .top-trader-e1VsR0 {
+  background-color: transparent;
+  height: 14px;
+  left: 103px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(36.07% - 5px);
+  width: 77px;
+}
+
+.bot-trading-traders .font-awsome-crown-e1VsR0 {
+  background-color: transparent;
+  height: 7px;
+  left: 168px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(36.05% - 2px);
+  width: 9px;
+}
+
+.bot-trading-traders .x149544-e1VsR0 {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-e1VsR0 {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-e1VsR0 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .x2-e1VsR0 {
+  background-color: transparent;
+  height: 15px;
+  left: 9px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  top: calc(26.67% - 4px);
+  width: 10px;
+}
+
+.bot-trading-traders .ligne-30-e1VsR0 {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: 20px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 9px;
+}
+
+.bot-trading-traders .button-cration-de-compte-e1VsR0 {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 44px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-OUdL75 {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-OUdL75 {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-OUdL75 {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-3-dxtpyk {
+  background-color: transparent;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  top: calc(17.43% - 13px);
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-hG8uPS {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-hG8uPS {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-hG8uPS {
+  background-color: transparent;
+  bottom: calc(35.71% - 7px);
+  height: 19px;
+  left: 103px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-hG8uPS {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .top-trader-hG8uPS {
+  background-color: transparent;
+  height: 14px;
+  left: 103px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(36.07% - 5px);
+  width: 77px;
+}
+
+.bot-trading-traders .font-awsome-crown-hG8uPS {
+  background-color: transparent;
+  height: 7px;
+  left: 168px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(36.05% - 2px);
+  width: 9px;
+}
+
+.bot-trading-traders .x149544-hG8uPS {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-hG8uPS {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-hG8uPS {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .x3-hG8uPS {
+  background-color: transparent;
+  height: 15px;
+  left: 9px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  top: calc(26.67% - 4px);
+  width: 10px;
+}
+
+.bot-trading-traders .ligne-30-hG8uPS {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: 20px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 9px;
+}
+
+.bot-trading-traders .button-cration-de-compte-hG8uPS {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 44px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-Sl5AfH {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-Sl5AfH {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-Sl5AfH {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-4-dxtpyk {
+  background-color: transparent;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  top: calc(24.31% - 18px);
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-oX5uxM {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-882-oX5uxM {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-oX5uxM {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-oX5uxM {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-oX5uxM {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-oX5uxM {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-oX5uxM {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-oX5uxM {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-G3ko4g {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-G3ko4g {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-G3ko4g {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-5-dxtpyk {
+  background-color: transparent;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  top: calc(31.19% - 23px);
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-D6SD0I {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-D6SD0I {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-D6SD0I {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-D6SD0I {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-D6SD0I {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-D6SD0I {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-D6SD0I {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-D6SD0I {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-p9YpD8 {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-p9YpD8 {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-p9YpD8 {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-6-dxtpyk {
+  background-color: transparent;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  top: calc(38.07% - 29px);
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-ceNKQV {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-ceNKQV {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-ceNKQV {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-ceNKQV {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-ceNKQV {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-ceNKQV {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-ceNKQV {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-ceNKQV {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-wqQ0LM {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-wqQ0LM {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-wqQ0LM {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-7-dxtpyk {
+  background-color: transparent;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  top: calc(44.95% - 34px);
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-gPZNq1 {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-gPZNq1 {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-gPZNq1 {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-gPZNq1 {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-gPZNq1 {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-gPZNq1 {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-gPZNq1 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-gPZNq1 {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-yim6LZ {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-yim6LZ {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-yim6LZ {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-8-dxtpyk {
+  background-color: transparent;
+  bottom: calc(48.17% - 36px);
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-NwdJX8 {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-NwdJX8 {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-NwdJX8 {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-NwdJX8 {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-NwdJX8 {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-NwdJX8 {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-NwdJX8 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-NwdJX8 {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-0HohkE {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-0HohkE {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-0HohkE {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-9-dxtpyk {
+  background-color: transparent;
+  bottom: calc(41.28% - 31px);
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-gFSYQl {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-gFSYQl {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-gFSYQl {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-gFSYQl {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-gFSYQl {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-gFSYQl {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-gFSYQl {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-gFSYQl {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-3NDDFr {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-3NDDFr {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-3NDDFr {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-10-dxtpyk {
+  background-color: transparent;
+  bottom: calc(34.40% - 26px);
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-epOaIQ {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-epOaIQ {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-epOaIQ {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-epOaIQ {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-epOaIQ {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-epOaIQ {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-epOaIQ {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-epOaIQ {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-dGbTtJ {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-dGbTtJ {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-dGbTtJ {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-11-dxtpyk {
+  background-color: transparent;
+  bottom: calc(27.52% - 21px);
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-7VOxLm {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-7VOxLm {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-7VOxLm {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-7VOxLm {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-7VOxLm {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-7VOxLm {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-7VOxLm {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-7VOxLm {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-axTn63 {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-axTn63 {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-axTn63 {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-12-dxtpyk {
+  background-color: transparent;
+  bottom: calc(20.64% - 15px);
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-jZelgW {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-jZelgW {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-jZelgW {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-jZelgW {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-jZelgW {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-jZelgW {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-jZelgW {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-jZelgW {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-k3Y4my {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-k3Y4my {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-k3Y4my {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-13-dxtpyk {
+  background-color: transparent;
+  bottom: 150px;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-Ih4TCc {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-Ih4TCc {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-Ih4TCc {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-Ih4TCc {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-Ih4TCc {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-Ih4TCc {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-Ih4TCc {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-Ih4TCc {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-WRFYjK {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-WRFYjK {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-WRFYjK {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-14-dxtpyk {
+  background-color: transparent;
+  bottom: 75px;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-YduxLx {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-YduxLx {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-YduxLx {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-YduxLx {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-YduxLx {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-YduxLx {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-YduxLx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-YduxLx {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-3TR9QP {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-3TR9QP {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-3TR9QP {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .row-15-dxtpyk {
+  background-color: transparent;
+  bottom: 0px;
+  height: 75px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3564-h2zpXK {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .image-880-h2zpXK {
+  background-color: transparent;
+  height: calc(100.00% - 29px);
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 46px;
+}
+
+.bot-trading-traders .wet-cross-bus-h2zpXK {
+  background-color: transparent;
+  bottom: calc(48.21% - 9px);
+  height: 19px;
+  left: 81px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 103px;
+}
+
+.bot-trading-traders .ligne-28-h2zpXK {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: calc(24.39% - 6px);
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.bot-trading-traders .x149544-h2zpXK {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  left: calc(39.04% - 34px);
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .x13646-h2zpXK {
+  background-color: transparent;
+  bottom: calc(47.37% - 9px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(35.16% - 31px);
+  text-align: left;
+  width: 87px;
+}
+
+.bot-trading-traders .rectangle-3562-h2zpXK {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .button-cration-de-compte-h2zpXK {
+  background-color: transparent;
+  bottom: calc(48.89% - 15px);
+  height: 30px;
+  position: absolute;
+  right: 49px;
+  width: 101px;
+}
+
+.bot-trading-traders .rectangle-3470-U3Hn40 {
+  background: linear-gradient(102.85deg, #d61d00 12.14%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .suivre-U3Hn40 {
+  background-color: transparent;
+  bottom: calc(42.31% - 7px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(36.54% - 13px);
+  text-align: left;
+  width: 36px;
+}
+
+.bot-trading-traders .icon-plus-U3Hn40 {
+  background-color: transparent;
+  bottom: calc(47.62% - 4px);
+  height: 9px;
+  left: calc(27.99% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 9px;
+}
+
+.bot-trading-traders .footer-4cm5Mv {
+  background-color: transparent;
+  bottom: -1px;
+  height: 210px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .background-vKbuY9 {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .menu-footer-vKbuY9 {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: 185px;
+  top: calc(47.37% - 9px);
+  width: 470px;
+}
+
+.bot-trading-traders .mentions-lgales-yjPBFF {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 70px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.bot-trading-traders .cgu-yjPBFF {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: calc(45.12% - 13px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.bot-trading-traders .cgv-yjPBFF {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(44.47% - 12px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.bot-trading-traders .politique-de-confidentialit-yjPBFF {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.bot-trading-traders .politique-de-confidentialit-lcTCVQ {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 0px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.bot-trading-traders .contact-yjPBFF {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.bot-trading-traders .x2022-6-fire-invest-vKbuY9 {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.88% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.bot-trading-traders .logo-vKbuY9 {
+  background-color: transparent;
+  height: 58px;
+  left: 191px;
+  position: absolute;
+  top: calc(33.01% - 19px);
+  width: 199px;
+}
+
+.bot-trading-traders .groupe-2-q2noIg {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.bot-trading-traders .groupe-1-T6b38c {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .effect-q2noIg {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.bot-trading-traders .ligne-31-vKbuY9 {
+  background-color: transparent;
+  bottom: 31.58%;
+  height: 1px;
+  left: 72px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 143px);
+}
+
+.bot-trading-traders .groupe-3011-vKbuY9 {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: 215px;
+  top: calc(26.53% - 6px);
+  width: 21px;
+}
+
+.bot-trading-traders .ellipse-17695-UqxAJY {
+  background-color: var(--milano-red);
+  border-radius: 22px;
+  height: calc(100.00% + 23px);
+  left: -12px;
+  opacity: 0;
+  position: absolute;
+  top: -11px;
+  width: calc(100.00% + 23px);
+}
+
+.bot-trading-traders .icon-instagram-UqxAJY {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .groupe-3010-vKbuY9 {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 185px;
+  top: calc(26.87% - 5px);
+  width: 16px;
+}
+
+.bot-trading-traders .ellipse-17696-Cwiuxc {
+  background-color: var(--milano-red);
+  border-radius: 22px;
+  height: calc(100.00% + 26px);
+  left: -14px;
+  opacity: 0;
+  position: absolute;
+  top: -13px;
+  width: calc(100.00% + 28px);
+}
+
+.bot-trading-traders .icon-simple-tiktok-Cwiuxc {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.bot-trading-traders .header-4cm5Mv {
+  background-color: transparent;
+  height: 144px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3483-l4Aixi {
+  background-color: var(--midnight-moss);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .logo-l4Aixi {
+  background-color: transparent;
+  height: 59px;
+  left: calc(50.00% - 44px);
+  position: absolute;
+  top: 17px;
+  width: 88px;
+}
+
+.bot-trading-traders .groupe-1483-lUxiiA {
+  background-color: transparent;
+  bottom: -93px;
+  height: 36px;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% - 9px);
+}
+
+.bot-trading-traders .groupe-1482-lYK2Yt {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.bot-trading-traders .effect-lUxiiA {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .thme-sombre-l4Aixi {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: calc(18.74% - 9px);
+  top: calc(30.33% - 4px);
+  width: 48px;
+}
+
+.bot-trading-traders .icon-ionic-ios-moon-3kakFE {
+  background-color: transparent;
+  height: 100%;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 14px;
+}
+
+.bot-trading-traders .toogle-button-3kakFE {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  width: 25px;
+}
+
+.bot-trading-traders .rectangle-3485-r6WjP7 {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .ellipse-17688-r6WjP7 {
+  background-color: var(--cape-cod);
+  border-radius: 5px;
+  height: calc(100.00% - 4px);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 10px;
+}
+
+.bot-trading-traders .menu-l4Aixi {
+  background-color: transparent;
+  bottom: 0px;
+  height: 51px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3484-bHLxtG {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .espace-trading-crypto-bHLxtG {
+  background-color: transparent;
+  cursor: pointer;
+  height: 17px;
+  left: 197px;
+  position: absolute;
+  top: calc(45.59% - 8px);
+  width: 152px;
+}
+
+.bot-trading-traders .formations-yxNfHF {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.bot-trading-traders .ligne-8-yxNfHF {
+  background-color: transparent;
+  bottom: -18px;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 4px);
+}
+
+.bot-trading-traders .formations-bHLxtG {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  left: calc(29.94% - 29px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 98px;
+}
+
+.bot-trading-traders .formations-w1AxNf {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 72px;
+}
+
+.bot-trading-traders .ligne-8-w1AxNf {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 35px);
+}
+
+.bot-trading-traders .icon-actif-w1AxNf {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .ellipse-17693-2XEPYJ {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .font-awsome-graduation-cap-2XEPYJ {
+  background-color: transparent;
+  bottom: 7px;
+  height: 7px;
+  object-fit: cover;
+  position: absolute;
+  right: 3px;
+  width: 15px;
+}
+
+.bot-trading-traders .forex-bHLxtG {
+  background-color: transparent;
+  height: 20px;
+  left: calc(39.04% - 25px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 64px;
+}
+
+.bot-trading-traders .formations-LJIGmS {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 37px;
+}
+
+.bot-trading-traders .ligne-8-LJIGmS {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 70px);
+}
+
+.bot-trading-traders .icon-actif-LJIGmS {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .ellipse-17693-ad6Mfk {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .font-awsome-dollar-sign-ad6Mfk {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 7px;
+  top: 5px;
+  width: 6px;
+}
+
+.bot-trading-traders .crypto-wallet-bHLxtG {
+  background-color: transparent;
+  cursor: pointer;
+  height: 20px;
+  left: calc(48.14% - 55px);
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 114px;
+}
+
+.bot-trading-traders .formations-LW9Yz5 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  width: 88px;
+}
+
+.bot-trading-traders .ligne-8-LW9Yz5 {
+  background-color: transparent;
+  bottom: -16px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  width: calc(100.00% + 19px);
+}
+
+.bot-trading-traders .icon-actif-LW9Yz5 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .ellipse-17693-AgtgkR {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .font-awsome-wallet-AgtgkR {
+  background-color: transparent;
+  bottom: 5px;
+  height: 9px;
+  left: 5px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 10px);
+}
+
+.bot-trading-traders .bot-trading-bHLxtG {
+  background-color: transparent;
+  bottom: 1px;
+  height: 34px;
+  position: absolute;
+  right: calc(40.65% - 43px);
+  width: 106px;
+}
+
+.bot-trading-traders .club-premium-rF48xc {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 6px;
+  text-align: left;
+  top: calc(6.45% - 1px);
+  width: 72px;
+}
+
+.bot-trading-traders .ligne-8-rF48xc {
+  background-color: transparent;
+  bottom: -1px;
+  height: 2px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders .icon-actif-rF48xc {
+  background-color: transparent;
+  height: calc(100.00% - 14px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .ellipse-17693-EtGLDN {
+  background-color: var(--milano-red);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .icon-awesome-robot-EtGLDN {
+  background-color: transparent;
+  height: calc(100.00% - 10px);
+  left: 4px;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: calc(100.00% - 8px);
+}
+
+.bot-trading-traders .trading-bHLxtG {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: calc(27.69% - 36px);
+  top: 0px;
+  width: 131px;
+}
+
+.bot-trading-traders .rectangle-3556-fZHUiv {
+  background-color: var(--milano-red);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .trading-fZHUiv {
+  background-color: transparent;
+  bottom: calc(44.83% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 14px;
+  text-align: left;
+  width: 70px;
+}
+
+.bot-trading-traders .icon-actif-fZHUiv {
+  background-color: transparent;
+  height: calc(100.00% - 31px);
+  left: 17px;
+  position: absolute;
+  top: 16px;
+  width: 20px;
+}
+
+.bot-trading-traders .ellipse-17693-PYNJtq {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
+.bot-trading-traders .icon-simple-graphcool-PYNJtq {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 9px;
+}
+
+.bot-trading-traders .espace-membre-l4Aixi {
+  background-color: transparent;
+  height: 17px;
+  position: absolute;
+  right: 112px;
+  top: calc(29.92% - 5px);
+  width: 83px;
+}
+
+.bot-trading-traders .connexion-DRxbMV {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .club-premium-eWgMVx {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.bot-trading-traders .ligne-8-eWgMVx {
+  background-color: transparent;
+  bottom: -5px;
+  height: 1px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  right: 2px;
+  width: 64px;
+}
+
+.bot-trading-traders .menu-2-l4Aixi {
+  background-color: transparent;
+  height: 9px;
+  position: absolute;
+  right: 50px;
+  top: calc(31.11% - 3px);
+  width: 27px;
+}
+
+.bot-trading-traders .icon-ionic-ios-menu-QB3dVS {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .trac-1-CArbAB {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .trac-2-CArbAB {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.bot-trading-traders .menu-2-QB3dVS {
+  background-color: transparent;
+  height: calc(100.00% + 759px);
+  left: -310px;
+  opacity: 0;
+  position: absolute;
+  top: -42px;
+  width: calc(100.00% + 360px);
+}
+
+.bot-trading-traders .background-I3T0wD {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .groupe-1487-I3T0wD {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 37px;
+  top: 28px;
+  width: 13px;
+}
+
+.bot-trading-traders .ligne-10-BxgCLP {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.bot-trading-traders .ligne-11-BxgCLP {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.bot-trading-traders .numro-de-tlphone-I3T0wD {
+  background-color: transparent;
+  height: 59px;
+  position: absolute;
+  right: 37px;
+  top: 114px;
+  width: 210px;
+}
+
+.bot-trading-traders .ligne-6-ZixFEh {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 50.00%;
+  width: 100%;
+}
+
+.bot-trading-traders .mes-donnes-personnelles-ZixFEh {
+  background-color: transparent;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  width: calc(100.00% - 24px);
+}
+
+.bot-trading-traders .ma-licence-ZixFEh {
+  background-color: transparent;
+  bottom: -2px;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  width: calc(100.00% - 26px);
+}
+
+.bot-trading-traders .search-bar-l4Aixi {
+  background-color: transparent;
+  height: 14px;
+  position: absolute;
+  right: 87px;
+  top: calc(30.33% - 4px);
+  width: 14px;
+}
+
+.bot-trading-traders .icon-search-cEf0tF {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .search-bar-cEf0tF {
+  background-color: transparent;
+  height: calc(100.00% + 78px);
+  left: -1264px;
+  opacity: 0;
+  position: absolute;
+  top: -39px;
+  width: calc(100.00% + 1352px);
+}
+
+.bot-trading-traders .rectangle-3603-Yhc9H2 {
+  background-color: var(--black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .search-bar-Yhc9H2 {
+  background-color: transparent;
+  height: 42px;
+  position: absolute;
+  right: calc(49.95% - 184px);
+  top: calc(50.00% - 21px);
+  width: 369px;
+}
+
+.bot-trading-traders .rectangle-3604-2FPI5O {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 40px);
+}
+
+.bot-trading-traders .rectangle-3605-2FPI5O {
+  background-color: transparent;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 41px;
+}
+
+.bot-trading-traders .rechercher-2FPI5O {
+  background-color: transparent;
+  bottom: calc(43.48% - 8px);
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 270px;
+}
+
+.bot-trading-traders .icon-search-2FPI5O {
+  background-color: transparent;
+  bottom: calc(50.00% - 8px);
+  height: 16px;
+  object-fit: cover;
+  position: absolute;
+  right: 12px;
+  width: 16px;
+}
+
+.bot-trading-traders .groupe-1487-Yhc9H2 {
+  background-color: transparent;
+  height: 13px;
+  position: absolute;
+  right: 90px;
+  top: calc(50.00% - 6px);
+  width: 13px;
+}
+
+.bot-trading-traders .ligne-10-YSm5Zn {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.bot-trading-traders .ligne-11-YSm5Zn {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% + 1px);
+}
+
+.bot-trading-traders .form-4cm5Mv {
+  background-color: transparent;
+  bottom: calc(24.00% - 28px);
+  height: 118px;
+  left: 197px;
+  position: absolute;
+  width: 963px;
+}
+
+.bot-trading-traders .rectangle-3578-33fSpM {
+  background-color: transparent;
+  border: 1px solid #97979c;
+  border-radius: 10px;
+  bottom: 0px;
+  height: 48px;
+  left: 120px;
+  position: absolute;
+  width: 596px;
+}
+
+.bot-trading-traders .vous-voulez-suivre-u-33fSpM {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  right: calc(49.11% - 171px);
+  text-align: center;
+  top: 9px;
+  width: 348px;
+}
+
+.bot-trading-traders .partagez-nous-le-pse-33fSpM {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: calc(26.26% - 5px);
+  width: calc(100.00% + 2px);
+}
+
+.bot-trading-traders .rectangle-3574-33fSpM {
+  background-color: var(--milano-red);
+  height: 3px;
+  left: 471px;
+  position: absolute;
+  top: 0px;
+  width: 31px;
+}
+
+.bot-trading-traders .ecrivez-votre-message-33fSpM {
+  background-color: transparent;
+  bottom: calc(19.19% - 4px);
+  height: 19px;
+  left: 142px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 160px;
+}
+
+.bot-trading-traders .rectangle-3579-33fSpM {
+  background-color: var(--milano-red-2);
+  border-radius: 10px;
+  bottom: 0px;
+  height: 48px;
+  position: absolute;
+  right: 112px;
+  width: 127px;
+}
+
+.bot-trading-traders .envoyer-33fSpM {
+  background-color: transparent;
+  bottom: 11px;
+  height: 23px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: 144px;
+  text-align: center;
+  width: 61px;
+}
+
+.bot-trading-traders .bloc-affi-4cm5Mv {
+  background-color: transparent;
+  bottom: 262px;
+  height: 197px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3606-2BRUTX {
+  background-color: var(--black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .o-prendre-les-trades-des-traders-2BRUTX {
+  background-color: transparent;
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.41% - 172px);
+  text-align: center;
+  top: calc(18.40% - 3px);
+  width: 348px;
+}
+
+.bot-trading-traders .novice-inscrivez-vous-ici-2BRUTX {
+  background-color: transparent;
+  height: 27px;
+  left: calc(32.89% - 78px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: calc(45.74% - 12px);
+  width: 238px;
+}
+
+.bot-trading-traders .bouton-affi-2BRUTX {
+  background-color: transparent;
+  bottom: calc(32.12% - 13px);
+  height: 39px;
+  position: absolute;
+  right: 365px;
+  width: 247px;
+}
+
+.bot-trading-traders .rectangle-8-xcHvl1 {
+  background-color: var(--bright-sun);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .binance-svgrepo-com-xcHvl1 {
+  background-color: transparent;
+  bottom: calc(50.00% - 9px);
+  height: 18px;
+  left: 15px;
+  object-fit: cover;
+  position: absolute;
+  width: 18px;
+}
+
+.bot-trading-traders .c-rer-un-compte-binance-xcHvl1 {
+  background-color: transparent;
+  bottom: calc(45.24% - 8px);
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(42.50% - 74px);
+  text-align: left;
+  width: 173px;
+}
+
+.bot-trading-traders .icon-ionic-ios-arrow-round-forward-xcHvl1 {
+  background-color: transparent;
+  height: 8px;
+  object-fit: cover;
+  position: absolute;
+  right: 15px;
+  top: calc(50.00% - 4px);
+  width: 12px;
+}
+
+.bot-trading-traders .expriment-inscrivez-vous-ici-2BRUTX {
+  background-color: transparent;
+  height: 20px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(33.30% - 66px);
+  text-align: center;
+  top: calc(43.93% - 9px);
+  width: 198px;
+}
+
+.bot-trading-traders .bouton-affi-fu2S5j {
+  background-color: transparent;
+  bottom: calc(32.12% - 13px);
+  height: 39px;
+  position: absolute;
+  right: 753px;
+  width: 247px;
+}
+
+.bot-trading-traders .rectangle-8-bS0Kej {
+  background-color: var(--blue-ribbon);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .crer-un-compte-puprime-bS0Kej {
+  background-color: transparent;
+  bottom: calc(45.24% - 8px);
+  color: var(--white);
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(16.74% - 33px);
+  text-align: left;
+  width: 196px;
+}
+
+.bot-trading-traders .icon-ionic-ios-arrow-round-forward-bS0Kej {
+  background-color: transparent;
+  height: 8px;
+  object-fit: cover;
+  position: absolute;
+  right: 15px;
+  top: calc(50.00% - 4px);
+  width: 12px;
+}
+
+.bot-trading-traders .groupe-3019-bS0Kej {
+  background-color: transparent;
+  height: 18px;
+  left: 19px;
+  position: absolute;
+  top: calc(50.00% - 9px);
+  width: 18px;
+}
+
+.bot-trading-traders .groupe-3019-qG1eyL {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .avertissement-4cm5Mv {
+  background-color: transparent;
+  bottom: 209px;
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders .groupe-3020-HM5sYg {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .rectangle-3606-C7USVw {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders .les-investissements-C7USVw {
+  background-color: transparent;
+  height: 35px;
+  left: 135px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  width: calc(100.00% - 268px);
+}
+
+.bot-trading-traders .span0-0XHUis {
+}
+
+.bot-trading-traders .span1-0XHUis {
+}
+
+.bot-trading-traders .ligne-41-HM5sYg {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+/* screen - bot-trading-traders-mobile */
+
+.bot-trading-traders-mobile {
+  background-color: var(--white);
+  height: 100vh;
+  margin: 0px;
+  min-height: 2826px;
+  min-width: 428px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .avertissement-1tYkRE {
+  background-color: transparent;
+  bottom: 200px;
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .groupe-3020-LwysVW {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .rectangle-3606-FoCtx7 {
+  background-color: var(--eerie-black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .les-investissements-FoCtx7 {
+  background-color: transparent;
+  height: 79px;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 17px;
+  width: calc(100.00% - 52px);
+}
+
+.bot-trading-traders-mobile .span0-NuvJS1 {
+}
+
+.bot-trading-traders-mobile .span1-NuvJS1 {
+}
+
+.bot-trading-traders-mobile .ligne-41-LwysVW {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .footer-1tYkRE {
+  background-color: transparent;
+  bottom: -3px;
+  height: 203px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .background-hiEWkD {
+  background-color: var(--licorice);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .menu-footer-hiEWkD {
+  background-color: transparent;
+  bottom: calc(40.37% - 17px);
+  height: 42px;
+  left: calc(50.00% - 108px);
+  position: absolute;
+  width: 216px;
+}
+
+.bot-trading-traders-mobile .mentions-lgales-M4K07i {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(40.97% - 45px);
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 111px;
+}
+
+.bot-trading-traders-mobile .cgu-M4K07i {
+  background-color: transparent;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: 4px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 29px;
+}
+
+.bot-trading-traders-mobile .cgv-M4K07i {
+  background-color: transparent;
+  bottom: -3px;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.bot-trading-traders-mobile .politique-de-confidentialit-M4K07i {
+  background-color: transparent;
+  bottom: -5px;
+  height: 22px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.bot-trading-traders-mobile .contact-M4K07i {
+  background-color: transparent;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.bot-trading-traders-mobile .x2022-6-fire-invest-hiEWkD {
+  background-color: transparent;
+  bottom: 18px;
+  height: 23px;
+  letter-spacing: 0.56px;
+  line-height: 14px;
+  opacity: 0.5;
+  position: absolute;
+  right: calc(49.46% - 74px);
+  text-align: left;
+  white-space: nowrap;
+  width: 149px;
+}
+
+.bot-trading-traders-mobile .logo-hiEWkD {
+  background-color: transparent;
+  height: 58px;
+  left: 10px;
+  position: absolute;
+  top: 18px;
+  width: 199px;
+}
+
+.bot-trading-traders-mobile .groupe-2-1XJtb3 {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  position: absolute;
+  right: 0px;
+  width: 113px;
+}
+
+.bot-trading-traders-mobile .groupe-1-4333N8 {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .effect-1XJtb3 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 86px;
+}
+
+.bot-trading-traders-mobile .ligne-31-hiEWkD {
+  background-color: transparent;
+  bottom: 26.73%;
+  height: 1px;
+  left: 38px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 76px);
+}
+
+.bot-trading-traders-mobile .groupe-3011-hiEWkD {
+  background-color: transparent;
+  height: 21px;
+  position: absolute;
+  right: calc(22.45% - 5px);
+  top: calc(20.19% - 4px);
+  width: 21px;
+}
+
+.bot-trading-traders-mobile .icon-instagram-igxqNi {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .groupe-3010-hiEWkD {
+  background-color: transparent;
+  height: 18px;
+  position: absolute;
+  right: 61px;
+  top: calc(20.64% - 4px);
+  width: 16px;
+}
+
+.bot-trading-traders-mobile .icon-simple-tiktok-EBGRKX {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .icon-paper_plane-hiEWkD {
+  background-color: transparent;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 25px;
+  top: calc(20.64% - 4px);
+  width: 21px;
+}
+
+.bot-trading-traders-mobile .groupe-de-masques-327-1tYkRE {
+  background-color: transparent;
+  height: 195px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 153px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .rectangle-3558-1tYkRE {
+  background: linear-gradient(126.16deg, rgba(214, 29, 0, 0.2) 4.97%, rgba(179, 15, 16, 0.2) 31.21%);
+  background-color: transparent;
+  height: 196px;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 153px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .groupe-3024-1tYkRE {
+  background-color: transparent;
+  height: 124px;
+  left: 39px;
+  position: absolute;
+  top: 185px;
+  width: calc(100.00% - 78px);
+}
+
+.bot-trading-traders-mobile .club-premium-wJcN06 {
+  background-color: transparent;
+  height: 24px;
+  left: 32px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: calc(100.00% - 62px);
+}
+
+.bot-trading-traders-mobile .club-premium-ixEiLS {
+  background-color: transparent;
+  height: 40px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: calc(28.57% - 11px);
+  width: calc(100.00% + 2px);
+}
+
+.bot-trading-traders-mobile .menu-bascule-wJcN06 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 41px;
+  left: 19px;
+  position: absolute;
+  width: calc(100.00% - 40px);
+}
+
+.bot-trading-traders-mobile .groupe-3014-7jVV3X {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 156px;
+}
+
+.bot-trading-traders-mobile .rectangle-3559-9dy4sN {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .club-premium-9dy4sN {
+  background-color: transparent;
+  bottom: calc(45.45% - 9px);
+  height: 19px;
+  left: 18px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 34px);
+}
+
+.bot-trading-traders-mobile .groupe-3013-7jVV3X {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 156px;
+}
+
+.bot-trading-traders-mobile .rectangle-3560-kMcVGf {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .club-premium-kMcVGf {
+  background-color: transparent;
+  bottom: calc(45.45% - 9px);
+  height: 19px;
+  left: 18px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 34px);
+}
+
+.bot-trading-traders-mobile .club-premium-1tYkRE {
+  background-color: transparent;
+  height: 40px;
+  left: 22px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 379px;
+  width: calc(100.00% - 43px);
+}
+
+.bot-trading-traders-mobile .header-1tYkRE {
+  background-color: transparent;
+  height: 153px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .rectangle-3484-y6mPE2 {
+  background-color: var(--black-3);
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .logo-y6mPE2 {
+  background-color: transparent;
+  height: 86px;
+  position: absolute;
+  right: calc(49.68% - 64px);
+  top: 4px;
+  width: 128px;
+}
+
+.bot-trading-traders-mobile .effect-NxV0Tb {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .toogle-button-y6mPE2 {
+  background-color: transparent;
+  height: 18px;
+  left: 37px;
+  position: absolute;
+  top: calc(28.31% - 5px);
+  width: 58px;
+}
+
+.bot-trading-traders-mobile .icon-ionic-ios-moon-W72uwx {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: 17px;
+}
+
+.bot-trading-traders-mobile .toogle-button-W72uwx {
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 32px;
+}
+
+.bot-trading-traders-mobile .rectangle-3485-d6zwqc {
+  background-color: var(--quill-gray);
+  border-radius: 30px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .ellipse-17688-d6zwqc {
+  background-color: var(--cape-cod);
+  border-radius: 6.41px;
+  height: calc(100.00% - 5px);
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 13px;
+}
+
+.bot-trading-traders-mobile .search-bar-y6mPE2 {
+  background-color: transparent;
+  height: 22px;
+  position: absolute;
+  right: 37px;
+  top: calc(26.28% - 6px);
+  width: 22px;
+}
+
+.bot-trading-traders-mobile .icon-search-7o1HFP {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .rectangle-3607-y6mPE2 {
+  background-color: var(--licorice);
+  bottom: 0px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .menu-y6mPE2 {
+  background-color: transparent;
+  bottom: calc(17.71% - 2px);
+  height: 9px;
+  position: absolute;
+  right: 37px;
+  width: 27px;
+}
+
+.bot-trading-traders-mobile .icon-ionic-ios-menu-ljeXh2 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .trac-1-PNVZMR {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .trac-2-PNVZMR {
+  background-color: transparent;
+  bottom: 0px;
+  height: 2px;
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100.00% - 3px);
+}
+
+.bot-trading-traders-mobile .espace-trading-crypto-y6mPE2 {
+  background-color: transparent;
+  bottom: 20px;
+  height: 17px;
+  left: 16px;
+  position: absolute;
+  width: 152px;
+}
+
+.bot-trading-traders-mobile .formations-jKL3Ab {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% + 2px);
+}
+
+.bot-trading-traders-mobile .background-1tYkRE {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  height: 1867px;
+  left: 0px;
+  position: absolute;
+  top: 348px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .h2-1tYkRE {
+  background-color: transparent;
+  height: 40px;
+  left: 22px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  top: 371px;
+  width: calc(100.00% - 52px);
+}
+
+.bot-trading-traders-mobile .paragraph-1tYkRE {
+  background-color: transparent;
+  height: 87px;
+  left: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 417px;
+  width: calc(100.00% - 47px);
+}
+
+.bot-trading-traders-mobile .grid-table-1tYkRE {
+  background-color: transparent;
+  height: 1381px;
+  left: 22px;
+  position: absolute;
+  top: calc(36.96% - 510px);
+  width: calc(100.00% - 44px);
+}
+
+.bot-trading-traders-mobile .header-table-TxAbEZ {
+  background-color: transparent;
+  height: 41px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .rectangle-3561-G62Kzs {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .club-premium-G62Kzs {
+  background-color: transparent;
+  bottom: calc(45.83% - 8px);
+  height: 17px;
+  left: 25px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .club-premium-biYCBo {
+  background-color: transparent;
+  bottom: calc(45.83% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(32.59% - 23px);
+  text-align: left;
+  width: 70px;
+}
+
+.bot-trading-traders-mobile .club-premium-uZjdBx {
+  background-color: transparent;
+  bottom: calc(45.83% - 8px);
+  height: 17px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 18px;
+  text-align: left;
+  width: 66px;
+}
+
+.bot-trading-traders-mobile .row-1-TxAbEZ {
+  background-color: transparent;
+  height: 122px;
+  left: 0px;
+  position: absolute;
+  top: 40px;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .rectangle-3564-PR28tH {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .image-880-PR28tH {
+  background-color: transparent;
+  height: 46px;
+  left: 37px;
+  object-fit: cover;
+  position: absolute;
+  top: 12px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-PR28tH {
+  background-color: transparent;
+  height: 19px;
+  left: calc(33.57% - 35px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(32.04% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-PR28tH {
+  background-color: transparent;
+  height: 14px;
+  left: calc(30.72% - 24px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(17.59% - 2px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-PR28tH {
+  background-color: transparent;
+  height: 7px;
+  left: calc(42.47% - 4px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(18.72% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-PR28tH {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-PR28tH {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-PR28tH {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .x1-PR28tH {
+  background-color: transparent;
+  height: 15px;
+  left: 9px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  top: 16px;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .ligne-30-PR28tH {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 15px;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-PR28tH {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-zfJxqi {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-zfJxqi {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-zfJxqi {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-jDWQHp {
+  background-color: transparent;
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  top: 162px;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .image-880-uD7E8y {
+  background-color: transparent;
+  height: 46px;
+  left: 37px;
+  object-fit: cover;
+  position: absolute;
+  top: 12px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-uD7E8y {
+  background-color: transparent;
+  height: 19px;
+  left: calc(33.57% - 35px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(32.04% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-uD7E8y {
+  background-color: transparent;
+  height: 14px;
+  left: calc(30.72% - 24px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(17.59% - 2px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-uD7E8y {
+  background-color: transparent;
+  height: 7px;
+  left: calc(42.47% - 4px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(18.72% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-uD7E8y {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-uD7E8y {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-uD7E8y {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .x2-uD7E8y {
+  background-color: transparent;
+  height: 17px;
+  left: 9px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 16px;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .ligne-30-uD7E8y {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 15px;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-uD7E8y {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-M7gMGW {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-M7gMGW {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-M7gMGW {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-n9O1bx {
+  background-color: transparent;
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  top: calc(22.56% - 28px);
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .rectangle-3564-W2xn5B {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .image-880-W2xn5B {
+  background-color: transparent;
+  height: 46px;
+  left: 37px;
+  object-fit: cover;
+  position: absolute;
+  top: 12px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-W2xn5B {
+  background-color: transparent;
+  height: 19px;
+  left: calc(33.57% - 35px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(32.04% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-W2xn5B {
+  background-color: transparent;
+  height: 14px;
+  left: calc(30.72% - 24px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(17.59% - 2px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-W2xn5B {
+  background-color: transparent;
+  height: 7px;
+  left: calc(42.47% - 4px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(18.72% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-W2xn5B {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-W2xn5B {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-W2xn5B {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .x3-W2xn5B {
+  background-color: transparent;
+  height: 17px;
+  left: 9px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 16px;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .ligne-30-W2xn5B {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 15px;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-W2xn5B {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-Nm0y86 {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-Nm0y86 {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-Nm0y86 {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-xrQY3V {
+  background-color: transparent;
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  top: calc(32.17% - 39px);
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .image-880-EsDdVE {
+  background-color: transparent;
+  height: 46px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-EsDdVE {
+  background-color: transparent;
+  height: 19px;
+  left: calc(25.36% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.01% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-EsDdVE {
+  background-color: transparent;
+  height: 14px;
+  left: calc(23.20% - 18px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.52% - 3px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-EsDdVE {
+  background-color: transparent;
+  height: 7px;
+  left: calc(36.33% - 3px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(19.59% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-EsDdVE {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-EsDdVE {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-EsDdVE {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-EsDdVE {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-snzohg {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-snzohg {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-snzohg {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-L0xGSn {
+  background-color: transparent;
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  top: calc(41.86% - 51px);
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .rectangle-3564-ogYGxl {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .image-880-ogYGxl {
+  background-color: transparent;
+  height: 46px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-ogYGxl {
+  background-color: transparent;
+  height: 19px;
+  left: calc(25.36% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.01% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-ogYGxl {
+  background-color: transparent;
+  height: 14px;
+  left: calc(23.20% - 18px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.52% - 3px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-ogYGxl {
+  background-color: transparent;
+  height: 7px;
+  left: calc(36.33% - 3px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(19.59% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-ogYGxl {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-ogYGxl {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-ogYGxl {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-ogYGxl {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-xjX3Gq {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-xjX3Gq {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-xjX3Gq {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-OD6Uck {
+  background-color: transparent;
+  bottom: calc(48.45% - 59px);
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .image-880-mrXmBE {
+  background-color: transparent;
+  height: 46px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-mrXmBE {
+  background-color: transparent;
+  height: 19px;
+  left: calc(25.36% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.01% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-mrXmBE {
+  background-color: transparent;
+  height: 14px;
+  left: calc(23.20% - 18px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.52% - 3px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-mrXmBE {
+  background-color: transparent;
+  height: 7px;
+  left: calc(36.33% - 3px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(19.59% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-mrXmBE {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-mrXmBE {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-mrXmBE {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-mrXmBE {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-fIuw3Y {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-fIuw3Y {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-fIuw3Y {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-VcoZNv {
+  background-color: transparent;
+  bottom: calc(38.76% - 47px);
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .rectangle-3564-HO6jPx {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .image-880-HO6jPx {
+  background-color: transparent;
+  height: 46px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-HO6jPx {
+  background-color: transparent;
+  height: 19px;
+  left: calc(25.36% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.01% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-HO6jPx {
+  background-color: transparent;
+  height: 14px;
+  left: calc(23.20% - 18px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.52% - 3px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-HO6jPx {
+  background-color: transparent;
+  height: 7px;
+  left: calc(36.33% - 3px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(19.59% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-HO6jPx {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-HO6jPx {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-HO6jPx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-HO6jPx {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-S5oc2O {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-S5oc2O {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-S5oc2O {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-EFbqhm {
+  background-color: transparent;
+  bottom: calc(29.07% - 35px);
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .image-880-x9y5zA {
+  background-color: transparent;
+  height: 46px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-x9y5zA {
+  background-color: transparent;
+  height: 19px;
+  left: calc(25.36% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.01% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-x9y5zA {
+  background-color: transparent;
+  height: 14px;
+  left: calc(23.20% - 18px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.52% - 3px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-x9y5zA {
+  background-color: transparent;
+  height: 7px;
+  left: calc(36.33% - 3px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(19.59% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-x9y5zA {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-x9y5zA {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-x9y5zA {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-x9y5zA {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-sxltP6 {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-sxltP6 {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-sxltP6 {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-nSxmga {
+  background-color: transparent;
+  bottom: calc(19.38% - 24px);
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .rectangle-3564-qmT0wu {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .image-880-qmT0wu {
+  background-color: transparent;
+  height: 46px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-qmT0wu {
+  background-color: transparent;
+  height: 19px;
+  left: calc(25.36% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.01% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-qmT0wu {
+  background-color: transparent;
+  height: 14px;
+  left: calc(23.20% - 18px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.52% - 3px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-qmT0wu {
+  background-color: transparent;
+  height: 7px;
+  left: calc(36.33% - 3px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(19.59% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-qmT0wu {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-qmT0wu {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-qmT0wu {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-qmT0wu {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-gbhGyx {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-gbhGyx {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-gbhGyx {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-QirQWI {
+  background-color: transparent;
+  bottom: 122px;
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .image-880-O7Zfmo {
+  background-color: transparent;
+  height: 46px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-O7Zfmo {
+  background-color: transparent;
+  height: 19px;
+  left: calc(25.36% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.01% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-O7Zfmo {
+  background-color: transparent;
+  height: 14px;
+  left: calc(23.20% - 18px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.52% - 3px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-O7Zfmo {
+  background-color: transparent;
+  height: 7px;
+  left: calc(36.33% - 3px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(19.59% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-O7Zfmo {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-O7Zfmo {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-O7Zfmo {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-O7Zfmo {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-IDsauh {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-IDsauh {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-IDsauh {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .row-1-77Wbxo {
+  background-color: transparent;
+  bottom: 0px;
+  height: 122px;
+  left: 1px;
+  position: absolute;
+  width: calc(100.00% - 1px);
+}
+
+.bot-trading-traders-mobile .rectangle-3564-aqbphU {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .image-880-aqbphU {
+  background-color: transparent;
+  height: 46px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 46px;
+}
+
+.bot-trading-traders-mobile .wet-cross-bus-aqbphU {
+  background-color: transparent;
+  height: 19px;
+  left: calc(25.36% - 26px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.01% - 6px);
+  width: 103px;
+}
+
+.bot-trading-traders-mobile .top-trader-aqbphU {
+  background-color: transparent;
+  height: 14px;
+  left: calc(23.20% - 18px);
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: calc(18.52% - 3px);
+  width: 77px;
+}
+
+.bot-trading-traders-mobile .font-awsome-crown-aqbphU {
+  background-color: transparent;
+  height: 7px;
+  left: calc(36.33% - 3px);
+  object-fit: cover;
+  position: absolute;
+  top: calc(19.59% - 1px);
+  width: 9px;
+}
+
+.bot-trading-traders-mobile .x149544-aqbphU {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: calc(33.75% - 20px);
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 60px;
+}
+
+.bot-trading-traders-mobile .x13646-aqbphU {
+  background-color: transparent;
+  height: 18px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  right: 29px;
+  text-align: left;
+  top: calc(26.92% - 5px);
+  width: 56px;
+}
+
+.bot-trading-traders-mobile .rectangle-3562-aqbphU {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .button-cration-de-compte-aqbphU {
+  background-color: transparent;
+  bottom: 10px;
+  height: 34px;
+  position: absolute;
+  right: calc(49.56% - 78px);
+  width: 157px;
+}
+
+.bot-trading-traders-mobile .rectangle-3470-B3uMB5 {
+  background: linear-gradient(99.44deg, #d61d00 11.89%, #9a0402 50%);
+  background-color: transparent;
+  border-radius: 20px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .suivre-B3uMB5 {
+  background-color: transparent;
+  bottom: calc(43.33% - 8px);
+  height: 19px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(41.09% - 18px);
+  text-align: left;
+  width: 43px;
+}
+
+.bot-trading-traders-mobile .icon-plus-B3uMB5 {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 10px;
+  left: calc(33.25% - 3px);
+  object-fit: cover;
+  position: absolute;
+  width: 10px;
+}
+
+.bot-trading-traders-mobile .form-1tYkRE {
+  background-color: transparent;
+  bottom: calc(26.10% - 46px);
+  height: 175px;
+  left: 24px;
+  position: absolute;
+  width: calc(100.00% - 48px);
+}
+
+.bot-trading-traders-mobile .rectangle-3578-zdJBJG {
+  background-color: transparent;
+  border: 1px solid #97979c;
+  border-radius: 10px;
+  bottom: calc(42.52% - 20px);
+  height: 48px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .vous-voulez-suivre-u-zdJBJG {
+  background-color: transparent;
+  height: 19px;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  top: 12px;
+  width: calc(100.00% - 32px);
+}
+
+.bot-trading-traders-mobile .partagez-nous-le-pse-zdJBJG {
+  background-color: transparent;
+  height: 37px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: calc(21.01% - 8px);
+  width: calc(100.00% + 2px);
+}
+
+.bot-trading-traders-mobile .rectangle-3574-zdJBJG {
+  background-color: var(--milano-red);
+  height: 3px;
+  left: 175px;
+  position: absolute;
+  top: 0px;
+  width: 31px;
+}
+
+.bot-trading-traders-mobile .ecrivez-votre-message-zdJBJG {
+  background-color: transparent;
+  bottom: calc(46.79% - 9px);
+  height: 19px;
+  left: 22px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 160px;
+}
+
+.bot-trading-traders-mobile .rectangle-3579-zdJBJG {
+  background-color: var(--milano-red-2);
+  border-radius: 10px;
+  bottom: 0px;
+  height: 38px;
+  position: absolute;
+  right: calc(48.10% - 108px);
+  width: 224px;
+}
+
+.bot-trading-traders-mobile .envoyer-zdJBJG {
+  background-color: transparent;
+  bottom: 6px;
+  height: 23px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(48.60% - 30px);
+  text-align: center;
+  width: 61px;
+}
+
+.bot-trading-traders-mobile .bloc-affi-1tYkRE {
+  background-color: transparent;
+  bottom: 310px;
+  height: 301px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .rectangle-3606-QhAOx8 {
+  background-color: var(--black);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .o-prendre-les-trades-des-traders-QhAOx8 {
+  background-color: transparent;
+  height: 19px;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: 44px;
+  width: calc(100.00% - 80px);
+}
+
+.bot-trading-traders-mobile .novice-inscrivez-vous-ici-QhAOx8 {
+  background-color: transparent;
+  height: 27px;
+  left: 96px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: calc(29.40% - 8px);
+  width: calc(100.00% - 190px);
+}
+
+.bot-trading-traders-mobile .expriment-inscrivez-vous-ici-QhAOx8 {
+  background-color: transparent;
+  bottom: calc(34.76% - 7px);
+  height: 20px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.57% - 98px);
+  text-align: center;
+  width: 198px;
+}
+
+.bot-trading-traders-mobile .bouton-affi-QhAOx8 {
+  background-color: transparent;
+  height: 45px;
+  position: absolute;
+  right: 55px;
+  top: calc(41.27% - 19px);
+  width: 319px;
+}
+
+.bot-trading-traders-mobile .rectangle-8-a0yKPk {
+  background-color: var(--blue-ribbon);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .crer-un-compte-puprime-a0yKPk {
+  background-color: transparent;
+  bottom: calc(45.87% - 10px);
+  color: var(--white);
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+  height: 21px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(49.21% - 94px);
+  text-align: left;
+  width: 192px;
+}
+
+.bot-trading-traders-mobile .icon-ionic-ios-arrow-round-forward-a0yKPk {
+  background-color: transparent;
+  bottom: calc(50.00% - 5px);
+  height: 9px;
+  object-fit: cover;
+  position: absolute;
+  right: 29px;
+  width: 14px;
+}
+
+.bot-trading-traders-mobile .groupe-3019-a0yKPk {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  left: 22px;
+  position: absolute;
+  width: 20px;
+}
+
+.bot-trading-traders-mobile .groupe-3019-mcWmAW {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .groupe-3025-QhAOx8 {
+  background-color: transparent;
+  bottom: 44px;
+  height: 45px;
+  left: 55px;
+  position: absolute;
+  width: calc(100.00% - 109px);
+}
+
+.bot-trading-traders-mobile .bouton-affi-XaoBLf {
+  background-color: transparent;
+  height: 45px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 319px;
+}
+
+.bot-trading-traders-mobile .rectangle-8-om1XcR {
+  background-color: var(--bright-sun);
+  border-radius: 6px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.bot-trading-traders-mobile .binance-svgrepo-com-om1XcR {
+  background-color: transparent;
+  height: 21px;
+  left: 18px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(50.00% - 11px);
+  width: 21px;
+}
+
+.bot-trading-traders-mobile .c-rer-un-compte-binance-om1XcR {
+  background-color: transparent;
+  bottom: calc(45.87% - 10px);
+  height: 21px;
+  left: calc(48.04% - 92px);
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: 191px;
+}
+
+.bot-trading-traders-mobile .icon-ionic-ios-arrow-round-forward-om1XcR {
+  background-color: transparent;
+  height: 9px;
+  object-fit: cover;
+  position: absolute;
+  right: 32px;
+  top: calc(50.00% - 5px);
+  width: 14px;
+}
+@media screen and (max-width: 1365px) {
+  .screen.bot-trading-traders { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) {
+  .screen.bot-trading-traders-mobile { 
+    display: none;
+   }
+}
