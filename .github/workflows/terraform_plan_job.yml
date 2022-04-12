@@ -5,6 +5,8 @@ on:
         required: true
       AWS_SECRET_ACCESS_KEY:
         required: true
+      AWS_ROLE_ARN:
+        required: true
 name: Terraform Plan Job
 
 #  terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard
