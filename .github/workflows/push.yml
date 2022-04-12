@@ -2,9 +2,6 @@ on: push
 name: Push CI
 jobs:
   install:
-    secrets:
-      AWS_ACCESS_KEY_ID: '${{ secrets.AWS_ACCESS_KEY_ID }}'
-      AWS_SECRET_ACCESS_KEY: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
     name: Install dependencies
     uses: vanerac/6FIRE/.github/workflows/install_job.yml@main
   lint:
@@ -22,5 +19,5 @@ jobs:
     needs: [ terraform ]
     uses: vanerac/6FIRE/.github/workflows/terraform_plan_job.yml@main
     secrets:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_ACCESS_KEY_ID: '${{ secrets.AWS_ACCESS_KEY_ID }}'
+      AWS_SECRET_ACCESS_KEY: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
