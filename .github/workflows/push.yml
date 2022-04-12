@@ -3,6 +3,7 @@ name: Push CI
 env:
   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
   AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+  AWS_ROLE_ARN: ${{secrets.AWS_ROLE_ARN}}
 jobs:
   install:
     name: Install dependencies
@@ -24,3 +25,4 @@ jobs:
     secrets:
       AWS_ACCESS_KEY_ID: ${env.AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${env.AWS_SECRET_ACCESS_KEY}
+      AWS_ROLE_ARN: ${env.AWS_ROLE_ARN}
