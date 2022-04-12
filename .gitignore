@@ -9,3 +9,5 @@ build/
 !next.config.js
 data/
 !.prettierrc.js
+
+.env

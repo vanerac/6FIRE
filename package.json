@@ -17,6 +17,7 @@
     "apps/client",
     "apps/api",
     "apps/dashboard",
+    "apps/bot",
     "shared/*"
   ],
   "repository": {
