@@ -1,19 +1,19 @@
 on:
   workflow_call:
-#    inputs:
-#      AWS_ACCESS_KEY_ID:
-#        description: "AWS Access Key ID"
-#        type: "string"
-#        required: true
-#      AWS_SECRET_ACCESS_KEY:
-#        description: "AWS Secret Access Key"
-#        type: "string"
-#        required: true
-    secrets:
+    inputs:
       AWS_ACCESS_KEY_ID:
+        description: "AWS Access Key ID"
+        type: "string"
         required: true
       AWS_SECRET_ACCESS_KEY:
+        description: "AWS Secret Access Key"
+        type: "string"
         required: true
+#    secrets:
+#      AWS_ACCESS_KEY_ID:
+#        required: true
+#      AWS_SECRET_ACCESS_KEY:
+#        required: true
 name: Terraform Plan Job
 
 #  terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard
