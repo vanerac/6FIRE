@@ -36,7 +36,7 @@ jobs:
         continue-on-error: true
       - name: Plan deployement
         working-directory: terraform/
-        run: terraform plan -out=plan.file -input=false -auto-approve
+        run: terraform plan -out=plan.file -input=false
       - name: Apply deployement
         working-directory: terraform/
-        run: terraform apply plan.file
+        run: terraform apply plan.file -input=false -auto-approve
