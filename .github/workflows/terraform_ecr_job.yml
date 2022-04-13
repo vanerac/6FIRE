@@ -29,10 +29,10 @@ jobs:
             echo "::set-env name=valid::false"
           fi
       - name: Plan deployement
-        if: env.valid=true
+        if: env.valid == true
         working-directory: terraform/
         run: terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard -out=plan.file -input=false
       - run: terraform apply plan.file
-        if: env.valid=true
+        if: env.valid == true
         working-directory: terraform/
         name: Apply deployement
