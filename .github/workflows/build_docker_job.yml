@@ -3,6 +3,9 @@ on: [ workflow_call, workflow_dispatch ]
 name: Build Docker images job
 jobs:
   build:
+    permissions:
+      id-token: write
+      contents: read
     name: Build docker Images
     runs-on: ubuntu-latest
     strategy:
