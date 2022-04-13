@@ -36,7 +36,7 @@ jobs:
         continue-on-error: true
       - name: Import RDS
         working-directory: terraform/
-        run: terraform import aws_rds_cluster.rds rds-6fire-cluster
+        run: terraform import aws_rds_cluster.default rds-6fire-cluster
         continue-on-error: true
       - name: Plan deployement
         working-directory: terraform/

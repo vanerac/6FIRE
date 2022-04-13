@@ -43,7 +43,7 @@ resource "aws_ecs_task_definition" "api" {
   {
     "cpu": 128,
     "essential": true,
-    "image": "${aws_ecr_repository.api.arn}/api:latest",
+    "image": "${aws_ecr_repository.api.arn}/6fire-api:latest",
     "memory": 128,
     "name": "api"
   }
@@ -64,7 +64,7 @@ resource "aws_ecs_task_definition" "client" {
   {
     "cpu": 128,
     "essential": true,
-    "image": "${aws_ecr_repository.client.arn}/client:latest",
+    "image": "${aws_ecr_repository.client.arn}/6fire-client:latest",
     "memory": 128,
     "name": "client"
   }
@@ -82,7 +82,7 @@ resource "aws_ecs_task_definition" "dashboard" {
   {
     "cpu": 128,
     "essential": true,
-    "image": "${aws_ecr_repository.dashboard.arn}/dashboard:latest",
+    "image": "${aws_ecr_repository.dashboard.arn}/6fire-dashboard:latest",
     "memory": 128,
     "name": "dashboard"
   }
