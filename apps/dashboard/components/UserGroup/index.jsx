@@ -2,7 +2,7 @@ import React from 'react';
 import UsersAvatarPhoto2States from '../UsersAvatarPhoto2States';
 import IconsChevronDown from '../IconsChevronDown';
 import styled from 'styled-components';
-import { PoppinsNormalWhite14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalWhite14px } from '../../styledMixins';
 
 function UserGroup(props) {
     const { usersAvatarPhoto2StatesProps } = props;

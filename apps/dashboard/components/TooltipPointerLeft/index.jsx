@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-    PoppinsNormalShadowBlue12px,
-    PoppinsNormalVulcan12px,
-    PoppinsSemiBoldVulcan12px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalShadowBlue12px, PoppinsNormalVulcan12px, PoppinsSemiBoldVulcan12px } from '../../styledMixins';
 
 function TooltipPointerLeft(props) {
     const { bg, titlee, x7501, onlineSales1, x7502, onlineSales2, x7503, onlineSales3 } = props;

@@ -16,6 +16,22 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
 } from '../styledMixins';
 import './Pays.css';
+import {
+    abonnement14Data,
+    articles11Data,
+    buttonsBtnTextIcon71Data,
+    filtre15Data,
+    sidebarMenuItem56Data,
+    sidebarMenuItem57Data,
+    sidebarMenuItem58Data,
+    sidebarMenuItem59Data,
+    topNavigation10Data,
+    tradingCrypto215Data,
+    tradingCrypto61Data,
+    tradingCrypto62Data,
+    tradingCrypto63Data,
+    tradingCrypto64Data,
+} from './index';
 
 function Pays(props: any): any {
     const {
@@ -400,3 +416,36 @@ const IconClose = styled.img`
 `;
 
 export default Pays;
+export const paysData = {
+    analytics: 'Pays',
+    name1: 'Rechercher…',
+    name2: 'ID',
+    name3: 'Nom',
+    name4: 'Préfixe',
+    name5: 'Drapeau',
+    name6: 'Visible',
+    name7: 'Action',
+    name8: '1',
+    name9: 'France',
+    name10: '33',
+    groupe1492: '/img/trac--994@1x.png',
+    trac995: '/img/trac--995@1x.png',
+    trac996: '/img/trac--996@1x.png',
+    membre: '/img/fontawsome--check-square--10@1x.png',
+    fontawsomePen: '/img/fontawsome--pen--12@1x.png',
+    fontawsomeTimes: '/img/fontawsome--times--10@1x.png',
+    topNavigationProps: topNavigation10Data,
+    sidebarMenuItem1Props: sidebarMenuItem56Data,
+    sidebarMenuItem2Props: sidebarMenuItem57Data,
+    sidebarMenuItem3Props: sidebarMenuItem58Data,
+    articlesProps: articles11Data,
+    tradingCrypto1Props: tradingCrypto61Data,
+    tradingCrypto2Props: tradingCrypto62Data,
+    tradingCrypto3Props: tradingCrypto63Data,
+    tradingCrypto4Props: tradingCrypto64Data,
+    tradingCrypto2Props2: tradingCrypto215Data,
+    tradingCrypto2Props22: abonnement14Data,
+    sidebarMenuItem4Props: sidebarMenuItem59Data,
+    filtreProps: filtre15Data,
+    buttonsBtnTextIcon7Props: buttonsBtnTextIcon71Data,
+};

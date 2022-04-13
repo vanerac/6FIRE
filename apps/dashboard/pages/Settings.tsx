@@ -9,12 +9,28 @@ import ButtonsBtnTextIcon3 from '../components/ButtonsBtnTextIcon3';
 import Toggle from '../components/Toggle';
 import styled from 'styled-components';
 import {
-    PoppinsSemiboldSemiBoldWhite14px,
     LatoNormalComet10px,
-    PoppinsSemiboldSemiBoldMirage24px,
     PoppinsNormalTundora12px,
+    PoppinsSemiboldSemiBoldMirage24px,
+    PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
 import './Settings.css';
+import {
+    abonnement15Data,
+    articles12Data,
+    buttonsBtnTextIcon320Data,
+    sidebarMenuItem210Data,
+    sidebarMenuItem60Data,
+    sidebarMenuItem61Data,
+    sidebarMenuItem62Data,
+    toggle1Data,
+    topNavigation11Data,
+    tradingCrypto65Data,
+    tradingCrypto66Data,
+    tradingCrypto67Data,
+    tradingCrypto68Data,
+    tradingCrypto69Data,
+} from './index';
 
 function Paramtres(props: any): any {
     const {
@@ -253,3 +269,24 @@ const Ligne6 = styled.img`
 `;
 
 export default Paramtres;
+export const paramtresData = {
+    analytics1: 'Paramètres',
+    analytics2: 'SMS à l’Inscription',
+    contenuDuSms: 'Contenu du SMS',
+    nom: 'Nom',
+    ligne6: '/img/ligne-6-42@1x.png',
+    topNavigationProps: topNavigation11Data,
+    sidebarMenuItem1Props: sidebarMenuItem60Data,
+    sidebarMenuItem2Props: sidebarMenuItem61Data,
+    sidebarMenuItem3Props: sidebarMenuItem62Data,
+    articlesProps: articles12Data,
+    tradingCrypto1Props: tradingCrypto65Data,
+    tradingCrypto2Props: tradingCrypto66Data,
+    tradingCrypto3Props: tradingCrypto67Data,
+    tradingCrypto4Props: tradingCrypto68Data,
+    tradingCrypto5Props: tradingCrypto69Data,
+    tradingCrypto5Props2: abonnement15Data,
+    sidebarMenuItem2Props2: sidebarMenuItem210Data,
+    buttonsBtnTextIcon3Props: buttonsBtnTextIcon320Data,
+    toggleProps: toggle1Data,
+};

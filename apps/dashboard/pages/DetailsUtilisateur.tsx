@@ -14,13 +14,41 @@ import Titre from '../components/Titre';
 import Historique from '../components/Historique';
 import styled from 'styled-components';
 import {
-    PoppinsSemiboldSemiBoldMirage24px,
     LatoNormalComet10px,
-    PoppinsSemiboldSemiBoldWhite14px,
     PoppinsNormalComet12px,
     PoppinsNormalVulcan12px,
+    PoppinsSemiboldSemiBoldMirage24px,
+    PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
 import './DetailsUtilisateur.css';
+import {
+    articles3Data,
+    buttonsBtnTextIcon32Data,
+    buttonsBtnTextIcon33Data,
+    buttonsBtnTextIcon34Data,
+    buttonsBtnTextIcon41Data,
+    buttonsBtnTextIcon42Data,
+    email1Data,
+    email2Data,
+    email3Data,
+    emailConfirm1Data,
+    emailConfirm2Data,
+    historique1Data,
+    historique2Data,
+    iDFixe1Data,
+    iDFixe2Data,
+    sidebarMenuItem10Data,
+    sidebarMenuItem11Data,
+    sidebarMenuItem12Data,
+    sidebarMenuItem24Data,
+    titre1Data,
+    topNavigation21Data,
+    tradingCrypto11Data,
+    tradingCrypto12Data,
+    tradingCrypto13Data,
+    tradingCrypto14Data,
+    tradingCrypto15Data,
+} from './index';
 
 function DtailsUtilisateurs(props: any): any {
     const {
@@ -502,3 +530,43 @@ const Rectangle6322 = styled.div`
 `;
 
 export default DtailsUtilisateurs;
+export const dtailsUtilisateursData = {
+    analytics1: 'Profil user',
+    analytics2: 'Données utilisateurs',
+    numroDeTlphone: 'Numéro de téléphone',
+    x33France: '+ 33 (France)',
+    iconIonicIosArrowDown: '/img/icon-ionic-ios-arrow-down-4@1x.png',
+    ligne36: '/img/ligne-36@1x.png',
+    phone: '77777777',
+    ligne61: '/img/ligne-6-4@1x.png',
+    analytics3: 'Données de connexion',
+    analytics4: 'Notes',
+    notes: 'Notes…',
+    ligne62: '/img/ligne-6-6@1x.png',
+    topNavigation2Props: topNavigation21Data,
+    sidebarMenuItem1Props: sidebarMenuItem10Data,
+    sidebarMenuItem2Props: sidebarMenuItem24Data,
+    sidebarMenuItem2Props2: sidebarMenuItem11Data,
+    articlesProps: articles3Data,
+    tradingCrypto1Props: tradingCrypto11Data,
+    tradingCrypto2Props: tradingCrypto12Data,
+    tradingCrypto3Props: tradingCrypto13Data,
+    tradingCrypto4Props: tradingCrypto14Data,
+    tradingCrypto5Props: tradingCrypto15Data,
+    sidebarMenuItem3Props: sidebarMenuItem12Data,
+    buttonsBtnTextIcon31Props: buttonsBtnTextIcon32Data,
+    buttonsBtnTextIcon41Props: buttonsBtnTextIcon41Data,
+    buttonsBtnTextIcon32Props: buttonsBtnTextIcon33Data,
+    buttonsBtnTextIcon42Props: buttonsBtnTextIcon42Data,
+    buttonsBtnTextIcon33Props: buttonsBtnTextIcon34Data,
+    email1Props: email1Data,
+    email2Props: email2Data,
+    email3Props: email3Data,
+    iDFixe1Props: iDFixe1Data,
+    iDFixe2Props: iDFixe2Data,
+    emailConfirm1Props: emailConfirm1Data,
+    emailConfirm2Props: emailConfirm2Data,
+    titreProps: titre1Data,
+    historique1Props: historique1Data,
+    historique2Props: historique2Data,
+};

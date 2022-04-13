@@ -14,6 +14,28 @@ import Abonnement42 from '../components/Abonnement42';
 import styled from 'styled-components';
 import { PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './AbonnementEssaiGratuitCrerEssaiGrat.css';
+import {
+    abonnement224Data,
+    abonnement423Data,
+    articles19Data,
+    bestSeller6Data,
+    buttonsBtnTextIcon822Data,
+    iDFixe32Data,
+    iDFixe33Data,
+    iDFixe34Data,
+    sidebarMenuItem87Data,
+    sidebarMenuItem88Data,
+    sidebarMenuItem89Data,
+    sidebarMenuItem90Data,
+    titre10Data,
+    topNavigation27Data,
+    tradingCrypto101Data,
+    tradingCrypto102Data,
+    tradingCrypto103Data,
+    tradingCrypto104Data,
+    tradingCrypto105Data,
+    type5Data,
+} from './index';
 
 function AbonnementEssaiGratuitCrerEssaiGrat(props: any): any {
     const {
@@ -218,3 +240,26 @@ const Rectangle632 = styled.div`
 `;
 
 export default AbonnementEssaiGratuitCrerEssaiGrat;
+export const abonnementEssaiGratuitCrerEssaiGratData = {
+    analytics: 'Créer Essai Gratuit (unique)',
+    topNavigation2Props: topNavigation27Data,
+    sidebarMenuItem1Props: sidebarMenuItem87Data,
+    sidebarMenuItem2Props: sidebarMenuItem88Data,
+    sidebarMenuItem3Props: sidebarMenuItem89Data,
+    articlesProps: articles19Data,
+    tradingCrypto1Props: tradingCrypto101Data,
+    tradingCrypto2Props: tradingCrypto102Data,
+    tradingCrypto3Props: tradingCrypto103Data,
+    tradingCrypto4Props: tradingCrypto104Data,
+    tradingCrypto5Props: tradingCrypto105Data,
+    abonnement2Props: abonnement224Data,
+    sidebarMenuItem4Props: sidebarMenuItem90Data,
+    buttonsBtnTextIcon8Props: buttonsBtnTextIcon822Data,
+    titreProps: titre10Data,
+    iDFixe1Props: iDFixe32Data,
+    iDFixe2Props: iDFixe33Data,
+    bestSellerProps: bestSeller6Data,
+    typeProps: type5Data,
+    abonnement4Props: abonnement423Data,
+    iDFixe3Props: iDFixe34Data,
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsMediumMirage12px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsMediumMirage12px } from '../../styledMixins';
 
 function GridTable(props) {
     const { name1, name2, name3, name4, name5, className } = props;

@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-    Border2pxTundora,
-    PoppinsNormalTundora12px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { Border2pxTundora, PoppinsNormalTundora12px } from '../../styledMixins';
 
 function BestSeller(props) {
     const { children, className } = props;

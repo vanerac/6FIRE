@@ -16,6 +16,23 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
 } from '../styledMixins';
 import './AbonnementEssaiGratuit.css';
+import {
+    abonnement223Data,
+    articles18Data,
+    buttonsBtnTextIcon72Data,
+    buttonsBtnTextIcon83Data,
+    filtre19Data,
+    sidebarMenuItem83Data,
+    sidebarMenuItem84Data,
+    sidebarMenuItem85Data,
+    sidebarMenuItem86Data,
+    topNavigation15Data,
+    tradingCrypto100Data,
+    tradingCrypto96Data,
+    tradingCrypto97Data,
+    tradingCrypto98Data,
+    tradingCrypto99Data,
+} from './index';
 
 function AbonnementEssaiGratuit(props: any): any {
     const {
@@ -371,3 +388,33 @@ const IconClose = styled.img`
 `;
 
 export default AbonnementEssaiGratuit;
+export const abonnementEssaiGratuitData = {
+    analytics: 'Essai Gratuit',
+    name1: 'Rechercher…',
+    name2: 'Nom Campagne',
+    name3: 'Durée d’essai',
+    name4: 'Type',
+    name5: 'Etat (Actif/Désactiver)',
+    name6: 'Action',
+    name7: 'Broker (30j)',
+    name8: '30',
+    name9: 'Mensuel',
+    membre: '/img/fontawsome--check-square--10@1x.png',
+    fontawsomePen: '/img/fontawsome--pen--12@1x.png',
+    fontawsomeTimes: '/img/fontawsome--times--10@1x.png',
+    topNavigationProps: topNavigation15Data,
+    sidebarMenuItem1Props: sidebarMenuItem83Data,
+    sidebarMenuItem2Props: sidebarMenuItem84Data,
+    sidebarMenuItem3Props: sidebarMenuItem85Data,
+    articlesProps: articles18Data,
+    tradingCrypto1Props: tradingCrypto96Data,
+    tradingCrypto2Props: tradingCrypto97Data,
+    tradingCrypto3Props: tradingCrypto98Data,
+    tradingCrypto4Props: tradingCrypto99Data,
+    tradingCrypto5Props: tradingCrypto100Data,
+    abonnement2Props: abonnement223Data,
+    sidebarMenuItem4Props: sidebarMenuItem86Data,
+    filtreProps: filtre19Data,
+    buttonsBtnTextIcon3Props: buttonsBtnTextIcon83Data,
+    buttonsBtnTextIcon7Props: buttonsBtnTextIcon72Data,
+};

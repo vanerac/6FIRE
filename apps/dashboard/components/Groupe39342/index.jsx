@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalWhite14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalWhite14px } from '../../styledMixins';
 
 function Groupe39342(props) {
     const { children, className } = props;

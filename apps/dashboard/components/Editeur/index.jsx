@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Border1pxSilver } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { Border1pxSilver } from '../../styledMixins';
 
 function Editeur(props) {
     const { src } = props;

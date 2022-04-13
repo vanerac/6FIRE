@@ -10,11 +10,30 @@ import Email from '../components/Email';
 import Editeur from '../components/Editeur';
 import styled from 'styled-components';
 import {
-    PoppinsSemiboldSemiBoldWhite14px,
     LatoNormalComet10px,
     PoppinsSemiboldSemiBoldMirage24px,
+    PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
 import './TradingCrypto3.css';
+import {
+    abonnement9Data,
+    articles6Data,
+    buttonsBtnTextIcon316Data,
+    editeur1Data,
+    editeur2Data,
+    email7Data,
+    email8Data,
+    sidebarMenuItem36Data,
+    sidebarMenuItem37Data,
+    sidebarMenuItem38Data,
+    sidebarMenuItem39Data,
+    topNavigation6Data,
+    tradingCrypto210Data,
+    tradingCrypto41Data,
+    tradingCrypto42Data,
+    tradingCrypto43Data,
+    tradingCrypto44Data,
+} from './index';
 
 function TradingCrypto3(props: any): any {
     const {
@@ -263,3 +282,27 @@ const Analytics2 = styled.div`
 `;
 
 export default TradingCrypto3;
+export const tradingCrypto310Data = {
+    analytics1: 'Trading & Crypto',
+    analytics2: 'Page - Espace Trading & Crypto',
+    paragraphe1: 'Paragraphe',
+    analytics3: 'Page - Nos trades',
+    paragraphe2: 'Paragraphe',
+    topNavigationProps: topNavigation6Data,
+    sidebarMenuItem1Props: sidebarMenuItem36Data,
+    sidebarMenuItem2Props: sidebarMenuItem37Data,
+    sidebarMenuItem3Props: sidebarMenuItem38Data,
+    articlesProps: articles6Data,
+    tradingCrypto2Props: tradingCrypto210Data,
+    tradingCrypto1Props: tradingCrypto41Data,
+    tradingCrypto2Props2: tradingCrypto42Data,
+    tradingCrypto3Props: tradingCrypto43Data,
+    tradingCrypto4Props: tradingCrypto44Data,
+    tradingCrypto4Props2: abonnement9Data,
+    sidebarMenuItem4Props: sidebarMenuItem39Data,
+    buttonsBtnTextIcon3Props: buttonsBtnTextIcon316Data,
+    email1Props: email7Data,
+    editeur1Props: editeur1Data,
+    email2Props: email8Data,
+    editeur2Props: editeur2Data,
+};

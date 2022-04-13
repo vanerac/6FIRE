@@ -1,7 +1,7 @@
 import React from 'react';
 import IconsNavigationIcon12States from '../IconsNavigationIcon12States';
 import styled from 'styled-components';
-import { PoppinsMediumVulcan14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsMediumVulcan14px } from '../../styledMixins';
 
 function SidebarMenuItem3(props) {
     const { name, iconsNavigationIcon12StatesProps } = props;

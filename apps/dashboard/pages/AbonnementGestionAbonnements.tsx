@@ -11,6 +11,23 @@ import GridTable from '../components/GridTable';
 import styled from 'styled-components';
 import { PoppinsMediumMirage10px, PoppinsMediumTundora10px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './AbonnementGestionAbonnements.css';
+import {
+    abonnement22Data,
+    articles13Data,
+    buttonsBtnTextIcon43Data,
+    filtre16Data,
+    gridTable1Data,
+    sidebarMenuItem63Data,
+    sidebarMenuItem64Data,
+    sidebarMenuItem65Data,
+    sidebarMenuItem66Data,
+    topNavigation12Data,
+    tradingCrypto70Data,
+    tradingCrypto71Data,
+    tradingCrypto72Data,
+    tradingCrypto73Data,
+    tradingCrypto74Data,
+} from './index';
 
 function AbonnementGestionAbonnements(props: any): any {
     const {
@@ -305,3 +322,29 @@ const IconClose = styled.img`
 `;
 
 export default AbonnementGestionAbonnements;
+export const abonnementGestionAbonnementsData = {
+    analytics: 'Gestion Abonnements',
+    name1: 'Rechercher…',
+    name2: 'Novice',
+    name3: '49.99 €',
+    name4: 'Mensuel',
+    membre1: '/img/fontawsome--check-square--10@1x.png',
+    membre2: '/img/fontawsome--check-square--10@1x.png',
+    fontawsomePen: '/img/fontawsome--pen--12@1x.png',
+    iconClose: '/img/fontawsome--times--10@1x.png',
+    topNavigationProps: topNavigation12Data,
+    sidebarMenuItem1Props: sidebarMenuItem63Data,
+    sidebarMenuItem2Props: sidebarMenuItem64Data,
+    sidebarMenuItem3Props: sidebarMenuItem65Data,
+    articlesProps: articles13Data,
+    tradingCrypto1Props: tradingCrypto70Data,
+    tradingCrypto2Props: tradingCrypto71Data,
+    tradingCrypto3Props: tradingCrypto72Data,
+    tradingCrypto4Props: tradingCrypto73Data,
+    tradingCrypto5Props: tradingCrypto74Data,
+    abonnement2Props: abonnement22Data,
+    sidebarMenuItem4Props: sidebarMenuItem66Data,
+    filtreProps: filtre16Data,
+    buttonsBtnTextIcon4Props: buttonsBtnTextIcon43Data,
+    gridTableProps: gridTable1Data,
+};

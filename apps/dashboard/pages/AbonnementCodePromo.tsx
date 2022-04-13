@@ -12,6 +12,23 @@ import IconFeatherCopy from '../components/IconFeatherCopy';
 import styled from 'styled-components';
 import { PoppinsMediumMirage10px, PoppinsMediumTundora10px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './AbonnementCodePromo.css';
+import {
+    abonnement42Data,
+    articles16Data,
+    filtre17Data,
+    filtre18Data,
+    gridTable2Data,
+    sidebarMenuItem75Data,
+    sidebarMenuItem76Data,
+    sidebarMenuItem77Data,
+    sidebarMenuItem78Data,
+    topNavigation14Data,
+    tradingCrypto86Data,
+    tradingCrypto87Data,
+    tradingCrypto88Data,
+    tradingCrypto89Data,
+    tradingCrypto90Data,
+} from './index';
 
 function AbonnementCodePromo(props: any): any {
     const {
@@ -307,3 +324,29 @@ const IconClose = styled.img`
 `;
 
 export default AbonnementCodePromo;
+export const abonnementCodePromoData = {
+    analytics: 'Code Promo',
+    name1: 'Rechercher…',
+    name2: 'Novice',
+    name3: '50%',
+    name4: 'Tous',
+    name5: '0',
+    membre: '/img/fontawsome--check-square--10@1x.png',
+    fontawsomePen: '/img/fontawsome--pen--12@1x.png',
+    iconClose: '/img/fontawsome--times--10@1x.png',
+    topNavigationProps: topNavigation14Data,
+    sidebarMenuItem1Props: sidebarMenuItem75Data,
+    sidebarMenuItem2Props: sidebarMenuItem76Data,
+    sidebarMenuItem3Props: sidebarMenuItem77Data,
+    articlesProps: articles16Data,
+    tradingCrypto1Props: tradingCrypto86Data,
+    tradingCrypto2Props: tradingCrypto87Data,
+    tradingCrypto3Props: tradingCrypto88Data,
+    tradingCrypto4Props: tradingCrypto89Data,
+    tradingCrypto5Props: tradingCrypto90Data,
+    abonnement4Props: abonnement42Data,
+    sidebarMenuItem4Props: sidebarMenuItem78Data,
+    filtre1Props: filtre17Data,
+    filtre2Props: filtre18Data,
+    gridTableProps: gridTable2Data,
+};

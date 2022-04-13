@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MuliBoldWhite13px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { MuliBoldWhite13px } from '../../styledMixins';
 
 function TabGroupElementsRegularTab2States2(props) {
     const { children, className } = props;

@@ -16,6 +16,29 @@ import Lignes1 from '../components/Lignes1';
 import styled from 'styled-components';
 import { PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './AbonnementCrerUnAbonnement.css';
+import {
+    articles14Data,
+    bestSeller1Data,
+    bestSeller2Data,
+    buttonsBtnTextIcon44Data,
+    iDFixe17Data,
+    iDFixe18Data,
+    iDFixe19Data,
+    sidebarMenuItem67Data,
+    sidebarMenuItem68Data,
+    sidebarMenuItem69Data,
+    sidebarMenuItem70Data,
+    titre6Data,
+    toggle2Data,
+    topNavigation25Data,
+    tradingCrypto75Data,
+    tradingCrypto76Data,
+    tradingCrypto77Data,
+    tradingCrypto78Data,
+    tradingCrypto79Data,
+    tradingCrypto80Data,
+    type1Data,
+} from './index';
 
 function AbonnementCrerUnAbonnement(props: any): any {
     const {
@@ -265,3 +288,28 @@ const Rectangle6321 = styled.div`
 `;
 
 export default AbonnementCrerUnAbonnement;
+export const abonnementCrerUnAbonnementData = {
+    iconIonicIosArrowDown: '/img/icon-ionic-ios-arrow-down-10@1x.png',
+    analytics: 'Gestion Abonnements',
+    topNavigation2Props: topNavigation25Data,
+    sidebarMenuItem1Props: sidebarMenuItem67Data,
+    sidebarMenuItem2Props: sidebarMenuItem68Data,
+    sidebarMenuItem3Props: sidebarMenuItem69Data,
+    articlesProps: articles14Data,
+    tradingCrypto1Props: tradingCrypto75Data,
+    tradingCrypto2Props: tradingCrypto76Data,
+    tradingCrypto3Props: tradingCrypto77Data,
+    tradingCrypto4Props: tradingCrypto78Data,
+    tradingCrypto5Props: tradingCrypto79Data,
+    tradingCrypto6Props: tradingCrypto80Data,
+    sidebarMenuItem4Props: sidebarMenuItem70Data,
+    buttonsBtnTextIcon4Props: buttonsBtnTextIcon44Data,
+    titreProps: titre6Data,
+    iDFixe1Props: iDFixe17Data,
+    iDFixe2Props: iDFixe18Data,
+    iDFixe3Props: iDFixe19Data,
+    typeProps: type1Data,
+    bestSeller1Props: bestSeller1Data,
+    bestSeller2Props: bestSeller2Data,
+    toggleProps: toggle2Data,
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Border1pxBlueRibbon4 } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { Border1pxBlueRibbon4 } from '../../styledMixins';
 
 function IconsWidgetIllustration(props) {
     const { src, className } = props;

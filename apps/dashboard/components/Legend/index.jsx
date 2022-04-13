@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalComet14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalComet14px } from '../../styledMixins';
 
 function Legend(props) {
     const { children, className } = props;

@@ -13,6 +13,26 @@ import Abonnement42 from '../components/Abonnement42';
 import styled from 'styled-components';
 import { LatoNormalComet10px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './AbonnementCodePromoCrer.css';
+import {
+    abonnement222Data,
+    abonnement422Data,
+    articles17Data,
+    bestSeller5Data,
+    buttonsBtnTextIcon821Data,
+    iDFixe30Data,
+    iDFixe31Data,
+    sidebarMenuItem79Data,
+    sidebarMenuItem80Data,
+    sidebarMenuItem81Data,
+    sidebarMenuItem82Data,
+    titre9Data,
+    topNavigation26Data,
+    tradingCrypto91Data,
+    tradingCrypto92Data,
+    tradingCrypto93Data,
+    tradingCrypto94Data,
+    tradingCrypto95Data,
+} from './index';
 
 function AbonnementCodePromoCrer(props: any): any {
     const {
@@ -239,3 +259,26 @@ const Ligne6 = styled.img`
 `;
 
 export default AbonnementCodePromoCrer;
+export const abonnementCodePromoCrerData = {
+    analytics: 'Code promo',
+    rductionFixe: 'Réduction fixe',
+    ligne6: '/img/ligne-6-1@1x.png',
+    topNavigation2Props: topNavigation26Data,
+    sidebarMenuItem1Props: sidebarMenuItem79Data,
+    sidebarMenuItem2Props: sidebarMenuItem80Data,
+    sidebarMenuItem3Props: sidebarMenuItem81Data,
+    articlesProps: articles17Data,
+    tradingCrypto1Props: tradingCrypto91Data,
+    tradingCrypto2Props: tradingCrypto92Data,
+    tradingCrypto3Props: tradingCrypto93Data,
+    tradingCrypto4Props: tradingCrypto94Data,
+    tradingCrypto5Props: tradingCrypto95Data,
+    abonnement2Props: abonnement222Data,
+    sidebarMenuItem4Props: sidebarMenuItem82Data,
+    buttonsBtnTextIcon8Props: buttonsBtnTextIcon821Data,
+    titreProps: titre9Data,
+    iDFixe1Props: iDFixe30Data,
+    iDFixe2Props: iDFixe31Data,
+    bestSellerProps: bestSeller5Data,
+    abonnement4Props: abonnement422Data,
+};

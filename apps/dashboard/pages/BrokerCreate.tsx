@@ -10,11 +10,28 @@ import ButtonsBtnTextIcon5 from '../components/ButtonsBtnTextIcon5';
 import IDFixe from '../components/IDFixe';
 import styled from 'styled-components';
 import {
-    PoppinsSemiboldSemiBoldWhite14px,
     LatoNormalComet10px,
     PoppinsSemiboldSemiBoldMirage24px,
+    PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
 import './BrokerCreate.css';
+import {
+    articles10Data,
+    buttonsBtnTextIcon319Data,
+    buttonsBtnTextIcon59Data,
+    iDFixe15Data,
+    iDFixe16Data,
+    sidebarMenuItem52Data,
+    sidebarMenuItem53Data,
+    sidebarMenuItem54Data,
+    sidebarMenuItem55Data,
+    topNavigation24Data,
+    tradingCrypto214Data,
+    tradingCrypto57Data,
+    tradingCrypto58Data,
+    tradingCrypto59Data,
+    tradingCrypto60Data,
+} from './index';
 
 function BrokerCrerUnBroker(props: any): any {
     const {
@@ -267,3 +284,24 @@ const Image1 = styled.img`
 `;
 
 export default BrokerCrerUnBroker;
+export const brokerCrerUnBrokerData = {
+    analytics1: 'Broker',
+    analytics2: 'Broker',
+    logoBroker: 'Logo Broker',
+    image1: '/img/image-1-1@1x.png',
+    topNavigation2Props: topNavigation24Data,
+    sidebarMenuItem1Props: sidebarMenuItem52Data,
+    sidebarMenuItem2Props: sidebarMenuItem53Data,
+    sidebarMenuItem3Props: sidebarMenuItem54Data,
+    articlesProps: articles10Data,
+    tradingCrypto1Props: tradingCrypto57Data,
+    tradingCrypto2Props: tradingCrypto58Data,
+    tradingCrypto3Props: tradingCrypto59Data,
+    tradingCrypto2Props2: tradingCrypto214Data,
+    tradingCrypto4Props: tradingCrypto60Data,
+    sidebarMenuItem4Props: sidebarMenuItem55Data,
+    buttonsBtnTextIcon3Props: buttonsBtnTextIcon319Data,
+    buttonsBtnTextIcon5Props: buttonsBtnTextIcon59Data,
+    iDFixe1Props: iDFixe15Data,
+    iDFixe2Props: iDFixe16Data,
+};

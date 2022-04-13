@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-    PoppinsNormalVulcan12px,
-    LatoNormalComet10px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalVulcan12px, LatoNormalComet10px } from '../../styledMixins';
 
 function Email(props) {
     const { email, elodieElodieGmailCom, className } = props;

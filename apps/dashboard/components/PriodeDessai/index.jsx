@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-    ArialBoldWhite6px,
-    LatoNormalComet10px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { ArialBoldWhite6px, LatoNormalComet10px } from '../../styledMixins';
 
 function PriodeDessai(props) {
     const { on, priodeDessai } = props;

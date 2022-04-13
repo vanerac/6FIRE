@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalShadowBlue16px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalShadowBlue16px } from '../../styledMixins';
 
 function PaginationPageNumber2States2(props) {
     const { children, className } = props;

@@ -18,6 +18,32 @@ import Lignes1 from '../components/Lignes1';
 import styled from 'styled-components';
 import { PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './AbonnementCrerUnAbonnementpriodeDes.css';
+import {
+    abonnement32Data,
+    articles15Data,
+    bestSeller3Data,
+    bestSeller4Data,
+    buttonsBtnTextIcon45Data,
+    iDFixe20Data,
+    iDFixe21Data,
+    iDFixe27Data,
+    iDFixe28Data,
+    iDFixe29Data,
+    priodeDessaiData,
+    sidebarMenuItem71Data,
+    sidebarMenuItem72Data,
+    sidebarMenuItem73Data,
+    sidebarMenuItem74Data,
+    titre8Data,
+    topNavigation13Data,
+    tradingCrypto81Data,
+    tradingCrypto82Data,
+    tradingCrypto83Data,
+    tradingCrypto84Data,
+    tradingCrypto85Data,
+    type2Data,
+    type3Data,
+} from './index';
 
 function AbonnementCrerUnAbonnementpriodeDes(props: any): any {
     const {
@@ -279,3 +305,30 @@ const OverlapGroup3 = styled.div`
 `;
 
 export default AbonnementCrerUnAbonnementpriodeDes;
+export const abonnementCrerUnAbonnementpriodeDesData = {
+    analytics: 'Gestion Abonnements',
+    topNavigationProps: topNavigation13Data,
+    sidebarMenuItem1Props: sidebarMenuItem71Data,
+    sidebarMenuItem2Props: sidebarMenuItem72Data,
+    sidebarMenuItem3Props: sidebarMenuItem73Data,
+    articlesProps: articles15Data,
+    tradingCrypto1Props: tradingCrypto81Data,
+    tradingCrypto2Props: tradingCrypto82Data,
+    tradingCrypto3Props: tradingCrypto83Data,
+    tradingCrypto4Props: tradingCrypto84Data,
+    tradingCrypto5Props: tradingCrypto85Data,
+    abonnement3Props: abonnement32Data,
+    sidebarMenuItem4Props: sidebarMenuItem74Data,
+    buttonsBtnTextIcon4Props: buttonsBtnTextIcon45Data,
+    titreProps: titre8Data,
+    iDFixe1Props: iDFixe20Data,
+    iDFixe2Props: iDFixe21Data,
+    iDFixe3Props: iDFixe27Data,
+    type1Props: type2Data,
+    bestSeller1Props: bestSeller3Data,
+    bestSeller2Props: bestSeller4Data,
+    priodeDessaiProps: priodeDessaiData,
+    iDFixe4Props: iDFixe28Data,
+    iDFixe5Props: iDFixe29Data,
+    type2Props: type3Data,
+};

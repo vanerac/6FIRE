@@ -2,10 +2,7 @@ import React from 'react';
 import WidgetsElementsPrice from '../WidgetsElementsPrice';
 import WidgetsElementsChartMiniChart from '../WidgetsElementsChartMiniChart';
 import styled from 'styled-components';
-import {
-    PoppinsSemiBoldVulcan28px,
-    PoppinsNormalShadowBlue16px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsSemiBoldVulcan28px, PoppinsNormalShadowBlue16px } from '../../styledMixins';
 
 function WidgetsDataCardWithCharts(props) {
     const { sales, x27632, widgetsElementsChartMiniChartProps } = props;

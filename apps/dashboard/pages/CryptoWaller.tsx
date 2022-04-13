@@ -15,12 +15,35 @@ import Editeur from '../components/Editeur';
 import IDFixe2 from '../components/IDFixe2';
 import styled from 'styled-components';
 import {
-    PoppinsNormalTundora12px,
-    PoppinsSemiboldSemiBoldWhite14px,
     LatoNormalComet10px,
+    PoppinsNormalTundora12px,
     PoppinsSemiboldSemiBoldMirage24px,
+    PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
 import './CryptoWallet.css';
+import {
+    abonnement11Data,
+    articles8Data,
+    boutonPourSupprimer3Data,
+    buttonsBtnTextIcon318Data,
+    buttonsBtnTextIcon58Data,
+    devise1Data,
+    devise2Data,
+    editeur3Data,
+    filtre14Data,
+    iDFixe26Data,
+    sidebarMenuItem44Data,
+    sidebarMenuItem45Data,
+    sidebarMenuItem46Data,
+    sidebarMenuItem47Data,
+    titre22Data,
+    topNavigation8Data,
+    tradingCrypto212Data,
+    tradingCrypto49Data,
+    tradingCrypto50Data,
+    tradingCrypto51Data,
+    tradingCrypto52Data,
+} from './index';
 
 function CryptoWallet(props: any): any {
     const {
@@ -376,3 +399,34 @@ const Paragraphe = styled.div`
 `;
 
 export default CryptoWallet;
+export const cryptoWalletData = {
+    analytics1: 'Crypto Wallet',
+    cryptoSlectionn: 'Crypto Sélectionné',
+    bitcoin: 'Bitcoin',
+    x1421344023328: '/img/trac--992@1x.png',
+    trac993: '/img/trac--993@1x.png',
+    ligne6: '/img/ligne-6-37@1x.png',
+    analytics2: 'Message',
+    paragraphe: 'Paragraphe',
+    topNavigationProps: topNavigation8Data,
+    sidebarMenuItem1Props: sidebarMenuItem44Data,
+    sidebarMenuItem2Props: sidebarMenuItem45Data,
+    sidebarMenuItem3Props: sidebarMenuItem46Data,
+    articlesProps: articles8Data,
+    tradingCrypto1Props: tradingCrypto49Data,
+    tradingCrypto2Props: tradingCrypto50Data,
+    tradingCrypto2Props2: tradingCrypto212Data,
+    tradingCrypto3Props: tradingCrypto51Data,
+    tradingCrypto4Props: tradingCrypto52Data,
+    tradingCrypto4Props2: abonnement11Data,
+    sidebarMenuItem4Props: sidebarMenuItem47Data,
+    buttonsBtnTextIcon3Props: buttonsBtnTextIcon318Data,
+    titre2Props: titre22Data,
+    filtreProps: filtre14Data,
+    devise1Props: devise1Data,
+    devise2Props: devise2Data,
+    buttonsBtnTextIcon5Props: buttonsBtnTextIcon58Data,
+    boutonPourSupprimerProps: boutonPourSupprimer3Data,
+    editeurProps: editeur3Data,
+    iDFixe2Props: iDFixe26Data,
+};

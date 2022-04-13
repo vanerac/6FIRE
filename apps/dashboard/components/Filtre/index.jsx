@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsMediumMirage10px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsMediumMirage10px } from '../../styledMixins';
 
 function Filtre(props) {
     const { name, className } = props;

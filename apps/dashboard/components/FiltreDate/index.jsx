@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalComet12px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalComet12px } from '../../styledMixins';
 
 function FiltreDate(props) {
     const { calendarEvent, text } = props;

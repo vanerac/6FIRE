@@ -1,7 +1,7 @@
 import React from 'react';
 import IconFeatherUserPlus from '../IconFeatherUserPlus';
 import styled from 'styled-components';
-import { Border1pxBlueRibbon4 } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { Border1pxBlueRibbon4 } from '../../styledMixins';
 
 function IconsWidgetIllustration2(props) {
     const { iconFeatherUserPlusProps } = props;

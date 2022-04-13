@@ -14,8 +14,33 @@ import Titre4 from '../components/Titre4';
 import Titre5 from '../components/Titre5';
 import BoutonPourSupprimer from '../components/BoutonPourSupprimer';
 import styled from 'styled-components';
-import { PoppinsSemiboldSemiBoldWhite14px, Border1pxSilver, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
+import { Border1pxSilver, PoppinsSemiboldSemiBoldMirage24px, PoppinsSemiboldSemiBoldWhite14px } from '../styledMixins';
 import './ArticlesCrerUnArticle.css';
+import {
+    abonnement7Data,
+    articles23Data,
+    buttonsBtnTextIcon310Data,
+    buttonsBtnTextIcon311Data,
+    buttonsBtnTextIcon38Data,
+    buttonsBtnTextIcon39Data,
+    email5Data,
+    filtre10Data,
+    filtre11Data,
+    iDFixe11Data,
+    iDFixe12Data,
+    image11Data,
+    image12Data,
+    sidebarMenuItem28Data,
+    sidebarMenuItem29Data,
+    sidebarMenuItem30Data,
+    sidebarMenuItem31Data,
+    topNavigation23Data,
+    tradingCrypto31Data,
+    tradingCrypto32Data,
+    tradingCrypto33Data,
+    tradingCrypto34Data,
+    tradingCrypto35Data,
+} from './index';
 
 function ArticlesCrerUnArticle(props: any): any {
     const {
@@ -393,3 +418,33 @@ const Analytics3 = styled.div`
 `;
 
 export default ArticlesCrerUnArticle;
+export const articlesCrerUnArticleData = {
+    analytics1: 'Créer un article',
+    analytics2: 'Articles',
+    notesDetailsTextEditor: '/img/notes--details--text-editor@1x.png',
+    analytics3: 'Podcast',
+    analytics4: 'Articles suggérés',
+    topNavigation2Props: topNavigation23Data,
+    sidebarMenuItem1Props: sidebarMenuItem28Data,
+    sidebarMenuItem2Props: sidebarMenuItem29Data,
+    sidebarMenuItem3Props: sidebarMenuItem30Data,
+    articles2Props: articles23Data,
+    tradingCrypto1Props: tradingCrypto31Data,
+    tradingCrypto2Props: tradingCrypto32Data,
+    tradingCrypto3Props: tradingCrypto33Data,
+    tradingCrypto4Props: tradingCrypto34Data,
+    tradingCrypto5Props: tradingCrypto35Data,
+    tradingCrypto5Props2: abonnement7Data,
+    sidebarMenuItem4Props: sidebarMenuItem31Data,
+    buttonsBtnTextIcon31Props: buttonsBtnTextIcon38Data,
+    buttonsBtnTextIcon32Props: buttonsBtnTextIcon39Data,
+    image11Props: image11Data,
+    filtre1Props: filtre10Data,
+    iDFixe1Props: iDFixe11Data,
+    image12Props: image12Data,
+    emailProps: email5Data,
+    buttonsBtnTextIcon33Props: buttonsBtnTextIcon310Data,
+    iDFixe2Props: iDFixe12Data,
+    buttonsBtnTextIcon34Props: buttonsBtnTextIcon311Data,
+    filtre2Props: filtre11Data,
+};

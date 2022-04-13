@@ -11,6 +11,21 @@ import Row1 from '../components/Row1';
 import styled from 'styled-components';
 import { PoppinsMediumMirage10px, PoppinsMediumMirage12px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './BotTrading.css';
+import {
+    abonnement10Data,
+    articles7Data,
+    buttonsBtnTextIcon317Data,
+    sidebarMenuItem40Data,
+    sidebarMenuItem41Data,
+    sidebarMenuItem42Data,
+    sidebarMenuItem43Data,
+    topNavigation7Data,
+    tradingCrypto211Data,
+    tradingCrypto45Data,
+    tradingCrypto46Data,
+    tradingCrypto47Data,
+    tradingCrypto48Data,
+} from './index';
 
 function BotTrading(props: any): any {
     const {
@@ -250,3 +265,23 @@ const Name3 = styled.div`
 `;
 
 export default BotTrading;
+export const botTradingData = {
+    analytics: 'Bot Trading',
+    name1: 'Rechercher…',
+    name2: 'Classement',
+    name3: 'Trader',
+    name4: 'Action',
+    topNavigationProps: topNavigation7Data,
+    sidebarMenuItem1Props: sidebarMenuItem40Data,
+    sidebarMenuItem2Props: sidebarMenuItem41Data,
+    sidebarMenuItem3Props: sidebarMenuItem42Data,
+    articlesProps: articles7Data,
+    tradingCrypto1Props: tradingCrypto45Data,
+    tradingCrypto2Props: tradingCrypto211Data,
+    tradingCrypto2Props2: tradingCrypto46Data,
+    tradingCrypto3Props: tradingCrypto47Data,
+    tradingCrypto4Props: tradingCrypto48Data,
+    tradingCrypto4Props2: abonnement10Data,
+    sidebarMenuItem4Props: sidebarMenuItem43Data,
+    buttonsBtnTextIcon3Props: buttonsBtnTextIcon317Data,
+};

@@ -1,10 +1,7 @@
 import React from 'react';
 import IconsNavigationIcon12States from '../IconsNavigationIcon12States';
 import styled from 'styled-components';
-import {
-    Border1pxSnuff,
-    PoppinsNormalComet14px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { Border1pxSnuff, PoppinsNormalComet14px } from '../../styledMixins';
 
 function ButtonsBtnTextIcon2(props) {
     const { iconsNavigationIcon12StatesProps } = props;

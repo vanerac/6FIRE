@@ -1,7 +1,7 @@
 import React from 'react';
 import IconsChevronRight from '../IconsChevronRight';
 import styled from 'styled-components';
-import { PoppinsMediumBlueRibbon14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsMediumBlueRibbon14px } from '../../styledMixins';
 
 function ButtonsBtnSmalText(props) {
     const { findOutMore, iconsChevronRightProps } = props;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import EssaiGratuit from '../EssaiGratuit';
 import styled from 'styled-components';
-import { PoppinsMediumBlueRibbon14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsMediumBlueRibbon14px } from '../../styledMixins';
 
 function Abonnement7(props) {
     const {

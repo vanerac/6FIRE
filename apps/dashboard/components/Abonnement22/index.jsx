@@ -2,7 +2,7 @@ import React from 'react';
 import GestionAbonnements from '../GestionAbonnements';
 import EssaiGratuit from '../EssaiGratuit';
 import styled from 'styled-components';
-import { PoppinsMediumBlueRibbon14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsMediumBlueRibbon14px } from '../../styledMixins';
 
 function Abonnement22(props) {
     const { overlapGroup, gestionAbonnements1Props, gestionAbonnements2Props, essaiGratuit1Props, essaiGratuit2Props } =

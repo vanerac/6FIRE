@@ -17,6 +17,24 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
 } from '../styledMixins';
 import './ThemesArticles.css';
+import {
+    abonnement4Data,
+    articles4Data,
+    buttonsBtnTextIcon35Data,
+    buttonsBtnTextIcon61Data,
+    filtre5Data,
+    filtre6Data,
+    sidebarMenuItem13Data,
+    sidebarMenuItem14Data,
+    sidebarMenuItem15Data,
+    sidebarMenuItem16Data,
+    topNavigation3Data,
+    tradingCrypto16Data,
+    tradingCrypto17Data,
+    tradingCrypto18Data,
+    tradingCrypto19Data,
+    tradingCrypto22Data,
+} from './index';
 
 function ThmesArticles(props: any): any {
     const {
@@ -402,3 +420,36 @@ const IconClose = styled.img`
 `;
 
 export default ThmesArticles;
+export const thmesArticlesData = {
+    analytics: 'Thèmes articles',
+    name1: 'Rechercher…',
+    name2: 'ID',
+    name3: 'Thèmes',
+    name4: 'Icon',
+    name5: 'Type d’abonnement',
+    name6: 'Visible',
+    name7: 'Action',
+    name8: '1',
+    name9: 'Cryptomonnaies',
+    iconActif: '/img/groupe-1490@1x.png',
+    name10: 'Intermédiaire (99.99€)',
+    membre: '/img/fontawsome--check-square--10@1x.png',
+    fontawsomePen: '/img/fontawsome--pen--12@1x.png',
+    iconClose: '/img/fontawsome--times--10@1x.png',
+    topNavigationProps: topNavigation3Data,
+    sidebarMenuItem1Props: sidebarMenuItem13Data,
+    sidebarMenuItem2Props: sidebarMenuItem14Data,
+    sidebarMenuItem3Props: sidebarMenuItem15Data,
+    articlesProps: articles4Data,
+    tradingCrypto2Props: tradingCrypto22Data,
+    tradingCrypto1Props: tradingCrypto16Data,
+    tradingCrypto2Props2: tradingCrypto17Data,
+    tradingCrypto3Props: tradingCrypto18Data,
+    tradingCrypto4Props: tradingCrypto19Data,
+    abonnementProps: abonnement4Data,
+    sidebarMenuItem4Props: sidebarMenuItem16Data,
+    filtre1Props: filtre5Data,
+    filtre2Props: filtre6Data,
+    buttonsBtnTextIcon3Props: buttonsBtnTextIcon35Data,
+    buttonsBtnTextIcon6Props: buttonsBtnTextIcon61Data,
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsSemiBoldVulcan12px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsSemiBoldVulcan12px } from '../../styledMixins';
 
 function WidgetsTableTableHeader(props) {
     const { paymentNumber, dateTime1, dateTime2, amount1, amount2 } = props;

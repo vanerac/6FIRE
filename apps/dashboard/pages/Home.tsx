@@ -20,9 +20,8 @@ import Day from '../components/Day';
 import TooltipPointerLeft2 from '../components/TooltipPointerLeft2';
 import styled from 'styled-components';
 import { PoppinsNormalBlueBell12px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './Home.css';
 
-function Home(props: any) {
+function Home({ data: props }: { data: HomeData }) {
     const {
         groupe2,
         analytics,
@@ -580,3 +579,391 @@ const GroupeDfilant4 = styled.div`
 `;
 
 export default Home;
+export const iconsNavigationIcon12States23Data = {
+    src: '/img/fontawsome--bookmark--10@1x.png',
+    className: 'icons-navigation-icon-12-states-14',
+};
+export const sidebarMenuItem5Data = {
+    name: 'Thèmes articles',
+    className: 'thmes-articles',
+    iconsNavigationIcon12StatesProps: iconsNavigationIcon12States23Data,
+};
+export const iconsNavigationIcon12States24Data = {
+    src: '/img/ic-invoice-10@1x.png',
+    className: 'icons-navigation-icon-12-states-5',
+};
+
+export const articles1Data = {
+    iconsNavigationIcon12StatesProps: iconsNavigationIcon12States24Data,
+};
+
+export const iconsNavigationIcon12States26Data = {
+    src: '/img/ic-calendar-13@1x.png',
+    className: 'icons-navigation-icon-12-states-5',
+};
+
+export const buttonsBtnTextIcon21Data = {
+    iconsNavigationIcon12StatesProps: iconsNavigationIcon12States26Data,
+};
+export const date1Data = {
+    buttonsBtnTextIcon2Props: buttonsBtnTextIcon21Data,
+};
+export const day2Data = {
+    className: 'day-6',
+};
+
+export const usersAvatarPhoto2States4Data = {
+    image: '/img/image-2@1x.png',
+    className: 'users-avatar-photo-2-states-2',
+};
+
+export const userGroup1Data = {
+    usersAvatarPhoto2StatesProps: usersAvatarPhoto2States4Data,
+};
+
+export const topNavigationSearch2Data = {
+    color: '/img/color-2@1x.png',
+    className: 'top-navigation-search-1',
+};
+
+export const iconsNavigationIcon12States20Data = {
+    src: '/img/ic-home-10@1x.png',
+    className: 'icons-navigation-icon-12-states-13',
+};
+
+export const sidebarMenuItem22Data = {
+    name: 'Home',
+    className: 'home-22',
+    iconsNavigationIcon12StatesProps: iconsNavigationIcon12States20Data,
+};
+
+export const iconsNavigationIcon12States21Data = {
+    src: '/img/ic-users-11@1x.png',
+    className: 'icons-navigation-icon-12-states-5',
+};
+
+export const sidebarMenuItem4Data = {
+    name: 'Utilisateurs',
+    className: 'customers-1',
+    iconsNavigationIcon12StatesProps: iconsNavigationIcon12States21Data,
+};
+
+export const tradingCrypto1Data = {
+    iconPencil: '/img/fontawsome--pen--10@1x.png',
+    name: 'Trading & Crypto',
+};
+
+export const tradingCrypto2Data = {
+    iconPencil: '/img/fontawsome--robot--3@1x.png',
+    name: 'Bot Trading',
+    className: 'bot-trading',
+};
+
+export const tradingCrypto3Data = {
+    iconPencil: '/img/fontawsome--bitcoin--11@1x.png',
+    name: 'Crypto Wallet',
+    className: 'crypto-wallet',
+};
+
+export const tradingCrypto4Data = {
+    iconPencil: '/img/fontawsome--handshake--10@1x.png',
+    name: 'Broker',
+    className: 'broker',
+};
+
+export const tradingCrypto5Data = {
+    iconPencil: '/img/fontawsome--globe-europe--10@1x.png',
+    name: 'Pays',
+    className: 'pays',
+};
+
+export const iconsNavigationIcon12States25Data = {
+    src: '/img/ic-setting-11@1x.png',
+    className: 'icons-navigation-icon-12-states-5',
+};
+
+export const sidebarMenuItem6Data = {
+    name: 'Settings',
+    className: 'settings',
+    iconsNavigationIcon12StatesProps: iconsNavigationIcon12States25Data,
+};
+
+export const tabGroupElementsRegularTab2States3Data = {
+    children: 'Days',
+};
+
+export const tabGroupElementsRegularTab2States23Data = {
+    children: 'Weeks',
+    className: 'tab-group-_-elements-5',
+};
+
+export const tabGroupElementsRegularTab2States4Data = {
+    children: 'Months',
+    className: 'tab-group-_-elements-3',
+};
+
+export const iconsWidgetIllustration2Data = {
+    src: '/img/ic-users-7@1x.png',
+    className: 'icons-widget-illustration-1',
+};
+
+export const widgetsDataCardWithIcons2Data = {
+    sales: 'Utilisateurs Total',
+    x27632: '10.000',
+    iconsWidgetIllustrationProps: iconsWidgetIllustration2Data,
+};
+
+export const iconFeatherUserPlus1Data = {
+    trac463: '/img/trac--463-1@1x.png',
+    trac464: '/img/trac--464-1@1x.png',
+    trac465: '/img/trac--465-1@1x.png',
+    trac466: '/img/trac--466-1@1x.png',
+};
+
+export const iconsWidgetIllustration22Data = {
+    iconFeatherUserPlusProps: iconFeatherUserPlus1Data,
+};
+
+export const widgetsDataCardWithIcons3Data = {
+    sales: 'Membres Total',
+    x27632: '1002',
+    iconsWidgetIllustration2Props: iconsWidgetIllustration22Data,
+};
+
+export const iconsWidgetIllustration3Data = {
+    src: '/img/usd-circle-2@1x.png',
+};
+
+export const widgetsDataCardWithIcons4Data = {
+    sales: 'Nouveaux utilisateurs',
+    x27632: '+52',
+    iconsWidgetIllustration3Props: iconsWidgetIllustration3Data,
+};
+
+export const iconFeatherUserPlus2Data = {
+    trac463: '/img/trac--463@1x.png',
+    trac464: '/img/trac--464@1x.png',
+    trac465: '/img/trac--465@1x.png',
+    trac466: '/img/trac--466@1x.png',
+};
+
+export const iconsWidgetIllustration4Data = {
+    iconFeatherUserPlusProps: iconFeatherUserPlus2Data,
+};
+
+export const widgetsDataCardWithIcons5Data = {
+    sales: 'Nouveaux membres',
+    x27632: '+42',
+    iconsWidgetIllustration4Props: iconsWidgetIllustration4Data,
+};
+
+export const widgetsElementsChartMiniChart2Data = {
+    chart: '/img/path-4-copy-6-10@1x.png',
+    path4Copy8: '/img/path-4-copy-8-10@1x.png',
+    className: 'widgets-_-elements-chart-mini-chart-1',
+};
+
+export const widgetsDataCardWithCharts21Data = {
+    sales: 'Licence Novice',
+    x27632: '806',
+    widgetsElementsChartMiniChartProps: widgetsElementsChartMiniChart2Data,
+};
+
+export const widgetsElementsChartMiniChart3Data = {
+    chart: '/img/path-4-copy-6-8@1x.png',
+    path4Copy8: '/img/path-4-copy-8-8@1x.png',
+    className: 'widgets-_-elements-chart-mini-chart-2',
+};
+
+export const widgetsDataCardWithCharts22Data = {
+    sales: 'Licence Confirmé',
+    x27632: '192',
+    className: 'widgets-data-card-with-charts-2',
+    widgetsElementsChartMiniChartProps: widgetsElementsChartMiniChart3Data,
+};
+
+export const widgetsElementsChartMiniChart4Data = {
+    chart: '/img/path-4-copy-6-3@1x.png',
+    path4Copy8: '/img/path-4-copy-8-3@1x.png',
+    className: 'widgets-_-elements-chart-mini-chart-3',
+};
+
+export const widgetsDataCardWithCharts23Data = {
+    sales: 'Licence Partenaire',
+    x27632: '4',
+    className: 'widgets-data-card-with-charts-3',
+    widgetsElementsChartMiniChartProps: widgetsElementsChartMiniChart4Data,
+};
+
+export const legend3Data = {
+    children: 'Nouveaux utilisateurs',
+    className: 'online',
+};
+
+export const chartLeftValue1Data = {
+    children: '1200',
+};
+export const chartLeftValue2Data = {
+    children: '1000',
+    className: 'chart-left-value-1',
+};
+export const chartLeftValue3Data = {
+    children: '800',
+    className: 'chart-left-value-2',
+};
+export const chartLeftValue4Data = {
+    children: '600',
+    className: 'chart-left-value-3',
+};
+export const chartLeftValue5Data = {
+    children: '400',
+    className: 'chart-left-value-4',
+};
+export const chartLeftValue6Data = {
+    children: '200',
+    className: 'chart-left-value-5',
+};
+export const chartLeftValue7Data = {
+    children: '0',
+    className: 'chart-left-value-6',
+};
+export const tooltipPointerLeft2Data = {
+    bg: '/img/bg-4@1x.png',
+    titlee: '01 avril, 2022',
+    x750: '402',
+    onlineSales: 'Nouveaux utilisateurs',
+};
+
+interface HomeData {
+    groupe2: string;
+    analytics: string;
+    customerGrowth: string;
+    text2: string;
+    text3: string;
+    text4: string;
+    text5: string;
+    text6: string;
+    topNavigationSearchProps: { color: string; className: string };
+    userGroupProps: { usersAvatarPhoto2StatesProps: { image: string; className: string } };
+    sidebarMenuItem2Props: {
+        name: string;
+        className: string;
+        iconsNavigationIcon12StatesProps: { src: string; className: string };
+    };
+    sidebarMenuItem1Props: {
+        name: string;
+        className: string;
+        iconsNavigationIcon12StatesProps: { src: string; className: string };
+    };
+    sidebarMenuItem2Props2: {
+        name: string;
+        className: string;
+        iconsNavigationIcon12StatesProps: { src: string; className: string };
+    };
+    articlesProps: { iconsNavigationIcon12StatesProps: { src: string; className: string } };
+    tradingCrypto1Props: { name: string; iconPencil: string };
+    tradingCrypto2Props: { name: string; iconPencil: string; className: string };
+    tradingCrypto3Props: { name: string; iconPencil: string; className: string };
+    tradingCrypto4Props: { name: string; iconPencil: string; className: string };
+    tradingCrypto5Props: { name: string; iconPencil: string; className: string };
+    sidebarMenuItem3Props: {
+        name: string;
+        className: string;
+        iconsNavigationIcon12StatesProps: { src: string; className: string };
+    };
+    tabGroupElementsRegularTab2States1Props: { children: string };
+    tabGroupElementsRegularTab2States2Props: { children: string; className: string };
+    tabGroupElementsRegularTab2States2Props2: { children: string; className: string };
+    dateProps: { buttonsBtnTextIcon2Props: { iconsNavigationIcon12StatesProps: { src: string; className: string } } };
+    widgetsDataCardWithIcons2Props: {
+        x27632: string;
+        iconsWidgetIllustrationProps: { src: string; className: string };
+        sales: string;
+    };
+    widgetsDataCardWithIcons3Props: {
+        iconsWidgetIllustration2Props: {
+            iconFeatherUserPlusProps: { trac463: string; trac464: string; trac465: string; trac466: string };
+        };
+        x27632: string;
+        sales: string;
+    };
+    widgetsDataCardWithIcons4Props: { iconsWidgetIllustration3Props: { src: string }; x27632: string; sales: string };
+    widgetsDataCardWithIcons5Props: {
+        x27632: string;
+        iconsWidgetIllustration4Props: {
+            iconFeatherUserPlusProps: { trac463: string; trac464: string; trac465: string; trac466: string };
+        };
+        sales: string;
+    };
+    widgetsDataCardWithCharts21Props: {
+        widgetsElementsChartMiniChartProps: { path4Copy8: string; className: string; chart: string };
+        x27632: string;
+        sales: string;
+    };
+    widgetsDataCardWithCharts22Props: {
+        widgetsElementsChartMiniChartProps: { path4Copy8: string; className: string; chart: string };
+        x27632: string;
+        className: string;
+        sales: string;
+    };
+    widgetsDataCardWithCharts23Props: {
+        widgetsElementsChartMiniChartProps: { path4Copy8: string; className: string; chart: string };
+        x27632: string;
+        className: string;
+        sales: string;
+    };
+    legendProps: { children: string; className: string };
+    chartLeftValue1Props: { children: string };
+    chartLeftValue2Props: { children: string; className: string };
+    chartLeftValue3Props: { children: string; className: string };
+    chartLeftValue4Props: { children: string; className: string };
+    chartLeftValue5Props: { children: string; className: string };
+    chartLeftValue6Props: { children: string; className: string };
+    chartLeftValue7Props: { children: string; className: string };
+    dayProps: { className: string };
+    tooltipPointerLeft2Props: { onlineSales: string; bg: string; titlee: string; x750: string };
+}
+
+export const homeData: HomeData = {
+    groupe2: '/img/groupe-1@1x.png',
+    analytics: 'Home',
+    customerGrowth: 'Evolution utilisateurs',
+    text2: '29/03',
+    text3: '30/03',
+    text4: '31/03',
+    text5: '01/04',
+    text6: '02/04',
+    topNavigationSearchProps: topNavigationSearch2Data,
+    userGroupProps: userGroup1Data,
+    sidebarMenuItem2Props: sidebarMenuItem22Data,
+    sidebarMenuItem1Props: sidebarMenuItem4Data,
+    sidebarMenuItem2Props2: sidebarMenuItem5Data,
+    articlesProps: articles1Data,
+    tradingCrypto1Props: tradingCrypto1Data,
+    tradingCrypto2Props: tradingCrypto2Data,
+    tradingCrypto3Props: tradingCrypto3Data,
+    tradingCrypto4Props: tradingCrypto4Data,
+    tradingCrypto5Props: tradingCrypto5Data,
+    sidebarMenuItem3Props: sidebarMenuItem6Data,
+    tabGroupElementsRegularTab2States1Props: tabGroupElementsRegularTab2States3Data,
+    tabGroupElementsRegularTab2States2Props: tabGroupElementsRegularTab2States23Data,
+    tabGroupElementsRegularTab2States2Props2: tabGroupElementsRegularTab2States4Data,
+    dateProps: date1Data,
+    widgetsDataCardWithIcons2Props: widgetsDataCardWithIcons2Data,
+    widgetsDataCardWithIcons3Props: widgetsDataCardWithIcons3Data,
+    widgetsDataCardWithIcons4Props: widgetsDataCardWithIcons4Data,
+    widgetsDataCardWithIcons5Props: widgetsDataCardWithIcons5Data,
+    widgetsDataCardWithCharts21Props: widgetsDataCardWithCharts21Data,
+    widgetsDataCardWithCharts22Props: widgetsDataCardWithCharts22Data,
+    widgetsDataCardWithCharts23Props: widgetsDataCardWithCharts23Data,
+    legendProps: legend3Data,
+    chartLeftValue1Props: chartLeftValue1Data,
+    chartLeftValue2Props: chartLeftValue2Data,
+    chartLeftValue3Props: chartLeftValue3Data,
+    chartLeftValue4Props: chartLeftValue4Data,
+    chartLeftValue5Props: chartLeftValue5Data,
+    chartLeftValue6Props: chartLeftValue6Data,
+    chartLeftValue7Props: chartLeftValue7Data,
+    dayProps: day2Data,
+    tooltipPointerLeft2Props: tooltipPointerLeft2Data,
+};

@@ -26,11 +26,7 @@ import WidgetsCustomerRow from '../WidgetsCustomerRow';
 import WidgetsTableTableHeader from '../WidgetsTableTableHeader';
 import WidgetsTableTableRow from '../WidgetsTableTableRow';
 import styled from 'styled-components';
-import {
-    PoppinsNormalVulcan13px,
-    PoppinsMediumVulcan28px,
-    PoppinsNormalShadowBlue16px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalVulcan13px, PoppinsMediumVulcan28px, PoppinsNormalShadowBlue16px } from '../../styledMixins';
 import './UIInventory.css';
 
 function UIInventory(props) {

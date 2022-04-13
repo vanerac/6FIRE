@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalVulcan14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalVulcan14px } from '../../styledMixins';
 
 function WidgetsTableTableRow(props) {
     const { paymentFrom10321, mar212019330Pm1, mar212019330Pm2, x250001, x250002, className } = props;

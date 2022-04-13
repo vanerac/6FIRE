@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalBlueBell12px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalBlueBell12px } from '../../styledMixins';
 
 function Day(props) {
     const { className } = props;

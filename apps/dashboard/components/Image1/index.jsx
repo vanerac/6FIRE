@@ -1,7 +1,7 @@
 import React from 'react';
 import ButtonsBtnTextIcon5 from '../ButtonsBtnTextIcon5';
 import styled from 'styled-components';
-import { LatoNormalComet10px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { LatoNormalComet10px } from '../../styledMixins';
 
 function Image1(props) {
     const { imagePrsentation, className, buttonsBtnTextIcon5Props } = props;

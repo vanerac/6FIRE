@@ -15,13 +15,40 @@ import Titre5 from '../components/Titre5';
 import BoutonPourSupprimer from '../components/BoutonPourSupprimer';
 import styled from 'styled-components';
 import {
-    PoppinsNormalVulcan12px,
-    PoppinsSemiboldSemiBoldWhite14px,
-    LatoNormalComet10px,
-    PoppinsSemiboldSemiBoldMirage24px,
     Border1pxSilver,
+    LatoNormalComet10px,
+    PoppinsNormalVulcan12px,
+    PoppinsSemiboldSemiBoldMirage24px,
+    PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
 import './ArticlesCrerUnArticle1.css';
+import {
+    abonnement8Data,
+    articles24Data,
+    buttonsBtnTextIcon312Data,
+    buttonsBtnTextIcon313Data,
+    buttonsBtnTextIcon314Data,
+    buttonsBtnTextIcon315Data,
+    email6Data,
+    filtre12Data,
+    filtre13Data,
+    iDFixe13Data,
+    iDFixe14Data,
+    image13Data,
+    image14Data,
+    sidebarMenuItem32Data,
+    sidebarMenuItem33Data,
+    sidebarMenuItem34Data,
+    sidebarMenuItem35Data,
+    titre42Data,
+    titre52Data,
+    topNavigation5Data,
+    tradingCrypto36Data,
+    tradingCrypto37Data,
+    tradingCrypto38Data,
+    tradingCrypto39Data,
+    tradingCrypto40Data,
+} from './index';
 
 function ArticlesCrerUnArticle1(props: any): any {
     const {
@@ -639,3 +666,62 @@ const Analytics3 = styled.div`
 `;
 
 export default ArticlesCrerUnArticle1;
+export const articlesCrerUnArticle1Data = {
+    analytics1: 'Créer article entreprise',
+    analytics2: 'Articles',
+    notesDetailsTextEditor: '/img/notes--details--text-editor-1@1x.png',
+    description: 'Description',
+    axieInfinityEstUn:
+        'Axie Infinity est un univers d’animaux de compagnie numérique décentralisé où les joueurs combattent, élèvent et échangent des créatures fantastiques appelées Axies. Les joueurs gagnent des revenus sous la forme de jetons fongibles appelés Smooth Love Potions (SLP) en remportant des batailles entre Axies.',
+    ligne61: '/img/ligne-6-27@1x.png',
+    salaireMoyen: 'Salaire moyen',
+    lesJoueursDuMonde: 'Les joueurs du monde entier gagnent entre 500 et 1 000 $ par mois en jouant au jeu.',
+    ligne62: '/img/ligne-6-28@1x.png',
+    tarificationDeLaPlateforme: 'Tarification de la plateforme',
+    pourJouerAxieIn: (
+        <>
+            Pour jouer à Axie Infinity, un joueur doit d’abord acheter une équipe de trois Axies, qui sont eux-mêmes des
+            jetons non fongibles (NFT).
+            <br />
+            <br />
+            Une équipe de départ coûte environ 500 $.
+        </>
+    ),
+    ligne63: '/img/ligne-6-29@1x.png',
+    utilisateursGnran: 'Utilisateurs générants des revenus sur la plateforme',
+    address1: '350 000 utilisateurs actifs mensuels',
+    ligne64: '/img/ligne-6-28@1x.png',
+    financement: 'Financement',
+    address2: '9 millions $',
+    ligne65: '/img/ligne-6-31@1x.png',
+    ncessiteUneAudience: 'Nécessite une audience',
+    non: 'Non',
+    ligne66: '/img/ligne-6-32@1x.png',
+    analytics3: 'Podcast',
+    analytics4: 'Articles suggérés',
+    topNavigationProps: topNavigation5Data,
+    sidebarMenuItem1Props: sidebarMenuItem32Data,
+    sidebarMenuItem2Props: sidebarMenuItem33Data,
+    sidebarMenuItem3Props: sidebarMenuItem34Data,
+    articles2Props: articles24Data,
+    tradingCrypto1Props: tradingCrypto36Data,
+    tradingCrypto2Props: tradingCrypto37Data,
+    tradingCrypto3Props: tradingCrypto38Data,
+    tradingCrypto4Props: tradingCrypto39Data,
+    tradingCrypto5Props: tradingCrypto40Data,
+    tradingCrypto5Props2: abonnement8Data,
+    sidebarMenuItem4Props: sidebarMenuItem35Data,
+    buttonsBtnTextIcon31Props: buttonsBtnTextIcon312Data,
+    buttonsBtnTextIcon32Props: buttonsBtnTextIcon313Data,
+    image11Props: image13Data,
+    filtre1Props: filtre12Data,
+    iDFixe1Props: iDFixe13Data,
+    image12Props: image14Data,
+    emailProps: email6Data,
+    titre4Props: titre42Data,
+    titre5Props: titre52Data,
+    buttonsBtnTextIcon33Props: buttonsBtnTextIcon314Data,
+    iDFixe2Props: iDFixe14Data,
+    buttonsBtnTextIcon34Props: buttonsBtnTextIcon315Data,
+    filtre2Props: filtre13Data,
+};

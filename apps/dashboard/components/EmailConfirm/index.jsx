@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalTundora12px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalTundora12px } from '../../styledMixins';
 
 function EmailConfirm(props) {
     const { emailConfirm, className } = props;

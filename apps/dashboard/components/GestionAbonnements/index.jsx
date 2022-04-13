@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsMediumBlueRibbon14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsMediumBlueRibbon14px } from '../../styledMixins';
 
 function GestionAbonnements(props) {
     const { children, className } = props;

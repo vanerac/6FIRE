@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-    LatoNormalComet10px,
-    PoppinsNormalTundora12px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { LatoNormalComet10px, PoppinsNormalTundora12px } from '../../styledMixins';
 
 function Type(props) {
     const { type, mensuel, className } = props;

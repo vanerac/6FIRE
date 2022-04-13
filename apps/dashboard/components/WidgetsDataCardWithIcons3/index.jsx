@@ -1,10 +1,7 @@
 import React from 'react';
 import IconsWidgetIllustration2 from '../IconsWidgetIllustration2';
 import styled from 'styled-components';
-import {
-    PoppinsNormalComet16px,
-    PoppinsSemiBoldVulcan28px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalComet16px, PoppinsSemiBoldVulcan28px } from '../../styledMixins';
 
 function WidgetsDataCardWithIcons3(props) {
     const { sales, x27632, iconsWidgetIllustration2Props } = props;

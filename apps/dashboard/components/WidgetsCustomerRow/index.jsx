@@ -2,10 +2,7 @@ import React from 'react';
 import UsersAvatarPhoto2States from '../UsersAvatarPhoto2States';
 import IconsNavigationIcon12States from '../IconsNavigationIcon12States';
 import styled from 'styled-components';
-import {
-    PoppinsNormalShadowBlue12px,
-    PoppinsMediumVulcan14px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalShadowBlue12px, PoppinsMediumVulcan14px } from '../../styledMixins';
 
 function WidgetsCustomerRow(props) {
     const { customerId00222, isabellaMoran, usersAvatarPhoto2StatesProps, iconsNavigationIcon12StatesProps } = props;

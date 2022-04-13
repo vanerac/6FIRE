@@ -1,7 +1,7 @@
 import React from 'react';
 import IcSearch from '../IcSearch';
 import styled from 'styled-components';
-import { PoppinsNormalComet14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalComet14px } from '../../styledMixins';
 
 function TopNavigationSearch2(props) {
     const { icSearchProps } = props;

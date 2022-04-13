@@ -13,6 +13,26 @@ import ButtonsBtnTextIcon5 from '../components/ButtonsBtnTextIcon5';
 import styled from 'styled-components';
 import { LatoNormalComet10px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './ThemesArticlesCreation.css';
+import {
+    abonnement5Data,
+    articles5Data,
+    buttonsBtnTextIcon36Data,
+    buttonsBtnTextIcon37Data,
+    buttonsBtnTextIcon53Data,
+    email4Data,
+    filtre7Data,
+    sidebarMenuItem17Data,
+    sidebarMenuItem18Data,
+    sidebarMenuItem19Data,
+    sidebarMenuItem25Data,
+    titre21Data,
+    topNavigation22Data,
+    tradingCrypto20Data,
+    tradingCrypto21Data,
+    tradingCrypto23Data,
+    tradingCrypto24Data,
+    tradingCrypto25Data,
+} from './index';
 
 function ThmesArticlesCration(props: any): any {
     const {
@@ -271,3 +291,27 @@ const Image1 = styled.img`
 `;
 
 export default ThmesArticlesCration;
+export const thmesArticlesCrationData = {
+    analytics: 'Créer un thème',
+    slectionnerTypesDabonnements: 'Sélectionner types d’abonnements',
+    icon: 'Icon',
+    image1: '/img/image-1-1@1x.png',
+    topNavigation2Props: topNavigation22Data,
+    sidebarMenuItem1Props: sidebarMenuItem17Data,
+    sidebarMenuItem2Props: sidebarMenuItem18Data,
+    sidebarMenuItem2Props2: sidebarMenuItem25Data,
+    articlesProps: articles5Data,
+    tradingCrypto1Props: tradingCrypto20Data,
+    tradingCrypto2Props: tradingCrypto21Data,
+    tradingCrypto3Props: tradingCrypto23Data,
+    tradingCrypto4Props: tradingCrypto24Data,
+    tradingCrypto5Props: tradingCrypto25Data,
+    abonnementProps: abonnement5Data,
+    sidebarMenuItem3Props: sidebarMenuItem19Data,
+    buttonsBtnTextIcon31Props: buttonsBtnTextIcon36Data,
+    buttonsBtnTextIcon32Props: buttonsBtnTextIcon37Data,
+    titre2Props: titre21Data,
+    emailProps: email4Data,
+    filtreProps: filtre7Data,
+    buttonsBtnTextIcon5Props: buttonsBtnTextIcon53Data,
+};

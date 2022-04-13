@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsSemiboldSemiBoldWhite10px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsSemiboldSemiBoldWhite10px } from '../../styledMixins';
 
 function Titre4(props) {
     const { className } = props;

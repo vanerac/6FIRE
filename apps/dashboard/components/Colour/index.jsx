@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-    HelveticaneueMediumBrightGray234px,
-    HelveticaneueNormalBrightGray156px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { HelveticaneueMediumBrightGray234px, HelveticaneueNormalBrightGray156px } from '../../styledMixins';
 
 function Colour(props) {
     const { x665Eff, rgb10294225, className } = props;

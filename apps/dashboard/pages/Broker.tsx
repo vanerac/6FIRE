@@ -11,6 +11,21 @@ import Row1 from '../components/Row1';
 import styled from 'styled-components';
 import { PoppinsMediumMirage10px, PoppinsMediumMirage12px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
 import './Broker.css';
+import {
+    abonnement12Data,
+    articles9Data,
+    buttonsBtnTextIcon62Data,
+    sidebarMenuItem48Data,
+    sidebarMenuItem49Data,
+    sidebarMenuItem50Data,
+    sidebarMenuItem51Data,
+    topNavigation9Data,
+    tradingCrypto213Data,
+    tradingCrypto53Data,
+    tradingCrypto54Data,
+    tradingCrypto55Data,
+    tradingCrypto56Data,
+} from './index';
 
 function Broker(props: any): any {
     const {
@@ -263,3 +278,24 @@ const Name4 = styled.div`
 `;
 
 export default Broker;
+export const brokerData = {
+    analytics: 'Broker',
+    name1: 'Rechercher…',
+    name2: 'ID',
+    name3: 'Broker',
+    name4: 'Logo',
+    name5: 'Action',
+    topNavigationProps: topNavigation9Data,
+    sidebarMenuItem1Props: sidebarMenuItem48Data,
+    sidebarMenuItem2Props: sidebarMenuItem49Data,
+    sidebarMenuItem3Props: sidebarMenuItem50Data,
+    articlesProps: articles9Data,
+    tradingCrypto1Props: tradingCrypto53Data,
+    tradingCrypto2Props: tradingCrypto54Data,
+    tradingCrypto3Props: tradingCrypto55Data,
+    tradingCrypto2Props2: tradingCrypto213Data,
+    tradingCrypto4Props: tradingCrypto56Data,
+    abonnementProps: abonnement12Data,
+    sidebarMenuItem4Props: sidebarMenuItem51Data,
+    buttonsBtnTextIcon6Props: buttonsBtnTextIcon62Data,
+};

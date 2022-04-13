@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalWhite12px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalWhite12px } from '../../styledMixins';
 
 function ButtonsBtnTextIcon5(props) {
     const { children, className } = props;

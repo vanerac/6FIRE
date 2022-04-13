@@ -4,10 +4,7 @@ import ButtonsBtnTextIcon5 from '../ButtonsBtnTextIcon5';
 import IDFixe2 from '../IDFixe2';
 import Renouvellement from '../Renouvellement';
 import styled from 'styled-components';
-import {
-    LatoNormalComet10px,
-    PoppinsNormalTundora12px,
-} from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { LatoNormalComet10px, PoppinsNormalTundora12px } from '../../styledMixins';
 
 function Historique(props) {
     const {

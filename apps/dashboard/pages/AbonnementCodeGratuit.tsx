@@ -9,15 +9,32 @@ import Filtre from '../components/Filtre';
 import IconFeatherCopy from '../components/IconFeatherCopy';
 import styled from 'styled-components';
 import {
-    PoppinsNormalTundora12px,
-    PoppinsSemiboldSemiBoldWhite14px,
     LatoNormalComet10px,
-    PoppinsSemiboldSemiBoldMirage24px,
+    PoppinsMediumMirage10px,
     PoppinsMediumMirage12px,
     PoppinsMediumTundora10px,
-    PoppinsMediumMirage10px,
+    PoppinsNormalTundora12px,
+    PoppinsSemiboldSemiBoldMirage24px,
+    PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
 import './AbonnementCodeGratuit.css';
+import {
+    abonnement72Data,
+    articles20Data,
+    filtre20Data,
+    iconFeatherCopy2Data,
+    iconFeatherCopy3Data,
+    sidebarMenuItem91Data,
+    sidebarMenuItem92Data,
+    sidebarMenuItem93Data,
+    sidebarMenuItem94Data,
+    topNavigation16Data,
+    tradingCrypto106Data,
+    tradingCrypto107Data,
+    tradingCrypto108Data,
+    tradingCrypto109Data,
+    tradingCrypto110Data,
+} from './index';
 
 function AbonnementCodeGratuit(props: any): any {
     const {
@@ -607,3 +624,45 @@ const IconClose1 = styled.img`
 `;
 
 export default AbonnementCodeGratuit;
+export const abonnementCodeGratuitData = {
+    analytics1: 'Code gratuit (unique)',
+    analytics2: 'Phrase à copier',
+    phrase: 'Phrase',
+    tonCodePromoCo: 'Ton code promo : {code} à rentrer après avoir sélectionner l’offre intermédiaire sur le site',
+    ligne6: '/img/ligne-6-67@1x.png',
+    name1: 'Rechercher…',
+    name2: 'Code unique',
+    name3: 'Campagne',
+    name4: 'Création',
+    name5: 'Utiliser',
+    name6: 'Utiliser par',
+    name7: 'Action',
+    name8: 'XOvE39b',
+    name9: 'Broker (30j)',
+    name10: '22/03/22',
+    membre1: '/img/fontawsome--check-square--10@1x.png',
+    name11: 'elodie@elodie.fr',
+    fontawsomePen1: '/img/fontawsome--pen--12@1x.png',
+    iconClose1: '/img/fontawsome--times--10@1x.png',
+    name12: 'XOvE39b',
+    name13: 'Broker (30j)',
+    name14: '22/03/22',
+    membre2: '/img/fontawsome--window-close--12@1x.png',
+    fontawsomePen2: '/img/fontawsome--pen--12@1x.png',
+    iconClose2: '/img/fontawsome--times--10@1x.png',
+    topNavigationProps: topNavigation16Data,
+    sidebarMenuItem1Props: sidebarMenuItem91Data,
+    sidebarMenuItem2Props: sidebarMenuItem92Data,
+    sidebarMenuItem3Props: sidebarMenuItem93Data,
+    articlesProps: articles20Data,
+    tradingCrypto1Props: tradingCrypto106Data,
+    tradingCrypto2Props: tradingCrypto107Data,
+    tradingCrypto3Props: tradingCrypto108Data,
+    tradingCrypto4Props: tradingCrypto109Data,
+    tradingCrypto5Props: tradingCrypto110Data,
+    abonnement7Props: abonnement72Data,
+    sidebarMenuItem4Props: sidebarMenuItem94Data,
+    filtreProps: filtre20Data,
+    iconFeatherCopy1Props: iconFeatherCopy2Data,
+    iconFeatherCopy2Props: iconFeatherCopy3Data,
+};

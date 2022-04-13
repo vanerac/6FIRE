@@ -1,7 +1,7 @@
 import React from 'react';
 import IconsNavigationIcon12States from '../IconsNavigationIcon12States';
 import styled from 'styled-components';
-import { PoppinsMediumBlueRibbon14px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsMediumBlueRibbon14px } from '../../styledMixins';
 
 function SidebarMenuItem2(props) {
     const { name, className, iconsNavigationIcon12StatesProps } = props;

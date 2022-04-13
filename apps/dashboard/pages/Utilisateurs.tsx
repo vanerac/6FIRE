@@ -18,6 +18,25 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
 } from '../styledMixins';
 import './Utilisateurs.css';
+import {
+    articles2Data,
+    buttonsBtnTextIcon3Data,
+    filtre1Data,
+    filtre2Data,
+    filtre3Data,
+    filtre4Data,
+    filtreDateData,
+    sidebarMenuItem23Data,
+    sidebarMenuItem7Data,
+    sidebarMenuItem8Data,
+    sidebarMenuItem9Data,
+    topNavigation1Data,
+    tradingCrypto10Data,
+    tradingCrypto6Data,
+    tradingCrypto7Data,
+    tradingCrypto8Data,
+    tradingCrypto9Data,
+} from './index';
 
 function Utilisateurs(props: any) {
     const {
@@ -406,3 +425,38 @@ const FontAwsomepen = styled.img`
 `;
 
 export default Utilisateurs;
+export const utilisateursData = {
+    analytics: 'Utilisateurs',
+    name1: 'Rechercher…',
+    name2: 'ID',
+    name3: 'Email',
+    name4: 'Prénom',
+    name5: 'Nom',
+    name6: 'Abonnement',
+    name7: 'Membre',
+    name8: 'Action',
+    name9: '1002',
+    name10: 'Elodie.elodie@gmail.com',
+    name11: 'Elodie',
+    name12: 'Elodie',
+    name13: 'Intermédiaire (99.99€)',
+    membre: '/img/fontawsome--check-square--10@1x.png',
+    fontawsomePen: '/img/fontawsome--pen--1@1x.png',
+    topNavigationProps: topNavigation1Data,
+    sidebarMenuItem1Props: sidebarMenuItem7Data,
+    sidebarMenuItem2Props: sidebarMenuItem23Data,
+    sidebarMenuItem2Props2: sidebarMenuItem8Data,
+    articlesProps: articles2Data,
+    tradingCrypto1Props: tradingCrypto6Data,
+    tradingCrypto2Props: tradingCrypto7Data,
+    tradingCrypto3Props: tradingCrypto8Data,
+    tradingCrypto4Props: tradingCrypto9Data,
+    tradingCrypto5Props: tradingCrypto10Data,
+    sidebarMenuItem3Props: sidebarMenuItem9Data,
+    filtre1Props: filtre1Data,
+    filtre2Props: filtre2Data,
+    filtre3Props: filtre3Data,
+    filtre4Props: filtre4Data,
+    filtreDateProps: filtreDateData,
+    buttonsBtnTextIconProps: buttonsBtnTextIcon3Data,
+};

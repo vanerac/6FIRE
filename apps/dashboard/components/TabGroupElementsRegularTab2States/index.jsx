@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MuliSemiBoldVulcan13px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { MuliSemiBoldVulcan13px } from '../../styledMixins';
 
 function TabGroupElementsRegularTab2States(props) {
     const { children, className } = props;

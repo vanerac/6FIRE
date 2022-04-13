@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PoppinsNormalShadowBlue12px } from '../../../../../../../Downloads/AnimaPackage-React-0FVG6/styledMixins';
+import { PoppinsNormalShadowBlue12px } from '../../styledMixins';
 
 function WidgetsElementsChartGraphStackedBar(props) {
     const { children } = props;
