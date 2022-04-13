@@ -27,7 +27,7 @@ jobs:
       - name: Verify state
         working-directory: terraform/
         run: |
-          if terraform state show data.aws_ecr_repository.${{matrix.directories}}; then
+          if terraform state show data.aws_ecr_repository.api && terraform state show data.aws_ecr_repository.client && terraform state show data.aws_ecr_repository.dashboard; then
             echo "::set-env name=valid::true"
           else
             echo "::set-env name=valid::false"
