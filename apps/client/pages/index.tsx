@@ -1,20 +1,20 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import logo from './../img/effect-1@1x.png';
-import line from './../img/ligne-1-1@1x.png';
-import trac_1 from './../img/trac--1-1@1x.png';
-import trac_2 from './../img/trac--2-1@1x.png';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const Home: NextPage = (props: any) => {
+    const [userName, setUserName] = useState('');
+
     return (
         <body style={{ margin: 0 }}>
+            {userName}
             <input type="hidden" id="anPageName" name="page" value="register-web" />
             <div className="register-web screen">
                 <div className="background-WxaGAS"></div>
                 <div className="logo-WxaGAS">
                     <div className="effect-ReYaAa">
-                        <Image src={logo} />
+                        <Image layout="fill" src="/img/effect-1@1x.png" />
                     </div>
                 </div>
                 <div className="crer-votre-compte-sur-6-firecom-WxaGAS">Créer votre compte sur 6FIRE.com</div>
@@ -45,29 +45,36 @@ const Home: NextPage = (props: any) => {
                 </div>
                 <div className="nom-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        <Image src={line} />
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
                     </div>
-                    <input placeholder="*Nom" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
+                    <input
+                        placeholder="*Nom"
+                        onChange={(event) => setUserName(event.target.value)}
+                        className="nom-Ay5Yag lato-normal-white-14px"
+                        type="text"
+                    />
                 </div>
                 <div className="prnom-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        <Image src={line} />
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
                     </div>
                     <input placeholder="*Prénom" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
                 </div>
                 <div className="numro-de-tlphone-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        <Image src={line} />
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
                     </div>
                     <input placeholder="*Email" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
                 </div>
                 <div className="mot-de-passe-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        <Image src={line} />
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
                     </div>
                     <input placeholder="* Mot de passe" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
 
-                    <img className="icon-ionic-md-eye-off-YId6x8" src="img/icon-ionic-md-eye-off-1@1x.png" />
+                    <div className="icon-ionic-md-eye-off-YId6x8">
+                        <Image layout="fill" src="/img/icon-ionic-md-eye-off-1@1x.png" />
+                    </div>
                 </div>
                 <div className="button-sign-in-WxaGAS">
                     <div className="button-cration-de-compte-43BKS5">
@@ -84,7 +91,7 @@ const Home: NextPage = (props: any) => {
                 </div>
                 <div className="numro-de-tlphone-Ae6KpX">
                     <div className="ligne-1-Ay5Yag">
-                        <Image src={line} />
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
                     </div>
                     <input
                         placeholder="*Numéro de téléphone"
@@ -102,10 +109,10 @@ const Home: NextPage = (props: any) => {
                     </div>
                     <div className="icon-ionic-ios-menu-zebl9P">
                         <div className="trac-1-mD2maU">
-                            <Image src={trac_1} />
+                            <Image layout="fill" src="/img/trac--1-1@1x.png" />
                         </div>
                         <div className="trac-2-mD2maU">
-                            <Image src={trac_2} />
+                            <Image layout="fill" src="/img/trac--2-1@1x.png" />
                         </div>
                     </div>
                 </div>
@@ -114,7 +121,7 @@ const Home: NextPage = (props: any) => {
                 <div className="background-qfTrnm"></div>
                 <div className="logo-qfTrnm">
                     <div className="effect-YcCH73">
-                        <Image src={logo} />
+                        <Image layout="fill" src="/img/effect-1@1x.png" />
                     </div>
                 </div>
                 <div className="crer-votre-compte-sur-6-firecom-qfTrnm">Créer votre compte sur 6FIRE.com</div>
@@ -142,20 +149,30 @@ const Home: NextPage = (props: any) => {
                     </div>
                 </div>
                 <div className="nom-qfTrnm">
-                    <img className="ligne-1-vdEIbT" src="img/ligne-1-1@1x.png" />
-                    <div className="nom-vdEIbT lato-normal-white-14px">* Nom</div>
+                    <div className="ligne-1-vdEIbT">
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                    </div>
+                    <input placeholder="*Nom" type="text" className="nom-vdEIbT lato-normal-white-14px" />
                 </div>
                 <div className="prnom-qfTrnm">
-                    <img className="ligne-5-6mOLtL" src="img/ligne-1-1@1x.png" />
+                    <div className="ligne-5-6mOLtL">
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                    </div>
                     <div className="prnom-6mOLtL lato-normal-white-14px">* Prénom</div>
                 </div>
                 <div className="numro-de-tlphone-qfTrnm">
-                    <img className="ligne-6-Glkvq0" src="img/ligne-1-1@1x.png" />
+                    <div className="ligne-6-Glkvq0">
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                    </div>
                     <div className="numro-de-tlphone-Glkvq0 lato-normal-white-14px">* Numéro de téléphone</div>
                 </div>
                 <div className="mot-de-passe-qfTrnm">
-                    <img className="icon-ionic-md-eye-off-WPm9xl" src="img/icon-ionic-md-eye-off-1@1x.png" />
-                    <img className="ligne-7-WPm9xl" src="img/ligne-1-1@1x.png" />
+                    <div className="icon-ionic-md-eye-off-WPm9xl">
+                        <Image layout="fill" src="/img/icon-ionic-md-eye-off-1@1x.png" />
+                    </div>
+                    <div className="ligne-7-WPm9xl">
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                    </div>
                     <div className="mot-de-passe-WPm9xl lato-normal-white-14px">* Mot de passe</div>
                 </div>
                 <div className="button-sign-in-qfTrnm">
@@ -171,13 +188,19 @@ const Home: NextPage = (props: any) => {
                             <div className="club-premium-MoQQxl lato-normal-white-14px">Club Privé</div>
                         </div>
                         <div className="icon-ionic-ios-menu-1aVEbJ">
-                            <img className="trac-1-l9Kpxb" src="img/trac--1-1@1x.png" />
-                            <img className="trac-2-l9Kpxb" src="img/trac--2-1@1x.png" />
+                            <div className="trac-1-l9Kpxb">
+                                <Image layout="fill" src="/img/trac--1-1@1x.png" />
+                            </div>
+                            <div className="trac-2-l9Kpxb">
+                                <Image layout="fill" src="/img/trac--2-1@1x.png" />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="numro-de-tlphone-511QbH">
-                    <img className="ligne-6-DzMs4Y" src="img/ligne-1-1@1x.png" />
+                    <div className="ligne-6-DzMs4Y">
+                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                    </div>
                     <div className="email-DzMs4Y lato-normal-white-14px">* Email</div>
                 </div>
             </div>
