@@ -1,5 +1,9 @@
 on: push
 name: Push CI
+env:
+  AWS_ACCESS_KEY_ID: ${secrets.AWS_ACCESS_KEY_ID}
+  AWS_SECRET_ACCESS_KEY: ${secrets.AWS_SECRET_ACCESS_KEY}
+  AWS_ROLE_ARN: ${secrets.AWS_ROLE_ARN}
 jobs:
   install:
     name: Install dependencies
@@ -13,8 +17,23 @@ jobs:
   prisma:
     needs: [ install ]
     uses: vanerac/6FIRE/.github/workflows/prisma_job.yml@main
+  compile:
+    needs: [ lint, openapi, prisma ]
+    uses: vanerac/6FIRE/.github/workflows/compile_job.yml@main
+  test:
+    needs: [ lint, openapi, compile, prisma ]
+    uses: vanerac/6FIRE/.github/workflows/test_job.yml@main
   terraform:
     uses: vanerac/6FIRE/.github/workflows/terraform_validate_job.yml@main
   terraform_plan:
     needs: [ terraform ]
     uses: vanerac/6FIRE/.github/workflows/terraform_plan_job.yml@main
+  terraform_apply_ecr:
+    needs: [ terraform_plan ]
+    uses: vanerac/6FIRE/.github/workflows/terraform_ecr_job.yml@main
+  docker_build:
+    needs: [ terraform_apply_ecr, test, compile ]
+    uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
+  terraform_deploy:
+    needs: [ terraform_apply_ecr, test, compile, docker_build ]
+    uses: vanerac/6FIRE/.github/workflows/terraform_deploy_job.yml@main

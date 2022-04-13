@@ -1,0 +1,42 @@
+on: workflow_call
+name: Terraform Apply ECR Job
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+jobs:
+  ecr:
+    permissions:
+      id-token: write
+      contents: read
+    name: Terraform Apply ECR Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
+      - name: login to AWS
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
+          aws-region: eu-west-3
+      - run: terraform init
+        working-directory: terraform/
+        name: terraform init
+      - name: Refresh state
+        working-directory: terraform/
+        run: terraform apply -refresh-only
+      - name: Verify state
+        working-directory: terraform/
+        run: |
+          if terraform state show data.aws_ecr_repository.api && terraform state show data.aws_ecr_repository.client && terraform state show data.aws_ecr_repository.dashboard; then
+            echo "::set-env name=valid::true"
+          else
+            echo "::set-env name=valid::false"
+          fi
+      - name: Plan deployement
+        if: env.valid == true
+        working-directory: terraform/
+        run: terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard -out=plan.file -input=false
+      - run: terraform apply plan.file
+        if: env.valid == true
+        working-directory: terraform/
+        name: Apply deployement

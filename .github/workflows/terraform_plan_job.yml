@@ -1,18 +1,21 @@
-on: [ workflow_call, workflow_dispatch ]
+on: workflow_call
 name: Terraform Plan Job
+
 #  terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard
 jobs:
   ecr:
+    permissions:
+      id-token: write
+      contents: read
     name: Terraform Plan Job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
       - name: login to AWS
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@master
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
           aws-region: eu-west-3
       - run: terraform init
         working-directory: terraform/
