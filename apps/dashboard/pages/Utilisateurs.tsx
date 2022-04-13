@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import TopNavigation from '../components/TopNavigation';
 import SidebarMenuItem from '../components/SidebarMenuItem';
 import SidebarMenuItem2 from '../components/SidebarMenuItem2';
@@ -171,7 +171,7 @@ function Utilisateurs(props: any) {
                                 <Name11>{name12}</Name11>
                                 <Name12>{name13}</Name12>
                                 <Membre style={{ backgroundImage: `url(${membre})` }}></Membre>
-                                <Link to="/details-utilisateurs" className="align-self-flex-center">
+                                <Link href="/detailsutilisateurs">
                                     <FontAwsomepen src={fontawsomePen} />
                                 </Link>
                             </Groupe454>

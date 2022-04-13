@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Groupe3934 from '../Groupe3934';
 import styled from 'styled-components';
 
@@ -7,7 +7,7 @@ function ButtonsBtnTextIcon8(props) {
     const { className } = props;
 
     return (
-        <Link to="/abonnement-code-promo-creer">
+        <Link href="/abonnement-code-promo-creer">
             <ButtonsBtnTextIcon className={`buttons-btn-text-icon-40 ${className || ''}`}>
                 <Groupe3934 />
             </ButtonsBtnTextIcon>

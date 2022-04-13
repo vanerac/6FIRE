@@ -64,7 +64,7 @@ function Home({ data: props }: { data: HomeData }) {
         chartLeftValue7Props,
         dayProps,
         tooltipPointerLeft2Props,
-    } = props;
+    } = homeData;
 
     return (
         <div className="container-center-horizontal">

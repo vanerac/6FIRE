@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Groupe3932 from '../Groupe3932';
 import styled from 'styled-components';
 

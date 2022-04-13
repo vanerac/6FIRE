@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { PoppinsMediumMirage14px } from '../../styledMixins';
 
@@ -7,7 +7,7 @@ function Abonnement(props) {
     const { className } = props;
 
     return (
-        <Link to="/abonnement-gestion-abonnements">
+        <Link href="/abonnement-gestion-abonnements">
             <Abonnement1 className={`abonnement-1 ${className || ''}`}>
                 <IconMaterialPayment className="icon-material-payment" src="/img/icon-material-payment-10@1x.png" />
                 <Name className="name-9">Abonnement</Name>

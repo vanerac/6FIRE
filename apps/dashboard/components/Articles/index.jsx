@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import IconsNavigationIcon12States from '../IconsNavigationIcon12States';
 import styled from 'styled-components';
 import { PoppinsMediumMirage14px } from '../../styledMixins';
@@ -8,7 +8,7 @@ function Articles(props) {
     const { className, iconsNavigationIcon12StatesProps } = props;
 
     return (
-        <Link to="/articles-historique-articles">
+        <Link href="/articles-historique-articles">
             <Articles1 className={`articles ${className || ''}`}>
                 <IconsNavigationIcon12States
                     src={iconsNavigationIcon12StatesProps.src}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { PoppinsMediumMirage14px } from '../styledMixins';
 
@@ -7,7 +7,7 @@ function TradingCrypto(props: any): any {
     const { iconPencil, name, className } = props;
 
     return (
-        <Link to="/trading-crypto">
+        <Link href={'/TradingCrypto'}>
             <TradingCrypto1 className={`trading-crypto ${className || ''}`}>
                 <IconPencil className="icon-pencil" src={iconPencil} />
                 <Name className="name-8">{name}</Name>

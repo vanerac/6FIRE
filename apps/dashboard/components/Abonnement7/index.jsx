@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import EssaiGratuit from '../EssaiGratuit';
 import styled from 'styled-components';
 import { PoppinsMediumBlueRibbon14px } from '../../styledMixins';
@@ -25,17 +25,17 @@ function Abonnement7(props) {
                 <Name>{name1}</Name>
                 <IconIonicIosArrowDown src={iconIonicIosArrowDown} />
             </OverlapGroup>
-            <Link to="/abonnement-gestion-abonnements">
+            <Link href="/abonnement-gestion-abonnements">
                 <GestionAbonnements>
                     <Name1>{name2}</Name1>
                 </GestionAbonnements>
             </Link>
-            <Link to="/abonnement-code-promo">
+            <Link href="/abonnement-code-promo">
                 <GestionAbonnements>
                     <Name2>{name3}</Name2>
                 </GestionAbonnements>
             </Link>
-            <Link to="/abonnement-essai-gratuit">
+            <Link href="/abonnement-essai-gratuit">
                 <EssaiGratuit1 style={{ backgroundImage: `url(${essaiGratuit})` }}>
                     <Name3>{name4}</Name3>
                 </EssaiGratuit1>

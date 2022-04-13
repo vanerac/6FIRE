@@ -6,42 +6,42 @@
     font-family: "HelveticaNeue-Medium";
     font-style: normal;
     font-weight: 500;
-    src: url("../static/fonts/HelveticaNeue-Medium.otf") format("opentype");
+    src: url("../public/fonts/HelveticaNeue-Medium.otf") format("opentype");
 }
 
 @font-face {
     font-family: "HelveticaNeue";
     font-style: normal;
     font-weight: 1 1000;
-    src: url("../static/fonts/helveticaneue.ttf") format("truetype");
+    src: url("../public/fonts/helveticaneue.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Muli-Bold";
     font-style: normal;
     font-weight: 700;
-    src: url("../static/fonts/Muli-Bold.ttf") format("truetype");
+    src: url("../public/fonts/Muli-Bold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Muli-SemiBold";
     font-style: normal;
     font-weight: 600;
-    src: url("../static/fonts/Muli-SemiBold.ttf") format("truetype");
+    src: url("../public/fonts/Muli-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Poppins-SemiBold-SemiBold";
     font-style: normal;
     font-weight: 600;
-    src: url("../static/fonts/Poppins.zip");
+    src: url("../public/fonts/Poppins.zip");
 }
 
 @font-face {
     font-family: "Arial-Bold";
     font-style: normal;
     font-weight: 700;
-    src: url("../static/fonts/FontsFree-Net-arial-bold.ttf") format("truetype");
+    src: url("../public/fonts/FontsFree-Net-arial-bold.ttf") format("truetype");
 }
 
 /* The following line is used to measure usage of this code in production. For more info see our usage billing page */

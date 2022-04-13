@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import GestionAbonnements from '../GestionAbonnements';
 import styled from 'styled-components';
 import { PoppinsMediumBlueRibbon14px } from '../../styledMixins';
@@ -30,12 +30,12 @@ function Abonnement4(props) {
             <GestionAbonnements className={gestionAbonnements2Props.className}>
                 {gestionAbonnements2Props.children}
             </GestionAbonnements>
-            <Link to="/abonnement-essai-gratuit">
+            <Link href="/abonnement-essai-gratuit">
                 <EssaiGratuit style={{ backgroundImage: `url(${essaiGratuit})` }}>
                     <Name1>{name2}</Name1>
                 </EssaiGratuit>
             </Link>
-            <Link to="/abonnement-code-gratuit">
+            <Link href="/abonnement-code-gratuit">
                 <EssaiGratuit style={{ backgroundImage: `url(${codeGratuit})` }}>
                     <Name2>{name3}</Name2>
                 </EssaiGratuit>
