@@ -12,7 +12,7 @@ resource "aws_rds_cluster" "default" {
   skip_final_snapshot = true
   storage_encrypted   = true
   engine              = "aurora-postgresql"
-  engine_version      = "13"
+  engine_version      = "13.4"
   deletion_protection = false
-  
+
 }
