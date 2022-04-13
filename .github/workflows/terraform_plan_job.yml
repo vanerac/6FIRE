@@ -11,6 +11,7 @@ name: Terraform Plan Job
 
 permissions:
   id-token: write
+  repository-projects: read
 #  terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard
 jobs:
   ecr:
