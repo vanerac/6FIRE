@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const HomePage: NextPage = () => {
     return (
-        <body style={{ margin: 0, background: '#ffffff' }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="articles-details-entreprise" />
             <div className="articles-details-entreprise screen">
                 <div className="background-pYC6Z9" />
@@ -594,7 +594,7 @@ const HomePage: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 

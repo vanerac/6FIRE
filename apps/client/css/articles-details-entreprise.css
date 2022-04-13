@@ -1,5 +1,9 @@
 /* screen - articles-details-entreprise */
 
+body {
+  margin: 0;
+}
+
 .articles-details-entreprise {
   background-color: var(--white);
   height: 100vh;
