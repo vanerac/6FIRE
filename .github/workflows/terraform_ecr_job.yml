@@ -9,7 +9,6 @@ on:
         required: true
 name: Terraform Apply ECR Job
 
-#  terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard
 jobs:
   ecr:
     permissions:
@@ -28,6 +27,8 @@ jobs:
       - run: terraform init
         working-directory: terraform/
         name: terraform init
-      - run: terraform apply -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard
+      - name: Plan deployement
+        run: terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard -out=plan.file -input=false
+      - run: terraform apply plan.file
         working-directory: terraform/
-        name: terraform Apply
+        name: Apply deployement
