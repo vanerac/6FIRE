@@ -41,10 +41,10 @@ resource "aws_ecs_task_definition" "api" {
   container_definitions    = <<DEFINITION
 [
   {
-    "cpu": 128,
+    "cpu": 512,
     "essential": true,
     "image": "${aws_ecr_repository.api.arn}/6fire-api:latest",
-    "memory": 128,
+    "memory": 1024,
     "name": "api"
   }
 ]
@@ -62,10 +62,10 @@ resource "aws_ecs_task_definition" "client" {
   container_definitions    = <<DEFINITION
 [
   {
-    "cpu": 128,
+    "cpu": 512,
     "essential": true,
     "image": "${aws_ecr_repository.client.arn}/6fire-client:latest",
-    "memory": 128,
+    "memory": 1024,
     "name": "client"
   }
 ]
@@ -80,10 +80,10 @@ resource "aws_ecs_task_definition" "dashboard" {
   container_definitions    = <<DEFINITION
 [
   {
-    "cpu": 128,
+    "cpu": 512,
     "essential": true,
     "image": "${aws_ecr_repository.dashboard.arn}/6fire-dashboard:latest",
-    "memory": 128,
+    "memory": 1024,
     "name": "dashboard"
   }
 ]
