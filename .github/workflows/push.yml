@@ -20,7 +20,7 @@ jobs:
   terraform:
     uses: vanerac/6FIRE/.github/workflows/terraform_validate_job.yml@main
   terraform_plan:
-    needs: [ terraform ]
+#    needs: [ terraform ]
     uses: vanerac/6FIRE/.github/workflows/terraform_plan_job.yml@main
     secrets:
       AWS_ACCESS_KEY_ID: ${env.AWS_ACCESS_KEY_ID}
