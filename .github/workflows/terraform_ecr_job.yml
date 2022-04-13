@@ -32,8 +32,6 @@ jobs:
         working-directory: terraform/
         run: terraform import aws_ecr_repository.${{matrix.repositories}} 6fire-${{matrix.repositories}}
         continue-on-error: true
-      - name: print status
-        run: echo ${{steps.verify-state.outcome}}
       - name: Plan deployement
         if: steps.verify-state.outcome != 'success'
         env:
