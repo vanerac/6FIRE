@@ -35,12 +35,12 @@ jobs:
       - name: Plan deployement
         if: $valid == true
         env:
-          valid: ${{valid}}
+          valid: ${{env.valid}}
         working-directory: terraform/
         run: terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard -out=plan.file -input=false
       - run: terraform apply -input=false plan.file
         if: $valid == true
         env:
-          valid: ${{valid}}
+          valid: ${{env.valid}}
         working-directory: terraform/
         name: Apply deployement
