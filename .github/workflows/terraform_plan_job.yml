@@ -17,10 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
-      - name: test
-        run: |
-          echo ${{ secrets.AWS_ACCESS_KEY_ID }}
-          echo ${ secrets.AWS_SECRET_ACCESS_KEY }
       - name: login to AWS
         uses: aws-actions/configure-aws-credentials@v1
         with:
