@@ -1,13 +1,13 @@
 import React from 'react';
-import TopNavigation from './components/TopNavigation';
-import SidebarMenuItem from './components/SidebarMenuItem';
-import Articles from './components/Articles';
+import TopNavigation from '../components/TopNavigation';
+import SidebarMenuItem from '../components/SidebarMenuItem';
+import Articles from '../components/Articles';
 import TradingCrypto from './TradingCrypto';
-import Abonnement22 from './components/Abonnement22';
-import Filtre from './components/Filtre';
-import ButtonsBtnTextIcon8 from './components/ButtonsBtnTextIcon8';
-import Groupe455 from './components/Groupe455';
-import ButtonsBtnTextIcon7 from './components/ButtonsBtnTextIcon7';
+import Abonnement22 from '../components/Abonnement22';
+import Filtre from '../components/Filtre';
+import ButtonsBtnTextIcon8 from '../components/ButtonsBtnTextIcon8';
+import Groupe455 from '../components/Groupe455';
+import ButtonsBtnTextIcon7 from '../components/ButtonsBtnTextIcon7';
 import styled from 'styled-components';
 import {
     PoppinsMediumMirage10px,

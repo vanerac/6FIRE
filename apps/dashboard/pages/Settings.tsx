@@ -1,12 +1,12 @@
 import React from 'react';
-import TopNavigation from './components/TopNavigation';
-import SidebarMenuItem from './components/SidebarMenuItem';
-import Articles from './components/Articles';
+import TopNavigation from '../components/TopNavigation';
+import SidebarMenuItem from '../components/SidebarMenuItem';
+import Articles from '../components/Articles';
 import TradingCrypto from './TradingCrypto';
-import Abonnement from './components/Abonnement';
-import SidebarMenuItem2 from './components/SidebarMenuItem2';
-import ButtonsBtnTextIcon3 from './components/ButtonsBtnTextIcon3';
-import Toggle from './components/Toggle';
+import Abonnement from '../components/Abonnement';
+import SidebarMenuItem2 from '../components/SidebarMenuItem2';
+import ButtonsBtnTextIcon3 from '../components/ButtonsBtnTextIcon3';
+import Toggle from '../components/Toggle';
 import styled from 'styled-components';
 import {
     PoppinsSemiboldSemiBoldWhite14px,

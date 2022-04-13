@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import TopNavigation from './components/TopNavigation';
-import SidebarMenuItem from './components/SidebarMenuItem';
-import SidebarMenuItem2 from './components/SidebarMenuItem2';
-import Articles from './components/Articles';
+import TopNavigation from '../components/TopNavigation';
+import SidebarMenuItem from '../components/SidebarMenuItem';
+import SidebarMenuItem2 from '../components/SidebarMenuItem2';
+import Articles from '../components/Articles';
 import TradingCrypto from './TradingCrypto';
-import Abonnement from './components/Abonnement';
-import Filtre from './components/Filtre';
-import FiltreDate from './components/FiltreDate';
-import ButtonsBtnTextIcon from './components/ButtonsBtnTextIcon';
-import Groupe455 from './components/Groupe455';
+import Abonnement from '../components/Abonnement';
+import Filtre from '../components/Filtre';
+import FiltreDate from '../components/FiltreDate';
+import ButtonsBtnTextIcon from '../components/ButtonsBtnTextIcon';
+import Groupe455 from '../components/Groupe455';
 import styled from 'styled-components';
 import {
     PoppinsMediumMirage10px,

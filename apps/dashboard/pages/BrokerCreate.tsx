@@ -1,13 +1,13 @@
 import React from 'react';
-import TopNavigation2 from './components/TopNavigation2';
-import SidebarMenuItem from './components/SidebarMenuItem';
-import Articles from './components/Articles';
+import TopNavigation2 from '../components/TopNavigation2';
+import SidebarMenuItem from '../components/SidebarMenuItem';
+import Articles from '../components/Articles';
 import TradingCrypto from './TradingCrypto';
 import TradingCrypto2 from './TradingCrypto2';
-import Abonnement from './components/Abonnement';
-import ButtonsBtnTextIcon3 from './components/ButtonsBtnTextIcon3';
-import ButtonsBtnTextIcon5 from './components/ButtonsBtnTextIcon5';
-import IDFixe from './components/IDFixe';
+import Abonnement from '../components/Abonnement';
+import ButtonsBtnTextIcon3 from '../components/ButtonsBtnTextIcon3';
+import ButtonsBtnTextIcon5 from '../components/ButtonsBtnTextIcon5';
+import IDFixe from '../components/IDFixe';
 import styled from 'styled-components';
 import {
     PoppinsSemiboldSemiBoldWhite14px,

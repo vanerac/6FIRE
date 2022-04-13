@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Switch } from 'react-router';
-import UIInventory from './components/UIInventory';
+import UIInventory from '../components/UIInventory';
 import Home from './Home';
 import Utilisateurs from './Utilisateurs';
 import DtailsUtilisateurs from './DetailsUtilisateur';

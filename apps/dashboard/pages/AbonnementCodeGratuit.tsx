@@ -1,12 +1,12 @@
 import React from 'react';
-import TopNavigation from './components/TopNavigation';
-import SidebarMenuItem from './components/SidebarMenuItem';
-import Articles from './components/Articles';
+import TopNavigation from '../components/TopNavigation';
+import SidebarMenuItem from '../components/SidebarMenuItem';
+import Articles from '../components/Articles';
 import TradingCrypto from './TradingCrypto';
-import Abonnement7 from './components/Abonnement7';
-import Filtre2 from './components/Filtre2';
-import Filtre from './components/Filtre';
-import IconFeatherCopy from './components/IconFeatherCopy';
+import Abonnement7 from '../components/Abonnement7';
+import Filtre2 from '../components/Filtre2';
+import Filtre from '../components/Filtre';
+import IconFeatherCopy from '../components/IconFeatherCopy';
 import styled from 'styled-components';
 import {
     PoppinsNormalTundora12px,
