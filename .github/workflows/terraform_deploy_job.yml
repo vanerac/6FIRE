@@ -23,11 +23,17 @@ jobs:
         working-directory: terraform/
         run: terraform apply -refresh-only
       - name: Import API ECR
+        working-directory: terraform/
         run: terraform import aws_ecr_repository.api 6fire-api
+        continue-on-error: true
       - name: Import Dashboard ECR
+        working-directory: terraform/
         run: terraform import aws_ecr_repository.dashboard 6fire-dashboard
+        continue-on-error: true
       - name: Import Client ECR
+        working-directory: terraform/
         run: terraform import aws_ecr_repository.client 6fire-client
+        continue-on-error: true
       - name: Plan deployement
         working-directory: terraform/
         run: terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard -out=plan.file -input=false
