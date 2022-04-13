@@ -21,14 +21,20 @@ jobs:
       - name: Get the version
         id: vars
         run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+      - name: login to AWS
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
+          aws-region: eu-west-3
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
       - name: Build the tagged Docker image
         id: build
-        run: docker build . --file docker/${{ matrix.directories }}/Dockerfile -t ${{ matrix.directories }}
-      - name: Export Image
-        id: export
-        run: docker save -o docker/${{ matrix.directories }}${{ steps.vars.outputs.tag }}.tar ${{ matrix.directories }}
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: ${{ matrix.directories }}
-          path: docker/${{ matrix.directories }}${{ steps.vars.outputs.tag }}.tar
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: 6fire-${{ matrix.directories }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG

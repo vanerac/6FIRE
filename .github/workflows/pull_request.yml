@@ -24,7 +24,9 @@ jobs:
   terraform_plan:
     needs: [ terraform_validate ]
     uses: vanerac/6FIRE/.github/workflows/terraform_plan_job.yml@main
-    secrets:
-      AWS_ACCESS_KEY_ID: ${env.AWS_ACCESS_KEY_ID}
-      AWS_SECRET_ACCESS_KEY: ${env.AWS_SECRET_ACCESS_KEY}
-      AWS_ROLE_ARN: ${env.AWS_ROLE_ARN}
+  terraform_apply_ecr:
+    needs: [ terraform_plan ]
+    uses: vanerac/6FIRE/.github/workflows/terraform_ecr_job.yml@main
+  docker_build:
+    needs: [ terraform_apply_ecr ]
+    uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
