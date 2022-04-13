@@ -17,6 +17,7 @@ RUN npm run build
 
 FROM node:lts-alpine as run
 
+WORKDIR /app
 COPY --from=build /app ./
 
 EXPOSE 3000

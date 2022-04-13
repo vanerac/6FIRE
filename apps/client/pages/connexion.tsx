@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import SIXFIRELOGO from './../img/group-1-1@1x.png';
-import arrow from './../img/group-1485-1@1x.png';
-import line_1 from './../img/path-1-10@1x.png';
-import line_2 from './../img/path-2-10@1x.png';
-import SIXFIREPNG from './../img/effect-10@1x.png';
+import SIXFIRELOGO from './../public/img/group-1-1@1x.png';
+import arrow from './../public/img/group-1485-1@1x.png';
+import line_1 from './../public/img/path-1-10@1x.png';
+import line_2 from './../public/img/path-2-10@1x.png';
+import SIXFIREPNG from './../public/img/effect-10@1x.png';
 
 const HomePage: NextPage = () => {
     return (
