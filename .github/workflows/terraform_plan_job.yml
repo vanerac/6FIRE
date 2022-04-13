@@ -24,6 +24,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: eu-west-3
+          role-duration-seconds: 3600
+          role-session-name: GitHubActions
       - run: terraform init
         working-directory: terraform/
         name: terraform init
