@@ -34,6 +34,10 @@ jobs:
         working-directory: terraform/
         run: terraform import aws_ecr_repository.client 6fire-client
         continue-on-error: true
+      - name: Import RDS
+        working-directory: terraform/
+        run: terraform import aws_rds_cluster.rds rds-6fire-cluster
+        continue-on-error: true
       - name: Plan deployement
         working-directory: terraform/
         run: terraform plan -out=plan.file -input=false
