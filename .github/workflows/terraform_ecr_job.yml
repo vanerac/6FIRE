@@ -20,8 +20,10 @@ jobs:
         working-directory: terraform/
         name: terraform init
       - name: Refresh state
+        working-directory: terraform/
         run: terraform apply -refresh-only
       - name: Verify state
+        working-directory: terraform/
         run: |
           if terraform state show data.aws_ecr_repository.${{matrix.directories}}; then
             echo "::set-env name=valid::true"
