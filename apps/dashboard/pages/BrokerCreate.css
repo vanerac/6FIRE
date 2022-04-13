@@ -1,0 +1,10 @@
+.broker-creer-un-broker {
+  align-items: flex-start;
+  background-color: var(--zircon);
+  display: flex;
+  flex-direction: column;
+  height: 893px;
+  position: relative;
+  width: 1600px;
+}
+

@@ -1,0 +1,10 @@
+.abonnement-creer-un-abonnement-periode-dessai {
+  align-items: flex-start;
+  background-color: var(--zircon);
+  display: flex;
+  flex-direction: column;
+  height: 1001px;
+  position: relative;
+  width: 1600px;
+}
+

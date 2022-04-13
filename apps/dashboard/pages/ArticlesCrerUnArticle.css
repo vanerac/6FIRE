@@ -1,0 +1,11 @@
+.articles-creer-un-article {
+  align-items: flex-start;
+  background-color: var(--zircon);
+  display: flex;
+  flex-direction: column;
+  height: 1884px;
+  overflow: hidden;
+  position: relative;
+  width: 1600px;
+}
+

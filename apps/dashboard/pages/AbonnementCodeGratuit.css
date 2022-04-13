@@ -1,0 +1,10 @@
+.abonnement-code-gratuit {
+  align-items: flex-start;
+  background-color: var(--zircon);
+  display: flex;
+  flex-direction: column;
+  height: 1236px;
+  position: relative;
+  width: 1600px;
+}
+
