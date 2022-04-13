@@ -21,7 +21,7 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
     PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
-import './ArticlesCrerUnArticle1.css';
+import '../styles/ArticlesCrerUnArticle1.css';
 import {
     abonnement8Data,
     articles24Data,

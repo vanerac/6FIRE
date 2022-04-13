@@ -13,7 +13,7 @@ import Type from '../components/Type';
 import Abonnement42 from '../components/Abonnement42';
 import styled from 'styled-components';
 import { PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './AbonnementEssaiGratuitCrerEssaiGrat.css';
+import '../styles/AbonnementEssaiGratuitCrerEssaiGrat.css';
 import {
     abonnement224Data,
     abonnement423Data,

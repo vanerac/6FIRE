@@ -20,7 +20,7 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
     PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
-import './CryptoWallet.css';
+import '../styles/CryptoWallet.css';
 import {
     abonnement11Data,
     articles8Data,

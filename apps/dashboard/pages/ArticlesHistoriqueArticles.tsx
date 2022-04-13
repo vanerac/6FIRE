@@ -14,7 +14,7 @@ import {
     PoppinsMediumTundora10px,
     PoppinsSemiboldSemiBoldMirage24px,
 } from '../styledMixins';
-import './ArticlesHistoriqueArticles.css';
+import '../styles/ArticlesHistoriqueArticles.css';
 
 function ArticlesHistoriqueArticles(props: any): any {
     const {

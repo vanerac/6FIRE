@@ -20,7 +20,7 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
     PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
-import './DetailsUtilisateur.css';
+import '../styles/DetailsUtilisateur.css';
 import {
     articles3Data,
     buttonsBtnTextIcon32Data,

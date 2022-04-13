@@ -10,7 +10,7 @@ import Groupe455 from '../components/Groupe455';
 import GridTable from '../components/GridTable';
 import styled from 'styled-components';
 import { PoppinsMediumMirage10px, PoppinsMediumTundora10px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './AbonnementGestionAbonnements.css';
+import '../styles/AbonnementGestionAbonnements.css';
 import {
     abonnement22Data,
     articles13Data,

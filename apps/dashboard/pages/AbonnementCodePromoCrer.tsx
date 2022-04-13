@@ -12,7 +12,7 @@ import BestSeller from '../components/BestSeller';
 import Abonnement42 from '../components/Abonnement42';
 import styled from 'styled-components';
 import { LatoNormalComet10px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './AbonnementCodePromoCrer.css';
+import '../styles/AbonnementCodePromoCrer.css';
 import {
     abonnement222Data,
     abonnement422Data,

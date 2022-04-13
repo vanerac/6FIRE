@@ -12,7 +12,7 @@ import Filtre from '../components/Filtre';
 import ButtonsBtnTextIcon5 from '../components/ButtonsBtnTextIcon5';
 import styled from 'styled-components';
 import { LatoNormalComet10px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './ThemesArticlesCreation.css';
+import '../styles/ThemesArticlesCreation.css';
 import {
     abonnement5Data,
     articles5Data,

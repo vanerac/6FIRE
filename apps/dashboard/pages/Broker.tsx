@@ -10,7 +10,7 @@ import Groupe455 from '../components/Groupe455';
 import Row1 from '../components/Row1';
 import styled from 'styled-components';
 import { PoppinsMediumMirage10px, PoppinsMediumMirage12px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './Broker.css';
+import '../styles/Broker.css';
 import {
     abonnement12Data,
     articles9Data,

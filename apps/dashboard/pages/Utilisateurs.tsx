@@ -17,7 +17,7 @@ import {
     PoppinsMediumTundora10px,
     PoppinsSemiboldSemiBoldMirage24px,
 } from '../styledMixins';
-import './Utilisateurs.css';
+import '../styles/Utilisateurs.css';
 import {
     articles2Data,
     buttonsBtnTextIcon3Data,

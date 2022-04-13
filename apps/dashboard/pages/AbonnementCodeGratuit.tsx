@@ -17,7 +17,7 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
     PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
-import './AbonnementCodeGratuit.css';
+import '../styles/AbonnementCodeGratuit.css';
 import {
     abonnement72Data,
     articles20Data,

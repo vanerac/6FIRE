@@ -15,7 +15,7 @@ import Titre5 from '../components/Titre5';
 import BoutonPourSupprimer from '../components/BoutonPourSupprimer';
 import styled from 'styled-components';
 import { Border1pxSilver, PoppinsSemiboldSemiBoldMirage24px, PoppinsSemiboldSemiBoldWhite14px } from '../styledMixins';
-import './ArticlesCrerUnArticle.css';
+import '../styles/ArticlesCrerUnArticle.css';
 import {
     abonnement7Data,
     articles23Data,

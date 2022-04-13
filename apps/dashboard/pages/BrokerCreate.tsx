@@ -14,7 +14,7 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
     PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
-import './BrokerCreate.css';
+import '../styles/BrokerCreate.css';
 import {
     articles10Data,
     buttonsBtnTextIcon319Data,

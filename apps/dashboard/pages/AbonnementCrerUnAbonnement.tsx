@@ -15,7 +15,7 @@ import Titre7 from '../components/Titre7';
 import Lignes1 from '../components/Lignes1';
 import styled from 'styled-components';
 import { PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './AbonnementCrerUnAbonnement.css';
+import '../styles/AbonnementCrerUnAbonnement.css';
 import {
     articles14Data,
     bestSeller1Data,

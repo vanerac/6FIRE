@@ -16,7 +16,7 @@ import {
     PoppinsMediumTundora10px,
     PoppinsSemiboldSemiBoldMirage24px,
 } from '../styledMixins';
-import './ThemesArticles.css';
+import '../styles/ThemesArticles.css';
 import {
     abonnement4Data,
     articles4Data,

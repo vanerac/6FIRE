@@ -14,7 +14,7 @@ import {
     PoppinsSemiboldSemiBoldMirage24px,
     PoppinsSemiboldSemiBoldWhite14px,
 } from '../styledMixins';
-import './TradingCrypto3.css';
+import '../styles/TradingCrypto3.css';
 import {
     abonnement9Data,
     articles6Data,

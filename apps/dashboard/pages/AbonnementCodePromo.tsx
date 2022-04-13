@@ -11,7 +11,7 @@ import GridTable from '../components/GridTable';
 import IconFeatherCopy from '../components/IconFeatherCopy';
 import styled from 'styled-components';
 import { PoppinsMediumMirage10px, PoppinsMediumTundora10px, PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './AbonnementCodePromo.css';
+import '../styles/AbonnementCodePromo.css';
 import {
     abonnement42Data,
     articles16Data,

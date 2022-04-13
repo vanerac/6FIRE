@@ -15,7 +15,7 @@ import {
     PoppinsMediumTundora10px,
     PoppinsSemiboldSemiBoldMirage24px,
 } from '../styledMixins';
-import './AbonnementEssaiGratuit.css';
+import '../styles/AbonnementEssaiGratuit.css';
 import {
     abonnement223Data,
     articles18Data,

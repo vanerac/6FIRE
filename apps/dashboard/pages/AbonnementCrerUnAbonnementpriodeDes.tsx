@@ -17,7 +17,7 @@ import Titre7 from '../components/Titre7';
 import Lignes1 from '../components/Lignes1';
 import styled from 'styled-components';
 import { PoppinsSemiboldSemiBoldMirage24px } from '../styledMixins';
-import './AbonnementCrerUnAbonnementpriodeDes.css';
+import '../styles/AbonnementCrerUnAbonnementpriodeDes.css';
 import {
     abonnement32Data,
     articles15Data,
