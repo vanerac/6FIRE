@@ -10,6 +10,12 @@ jobs:
       contents: read
     name: Terraform Apply ECR Job
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repositories:
+          - api
+          - dashboard
+          - client
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
@@ -24,10 +30,10 @@ jobs:
       - name: Refresh state
         working-directory: terraform/
         run: terraform apply -refresh-only
-      - name: Verify state
+      - name: Import elements
         id: verify-state
         working-directory: terraform/
-        run: terraform state show aws_ecr_repository.api && terraform state show aws_ecr_repository.client && terraform state show aws_ecr_repository.dashboard
+        run: terraform import aws_ecr_repository.${{matrix.repositories}} 6fire-${{matrix.repositories}}
         continue-on-error: true
       - name: print status
         run: echo ${{steps.verify-state.outcome}}
@@ -36,7 +42,7 @@ jobs:
         env:
           valid: ${{env.valid}}
         working-directory: terraform/
-        run: terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard -out=plan.file -input=false
+        run: terraform plan -target=aws_ecr_repository.${{matrix.repositories}} -out=plan.file -input=false
       - run: terraform apply -input=false plan.file
         if: steps.verify-state.outcome != 'success'
         env:
