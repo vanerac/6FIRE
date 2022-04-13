@@ -19,9 +19,20 @@ jobs:
       - run: terraform init
         working-directory: terraform/
         name: terraform init
+      - name: Refresh state
+        run: terraform apply -refresh-only
+      - name: Verify state
+        run: |
+          if terraform state show data.aws_ecr_repository.${{matrix.directories}}; then
+            echo "::set-env name=valid::true"
+          else
+            echo "::set-env name=valid::false"
+          fi
       - name: Plan deployement
+        if: env.valid=true
         working-directory: terraform/
         run: terraform plan -target=aws_ecr_repository.api -target=aws_ecr_repository.client -target=aws_ecr_repository.dashboard -out=plan.file -input=false
       - run: terraform apply plan.file
+        if: env.valid=true
         working-directory: terraform/
         name: Apply deployement
