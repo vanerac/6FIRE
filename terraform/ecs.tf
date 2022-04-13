@@ -4,26 +4,26 @@
 // name var.NAME
 
 
-data "aws_ecr_repository" "api" {
-  depends_on = [
-    aws_ecr_repository.api
-  ]
-  name = var.ecr_name_api
-}
-
-data "aws_ecr_repository" "client" {
-  depends_on = [
-    aws_ecr_repository.client
-  ]
-  name = var.ecr_name_client
-}
-
-data "aws_ecr_repository" "dashboard" {
-  depends_on = [
-    aws_ecr_repository.dashboard
-  ]
-  name = var.ecr_name_dashboard
-}
+#data "aws_ecr_repository" "api" {
+#  depends_on = [
+#    aws_ecr_repository.api
+#  ]
+#  name = var.ecr_name_api
+#}
+#
+#data "aws_ecr_repository" "client" {
+#  depends_on = [
+#    aws_ecr_repository.client
+#  ]
+#  name = var.ecr_name_client
+#}
+#
+#data "aws_ecr_repository" "dashboard" {
+#  depends_on = [
+#    aws_ecr_repository.dashboard
+#  ]
+#  name = var.ecr_name_dashboard
+#}
 
 #data "aws_iam_role" "default" {
 #  name = var.iam_role_name
@@ -43,7 +43,7 @@ resource "aws_ecs_task_definition" "api" {
   {
     "cpu": 128,
     "essential": true,
-    "image": "${data.aws_ecr_repository.api.arn}/api:latest",
+    "image": "${aws_ecr_repository.api.arn}/api:latest",
     "memory": 128,
     "name": "api"
   }
@@ -64,7 +64,7 @@ resource "aws_ecs_task_definition" "client" {
   {
     "cpu": 128,
     "essential": true,
-    "image": "${data.aws_ecr_repository.client.arn}/client:latest",
+    "image": "${aws_ecr_repository.client.arn}/client:latest",
     "memory": 128,
     "name": "client"
   }
@@ -82,7 +82,7 @@ resource "aws_ecs_task_definition" "dashboard" {
   {
     "cpu": 128,
     "essential": true,
-    "image": "${data.aws_ecr_repository.dashboard.arn}/dashboard:latest",
+    "image": "${aws_ecr_repository.dashboard.arn}/dashboard:latest",
     "memory": 128,
     "name": "dashboard"
   }
