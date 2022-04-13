@@ -1,0 +1,893 @@
+/* screen - broker-creer-un-broker */
+
+.broker-creer-un-broker {
+  background-color: var(--zircon);
+  height: 893px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1600px;
+}
+
+.broker-creer-un-broker .analytics-A9axGX {
+  background-color: transparent;
+  height: auto;
+  left: 359px;
+  letter-spacing: 0.10px;
+  line-height: 36px;
+  position: absolute;
+  text-align: center;
+  top: 106px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.broker-creer-un-broker .top-navigation-A9axGX {
+  background-color: transparent;
+  height: 68px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1600px;
+}
+
+.broker-creer-un-broker .rectangle-jPKCA6 {
+  background-color: var(--vulcan);
+  box-shadow: 0px 1px 4px #15223214;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .top-navigation-search-jPKCA6 {
+  background-color: transparent;
+  height: 24px;
+  left: calc(19.34% - 17px);
+  position: absolute;
+  top: calc(50.00% - 12px);
+  width: 90px;
+}
+
+.broker-creer-un-broker .x00-general-01-icons-GktIBc {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 24px;
+}
+
+.broker-creer-un-broker .color-kCbUEm {
+  background-color: transparent;
+  height: calc(100.00% - 7px);
+  left: 3px;
+  object-fit: cover;
+  position: absolute;
+  top: 3px;
+  width: 17px;
+}
+
+.broker-creer-un-broker .search-GktIBc {
+  background-color: transparent;
+  height: calc(100.00% - 2px);
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 3px;
+  white-space: nowrap;
+  width: 60px;
+}
+
+.broker-creer-un-broker .user-group-jPKCA6 {
+  background-color: transparent;
+  height: 36px;
+  position: absolute;
+  right: 40px;
+  top: calc(43.75% - 16px);
+  width: 117px;
+}
+
+.broker-creer-un-broker .users-avatar-photo-2-states-OUN416 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 36px;
+}
+
+.broker-creer-un-broker .oval-6MhVbF {
+  background-color: transparent;
+  border-radius: 18px;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .image-6MhVbF {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .monica-simons-OUN416 {
+  background-color: transparent;
+  bottom: calc(46.43% - 10px);
+  height: 22px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  right: calc(35.14% - 15px);
+  text-align: left;
+  white-space: nowrap;
+  width: 43px;
+}
+
+.broker-creer-un-broker .icons-chevron-down-OUN416 {
+  background-color: transparent;
+  height: 24px;
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  width: 24px;
+}
+
+.broker-creer-un-broker .trac-399-a34Vpg {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .trac-400-a34Vpg {
+  background-color: transparent;
+  height: 8px;
+  left: 5px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(48.67% - 4px);
+  width: calc(100.00% - 9px);
+}
+
+.broker-creer-un-broker .groupe-2-jPKCA6 {
+  background-color: transparent;
+  bottom: calc(50.00% - 10px);
+  height: 21px;
+  left: 40px;
+  position: absolute;
+  width: 113px;
+}
+
+.broker-creer-un-broker .groupe-1-peRq66 {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .buttons-btn-text-icon-A9axGX {
+  background-color: transparent;
+  height: 32px;
+  left: 1408px;
+  position: absolute;
+  top: 108px;
+  width: 111px;
+}
+
+.broker-creer-un-broker .type-byk8PY {
+  background-color: var(--caribbean-green);
+  border-radius: 4px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .groupe-393-byk8PY {
+  background-color: transparent;
+  height: 20px;
+  left: 12px;
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: calc(100.00% - 24px);
+}
+
+.broker-creer-un-broker .text-Ght4Gl {
+  background-color: transparent;
+  height: 22px;
+  left: 0px;
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 15.00%;
+  white-space: nowrap;
+  width: 89px;
+}
+
+.broker-creer-un-broker .broker-A9axGX {
+  background-color: transparent;
+  height: 301px;
+  left: 303px;
+  position: absolute;
+  top: 172px;
+  width: 1259px;
+}
+
+.broker-creer-un-broker .rectangle-632-KTElc3 {
+  background-color: var(--white);
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px #00000029;
+  height: calc(100.00% - 18px);
+  left: 0px;
+  position: absolute;
+  top: 18px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .titre-KTElc3 {
+  background-color: transparent;
+  height: 36px;
+  left: 39px;
+  position: absolute;
+  top: 0px;
+  width: 182px;
+}
+
+.broker-creer-un-broker .rectangle-633-1A7TJH {
+  background-color: var(--blue-ribbon);
+  border-radius: 10px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .analytics-1A7TJH {
+  background-color: transparent;
+  height: 22px;
+  left: 37.36%;
+  letter-spacing: 0.06px;
+  line-height: 36px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  white-space: nowrap;
+  width: 26.37%;
+}
+
+.broker-creer-un-broker .image-KTElc3 {
+  background-color: transparent;
+  bottom: 33px;
+  height: 141px;
+  left: 39px;
+  position: absolute;
+  width: 286px;
+}
+
+.broker-creer-un-broker .logo-broker-vGg0Wi {
+  background-color: transparent;
+  height: 14px;
+  left: 1px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 244px;
+}
+
+.broker-creer-un-broker .image-1-vGg0Wi {
+  background-color: transparent;
+  height: calc(100.00% - 3px);
+  left: -9px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 178px;
+}
+
+.broker-creer-un-broker .buttons-btn-text-icon-vGg0Wi {
+  background-color: transparent;
+  bottom: calc(40.27% - 12px);
+  height: 29px;
+  position: absolute;
+  right: 0px;
+  width: 93px;
+}
+
+.broker-creer-un-broker .type-PrhrWb {
+  background-color: var(--banana);
+  border-radius: 4px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .groupe-393-PrhrWb {
+  background-color: transparent;
+  height: 17px;
+  left: 12px;
+  position: absolute;
+  top: calc(50.00% - 8px);
+  width: calc(100.00% - 24px);
+}
+
+.broker-creer-un-broker .text-Ivk56x {
+  background-color: transparent;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.09px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 14.71%;
+  white-space: nowrap;
+  width: 71px;
+}
+
+.broker-creer-un-broker .thme-slectionn-KTElc3 {
+  background-color: transparent;
+  height: 40px;
+  left: 39px;
+  position: absolute;
+  top: calc(23.71% - 9px);
+  width: 268px;
+}
+
+.broker-creer-un-broker .ligne-6-xSO1ku {
+  background-color: transparent;
+  bottom: 0px;
+  height: 1px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.broker-creer-un-broker .nom-xSO1ku {
+  background-color: transparent;
+  bottom: 4px;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 34px);
+}
+
+.broker-creer-un-broker .thme-slectionn-xSO1ku {
+  background-color: transparent;
+  height: 14px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 24px);
+}
+
+.broker-creer-un-broker .url-KTElc3 {
+  background-color: transparent;
+  height: 40px;
+  left: calc(36.02% - 96px);
+  position: absolute;
+  top: calc(23.71% - 9px);
+  width: 268px;
+}
+
+.broker-creer-un-broker .ligne-6-uRqkqY {
+  background-color: transparent;
+  bottom: 0px;
+  height: 1px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.broker-creer-un-broker .https-uRqkqY {
+  background-color: transparent;
+  bottom: 4px;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 34px);
+}
+
+.broker-creer-un-broker .url-uRqkqY {
+  background-color: transparent;
+  height: 14px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 10px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: calc(100.00% - 24px);
+}
+
+.broker-creer-un-broker .sidebar-A9axGX {
+  background-color: transparent;
+  height: 825px;
+  left: 0px;
+  position: absolute;
+  top: 68px;
+  width: 250px;
+}
+
+.broker-creer-un-broker .shape-tgwR1y {
+  background-color: var(--white);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .settings-tgwR1y {
+  background-color: transparent;
+  bottom: calc(30.14% - 16px);
+  cursor: pointer;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-JQIS8q {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(37.65% - 23px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 60px;
+}
+
+.broker-creer-un-broker .icons-navigation-icon-12-states-JQIS8q {
+  background-color: transparent;
+  height: 24px;
+  left: 20px;
+  position: absolute;
+  top: calc(50.00% - 12px);
+  width: 24px;
+}
+
+.broker-creer-un-broker .ic_setting-T0rgzV {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .broker-tgwR1y {
+  background-color: transparent;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: calc(49.68% - 26px);
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .frame-jSGE8f {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .line-jSGE8f {
+  background-color: var(--blue-ribbon);
+  border-radius: 10px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 4px;
+}
+
+.broker-creer-un-broker .name-jSGE8f {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(34.97% - 16px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 47px;
+}
+
+.broker-creer-un-broker .font-awsome-handshake-jSGE8f {
+  background-color: transparent;
+  bottom: 20px;
+  height: 13px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  width: 21px;
+}
+
+.broker-creer-un-broker .crypto-wallet-tgwR1y {
+  background-color: transparent;
+  cursor: pointer;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: calc(42.95% - 22px);
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-Et7bZM {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(49.23% - 49px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 100px;
+}
+
+.broker-creer-un-broker .font-awsome-bitcoin-Et7bZM {
+  background-color: transparent;
+  height: 19px;
+  left: 22px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 19px;
+}
+
+.broker-creer-un-broker .trading-crypto-tgwR1y {
+  background-color: transparent;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: calc(29.50% - 15px);
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-T2iHB4 {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(39.62% - 49px);
+  text-align: left;
+  white-space: nowrap;
+  width: 124px;
+}
+
+.broker-creer-un-broker .font-awsome-pen-T2iHB4 {
+  background-color: transparent;
+  height: 19px;
+  left: 22px;
+  object-fit: cover;
+  position: absolute;
+  top: 16px;
+  width: 19px;
+}
+
+.broker-creer-un-broker .thmes-articles-tgwR1y {
+  background-color: transparent;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: calc(16.04% - 8px);
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-hmy13K {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  right: calc(44.35% - 51px);
+  text-align: left;
+  white-space: nowrap;
+  width: 115px;
+}
+
+.broker-creer-un-broker .icons-navigation-icon-12-states-hmy13K {
+  background-color: transparent;
+  height: 22px;
+  left: 24px;
+  position: absolute;
+  top: calc(50.00% - 11px);
+  width: 16px;
+}
+
+.broker-creer-un-broker .font-awsome-bookmark-lwFFPI {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .customers-tgwR1y {
+  background-color: transparent;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: 72px;
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-ZlH5o1 {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(43.24% - 35px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 82px;
+}
+
+.broker-creer-un-broker .icons-navigation-icon-12-states-ZlH5o1 {
+  background-color: transparent;
+  height: 24px;
+  left: 20px;
+  position: absolute;
+  top: calc(50.00% - 12px);
+  width: 24px;
+}
+
+.broker-creer-un-broker .ic_users-GCsSB3 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .home-tgwR1y {
+  background-color: transparent;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: 20px;
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-wnxBSc {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(34.41% - 15px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 44px;
+}
+
+.broker-creer-un-broker .icons-navigation-icon-12-states-wnxBSc {
+  background-color: transparent;
+  height: 24px;
+  left: 20px;
+  position: absolute;
+  top: calc(50.00% - 12px);
+  width: 24px;
+}
+
+.broker-creer-un-broker .ic_home-1iTEoT {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .articles-tgwR1y {
+  background-color: transparent;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: calc(22.77% - 12px);
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-HYEiy0 {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(36.57% - 20px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 55px;
+}
+
+.broker-creer-un-broker .icons-navigation-icon-12-states-HYEiy0 {
+  background-color: transparent;
+  height: 24px;
+  left: 20px;
+  position: absolute;
+  top: calc(50.00% - 12px);
+  width: 24px;
+}
+
+.broker-creer-un-broker .ic_invoice-JkqsRV {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.broker-creer-un-broker .icon-ionic-ios-arrow-down-HYEiy0 {
+  background-color: transparent;
+  bottom: calc(50.00% - 3px);
+  height: 7px;
+  left: 191px;
+  object-fit: cover;
+  position: absolute;
+  width: 12px;
+}
+
+.broker-creer-un-broker .bot-trading-tgwR1y {
+  background-color: transparent;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: calc(36.22% - 19px);
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-ucbluT {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(43.84% - 37px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 84px;
+}
+
+.broker-creer-un-broker .font-awsome-robot-ucbluT {
+  background-color: transparent;
+  height: 17px;
+  left: 20px;
+  object-fit: cover;
+  position: absolute;
+  top: 17px;
+  width: 21px;
+}
+
+.broker-creer-un-broker .pays-tgwR1y {
+  background-color: transparent;
+  bottom: calc(43.60% - 23px);
+  cursor: pointer;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-NjjJxX {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(32.99% - 12px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 36px;
+}
+
+.broker-creer-un-broker .font-awsome-globe-europe-NjjJxX {
+  background-color: transparent;
+  bottom: calc(50.00% - 9px);
+  height: 18px;
+  left: 25px;
+  object-fit: cover;
+  position: absolute;
+  width: 18px;
+}
+
+.broker-creer-un-broker .abonnement-tgwR1y {
+  background-color: transparent;
+  bottom: calc(36.87% - 19px);
+  cursor: pointer;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  width: calc(100.00% - 20px);
+}
+
+.broker-creer-un-broker .name-x9gxR2 {
+  background-color: transparent;
+  bottom: calc(36.67% - 8px);
+  height: 22px;
+  left: calc(47.41% - 45px);
+  letter-spacing: 0.10px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 95px;
+}
+
+.broker-creer-un-broker .icon-material-payment-x9gxR2 {
+  background-color: transparent;
+  height: 15px;
+  left: 24px;
+  object-fit: cover;
+  position: absolute;
+  top: 18px;
+  width: 19px;
+}
+
+.broker-creer-un-broker .icon-ionic-ios-arrow-down-x9gxR2 {
+  background-color: transparent;
+  bottom: calc(50.00% - 3px);
+  height: 7px;
+  left: 196px;
+  object-fit: cover;
+  position: absolute;
+  width: 12px;
+}

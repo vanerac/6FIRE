@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500,600|Montserrat:700,500|Lato:400");
+@font-face {
+  font-family: "HelveticaNeue-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url("../fonts/helveticaneue.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Muli-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Muli-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Muli-SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Muli-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-SemiBold-SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Poppins.zip");
+}
+@font-face {
+  font-family: "Arial-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/FontsFree-Net-arial-bold.ttf") format("truetype");
+}
+
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+@import url("https://px.animaapp.com/6241740d940ffb51b6759943.623ce29b706c765eb132ff4d.79kLMaJ.hcp.png");
+
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
