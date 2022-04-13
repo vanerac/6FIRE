@@ -39,4 +39,4 @@ jobs:
         run: terraform plan -out=plan.file -input=false
       - name: Apply deployement
         working-directory: terraform/
-        run: terraform apply plan.file -input=false -auto-approve
+        run: terraform apply plan.file -input=false
