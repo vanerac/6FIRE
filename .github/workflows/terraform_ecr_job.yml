@@ -27,9 +27,6 @@ jobs:
       - run: terraform init
         working-directory: terraform/
         name: terraform init
-      - name: Refresh state
-        working-directory: terraform/
-        run: terraform apply -refresh-only
       - name: Import elements
         id: verify-state
         working-directory: terraform/
