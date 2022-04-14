@@ -49,8 +49,8 @@ resource "aws_ecs_task_definition" "api" {
     "networkMode": "awsvpc",
     "portMappings": [
       {
-        "containerPort": 3000,
-        "hostPort": 80
+        "containerPort": 3333,
+        "hostPort": 8080
       }
     ]
   }
