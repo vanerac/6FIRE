@@ -45,7 +45,7 @@ resource "aws_ecs_task_definition" "api" {
     "essential": true,
     "image": "${aws_ecr_repository.api.arn}/6fire-api:latest",
     "memory": 1024,
-    "name": "api"
+    "name": "api",
     "networkMode": "awsvpc",
     "portMappings": [
       {
@@ -75,7 +75,7 @@ resource "aws_ecs_task_definition" "client" {
     "essential": true,
     "image": "${aws_ecr_repository.client.arn}/6fire-client:latest",
     "memory": 1024,
-    "name": "client"
+    "name": "client",
     "networkMode": "awsvpc",
     "portMappings": [
       {
@@ -104,7 +104,7 @@ resource "aws_ecs_task_definition" "dashboard" {
     "essential": true,
     "image": "${aws_ecr_repository.dashboard.arn}/6fire-dashboard:latest",
     "memory": 1024,
-    "name": "dashboard"
+    "name": "dashboard",
     "networkMode": "awsvpc",
     "portMappings": [
       {
