@@ -46,10 +46,20 @@ resource "aws_ecs_task_definition" "api" {
     "image": "${aws_ecr_repository.api.arn}/6fire-api:latest",
     "memory": 1024,
     "name": "api"
+    "networkMode": "awsvpc",
+    "portMappings": [
+      {
+        "containerPort": 3000,
+        "hostPort": 80
+      }
+    ]
   }
 ]
 DEFINITION
-  requires_compatibilities = ["EC2"]
+  network_mode             = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = 512
+  memory                   = 1024
 }
 
 resource "aws_ecs_task_definition" "client" {
@@ -58,7 +68,6 @@ resource "aws_ecs_task_definition" "client" {
   ]
 
   family                   = "${var.ecs_task_definition_family}-client"
-  requires_compatibilities = ["EC2"]
   container_definitions    = <<DEFINITION
 [
   {
@@ -67,9 +76,20 @@ resource "aws_ecs_task_definition" "client" {
     "image": "${aws_ecr_repository.client.arn}/6fire-client:latest",
     "memory": 1024,
     "name": "client"
+    "networkMode": "awsvpc",
+    "portMappings": [
+      {
+        "containerPort": 3000,
+        "hostPort": 80
+      }
+    ]
   }
 ]
 DEFINITION
+  network_mode             = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = 512
+  memory                   = 1024
 }
 
 resource "aws_ecs_task_definition" "dashboard" {
@@ -85,10 +105,21 @@ resource "aws_ecs_task_definition" "dashboard" {
     "image": "${aws_ecr_repository.dashboard.arn}/6fire-dashboard:latest",
     "memory": 1024,
     "name": "dashboard"
+    "networkMode": "awsvpc",
+    "portMappings": [
+      {
+        "containerPort": 3000,
+        "hostPort": 80
+      }
+    ]
   }
 ]
 DEFINITION
-  requires_compatibilities = ["EC2"]
+  network_mode             = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = 512
+  memory                   = 1024
+
 }
 
 
@@ -102,6 +133,7 @@ resource "aws_ecs_service" "api" {
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.api.arn
   desired_count   = 1
+  launch_type     = "FARGATE"
 }
 
 resource "aws_ecs_service" "client" {
@@ -109,6 +141,7 @@ resource "aws_ecs_service" "client" {
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.client.arn
   desired_count   = 1
+  launch_type     = "FARGATE"
 }
 
 resource "aws_ecs_service" "dashboard" {
@@ -116,4 +149,5 @@ resource "aws_ecs_service" "dashboard" {
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.dashboard.arn
   desired_count   = 1
+  launch_type     = "FARGATE"
 }
