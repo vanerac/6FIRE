@@ -30,8 +30,7 @@ jobs:
           path: |
             ./terraform/terraform.tfstate
             ./terraform/terraform.tfstate.backup
-          key:
-            ./terraform/terraform.tfstate
+          key: $GITHUB_REPOSITORY
       - run: terraform init
         working-directory: terraform/
         name: terraform init

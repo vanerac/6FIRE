@@ -10,6 +10,13 @@ jobs:
     name: Terraform Plan Job
     runs-on: ubuntu-latest
     steps:
+      - name: Terraform state cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./terraform/terraform.tfstate
+            ./terraform/terraform.tfstate.backup
+          key: $GITHUB_REPOSITORY
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
       - name: login to AWS
@@ -17,14 +24,6 @@ jobs:
         with:
           role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
           aws-region: eu-west-3
-      - name: Terraform state cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            ./terraform/terraform.tfstate
-            ./terraform/terraform.tfstate.backup
-          key:
-            ./terraform/terraform.tfstate
       - run: terraform init
         working-directory: terraform/
         name: terraform init
