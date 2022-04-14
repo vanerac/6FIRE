@@ -18,13 +18,13 @@ jobs:
           role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
           aws-region: eu-west-3
       - name: Terraform state cache
-        uses: actions/setup-cache@v1
+        uses: actions/cache@v2
         with:
-          path:
-            terraform/terraform.tfstate
-            terraform/terraform.tfstate.backup
+          path: |
+            ./terraform/terraform.tfstate
+            ./terraform/terraform.tfstate.backup
           key:
-            terraform/terraform.tfstate
+            ./terraform/terraform.tfstate
       - run: terraform init
         working-directory: terraform/
         name: terraform init
