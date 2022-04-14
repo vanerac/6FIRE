@@ -31,11 +31,11 @@ variable "ecs_service_name" {
   default     = "6fire-ecs-service"
 }
 
-variable "ecs_task_definition_name" {
-  description = "The name of the ECS task definition"
-  type        = string
-  default     = "6fire-ecs-task-definition"
-}
+#variable "ecs_task_definition_name" {
+#  description = "The name of the ECS task definition"
+#  type        = string
+#  default     = "6fire-ecs-task-definition"
+#}
 
 variable "ecs_task_definition_family" {
   description = "The family of the ECS task definition"
@@ -44,39 +44,39 @@ variable "ecs_task_definition_family" {
 }
 
 
-// iam variables
-variable "iam_role_name" {
-  description = "The name of the IAM role"
-  type        = string
-  default     = "6fire-iam-role"
-}
+#// iam variables
+#variable "iam_role_name" {
+#  description = "The name of the IAM role"
+#  type        = string
+#  default     = "6fire-iam-role"
+#}
 
 
 // ec2 variables
 
-variable "ec2_instance_type" {
-  description = "The type of the EC2 instance"
-  type        = string
-  default     = "t2.micro"
-}
+#variable "ec2_instance_type" {
+#  description = "The type of the EC2 instance"
+#  type        = string
+#  default     = "t2.micro"
+#}
+#
+#variable "lb_name" {
+#  description = "The name of the ELB"
+#  type        = string
+#  default     = "6fire-lb"
+#}
 
-variable "lb_name" {
-  description = "The name of the ELB"
-  type        = string
-  default     = "6fire-lb"
-}
+#variable "lb_port" {
+#  description = "The port of the ELB"
+#  type        = string
+#  default     = "80"
+#}
 
-variable "lb_port" {
-  description = "The port of the ELB"
-  type        = string
-  default     = "80"
-}
-
-variable "lb_scheme" {
-  description = "The scheme of the ELB"
-  type        = string
-  default     = "http"
-}
+#variable "lb_scheme" {
+#  description = "The scheme of the ELB"
+#  type        = string
+#  default     = "http"
+#}
 
 //rds variables
 variable "rds_db_name" {

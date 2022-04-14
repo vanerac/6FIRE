@@ -30,10 +30,16 @@
 #}
 
 resource "aws_ecs_cluster" "default" {
+  tags = {
+    project = "6fire"
+  }
   name = var.ecs_cluster_name
 }
 
 resource "aws_ecs_task_definition" "api" {
+  tags = {
+    project = "6fire"
+  }
   depends_on = [
     aws_ecr_repository.api
   ]
@@ -50,7 +56,7 @@ resource "aws_ecs_task_definition" "api" {
     "portMappings": [
       {
         "containerPort": 3333,
-        "hostPort": 8080
+        "hostPort": 3333
       }
     ]
   }
@@ -63,8 +69,12 @@ DEFINITION
 }
 
 resource "aws_ecs_task_definition" "client" {
+  tags = {
+    project = "6fire"
+  }
   depends_on = [
-    aws_ecr_repository.client
+    aws_ecr_repository.client,
+    aws_ecr_repository.api
   ]
 
   family                   = "${var.ecs_task_definition_family}-client"
@@ -80,7 +90,7 @@ resource "aws_ecs_task_definition" "client" {
     "portMappings": [
       {
         "containerPort": 3000,
-        "hostPort": 80
+        "hostPort": 3000
       }
     ]
   }
@@ -93,6 +103,9 @@ DEFINITION
 }
 
 resource "aws_ecs_task_definition" "dashboard" {
+  tags = {
+    project = "6fire"
+  }
   depends_on = [
     aws_ecr_repository.api, aws_ecr_repository.dashboard
   ]
@@ -109,7 +122,7 @@ resource "aws_ecs_task_definition" "dashboard" {
     "portMappings": [
       {
         "containerPort": 3000,
-        "hostPort": 80
+        "hostPort": 3000
       }
     ]
   }
@@ -129,25 +142,73 @@ DEFINITION
 // Dashboard (frontend)
 
 resource "aws_ecs_service" "api" {
+  tags = {
+    project = "6fire"
+  }
   name            = "${var.ecs_service_name}-api"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.api.arn
   desired_count   = 1
   launch_type     = "FARGATE"
+
+  network_configuration {
+    security_groups = [aws_security_group.ecs_tasks.id]
+    subnets         = aws_subnet.public.*.id
+  }
+  load_balancer {
+    target_group_arn = aws_alb_target_group.app.id
+    container_name   = "api"
+    container_port   = 3333
+  }
+  depends_on = [
+    aws_alb_listener.front_end,
+  ]
 }
 
 resource "aws_ecs_service" "client" {
+  tags = {
+    project = "6fire"
+  }
   name            = "${var.ecs_service_name}-client"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.client.arn
   desired_count   = 1
   launch_type     = "FARGATE"
+
+  network_configuration {
+    security_groups = [aws_security_group.ecs_tasks.id]
+    subnets         = aws_subnet.public.*.id
+  }
+  load_balancer {
+    target_group_arn = aws_alb_target_group.app.id
+    container_name   = "client"
+    container_port   = 3000
+  }
+  depends_on = [
+    aws_alb_listener.front_end,
+  ]
 }
 
 resource "aws_ecs_service" "dashboard" {
+  tags = {
+    project = "6fire"
+  }
   name            = "${var.ecs_service_name}-dashboard"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.dashboard.arn
   desired_count   = 1
   launch_type     = "FARGATE"
+
+  network_configuration {
+    security_groups = [aws_security_group.ecs_tasks.id]
+    subnets         = aws_subnet.public.*.id
+  }
+  load_balancer {
+    target_group_arn = aws_alb_target_group.app.id
+    container_name   = "dashboard"
+    container_port   = 3000
+  }
+  depends_on = [
+    aws_alb_listener.front_end,
+  ]
 }

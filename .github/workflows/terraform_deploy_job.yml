@@ -52,3 +52,8 @@ jobs:
       - name: Apply deployement
         working-directory: terraform/
         run: terraform apply -input=false plan.file
+      - name: Upload state as artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          path: terraform/terraform.tfstate
+          name: terraform.tfstate
