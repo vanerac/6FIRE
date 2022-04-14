@@ -17,17 +17,3 @@ jobs:
   prisma:
     needs: [ install ]
     uses: vanerac/6FIRE/.github/workflows/prisma_job.yml@main
-  terraform:
-    uses: vanerac/6FIRE/.github/workflows/terraform_validate_job.yml@main
-  terraform_plan:
-    needs: [ terraform ]
-    uses: vanerac/6FIRE/.github/workflows/terraform_plan_job.yml@main
-  terraform_apply_ecr:
-    needs: [ terraform_plan ]
-    uses: vanerac/6FIRE/.github/workflows/terraform_ecr_job.yml@main
-  docker_build:
-    needs: [ terraform_apply_ecr, ]
-    uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
-  terraform_deploy:
-    needs: [ docker_build ]
-    uses: vanerac/6FIRE/.github/workflows/terraform_deploy_job.yml@main

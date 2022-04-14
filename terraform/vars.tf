@@ -90,3 +90,7 @@ variable "rds_cluster_identifier" {
   type        = string
   default     = "rds-6fire-cluster"
 }
+
+variable "az_count" {
+  default = 2
+}

@@ -6,9 +6,6 @@ resource "aws_vpc" "main" {
   }
   cidr_block = "172.19.0.0/16"
 }
-variable "az_count" {
-  default = 2
-}
 
 # Create var.az_count private subnets, each in a different AZ
 resource "aws_subnet" "private" {

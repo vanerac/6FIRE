@@ -29,6 +29,124 @@
 #  name = var.iam_role_name
 #}
 
+
+resource "aws_iam_role" "ecs_task_role" {
+  name               = "ecs_task_role"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": [
+            "ecs-tasks.amazonaws.com",
+            "ecs.amazonaws.com",
+            "batch.amazonaws.com"
+        ]
+      },
+      "Effect": "Allow"
+    }
+  ]
+}
+EOF
+  tags               = {
+    project = "6fire"
+  }
+}
+
+resource "aws_iam_role_policy" "ecs_task_role" {
+  name   = "ecs_task_role"
+  role   = aws_iam_role.ecs_task_role.id
+  // attach AmazonEC2ContainerRegistryFullAccess policy to ecs_task_role
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecr:GetRepositoryPolicy",
+        "ecr:DescribeRepositories",
+        "ecr:ListImages",
+        "ecr:DescribeImages"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role" "esc_execution_role" {
+  name               = "ecs_execution_role"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": [
+            "ecs.amazonaws.com",
+            "ecs-tasks.amazonaws.com",
+            "batch.amazonaws.com"
+        ]
+      },
+      "Effect": "Allow"
+    }
+  ]
+}
+EOF
+  tags               = {
+    project = "6fire"
+  }
+}
+
+resource "aws_iam_role_policy" "esc_execution_role" {
+  name   = "ecs_execution_role"
+  role   = aws_iam_role.esc_execution_role.id
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:StartTask",
+        "ecs:StopTask",
+        "ecs:DescribeTasks",
+        "ecs:DescribeContainerInstances",
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
 resource "aws_ecs_cluster" "default" {
   tags = {
     project = "6fire"
@@ -43,16 +161,24 @@ resource "aws_ecs_task_definition" "api" {
   depends_on = [
     aws_ecr_repository.api
   ]
+  execution_role_arn       = aws_iam_role.esc_execution_role.arn
+  task_role_arn            = aws_iam_role.ecs_task_role.arn
   family                   = "${var.ecs_task_definition_family}-api"
   container_definitions    = <<DEFINITION
 [
   {
     "cpu": 512,
     "essential": true,
-    "image": "${aws_ecr_repository.api.arn}/6fire-api:latest",
+    "image": "${aws_ecr_repository.api.repository_url}:latest",
     "memory": 1024,
     "name": "api",
     "networkMode": "awsvpc",
+    "awsvpcConfiguration": {
+      "securityGroups": [
+        "${aws_security_group.ecs_tasks.id}"
+      ],
+      "assignPublicIp": "ENABLED"
+    },
     "portMappings": [
       {
         "containerPort": 3333,
@@ -78,15 +204,23 @@ resource "aws_ecs_task_definition" "client" {
   ]
 
   family                   = "${var.ecs_task_definition_family}-client"
+  execution_role_arn       = aws_iam_role.esc_execution_role.arn
+  task_role_arn            = aws_iam_role.ecs_task_role.arn
   container_definitions    = <<DEFINITION
 [
   {
     "cpu": 512,
     "essential": true,
-    "image": "${aws_ecr_repository.client.arn}/6fire-client:latest",
+    "image": "${aws_ecr_repository.client.repository_url}:latest",
     "memory": 1024,
     "name": "client",
     "networkMode": "awsvpc",
+    "awsvpcConfiguration": {
+      "securityGroups": [
+        "${aws_security_group.ecs_tasks.id}"
+      ],
+      "assignPublicIp": "ENABLED"
+    },
     "portMappings": [
       {
         "containerPort": 3000,
@@ -110,12 +244,14 @@ resource "aws_ecs_task_definition" "dashboard" {
     aws_ecr_repository.api, aws_ecr_repository.dashboard
   ]
   family                   = "${var.ecs_task_definition_family}-dashboard"
+  execution_role_arn       = aws_iam_role.esc_execution_role.arn
+  task_role_arn            = aws_iam_role.ecs_task_role.arn
   container_definitions    = <<DEFINITION
 [
   {
     "cpu": 512,
     "essential": true,
-    "image": "${aws_ecr_repository.dashboard.arn}/6fire-dashboard:latest",
+    "image": "${aws_ecr_repository.dashboard.repository_url}:latest",
     "memory": 1024,
     "name": "dashboard",
     "networkMode": "awsvpc",
@@ -142,7 +278,8 @@ DEFINITION
 // Dashboard (frontend)
 
 resource "aws_ecs_service" "api" {
-  tags = {
+  platform_version = "1.3.0"
+  tags             = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-api"
@@ -152,8 +289,9 @@ resource "aws_ecs_service" "api" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups = [aws_security_group.ecs_tasks.id]
-    subnets         = aws_subnet.public.*.id
+    security_groups  = [aws_security_group.ecs_tasks.id]
+    subnets          = aws_subnet.public.*.id
+    assign_public_ip = true
   }
   load_balancer {
     target_group_arn = aws_alb_target_group.app.id
@@ -166,7 +304,8 @@ resource "aws_ecs_service" "api" {
 }
 
 resource "aws_ecs_service" "client" {
-  tags = {
+  platform_version = "1.3.0"
+  tags             = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-client"
@@ -176,8 +315,9 @@ resource "aws_ecs_service" "client" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups = [aws_security_group.ecs_tasks.id]
-    subnets         = aws_subnet.public.*.id
+    security_groups  = [aws_security_group.ecs_tasks.id]
+    subnets          = aws_subnet.public.*.id
+    assign_public_ip = true
   }
   load_balancer {
     target_group_arn = aws_alb_target_group.app.id
@@ -190,7 +330,8 @@ resource "aws_ecs_service" "client" {
 }
 
 resource "aws_ecs_service" "dashboard" {
-  tags = {
+  platform_version = "1.3.0"
+  tags             = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-dashboard"
@@ -200,8 +341,9 @@ resource "aws_ecs_service" "dashboard" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups = [aws_security_group.ecs_tasks.id]
-    subnets         = aws_subnet.public.*.id
+    security_groups  = [aws_security_group.ecs_tasks.id]
+    subnets          = aws_subnet.public.*.id
+    assign_public_ip = true
   }
   load_balancer {
     target_group_arn = aws_alb_target_group.app.id
