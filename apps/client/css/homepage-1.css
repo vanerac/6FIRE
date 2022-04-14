@@ -1,5 +1,9 @@
 /* screen - homepage-1 */
 
+.body {
+  margin: O;
+}
+
 .homepage-1 {
   background-color: var(--white);
   height: 100vh;

@@ -42,7 +42,7 @@ const NosTrades: NextPage = () => {
                         <img className="icon-simple-tiktok-VcGkLM" src="img/icon-simple-tiktok-1@1x.png" />
                     </div>
                 </div>
-                <div className="header-kCjjkp">
+                {/* <div className="header-kCjjkp">
                     <div className="rectangle-3483-1LFFtq"></div>
                     <div className="logo-1LFFtq">
                         <img className="effect-g88I8b" src="img/effect-13@1x.png" />
@@ -124,7 +124,7 @@ const NosTrades: NextPage = () => {
                     <div className="search-bar-1LFFtq">
                         <img className="icon-search-tsS3Eo" src="img/icon-ionic-ios-search-13@1x.png" />
                     </div>
-                </div>
+                </div> */}
                 <div className="background-DslP8q"></div>
                 <div className="club-premium-kCjjkp lato-bold-white-16px">REJOIGNEZ NOTRE CANAL PRIVÉ TELEGRAM</div>
                 <div className="club-premium-DslP8q lato-normal-white-14px">

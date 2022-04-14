@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Header from './components/header';
 
 const HomePage: NextPage = () => {
     return (
@@ -41,7 +42,8 @@ const HomePage: NextPage = () => {
                         <img className="icon-simple-tiktok-NVC3AW" src="img/icon-simple-tiktok-1@1x.png" />
                     </div>
                 </div>
-                <div className="header-3LBGsu">
+                <Header />
+                {/* <div className="header-3LBGsu">
                     <div className="rectangle-3483-6cQg9k"></div>
                     <a href="homepage-1.html">
                         <div className="logo-6cQg9k">
@@ -129,7 +131,7 @@ const HomePage: NextPage = () => {
                     <div className="search-bar-6cQg9k">
                         <img className="icon-search-7x903f" src="img/icon-ionic-ios-search-11@1x.png" />
                     </div>
-                </div>
+                </div> */}
                 <div className="h2-3LBGsu lato-bold-white-14px">
                     CONTACTEZ NOUS POUR ACCÉDER AU CANAL TELEGRAM DES MEMBRES TRADING &amp; CRYPTO
                     <br />
