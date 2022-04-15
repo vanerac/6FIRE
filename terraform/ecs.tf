@@ -1,34 +1,4 @@
-// create ecs cluster
-// create ecs service
-// create ecs task definition
-// name var.NAME
-
-
-#data "aws_ecr_repository" "api" {
-#  depends_on = [
-#    aws_ecr_repository.api
-#  ]
-#  name = var.ecr_name_api
-#}
-#
-#data "aws_ecr_repository" "client" {
-#  depends_on = [
-#    aws_ecr_repository.client
-#  ]
-#  name = var.ecr_name_client
-#}
-#
-#data "aws_ecr_repository" "dashboard" {
-#  depends_on = [
-#    aws_ecr_repository.dashboard
-#  ]
-#  name = var.ecr_name_dashboard
-#}
-
-#data "aws_iam_role" "default" {
-#  name = var.iam_role_name
-#}
-
+// Log groups
 resource "aws_cloudwatch_log_group" "api" {
   name = "6fire-api"
 }
@@ -41,7 +11,136 @@ resource "aws_cloudwatch_log_group" "dashboard" {
   name = "6fire-dashboard"
 }
 
+// Auto Scalling policies
+resource "aws_appautoscaling_target" "api_autoscaling_target" {
+  max_capacity       = 5
+  min_capacity       = 1
+  resource_id        = "service/${aws_ecs_cluster.default.name}/${aws_ecs_service.api.name}"
+  scalable_dimension = "ecs:service:DesiredCount"
+  service_namespace  = "ecs"
+}
 
+resource "aws_appautoscaling_target" "client_autoscaling_target" {
+  max_capacity       = 5
+  min_capacity       = 1
+  resource_id        = "service/${aws_ecs_cluster.default.name}/${aws_ecs_service.client.name}"
+  scalable_dimension = "ecs:service:DesiredCount"
+  service_namespace  = "ecs"
+}
+
+resource "aws_appautoscaling_target" "dashboard_autoscaling_target" {
+  max_capacity       = 5
+  min_capacity       = 1
+  resource_id        = "service/${aws_ecs_cluster.default.name}/${aws_ecs_service.dashboard.name}"
+  scalable_dimension = "ecs:service:DesiredCount"
+  service_namespace  = "ecs"
+}
+
+resource "aws_appautoscaling_policy" "api_policy_memory" {
+  name               = "dev-to-memory"
+  policy_type        = "TargetTrackingScaling"
+  resource_id        = aws_appautoscaling_target.api_autoscaling_target.resource_id
+  scalable_dimension = aws_appautoscaling_target.api_autoscaling_target.scalable_dimension
+  service_namespace  = aws_appautoscaling_target.api_autoscaling_target.service_namespace
+
+  target_tracking_scaling_policy_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ECSServiceAverageMemoryUtilization"
+    }
+    scale_in_cooldown  = "60"
+    scale_out_cooldown = "60"
+    target_value       = 80
+  }
+}
+
+resource "aws_appautoscaling_policy" "api_policy_cpu" {
+  name               = "dev-to-cpu"
+  policy_type        = "TargetTrackingScaling"
+  resource_id        = aws_appautoscaling_target.api_autoscaling_target.resource_id
+  scalable_dimension = aws_appautoscaling_target.api_autoscaling_target.scalable_dimension
+  service_namespace  = aws_appautoscaling_target.api_autoscaling_target.service_namespace
+
+  target_tracking_scaling_policy_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ECSServiceAverageCPUUtilization"
+    }
+    scale_in_cooldown  = "60"
+    scale_out_cooldown = "60"
+    target_value       = 80
+  }
+}
+
+
+resource "aws_appautoscaling_policy" "client_policy_memory" {
+  name               = "dev-to-memory"
+  policy_type        = "TargetTrackingScaling"
+  resource_id        = aws_appautoscaling_target.client_autoscaling_target.resource_id
+  scalable_dimension = aws_appautoscaling_target.client_autoscaling_target.scalable_dimension
+  service_namespace  = aws_appautoscaling_target.client_autoscaling_target.service_namespace
+
+  target_tracking_scaling_policy_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ECSServiceAverageMemoryUtilization"
+    }
+    scale_in_cooldown  = "60"
+    scale_out_cooldown = "60"
+    target_value       = 80
+  }
+}
+
+resource "aws_appautoscaling_policy" "client_policy_cpu" {
+  name               = "dev-to-cpu"
+  policy_type        = "TargetTrackingScaling"
+  resource_id        = aws_appautoscaling_target.client_autoscaling_target.resource_id
+  scalable_dimension = aws_appautoscaling_target.client_autoscaling_target.scalable_dimension
+  service_namespace  = aws_appautoscaling_target.client_autoscaling_target.service_namespace
+
+  target_tracking_scaling_policy_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ECSServiceAverageCPUUtilization"
+    }
+    scale_in_cooldown  = "60"
+    scale_out_cooldown = "60"
+    target_value       = 80
+  }
+}
+
+resource "aws_appautoscaling_policy" "dashoard_policy_memory" {
+  name               = "dev-to-memory"
+  policy_type        = "TargetTrackingScaling"
+  resource_id        = aws_appautoscaling_target.dashboard_autoscaling_target.resource_id
+  scalable_dimension = aws_appautoscaling_target.dashboard_autoscaling_target.scalable_dimension
+  service_namespace  = aws_appautoscaling_target.dashboard_autoscaling_target.service_namespace
+
+  target_tracking_scaling_policy_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ECSServiceAverageMemoryUtilization"
+    }
+    scale_in_cooldown  = "60"
+    scale_out_cooldown = "60"
+    target_value       = 80
+  }
+}
+
+resource "aws_appautoscaling_policy" "dashoard_policy_cpu" {
+  name               = "dev-to-cpu"
+  policy_type        = "TargetTrackingScaling"
+  resource_id        = aws_appautoscaling_target.dashboard_autoscaling_target.resource_id
+  scalable_dimension = aws_appautoscaling_target.dashboard_autoscaling_target.scalable_dimension
+  service_namespace  = aws_appautoscaling_target.dashboard_autoscaling_target.service_namespace
+
+  target_tracking_scaling_policy_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ECSServiceAverageCPUUtilization"
+    }
+    scale_in_cooldown  = "60"
+    scale_out_cooldown = "60"
+    target_value       = 80
+  }
+}
+
+
+// Task role
 resource "aws_iam_role" "ecs_task_role" {
   name               = "ecs_task_role"
   assume_role_policy = <<EOF
@@ -67,6 +166,7 @@ EOF
   }
 }
 
+// Role policy
 resource "aws_iam_role_policy" "ecs_task_role" {
   name   = "ecs_task_role"
   role   = aws_iam_role.ecs_task_role.id
@@ -103,6 +203,7 @@ resource "aws_iam_role_policy" "ecs_task_role" {
 EOF
 }
 
+// execution role
 resource "aws_iam_role" "esc_execution_role" {
   name               = "ecs_execution_role"
   assume_role_policy = <<EOF
@@ -128,6 +229,7 @@ EOF
   }
 }
 
+// execution role policy
 resource "aws_iam_role_policy" "esc_execution_role" {
   name   = "ecs_execution_role"
   role   = aws_iam_role.esc_execution_role.id
@@ -159,6 +261,7 @@ resource "aws_iam_role_policy" "esc_execution_role" {
 EOF
 }
 
+// Cluster creation
 resource "aws_ecs_cluster" "default" {
   tags = {
     project = "6fire"
@@ -166,6 +269,8 @@ resource "aws_ecs_cluster" "default" {
   name = var.ecs_cluster_name
 }
 
+
+// Task definition
 resource "aws_ecs_task_definition" "api" {
   tags = {
     project = "6fire"
@@ -242,6 +347,7 @@ DEFINITION
   // add cloudwatch stream
 
 }
+
 
 resource "aws_ecs_task_definition" "client" {
   tags = {
@@ -337,11 +443,7 @@ DEFINITION
 }
 
 
-// services
-// API (backend)
-// Client (frontend)
-// Dashboard (frontend)
-
+// ecs services
 resource "aws_ecs_service" "api" {
   platform_version = "1.3.0"
   tags             = {
