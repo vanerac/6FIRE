@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use((req: Request, res: Response, next: NextFunction) => {
-    console.log(`${req.method} ${req.path}`);
+    console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
     next();
 });
 
