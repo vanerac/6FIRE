@@ -1,6 +1,6 @@
 # ALB Security group
 # This is the group you need to edit if you want to restrict access to your application
-resource "aws_security_group" "lb" {
+resource "aws_security_group" "lb_api" {
   tags = {
     project = "6fire"
   }
@@ -32,7 +32,7 @@ resource "aws_security_group" "ecs_tasks" {
     protocol        = "tcp"
     from_port       = 3000
     to_port         = 3333
-    security_groups = [aws_security_group.lb.id]
+    security_groups = [aws_security_group.lb_api.id]
   }
   egress {
     protocol    = "-1"
@@ -42,34 +42,94 @@ resource "aws_security_group" "ecs_tasks" {
   }
 }
 
-resource "aws_alb" "main" {
+resource "aws_alb" "api" {
   tags = {
     project = "6fire"
   }
-  name            = "6fire-ecs-alb"
+  name            = "6fire-ecs-alb-api"
   subnets         = aws_subnet.public.*.id
-  security_groups = [aws_security_group.lb.id]
+  security_groups = [aws_security_group.lb_api.id]
 }
-resource "aws_alb_target_group" "app" {
+resource "aws_alb" "client" {
   tags = {
     project = "6fire"
   }
-  name        = "6fire-ecs-alb-tg"
+  name            = "6fire-ecs-alb-client"
+  subnets         = aws_subnet.public.*.id
+  security_groups = [aws_security_group.lb_api.id]
+}
+resource "aws_alb" "dashboard" {
+  tags = {
+    project = "6fire"
+  }
+  name            = "6fire-ecs-alb-dashboard"
+  subnets         = aws_subnet.public.*.id
+  security_groups = [aws_security_group.lb_api.id]
+}
+resource "aws_alb_target_group" "api" {
+  tags = {
+    project = "6fire"
+  }
+  name        = "6fire-ecs-alb-tg-api"
+  port        = 80
+  protocol    = "HTTP"
+  vpc_id      = aws_vpc.main.id
+  target_type = "ip"
+}
+resource "aws_alb_target_group" "client" {
+  tags = {
+    project = "6fire"
+  }
+  name        = "6fire-ecs-alb-tg-client"
+  port        = 80
+  protocol    = "HTTP"
+  vpc_id      = aws_vpc.main.id
+  target_type = "ip"
+}
+resource "aws_alb_target_group" "dashboard" {
+  tags = {
+    project = "6fire"
+  }
+  name        = "6fire-ecs-alb-tg-dashboard"
   port        = 80
   protocol    = "HTTP"
   vpc_id      = aws_vpc.main.id
   target_type = "ip"
 }
 # Redirect all traffic from the ALB to the target group
-resource "aws_alb_listener" "front_end" {
+resource "aws_alb_listener" "api" {
   tags = {
     project = "6fire"
   }
-  load_balancer_arn = aws_alb.main.id
+  load_balancer_arn = aws_alb.api.id
   port              = "80"
   protocol          = "HTTP"
   default_action {
-    target_group_arn = aws_alb_target_group.app.id
+    target_group_arn = aws_alb_target_group.api.id
+    type             = "forward"
+  }
+}
+resource "aws_alb_listener" "client" {
+  tags = {
+    project = "6fire"
+  }
+  load_balancer_arn = aws_alb.client.id
+  port              = "80"
+  protocol          = "HTTP"
+  default_action {
+    target_group_arn = aws_alb_target_group.client.id
+    type             = "forward"
+  }
+}
+resource "aws_alb_listener" "dashboard" {
+  tags = {
+    project = "6fire"
+  }
+  load_balancer_arn = aws_alb.dashboard.id
+  port              = "80"
+  protocol          = "HTTP"
+  default_action {
+    target_group_arn = aws_alb_target_group.dashboard.id
     type             = "forward"
   }
 }

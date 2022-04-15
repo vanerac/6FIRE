@@ -461,12 +461,12 @@ resource "aws_ecs_service" "api" {
     assign_public_ip = true
   }
   load_balancer {
-    target_group_arn = aws_alb_target_group.app.id
+    target_group_arn = aws_alb_target_group.api.id
     container_name   = "api"
     container_port   = 3333
   }
   depends_on = [
-    aws_alb_listener.front_end,
+    aws_alb_listener.api,
     aws_ecr_repository.api,
     aws_ecs_task_definition.api
   ]
@@ -489,12 +489,12 @@ resource "aws_ecs_service" "client" {
     assign_public_ip = true
   }
   load_balancer {
-    target_group_arn = aws_alb_target_group.app.id
+    target_group_arn = aws_alb_target_group.client.id
     container_name   = "client"
     container_port   = 3000
   }
   depends_on = [
-    aws_alb_listener.front_end,
+    aws_alb_listener.client,
   ]
 }
 
@@ -515,11 +515,11 @@ resource "aws_ecs_service" "dashboard" {
     assign_public_ip = true
   }
   load_balancer {
-    target_group_arn = aws_alb_target_group.app.id
+    target_group_arn = aws_alb_target_group.dashboard.id
     container_name   = "dashboard"
     container_port   = 3000
   }
   depends_on = [
-    aws_alb_listener.front_end,
+    aws_alb_listener.dashboard,
   ]
 }

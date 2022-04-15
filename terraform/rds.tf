@@ -15,7 +15,7 @@ variable "rds_master_password" {
 resource "aws_db_subnet_group" "main" {
   name        = var.rds_cluster_identifier
   description = "6fire-backend-vpc"
-  subnet_ids  = aws_subnet.public.*.id
+  subnet_ids  = aws_subnet.private.*.id
   tags        = {
     project = "6fire"
   }
@@ -34,7 +34,7 @@ resource "aws_db_instance" "default" {
   password                = var.rds_master_password
   allocated_storage       = 15
   skip_final_snapshot     = true
-  publicly_accessible     = true
+  publicly_accessible     = false
   storage_type            = "gp2"
   backup_retention_period = 0
   vpc_security_group_ids  = [
