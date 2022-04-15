@@ -1,5 +1,9 @@
 /* screen - trading-forex */
 
+body {
+  margin: 0;
+}
+
 .trading-forex {
   background-color: transparent;
   cursor: pointer;

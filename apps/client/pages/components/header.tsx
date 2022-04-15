@@ -3,6 +3,7 @@ import Image from 'next/image';
 import router from 'next/router';
 
 const Header = (props: any) => {
+    console.log(props);
     return (
         <div className="header-top">
             <div className="header-rectangle_1"></div>
@@ -80,7 +81,7 @@ const Header = (props: any) => {
                     <div className="header-club-premium-POMvsT lato-normal-white-14px">Mon compte</div>
                 </div>
             </div>
-            <div className="header-menu-2-qecRh8">
+            <div onClick={() => props.isOpenSideBar(true)} className="header-menu-2-qecRh8">
                 <div className="header-icon-ionic-ios-menu-HLXizF">
                     <div className="header-trac-1-QKxW1t">
                         <Image layout="fill" src="/img/path-1-10@1x.png" />

@@ -409,6 +409,7 @@
     right: 50px;
     top: calc(31.11% - 3px);
     width: 27px;
+    cursor: pointer;
   }
   
   .header-icon-ionic-ios-menu-HLXizF {

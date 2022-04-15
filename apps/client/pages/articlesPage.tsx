@@ -1,8 +1,10 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import router from 'next/router';
 import Header from './components/header';
 
-const HomePage: NextPage = () => {
+const HomePage: NextPage = (props: any) => {
+    console.log(props);
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
@@ -82,7 +84,7 @@ const HomePage: NextPage = () => {
                                 </div>
                                 <div className="club-premium-BC63SN lato-light-manatee-12px">Il y a 2 heures</div>
                             </div>
-                            <div className="article-k5qTpB">
+                            <div onClick={() => router.push('/articlesDetails')} className="article-k5qTpB">
                                 <div className="groupe-de-masques-323-XPBk3x">
                                     <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
                                 </div>
@@ -182,7 +184,7 @@ const HomePage: NextPage = () => {
                         </div>
                     </div>
                 </div>
-                <Header />
+                <Header isOpenSideBar={props.useStateOpenSideBar} />
                 <div className="call-to-action-58RGA4">
                     <div className="groupe-de-masques-328-ir0Byo">
                         <Image layout="fill" src="/img/mask-group-328@1x.png" />

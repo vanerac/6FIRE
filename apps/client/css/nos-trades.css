@@ -1,5 +1,9 @@
 /* screen - nos-trades */
 
+body {
+  margin: 0;
+}
+
 .nos-trades {
   background-color: transparent;
   cursor: pointer;

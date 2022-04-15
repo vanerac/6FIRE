@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Header from './components/header';
 
-const HomePage: NextPage = () => {
+const HomePage: NextPage = (props: any) => {
     return (
-        <body style={{ margin: 0, backgroundColor: 'black' }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />
             <div className="articles-details screen">
                 <div className="photography-SAHlos">
@@ -12,7 +13,8 @@ const HomePage: NextPage = () => {
                     </div>
                     <div className="rectangle-3501-o80O4f"></div>
                 </div>
-                <div className="header-SAHlos">
+            <Header isOpenSideBar={props.useStateOpenSideBar} />
+                {/* <div className="header-SAHlos">
                     <div className="rectangle-3483-p6sbB3"></div>
                     <div className="logo-p6sbB3">
                         <div className="effect-PMiZNO">
@@ -104,7 +106,7 @@ const HomePage: NextPage = () => {
                             <Image src="/img/icon-ionic-ios-search-11@1x.png" layout="fill" />
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="thme-sombre-SAHlos">
                     <div className="content-page-FZXT2m">
                         <div className="thme-sombre-6DMTzr">
@@ -258,10 +260,9 @@ const HomePage: NextPage = () => {
                     <div className="icon-ionic-ios-moon-FZXT2m">
                         <Image src="/img/icon-ionic-ios-moon-1@1x.png" layout="fill" />
                     </div>
-                    <div className="toogle-button-FZXT2m">
-                        <div className="rectangle-3485-xV00UE"></div>
+                    {/* <div className="toogle-button-FZXT2m">
                         <div className="ellipse-17688-xV00UE"></div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="footer-SAHlos">
                     <div className="background-BaKdMY"></div>
@@ -593,7 +594,7 @@ const HomePage: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 
