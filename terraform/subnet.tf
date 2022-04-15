@@ -1,7 +1,9 @@
 # Fetch AZs in the current region
 data "aws_availability_zones" "available" {}
 resource "aws_vpc" "main" {
-  tags = {
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+  tags                 = {
     project = "6fire"
   }
   cidr_block = "172.19.0.0/16"

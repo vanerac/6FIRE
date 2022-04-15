@@ -43,10 +43,10 @@ services:
       dockerfile: docker/client/Dockerfile
     ports:
       - "3000:3000"
-    depends_on:
-      - api
-    links:
-      - api
+    #    depends_on:
+    #      - api
+    #    links:
+    #      - api
     restart: unless-stopped
 
   dashboard:

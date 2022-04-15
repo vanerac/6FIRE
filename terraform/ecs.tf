@@ -29,6 +29,18 @@
 #  name = var.iam_role_name
 #}
 
+resource "aws_cloudwatch_log_group" "api" {
+  name = "6fire-api"
+}
+
+resource "aws_cloudwatch_log_group" "client" {
+  name = "6fire-client"
+}
+
+resource "aws_cloudwatch_log_group" "dashboard" {
+  name = "6fire-dashboard"
+}
+
 
 resource "aws_iam_role" "ecs_task_role" {
   name               = "ecs_task_role"
@@ -159,7 +171,8 @@ resource "aws_ecs_task_definition" "api" {
     project = "6fire"
   }
   depends_on = [
-    aws_ecr_repository.api
+    aws_ecr_repository.api,
+    aws_db_instance.default
   ]
   execution_role_arn       = aws_iam_role.esc_execution_role.arn
   task_role_arn            = aws_iam_role.ecs_task_role.arn
@@ -184,7 +197,41 @@ resource "aws_ecs_task_definition" "api" {
         "containerPort": 3333,
         "hostPort": 3333
       }
-    ]
+    ],
+    "environment": [
+      {
+        "name": "DB_HOST",
+        "value": "${aws_db_instance.default.address}"
+      },
+      {
+        "name": "DB_PORT",
+        "value": "${aws_db_instance.default.port}"
+      },
+      {
+        "name": "DB_USER",
+        "value": "${aws_db_instance.default.username}"
+      },
+      {
+        "name": "DB_PASSWORD",
+        "value": "${aws_db_instance.default.password}"
+      },
+      {
+        "name": "DB_NAME",
+        "value": "6fire"
+      },
+      {
+        "name": "DATABASE_URL",
+        "value": "postgres://${aws_db_instance.default.username}:${aws_db_instance.default.password}@${aws_db_instance.default.address}:${aws_db_instance.default.port}/${aws_db_instance.default.name}"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${aws_cloudwatch_log_group.api.name}",
+        "awslogs-region": "eu-west-3",
+        "awslogs-stream-prefix": "api"
+      }
+    }
   }
 ]
 DEFINITION
@@ -192,6 +239,8 @@ DEFINITION
   requires_compatibilities = ["FARGATE"]
   cpu                      = 512
   memory                   = 1024
+  // add cloudwatch stream
+
 }
 
 resource "aws_ecs_task_definition" "client" {
@@ -226,7 +275,15 @@ resource "aws_ecs_task_definition" "client" {
         "containerPort": 3000,
         "hostPort": 3000
       }
-    ]
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${aws_cloudwatch_log_group.client.name}",
+        "awslogs-region": "eu-west-3",
+        "awslogs-stream-prefix": "client"
+      }
+    }
   }
 ]
 DEFINITION
@@ -260,7 +317,15 @@ resource "aws_ecs_task_definition" "dashboard" {
         "containerPort": 3000,
         "hostPort": 3000
       }
-    ]
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${aws_cloudwatch_log_group.dashboard.name}",
+        "awslogs-region": "eu-west-3",
+        "awslogs-stream-prefix": "dashboard"
+      }
+    }
   }
 ]
 DEFINITION
@@ -290,7 +355,7 @@ resource "aws_ecs_service" "api" {
 
   network_configuration {
     security_groups  = [aws_security_group.ecs_tasks.id]
-    subnets          = aws_subnet.public.*.id
+    subnets          = flatten([aws_subnet.public.*.id, aws_subnet.private.*.id])
     assign_public_ip = true
   }
   load_balancer {
@@ -300,6 +365,8 @@ resource "aws_ecs_service" "api" {
   }
   depends_on = [
     aws_alb_listener.front_end,
+    aws_ecr_repository.api,
+    aws_ecs_task_definition.api
   ]
 }
 
