@@ -1,8 +1,10 @@
 import type { NextPage } from 'next';
+import router from 'next/router';
+import Header from './components/header';
 
-const BotTrading: NextPage = () => {
+const BotTrading: NextPage = (props: any) => {
     return (
-        <body style={{ margin: 0 }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="bot-trading" />
             <div
                 className="bot-trading screen"
@@ -20,13 +22,8 @@ const BotTrading: NextPage = () => {
                         <img className="rectangle-3559-JxfHBf" src="img/rectangle-3559@1x.png" />
                         <div className="club-premium-JxfHBf lato-bold-white-14px">ACCÈS AU BOT</div>
                     </div>
-                    <div className="groupe-3013-rgUu6r">
-                        <a
-                            href="bot-trading-traders.html"
-                            // onclick="window.event.stopPropagation()"
-                        >
+                    <div onClick={() => router.push('/botTradingTraders')} className="groupe-3013-rgUu6r">
                             <img className="rectangle-3560-prXDZd" src="img/rectangle-3560@1x.png" />
-                        </a>
                         <div className="club-premium-prXDZd lato-bold-white-14px">TRADERS</div>
                     </div>
                 </div>
@@ -197,137 +194,7 @@ const BotTrading: NextPage = () => {
                         <img className="icon-simple-tiktok-6Z2cAN" src="img/icon-simple-tiktok-1@1x.png" />
                     </div>
                 </div>
-                <div className="header-FwUAid">
-                    <div className="rectangle-3483-M6M5uE"></div>
-                    <div className="logo-M6M5uE">
-                        <div className="groupe-1483-dNwqeZ hidden">
-                            <img className="groupe-1482-T1P9Ij" src="img/group-1482-13@1x.png" />
-                        </div>
-                        <img className="effect-dNwqeZ" src="img/effect-13@1x.png" />
-                    </div>
-                    <div className="thme-sombre-M6M5uE">
-                        <img className="icon-ionic-ios-moon-M4WdxW" src="img/icon-ionic-ios-moon-1@1x.png" />
-                        <div className="toogle-button-M4WdxW">
-                            <div className="rectangle-3485-KXC00l"></div>
-                            <div className="ellipse-17688-KXC00l"></div>
-                        </div>
-                    </div>
-                    <div className="menu-M6M5uE">
-                        <div className="rectangle-3484-M1erBy"></div>
-                        <a
-                            href="trading.html"
-                            // onclick="window.event.stopPropagation()"
-                        >
-                            <div className="espace-trading-crypto-M1erBy">
-                                <div className="formations-A83AMK lato-normal-white-14px">
-                                    Espace Trading &amp; Crypto
-                                </div>
-                                <img className="ligne-8-A83AMK hidden" src="img/line-8-22@1x.png" />
-                            </div>
-                        </a>
-                        <a
-                            href="trading-formations.html"
-                            // onclick="window.event.stopPropagation()"
-                        >
-                            <div className="formations-M1erBy">
-                                <div className="formations-Gw4Dt0 lato-normal-white-14px">Formations</div>
-                                <img className="ligne-8-Gw4Dt0 hidden" src="img/line-8-12@1x.png" />
-                                <div className="icon-actif-Gw4Dt0">
-                                    <div className="ellipse-17693-vDJeet"></div>
-                                    <img
-                                        className="font-awsome-graduation-cap-vDJeet"
-                                        src="img/fontawsome--graduation-cap--3@1x.png"
-                                    />
-                                </div>
-                            </div>
-                        </a>
-                        <div className="forex-M1erBy">
-                            <div className="formations-G2EeUI lato-normal-white-14px">Forex</div>
-                            <img className="ligne-8-G2EeUI hidden" src="img/line-8-12@1x.png" />
-                            <div className="icon-actif-G2EeUI">
-                                <div className="ellipse-17693-VMdnKa"></div>
-                                <img
-                                    className="font-awsome-dollar-sign-VMdnKa"
-                                    src="img/fontawsome--dollar-sign--2@1x.png"
-                                />
-                            </div>
-                        </div>
-                        <div className="crypto-wallet-M1erBy">
-                            <div className="formations-gBAR1E lato-normal-white-14px">Crypto Wallet</div>
-                            <img className="ligne-8-gBAR1E hidden" src="img/line-8-12@1x.png" />
-                            <div className="icon-actif-gBAR1E">
-                                <div className="ellipse-17693-27xcfR"></div>
-                                <img className="font-awsome-wallet-27xcfR" src="img/fontawsome--wallet--2@1x.png" />
-                            </div>
-                        </div>
-                        <div className="bot-trading-M1erBy">
-                            <div className="club-premium-m7HZPO lato-normal-white-14px">Bot Trading</div>
-                            <img className="ligne-8-m7HZPO" src="img/line-8-23@1x.png" />
-                            <div className="icon-actif-m7HZPO">
-                                <div className="ellipse-17693-fjf6mm"></div>
-                                <img className="icon-awesome-robot-fjf6mm" src="img/icon-awesome-robot-5@1x.png" />
-                            </div>
-                        </div>
-                        <a
-                            href="nos-trades.html"
-                            // onclick="window.event.stopPropagation()"
-                        >
-                            <div className="trading-M1erBy">
-                                <div className="rectangle-3556-7hme35"></div>
-                                <div className="trading-7hme35 lato-bold-white-14px">Nos trades</div>
-                                <div className="icon-actif-7hme35">
-                                    <div className="ellipse-17693-9CaIfb"></div>
-                                    <img
-                                        className="icon-simple-graphcool-9CaIfb"
-                                        src="img/icon-simple-graphcool-2@1x.png"
-                                    />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="espace-membre-M6M5uE">
-                        <div className="connexion-5F506e">
-                            <div className="club-premium-as3IJn lato-normal-white-14px">Mon compte</div>
-                            <img className="ligne-8-as3IJn hidden" src="img/line-8-13@1x.png" />
-                        </div>
-                    </div>
-                    <div className="menu-2-M6M5uE">
-                        <div className="icon-ionic-ios-menu-yMtxaH">
-                            <img className="trac-1-sphDyv" src="img/path-1-10@1x.png" />
-                            <img className="trac-2-sphDyv" src="img/path-2-10@1x.png" />
-                        </div>
-                        <div className="menu-2-yMtxaH hidden">
-                            <div className="background-cEZgdX"></div>
-                            <div className="groupe-1487-cEZgdX">
-                                <img className="ligne-10-kvxD39" src="img/line-10-10@1x.png" />
-                                <img className="ligne-11-kvxD39" src="img/line-11-10@1x.png" />
-                            </div>
-                            <div className="numro-de-tlphone-cEZgdX">
-                                <img className="ligne-6-cU744T" src="img/line-6-12@1x.png" />
-                                <div className="mes-donnes-personnelles-cU744T lato-normal-white-14px">
-                                    Mes données personnelles
-                                </div>
-                                <div className="ma-licence-cU744T lato-normal-white-14px">Ma licence</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="search-bar-M6M5uE">
-                        <img className="icon-search-OdTWTG" src="img/icon-ionic-ios-search-11@1x.png" />
-                        <div className="search-bar-OdTWTG hidden">
-                            <div className="rectangle-3603-IscRty"></div>
-                            <div className="search-bar-IscRty">
-                                <img className="rectangle-3604-3jfzWd" src="img/rectangle-3604-1@1x.png" />
-                                <img className="rectangle-3605-3jfzWd" src="img/rectangle-3605-1@1x.png" />
-                                <div className="rechercher-3jfzWd lato-normal-manatee-14px">Rechercher…</div>
-                                <img className="icon-search-3jfzWd" src="img/icon-ionic-ios-search-10@1x.png" />
-                            </div>
-                            <div className="groupe-1487-IscRty">
-                                <img className="ligne-10-BWQAXj" src="img/line-10-10@1x.png" />
-                                <img className="ligne-11-BWQAXj" src="img/line-11-10@1x.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="avertissement-FwUAid">
                     <div className="groupe-3020-BCxIWv">
                         <div className="rectangle-3606-rkI1Pb"></div>
@@ -557,7 +424,7 @@ const BotTrading: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 

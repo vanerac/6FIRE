@@ -2,7 +2,6 @@
 
 .crypto-wallet {
   background-color: transparent;
-  cursor: pointer;
   height: 100vh;
   margin: 0px;
   min-height: 1306px;
@@ -51,7 +50,7 @@
   line-height: 16px;
   position: absolute;
   text-align: left;
-  top: calc(23.06% - 5px);
+  top: calc(24%);
   width: 257px;
 }
 

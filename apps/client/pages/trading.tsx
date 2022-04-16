@@ -42,7 +42,7 @@ const HomePage: NextPage = (props: any) => {
                         <img className="icon-simple-tiktok-NVC3AW" src="img/icon-simple-tiktok-1@1x.png" />
                     </div>
                 </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} />
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false}/>
                 {/* <div className="header-3LBGsu">
                     <div className="rectangle-3483-6cQg9k"></div>
                     <a href="homepage-1.html">

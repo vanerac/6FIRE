@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Header from './components/header';
 
-const HomePage: NextPage = () => {
+const HomePage: NextPage = (props: any) => {
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="articles-details-entreprise" />
@@ -197,7 +198,9 @@ const HomePage: NextPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="header-pYC6Z9">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+
+                {/* <div className="header-pYC6Z9">
                     <div className="rectangle-3483-n2HFDc"></div>
                     <div className="logo-n2HFDc">
                         <div className="effect-AL4Lcx">
@@ -300,7 +303,7 @@ const HomePage: NextPage = () => {
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> */}
                 <div className="bandeau-call-to-action-pYC6Z9">
                     <div className="groupe-de-masques-329-f6PEkN">
                         <Image layout="fill" src="/img/mask-group-329-1@1x.png" />
