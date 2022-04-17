@@ -37,8 +37,9 @@
   background: linear-gradient(180deg, #000000 0%, #161a1a 89.61%);
   background-color: transparent;
   bottom: calc(46.87% - 386px);
-  height: 823px;
+  height: 100%;
   left: 0px;
+  top: 297px;
   position: absolute;
   width: 100%;
 }

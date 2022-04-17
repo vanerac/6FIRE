@@ -4,7 +4,6 @@ import router from 'next/router';
 import { useState } from 'react';
 
 const Header = (props: any) => {
-    const state = 'nos_trddades';
     console.log(props);
 
     return (
