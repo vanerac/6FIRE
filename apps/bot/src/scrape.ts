@@ -10,7 +10,7 @@ const client = new ApifyClient({
 export default async function Scrape() {
     const actor = 'tugkan/binance-futures-leaderboard';
 
-    const periodMap = ['DAILY', 'WEEKLY', 'MONTHLY', 'QUARTERLY', 'YEARLY'];
+    const periodMap = ['MONTHLY', 'EXACT_MONTHLY'];
     const levelMap = ['LEVEL1', 'LEVEL2', 'LEVEL3', 'LEVEL4', 'LEVEL5'];
 
     const urlBase = 'https://www.binance.com/en/futures-activity/leaderboard';

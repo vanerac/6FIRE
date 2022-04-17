@@ -4,14 +4,18 @@ import Routes from './entities/routes';
 import * as OpenApiValidator from 'express-openapi-validator';
 import { User } from '../../../shared/services/models/User';
 import configuration from '../configuration';
+import { PrismaClient } from '@prisma/client';
+import { QueryResultRow } from 'pg';
 
 const app = express();
+
+const prisma = new PrismaClient();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use((req: Request, res: Response, next: NextFunction) => {
-    console.log(`${req.method} ${req.path}`);
+    console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
     next();
 });
 
@@ -66,6 +70,16 @@ app.use((err, req, res, next) => {
     res.status(err.status || 500).json({
         message: err.message,
         errors: err.errors,
+    });
+});
+
+app.get('/', (req, res) => {
+    // get postgres version
+    prisma.$queryRaw`SELECT version()`.then((result: QueryResultRow) => {
+        res.status(200).json({
+            message: 'Server Up !',
+            postgres: result.rows[0].version,
+        });
     });
 });
 

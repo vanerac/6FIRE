@@ -24,6 +24,13 @@ jobs:
         with:
           role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
           aws-region: eu-west-3
+      - name: Terraform state cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./terraform/terraform.tfstate
+            ./terraform/terraform.tfstate.backup
+          key: $GITHUB_REPOSITORY
       - run: terraform init
         working-directory: terraform/
         name: terraform init
@@ -44,3 +51,8 @@ jobs:
           valid: ${{env.valid}}
         working-directory: terraform/
         name: Apply deployement
+      - name: Upload state as artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          path: terraform/terraform.tfstate
+          name: terraform.tfstate
