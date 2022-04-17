@@ -382,6 +382,12 @@ resource "aws_ecs_task_definition" "client" {
         "hostPort": 3000
       }
     ],
+    "environment": [
+      {
+        "name": "API_HOST",
+        "value": "${aws_alb.api.dns_name}"
+      }
+    ],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
@@ -422,6 +428,12 @@ resource "aws_ecs_task_definition" "dashboard" {
       {
         "containerPort": 3000,
         "hostPort": 3000
+      }
+    ],
+    "environment": [
+      {
+        "name": "API_HOST",
+        "value": "${aws_alb.api.dns_name}"
       }
     ],
     "logConfiguration": {
@@ -470,6 +482,9 @@ resource "aws_ecs_service" "api" {
     aws_ecr_repository.api,
     aws_ecs_task_definition.api
   ]
+  #  deployment_controller {
+  #    type = "CODE_DEPLOY"
+  #  }
 }
 
 resource "aws_ecs_service" "client" {
@@ -493,8 +508,16 @@ resource "aws_ecs_service" "client" {
     container_name   = "client"
     container_port   = 3000
   }
+  #  deployment_controller {
+  #    type = "CODE_DEPLOY"
+  #  }
   depends_on = [
     aws_alb_listener.client,
+    aws_ecr_repository.client,
+    aws_ecs_task_definition.client,
+    aws_ecs_service.api,
+    aws_alb.api,
+    aws_db_instance.default
   ]
 }
 
@@ -519,7 +542,14 @@ resource "aws_ecs_service" "dashboard" {
     container_name   = "dashboard"
     container_port   = 3000
   }
+  #  deployment_controller {
+  #    type = "CODE_DEPLOY"
+  #  }
   depends_on = [
     aws_alb_listener.dashboard,
+    aws_ecr_repository.dashboard,
+    aws_ecs_task_definition.dashboard,
+    aws_ecs_service.api,
+    aws_alb.api
   ]
 }
