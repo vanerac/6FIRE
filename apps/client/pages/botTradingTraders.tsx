@@ -1,4 +1,4 @@
-import type {NextPage} from 'next';
+import type { NextPage } from 'next';
 import router from 'next/router';
 import Header from './components/header';
 
