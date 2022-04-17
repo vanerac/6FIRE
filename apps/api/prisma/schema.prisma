@@ -39,7 +39,7 @@ model User {
 model VerificationCodes {
   id        Int              @id @default(autoincrement())
   userId    Int
-  code      String
+  code      Int
   type      VerificationType
   createdAt DateTime         @default(now())
   updatedAt DateTime         @default(now())

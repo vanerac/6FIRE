@@ -5,10 +5,11 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "predev": "npx prisma generate",
+    "predev": "npx prisma generate && npm run migrate",
     "dev": "npx nodemon src/index.ts",
     "lint": "eslint src/**/*.ts",
     "build": "npx tsc --build --verbose",
+    "migrate": "npx prisma db push",
     "lint:fix": "eslint --fix src/**/*.ts"
   },
   "keywords": [],

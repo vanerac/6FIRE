@@ -2,12 +2,18 @@ import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import Routes from './entities/routes';
 import * as OpenApiValidator from 'express-openapi-validator';
-import { User } from '../../../shared/services/models/User';
+import { User } from '@shared/services';
 import configuration from '../configuration';
 import { PrismaClient } from '@prisma/client';
 import { QueryResultRow } from 'pg';
+import cookieParser from 'cookie-parser';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const openApiDocument = require(configuration.OPENAPI_SPEC_DEFINITION);
 
 const app = express();
+
+app.use(cookieParser());
 
 const prisma = new PrismaClient();
 
@@ -21,13 +27,14 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 app.use(
     OpenApiValidator.middleware({
-        apiSpec: configuration.OPENAPI_SPEC_DEFINITION,
+        apiSpec: openApiDocument,
         validateRequests: {
-            removeAdditional: 'failing',
+            removeAdditional: 'all',
             allowUnknownQueryParameters: false,
+            coerceTypes: true,
         },
         validateResponses: {
-            removeAdditional: 'failing',
+            removeAdditional: 'all',
         },
         validateFormats: 'full',
         operationHandlers: false,
@@ -54,7 +61,7 @@ declare module 'express-session' {
     }
 }
 
-app.use(Routes);
+app.use('/api', Routes);
 
 app.use(
     cors({
@@ -65,7 +72,7 @@ app.use(
     }),
 );
 
-app.use((err, req, res, next) => {
+app.use((err, req, res, $next) => {
     // format error
     res.status(err.status || 500).json({
         message: err.message,
@@ -74,11 +81,10 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    // get postgres version
     prisma.$queryRaw`SELECT version()`.then((result: QueryResultRow) => {
         res.status(200).json({
             message: 'Server Up !',
-            postgres: result.rows[0].version,
+            postgres: result[0].version,
         });
     });
 });
