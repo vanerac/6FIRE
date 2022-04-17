@@ -1,5 +1,9 @@
 /* screen - nos-trades */
 
+body {
+  margin: 0;
+}
+
 .nos-trades {
   background-color: transparent;
   cursor: pointer;
@@ -16,7 +20,7 @@
 .nos-trades .background-kCjjkp {
   background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
   background-color: transparent;
-  height: 337px;
+  height: 100%;
   left: 0px;
   position: absolute;
   top: 137px;
@@ -702,7 +706,7 @@
 .nos-trades .background-DslP8q {
   background-color: var(--black);
   bottom: calc(35.69% - 89px);
-  height: 249px;
+  height: 25%;
   left: 0px;
   position: absolute;
   width: 100%;

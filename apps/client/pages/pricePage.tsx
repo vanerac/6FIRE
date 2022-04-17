@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
+import Header from './components/header';
 
-const PricePage: NextPage = () => {
+const PricePage: NextPage = (props: any) => {
     return (
-        <body style={{ margin: 0, background: '#ffffff' }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="prices-page" />
             <div className="prices-page screen">
                 <div className="footer-bAAl1m">
@@ -282,7 +283,8 @@ const PricePage: NextPage = () => {
                     <div className="rectangle-3608-Q775IJ"></div>
                     <img className="best-seller-Q775IJ" src="img/best-seller-1@1x.png" />
                 </div>
-                <div className="header-bAAl1m">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+                {/* <div className="header-bAAl1m">
                     <div className="rectangle-3483-dHGHFp"></div>
                     <div className="logo-dHGHFp">
                         <img className="effect-auvAAe" src="img/effect-13@1x.png" />
@@ -354,7 +356,7 @@ const PricePage: NextPage = () => {
                         </div>
                     </div>
                     <img className="icon-search-dHGHFp" src="img/icon-ionic-ios-search@1x.png" />
-                </div>
+                </div> */}
             </div>
             <div className="prices-page-mobile screen">
                 <div className="background-IrLseF"></div>
@@ -650,7 +652,7 @@ const PricePage: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 
