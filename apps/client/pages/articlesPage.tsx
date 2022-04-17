@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type {NextPage} from 'next';
 import Image from 'next/image';
 import router from 'next/router';
 import Header from './components/header';
@@ -184,7 +184,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                 </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true}/>
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
                 <div className="call-to-action-58RGA4">
                     <div className="groupe-de-masques-328-ir0Byo">
                         <Image layout="fill" src="/img/mask-group-328@1x.png" />

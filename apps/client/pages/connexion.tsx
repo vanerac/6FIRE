@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
+import type {NextPage} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import router, { Router } from 'next/router';
-import { useState } from 'react';
+import router from 'next/router';
+import {useState} from 'react';
 
 const Home: NextPage = (props: any) => {
     const [userName, setUserName] = useState('');

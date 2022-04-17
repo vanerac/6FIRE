@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type {NextPage} from 'next';
 import router from 'next/router';
 import Header from './components/header';
 
@@ -23,7 +23,7 @@ const BotTrading: NextPage = (props: any) => {
                         <div className="club-premium-JxfHBf lato-bold-white-14px">ACCÈS AU BOT</div>
                     </div>
                     <div onClick={() => router.push('/botTradingTraders')} className="groupe-3013-rgUu6r">
-                            <img className="rectangle-3560-prXDZd" src="img/rectangle-3560@1x.png" />
+                        <img className="rectangle-3560-prXDZd" src="img/rectangle-3560@1x.png" />
                         <div className="club-premium-prXDZd lato-bold-white-14px">TRADERS</div>
                     </div>
                 </div>

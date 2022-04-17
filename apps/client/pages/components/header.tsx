@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import router from 'next/router';
-import { useState } from 'react';
 
 const Header = (props: any) => {
     console.log(props);
@@ -93,7 +92,9 @@ const Header = (props: any) => {
                         </div>
                         <img className="header-trading-crypto-ligne-8-8XkrAY hidden" src="img/line-8-22@1x.png" />
                     </div>
-                    <div onClick={() => router.push('/tradingFormations')} className="header-trading-crypto-formations-LdomJT">
+                    <div
+                        onClick={() => router.push('/tradingFormations')}
+                        className="header-trading-crypto-formations-LdomJT">
                         <div className="header-trading-crypto-club-premium-hbskOF lato-normal-white-14px">
                             Formations
                         </div>
