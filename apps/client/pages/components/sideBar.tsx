@@ -65,7 +65,7 @@ const Sidebar = (props: any) => {
                             props.setIsOpenSideBar(false);
                             console.log('Close icon clicked, close sidebar');
                         }}>
-                        test
+                        <span></span>
                     </CloseIcon>
                 </SidebarWrapper>
             </SidebarStyled>

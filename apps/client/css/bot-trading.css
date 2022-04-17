@@ -176,7 +176,7 @@
 .bot-trading .bloc-1-FwUAid {
   background-color: transparent;
   height: 58.39%;
-  left: 0px;
+  left: calc(50% - 680px);
   position: absolute;
   top: 27.08%;
   width: 100%;

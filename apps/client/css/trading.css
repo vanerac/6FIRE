@@ -845,10 +845,10 @@
 
 .trading .icon-actif-3LBGsu {
   background-color: transparent;
-  height: calc(100.00% - 1343px);
-  left: 519px;
+  /* height: calc(100.00% - 1343px); */
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 506px;
+  top: calc(50.00% - 150px);
   width: 39px;
 }
 
@@ -870,6 +870,7 @@
   position: absolute;
   right: 5px;
   width: 29px;
+  top: 13px;
 }
 
 .trading .avertissement-3LBGsu {
@@ -933,29 +934,29 @@
   box-shadow: 0px 3px 6px #00000029;
   height: 379px;
   position: absolute;
-  right: calc(49.75% - 189px);
-  top: calc(47.06% - 178px);
+  right: calc(50% - 195px);
+  top: calc(50% - 178px);
   width: 379px;
 }
 
 .trading .paragraph-wsIV14 {
   background-color: transparent;
   height: 19px;
-  left: 140px;
+  left: calc(50% - 540px);
   letter-spacing: 0.00px;
   line-height: 14px;
   position: absolute;
   text-align: left;
-  top: calc(36.10% - 7px);
+  top: calc(50% - 150px);
   width: 358px;
 }
 
 .trading .icon-actif-wsIV14 {
   background-color: transparent;
-  height: calc(100.00% - 1343px);
-  left: 470px;
+  /* height: calc(100.00% - 1343px); */
+  right: calc(50% + 175px);
   position: absolute;
-  top: 685px;
+  top: calc(50% + 20px);
   width: 39px;
 }
 
@@ -981,9 +982,9 @@
 
 .trading .paragraph-WACo3F {
   background-color: transparent;
-  bottom: calc(47.29% - 25px);
+  top: calc(50% + 50px);
   height: 53px;
-  left: 196px;
+  left: calc(50% - 480px);
   letter-spacing: 0.00px;
   line-height: 12px;
   position: absolute;
@@ -994,53 +995,53 @@
 .trading .paragraph-CYhAka {
   background-color: transparent;
   height: 66px;
-  left: 140px;
+  left: calc(50% - 540px);
   letter-spacing: 0.00px;
   line-height: 12px;
   position: absolute;
   text-align: left;
-  top: calc(39.44% - 26px);
+  top: calc(50% - 120px);
   width: 350px;
 }
 
 .trading .ligne-37-3LBGsu {
   background-color: transparent;
-  bottom: 870px;
+  top: calc(50% - 130px);
   height: 2px;
-  left: 140px;
+  left: calc(50% - 540px);
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 1292px);
+  width: 74px;
 }
 
 .trading .paragraph-8BChM2 {
   background-color: transparent;
   height: 19px;
-  left: 196px;
+  left: calc(50% - 480px);
   letter-spacing: 0.00px;
   line-height: 14px;
   position: absolute;
   text-align: left;
-  top: calc(49.56% - 9px);
+  top: calc(50% + 20px);
   width: 62px;
 }
 
 .trading .ligne-38-3LBGsu {
   background-color: transparent;
-  bottom: 686px;
+  top: calc(50% + 38px);
   height: 2px;
-  left: 196px;
+  left: calc(50% - 480px);
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 1333px);
+  width: 33px;
 }
 
 .trading .icon-actif-WACo3F {
   background-color: transparent;
-  height: calc(100.00% - 1344px);
-  left: 842px;
+  /* height: calc(100.00% - 1344px); */
+  right: calc(50.00% - 190px);
   position: absolute;
-  top: 544px;
+  top: calc(50.00% - 120px);
   width: 38px;
 }
 
@@ -1050,7 +1051,6 @@
   height: 38px;
   left: 0px;
   position: absolute;
-  top: 0px;
   width: 38px;
 }
 
@@ -1070,9 +1070,9 @@
   letter-spacing: 0.00px;
   line-height: 14px;
   position: absolute;
-  right: 108px;
+  right: calc(50% - 575px);
   text-align: left;
-  top: calc(38.52% - 7px);
+  top: calc(50% - 125px);
   width: 358px;
 }
 
@@ -1083,28 +1083,28 @@
   line-height: 12px;
   overflow: hidden;
   position: absolute;
-  right: 108px;
+  right: calc(50% - 575px);
   text-align: left;
-  top: calc(41.91% - 27px);
+  top: calc(50% - 100px);
   width: 358px;
 }
 
 .trading .ligne-39-3LBGsu {
   background-color: transparent;
-  bottom: 837px;
+  top: calc(50% - 107px);
   height: 2px;
-  left: 900px;
+  right: calc(50% - 290px);
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 1292px);
+  width: 74px;
 }
 
 .trading .icon-actif-CYhAka {
   background-color: transparent;
   height: calc(100.00% - 1343px);
-  left: 827px;
+  left: calc(50% + 160px);
   position: absolute;
-  top: 761px;
+  top: calc(50% + 90px);
   width: 39px;
 }
 
@@ -1112,7 +1112,6 @@
   background-color: var(--white);
   border-radius: 19.48px;
   height: 39px;
-  left: 0px;
   position: absolute;
   top: 0px;
   width: 39px;
@@ -1120,7 +1119,7 @@
 
 .trading .icon-awesome-robot-eZI6fo {
   background-color: transparent;
-  height: calc(100.00% - 20px);
+  /* height: calc(100.00% - 20px); */
   left: 8px;
   object-fit: cover;
   position: absolute;
@@ -1130,44 +1129,44 @@
 
 .trading .paragraph-cxW2ZF {
   background-color: transparent;
-  bottom: calc(43.95% - 8px);
+  bottom: calc(50% - 110px);
   height: 19px;
   letter-spacing: 0.00px;
   line-height: 14px;
   position: absolute;
-  right: 123px;
+  right: calc(50% - 575px);
   text-align: left;
   width: 358px;
 }
 
 .trading .paragraph-V9zAaz {
   background-color: transparent;
-  bottom: calc(39.20% - 32px);
+  bottom: calc(50% - 200px);
   height: 81px;
   letter-spacing: 0.00px;
   line-height: 12px;
   position: absolute;
-  right: 108px;
+  right: calc(50% - 590px);
   text-align: left;
   width: 373px;
 }
 
 .trading .ligne-40-3LBGsu {
   background-color: transparent;
-  bottom: 598px;
+  top: calc(50% + 110px);
   height: 2px;
-  left: 885px;
+  left: calc(50% + 217px);
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 1292px);
+  width: 74px;
 }
 
 .trading .logo-3LBGsu {
   background-color: transparent;
   height: 154px;
   position: absolute;
-  right: calc(49.82% - 116px);
-  top: calc(47.64% - 73px);
+  right: calc(50% - 130px);
+  top: calc(50% - 73px);
   width: 232px;
 }
 
@@ -1204,15 +1203,6 @@
   text-align: center;
   top: calc(27.55% - 14px);
   width: 520px;
-}
-
-.trading .bouton-affi-3LBGsu {
-  background-color: transparent;
-  bottom: calc(23.83% - 9px);
-  height: 39px;
-  position: absolute;
-  right: 421px;
-  width: 247px;
 }
 
 .trading .rectangle-8-uw4ETs {
@@ -1262,7 +1252,23 @@
   bottom: calc(23.83% - 9px);
   height: 39px;
   position: absolute;
-  right: 697px;
+  background-color: var(--blue-ribbon);
+  border-radius: 5px;
+
+  right: calc(50% + 20px);
+  width: 247px;
+}
+
+.trading .bouton-affi-3LBGsu {
+  background-color: transparent;
+  bottom: calc(23.83% - 9px);
+  height: 39px;
+  position: absolute;
+  background-color: var(--bright-sun);
+  border-radius: 5px;
+
+  /* right: 421px; */
+  right: calc(50% - 270px);
   width: 247px;
 }
 
@@ -1324,10 +1330,10 @@
 
 .trading .icon-actif-8BChM2 {
   background-color: transparent;
-  height: calc(100.00% - 1343px);
-  left: 587px;
+  /* height: calc(100.00% - 1343px); */
+  left: calc(50% - 90px);
   position: absolute;
-  top: 826px;
+  top: calc(50% + 180px);
   width: 39px;
 }
 
@@ -1353,9 +1359,9 @@
 
 .trading .paragraph-NYxpqZ {
   background-color: transparent;
-  bottom: calc(36.54% - 7px);
+  top: calc(50% + 220px);
   height: 19px;
-  left: calc(34.52% - 124px);
+  left: calc(50% - 320px);
   letter-spacing: 0.00px;
   line-height: 14px;
   position: absolute;
@@ -1365,9 +1371,9 @@
 
 .trading .paragraph-ax1V3m {
   background-color: transparent;
-  bottom: calc(32.27% - 21px);
+  top: calc(50% + 250px);
   height: 65px;
-  left: calc(34.52% - 124px);
+  left: calc(50% - 320px);
   letter-spacing: 0.00px;
   line-height: 12px;
   position: absolute;
@@ -1377,12 +1383,12 @@
 
 .trading .ligne-41-3LBGsu {
   background-color: transparent;
-  bottom: 497px;
+  top: calc(50% + 238px);
   height: 2px;
-  left: 348px;
+  left: calc(50% - 320px);
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 1292px);
+  width: 74px;
 }
 /* screen - trading-mobile */
 
