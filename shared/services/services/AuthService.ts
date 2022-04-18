@@ -6,7 +6,8 @@ import type {BaseHttpRequest} from '../core/BaseHttpRequest';
 
 export class AuthService {
 
-    constructor(public readonly httpRequest: BaseHttpRequest) {}
+    constructor(public readonly httpRequest: BaseHttpRequest) {
+    }
 
     /**
      * Login

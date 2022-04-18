@@ -35,10 +35,10 @@ const createVerificationCode = async (
 export default class AuthController {
     static async register(req: Request, res: Response) {
         try {
-            const { email, password, firstName, lastName, countryId, telephone, confirm_password, cgu } = req.body;
+            const {email, password, firstName, lastName, countryId, telephone, confirm_password, CGU} = req.body;
 
             if (
-                [cgu, email, password, confirm_password, firstName, lastName, countryId, telephone].includes(undefined)
+                [CGU, email, password, confirm_password, firstName, lastName, countryId, telephone].includes(undefined)
             ) {
                 return res.status(400).json({
                     message: 'Missing required fields',
@@ -57,7 +57,7 @@ export default class AuthController {
                     },
                     email,
                     password: hashPassword(password),
-                    // cgu
+                    CGU: !!CGU,
                 },
             });
 

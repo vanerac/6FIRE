@@ -24,6 +24,7 @@ model User {
   password          String
   telephone         String
   countryId         Int
+  CGU               Boolean
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @default(now())
   isAdmin           Boolean             @default(false)
