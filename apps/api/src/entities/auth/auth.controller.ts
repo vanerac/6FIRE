@@ -1,7 +1,7 @@
-import {Request, Response} from 'express';
-import {PrismaClient} from '@prisma/client';
-import {checkPassword, generateToken, hashPassword} from '../../tools/auth.tools';
-import {AWSsendEmail, sendSMS} from '../../tools/notifications.tools';
+import { Request, Response } from 'express';
+import { PrismaClient } from '@prisma/client';
+import { checkPassword, generateToken, hashPassword } from '../../tools/auth.tools';
+import { AWSsendEmail, sendSMS } from '../../tools/notifications.tools';
 
 const client = new PrismaClient();
 
@@ -35,7 +35,7 @@ const createVerificationCode = async (
 export default class AuthController {
     static async register(req: Request, res: Response) {
         try {
-            const {email, password, firstName, lastName, countryId, telephone, confirm_password, CGU} = req.body;
+            const { email, password, firstName, lastName, countryId, telephone, confirm_password, CGU } = req.body;
 
             if (
                 [CGU, email, password, confirm_password, firstName, lastName, countryId, telephone].includes(undefined)
