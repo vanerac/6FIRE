@@ -34,6 +34,9 @@ model User {
   VerificationCodes VerificationCodes[]
   TraderFollows     TraderFollows[]
   UserSubscription  UserSubscription[]
+
+  @@unique([email, verifiedEmail])
+  @@unique([telephone, verifiedPhone])
 }
 
 model VerificationCodes {

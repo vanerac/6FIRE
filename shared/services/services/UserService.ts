@@ -9,7 +9,8 @@ import type {BaseHttpRequest} from '../core/BaseHttpRequest';
 
 export class UserService {
 
-    constructor(public readonly httpRequest: BaseHttpRequest) {}
+    constructor(public readonly httpRequest: BaseHttpRequest) {
+    }
 
     /**
      * @param requestBody
