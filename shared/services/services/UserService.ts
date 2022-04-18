@@ -1,11 +1,11 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Subscription } from '../models/Subscription';
-import type { User } from '../models/User';
+import type {Subscription} from '../models/Subscription';
+import type {User} from '../models/User';
 
-import type { CancelablePromise } from '../core/CancelablePromise';
-import type { BaseHttpRequest } from '../core/BaseHttpRequest';
+import type {CancelablePromise} from '../core/CancelablePromise';
+import type {BaseHttpRequest} from '../core/BaseHttpRequest';
 
 export class UserService {
 
@@ -26,6 +26,7 @@ export class UserService {
             mediaType: 'application/json',
             errors: {
                 400: `Invalid user supplied`,
+                401: `Unauthorized`,
                 500: `Internal server error`,
             },
         });
@@ -62,6 +63,7 @@ export class UserService {
             },
             errors: {
                 400: `Invalid user supplied`,
+                401: `Unauthorized`,
                 500: `Internal server error`,
             },
         });

@@ -1,43 +1,36 @@
-import { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
-import { checkPassword, generateToken, hashPassword } from '../../tools/auth.tools';
+import {Request, Response} from 'express';
+import {PrismaClient} from '@prisma/client';
+import {checkPassword, generateToken, hashPassword} from '../../tools/auth.tools';
+import {AWSsendEmail, sendSMS} from '../../tools/notifications.tools';
 
 const client = new PrismaClient();
 
-///enum VerificationType {
-//   EMAIL
-//   PHONE
-// }
-// model User {
-//     id                Int                 @id @default(autoincrement())
-//     userId            String              @unique @default(uuid())
-//     firstName         String
-//     lastName          String
-//     email             String
-//     password          String
-//     telephone         String
-//     countryId         Int
-//     createdAt         DateTime            @default(now())
-//     updatedAt         DateTime            @default(now())
-//     isAdmin           Boolean             @default(false)
-//     verifiedEmail     Boolean             @default(false)
-//     verifiedPhone     Boolean             @default(false)
-//     banned            Boolean             @default(false)
-//     country           Country             @relation(fields: [countryId], references: [id])
-//     VerificationCodes VerificationCodes[]
-//     TraderFollows     TraderFollows[]
-//     UserSubscription  UserSubscription[]
-// }
-//
-// model VerificationCodes {
-//     id        Int              @id @default(autoincrement())
-//     userId    Int
-//     code      Int
-//     type      VerificationType
-//     createdAt DateTime         @default(now())
-//     updatedAt DateTime         @default(now())
-//     User      User             @relation(fields: [userId], references: [id])
-// }
+const createVerificationCode = async (
+    user: { id: number; email: string; telephone: string },
+    type: 'EMAIL' | 'PHONE',
+) => {
+    const code = Math.floor(Math.random() * 1000000);
+    const verificationCode = await client.verificationCodes.create({
+        data: {
+            userId: user.id,
+            code,
+            type,
+        },
+    });
+
+    const messageTemplate = `Votre code de vérification est ${code}`;
+
+    if (type === 'EMAIL') {
+        await AWSsendEmail({ email: user.email, subject: 'Code de vérification', message: messageTemplate });
+    } else {
+        await sendSMS({
+            phoneNumber: user.telephone,
+            message: messageTemplate,
+        });
+    }
+
+    return verificationCode;
+};
 
 export default class AuthController {
     static async register(req: Request, res: Response) {
@@ -68,11 +61,10 @@ export default class AuthController {
                 },
             });
 
-            // create verification codes
-            // one for email
-            // one for sms
-
-            // send email with aws sns and sms with smspartenr
+            await Promise.all([
+                await createVerificationCode(user, 'PHONE'),
+                await createVerificationCode(user, 'EMAIL'),
+            ]);
 
             return res.status(201);
         } catch (error) {
@@ -94,6 +86,9 @@ export default class AuthController {
                     id: true,
                     email: true,
                     password: true,
+                    verifiedEmail: true,
+                    verifiedPhone: true,
+                    telephone: true,
                 },
             });
 
@@ -109,10 +104,18 @@ export default class AuthController {
                 });
             }
 
-            // todo did the user verify ?
-            // resend email if not verified
+            if (!user.verifiedEmail && !user.verifiedPhone) {
+                await Promise.all([
+                    await createVerificationCode(user, 'PHONE'),
+                    await createVerificationCode(user, 'EMAIL'),
+                ]);
+                return res.status(401).json({
+                    message: 'User not verified',
+                });
+            }
 
             delete user.password;
+            delete user.telephone;
 
             const token = generateToken(user);
 
@@ -132,12 +135,90 @@ export default class AuthController {
     }
 
     static async verify(req: Request, res: Response) {
-        // verify with code in query
-        // compare code with db
-        // codes expires in 15m
+        try {
+            const { code } = req.query;
+
+            const verification = await client.verificationCodes.findFirst({
+                where: {
+                    code: +code,
+                },
+                select: {
+                    id: true,
+                    code: true,
+                    User: true,
+                    type: true,
+                    createdAt: true,
+                },
+            });
+
+            if (!verification) {
+                return res.status(400).json({
+                    message: 'Invalid code',
+                });
+            }
+
+            const { User, type, createdAt } = verification;
+
+            const now = new Date();
+            const diff = now.getTime() - createdAt.getTime();
+            const diffMinutes = Math.round(diff / 60000);
+
+            if (diffMinutes > 15) {
+                return res.status(400).json({
+                    message: 'Code expired',
+                });
+            }
+
+            if (type === 'PHONE') {
+                await client.user.update({
+                    data: {
+                        verifiedPhone: true,
+                    },
+                    where: {
+                        id: User.id,
+                    },
+                });
+            } else if (type === 'EMAIL') {
+                await client.user.update({
+                    data: {
+                        verifiedEmail: true,
+                    },
+                    where: {
+                        id: User.id,
+                    },
+                });
+            }
+
+            await client.verificationCodes.delete({
+                where: {
+                    id: verification.id,
+                },
+            });
+
+            res.sendStatus(200);
+        } catch (e) {
+            res.status(500).json({
+                message: e.message,
+            });
+        }
     }
 
     static async verifyNew(req: Request, res: Response) {
-        // creates a new verification code for the user
+        try {
+            const { type } = req.query;
+
+            const { user } = req.session;
+
+            await createVerificationCode(
+                { id: user.id, email: user.email, telephone: user.telephone },
+                type as 'PHONE' | 'EMAIL',
+            );
+
+            res.sendStatus(200);
+        } catch (e) {
+            res.status(500).json({
+                message: e.message,
+            });
+        }
     }
 }

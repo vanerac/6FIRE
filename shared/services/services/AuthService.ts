@@ -1,8 +1,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../core/CancelablePromise';
-import type { BaseHttpRequest } from '../core/BaseHttpRequest';
+import type {CancelablePromise} from '../core/CancelablePromise';
+import type {BaseHttpRequest} from '../core/BaseHttpRequest';
 
 export class AuthService {
 
@@ -64,10 +64,12 @@ export class AuthService {
         requestBody: {
             email: string;
             password: string;
+            confirm_password?: string;
             firstName: string;
             lastName: string;
             telephone: string;
             countryId: number;
+            cgu?: boolean;
         },
     ): CancelablePromise<{
         token?: string;

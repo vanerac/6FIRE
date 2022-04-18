@@ -507,6 +507,9 @@
                   "password": {
                     "type": "string"
                   },
+                  "confirm_password": {
+                    "type": "string"
+                  },
                   "firstName": {
                     "type": "string"
                   },
@@ -518,6 +521,9 @@
                   },
                   "countryId": {
                     "type": "number"
+                  },
+                  "cgu": {
+                    "type": "boolean"
                   }
                 },
                 "required": [
@@ -1578,6 +1584,10 @@
         "type": "object",
         "properties": {
           "id": {
+            "type": "number",
+            "nullable": false
+          },
+          "userId": {
             "type": "string",
             "nullable": false
           },
