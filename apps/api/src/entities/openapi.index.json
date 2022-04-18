@@ -29,6 +29,12 @@
     "/auth/register": {
       "$ref": "./auth/auth.path.json#/register"
     },
+    "/auth/verify": {
+      "$ref": "./auth/auth.path.json#/verify"
+    },
+    "/auth/verifyNewUser": {
+      "$ref": "./auth/auth.path.json#/verifyNew"
+    },
     "/theme": {
       "$ref": "./theme/theme.path.json#/themes"
     },

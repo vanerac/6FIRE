@@ -507,52 +507,46 @@
                   "password": {
                     "type": "string"
                   },
-                  "confirm_password": {
-                    "type": "string"
-                  },
                   "firstName": {
                     "type": "string"
                   },
                   "lastName": {
                     "type": "string"
                   },
-                  "telephone": {
-                    "type": "string"
-                  },
                   "countryId": {
                     "type": "number"
                   },
-                  "cgu": {
+                  "telephone": {
+                    "type": "string",
+                    "pattern": "^[0-9]{10}$"
+                  },
+                  "confirm_password": {
+                    "type": "string"
+                  },
+                  "CGU": {
                     "type": "boolean"
                   }
                 },
                 "required": [
                   "email",
                   "password",
+                  "confirm_password",
                   "firstName",
                   "lastName",
                   "telephone",
-                  "countryId"
+                  "countryId",
+                  "CGU"
                 ]
               }
             }
           }
         },
         "responses": {
-          "201": {
-            "description": "User created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "token": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
+          "200": {
+            "description": "User created"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "422": {
             "description": "Validation Error"
@@ -561,6 +555,90 @@
             "description": "Internal Server Error"
           }
         }
+      }
+    },
+    "/auth/verify": {
+      "get": {
+        "description": "Verify code in query params",
+        "operationId": "verify",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "description": "Verification code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "422": {
+            "description": "Validation Error"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Verify",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/auth/verifyNewUser": {
+      "get": {
+        "description": "Generate a new verification code of type in query params",
+        "operationId": "verifyNew",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Type of verification code",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "EMAIL",
+                "PHONE"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "422": {
+            "description": "Validation Error"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Auth"
+        ],
+        "summary": "VerifyNew",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/theme": {

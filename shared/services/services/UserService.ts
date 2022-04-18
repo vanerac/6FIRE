@@ -1,16 +1,15 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type {Subscription} from '../models/Subscription';
-import type {User} from '../models/User';
+import type { Subscription } from '../models/Subscription';
+import type { User } from '../models/User';
 
-import type {CancelablePromise} from '../core/CancelablePromise';
-import type {BaseHttpRequest} from '../core/BaseHttpRequest';
+import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 
 export class UserService {
 
-    constructor(public readonly httpRequest: BaseHttpRequest) {
-    }
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
 
     /**
      * @param requestBody

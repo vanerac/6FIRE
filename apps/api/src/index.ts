@@ -31,13 +31,20 @@ app.use(
         validateRequests: {
             removeAdditional: 'all',
             allowUnknownQueryParameters: false,
-            coerceTypes: true,
+            coerceTypes: false,
         },
         validateResponses: {
-            removeAdditional: 'all',
+            removeAdditional: 'failing',
+            onError: console.error, // todo: temporary solution
         },
         validateFormats: 'full',
         operationHandlers: false,
+        fileUploader: {
+            dest: '../../data/uploads',
+            limits: {
+                fileSize: 10 * 1024 * 1024,
+            },
+        },
         // validateSecurity: {
         //     handlers: {
         //         BearerAuth: (req: Request, scopes: string[], schema: SecuritySchemeObject): boolean => {

@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { checkPassword, generateToken, hashPassword } from '../../tools/auth.tools';
 import { AWSsendEmail, sendSMS } from '../../tools/notifications.tools';
@@ -33,19 +33,22 @@ const createVerificationCode = async (
 };
 
 export default class AuthController {
-    static async register(req: Request, res: Response) {
+    static async register(req: Request, res: Response, next: NextFunction) {
+        let user = undefined;
         try {
             const { email, password, firstName, lastName, countryId, telephone, confirm_password, CGU } = req.body;
 
+            console.log(req.body);
             if (
                 [CGU, email, password, confirm_password, firstName, lastName, countryId, telephone].includes(undefined)
             ) {
+                console.log('missing fields');
                 return res.status(400).json({
                     message: 'Missing required fields',
                 });
             }
 
-            const user = await client.user.create({
+            user = await client.user.create({
                 data: {
                     firstName,
                     lastName,
@@ -61,16 +64,20 @@ export default class AuthController {
                 },
             });
 
-            await Promise.all([
-                await createVerificationCode(user, 'PHONE'),
-                await createVerificationCode(user, 'EMAIL'),
-            ]);
-
-            return res.status(201);
+            return res.status(200);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            console.log(error);
+            if (error.code === 'P2002') {
+                return res.status(400).json({
+                    message: 'User already exists',
+                });
+            }
+            next(error);
+        } finally {
+            if (user)
+                Promise.all([createVerificationCode(user, 'PHONE'), createVerificationCode(user, 'EMAIL')]).catch(
+                    () => undefined,
+                );
         }
     }
 

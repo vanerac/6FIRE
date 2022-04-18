@@ -1,17 +1,17 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type {BaseHttpRequest} from './core/BaseHttpRequest';
-import type {OpenAPIConfig} from './core/OpenAPI';
-import {AxiosHttpRequest} from './core/AxiosHttpRequest';
+import type { BaseHttpRequest } from './core/BaseHttpRequest';
+import type { OpenAPIConfig } from './core/OpenAPI';
+import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
-import {ArticleService} from './services/ArticleService';
-import {AuthService} from './services/AuthService';
-import {CryptoService} from './services/CryptoService';
-import {SubscriptionService} from './services/SubscriptionService';
-import {ThemesService} from './services/ThemesService';
-import {TradersService} from './services/TradersService';
-import {UserService} from './services/UserService';
+import { ArticleService } from './services/ArticleService';
+import { AuthService } from './services/AuthService';
+import { CryptoService } from './services/CryptoService';
+import { SubscriptionService } from './services/SubscriptionService';
+import { ThemesService } from './services/ThemesService';
+import { TradersService } from './services/TradersService';
+import { UserService } from './services/UserService';
 
 type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
 
