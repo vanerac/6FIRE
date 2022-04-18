@@ -2,7 +2,6 @@
 
 .bot-trading {
   background-color: transparent;
-  cursor: pointer;
   height: 100vh;
   margin: 0px;
   min-height: 1817px;
@@ -123,6 +122,7 @@
   position: absolute;
   top: 0px;
   width: 156px;
+  cursor: pointer;
 }
 
 .bot-trading .rectangle-3560-prXDZd {
@@ -176,7 +176,7 @@
 .bot-trading .bloc-1-FwUAid {
   background-color: transparent;
   height: 58.39%;
-  left: 0px;
+  left: calc(50% - 680px);
   position: absolute;
   top: 27.08%;
   width: 100%;

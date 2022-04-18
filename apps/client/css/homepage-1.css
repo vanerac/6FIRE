@@ -1,5 +1,9 @@
 /* screen - homepage-1 */
 
+.body {
+  margin: O;
+}
+
 .homepage-1 {
   background-color: var(--white);
   height: 100vh;
@@ -415,6 +419,7 @@
   right: 0px;
   top: 0px;
   width: 300px;
+  cursor: pointer;
 }
 
 .homepage-1 .groupe-de-masques-323-XPBk3x {

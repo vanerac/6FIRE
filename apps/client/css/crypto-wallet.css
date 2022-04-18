@@ -2,7 +2,6 @@
 
 .crypto-wallet {
   background-color: transparent;
-  cursor: pointer;
   height: 100vh;
   margin: 0px;
   min-height: 1306px;
@@ -24,7 +23,7 @@
 .crypto-wallet .background-XPwy4i {
   background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
   background-color: transparent;
-  height: 899px;
+  height: 100%;
   left: 0px;
   position: absolute;
   top: 144px;
@@ -51,7 +50,7 @@
   line-height: 16px;
   position: absolute;
   text-align: left;
-  top: calc(23.06% - 5px);
+  top: calc(24%);
   width: 257px;
 }
 
@@ -1834,7 +1833,8 @@
   background-color: transparent;
   height: 39px;
   position: absolute;
-  right: 778px;
+  /* right: calc(50.00% + 100px); */
+  left: calc(30.72% - 79px);
   top: calc(26.72% - 10px);
   width: 247px;
 }
