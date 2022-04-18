@@ -24,6 +24,7 @@ model User {
   password          String
   telephone         String
   countryId         Int
+  CGU               Boolean
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @default(now())
   isAdmin           Boolean             @default(false)
@@ -34,12 +35,15 @@ model User {
   VerificationCodes VerificationCodes[]
   TraderFollows     TraderFollows[]
   UserSubscription  UserSubscription[]
+
+  @@unique([email, verifiedEmail])
+  @@unique([telephone, verifiedPhone])
 }
 
 model VerificationCodes {
   id        Int              @id @default(autoincrement())
   userId    Int
-  code      String
+  code      Int
   type      VerificationType
   createdAt DateTime         @default(now())
   updatedAt DateTime         @default(now())

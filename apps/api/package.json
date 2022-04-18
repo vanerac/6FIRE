@@ -5,10 +5,11 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "predev": "npx prisma generate",
+    "predev": "npx prisma generate && npm run migrate",
     "dev": "npx nodemon src/index.ts",
     "lint": "eslint src/**/*.ts",
     "build": "npx tsc --build --verbose",
+    "migrate": "npx prisma db push",
     "lint:fix": "eslint --fix src/**/*.ts"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^3.12.0",
+    "aws-sdk": "^2.1116.0",
     "axios": "^0.26.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",

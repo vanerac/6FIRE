@@ -3,7 +3,8 @@
 /* eslint-disable */
 
 export type User = {
-    id?: string;
+    id?: number;
+    userId?: string;
     firstName?: string;
     lastName?: string;
     email?: string;

@@ -26,6 +26,7 @@ export class UserService {
             mediaType: 'application/json',
             errors: {
                 400: `Invalid user supplied`,
+                401: `Unauthorized`,
                 500: `Internal server error`,
             },
         });
@@ -62,6 +63,7 @@ export class UserService {
             },
             errors: {
                 400: `Invalid user supplied`,
+                401: `Unauthorized`,
                 500: `Internal server error`,
             },
         });
