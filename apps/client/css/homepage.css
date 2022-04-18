@@ -1,5 +1,9 @@
 /* screen - homepage */
 
+.body {
+  margin: 0;
+}
+
 .homepage {
   background-color: var(--white);
   height: 100vh;
@@ -151,6 +155,7 @@
   position: absolute;
   top: 0px;
   width: 100%;
+  cursor: pointer;
 }
 
 .homepage .nous-rejoindre-f3cQ2w {
@@ -202,6 +207,7 @@
   position: absolute;
   top: 0px;
   width: 100%;
+  cursor: pointer;
 }
 
 .homepage .connexion-FL6OPd {

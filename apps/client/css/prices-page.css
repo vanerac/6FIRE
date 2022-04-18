@@ -1,5 +1,9 @@
 /* screen - prices-page */
 
+body {
+  margin: 0;
+}
+
 .prices-page {
   background-color: var(--white);
   height: 100vh;

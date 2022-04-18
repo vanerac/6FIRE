@@ -1,8 +1,11 @@
 /* screen - trading-forex */
 
+body {
+  margin: 0;
+}
+
 .trading-forex {
   background-color: transparent;
-  cursor: pointer;
   height: 100vh;
   margin: 0px;
   min-height: 1372px;
@@ -24,7 +27,7 @@
 .trading-forex .background-GY9xoT {
   background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
   background-color: transparent;
-  height: 965px;
+  height: 100%;
   left: 0px;
   position: absolute;
   top: 144px;

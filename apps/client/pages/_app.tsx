@@ -15,6 +15,7 @@ import '../css/bot-trading.css';
 import '../css/bot-trading-traders.css';
 import '../css/crypto-wallet.css';
 import '../css/nos-trades.css';
+import '../css/header.css';
 import { useState } from 'react';
 import Sidebar from './components/sideBar';
 

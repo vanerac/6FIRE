@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
+import Header from './components/header';
 
-const HomePage: NextPage = () => {
+const HomePage: NextPage = (props: any) => {
     return (
-        <body style={{ margin: 0, background: '#ffffff' }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="trading" />
             <div className="trading screen">
                 <img className="groupe-de-masques-333-3LBGsu" src="img/mask-group-333@1x.png" />
@@ -41,7 +42,8 @@ const HomePage: NextPage = () => {
                         <img className="icon-simple-tiktok-NVC3AW" src="img/icon-simple-tiktok-1@1x.png" />
                     </div>
                 </div>
-                <div className="header-3LBGsu">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+                {/* <div className="header-3LBGsu">
                     <div className="rectangle-3483-6cQg9k"></div>
                     <a href="homepage-1.html">
                         <div className="logo-6cQg9k">
@@ -129,7 +131,7 @@ const HomePage: NextPage = () => {
                     <div className="search-bar-6cQg9k">
                         <img className="icon-search-7x903f" src="img/icon-ionic-ios-search-11@1x.png" />
                     </div>
-                </div>
+                </div> */}
                 <div className="h2-3LBGsu lato-bold-white-14px">
                     CONTACTEZ NOUS POUR ACCÉDER AU CANAL TELEGRAM DES MEMBRES TRADING &amp; CRYPTO
                     <br />
@@ -188,8 +190,9 @@ const HomePage: NextPage = () => {
                 <div className="paragraph-8BChM2 lato-bold-white-14px">FOREX</div>
                 <img className="ligne-38-3LBGsu" src="img/line-38@1x.png" />
                 <div className="icon-actif-WACo3F">
-                    <div className="ellipse-17693-Y55Uhp"></div>
-                    <img className="font-awsome-wallet-Y55Uhp" src="img/fontawsome--wallet--1@1x.png" />
+                    <div className="ellipse-17693-Y55Uhp">
+                        <img className="font-awsome-wallet-Y55Uhp" src="img/fontawsome--wallet--1@1x.png" />
+                    </div>
                 </div>
                 <div className="paragraph-Jqjrbf lato-bold-white-14px">CRYPTO WALLET</div>
                 <div className="paragraph-wmWWGn lato-normal-white-12px">
@@ -199,8 +202,9 @@ const HomePage: NextPage = () => {
                 </div>
                 <img className="ligne-39-3LBGsu" src="img/line-37@1x.png" />
                 <div className="icon-actif-CYhAka">
-                    <div className="ellipse-17693-eZI6fo"></div>
-                    <img className="icon-awesome-robot-eZI6fo" src="img/icon-awesome-robot-1@1x.png" />
+                    <div className="ellipse-17693-eZI6fo">
+                        <img className="icon-awesome-robot-eZI6fo" src="img/icon-awesome-robot-1@1x.png" />
+                    </div>
                 </div>
                 <div className="paragraph-cxW2ZF lato-bold-white-14px">BOT TRADING</div>
                 <div className="paragraph-V9zAaz lato-normal-white-12px">
@@ -223,24 +227,28 @@ const HomePage: NextPage = () => {
                     besoin. <br />
                     N’hésite pas à nous contacter en cas de questions.
                 </div>
-                <div className="bouton-affi-3LBGsu">
-                    <div className="rectangle-8-uw4ETs"></div>
-                    <img className="binance-svgrepo-com-uw4ETs" src="img/binance-svgrepo-com-1@1x.png" />
-                    <div className="c-rer-un-compte-binance-uw4ETs roboto-bold-black-12px">CRÉER UN COMPTE BINANCE</div>
-                    <img
-                        className="icon-ionic-ios-arrow-round-forward-uw4ETs"
-                        src="img/icon-ionic-ios-arrow-round-forward-2@1x.png"
-                    />
-                </div>
-                <div className="bouton-affi-wsIV14">
-                    <div className="rectangle-8-B3xtBx"></div>
-                    <div className="crer-un-compte-puprime-B3xtBx">CRÉER UN COMPTE PUPRIME</div>
-                    <img
-                        className="icon-ionic-ios-arrow-round-forward-B3xtBx"
-                        src="img/icon-ionic-ios-arrow-round-forward-1@1x.png"
-                    />
-                    <div className="groupe-3019-B3xtBx">
-                        <img className="groupe-3019-MO4hLn" src="img/group-3019-1@1x.png" />
+                <div>
+                    <div className="bouton-affi-3LBGsu">
+                        {/* <div className="rectangle-8-uw4ETs"></div> */}
+                        <img className="binance-svgrepo-com-uw4ETs" src="img/binance-svgrepo-com-1@1x.png" />
+                        <div className="c-rer-un-compte-binance-uw4ETs roboto-bold-black-12px">
+                            CRÉER UN COMPTE BINANCE
+                        </div>
+                        <img
+                            className="icon-ionic-ios-arrow-round-forward-uw4ETs"
+                            src="img/icon-ionic-ios-arrow-round-forward-2@1x.png"
+                        />
+                    </div>
+                    <div className="bouton-affi-wsIV14">
+                        {/* <div className="rectangle-8-B3xtBx"></div> */}
+                        <div className="crer-un-compte-puprime-B3xtBx">CRÉER UN COMPTE PUPRIME</div>
+                        <img
+                            className="icon-ionic-ios-arrow-round-forward-B3xtBx"
+                            src="img/icon-ionic-ios-arrow-round-forward-1@1x.png"
+                        />
+                        <div className="groupe-3019-B3xtBx">
+                            <img className="groupe-3019-MO4hLn" src="img/group-3019-1@1x.png" />
+                        </div>
                     </div>
                 </div>
                 <div className="icon-actif-8BChM2">
@@ -2093,7 +2101,7 @@ const HomePage: NextPage = () => {
         }
       };
     </script> */}
-        </body>
+        </div>
     );
 };
 
