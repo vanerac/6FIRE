@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import router from 'next/router';
+import Image from 'next/image';
 
 const HomePage: NextPage = (props: any) => {
     return (
@@ -37,8 +38,8 @@ const HomePage: NextPage = (props: any) => {
                         <img className="groupe-1485-Jzdzun" src="img/group-1485-1@1x.png" />
                     </div>
                 </div>
+
                 <div className="connexion-zYNucu">
-                    {/* <Link href="/connexion"> */}
                     <div onClick={() => props.useStateOpenSideBar(true)} className="connexion-LAc7m9">
                         <div className="connexion-FL6OPd">
                             <div className="club-premium-5UOfx0 lato-normal-white-14px">Club Privé</div>
@@ -49,8 +50,7 @@ const HomePage: NextPage = (props: any) => {
                             <img className="trac-2-oIJAsx" src="img/path-2-10@1x.png" />
                         </div>
                     </div>
-                    {/* </Link> */}
-                    <div className="connexion-5l40sx hidden">
+                    {/* <div className="connexion-5l40sx hidden">
                         <div className="background-ODVNCb"></div>
                         <div className="groupe-1487-ODVNCb">
                             <img className="ligne-10-nseAnb" src="img/line-10-10@1x.png" />
@@ -94,9 +94,10 @@ const HomePage: NextPage = (props: any) => {
                                 <div className="crer-un-compte-0UZQRZ lato-normal-licorice-14px">Créer un compte</div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
+
             <div className="homepage-2 screen">
                 <div className="background-UwGJ9Z"></div>
                 <div className="club-priv-dinvestisseur-UwGJ9Z lato-light-manatee-18px">Club privé d’investisseur</div>
@@ -137,27 +138,8 @@ const HomePage: NextPage = (props: any) => {
             </div>
             <div className="homepage-button-animation screen">
                 <div className="background-cB6ICl"></div>
-                <div className="club-priv-dinvestisseur-cB6ICl lato-light-manatee-18px">Club privé d’investisseur</div>
-                <div className="logo-cB6ICl">
-                    <div className="groupe-2-KG15NJ">
-                        <img className="groupe-1-xxawnC" src="img/group-1-2@1x.png" />
-                    </div>
-                    <img className="effect-KG15NJ" src="img/effect-10@1x.png" />
-                </div>
-                <div className="icon-ionic-ios-menu-cB6ICl">
-                    <img className="trac-1-572WhD" src="img/path-1-10@1x.png" />
-                    <img className="trac-2-572WhD" src="img/path-2-10@1x.png" />
-                </div>
-                <div className="button-nous-rejoindre-cB6ICl">
-                    <div className="rectangle-3470-m6f9GA"></div>
-                    <div className="nous-rejoindre-m6f9GA lato-normal-black-16px">Nous rejoindre</div>
-                    <div className="groupe-1486-m6f9GA">
-                        <img className="groupe-1485-e9gjSa" src="img/group-1485-1@1x.png" />
-                    </div>
-                </div>
-                <div className="connexion-cB6ICl">
-                    <div className="club-premium-kgPGf2 lato-normal-white-14px">Club Privé</div>
-                    <img className="ligne-8-kgPGf2" src="img/line-8-10@1x.png" />
+                <div className="club-priv-dinvestisseur-cB6ICl lato-light-manatee-18px">
+                    <Image objectFit="cover" layout="fill" src="/img/mask-group-332@1x.png"></Image>
                 </div>
             </div>
         </div>

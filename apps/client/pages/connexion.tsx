@@ -1,15 +1,82 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import router from 'next/router';
+// import router from 'next/router';
 import { useState } from 'react';
+// import axios from 'axios';
 
 const Home: NextPage = (props: any) => {
     const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [setuserSurName, setUserSurName] = useState('');
+    const [userMail, setUserMail] = useState('');
+    const [userPhone, setUserPhone] = useState('');
+    const [errorUserName, setErrorUserName] = useState('');
+    const [errorPassword, setErrorPassword] = useState('');
+    const [errorUserSurName, setErrorUserSurName] = useState('');
+    const [errorUserMail, setErrorUserMail] = useState('');
+    const [errorUserPhone, setErrorUserPhone] = useState('');
+    const [showPassword, setShowPassword] = useState('password');
+    const [cguChecked, setCguChecked] = useState(false);
+    const [errorCgu, setErrorCgu] = useState('');
+
+    const create_account = () => {
+        console.log(userName);
+        console.log(password);
+        console.log(setuserSurName);
+        console.log(userMail);
+        console.log(userPhone);
+
+        if (userName === '') {
+            setErrorUserName("Votre nom d'utilisateur est obligatoire");
+        }
+        if (password === '') {
+            setErrorPassword('Votre mot de passe est obligatoire');
+        }
+        if (setuserSurName === '') {
+            setErrorUserSurName('Votre nom est obligatoire');
+        }
+        if (userMail === '') {
+            setErrorUserMail('Votre mail est obligatoire');
+        }
+
+        if (userPhone === '') {
+            setErrorUserPhone('Votre numéro de téléphone est obligatoire');
+        }
+        // if password is not 8 characters long
+        if (password.length < 8) {
+            setErrorPassword('Votre mot de passe doit contenir au moins 8 caractères');
+        }
+        if (cguChecked === false) {
+            setErrorCgu('Vous devez accepter les CGU');
+        }
+
+        // axios
+        //     .post('http://localhost:3333/api/user', {
+        //         // id: 0,
+        //         // userId: 'string',
+        //         firstName: 'string',
+        //         lastName: 'string',
+        //         email: 'string',
+        //         password: 'string',
+        //         telephone: 'string',
+        //         countryId: 0,
+        //         createdAt: 'string',
+        //         updatedAt: 'string',
+        //         isAdmin: true,
+        //         verifiedEmail: true,
+        //         verifiedPhone: true,
+        //         banned: false,
+        //         headers: {
+        //             'Access-Control-Allow-Origin': '*',
+        //         },
+        //     })
+        //     .then((res) => console.log(res));
+        // router.push('/articlesPage');
+    };
 
     return (
         <div>
-            {userName}
             <input type="hidden" id="anPageName" name="page" value="register-web" />
             <div className="register-web screen">
                 <div className="background-WxaGAS"></div>
@@ -31,7 +98,19 @@ const Home: NextPage = (props: any) => {
                 </div>
                 <div className="cgu-rgpd-WxaGAS">
                     {/* <div className="rectangle-3474-qVPDai border-1px-white"></div> */}
-                    <input type="checkbox" id="cgu" name="cgu" />
+                    <input
+                        type="checkbox"
+                        id="cgu"
+                        name="cgu"
+                        onChange={() => {
+                            if (cguChecked === false) {
+                                setErrorCgu('');
+                                setCguChecked(true);
+                            } else {
+                                setCguChecked(false);
+                            }
+                        }}
+                    />
                     <div className="en-crant-un-compte-v-qVPDai">
                         <span className="span0-qb1m9I lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
@@ -42,42 +121,114 @@ const Home: NextPage = (props: any) => {
                         </span>
                         <span className="span3-qb1m9I lato-normal-white-12px">Politique de confidentialité</span>
                         <span className="span4-qb1m9I lato-normal-white-12px"> de 6FIRE.</span>
+                        <br />
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorCgu}
+                        </div>
                     </div>
                 </div>
                 <div className="nom-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {errorUserName !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        {/* <Image style={{ color: 'red' }} layout="fill" src="/img/ligne-1-1@1x.png" /> */}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorUserName}
+                        </div>
                     </div>
                     <input
                         placeholder="*Nom"
-                        onChange={(event) => setUserName(event.target.value)}
+                        onChange={(event) => {
+                            setErrorUserName('');
+                            setUserName(event.target.value);
+                        }}
                         className="nom-Ay5Yag lato-normal-white-14px"
                         type="text"
                     />
                 </div>
                 <div className="prnom-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {/* <Image layout="fill" src="/img/ligne-1-1@1x.png" /> */}
+                        {errorUserSurName !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorUserSurName}
+                        </div>
                     </div>
-                    <input placeholder="*Prénom" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
+                    <input
+                        placeholder="*Prénom"
+                        onChange={(event) => {
+                            setErrorUserSurName('');
+                            setUserSurName(event.target.value);
+                        }}
+                        className="nom-Ay5Yag lato-normal-white-14px"
+                        type="text"
+                    />
                 </div>
                 <div className="numro-de-tlphone-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {/* <Image layout="fill" src="/img/ligne-1-1@1x.png" /> */}
+                        {errorUserMail !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorUserMail}
+                        </div>
                     </div>
-                    <input placeholder="*Email" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
+                    <input
+                        placeholder="*Email"
+                        onChange={(event) => {
+                            setErrorUserMail('');
+                            setUserMail(event.target.value);
+                        }}
+                        className="nom-Ay5Yag lato-normal-white-14px"
+                        type="text"
+                    />
                 </div>
                 <div className="mot-de-passe-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {errorPassword !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        {/* <Image layout="fill" src="/img/ligne-1-1@1x.png" /> */}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorPassword}
+                        </div>
                     </div>
-                    <input placeholder="* Mot de passe" className="nom-Ay5Yag lato-normal-white-14px" type="text" />
+                    <input
+                        placeholder="*Mot de passe"
+                        onChange={(event) => {
+                            setErrorPassword('');
+                            setPassword(event.target.value);
+                        }}
+                        className="nom-Ay5Yag lato-normal-white-14px"
+                        type={showPassword}
+                    />
 
-                    <div className="icon-ionic-md-eye-off-YId6x8">
+                    <div
+                        onClick={() => {
+                            console.log('showPassword', showPassword);
+                            if (showPassword == 'password') {
+                                setShowPassword('text');
+                            } else {
+                                setShowPassword('password');
+                            }
+                        }}
+                        className="icon-ionic-md-eye-off-YId6x8">
                         <Image layout="fill" src="/img/icon-ionic-md-eye-off-1@1x.png" />
                     </div>
                 </div>
-                <div onClick={() => router.push('/articlesPage')} className="button-sign-in-WxaGAS">
+                <div onClick={create_account} className="button-sign-in-WxaGAS">
                     <div className="button-cration-de-compte-43BKS5">
                         <div className="rectangle-3470-C8EDSj"></div>
                         <div className="crer-un-compte-C8EDSj">Créer un compte</div>
@@ -90,9 +241,21 @@ const Home: NextPage = (props: any) => {
                 </div>
                 <div className="numro-de-tlphone-Ae6KpX">
                     <div className="ligne-1-Ay5Yag">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {errorUserPhone !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorUserPhone}
+                        </div>
+                        {/* <Image layout="fill" src="/img/ligne-1-1@1x.png" /> */}
                     </div>
                     <input
+                        onChange={(event) => {
+                            setErrorUserPhone('');
+                            setUserPhone(event.target.value);
+                        }}
                         placeholder="*Numéro de téléphone"
                         className="nom-Ay5Yag lato-normal-white-14px"
                         type="text"
