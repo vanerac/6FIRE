@@ -30,7 +30,7 @@ resource "aws_security_group" "ecs_tasks" {
   vpc_id      = aws_vpc.main.id
   ingress {
     protocol        = "tcp"
-    from_port       = 3000
+    from_port       = 2000 // was 3000
     to_port         = 3333
     security_groups = [aws_security_group.lb_api.id]
   }

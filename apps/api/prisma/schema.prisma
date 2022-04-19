@@ -31,13 +31,13 @@ model User {
   verifiedEmail     Boolean             @default(false)
   verifiedPhone     Boolean             @default(false)
   banned            Boolean             @default(false)
-  country           Country             @relation(fields: [countryId], references: [id])
+  country           Country             @relation(fields: [countryId], references: [id], onDelete: SetNull)
   VerificationCodes VerificationCodes[]
   TraderFollows     TraderFollows[]
   UserSubscription  UserSubscription[]
 
-  @@unique([email, verifiedEmail])
-  @@unique([telephone, verifiedPhone])
+  @@unique(email)
+  @@unique(telephone)
 }
 
 model VerificationCodes {
@@ -47,7 +47,7 @@ model VerificationCodes {
   type      VerificationType
   createdAt DateTime         @default(now())
   updatedAt DateTime         @default(now())
-  User      User             @relation(fields: [userId], references: [id])
+  User      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Subscription {
@@ -67,8 +67,8 @@ model UserSubscription {
   subscriptionId Int
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @default(now())
-  User           User         @relation(fields: [userId], references: [id])
-  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  User           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Subscription   Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
 }
 
 model Theme {
@@ -88,7 +88,7 @@ model Article {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   themesId  Int
-  Theme     Theme    @relation(fields: [themesId], references: [id])
+  Theme     Theme    @relation(fields: [themesId], references: [id], onDelete: Cascade)
 
 }
 
@@ -132,7 +132,7 @@ model TraderFollows {
   traderId      Int
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @default(now())
-  User          User          @relation(fields: [userId], references: [id])
-  CuratedTrader CuratedTrader @relation(fields: [traderId], references: [id])
+  User          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  CuratedTrader CuratedTrader @relation(fields: [traderId], references: [id], onDelete: Cascade)
 
 }

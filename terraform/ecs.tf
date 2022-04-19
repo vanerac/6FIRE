@@ -275,10 +275,6 @@ resource "aws_ecs_task_definition" "api" {
   tags = {
     project = "6fire"
   }
-  depends_on = [
-    aws_ecr_repository.api,
-    aws_db_instance.default
-  ]
   execution_role_arn       = aws_iam_role.esc_execution_role.arn
   task_role_arn            = aws_iam_role.ecs_task_role.arn
   family                   = "${var.ecs_task_definition_family}-api"
@@ -322,11 +318,11 @@ resource "aws_ecs_task_definition" "api" {
       },
       {
         "name": "DB_NAME",
-        "value": "6fire"
+        "value": "${aws_db_instance.default.name}"
       },
       {
         "name": "DATABASE_URL",
-        "value": "postgres://${aws_db_instance.default.username}:${aws_db_instance.default.password}@${aws_db_instance.default.address}:${aws_db_instance.default.port}/${aws_db_instance.default.name}"
+        "value": "postgres://${aws_db_instance.default.username}:${aws_db_instance.default.password}@${aws_db_instance.default.address}:${aws_db_instance.default.port}"
       }
     ],
     "logConfiguration": {
@@ -336,7 +332,13 @@ resource "aws_ecs_task_definition" "api" {
         "awslogs-region": "eu-west-3",
         "awslogs-stream-prefix": "api"
       }
+    },
+    "mountPoints" : [
+      {
+        "containerPath" : "/upload",
+        "sourceVolume" : "6fire-efs-token"
     }
+    ]
   }
 ]
 DEFINITION
@@ -346,6 +348,13 @@ DEFINITION
   memory                   = 1024
   // add cloudwatch stream
 
+  volume {
+    name = "6fire-efs-token"
+    efs_volume_configuration {
+      file_system_id = aws_efs_file_system.main.id
+      root_directory = "/upload"
+    }
+  }
 }
 
 
@@ -353,10 +362,6 @@ resource "aws_ecs_task_definition" "client" {
   tags = {
     project = "6fire"
   }
-  depends_on = [
-    aws_ecr_repository.client,
-    aws_ecr_repository.api
-  ]
 
   family                   = "${var.ecs_task_definition_family}-client"
   execution_role_arn       = aws_iam_role.esc_execution_role.arn
@@ -409,9 +414,6 @@ resource "aws_ecs_task_definition" "dashboard" {
   tags = {
     project = "6fire"
   }
-  depends_on = [
-    aws_ecr_repository.api, aws_ecr_repository.dashboard
-  ]
   family                   = "${var.ecs_task_definition_family}-dashboard"
   execution_role_arn       = aws_iam_role.esc_execution_role.arn
   task_role_arn            = aws_iam_role.ecs_task_role.arn
@@ -457,8 +459,7 @@ DEFINITION
 
 // ecs services
 resource "aws_ecs_service" "api" {
-  platform_version = "1.3.0"
-  tags             = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-api"
@@ -468,8 +469,8 @@ resource "aws_ecs_service" "api" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups  = [aws_security_group.ecs_tasks.id]
-    subnets          = flatten([aws_subnet.public.*.id, aws_subnet.private.*.id])
+    security_groups  = [aws_security_group.ecs_tasks.id, aws_security_group.lb_api.id]
+    subnets          = flatten([aws_subnet.public.*.id, aws_subnet.private.*.id, aws_subnet.storage.id])
     assign_public_ip = true
   }
   load_balancer {
@@ -477,19 +478,10 @@ resource "aws_ecs_service" "api" {
     container_name   = "api"
     container_port   = 3333
   }
-  depends_on = [
-    aws_alb_listener.api,
-    aws_ecr_repository.api,
-    aws_ecs_task_definition.api
-  ]
-  #  deployment_controller {
-  #    type = "CODE_DEPLOY"
-  #  }
 }
 
 resource "aws_ecs_service" "client" {
-  platform_version = "1.3.0"
-  tags             = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-client"
@@ -508,22 +500,10 @@ resource "aws_ecs_service" "client" {
     container_name   = "client"
     container_port   = 3000
   }
-  #  deployment_controller {
-  #    type = "CODE_DEPLOY"
-  #  }
-  depends_on = [
-    aws_alb_listener.client,
-    aws_ecr_repository.client,
-    aws_ecs_task_definition.client,
-    aws_ecs_service.api,
-    aws_alb.api,
-    aws_db_instance.default
-  ]
 }
 
 resource "aws_ecs_service" "dashboard" {
-  platform_version = "1.3.0"
-  tags             = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-dashboard"
@@ -542,14 +522,4 @@ resource "aws_ecs_service" "dashboard" {
     container_name   = "dashboard"
     container_port   = 3000
   }
-  #  deployment_controller {
-  #    type = "CODE_DEPLOY"
-  #  }
-  depends_on = [
-    aws_alb_listener.dashboard,
-    aws_ecr_repository.dashboard,
-    aws_ecs_task_definition.dashboard,
-    aws_ecs_service.api,
-    aws_alb.api
-  ]
 }
