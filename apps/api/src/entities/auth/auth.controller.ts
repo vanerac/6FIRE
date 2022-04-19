@@ -36,12 +36,10 @@ export default class AuthController {
     static async register(req: Request, res: Response, next: NextFunction) {
         let user = undefined;
         try {
-            const { email, password, firstName, lastName, countryId, telephone, confirm_password, CGU } = req.body;
+            const { email, password, firstName, lastName, telephone, confirm_password, CGU } = req.body;
 
             console.log(req.body);
-            if (
-                [CGU, email, password, confirm_password, firstName, lastName, countryId, telephone].includes(undefined)
-            ) {
+            if ([CGU, email, password, confirm_password, firstName, lastName, telephone].includes(undefined)) {
                 console.log('missing fields');
                 return res.status(400).json({
                     message: 'Missing required fields',
@@ -53,11 +51,11 @@ export default class AuthController {
                     firstName,
                     lastName,
                     telephone,
-                    country: {
-                        connect: {
-                            id: +countryId,
-                        },
-                    },
+                    // country: {
+                    //     connect: {
+                    //         id: +countryId,
+                    //     },
+                    // },
                     email,
                     password: hashPassword(password),
                     CGU: !!CGU,
