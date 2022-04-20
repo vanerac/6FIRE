@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function AbonnementCodePromo() {
     return (
@@ -100,29 +101,7 @@ export default function AbonnementCodePromo() {
                             />
                         </div>
                     </div>
-                    <div className="top-navigation-o3qHqt">
-                        <div className="rectangle-sXDEMi"></div>
-                        <div className="top-navigation-search-sXDEMi">
-                            <div className="x00-general-01-icons-6uzDlD">
-                                <img className="color-CiUxxx" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-6uzDlD poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-sXDEMi">
-                            <div className="users-avatar-photo-2-states-bPSsGs">
-                                <img className="oval-x1BJ6S" src="img/oval-10@1x.png" />
-                                <img className="image-x1BJ6S" src="img/image-11@1x.png" />
-                            </div>
-                            <div className="monica-simons-bPSsGs poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-bPSsGs">
-                                <img className="trac-399-Bvotxx" src="img/home-10@1x.png" />
-                                <img className="trac-400-Bvotxx" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-sXDEMi">
-                            <img className="groupe-1-xYtfx6" src="img/groupe-1-10@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <a href="abonnement-code-promo-creer.tsx">
                         <div className="buttons-btn-text-icon-o3qHqt">
                             <div className="type-ytGzbE"></div>

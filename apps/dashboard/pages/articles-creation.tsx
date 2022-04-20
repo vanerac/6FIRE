@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function ArticlesCreation() {
     return (
@@ -7,29 +8,7 @@ export default function ArticlesCreation() {
             <div className="container-center-horizontal">
                 <div className="articles-creer-un-article screen">
                     <div className="analytics-KWTlO3 poppins-semibold-semi-bold-mirage-24px">Créer un article</div>
-                    <div className="top-navigation-KWTlO3">
-                        <div className="rectangle-y9Txzy"></div>
-                        <div className="top-navigation-search-y9Txzy">
-                            <div className="x00-general-01-icons-6mnAFY">
-                                <img className="color-WvWtfx" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-6mnAFY poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-y9Txzy">
-                            <div className="users-avatar-photo-2-states-LoH6yY">
-                                <img className="oval-6k1vK2" src="img/oval-10@1x.png" />
-                                <img className="image-6k1vK2" src="img/image-8@1x.png" />
-                            </div>
-                            <div className="monica-simons-LoH6yY poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-LoH6yY">
-                                <img className="trac-399-WANiKz" src="img/home-10@1x.png" />
-                                <img className="trac-400-WANiKz" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-y9Txzy">
-                            <img className="groupe-1-aJw0vz" src="img/groupe-1-21@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="action-KWTlO3">
                         <div className="buttons-btn-text-icon-uAMshA">
                             <div className="type-YV9SAA"></div>

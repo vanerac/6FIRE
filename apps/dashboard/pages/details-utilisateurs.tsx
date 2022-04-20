@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function DetailsUtilisateurs() {
     return (
@@ -7,29 +8,7 @@ export default function DetailsUtilisateurs() {
             <div className="container-center-horizontal">
                 <div className="details-utilisateurs screen">
                     <div className="analytics-HZRbSP poppins-semibold-semi-bold-mirage-24px">Profil user</div>
-                    <div className="top-navigation-HZRbSP">
-                        <div className="rectangle-FX4BlE"></div>
-                        <div className="top-navigation-search-FX4BlE">
-                            <div className="x00-general-01-icons-4sYiRs">
-                                <img className="color-l1we4w" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-4sYiRs poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-FX4BlE">
-                            <div className="users-avatar-photo-2-states-OwFqOH">
-                                <img className="oval-GA58bf" src="img/oval-10@1x.png" />
-                                <img className="image-GA58bf" src="img/image-4@1x.png" />
-                            </div>
-                            <div className="monica-simons-OwFqOH poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-OwFqOH">
-                                <img className="trac-399-1VXelP" src="img/home-10@1x.png" />
-                                <img className="trac-400-1VXelP" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-FX4BlE">
-                            <img className="groupe-1-lqxn4x" src="img/groupe-1-2@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="action-HZRbSP">
                         <div className="rectangle-631-qgxb7t"></div>
                         <div className="buttons-btn-text-icon-qgxb7t">

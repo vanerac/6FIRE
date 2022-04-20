@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function CreerUnAbonnement() {
     return (
@@ -78,29 +79,7 @@ export default function CreerUnAbonnement() {
                             src="img/icon-ionic-ios-arrow-down-10@1x.png"
                         />
                     </div>
-                    <div className="top-navigation-zmtgzx">
-                        <div className="rectangle-ef8SnA"></div>
-                        <div className="top-navigation-search-ef8SnA">
-                            <div className="x00-general-01-icons-pM3au3">
-                                <img className="color-2QHZ5D" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-pM3au3 poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-ef8SnA">
-                            <div className="users-avatar-photo-2-states-iMqYE7">
-                                <img className="oval-ad3sbP" src="img/oval-10@1x.png" />
-                                <img className="image-ad3sbP" src="img/image-14@1x.png" />
-                            </div>
-                            <div className="monica-simons-iMqYE7 poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-iMqYE7">
-                                <img className="trac-399-bxUwfH" src="img/home-10@1x.png" />
-                                <img className="trac-400-bxUwfH" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-ef8SnA">
-                            <img className="groupe-1-qDjgbx" src="img/groupe-1-12@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-zmtgzx">
                         <div className="type-VxCxaA"></div>
                         <div className="groupe-393-VxCxaA">

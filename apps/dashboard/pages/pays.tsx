@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function Pays() {
     return (
@@ -7,29 +8,7 @@ export default function Pays() {
             <div className="container-center-horizontal">
                 <div className="pays screen">
                     <div className="analytics-ele2Hq poppins-semibold-semi-bold-mirage-24px">Pays</div>
-                    <div className="top-navigation-ele2Hq">
-                        <div className="rectangle-3oDr6D"></div>
-                        <div className="top-navigation-search-3oDr6D">
-                            <div className="x00-general-01-icons-08xtC7">
-                                <img className="color-Jh0Za1" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-08xtC7 poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-3oDr6D">
-                            <div className="users-avatar-photo-2-states-xhsMQq">
-                                <img className="oval-j9MEe9" src="img/oval-10@1x.png" />
-                                <img className="image-j9MEe9" src="img/image-11@1x.png" />
-                            </div>
-                            <div className="monica-simons-xhsMQq poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-xhsMQq">
-                                <img className="trac-399-dJG8OB" src="img/home-10@1x.png" />
-                                <img className="trac-400-dJG8OB" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-3oDr6D">
-                            <img className="groupe-1-Nf8ECI" src="img/groupe-1-10@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-ele2Hq">
                         <div className="type-xlxngf"></div>
                         <div className="groupe-393-xlxngf">

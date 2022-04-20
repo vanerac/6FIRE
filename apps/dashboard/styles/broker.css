@@ -1,921 +1,921 @@
 /* screen - broker */
 
 .broker {
-  background-color: var(--zircon);
-  height: 893px;
-  overflow: hidden;
-  overflow-x: hidden;
-  position: relative;
-  width: 1600px;
+    background-color: var(--zircon);
+    height: 893px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 1600px;
 }
 
 .broker .analytics-5ITOEV {
-  background-color: transparent;
-  height: auto;
-  left: 359px;
-  letter-spacing: 0.10px;
-  line-height: 36px;
-  position: absolute;
-  text-align: center;
-  top: 106px;
-  white-space: nowrap;
-  width: auto;
+    background-color: transparent;
+    height: auto;
+    left: 359px;
+    letter-spacing: 0.10px;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 106px;
+    white-space: nowrap;
+    width: auto;
 }
 
-.broker .top-navigation-5ITOEV {
-  background-color: transparent;
-  height: 68px;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 1600px;
-}
+/*.broker .top-navigation-5ITOEV {*/
+/*  background-color: transparent;*/
+/*  height: 68px;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 1600px;*/
+/*}*/
 
-.broker .rectangle-fE658L {
-  background-color: var(--vulcan);
-  box-shadow: 0px 1px 4px #15223214;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.broker .rectangle-fE658L {*/
+/*  background-color: var(--vulcan);*/
+/*  box-shadow: 0px 1px 4px #15223214;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
-.broker .top-navigation-search-fE658L {
-  background-color: transparent;
-  height: 24px;
-  left: calc(19.34% - 17px);
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 90px;
-}
+/*.broker .top-navigation-search-fE658L {*/
+/*  background-color: transparent;*/
+/*  height: 24px;*/
+/*  left: calc(19.34% - 17px);*/
+/*  position: absolute;*/
+/*  top: calc(50.00% - 12px);*/
+/*  width: 90px;*/
+/*}*/
 
-.broker .x00-general-01-icons-iJOnaQ {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 24px;
-}
+/*.broker .x00-general-01-icons-iJOnaQ {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 24px;*/
+/*}*/
 
-.broker .color-UEGDeI {
-  background-color: transparent;
-  height: calc(100.00% - 7px);
-  left: 3px;
-  object-fit: cover;
-  position: absolute;
-  top: 3px;
-  width: 17px;
-}
+/*.broker .color-UEGDeI {*/
+/*  background-color: transparent;*/
+/*  height: calc(100.00% - 7px);*/
+/*  left: 3px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 3px;*/
+/*  width: 17px;*/
+/*}*/
 
-.broker .search-iJOnaQ {
-  background-color: transparent;
-  height: calc(100.00% - 2px);
-  letter-spacing: 0.00px;
-  line-height: 20px;
-  position: absolute;
-  right: -2px;
-  text-align: left;
-  top: 3px;
-  white-space: nowrap;
-  width: 60px;
-}
+/*.broker .search-iJOnaQ {*/
+/*  background-color: transparent;*/
+/*  height: calc(100.00% - 2px);*/
+/*  letter-spacing: 0.00px;*/
+/*  line-height: 20px;*/
+/*  position: absolute;*/
+/*  right: -2px;*/
+/*  text-align: left;*/
+/*  top: 3px;*/
+/*  white-space: nowrap;*/
+/*  width: 60px;*/
+/*}*/
 
-.broker .user-group-fE658L {
-  background-color: transparent;
-  height: 36px;
-  position: absolute;
-  right: 40px;
-  top: calc(43.75% - 16px);
-  width: 117px;
-}
+/*.broker .user-group-fE658L {*/
+/*  background-color: transparent;*/
+/*  height: 36px;*/
+/*  position: absolute;*/
+/*  right: 40px;*/
+/*  top: calc(43.75% - 16px);*/
+/*  width: 117px;*/
+/*}*/
 
-.broker .users-avatar-photo-2-states-aSkJsI {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 36px;
-}
+/*.broker .users-avatar-photo-2-states-aSkJsI {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 36px;*/
+/*}*/
 
-.broker .oval-fBwMJr {
-  background-color: transparent;
-  border-radius: 18px;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.broker .oval-fBwMJr {*/
+/*  background-color: transparent;*/
+/*  border-radius: 18px;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
-.broker .image-fBwMJr {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.broker .image-fBwMJr {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
-.broker .monica-simons-aSkJsI {
-  background-color: transparent;
-  bottom: calc(46.43% - 10px);
-  height: 22px;
-  letter-spacing: 0.00px;
-  line-height: 20px;
-  position: absolute;
-  right: calc(35.14% - 15px);
-  text-align: left;
-  white-space: nowrap;
-  width: 43px;
-}
+/*.broker .monica-simons-aSkJsI {*/
+/*  background-color: transparent;*/
+/*  bottom: calc(46.43% - 10px);*/
+/*  height: 22px;*/
+/*  letter-spacing: 0.00px;*/
+/*  line-height: 20px;*/
+/*  position: absolute;*/
+/*  right: calc(35.14% - 15px);*/
+/*  text-align: left;*/
+/*  white-space: nowrap;*/
+/*  width: 43px;*/
+/*}*/
 
-.broker .icons-chevron-down-aSkJsI {
-  background-color: transparent;
-  height: 24px;
-  position: absolute;
-  right: 0px;
-  top: 5px;
-  width: 24px;
-}
+/*.broker .icons-chevron-down-aSkJsI {*/
+/*  background-color: transparent;*/
+/*  height: 24px;*/
+/*  position: absolute;*/
+/*  right: 0px;*/
+/*  top: 5px;*/
+/*  width: 24px;*/
+/*}*/
 
-.broker .trac-399-xzP48Z {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.broker .trac-399-xzP48Z {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
-.broker .trac-400-xzP48Z {
-  background-color: transparent;
-  height: 8px;
-  left: 5px;
-  object-fit: cover;
-  position: absolute;
-  top: calc(48.67% - 4px);
-  width: calc(100.00% - 9px);
-}
+/*.broker .trac-400-xzP48Z {*/
+/*  background-color: transparent;*/
+/*  height: 8px;*/
+/*  left: 5px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: calc(48.67% - 4px);*/
+/*  width: calc(100.00% - 9px);*/
+/*}*/
 
-.broker .groupe-2-fE658L {
-  background-color: transparent;
-  bottom: calc(50.00% - 10px);
-  height: 21px;
-  left: 40px;
-  position: absolute;
-  width: 113px;
-}
+/*.broker .groupe-2-fE658L {*/
+/*  background-color: transparent;*/
+/*  bottom: calc(50.00% - 10px);*/
+/*  height: 21px;*/
+/*  left: 40px;*/
+/*  position: absolute;*/
+/*  width: 113px;*/
+/*}*/
 
-.broker .groupe-1-TW9Vex {
-  background-color: transparent;
-  height: 100%;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.broker .groupe-1-TW9Vex {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 1px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
 .broker .buttons-btn-text-icon-5ITOEV {
-  background-color: transparent;
-  cursor: pointer;
-  height: 32px;
-  left: 1408px;
-  position: absolute;
-  top: 108px;
-  width: 133px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 32px;
+    left: 1408px;
+    position: absolute;
+    top: 108px;
+    width: 133px;
 }
 
 .broker .type-o6Sm8g {
-  background-color: var(--caribbean-green);
-  border-radius: 4px;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: var(--caribbean-green);
+    border-radius: 4px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .groupe-393-o6Sm8g {
-  background-color: transparent;
-  height: 20px;
-  left: 12px;
-  position: absolute;
-  top: calc(50.00% - 10px);
-  width: calc(100.00% - 24px);
+    background-color: transparent;
+    height: 20px;
+    left: 12px;
+    position: absolute;
+    top: calc(50.00% - 10px);
+    width: calc(100.00% - 24px);
 }
 
 .broker .text-2mDgAd {
-  background-color: transparent;
-  height: 22px;
-  left: 0px;
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 15.00%;
-  white-space: nowrap;
-  width: 111px;
+    background-color: transparent;
+    height: 22px;
+    left: 0px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 15.00%;
+    white-space: nowrap;
+    width: 111px;
 }
 
 .broker .grid-table-5ITOEV {
-  background-color: transparent;
-  height: 570px;
-  left: 301px;
-  position: absolute;
-  top: 257px;
-  width: 1259px;
+    background-color: transparent;
+    height: 570px;
+    left: 301px;
+    position: absolute;
+    top: 257px;
+    width: 1259px;
 }
 
 .broker .groupe-455-xSiFws {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .rectangle-616-qX6ozW {
-  background-color: var(--white);
-  border-radius: 6px;
-  box-shadow: 0px 3px 6px #00000029;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px #00000029;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .rectangle-618-qX6ozW {
-  background-color: var(--white);
-  height: 62px;
-  left: 0px;
-  position: absolute;
-  top: calc(24.80% - 15px);
-  width: 100%;
+    background-color: var(--white);
+    height: 62px;
+    left: 0px;
+    position: absolute;
+    top: calc(24.80% - 15px);
+    width: 100%;
 }
 
 .broker .rectangle-619-qX6ozW {
-  background-color: var(--whisper);
-  height: 62px;
-  left: 0px;
-  position: absolute;
-  top: calc(37.01% - 23px);
-  width: 100%;
+    background-color: var(--whisper);
+    height: 62px;
+    left: 0px;
+    position: absolute;
+    top: calc(37.01% - 23px);
+    width: 100%;
 }
 
 .broker .rectangle-621-qX6ozW {
-  background-color: var(--white);
-  height: 62px;
-  left: 0px;
-  position: absolute;
-  top: calc(49.21% - 31px);
-  width: 100%;
+    background-color: var(--white);
+    height: 62px;
+    left: 0px;
+    position: absolute;
+    top: calc(49.21% - 31px);
+    width: 100%;
 }
 
 .broker .rectangle-622-qX6ozW {
-  background-color: var(--whisper);
-  bottom: calc(38.58% - 24px);
-  height: 62px;
-  left: 0px;
-  position: absolute;
-  width: 100%;
+    background-color: var(--whisper);
+    bottom: calc(38.58% - 24px);
+    height: 62px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
 }
 
 .broker .rectangle-623-qX6ozW {
-  background-color: var(--white);
-  bottom: calc(26.38% - 16px);
-  height: 62px;
-  left: 0px;
-  position: absolute;
-  width: 100%;
+    background-color: var(--white);
+    bottom: calc(26.38% - 16px);
+    height: 62px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
 }
 
 .broker .rectangle-624-qX6ozW {
-  background-color: var(--whisper);
-  bottom: 72px;
-  height: 62px;
-  left: 0px;
-  position: absolute;
-  width: 100%;
+    background-color: var(--whisper);
+    bottom: 72px;
+    height: 62px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
 }
 
 .broker .grid-table-xSiFws {
-  background-color: transparent;
-  height: 17px;
-  left: 30px;
-  position: absolute;
-  top: 24px;
-  width: calc(100.00% - 67px);
+    background-color: transparent;
+    height: 17px;
+    left: 30px;
+    position: absolute;
+    top: 24px;
+    width: calc(100.00% - 67px);
 }
 
 .broker .name-U5IxZJ {
-  background-color: transparent;
-  height: 19px;
-  left: 0px;
-  letter-spacing: 0.09px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  top: 14.71%;
-  white-space: nowrap;
-  width: 14px;
+    background-color: transparent;
+    height: 19px;
+    left: 0px;
+    letter-spacing: 0.09px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    top: 14.71%;
+    white-space: nowrap;
+    width: 14px;
 }
 
 .broker .name-5oQeFx {
-  background-color: transparent;
-  height: 19px;
-  left: calc(14.07% - 6px);
-  letter-spacing: 0.09px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  top: 14.71%;
-  white-space: nowrap;
-  width: 41px;
+    background-color: transparent;
+    height: 19px;
+    left: calc(14.07% - 6px);
+    letter-spacing: 0.09px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    top: 14.71%;
+    white-space: nowrap;
+    width: 41px;
 }
 
 .broker .name-vtHmEe {
-  background-color: transparent;
-  height: 19px;
-  left: calc(100.17% - 41px);
-  letter-spacing: 0.09px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  top: 14.71%;
-  white-space: nowrap;
-  width: 41px;
+    background-color: transparent;
+    height: 19px;
+    left: calc(100.17% - 41px);
+    letter-spacing: 0.09px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    top: 14.71%;
+    white-space: nowrap;
+    width: 41px;
 }
 
 .broker .name-JK2tUZ {
-  background-color: transparent;
-  height: 19px;
-  left: calc(32.76% - 10px);
-  letter-spacing: 0.09px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  top: 14.71%;
-  white-space: nowrap;
-  width: 31px;
+    background-color: transparent;
+    height: 19px;
+    left: calc(32.76% - 10px);
+    letter-spacing: 0.09px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    top: 14.71%;
+    white-space: nowrap;
+    width: 31px;
 }
 
 .broker .groupe-454-xSiFws {
-  background-color: transparent;
-  height: 62px;
-  left: 0px;
-  position: absolute;
-  top: 64px;
-  width: 100%;
+    background-color: transparent;
+    height: 62px;
+    left: 0px;
+    position: absolute;
+    top: 64px;
+    width: 100%;
 }
 
 .broker .rectangle-617-T4T2ms {
-  background-color: var(--whisper);
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: var(--whisper);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .name-T4T2ms {
-  background-color: transparent;
-  bottom: calc(38.89% - 7px);
-  height: 17px;
-  left: 2.39%;
-  letter-spacing: 0.07px;
-  line-height: 10px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 6px;
+    background-color: transparent;
+    bottom: calc(38.89% - 7px);
+    height: 17px;
+    left: 2.39%;
+    letter-spacing: 0.07px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 6px;
 }
 
 .broker .name-SRWHeO {
-  background-color: transparent;
-  bottom: calc(38.89% - 7px);
-  height: 17px;
-  left: calc(15.76% - 6px);
-  letter-spacing: 0.07px;
-  line-height: 10px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 41px;
+    background-color: transparent;
+    bottom: calc(38.89% - 7px);
+    height: 17px;
+    left: calc(15.76% - 6px);
+    letter-spacing: 0.07px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 41px;
 }
 
 .broker .font-awsome-pen-T4T2ms {
-  background-color: transparent;
-  bottom: calc(46.62% - 8px);
-  height: 18px;
-  object-fit: cover;
-  position: absolute;
-  right: 65px;
-  width: 18px;
+    background-color: transparent;
+    bottom: calc(46.62% - 8px);
+    height: 18px;
+    object-fit: cover;
+    position: absolute;
+    right: 65px;
+    width: 18px;
 }
 
 .broker .font-awsome-times-T4T2ms {
-  background-color: transparent;
-  bottom: calc(46.96% - 6px);
-  height: 13px;
-  object-fit: cover;
-  position: absolute;
-  right: 39px;
-  width: 13px;
+    background-color: transparent;
+    bottom: calc(46.96% - 6px);
+    height: 13px;
+    object-fit: cover;
+    position: absolute;
+    right: 39px;
+    width: 13px;
 }
 
 .broker .search-5ITOEV {
-  background-color: transparent;
-  height: 37px;
-  left: 301px;
-  position: absolute;
-  top: 180px;
-  width: 317px;
+    background-color: transparent;
+    height: 37px;
+    left: 301px;
+    position: absolute;
+    top: 180px;
+    width: 317px;
 }
 
 .broker .rectangle-625-yMi7UJ {
-  background-color: var(--white);
-  border-radius: 6px;
-  box-shadow: 0px 3px 6px #00000029;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px #00000029;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .name-yMi7UJ {
-  background-color: transparent;
-  bottom: calc(27.50% - 5px);
-  height: 17px;
-  left: calc(7.20% - 5px);
-  letter-spacing: 0.07px;
-  line-height: 10px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 67px;
+    background-color: transparent;
+    bottom: calc(27.50% - 5px);
+    height: 17px;
+    left: calc(7.20% - 5px);
+    letter-spacing: 0.07px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 67px;
 }
 
 .broker .sidebar-5ITOEV {
-  background-color: transparent;
-  height: 825px;
-  left: 0px;
-  position: absolute;
-  top: 68px;
-  width: 250px;
+    background-color: transparent;
+    height: 825px;
+    left: 0px;
+    position: absolute;
+    top: 68px;
+    width: 250px;
 }
 
 .broker .shape-RY5x7r {
-  background-color: var(--white);
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: var(--white);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .settings-RY5x7r {
-  background-color: transparent;
-  bottom: calc(30.14% - 16px);
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    bottom: calc(30.14% - 16px);
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-zHxyjN {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(37.65% - 23px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 60px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(37.65% - 23px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 60px;
 }
 
 .broker .icons-navigation-icon-12-states-zHxyjN {
-  background-color: transparent;
-  height: 24px;
-  left: 20px;
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 24px;
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
 }
 
 .broker .ic_setting-nUTPbM {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .broker-RY5x7r {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(49.68% - 26px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(49.68% - 26px);
+    width: calc(100.00% - 20px);
 }
 
 .broker .frame-vGRIj3 {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .line-vGRIj3 {
-  background-color: var(--blue-ribbon);
-  border-radius: 10px;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 4px;
+    background-color: var(--blue-ribbon);
+    border-radius: 10px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 4px;
 }
 
 .broker .name-vGRIj3 {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(34.97% - 16px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 47px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(34.97% - 16px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 47px;
 }
 
 .broker .font-awsome-handshake-vGRIj3 {
-  background-color: transparent;
-  bottom: 20px;
-  height: 13px;
-  left: 21px;
-  object-fit: cover;
-  position: absolute;
-  width: 21px;
+    background-color: transparent;
+    bottom: 20px;
+    height: 13px;
+    left: 21px;
+    object-fit: cover;
+    position: absolute;
+    width: 21px;
 }
 
 .broker .crypto-wallet-RY5x7r {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(42.95% - 22px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(42.95% - 22px);
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-HqdvPT {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(49.23% - 49px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 100px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(49.23% - 49px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 100px;
 }
 
 .broker .font-awsome-bitcoin-HqdvPT {
-  background-color: transparent;
-  height: 19px;
-  left: 22px;
-  object-fit: cover;
-  position: absolute;
-  top: calc(50.00% - 10px);
-  width: 19px;
+    background-color: transparent;
+    height: 19px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: calc(50.00% - 10px);
+    width: 19px;
 }
 
 .broker .trading-crypto-RY5x7r {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(29.50% - 15px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(29.50% - 15px);
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-Zi5Ua8 {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  right: calc(39.62% - 49px);
-  text-align: left;
-  white-space: nowrap;
-  width: 124px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(39.62% - 49px);
+    text-align: left;
+    white-space: nowrap;
+    width: 124px;
 }
 
 .broker .font-awsome-pen-Zi5Ua8 {
-  background-color: transparent;
-  height: 19px;
-  left: 22px;
-  object-fit: cover;
-  position: absolute;
-  top: 16px;
-  width: 19px;
+    background-color: transparent;
+    height: 19px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: 16px;
+    width: 19px;
 }
 
 .broker .thmes-articles-RY5x7r {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(16.04% - 8px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(16.04% - 8px);
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-G38iTJ {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  right: calc(44.35% - 51px);
-  text-align: left;
-  white-space: nowrap;
-  width: 115px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(44.35% - 51px);
+    text-align: left;
+    white-space: nowrap;
+    width: 115px;
 }
 
 .broker .icons-navigation-icon-12-states-G38iTJ {
-  background-color: transparent;
-  height: 22px;
-  left: 24px;
-  position: absolute;
-  top: calc(50.00% - 11px);
-  width: 16px;
+    background-color: transparent;
+    height: 22px;
+    left: 24px;
+    position: absolute;
+    top: calc(50.00% - 11px);
+    width: 16px;
 }
 
 .broker .font-awsome-bookmark-nfkPcj {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .customers-RY5x7r {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: 72px;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 72px;
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-q2MdmD {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(43.24% - 35px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 82px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(43.24% - 35px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 82px;
 }
 
 .broker .icons-navigation-icon-12-states-q2MdmD {
-  background-color: transparent;
-  height: 24px;
-  left: 20px;
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 24px;
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
 }
 
 .broker .ic_users-G1mAIO {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .home-RY5x7r {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: 20px;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 20px;
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-wiWKSJ {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(34.41% - 15px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 44px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(34.41% - 15px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 44px;
 }
 
 .broker .icons-navigation-icon-12-states-wiWKSJ {
-  background-color: transparent;
-  height: 24px;
-  left: 20px;
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 24px;
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
 }
 
 .broker .ic_home-tTijEy {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .articles-RY5x7r {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(22.77% - 12px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(22.77% - 12px);
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-AAUbY9 {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(36.57% - 20px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 55px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(36.57% - 20px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 55px;
 }
 
 .broker .icons-navigation-icon-12-states-AAUbY9 {
-  background-color: transparent;
-  height: 24px;
-  left: 20px;
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 24px;
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
 }
 
 .broker .ic_invoice-TnvAau {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .broker .icon-ionic-ios-arrow-down-AAUbY9 {
-  background-color: transparent;
-  bottom: calc(50.00% - 3px);
-  height: 7px;
-  left: 191px;
-  object-fit: cover;
-  position: absolute;
-  width: 12px;
+    background-color: transparent;
+    bottom: calc(50.00% - 3px);
+    height: 7px;
+    left: 191px;
+    object-fit: cover;
+    position: absolute;
+    width: 12px;
 }
 
 .broker .bot-trading-RY5x7r {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(36.22% - 19px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(36.22% - 19px);
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-BFT0R4 {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(43.84% - 37px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 84px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(43.84% - 37px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 84px;
 }
 
 .broker .font-awsome-robot-BFT0R4 {
-  background-color: transparent;
-  height: 17px;
-  left: 20px;
-  object-fit: cover;
-  position: absolute;
-  top: 17px;
-  width: 21px;
+    background-color: transparent;
+    height: 17px;
+    left: 20px;
+    object-fit: cover;
+    position: absolute;
+    top: 17px;
+    width: 21px;
 }
 
 .broker .pays-RY5x7r {
-  background-color: transparent;
-  bottom: calc(43.60% - 23px);
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    bottom: calc(43.60% - 23px);
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-U8CadT {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(32.99% - 12px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 36px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(32.99% - 12px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 36px;
 }
 
 .broker .font-awsome-globe-europe-U8CadT {
-  background-color: transparent;
-  bottom: calc(50.00% - 9px);
-  height: 18px;
-  left: 25px;
-  object-fit: cover;
-  position: absolute;
-  width: 18px;
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    left: 25px;
+    object-fit: cover;
+    position: absolute;
+    width: 18px;
 }
 
 .broker .abonnement-RY5x7r {
-  background-color: transparent;
-  bottom: calc(36.87% - 19px);
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    bottom: calc(36.87% - 19px);
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    width: calc(100.00% - 20px);
 }
 
 .broker .name-g2bgmU {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(47.41% - 45px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 95px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(47.41% - 45px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 95px;
 }
 
 .broker .icon-material-payment-g2bgmU {
-  background-color: transparent;
-  height: 15px;
-  left: 24px;
-  object-fit: cover;
-  position: absolute;
-  top: 18px;
-  width: 19px;
+    background-color: transparent;
+    height: 15px;
+    left: 24px;
+    object-fit: cover;
+    position: absolute;
+    top: 18px;
+    width: 19px;
 }
 
 .broker .icon-ionic-ios-arrow-down-g2bgmU {
-  background-color: transparent;
-  bottom: calc(50.00% - 3px);
-  height: 7px;
-  left: 196px;
-  object-fit: cover;
-  position: absolute;
-  width: 12px;
+    background-color: transparent;
+    bottom: calc(50.00% - 3px);
+    height: 7px;
+    left: 196px;
+    object-fit: cover;
+    position: absolute;
+    width: 12px;
 }

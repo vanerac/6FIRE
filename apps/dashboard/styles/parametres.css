@@ -1,846 +1,846 @@
 /* screen - parametres */
 
 .parametres {
-  background-color: var(--zircon);
-  height: 1001px;
-  overflow: hidden;
-  overflow-x: hidden;
-  position: relative;
-  width: 1600px;
+    background-color: var(--zircon);
+    height: 1001px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 1600px;
 }
 
 .parametres .analytics-Oh231m {
-  background-color: transparent;
-  height: auto;
-  left: 327px;
-  letter-spacing: 0.10px;
-  line-height: 36px;
-  position: absolute;
-  text-align: center;
-  top: 106px;
-  white-space: nowrap;
-  width: auto;
+    background-color: transparent;
+    height: auto;
+    left: 327px;
+    letter-spacing: 0.10px;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 106px;
+    white-space: nowrap;
+    width: auto;
 }
 
-.parametres .top-navigation-Oh231m {
-  background-color: transparent;
-  height: 68px;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 1600px;
-}
+/*.parametres .top-navigation-Oh231m {*/
+/*  background-color: transparent;*/
+/*  height: 68px;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 1600px;*/
+/*}*/
 
-.parametres .rectangle-PamlAg {
-  background-color: var(--vulcan);
-  box-shadow: 0px 1px 4px #15223214;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.parametres .rectangle-PamlAg {*/
+/*  background-color: var(--vulcan);*/
+/*  box-shadow: 0px 1px 4px #15223214;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
-.parametres .top-navigation-search-PamlAg {
-  background-color: transparent;
-  height: 24px;
-  left: calc(19.34% - 17px);
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 90px;
-}
+/*.parametres .top-navigation-search-PamlAg {*/
+/*  background-color: transparent;*/
+/*  height: 24px;*/
+/*  left: calc(19.34% - 17px);*/
+/*  position: absolute;*/
+/*  top: calc(50.00% - 12px);*/
+/*  width: 90px;*/
+/*}*/
 
-.parametres .x00-general-01-icons-BD6x1p {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 24px;
-}
+/*.parametres .x00-general-01-icons-BD6x1p {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 24px;*/
+/*}*/
 
-.parametres .color-B5B2Wd {
-  background-color: transparent;
-  height: calc(100.00% - 7px);
-  left: 3px;
-  object-fit: cover;
-  position: absolute;
-  top: 3px;
-  width: 17px;
-}
+/*.parametres .color-B5B2Wd {*/
+/*  background-color: transparent;*/
+/*  height: calc(100.00% - 7px);*/
+/*  left: 3px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 3px;*/
+/*  width: 17px;*/
+/*}*/
 
-.parametres .search-BD6x1p {
-  background-color: transparent;
-  height: calc(100.00% - 2px);
-  letter-spacing: 0.00px;
-  line-height: 20px;
-  position: absolute;
-  right: -2px;
-  text-align: left;
-  top: 3px;
-  white-space: nowrap;
-  width: 60px;
-}
+/*.parametres .search-BD6x1p {*/
+/*  background-color: transparent;*/
+/*  height: calc(100.00% - 2px);*/
+/*  letter-spacing: 0.00px;*/
+/*  line-height: 20px;*/
+/*  position: absolute;*/
+/*  right: -2px;*/
+/*  text-align: left;*/
+/*  top: 3px;*/
+/*  white-space: nowrap;*/
+/*  width: 60px;*/
+/*}*/
 
-.parametres .user-group-PamlAg {
-  background-color: transparent;
-  height: 36px;
-  position: absolute;
-  right: 40px;
-  top: calc(43.75% - 16px);
-  width: 117px;
-}
+/*.parametres .user-group-PamlAg {*/
+/*  background-color: transparent;*/
+/*  height: 36px;*/
+/*  position: absolute;*/
+/*  right: 40px;*/
+/*  top: calc(43.75% - 16px);*/
+/*  width: 117px;*/
+/*}*/
 
-.parametres .users-avatar-photo-2-states-xTm5xI {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 36px;
-}
+/*.parametres .users-avatar-photo-2-states-xTm5xI {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 36px;*/
+/*}*/
 
-.parametres .oval-qWGJdX {
-  background-color: transparent;
-  border-radius: 18px;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.parametres .oval-qWGJdX {*/
+/*  background-color: transparent;*/
+/*  border-radius: 18px;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
-.parametres .image-qWGJdX {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.parametres .image-qWGJdX {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
-.parametres .monica-simons-xTm5xI {
-  background-color: transparent;
-  bottom: calc(46.43% - 10px);
-  height: 22px;
-  letter-spacing: 0.00px;
-  line-height: 20px;
-  position: absolute;
-  right: calc(35.14% - 15px);
-  text-align: left;
-  white-space: nowrap;
-  width: 43px;
-}
+/*.parametres .monica-simons-xTm5xI {*/
+/*  background-color: transparent;*/
+/*  bottom: calc(46.43% - 10px);*/
+/*  height: 22px;*/
+/*  letter-spacing: 0.00px;*/
+/*  line-height: 20px;*/
+/*  position: absolute;*/
+/*  right: calc(35.14% - 15px);*/
+/*  text-align: left;*/
+/*  white-space: nowrap;*/
+/*  width: 43px;*/
+/*}*/
 
-.parametres .icons-chevron-down-xTm5xI {
-  background-color: transparent;
-  height: 24px;
-  position: absolute;
-  right: 0px;
-  top: 5px;
-  width: 24px;
-}
+/*.parametres .icons-chevron-down-xTm5xI {*/
+/*  background-color: transparent;*/
+/*  height: 24px;*/
+/*  position: absolute;*/
+/*  right: 0px;*/
+/*  top: 5px;*/
+/*  width: 24px;*/
+/*}*/
 
-.parametres .trac-399-4sP4Pp {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.parametres .trac-399-4sP4Pp {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
-.parametres .trac-400-4sP4Pp {
-  background-color: transparent;
-  height: 8px;
-  left: 5px;
-  object-fit: cover;
-  position: absolute;
-  top: calc(48.67% - 4px);
-  width: calc(100.00% - 9px);
-}
+/*.parametres .trac-400-4sP4Pp {*/
+/*  background-color: transparent;*/
+/*  height: 8px;*/
+/*  left: 5px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: calc(48.67% - 4px);*/
+/*  width: calc(100.00% - 9px);*/
+/*}*/
 
-.parametres .groupe-2-PamlAg {
-  background-color: transparent;
-  bottom: calc(50.00% - 10px);
-  height: 21px;
-  left: 40px;
-  position: absolute;
-  width: 113px;
-}
+/*.parametres .groupe-2-PamlAg {*/
+/*  background-color: transparent;*/
+/*  bottom: calc(50.00% - 10px);*/
+/*  height: 21px;*/
+/*  left: 40px;*/
+/*  position: absolute;*/
+/*  width: 113px;*/
+/*}*/
 
-.parametres .groupe-1-XuxHPE {
-  background-color: transparent;
-  height: 100%;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
+/*.parametres .groupe-1-XuxHPE {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 1px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
 
 .parametres .buttons-btn-text-icon-Oh231m {
-  background-color: transparent;
-  height: 32px;
-  left: 1408px;
-  position: absolute;
-  top: 125px;
-  width: 116px;
+    background-color: transparent;
+    height: 32px;
+    left: 1408px;
+    position: absolute;
+    top: 125px;
+    width: 116px;
 }
 
 .parametres .type-ntDvMP {
-  background-color: var(--caribbean-green);
-  border-radius: 4px;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: var(--caribbean-green);
+    border-radius: 4px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .groupe-393-ntDvMP {
-  background-color: transparent;
-  height: 20px;
-  left: 12px;
-  position: absolute;
-  top: calc(50.00% - 10px);
-  width: calc(100.00% - 24px);
+    background-color: transparent;
+    height: 20px;
+    left: 12px;
+    position: absolute;
+    top: calc(50.00% - 10px);
+    width: calc(100.00% - 24px);
 }
 
 .parametres .text-mJ3Zt0 {
-  background-color: transparent;
-  height: 22px;
-  left: 0px;
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  top: 15.00%;
-  white-space: nowrap;
-  width: 94px;
+    background-color: transparent;
+    height: 22px;
+    left: 0px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 15.00%;
+    white-space: nowrap;
+    width: 94px;
 }
 
 .parametres .sms-inscription-Oh231m {
-  background-color: transparent;
-  height: 301px;
-  left: 303px;
-  position: absolute;
-  top: 172px;
-  width: 1259px;
+    background-color: transparent;
+    height: 301px;
+    left: 303px;
+    position: absolute;
+    top: 172px;
+    width: 1259px;
 }
 
 .parametres .rectangle-632-rA1U92 {
-  background-color: var(--white);
-  border-radius: 6px;
-  box-shadow: 0px 3px 6px #00000029;
-  height: calc(100.00% - 18px);
-  left: 0px;
-  position: absolute;
-  top: 18px;
-  width: 100%;
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px #00000029;
+    height: calc(100.00% - 18px);
+    left: 0px;
+    position: absolute;
+    top: 18px;
+    width: 100%;
 }
 
 .parametres .titre-rA1U92 {
-  background-color: transparent;
-  height: 36px;
-  left: 39px;
-  position: absolute;
-  top: 0px;
-  width: 182px;
+    background-color: transparent;
+    height: 36px;
+    left: 39px;
+    position: absolute;
+    top: 0px;
+    width: 182px;
 }
 
 .parametres .rectangle-633-GWCpxd {
-  background-color: var(--blue-ribbon);
-  border-radius: 10px;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: var(--blue-ribbon);
+    border-radius: 10px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .analytics-GWCpxd {
-  background-color: transparent;
-  height: 22px;
-  left: 14.29%;
-  letter-spacing: 0.06px;
-  line-height: 36px;
-  position: absolute;
-  text-align: center;
-  top: 0px;
-  white-space: nowrap;
-  width: 72.53%;
+    background-color: transparent;
+    height: 22px;
+    left: 14.29%;
+    letter-spacing: 0.06px;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    white-space: nowrap;
+    width: 72.53%;
 }
 
 .parametres .contenu-sms-rA1U92 {
-  background-color: transparent;
-  height: 40px;
-  left: 39px;
-  position: absolute;
-  top: calc(39.01% - 15px);
-  width: calc(100.00% - 102px);
+    background-color: transparent;
+    height: 40px;
+    left: 39px;
+    position: absolute;
+    top: calc(39.01% - 15px);
+    width: calc(100.00% - 102px);
 }
 
 .parametres .ligne-6-CMjqbk {
-  background-color: transparent;
-  bottom: 0px;
-  height: 1px;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
 }
 
 .parametres .nom-CMjqbk {
-  background-color: transparent;
-  bottom: 4px;
-  height: 19px;
-  left: 0px;
-  letter-spacing: 0.00px;
-  line-height: 12px;
-  position: absolute;
-  text-align: left;
-  width: calc(100.00% - 34px);
+    background-color: transparent;
+    bottom: 4px;
+    height: 19px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    width: calc(100.00% - 34px);
 }
 
 .parametres .contenu-du-sms-CMjqbk {
-  background-color: transparent;
-  height: 14px;
-  left: 0px;
-  letter-spacing: 0.00px;
-  line-height: 10px;
-  position: absolute;
-  text-align: left;
-  top: 0px;
-  width: calc(100.00% - 24px);
+    background-color: transparent;
+    height: 14px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100.00% - 24px);
 }
 
 .parametres .toggle-rA1U92 {
-  background-color: transparent;
-  height: 21px;
-  left: 39px;
-  position: absolute;
-  top: calc(21.07% - 4px);
-  width: calc(100.00% - 70px);
+    background-color: transparent;
+    height: 21px;
+    left: 39px;
+    position: absolute;
+    top: calc(21.07% - 4px);
+    width: calc(100.00% - 70px);
 }
 
 .parametres .toggle-OkDX6D {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 46px;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 46px;
 }
 
 .parametres .toggle-off-7yQuww {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  position: relative;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .rectangle-655-IfZx8D {
-  background-color: #bce0fd;
-  border-radius: 40px;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: #bce0fd;
+    border-radius: 40px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .rectangle-656-IfZx8D {
-  background-color: var(--white);
-  border-radius: 40px;
-  height: calc(100.00% - 4px);
-  left: 2px;
-  position: absolute;
-  top: 2px;
-  width: 17px;
+    background-color: var(--white);
+    border-radius: 40px;
+    height: calc(100.00% - 4px);
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 17px;
 }
 
 .parametres .off-IfZx8D {
-  background-color: transparent;
-  bottom: calc(46.15% - 4px);
-  height: 8px;
-  letter-spacing: 0.00px;
-  line-height: 6px;
-  position: absolute;
-  right: calc(28.12% - 4px);
-  text-align: left;
-  white-space: nowrap;
-  width: 14px;
+    background-color: transparent;
+    bottom: calc(46.15% - 4px);
+    height: 8px;
+    letter-spacing: 0.00px;
+    line-height: 6px;
+    position: absolute;
+    right: calc(28.12% - 4px);
+    text-align: left;
+    white-space: nowrap;
+    width: 14px;
 }
 
 .parametres .activer-les-sms-linscription-OkDX6D {
-  background-color: transparent;
-  bottom: calc(28.57% - 4px);
-  height: 14px;
-  left: 58px;
-  letter-spacing: 0.00px;
-  line-height: 10px;
-  position: absolute;
-  text-align: left;
-  width: calc(100.00% - 56px);
+    background-color: transparent;
+    bottom: calc(28.57% - 4px);
+    height: 14px;
+    left: 58px;
+    letter-spacing: 0.00px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    width: calc(100.00% - 56px);
 }
 
 .parametres .sidebar-Oh231m {
-  background-color: transparent;
-  height: 933px;
-  left: 0px;
-  position: absolute;
-  top: 68px;
-  width: 250px;
+    background-color: transparent;
+    height: 933px;
+    left: 0px;
+    position: absolute;
+    top: 68px;
+    width: 250px;
 }
 
 .parametres .shape-SGNSZD {
-  background-color: var(--white);
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: var(--white);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .settings-SGNSZD {
-  background-color: transparent;
-  bottom: calc(38.71% - 20px);
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    bottom: calc(38.71% - 20px);
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    width: calc(100.00% - 20px);
 }
 
 .parametres .frame-WRa0Tl {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .name-WRa0Tl {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(37.65% - 23px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 60px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(37.65% - 23px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 60px;
 }
 
 .parametres .line-WRa0Tl {
-  background-color: var(--blue-ribbon);
-  border-radius: 10px;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 4px;
+    background-color: var(--blue-ribbon);
+    border-radius: 10px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 4px;
 }
 
 .parametres .icons-navigation-icon-12-states-WRa0Tl {
-  background-color: transparent;
-  height: 24px;
-  left: 20px;
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 24px;
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
 }
 
 .parametres .ic_setting-K2SAPN {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .broker-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(43.59% - 23px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(43.59% - 23px);
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-JWx0xh {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(34.97% - 16px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 47px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(34.97% - 16px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 47px;
 }
 
 .parametres .font-awsome-handshake-JWx0xh {
-  background-color: transparent;
-  bottom: 20px;
-  height: 13px;
-  left: 21px;
-  object-fit: cover;
-  position: absolute;
-  width: 21px;
+    background-color: transparent;
+    bottom: 20px;
+    height: 13px;
+    left: 21px;
+    object-fit: cover;
+    position: absolute;
+    width: 21px;
 }
 
 .parametres .crypto-wallet-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(37.68% - 20px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(37.68% - 20px);
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-ymvQyY {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(49.23% - 49px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 100px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(49.23% - 49px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 100px;
 }
 
 .parametres .font-awsome-bitcoin-ymvQyY {
-  background-color: transparent;
-  height: 19px;
-  left: 22px;
-  object-fit: cover;
-  position: absolute;
-  top: calc(50.00% - 10px);
-  width: 19px;
+    background-color: transparent;
+    height: 19px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: calc(50.00% - 10px);
+    width: 19px;
 }
 
 .parametres .trading-crypto-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(25.88% - 13px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(25.88% - 13px);
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-VNm6eD {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  right: calc(39.62% - 49px);
-  text-align: left;
-  white-space: nowrap;
-  width: 124px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(39.62% - 49px);
+    text-align: left;
+    white-space: nowrap;
+    width: 124px;
 }
 
 .parametres .font-awsome-pen-VNm6eD {
-  background-color: transparent;
-  height: 19px;
-  left: 22px;
-  object-fit: cover;
-  position: absolute;
-  top: 16px;
-  width: 19px;
+    background-color: transparent;
+    height: 19px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: 16px;
+    width: 19px;
 }
 
 .parametres .thmes-articles-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: 124px;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 124px;
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-DoQz22 {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  right: calc(44.35% - 51px);
-  text-align: left;
-  white-space: nowrap;
-  width: 115px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(44.35% - 51px);
+    text-align: left;
+    white-space: nowrap;
+    width: 115px;
 }
 
 .parametres .icons-navigation-icon-12-states-DoQz22 {
-  background-color: transparent;
-  height: 22px;
-  left: 24px;
-  position: absolute;
-  top: calc(50.00% - 11px);
-  width: 16px;
+    background-color: transparent;
+    height: 22px;
+    left: 24px;
+    position: absolute;
+    top: calc(50.00% - 11px);
+    width: 16px;
 }
 
 .parametres .font-awsome-bookmark-6JxALY {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .customers-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: 72px;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 72px;
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-Xjk4Aq {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(43.24% - 35px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 82px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(43.24% - 35px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 82px;
 }
 
 .parametres .icons-navigation-icon-12-states-Xjk4Aq {
-  background-color: transparent;
-  height: 24px;
-  left: 20px;
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 24px;
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
 }
 
 .parametres .ic_users-AB7cE0 {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .home-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: 20px;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 20px;
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-KhtoyF {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(34.41% - 15px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 44px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(34.41% - 15px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 44px;
 }
 
 .parametres .icons-navigation-icon-12-states-KhtoyF {
-  background-color: transparent;
-  height: 24px;
-  left: 20px;
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 24px;
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
 }
 
 .parametres .ic_home-RSDpol {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .articles-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(19.98% - 10px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(19.98% - 10px);
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-qNxyEv {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(36.57% - 20px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 55px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(36.57% - 20px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 55px;
 }
 
 .parametres .icons-navigation-icon-12-states-qNxyEv {
-  background-color: transparent;
-  height: 24px;
-  left: 20px;
-  position: absolute;
-  top: calc(50.00% - 12px);
-  width: 24px;
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
 }
 
 .parametres .ic_invoice-5xxUGy {
-  background-color: transparent;
-  height: 100%;
-  left: 0px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
 
 .parametres .icon-ionic-ios-arrow-down-qNxyEv {
-  background-color: transparent;
-  bottom: calc(50.00% - 3px);
-  height: 7px;
-  left: 191px;
-  object-fit: cover;
-  position: absolute;
-  width: 12px;
+    background-color: transparent;
+    bottom: calc(50.00% - 3px);
+    height: 7px;
+    left: 191px;
+    object-fit: cover;
+    position: absolute;
+    width: 12px;
 }
 
 .parametres .bot-trading-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(31.78% - 17px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(31.78% - 17px);
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-GxlClI {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(43.84% - 37px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 84px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(43.84% - 37px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 84px;
 }
 
 .parametres .font-awsome-robot-GxlClI {
-  background-color: transparent;
-  height: 17px;
-  left: 20px;
-  object-fit: cover;
-  position: absolute;
-  top: 17px;
-  width: 21px;
+    background-color: transparent;
+    height: 17px;
+    left: 20px;
+    object-fit: cover;
+    position: absolute;
+    top: 17px;
+    width: 21px;
 }
 
 .parametres .pays-SGNSZD {
-  background-color: transparent;
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  top: calc(49.49% - 26px);
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(49.49% - 26px);
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-z7G2Ox {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(32.99% - 12px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 36px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(32.99% - 12px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 36px;
 }
 
 .parametres .font-awsome-globe-europe-z7G2Ox {
-  background-color: transparent;
-  bottom: calc(50.00% - 9px);
-  height: 18px;
-  left: 25px;
-  object-fit: cover;
-  position: absolute;
-  width: 18px;
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    left: 25px;
+    object-fit: cover;
+    position: absolute;
+    width: 18px;
 }
 
 .parametres .abonnement-SGNSZD {
-  background-color: transparent;
-  bottom: calc(44.61% - 23px);
-  height: 52px;
-  left: 0px;
-  position: absolute;
-  width: calc(100.00% - 20px);
+    background-color: transparent;
+    bottom: calc(44.61% - 23px);
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    width: calc(100.00% - 20px);
 }
 
 .parametres .name-rQwdMq {
-  background-color: transparent;
-  bottom: calc(36.67% - 8px);
-  height: 22px;
-  left: calc(47.41% - 45px);
-  letter-spacing: 0.10px;
-  line-height: 14px;
-  position: absolute;
-  text-align: left;
-  white-space: nowrap;
-  width: 95px;
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(47.41% - 45px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 95px;
 }
 
 .parametres .icon-material-payment-rQwdMq {
-  background-color: transparent;
-  height: 15px;
-  left: 24px;
-  object-fit: cover;
-  position: absolute;
-  top: 18px;
-  width: 19px;
+    background-color: transparent;
+    height: 15px;
+    left: 24px;
+    object-fit: cover;
+    position: absolute;
+    top: 18px;
+    width: 19px;
 }
 
 .parametres .icon-ionic-ios-arrow-down-rQwdMq {
-  background-color: transparent;
-  bottom: calc(50.00% - 3px);
-  height: 7px;
-  left: 196px;
-  object-fit: cover;
-  position: absolute;
-  width: 12px;
+    background-color: transparent;
+    bottom: calc(50.00% - 3px);
+    height: 7px;
+    left: 196px;
+    object-fit: cover;
+    position: absolute;
+    width: 12px;
 }

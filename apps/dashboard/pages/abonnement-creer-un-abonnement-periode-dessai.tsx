@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function AbonnementCreerUnAbonnementPeriodeDessai() {
     return (
@@ -92,29 +93,7 @@ export default function AbonnementCreerUnAbonnementPeriodeDessai() {
                             </div>
                         </div>
                     </div>
-                    <div className="top-navigation-gvR0L2">
-                        <div className="rectangle-6se2OD"></div>
-                        <div className="top-navigation-search-6se2OD">
-                            <div className="x00-general-01-icons-sJHH2G">
-                                <img className="color-BxBJiA" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-sJHH2G poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-6se2OD">
-                            <div className="users-avatar-photo-2-states-Y3gVlc">
-                                <img className="oval-d49QAm" src="img/oval-10@1x.png" />
-                                <img className="image-d49QAm" src="img/image-14@1x.png" />
-                            </div>
-                            <div className="monica-simons-Y3gVlc poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-Y3gVlc">
-                                <img className="trac-399-mfUGvc" src="img/home-10@1x.png" />
-                                <img className="trac-400-mfUGvc" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-6se2OD">
-                            <img className="groupe-1-oo7iil" src="img/groupe-1-17@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-gvR0L2">
                         <div className="type-nl1lF8"></div>
                         <div className="groupe-393-nl1lF8">

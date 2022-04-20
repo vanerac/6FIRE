@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function Parametres() {
     return (
@@ -7,29 +8,7 @@ export default function Parametres() {
             <div className="container-center-horizontal">
                 <div className="parametres screen">
                     <div className="analytics-Oh231m poppins-semibold-semi-bold-mirage-24px">Paramètres</div>
-                    <div className="top-navigation-Oh231m">
-                        <div className="rectangle-PamlAg"></div>
-                        <div className="top-navigation-search-PamlAg">
-                            <div className="x00-general-01-icons-BD6x1p">
-                                <img className="color-B5B2Wd" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-BD6x1p poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-PamlAg">
-                            <div className="users-avatar-photo-2-states-xTm5xI">
-                                <img className="oval-qWGJdX" src="img/oval-10@1x.png" />
-                                <img className="image-qWGJdX" src="img/image-11@1x.png" />
-                            </div>
-                            <div className="monica-simons-xTm5xI poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-xTm5xI">
-                                <img className="trac-399-4sP4Pp" src="img/home-10@1x.png" />
-                                <img className="trac-400-4sP4Pp" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-PamlAg">
-                            <img className="groupe-1-XuxHPE" src="img/groupe-1-10@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-Oh231m">
                         <div className="type-ntDvMP"></div>
                         <div className="groupe-393-ntDvMP">

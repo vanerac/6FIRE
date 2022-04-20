@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function AbonnementCodePromoCreer() {
     return (
@@ -96,29 +97,7 @@ export default function AbonnementCodePromoCreer() {
                             />
                         </div>
                     </div>
-                    <div className="top-navigation-37sSb8">
-                        <div className="rectangle-VbFOfl"></div>
-                        <div className="top-navigation-search-VbFOfl">
-                            <div className="x00-general-01-icons-VHNS4d">
-                                <img className="color-v5Oexw" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-VHNS4d poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-VbFOfl">
-                            <div className="users-avatar-photo-2-states-3eVNwQ">
-                                <img className="oval-SPOMyD" src="img/oval-10@1x.png" />
-                                <img className="image-SPOMyD" src="img/image-14@1x.png" />
-                            </div>
-                            <div className="monica-simons-3eVNwQ poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-3eVNwQ">
-                                <img className="trac-399-8Mc88A" src="img/home-10@1x.png" />
-                                <img className="trac-400-8Mc88A" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-VbFOfl">
-                            <img className="groupe-1-7YmpKS" src="img/groupe-1-12@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-37sSb8">
                         <div className="type-155DSa"></div>
                         <div className="groupe-393-155DSa">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function BotTrading() {
     return (
@@ -7,29 +8,7 @@ export default function BotTrading() {
             <div className="container-center-horizontal">
                 <div className="bot-trading screen">
                     <div className="analytics-FwUAid poppins-semibold-semi-bold-mirage-24px">Bot Trading</div>
-                    <div className="top-navigation-FwUAid">
-                        <div className="rectangle-B088AD"></div>
-                        <div className="top-navigation-search-B088AD">
-                            <div className="x00-general-01-icons-m9s8fv">
-                                <img className="color-WLIgNA" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-m9s8fv poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-B088AD">
-                            <div className="users-avatar-photo-2-states-0M6x5s">
-                                <img className="oval-ae2kTQ" src="img/oval-10@1x.png" />
-                                <img className="image-ae2kTQ" src="img/image-11@1x.png" />
-                            </div>
-                            <div className="monica-simons-0M6x5s poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-0M6x5s">
-                                <img className="trac-399-tTRVRq" src="img/home-10@1x.png" />
-                                <img className="trac-400-tTRVRq" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-B088AD">
-                            <img className="groupe-1-KumoKO" src="img/groupe-1-10@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-FwUAid">
                         <div className="type-aOpqPg"></div>
                         <div className="groupe-393-aOpqPg">

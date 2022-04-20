@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
     return (
@@ -98,29 +99,8 @@ export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
                             />
                         </div>
                     </div>
-                    <div className="top-navigation-06U2bs">
-                        <div className="rectangle-orrzyq"></div>
-                        <div className="top-navigation-search-orrzyq">
-                            <div className="x00-general-01-icons-26qeog">
-                                <img className="color-HTk73i" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-26qeog poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-orrzyq">
-                            <div className="users-avatar-photo-2-states-ft0SZi">
-                                <img className="oval-S15y9C" src="img/oval-10@1x.png" />
-                                <img className="image-S15y9C" src="img/image-23@1x.png" />
-                            </div>
-                            <div className="monica-simons-ft0SZi poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-ft0SZi">
-                                <img className="trac-399-59FxgF" src="img/home-10@1x.png" />
-                                <img className="trac-400-59FxgF" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-orrzyq">
-                            <img className="groupe-1-4RGIqE" src="img/groupe-1-21@1x.png" />
-                        </div>
-                    </div>
+
+                    <Topbar />
                     <div className="buttons-btn-text-icon-06U2bs">
                         <div className="type-DkTLSP"></div>
                         <div className="groupe-393-DkTLSP">

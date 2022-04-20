@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function ThemesArticles() {
     return (
@@ -7,29 +8,7 @@ export default function ThemesArticles() {
             <div className="container-center-horizontal">
                 <div className="themes-articles screen">
                     <div className="analytics-FLlxoQ poppins-semibold-semi-bold-mirage-24px">Thèmes articles</div>
-                    <div className="top-navigation-FLlxoQ">
-                        <div className="rectangle-h7DBHl"></div>
-                        <div className="top-navigation-search-h7DBHl">
-                            <div className="x00-general-01-icons-x5QxAg">
-                                <img className="color-uUr8ul" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-x5QxAg poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-h7DBHl">
-                            <div className="users-avatar-photo-2-states-75dd7r">
-                                <img className="oval-lnSYEl" src="img/oval-10@1x.png" />
-                                <img className="image-lnSYEl" src="img/image-2@1x.png" />
-                            </div>
-                            <div className="monica-simons-75dd7r poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-75dd7r">
-                                <img className="trac-399-6IFrZo" src="img/home-10@1x.png" />
-                                <img className="trac-400-6IFrZo" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-h7DBHl">
-                            <img className="groupe-1-zz3lox" src="img/groupe-1-10@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="grid-table-FLlxoQ">
                         <div className="groupe-455-2OQISg">
                             <div className="rectangle-616-SQUZbp"></div>

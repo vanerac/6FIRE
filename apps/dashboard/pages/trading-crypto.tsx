@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function TradingCrypto() {
     return (
@@ -7,29 +8,7 @@ export default function TradingCrypto() {
             <div className="container-center-horizontal">
                 <div className="trading-crypto screen">
                     <div className="analytics-0HdJvR poppins-semibold-semi-bold-mirage-24px">Trading &amp; Crypto</div>
-                    <div className="top-navigation-0HdJvR">
-                        <div className="rectangle-IFpJuP"></div>
-                        <div className="top-navigation-search-IFpJuP">
-                            <div className="x00-general-01-icons-F2OGYX">
-                                <img className="color-5g4dUl" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-F2OGYX poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-IFpJuP">
-                            <div className="users-avatar-photo-2-states-yBRndw">
-                                <img className="oval-rB6h0L" src="img/oval-10@1x.png" />
-                                <img className="image-rB6h0L" src="img/image-10@1x.png" />
-                            </div>
-                            <div className="monica-simons-yBRndw poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-yBRndw">
-                                <img className="trac-399-Pr2TkJ" src="img/home-10@1x.png" />
-                                <img className="trac-400-Pr2TkJ" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-IFpJuP">
-                            <img className="groupe-1-bggexA" src="img/groupe-1-20@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-0HdJvR">
                         <div className="type-M8x5OR"></div>
                         <div className="groupe-393-M8x5OR">

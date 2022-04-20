@@ -50,6 +50,8 @@ import '../styles/ui-inventory.css';
 import '../styles/abonnement-gestion-abonnements.css';
 import '../styles/utilisateurs.css';
 import '../styles/articles-creer-un-article-1.css';
+// New
+import '../styles/topbar.css';
 
 import type { AppProps } from 'next/app';
 

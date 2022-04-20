@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function Broker() {
     return (
@@ -7,29 +8,7 @@ export default function Broker() {
             <div className="container-center-horizontal">
                 <div className="broker screen">
                     <div className="analytics-5ITOEV poppins-semibold-semi-bold-mirage-24px">Broker</div>
-                    <div className="top-navigation-5ITOEV">
-                        <div className="rectangle-fE658L"></div>
-                        <div className="top-navigation-search-fE658L">
-                            <div className="x00-general-01-icons-iJOnaQ">
-                                <img className="color-UEGDeI" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-iJOnaQ poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-fE658L">
-                            <div className="users-avatar-photo-2-states-aSkJsI">
-                                <img className="oval-fBwMJr" src="img/oval-10@1x.png" />
-                                <img className="image-fBwMJr" src="img/image-11@1x.png" />
-                            </div>
-                            <div className="monica-simons-aSkJsI poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-aSkJsI">
-                                <img className="trac-399-xzP48Z" src="img/home-10@1x.png" />
-                                <img className="trac-400-xzP48Z" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-fE658L">
-                            <img className="groupe-1-TW9Vex" src="img/groupe-1-10@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <a href="broker-creer-un-broker.html">
                         <div className="buttons-btn-text-icon-5ITOEV">
                             <div className="type-o6Sm8g"></div>

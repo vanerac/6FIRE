@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function AbonnementEssaiGratuit() {
     return (
@@ -96,29 +97,7 @@ export default function AbonnementEssaiGratuit() {
                             />
                         </div>
                     </div>
-                    <div className="top-navigation-dIMMOR">
-                        <div className="rectangle-HRJ8zk"></div>
-                        <div className="top-navigation-search-HRJ8zk">
-                            <div className="x00-general-01-icons-JxqpIA">
-                                <img className="color-ERc72O" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-JxqpIA poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-HRJ8zk">
-                            <div className="users-avatar-photo-2-states-FExCs4">
-                                <img className="oval-u9ZcVr" src="img/oval-10@1x.png" />
-                                <img className="image-u9ZcVr" src="img/image-22@1x.png" />
-                            </div>
-                            <div className="monica-simons-FExCs4 poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-FExCs4">
-                                <img className="trac-399-HuEtUl" src="img/home-10@1x.png" />
-                                <img className="trac-400-HuEtUl" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-HRJ8zk">
-                            <img className="groupe-1-YWt5vj" src="img/groupe-1-20@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-dIMMOR">
                         <div className="type-mXCuo0"></div>
                         <div className="groupe-393-mXCuo0">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function BrokerCreation() {
     return (
@@ -7,29 +8,7 @@ export default function BrokerCreation() {
             <div className="container-center-horizontal">
                 <div className="broker-creer-un-broker screen">
                     <div className="analytics-A9axGX poppins-semibold-semi-bold-mirage-24px">Broker</div>
-                    <div className="top-navigation-A9axGX">
-                        <div className="rectangle-jPKCA6"></div>
-                        <div className="top-navigation-search-jPKCA6">
-                            <div className="x00-general-01-icons-GktIBc">
-                                <img className="color-kCbUEm" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-GktIBc poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-jPKCA6">
-                            <div className="users-avatar-photo-2-states-OUN416">
-                                <img className="oval-6MhVbF" src="img/oval-10@1x.png" />
-                                <img className="image-6MhVbF" src="img/image-14@1x.png" />
-                            </div>
-                            <div className="monica-simons-OUN416 poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-OUN416">
-                                <img className="trac-399-a34Vpg" src="img/home-10@1x.png" />
-                                <img className="trac-400-a34Vpg" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-jPKCA6">
-                            <img className="groupe-1-peRq66" src="img/groupe-1-12@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="buttons-btn-text-icon-A9axGX">
                         <div className="type-byk8PY"></div>
                         <div className="groupe-393-byk8PY">

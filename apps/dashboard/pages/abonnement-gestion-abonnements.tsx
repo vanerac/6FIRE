@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function AbonnementGestionAbonnements() {
     return (
@@ -104,29 +105,7 @@ export default function AbonnementGestionAbonnements() {
                             />
                         </div>
                     </div>
-                    <div className="top-navigation-xxlmKF">
-                        <div className="rectangle-zHE8ES"></div>
-                        <div className="top-navigation-search-zHE8ES">
-                            <div className="x00-general-01-icons-KUnMTp">
-                                <img className="color-tGhWQj" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-KUnMTp poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-zHE8ES">
-                            <div className="users-avatar-photo-2-states-jxABKB">
-                                <img className="oval-B6580b" src="img/oval-10@1x.png" />
-                                <img className="image-B6580b" src="img/image-11@1x.png" />
-                            </div>
-                            <div className="monica-simons-jxABKB poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-jxABKB">
-                                <img className="trac-399-Wk2U2e" src="img/home-10@1x.png" />
-                                <img className="trac-400-Wk2U2e" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-zHE8ES">
-                            <img className="groupe-1-g4JmhR" src="img/groupe-1-10@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <a href="abonnement-creer-un-abonnement.tsx">
                         <div className="buttons-btn-text-icon-xxlmKF">
                             <div className="type-QQwysk"></div>

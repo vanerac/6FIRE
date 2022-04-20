@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function Index() {
     return (
@@ -7,29 +8,7 @@ export default function Index() {
             <div className="container-center-horizontal">
                 <div className="home screen">
                     <div className="analytics-xl4bh6 poppins-semibold-semi-bold-mirage-24px">Home</div>
-                    <div className="top-navigation-xl4bh6">
-                        <div className="rectangle-CmX7CH"></div>
-                        <div className="top-navigation-search-CmX7CH">
-                            <div className="x00-general-01-icons-tOsY8x">
-                                <img className="color-MBRcI1" src="public/img/color-2@1x.png" />
-                            </div>
-                            <div className="search-tOsY8x poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-CmX7CH">
-                            <div className="users-avatar-photo-2-states-mdWajc">
-                                <img className="oval-nxuyev" src="img/oval-10@1x.png" />
-                                <img className="image-nxuyev" src="img/image-2@1x.png" />
-                            </div>
-                            <div className="monica-simons-mdWajc poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-mdWajc">
-                                <img className="trac-399-jESsjN" src="img/home-10@1x.png" />
-                                <img className="trac-400-jESsjN" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-CmX7CH">
-                            <img className="groupe-1-iVb1Uq" src="img/groupe-1@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="sort-filter-xl4bh6">
                         <div className="tabs-yIG9sx">
                             <div className="tab-group-6t5I7V">

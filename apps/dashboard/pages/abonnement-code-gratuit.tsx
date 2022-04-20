@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from '../components/topbar';
 
 export default function AbonnementCodeGratuit() {
     return (
@@ -106,29 +107,7 @@ export default function AbonnementCodeGratuit() {
                             />
                         </div>
                     </div>
-                    <div className="top-navigation-IJFojW">
-                        <div className="rectangle-oCUWWG"></div>
-                        <div className="top-navigation-search-oCUWWG">
-                            <div className="x00-general-01-icons-2x40ed">
-                                <img className="color-zvtQQo" src="img/color-10@1x.png" />
-                            </div>
-                            <div className="search-2x40ed poppins-normal-comet-14px">Search...</div>
-                        </div>
-                        <div className="user-group-oCUWWG">
-                            <div className="users-avatar-photo-2-states-JELuwO">
-                                <img className="oval-hXNDxg" src="img/oval-10@1x.png" />
-                                <img className="image-hXNDxg" src="img/image-22@1x.png" />
-                            </div>
-                            <div className="monica-simons-JELuwO poppins-normal-white-14px">Elodie</div>
-                            <div className="icons-chevron-down-JELuwO">
-                                <img className="trac-399-INa6aK" src="img/home-10@1x.png" />
-                                <img className="trac-400-INa6aK" src="img/trac--400-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="groupe-2-oCUWWG">
-                            <img className="groupe-1-s0oyxy" src="img/groupe-1-20@1x.png" />
-                        </div>
-                    </div>
+                    <Topbar />
                     <div className="informations-IJFojW">
                         <div className="rectangle-632-xQSJNS"></div>
                         <div className="titre-xQSJNS">
