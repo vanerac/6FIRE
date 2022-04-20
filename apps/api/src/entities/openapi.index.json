@@ -35,6 +35,15 @@
     "/auth/verifyNewUser": {
       "$ref": "./auth/auth.path.json#/verifyNew"
     },
+    "/auth/password/forgot": {
+      "$ref": "./auth/auth.path.json#/forgotPassword"
+    },
+    "/auth/password/reset": {
+      "$ref": "./auth/auth.path.json#/resetPassword"
+    },
+    "/auth/password/change": {
+      "$ref": "./auth/auth.path.json#/changePassword"
+    },
     "/theme": {
       "$ref": "./theme/theme.path.json#/themes"
     },
@@ -49,6 +58,15 @@
     },
     "/crypto/message": {
       "$ref": "./crypto/crypto.path.json#/setMessage"
+    },
+    "/crypto/searchCoin": {
+      "$ref": "./crypto/crypto.path.json#/searchCrypto"
+    },
+    "/crypto/{id}/value": {
+      "$ref": "./crypto/crypto.path.json#/getCoinValue"
+    },
+    "/crypto/coinImg/{id}": {
+      "$ref": "./crypto/crypto.path.json#/getCryptoImage"
     },
     "/trader/curation": {
       "$ref": "./trader/trader.path.json#/curation"
@@ -79,6 +97,12 @@
     },
     "/subscription/{id}": {
       "$ref": "./subscription/subscription.path.json#/byId"
+    },
+    "/country": {
+      "$ref": "./country/country.path.json#/withoutId"
+    },
+    "/country/{id}": {
+      "$ref": "./country/country.path.json#/withId"
     }
   },
   "components": {
@@ -103,6 +127,9 @@
       },
       "Subscription": {
         "$ref": "./openapi.components.json#/schemas/Subscription"
+      },
+      "Country": {
+        "$ref": "./openapi.components.json#/schemas/Country"
       }
     }
   }

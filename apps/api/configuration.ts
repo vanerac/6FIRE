@@ -8,4 +8,6 @@ export default {
     EMAIL_SENDER: process.env.EMAIL_SENDER ?? 'no-reply@6fireinvest.com',
     SMS_SENDER: process.env.SMS_SENDER ?? '6FIREINVEST',
     SMS_API_KEY: process.env.SMS_API_KEY ?? '',
+    UPLOAD_DIR: process.env.UPLOAD_DIR ?? '../../data/uploads',
+    COINMARKETCAP_API_KEY: process.env.COIN_MARKET_API_KEY ?? '',
 };

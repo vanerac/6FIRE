@@ -23,7 +23,6 @@ model User {
   email             String
   password          String
   telephone         String
-  countryId         Int
   CGU               Boolean
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @default(now())
@@ -31,13 +30,22 @@ model User {
   verifiedEmail     Boolean             @default(false)
   verifiedPhone     Boolean             @default(false)
   banned            Boolean             @default(false)
-  country           Country             @relation(fields: [countryId], references: [id])
   VerificationCodes VerificationCodes[]
   TraderFollows     TraderFollows[]
   UserSubscription  UserSubscription[]
+  PasswordReset PasswordReset[]
 
   @@unique([email, verifiedEmail])
   @@unique([telephone, verifiedPhone])
+}
+
+model PasswordReset {
+  id        Int      @id @default(autoincrement())
+  userId    String   @unique
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [userId])
 }
 
 model VerificationCodes {
@@ -99,14 +107,15 @@ model Country {
   enabled   Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  User      User[]
 }
 
 model CryptoHolding {
   id     Int      @id @default(autoincrement())
   token  String
+  price  Int
   amount Int
-  date   DateTime @default(now())
+  updatedAt DateTime @default(now())
+  createdAt DateTime @default(now())
 }
 
 model CryptoJournal {

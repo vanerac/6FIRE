@@ -40,7 +40,7 @@ app.use(
         validateFormats: 'full',
         operationHandlers: false,
         fileUploader: {
-            dest: '../../data/uploads',
+            dest: configuration.UPLOAD_DIR,
             limits: {
                 fileSize: 10 * 1024 * 1024,
             },
@@ -78,6 +78,8 @@ app.use(
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );
+
+app.use(express.static(configuration.UPLOAD_DIR));
 
 app.use((err, req, res, $next) => {
     // format error
