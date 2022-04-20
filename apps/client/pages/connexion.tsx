@@ -4,7 +4,8 @@ import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
 import { useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
+import { ApiClient } from '@shared/services/ApiClient';
 
 const Home: NextPage = (props: any) => {
     const [userName, setUserName] = useState('');
@@ -20,6 +21,7 @@ const Home: NextPage = (props: any) => {
     const [showPassword, setShowPassword] = useState('password');
     const [cguChecked, setCguChecked] = useState(false);
     const [errorCgu, setErrorCgu] = useState('');
+    const apiClient = new ApiClient();
 
     const create_account = () => {
         console.log(userName);
@@ -62,6 +64,20 @@ const Home: NextPage = (props: any) => {
         ) {
             router.push('/articlesPage');
         }
+
+        const test = {
+            email: 'string',
+            password: 'string',
+            firstName: 'string',
+            lastName: 'string',
+            telephone: 'string',
+            confirm_password: 'string',
+            CGU: true,
+        };
+
+        apiClient.auth.register(test).then((res) => {
+            console.log(res);
+        });
 
         // axios
         //     .post('http://localhost:3333/api/user', {
