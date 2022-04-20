@@ -111,7 +111,7 @@ const HomePage: NextPage = (props: any) => {
                     <img className="trac-1-3BLpSU" src="img/path-1-10@1x.png" />
                     <img className="trac-2-3BLpSU" src="img/path-2-10@1x.png" />
                 </div>
-                <div className="button-nous-rejoindre-UwGJ9Z">
+                <div onClick={() => router.push('/connexion')} className="button-nous-rejoindre-UwGJ9Z">
                     <div className="rectangle-3470-vZJ39L"></div>
                     <div className="nous-rejoindre-vZJ39L lato-normal-white-16px">Nous rejoindre</div>
                 </div>

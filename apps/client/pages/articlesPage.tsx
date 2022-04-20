@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import router from 'next/router';
+import Footer from './components/footer';
 import Header from './components/header';
 
 const HomePage: NextPage = (props: any) => {
@@ -9,52 +10,10 @@ const HomePage: NextPage = (props: any) => {
         <div>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
             <div className="homepage-1 screen">
-                <div className="footer-58RGA4">
-                    <div className="background-oAP47k"></div>
-                    <div className="menu-footer-oAP47k">
-                        <div className="mentions-lgales-1x8gv1 sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-1x8gv1 sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-1x8gv1 sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-1x8gv1 sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-svYU0K sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-1x8gv1 sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-oAP47k sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-oAP47k">
-                        <div className="groupe-2-sl8fJD">
-                            <div className="groupe-1-Im0Mvz">
-                                <Image layout="fill" src="/img/group-1-11@1x.png" />
-                            </div>
-                        </div>
-                        <div className="effect-sl8fJD">
-                            <Image layout="fill" src="/img/effect-12@1x.png" />
-                        </div>
-                    </div>
-                    <div className="ligne-31-oAP47k">
-                        <Image layout="fill" src="/img/line-31-1@1x.png" />
-                    </div>
-                    <div className="groupe-3011-oAP47k">
-                        <div className="icon-instagram-fzzB9m">
-                            <Image layout="fill" src="/img/fontawsome--instagram--1@1x.png" />
-                        </div>
-                    </div>
-                    <div className="groupe-3010-oAP47k">
-                        <div className="icon-simple-tiktok-IkA9hE">
-                            <Image layout="fill" src="/img/icon-simple-tiktok-1@1x.png" />
-                        </div>
-                    </div>
-                </div>
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
                 <div className="content-white-dark-58RGA4">
                     <div className="content-dark-LZQy1P">
-                        <div style={{height: '100%'}} className="background-1CdAvu"></div>
+                        <div style={{ height: '100%' }} className="background-1CdAvu"></div>
                         <div className="prvisualition-articles-1CdAvu">
                             <div className="article-zyelmY">
                                 <div className="groupe-de-masques-321-QWNatB">
@@ -184,7 +143,6 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                 </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
                 <div className="call-to-action-58RGA4">
                     <div className="groupe-de-masques-328-ir0Byo">
                         <Image layout="fill" src="/img/mask-group-328@1x.png" />
@@ -216,6 +174,7 @@ const HomePage: NextPage = (props: any) => {
                         <Image layout="fill" src="/img/line-41-2@1x.png" />
                     </div>
                 </div>
+                <Footer />
             </div>
             <div className="homepage-1-mobile screen">
                 <div className="background-3xxVvY"></div>

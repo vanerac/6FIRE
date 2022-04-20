@@ -15,7 +15,7 @@ const HomePage: NextPage = (props: any) => {
                     <div
                         className="lato-normal-white-12px"
                         style={{ color: '#fff', marginTop: '200px', marginLeft: '20%', marginRight: '20%' }}>
-                        <h1>Conditions Générales d’Utilisations</h1>
+                        <h1>Conditions Générales de Vente</h1>
                         Description des services fournis
                         <br />
                         <br />
@@ -142,10 +142,10 @@ const HomePage: NextPage = (props: any) => {
                         Pour conna&icirc;tre davantage d&rsquo;informations sur la mani&egrave;re dont vos informations
                         personnelles sont utilis&eacute;es, nous vous invitons &agrave; consulter notre Politique de
                         confidentialit&eacute;.
-                        {/* <br />
                         <br />
                         <br />
-                        <br /> */}
+                        <br />
+                        <br />
                     </div>
                 </div>
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />

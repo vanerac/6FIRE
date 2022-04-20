@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Header from './components/header';
+import Footer from './components/footer';
 
 const HomePage: NextPage = (props: any) => {
     return (
@@ -186,52 +187,6 @@ const HomePage: NextPage = (props: any) => {
                             </div>
                         </div>
                     </div>
-                    <div className="icon-ionic-ios-moon-FZXT2m">
-                        <Image src="/img/icon-ionic-ios-moon-1@1x.png" layout="fill" />
-                    </div>
-                </div>
-                <div className="footer-SAHlos">
-                    <div className="background-BaKdMY"></div>
-                    <div className="menu-footer-BaKdMY">
-                        <div className="mentions-lgales-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-oLo3wS sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-BaKdMY sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-BaKdMY">
-                        <div className="groupe-2-4tGdAy">
-                            <div className="groupe-1-xjk9Ad">
-                                <Image src="/img/group-1-10@1x.png" layout="fill" />
-                            </div>
-                        </div>
-                        <div className="effect-4tGdAy">
-                            <Image src="/img/effect-12@1x.png" layout="fill" />
-                        </div>
-                    </div>
-                    <div className="ligne-31-BaKdMY">
-                        <Image src="/img/line-31-1@1x.png" layout="fill" />
-                    </div>
-                    <div className="groupe-3011-BaKdMY">
-                        <div className="icon-instagram-GiDxHj">
-                            <Image src="/img/fontawsome--instagram--1@1x.png" layout="fill" />
-                        </div>
-                    </div>
-                    <div className="groupe-3010-BaKdMY">
-                        <div className="icon-simple-tiktok-2zSnac">
-                            <Image src="/img/icon-simple-tiktok-1@1x.png" layout="fill" />
-                        </div>
-                    </div>
                 </div>
                 <div className="bandeau-call-to-action-SAHlos">
                     <div className="groupe-de-masques-329-8hnitL">
@@ -264,6 +219,7 @@ const HomePage: NextPage = (props: any) => {
                         <Image src="/img/line-41-2@1x.png" layout="fill" />
                     </div>
                 </div>
+                <Footer />
             </div>
             <div className="articles-details-mobile screen">
                 <div className="background-2dehIQ"></div>

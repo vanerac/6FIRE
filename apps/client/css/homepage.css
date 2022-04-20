@@ -701,6 +701,7 @@
   left: 101px;
   position: absolute;
   width: calc(100.00% - 201px);
+  cursor: pointer;
 }
 
 .homepage-2 .rectangle-3470-vZJ39L {

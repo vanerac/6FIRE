@@ -270,6 +270,7 @@
     right: 11px;
     top: 3px;
     width: 13px;
+    cursor: pointer;
 }
 
 .register-mobile .ligne-7-WPm9xl {
@@ -301,6 +302,7 @@
     position: absolute;
     right: calc(49.79% - 95px);
     width: 190px;
+    cursor: pointer;
 }
 
 .register-mobile .button-cration-de-compte-TU0AFD {

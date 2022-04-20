@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import router from 'next/router';
 // import router from 'next/router';
 import { useState } from 'react';
 // import axios from 'axios';
@@ -8,7 +9,7 @@ import { useState } from 'react';
 const Home: NextPage = (props: any) => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const [setuserSurName, setUserSurName] = useState('');
+    const [userSurName, setUserSurName] = useState('');
     const [userMail, setUserMail] = useState('');
     const [userPhone, setUserPhone] = useState('');
     const [errorUserName, setErrorUserName] = useState('');
@@ -23,7 +24,7 @@ const Home: NextPage = (props: any) => {
     const create_account = () => {
         console.log(userName);
         console.log(password);
-        console.log(setuserSurName);
+        console.log(userSurName);
         console.log(userMail);
         console.log(userPhone);
 
@@ -33,7 +34,7 @@ const Home: NextPage = (props: any) => {
         if (password === '') {
             setErrorPassword('Votre mot de passe est obligatoire');
         }
-        if (setuserSurName === '') {
+        if (userSurName === '') {
             setErrorUserSurName('Votre nom est obligatoire');
         }
         if (userMail === '') {
@@ -49,6 +50,17 @@ const Home: NextPage = (props: any) => {
         }
         if (cguChecked === false) {
             setErrorCgu('Vous devez accepter les CGU');
+        }
+
+        if (
+            userName !== '' &&
+            password !== '' &&
+            userSurName !== '' &&
+            userMail !== '' &&
+            userPhone !== '' &&
+            cguChecked === true
+        ) {
+            router.push('/articlesPage');
         }
 
         // axios
@@ -90,14 +102,12 @@ const Home: NextPage = (props: any) => {
                     Rejoignez 6FIRE - Club Privé d’investisseur
                 </div>
                 <div className="newsletter-WxaGAS">
-                    {/* <div className="rectangle-3473-ctfCRZ border-1px-white"></div> */}
                     <input type="checkbox" id="actu6fire" name="actu6fire" />
                     <div className="je-souhaite-recevoir-lactualit-6-fire-ctfCRZ lato-normal-white-12px">
                         Je souhaite recevoir l’actualité 6FIRE
                     </div>
                 </div>
                 <div className="cgu-rgpd-WxaGAS">
-                    {/* <div className="rectangle-3474-qVPDai border-1px-white"></div> */}
                     <input
                         type="checkbox"
                         id="cgu"
@@ -134,7 +144,6 @@ const Home: NextPage = (props: any) => {
                         ) : (
                             <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
                         )}
-                        {/* <Image style={{ color: 'red' }} layout="fill" src="/img/ligne-1-1@1x.png" /> */}
                         <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
                             {errorUserName}
                         </div>
@@ -151,7 +160,6 @@ const Home: NextPage = (props: any) => {
                 </div>
                 <div className="prnom-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        {/* <Image layout="fill" src="/img/ligne-1-1@1x.png" /> */}
                         {errorUserSurName !== '' ? (
                             <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
                         ) : (
@@ -173,7 +181,6 @@ const Home: NextPage = (props: any) => {
                 </div>
                 <div className="numro-de-tlphone-WxaGAS">
                     <div className="ligne-1-Ay5Yag">
-                        {/* <Image layout="fill" src="/img/ligne-1-1@1x.png" /> */}
                         {errorUserMail !== '' ? (
                             <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
                         ) : (
@@ -200,7 +207,6 @@ const Home: NextPage = (props: any) => {
                         ) : (
                             <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
                         )}
-                        {/* <Image layout="fill" src="/img/ligne-1-1@1x.png" /> */}
                         <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
                             {errorPassword}
                         </div>
@@ -249,7 +255,6 @@ const Home: NextPage = (props: any) => {
                         <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
                             {errorUserPhone}
                         </div>
-                        {/* <Image layout="fill" src="/img/ligne-1-1@1x.png" /> */}
                     </div>
                     <input
                         onChange={(event) => {
@@ -291,13 +296,27 @@ const Home: NextPage = (props: any) => {
                     Rejoignez 6FIRE - Club Privé d’investisseur
                 </div>
                 <div className="newsletter-qfTrnm">
-                    <div className="rectangle-3473-eM3wxq border-1px-white"></div>
+                    {/* <div className="rectangle-3473-eM3wxq border-1px-white"></div> */}
+                    <input type="checkbox" id="actu6fire" name="actu6fire" />
                     <div className="je-souhaite-recevoir-lactualit-6-fire-eM3wxq lato-normal-white-12px">
                         Je souhaite recevoir l’actualité 6FIRE
                     </div>
                 </div>
                 <div className="cgu-rgpd-qfTrnm">
-                    <div className="rectangle-3474-XHhUEC border-1px-white"></div>
+                    {/* <div className="rectangle-3474-XHhUEC border-1px-white"></div> */}
+                    <input
+                        type="checkbox"
+                        id="cgu"
+                        name="cgu"
+                        onChange={() => {
+                            if (cguChecked === false) {
+                                setErrorCgu('');
+                                setCguChecked(true);
+                            } else {
+                                setCguChecked(false);
+                            }
+                        }}
+                    />
                     <div className="en-crant-un-compte-v-XHhUEC">
                         <span className="span0-J4Md4x lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
@@ -308,36 +327,108 @@ const Home: NextPage = (props: any) => {
                         </span>
                         <span className="span3-J4Md4x lato-normal-white-12px">Politique de confidentialité</span>
                         <span className="span4-J4Md4x lato-normal-white-12px"> de 6FIRE.</span>
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorCgu}
+                        </div>
                     </div>
                 </div>
                 <div className="nom-qfTrnm">
                     <div className="ligne-1-vdEIbT">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {errorUserName !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorUserName}
+                        </div>
                     </div>
-                    <input placeholder="*Nom" type="text" className="nom-vdEIbT lato-normal-white-14px" />
+                    <input
+                        onChange={(event) => {
+                            setErrorUserName('');
+                            setUserName(event.target.value);
+                        }}
+                        placeholder="*Nom"
+                        type="text"
+                        className="nom-vdEIbT lato-normal-white-14px"
+                    />
                 </div>
                 <div className="prnom-qfTrnm">
                     <div className="ligne-5-6mOLtL">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {errorUserSurName !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorUserSurName}
+                        </div>
                     </div>
-                    <div className="prnom-6mOLtL lato-normal-white-14px">* Prénom</div>
+                    <input
+                        onChange={(event) => {
+                            setErrorUserSurName('');
+                            setUserSurName(event.target.value);
+                        }}
+                        placeholder="*Prénom"
+                        type="text"
+                        className="nom-vdEIbT lato-normal-white-14px"
+                    />
                 </div>
                 <div className="numro-de-tlphone-qfTrnm">
                     <div className="ligne-6-Glkvq0">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {errorUserPhone !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorUserPhone}
+                        </div>
                     </div>
-                    <div className="numro-de-tlphone-Glkvq0 lato-normal-white-14px">* Numéro de téléphone</div>
+                    <input
+                        onChange={(event) => {
+                            setErrorUserPhone('');
+                            setUserPhone(event.target.value);
+                        }}
+                        placeholder="*Numéro de téléphone"
+                        type="text"
+                        className="nom-vdEIbT lato-normal-white-14px"
+                    />
                 </div>
                 <div className="mot-de-passe-qfTrnm">
-                    <div className="icon-ionic-md-eye-off-WPm9xl">
+                    <div
+                        onClick={() => {
+                            console.log('showPassword', showPassword);
+                            if (showPassword == 'password') {
+                                setShowPassword('text');
+                            } else {
+                                setShowPassword('password');
+                            }
+                        }}
+                        className="icon-ionic-md-eye-off-WPm9xl">
                         <Image layout="fill" src="/img/icon-ionic-md-eye-off-1@1x.png" />
                     </div>
                     <div className="ligne-7-WPm9xl">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {errorPassword !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorPassword}
+                        </div>
                     </div>
-                    <div className="mot-de-passe-WPm9xl lato-normal-white-14px">* Mot de passe</div>
+                    <input
+                        placeholder="*Mot de passe"
+                        onChange={(event) => {
+                            setErrorPassword('');
+                            setPassword(event.target.value);
+                        }}
+                        type={showPassword}
+                        className="nom-vdEIbT lato-normal-white-14px"
+                    />
                 </div>
-                <div className="button-sign-in-qfTrnm">
+                <div onClick={create_account} className="button-sign-in-qfTrnm">
                     <div className="button-cration-de-compte-TU0AFD">
                         <div className="rectangle-3470-1QO1gL"></div>
                         <div className="crer-un-compte-1QO1gL">Créer un compte</div>
@@ -361,9 +452,25 @@ const Home: NextPage = (props: any) => {
                 </div>
                 <div className="numro-de-tlphone-511QbH">
                     <div className="ligne-6-DzMs4Y">
-                        <Image layout="fill" src="/img/ligne-1-1@1x.png" />
+                        {errorUserMail !== '' ? (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid red' }}></div>
+                        ) : (
+                            <div className="rectangle-3475-1QZQZG" style={{ border: '1px solid white' }}></div>
+                        )}
+                        <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                            {errorUserMail}
+                        </div>
                     </div>
-                    <div className="email-DzMs4Y lato-normal-white-14px">* Email</div>
+                    <input
+                        onChange={(event) => {
+                            setErrorUserMail('');
+                            setUserMail(event.target.value);
+                            console.log('event.target.value', event.target.value);
+                        }}
+                        placeholder="*Email"
+                        type="text"
+                        className="nom-vdEIbT lato-normal-white-14px"
+                    />
                 </div>
             </div>
         </div>
