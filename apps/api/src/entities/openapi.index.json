@@ -35,6 +35,15 @@
     "/auth/verifyNewUser": {
       "$ref": "./auth/auth.path.json#/verifyNew"
     },
+    "/auth/password/forgot": {
+      "$ref": "./auth/auth.path.json#/forgotPassword"
+    },
+    "/auth/password/reset": {
+      "$ref": "./auth/auth.path.json#/resetPassword"
+    },
+    "/auth/password/change": {
+      "$ref": "./auth/auth.path.json#/changePassword"
+    },
     "/theme": {
       "$ref": "./theme/theme.path.json#/themes"
     },
