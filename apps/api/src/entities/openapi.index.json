@@ -79,6 +79,12 @@
     },
     "/subscription/{id}": {
       "$ref": "./subscription/subscription.path.json#/byId"
+    },
+    "/country": {
+      "$ref": "./country/country.path.json#/withoutId"
+    },
+    "/country/{id}": {
+      "$ref": "./country/country.path.json#/withId"
     }
   },
   "components": {
@@ -103,6 +109,9 @@
       },
       "Subscription": {
         "$ref": "./openapi.components.json#/schemas/Subscription"
+      },
+      "Country": {
+        "$ref": "./openapi.components.json#/schemas/Country"
       }
     }
   }

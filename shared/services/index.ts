@@ -10,6 +10,7 @@ export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { Article } from './models/Article';
+export type { Country } from './models/Country';
 export type { CryptoHolding } from './models/CryptoHolding';
 export type { Error } from './models/Error';
 export type { Subscription } from './models/Subscription';
@@ -19,6 +20,7 @@ export type { User } from './models/User';
 
 export { ArticleService } from './services/ArticleService';
 export { AuthService } from './services/AuthService';
+export { CountryService } from './services/CountryService';
 export { CryptoService } from './services/CryptoService';
 export { SubscriptionService } from './services/SubscriptionService';
 export { ThemesService } from './services/ThemesService';
