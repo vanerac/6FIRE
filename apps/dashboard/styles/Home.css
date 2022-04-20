@@ -1,9 +1,0 @@
-.home {
-  align-items: flex-start;
-  background-color: var(--zircon);
-  display: flex;
-  flex-direction: column;
-  height: 1007px;
-  width: 1600px;
-}
-
