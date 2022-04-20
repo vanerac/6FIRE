@@ -50,6 +50,15 @@
     "/crypto/message": {
       "$ref": "./crypto/crypto.path.json#/setMessage"
     },
+    "/crypto/searchCoin": {
+      "$ref": "./crypto/crypto.path.json#/searchCrypto"
+    },
+    "/crypto/{id}/value": {
+      "$ref": "./crypto/crypto.path.json#/getCoinValue"
+    },
+    "/crypto/coinImg/{id}": {
+      "$ref": "./crypto/crypto.path.json#/getCryptoImage"
+    },
     "/trader/curation": {
       "$ref": "./trader/trader.path.json#/curation"
     },
