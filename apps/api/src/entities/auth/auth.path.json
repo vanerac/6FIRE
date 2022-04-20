@@ -86,9 +86,6 @@
                 "lastName": {
                   "type": "string"
                 },
-                "countryId": {
-                  "type": "number"
-                },
                 "telephone": {
                   "type": "string",
                   "pattern": "^[0-9]{10}$"
