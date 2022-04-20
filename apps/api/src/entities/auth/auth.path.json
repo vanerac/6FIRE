@@ -90,9 +90,6 @@
                   "type": "string",
                   "pattern": "^[0-9]{10}$"
                 },
-                "confirm_password": {
-                  "type": "string"
-                },
                 "CGU": {
                   "type": "boolean"
                 }
@@ -100,7 +97,6 @@
               "required": [
                 "email",
                 "password",
-                "confirm_password",
                 "firstName",
                 "lastName",
                 "telephone",

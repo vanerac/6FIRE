@@ -67,7 +67,6 @@ export class AuthService {
             firstName: string;
             lastName: string;
             telephone: string;
-            confirm_password: string;
             CGU: boolean;
         },
     ): CancelablePromise<any> {
