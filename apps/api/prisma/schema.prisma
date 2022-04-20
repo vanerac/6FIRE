@@ -115,8 +115,10 @@ model Country {
 model CryptoHolding {
   id     Int      @id @default(autoincrement())
   token  String
+  price  Int
   amount Int
-  date   DateTime @default(now())
+  updatedAt DateTime @default(now())
+  createdAt DateTime @default(now())
 }
 
 model CryptoJournal {
