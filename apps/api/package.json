@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mollie/api-client": "^3.6.0",
     "@prisma/client": "^3.12.0",
     "aws-sdk": "^2.1116.0",
     "axios": "^0.26.1",

@@ -9,4 +9,5 @@ export default {
     SMS_SENDER: process.env.SMS_SENDER ?? '6FIREINVEST',
     SMS_API_KEY: process.env.SMS_API_KEY ?? '',
     UPLOAD_DIR: process.env.UPLOAD_DIR ?? '../../data/uploads',
+    MOLLIE_API_KEY: process.env.MOLLIE_API_KEY ?? '',
 };
