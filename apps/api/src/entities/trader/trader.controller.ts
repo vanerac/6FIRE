@@ -6,6 +6,7 @@ const prisma = new PrismaClient();
 export default class TraderController {
     static async getTopTraders(req: Request, res: Response) {
         try {
+            // Todo: Implement Apify client
             throw new Error('Not implemented');
         } catch (error) {
             res.status(500).json({
