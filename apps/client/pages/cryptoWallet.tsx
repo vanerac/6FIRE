@@ -394,4 +394,3 @@ const CryptoWallet: NextPage = (props: any) => {
 
 export default CryptoWallet;
 // export default checkAuth(CryptoWallet);
-
