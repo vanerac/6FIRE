@@ -2,8 +2,19 @@ import type { NextPage } from 'next';
 import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import { useEffect } from 'react';
 
 const BotTrading: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="bot-trading" />
@@ -393,3 +404,4 @@ const BotTrading: NextPage = (props: any) => {
 };
 
 export default BotTrading;
+// export default checkAuth(BotTrading);
