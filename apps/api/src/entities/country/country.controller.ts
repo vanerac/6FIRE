@@ -1,5 +1,5 @@
 import { CRUDController } from '../../types';
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -14,18 +14,16 @@ const prisma = new PrismaClient();
 // }
 
 export default class CountryController implements CRUDController {
-    static async getAll(req: Request, res: Response) {
+    static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
             const countries = await prisma.country.findMany();
             res.status(200).json(countries);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    static async getOne(req: Request, res: Response) {
+    static async getOne(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const country = await prisma.country.findFirst({
@@ -35,13 +33,11 @@ export default class CountryController implements CRUDController {
             });
             res.status(200).json(country);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    static async create(req: Request, res: Response) {
+    static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const country = await prisma.country.create({
                 data: {
@@ -50,13 +46,11 @@ export default class CountryController implements CRUDController {
             });
             res.status(201).json(country);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    static async update(req: Request, res: Response) {
+    static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const country = await prisma.country.update({
@@ -69,13 +63,11 @@ export default class CountryController implements CRUDController {
             });
             res.status(200).json(country);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    static async delete(req: Request, res: Response) {
+    static async delete(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const country = await prisma.country.delete({
@@ -85,9 +77,7 @@ export default class CountryController implements CRUDController {
             });
             res.status(200).json(country);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 }
