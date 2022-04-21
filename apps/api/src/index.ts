@@ -10,6 +10,14 @@ import cookieParser from 'cookie-parser';
 import * as Sentry from '@sentry/node';
 import * as Tracing from '@sentry/tracing';
 
+declare module 'express-session' {
+    export interface SessionData {
+        user: User;
+
+        [key: string]: any;
+    }
+}
+
 const app = express();
 
 Sentry.init({
@@ -37,11 +45,17 @@ app.use(Sentry.Handlers.errorHandler());
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const openApiDocument = require(configuration.OPENAPI_SPEC_DEFINITION);
-
-app.use(cookieParser());
-
 const prisma = new PrismaClient();
 
+app.use(
+    cors({
+        origin: '*',
+        credentials: true,
+        allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+        methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
+    }),
+);
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -60,9 +74,10 @@ app.use(
         },
         validateResponses: {
             removeAdditional: 'failing',
-            onError: console.error, // todo: temporary solution
+            onError: (any) => console.error('middleware', any), // todo: temporary solution
         },
         validateFormats: 'full',
+        // ignoreUndocumented: true,
         operationHandlers: false,
         fileUploader: {
             dest: configuration.UPLOAD_DIR,
@@ -85,34 +100,7 @@ app.use(
     }),
 );
 
-declare module 'express-session' {
-    export interface SessionData {
-        user: User;
-
-        [key: string]: any;
-    }
-}
-
 app.use('/api', Routes);
-
-app.use(
-    cors({
-        origin: '*',
-        credentials: true,
-        allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-        methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
-    }),
-);
-
-app.use(express.static(configuration.UPLOAD_DIR));
-
-app.use((err, req, res, $next) => {
-    // format error
-    res.status(err.status || 500).json({
-        message: err.message,
-        errors: err.errors,
-    });
-});
 
 app.get('/', (req, res) => {
     prisma.$queryRaw`SELECT version()`.then((result: QueryResultRow) => {
@@ -123,10 +111,24 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/debug-sentry', function mainHandler(req, res) {
-    throw new Error('My first Sentry error!');
+app.use('/public', express.static(configuration.UPLOAD_DIR));
+
+app.use((err, req, res, $next) => {
+    // format error
+    console.log('error', err);
+    Sentry.captureException(err);
+    console.log('sent', err);
+    res.status(err.status || 500).json({
+        message: err.message,
+        errors: err.errors,
+    });
 });
 
 app.listen(3333, () => {
     console.log('🚀 Server started on port 3333!');
+});
+
+process.on('unhandledRejection', (reason, p) => {
+    console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+    // application specific logging, throwing an error, or other logic here
 });
