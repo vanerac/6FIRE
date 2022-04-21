@@ -517,6 +517,9 @@
                     "type": "string",
                     "pattern": "^[0-9]{10}$"
                   },
+                  "countryId": {
+                    "type": "number"
+                  },
                   "CGU": {
                     "type": "boolean"
                   }
@@ -527,7 +530,6 @@
                   "firstName",
                   "lastName",
                   "telephone",
-                  "countryId",
                   "CGU"
                 ]
               }
