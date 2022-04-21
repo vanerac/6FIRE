@@ -5,6 +5,7 @@
     position: absolute;
     top: 0px;
     width: 100%;
+    z-index: 2;
 }
 
 .header-rectangle_1 {
@@ -922,4 +923,73 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+/* Code by Zihad (temp comment) */
+.main-nav .top-nav{
+    background-color: var(--black);
+    position: relative;
+    height: 95px;    
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5%;
+}
+.main-nav .top-nav .logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo span{
+    position: relative !important;
+}
+.logo img{
+    position: relative !important;
+    min-width: fit-content !important;
+    height: fit-content !important;
+}
+.main-nav-bar{
+    background-color: var(--licorice);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-nav-bar .nav-item-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-nav-bar .nav-item-wrap a{
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   padding: 10px 25px;
+   font-size: 18px;
+   color: #fff;
+   font-family: var(--font-family-lato);
+}
+.main-nav-bar .nav-item-wrap a span{
+    position: relative !important;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    display: inline-flex;
+}
+.main-nav-bar .nav-item-wrap a img{
+    position: relative !important;
+    min-width: fit-content !important;
+    height: fit-content !important;
+    margin: inherit !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.main-nav-bar .nav-item-wrap a.no-bg span{
+    background-color: transparent;
+    padding: 0px;
 }
