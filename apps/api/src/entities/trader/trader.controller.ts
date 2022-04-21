@@ -74,7 +74,7 @@ export default class TraderController {
     static async followTrader(req: Request, res: Response) {
         try {
             const { id: traderId } = req.params;
-            const { userId } = req.session;
+            const { id: userId } = req.user;
 
             await prisma.traderFollows.create({
                 data: {
@@ -96,7 +96,7 @@ export default class TraderController {
     static async unfollowTrader(req: Request, res: Response) {
         try {
             const { id: traderId } = req.params;
-            const { userId } = req.session;
+            const { id: userId } = req.user;
 
             await prisma.traderFollows.deleteMany({
                 where: {
@@ -117,7 +117,7 @@ export default class TraderController {
 
     static async getFollowing(req: Request, res: Response) {
         try {
-            const { userId } = req.session;
+            const { id: userId } = req.user;
 
             const traders = await prisma.traderFollows.findMany({
                 where: {

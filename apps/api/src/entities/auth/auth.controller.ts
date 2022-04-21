@@ -253,7 +253,7 @@ export default class AuthController {
         try {
             const { type } = req.query;
 
-            const { user } = req.session;
+            const { user } = req;
 
             await createVerificationCode(
                 { id: user.id, email: user.email, telephone: user.telephone },
@@ -372,7 +372,7 @@ export default class AuthController {
 
     static async changePassword(req: Request, res: Response) {
         try {
-            const { user } = req.session;
+            const { user } = req;
             const { oldPassword, newPassword, confirmPassword } = req.body;
 
             const userPassword = await client.user.findFirst({

@@ -15,7 +15,7 @@ router.use('/user', [verifyToken, isAdmin], UserRouter);
 router.use('/theme', verifyToken, ThemeRouter);
 router.use('/crypto', verifyToken, CryptoRouter);
 router.use('/trader', verifyToken, TraderRouter);
-router.use('/articles', verifyToken, ArticleRouter);
+router.use('/article', verifyToken, ArticleRouter);
 router.use('/subscription', verifyToken, SubscriptionRouter);
 
 export default router;
