@@ -5,7 +5,7 @@ import { ApiClient, Theme } from '@shared/services';
 const apiClient = new ApiClient();
 
 export default function ThemesArticles() {
-    const [themes, setThemes] = useState<Theme[]>([]);
+    const [$themes, setThemes] = useState<Theme[]>([]);
 
     useEffect(() => {
         apiClient.themes.getThemes().then(setThemes);
