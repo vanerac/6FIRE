@@ -956,6 +956,15 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+.main-nav-bar .nav-grid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 3%;
+    max-width: 1400px;
 }
 .main-nav-bar .nav-item-wrap{
     display: flex;
@@ -967,10 +976,13 @@ input:checked + .slider:before {
    align-items: center;
    justify-content: center;
    gap: 10px;
-   padding: 10px 25px;
-   font-size: 18px;
+   padding: 10px calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
+   font-size: 16px;
    color: #fff;
    font-family: var(--font-family-lato);
+}
+.main-nav-bar .nav-item-wrap a:first-child{
+    padding-left: 0;
 }
 .main-nav-bar .nav-item-wrap a span{
     position: relative !important;
@@ -992,4 +1004,73 @@ input:checked + .slider:before {
 .main-nav-bar .nav-item-wrap a.no-bg span{
     background-color: transparent;
     padding: 0px;
+}
+
+.main-nav .top-nav .right-nav-items .dark-light .light-icon span{
+    width: 19px !important;
+    height: 19px !important;
+    position: relative !important;
+}
+.main-nav .right-nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    font-family: var(--font-family-lato);
+}
+.main-nav .dark-light{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 150px;
+    gap: 10px;
+}
+.main-nav .right-nav-items a{
+    color: #fff;
+}
+.main-nav-bar .espace{
+    background-color: var(--milano-red);
+    color: #fff;
+    display: inline-flex;
+    /* position: absolute; */
+    right: 10%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 25px;
+    font-family: var(--font-family-lato);
+    font-weight: 500;
+}
+
+.main-nav .hamburger-icon{
+    position: relative;
+    width: 30px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.main-nav .hamburger-icon .line{
+    position: relative;
+    height: 22px;
+}
+.main-nav .hamburger-icon .line::after{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    content: "";
+}
+.main-nav .hamburger-icon .line:before{
+    position: absolute;
+    left: auto;
+    right: 0%;
+    bottom: 0%;
+    transform: translateY(-50%);
+    width: 80%;
+    height: 2px;
+    background: #fff;
+    content: "";
 }

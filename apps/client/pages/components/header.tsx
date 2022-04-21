@@ -198,16 +198,39 @@ const Header = (props: any) => {
                     <div className="logo">
                         <a href="./"><Image layout="fill" src="/img/effect-13@1x.png" /></a>
                     </div>
-                    <div className="right-nav-items">right nav items</div>
+                    <div className="right-nav-items">
+                        <div className="dark-light">
+                            <div className="light-icon">
+                                <Image layout="fill" src="/img/icon-ionic-ios-moon-1@1x.png" />
+                            </div>
+                            <label className="switch">
+                                <input type="checkbox" />
+                                <span className="slider round"></span>
+                            </label>
+                        </div>
+
+                        <a href="#" className="my-account">Mon compte</a>
+                        <div className="search-bar">
+                            <img src="" alt="" />
+                        </div>
+
+                        <div className="hamburger-icon">
+                            <div className="line"></div>
+                        </div>
+                    </div>
                 </div>
                 <div className="main-nav-bar">
-                    <div className="nav-item-wrap">
-                        <a className="no-bg" href="#"><span><Image layout="fill" src="/img/group-1490-1@1x.png" /></span>Cryptommonaies</a>
-                        <a href="#"><span><Image layout="fill" src="/img/nft-1@1x.png" /></span>NFT</a>
-                        <a href="#"><span><Image layout="fill" src="/img/path-1021-1@1x.png" /></span>Play to Earn</a>
-                        <a href="#"><span><Image layout="fill" src="/img/group-1504-1@1x.png" /></span>Immobilier</a>
-                        <a href="#"><span><Image layout="fill" src="/img/website-1@1x.png" /></span>E-Commerce</a>
-                        <a href="#">Autres thématiques</a>
+                    <div className="nav-grid">
+                        <div className="nav-item-wrap">
+                            <a className="no-bg" href="#"><span><Image layout="fill" src="/img/group-1490-1@1x.png" /></span>Cryptommonaies</a>
+                            <a href="#"><span><Image layout="fill" src="/img/nft-1@1x.png" /></span>NFT</a>
+                            <a href="#"><span><Image layout="fill" src="/img/path-1021-1@1x.png" /></span>Play to Earn</a>
+                            <a href="#"><span><Image layout="fill" src="/img/group-1504-1@1x.png" /></span>Immobilier</a>
+                            <a href="#"><span><Image layout="fill" src="/img/website-1@1x.png" /></span>E-Commerce</a>
+                            <a href="#">Autres thématiques</a>
+                        </div>
+
+                        <a href="#" className="espace"> Espace <br />Trading &amp; Crypto</a>
                     </div>
                 </div>
             </div>
