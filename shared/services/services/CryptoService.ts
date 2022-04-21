@@ -11,10 +11,17 @@ export class CryptoService {
     constructor(public readonly httpRequest: BaseHttpRequest) {}
 
     /**
-     * @returns CryptoHolding A successful response.
+     * @returns any A successful response.
      * @throws ApiError
      */
-    public getAllCrypto(): CancelablePromise<Array<CryptoHolding>> {
+    public getAllCrypto(): CancelablePromise<{
+        cryptos: Array<CryptoHolding>;
+        messages: Array<{
+            id: number;
+            message: string;
+            date: string;
+        }>;
+    }> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/crypto',

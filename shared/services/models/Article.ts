@@ -3,11 +3,24 @@
 /* eslint-disable */
 
 export type Article = {
-    id?: string;
-    title?: string;
-    content?: string;
-    hidden?: boolean;
-    createdAt?: string;
-    updatedAt?: string;
-    themeId?: string;
+    id: string;
+    title: string;
+    content: string;
+    hidden: boolean;
+    createdAt: string;
+    updatedAt: string;
+    themeId: string;
+    recommendedArticleIds?: Array<string>;
+    ArticleRecommandation?: Array<{
+        Recommandation?: {
+            Article?: {
+                id?: string;
+                title?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                themesId?: string;
+            };
+        };
+    }>;
 };

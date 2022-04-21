@@ -69,7 +69,7 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
     try {
         const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
         if (typeof decoded != 'string' && decoded.id) {
-            req.session.user = decoded;
+            req.user = decoded;
             next();
         } else {
             return res.status(401).send({
@@ -84,6 +84,7 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
                 message: 'Access denied. Token expired.',
             });
         } else {
+            console.log(error);
             return res.status(401).send({
                 status: 'error',
                 message: 'Access denied. Invalid token.',
@@ -93,63 +94,43 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
 };
 
 export async function isAdmin(req: Request, res: Response, next: NextFunction) {
-    if (req.session.user && !req.session.user.isAdmin) {
-        return res.status(401).send({
-            status: 'error',
-            message: 'Access denied. You are not an admin.',
-        });
-    }
-
-    const access_token = getAccessToken(req);
-
-    if (!access_token) {
-        return res.status(401).send({
-            status: 'error',
-            message: 'Access denied. No token provided.',
-        });
-    }
-
     try {
-        const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
+        const { user } = req;
 
-        if (typeof decoded != 'string' && decoded.id) {
-            req.session.user = decoded;
-            next();
-        } else {
+        if (!user) {
             return res.status(401).send({
                 status: 'error',
-                message: 'Access denied. Invalid token.',
+                message: 'Access denied. No token provided.',
             });
         }
 
-        const user = await prisma.user.findFirst({
-            where: {
-                id: decoded.id,
-            },
-        });
-        if (!user.isAdmin) {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. User is not admin.',
+        prisma.user
+            .findFirst({
+                where: {
+                    id: user.id,
+                },
+            })
+            .then((user: User & any) => {
+                if (user.isAdmin) {
+                    next();
+                } else {
+                    return res.status(401).send({
+                        status: 'error',
+                        message: 'Access denied. Invalid token.',
+                    });
+                }
             });
-        }
     } catch (error: any) {
-        if (error.name === 'TokenExpiredError') {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Token expired.',
-            });
-        } else {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Invalid token.',
-            });
-        }
+        console.log(error);
+        return res.status(401).send({
+            status: 'error',
+            message: 'Access denied. Invalid token.',
+        });
     }
 }
 
 export async function parseToken(req: Request, res: Response, next: NextFunction) {
-    // Parse token, decode it and set req.session.user
+    // Parse token, decode it and set req.user
     try {
         const bearerHeader = req.headers['Authorization'] || req.headers['authorization'] || req.cookies['API_TOKEN'];
         if (!bearerHeader) {
@@ -165,7 +146,7 @@ export async function parseToken(req: Request, res: Response, next: NextFunction
         }
         const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
         if (typeof decoded != 'string' && decoded.id) {
-            req.session.user = decoded;
+            req.user = decoded;
         }
         next();
     } catch (e) {

@@ -11,20 +11,44 @@ import cookieParser from 'cookie-parser';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const openApiDocument = require(configuration.OPENAPI_SPEC_DEFINITION);
 
-const app = express();
-
-app.use(cookieParser());
+declare module 'express' {
+    interface Request {
+        user?: User;
+    }
+}
 
 const prisma = new PrismaClient();
+const app = express();
 
+// Parser * Loggers
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
     next();
 });
 
+// CORS
+app.use(
+    cors({
+        origin: '*',
+        credentials: true,
+        allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+        methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
+    }),
+);
+
+// Format error response
+app.use((err, req, res, $next) => {
+    // format error
+    console.log('error', err);
+    res.status(err.status || 500).json({
+        message: err.message,
+        errors: err.errors,
+    });
+});
+// Validate OpenAPI
 app.use(
     OpenApiValidator.middleware({
         apiSpec: openApiDocument,
@@ -33,10 +57,11 @@ app.use(
             allowUnknownQueryParameters: false,
             coerceTypes: false,
         },
-        validateResponses: {
-            removeAdditional: 'failing',
-            onError: console.error, // todo: temporary solution
-        },
+        ignoreUndocumented: true,
+        // validateResponses: {
+        //     removeAdditional: 'failing',
+        //     onError: console.error, // todo: temporary solution
+        // },
         validateFormats: 'full',
         operationHandlers: false,
         fileUploader: {
@@ -60,34 +85,10 @@ app.use(
     }),
 );
 
-declare module 'express-session' {
-    export interface SessionData {
-        user: User;
-
-        [key: string]: any;
-    }
-}
-
+// Routes
 app.use('/api', Routes);
 
-app.use(
-    cors({
-        origin: '*',
-        credentials: true,
-        allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-        methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
-    }),
-);
-
 app.use(express.static(configuration.UPLOAD_DIR));
-
-app.use((err, req, res, $next) => {
-    // format error
-    res.status(err.status || 500).json({
-        message: err.message,
-        errors: err.errors,
-    });
-});
 
 app.get('/', (req, res) => {
     prisma.$queryRaw`SELECT version()`.then((result: QueryResultRow) => {

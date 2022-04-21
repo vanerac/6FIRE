@@ -23,8 +23,59 @@
         },
         "themeId": {
           "type": "string"
+        },
+        "recommendedArticleIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ArticleRecommandation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Recommandation": {
+                "type": "object",
+                "properties": {
+                  "Article": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      },
+                      "themesId": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
-      }
+      },
+      "required": [
+        "id",
+        "title",
+        "content",
+        "hidden",
+        "createdAt",
+        "updatedAt",
+        "themeId"
+      ]
     }
   }
 }

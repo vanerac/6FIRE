@@ -517,8 +517,8 @@
                     "type": "string",
                     "pattern": "^[0-9]{10}$"
                   },
-                  "confirm_password": {
-                    "type": "string"
+                  "countryId": {
+                    "type": "number"
                   },
                   "CGU": {
                     "type": "boolean"
@@ -527,11 +527,9 @@
                 "required": [
                   "email",
                   "password",
-                  "confirm_password",
                   "firstName",
                   "lastName",
                   "telephone",
-                  "countryId",
                   "CGU"
                 ]
               }
@@ -1115,10 +1113,43 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CryptoHolding"
-                  }
+                  "type": "object",
+                  "properties": {
+                    "cryptos": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CryptoHolding"
+                      }
+                    },
+                    "messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "format": "int64"
+                          },
+                          "message": {
+                            "type": "string"
+                          },
+                          "date": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "message",
+                          "date"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "cryptos",
+                    "messages"
+                  ]
                 }
               }
             }
@@ -2283,8 +2314,59 @@
           },
           "themeId": {
             "type": "string"
+          },
+          "recommendedArticleIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ArticleRecommandation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Recommandation": {
+                  "type": "object",
+                  "properties": {
+                    "Article": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        },
+                        "themesId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "required": [
+          "id",
+          "title",
+          "content",
+          "hidden",
+          "createdAt",
+          "updatedAt",
+          "themeId"
+        ]
       },
       "Subscription": {
         "type": "object",

@@ -9,8 +9,8 @@ const passwordResetCode = async (userId) => {
     // create a new code
     // store it in the database
 
-    // send an email to the user with the code
-    // send an sms to the user with the code
+    // email the user with the code
+    // send a sms to the user with the code
 
     const code = Math.floor(Math.random() * 1000000);
     const user = await client.user.findFirst({
@@ -79,10 +79,10 @@ export default class AuthController {
     static async register(req: Request, res: Response, next: NextFunction) {
         let user = undefined;
         try {
-            const { email, password, firstName, lastName, telephone, confirm_password, CGU } = req.body;
+            const { email, password, firstName, lastName, telephone, CGU } = req.body;
 
             console.log(req.body);
-            if ([CGU, email, password, confirm_password, firstName, lastName, telephone].includes(undefined)) {
+            if ([CGU, email, password, firstName, lastName, telephone].includes(undefined)) {
                 console.log('missing fields');
                 return res.status(400).json({
                     message: 'Missing required fields',
@@ -105,15 +105,17 @@ export default class AuthController {
                 },
             });
 
-            return res.status(200);
+            return res.sendStatus(200);
         } catch (error) {
-            console.log(error);
             if (error.code === 'P2002') {
                 return res.status(400).json({
                     message: 'User already exists',
                 });
             }
-            next(error);
+            return next(error);
+            // return res.status(500).json({
+            //     message: 'Internal server error',
+            // });
         } finally {
             if (user)
                 Promise.all([createVerificationCode(user, 'PHONE'), createVerificationCode(user, 'EMAIL')]).catch(
@@ -122,7 +124,7 @@ export default class AuthController {
         }
     }
 
-    static async login(req: Request, res: Response) {
+    static async login(req: Request, res: Response, next: NextFunction) {
         try {
             const { email, password } = req.body;
 
@@ -152,15 +154,15 @@ export default class AuthController {
                 });
             }
 
-            if (!user.verifiedEmail && !user.verifiedPhone) {
-                await Promise.all([
-                    await createVerificationCode(user, 'PHONE'),
-                    await createVerificationCode(user, 'EMAIL'),
-                ]);
-                return res.status(401).json({
-                    message: 'User not verified',
-                });
-            }
+            // if (!user.verifiedEmail && !user.verifiedPhone) {
+            //     await Promise.all([
+            //         await createVerificationCode(user, 'PHONE'),
+            //         await createVerificationCode(user, 'EMAIL'),
+            //     ]);
+            //     return res.status(401).json({
+            //         message: 'User not verified',
+            //     });
+            // }
 
             delete user.password;
             delete user.telephone;
@@ -171,9 +173,7 @@ export default class AuthController {
                 token,
             });
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
@@ -182,7 +182,7 @@ export default class AuthController {
         res.sendStatus(200);
     }
 
-    static async verify(req: Request, res: Response) {
+    static async verify(req: Request, res: Response, next: NextFunction) {
         try {
             const { code } = req.query;
 
@@ -244,18 +244,16 @@ export default class AuthController {
             });
 
             res.sendStatus(200);
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 
-    static async verifyNew(req: Request, res: Response) {
+    static async verifyNew(req: Request, res: Response, next: NextFunction) {
         try {
             const { type } = req.query;
 
-            const { user } = req.session;
+            const { user } = req;
 
             await createVerificationCode(
                 { id: user.id, email: user.email, telephone: user.telephone },
@@ -263,14 +261,12 @@ export default class AuthController {
             );
 
             res.sendStatus(200);
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 
-    static async resetPassword(req: Request, res: Response) {
+    static async resetPassword(req: Request, res: Response, next: NextFunction) {
         try {
             const { code, newPassword, confirmPassword } = req.body;
 
@@ -337,10 +333,8 @@ export default class AuthController {
             });
 
             res.sendStatus(200);
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 
@@ -378,7 +372,7 @@ export default class AuthController {
 
     static async changePassword(req: Request, res: Response) {
         try {
-            const { user } = req.session;
+            const { user } = req;
             const { oldPassword, newPassword, confirmPassword } = req.body;
 
             const userPassword = await client.user.findFirst({

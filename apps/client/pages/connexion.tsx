@@ -4,8 +4,8 @@ import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
 import { useState } from 'react';
-import axios from 'axios';
-import { ApiClient } from '@shared/services/ApiClient';
+import { ApiClient } from '@shared/services';
+// import axios from 'axios';
 
 const Home: NextPage = (props: any) => {
     const [userName, setUserName] = useState('');
@@ -21,86 +21,71 @@ const Home: NextPage = (props: any) => {
     const [showPassword, setShowPassword] = useState('password');
     const [cguChecked, setCguChecked] = useState(false);
     const [errorCgu, setErrorCgu] = useState('');
-    const apiClient = new ApiClient();
 
     const create_account = () => {
-        console.log(userName);
-        console.log(password);
-        console.log(userSurName);
-        console.log(userMail);
-        console.log(userPhone);
+        const apiClient = new ApiClient();
+        let isValid = true;
 
         if (userName === '') {
             setErrorUserName("Votre nom d'utilisateur est obligatoire");
+            isValid = false;
         }
         if (password === '') {
             setErrorPassword('Votre mot de passe est obligatoire');
+            isValid = false;
         }
         if (userSurName === '') {
             setErrorUserSurName('Votre nom est obligatoire');
+            isValid = false;
         }
         if (userMail === '') {
             setErrorUserMail('Votre mail est obligatoire');
+            isValid = false;
+        } else if (
+            !userMail.match(
+                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+            )
+        ) {
+            setErrorUserMail("Votre mail n'est pas valide");
+            isValid = false;
         }
 
         if (userPhone === '') {
             setErrorUserPhone('Votre numéro de téléphone est obligatoire');
+            isValid = false;
+        } else if (userPhone.length < 10) {
+            setErrorUserPhone('Votre numéro de téléphone est invalide');
+            isValid = false;
+        } else if (userPhone.length > 10) {
+            setErrorUserPhone('Votre numéro de téléphone est invalide');
+            isValid = false;
+        } else if (!userPhone.match(/^[0-9]{10}$/)) {
+            setErrorUserPhone('Votre numéro de téléphone est invalide');
+            isValid = false;
         }
         // if password is not 8 characters long
         if (password.length < 8) {
             setErrorPassword('Votre mot de passe doit contenir au moins 8 caractères');
+            isValid = false;
         }
-        if (cguChecked === false) {
+        if (!cguChecked) {
             setErrorCgu('Vous devez accepter les CGU');
+            isValid = false;
         }
 
-        if (
-            userName !== '' &&
-            password !== '' &&
-            userSurName !== '' &&
-            userMail !== '' &&
-            userPhone !== '' &&
-            cguChecked === true
-        ) {
-            router.push('/articlesPage');
-        }
-
-        const test = {
-            email: 'string',
-            password: 'string',
-            firstName: 'string',
-            lastName: 'string',
-            telephone: 'string',
-            confirm_password: 'string',
-            CGU: true,
-        };
-
-        apiClient.auth.register(test).then((res) => {
-            console.log(res);
-        });
-
-        // axios
-        //     .post('http://localhost:3333/api/user', {
-        //         // id: 0,
-        //         // userId: 'string',
-        //         firstName: 'string',
-        //         lastName: 'string',
-        //         email: 'string',
-        //         password: 'string',
-        //         telephone: 'string',
-        //         countryId: 0,
-        //         createdAt: 'string',
-        //         updatedAt: 'string',
-        //         isAdmin: true,
-        //         verifiedEmail: true,
-        //         verifiedPhone: true,
-        //         banned: false,
-        //         headers: {
-        //             'Access-Control-Allow-Origin': '*',
-        //         },
-        //     })
-        //     .then((res) => console.log(res));
-        // router.push('/articlesPage');
+        if (!isValid) return;
+        apiClient.auth
+            .register({
+                password: password,
+                CGU: cguChecked,
+                email: userMail,
+                firstName: userName,
+                lastName: userSurName,
+                telephone: userPhone,
+            })
+            .then(() => {
+                router.push('/articlesPage');
+            });
     };
 
     return (
