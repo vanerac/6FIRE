@@ -1,43 +1,13 @@
 import type { NextPage } from 'next';
+import Footer from './components/footer';
+import Header from './components/header';
 
-const PricePage: NextPage = () => {
+const PricePage: NextPage = (props: any) => {
     return (
-        <body style={{ margin: 0, background: '#ffffff' }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="prices-page" />
             <div className="prices-page screen">
-                <div className="footer-bAAl1m">
-                    <div className="background-TaM7Yn"></div>
-                    <div className="menu-footer-TaM7Yn">
-                        <div className="mentions-lgales-IPxenx sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-IPxenx sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-IPxenx sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-IPxenx sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-fGxoDM sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-IPxenx sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-TaM7Yn sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-TaM7Yn">
-                        <div className="groupe-2-tbH7j8">
-                            <img className="groupe-1-5GsK0f" src="img/group-1-10@1x.png" />
-                        </div>
-                        <img className="effect-tbH7j8" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-TaM7Yn" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-TaM7Yn">
-                        <img className="icon-instagram-lHJxZt" src="img/fontawsome--instagram-@1x.png" />
-                    </div>
-                    <div className="groupe-3010-TaM7Yn">
-                        <img className="icon-simple-tiktok-qQp3TQ" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="avertissement-bAAl1m">
                     <div className="groupe-3020-R9yMUv">
                         <div className="rectangle-3606-CczUp1"></div>
@@ -282,79 +252,7 @@ const PricePage: NextPage = () => {
                     <div className="rectangle-3608-Q775IJ"></div>
                     <img className="best-seller-Q775IJ" src="img/best-seller-1@1x.png" />
                 </div>
-                <div className="header-bAAl1m">
-                    <div className="rectangle-3483-dHGHFp"></div>
-                    <div className="logo-dHGHFp">
-                        <img className="effect-auvAAe" src="img/effect-13@1x.png" />
-                    </div>
-                    <div className="menu-dHGHFp">
-                        <div className="rectangle-3484-Ku6QyB"></div>
-                        <div className="cryptommonnaies-Ku6QyB">
-                            <div className="club-premium-SoEy5v lato-normal-white-14px">Cryptommonaies</div>
-                            <div className="icon-actif-SoEy5v">
-                                <img className="groupe-1490-qqcC8T" src="img/group-1490-1@1x.png" />
-                            </div>
-                        </div>
-                        <div className="nft-Ku6QyB">
-                            <div className="trading-jhcjGn lato-normal-white-14px">NFT</div>
-                            <div className="icon-jhcjGn">
-                                <div className="ellipse-17691-FsEpJA"></div>
-                                <img className="nft-FsEpJA" src="img/nft@1x.png" />
-                            </div>
-                        </div>
-                        <div className="play-to-earn-Ku6QyB">
-                            <div className="trading-gx95Ld lato-normal-white-14px">Play to Earn</div>
-                            <div className="icon-gx95Ld">
-                                <div className="ellipse-17691-7NZdmG"></div>
-                                <div className="gamepad-7NZdmG">
-                                    <img className="trac-1021-DC2RoI" src="img/path-1021@1x.png" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="immobiler-Ku6QyB">
-                            <div className="trading-qlWKq2 lato-normal-white-14px">Immobilier</div>
-                            <div className="icon-qlWKq2">
-                                <div className="ellipse-17691-OFZb9J"></div>
-                                <div className="groupe-1502-OFZb9J">
-                                    <img className="groupe-1504-7AUK81" src="img/group-1504@1x.png" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="e-commerce-Ku6QyB">
-                            <div className="trading-lx3HTx lato-normal-white-14px">E-Commerce</div>
-                            <div className="icon-lx3HTx">
-                                <div className="ellipse-17692-jb5j5D"></div>
-                                <img className="website-jb5j5D" src="img/website-1@1x.png" />
-                            </div>
-                        </div>
-                        <div className="autres-thmes-Ku6QyB">
-                            <div className="autres-thmatiques-B8zC1O">
-                                <div className="trading-Vigwwk lato-normal-white-14px">Autres thématiques</div>
-                            </div>
-                        </div>
-                        <a href="trading.html">
-                            <div className="trading-Ku6QyB">
-                                <div className="rectangle-3556-jY7BYl"></div>
-                                <div className="trading-jY7BYl lato-bold-white-14px">
-                                    Espace <br />
-                                    Trading &amp; Crypto
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="espace-membre-dHGHFp">
-                        <div className="connexion-BJQ5d9">
-                            <div className="club-premium-Z2L3JY lato-normal-white-14px">Mon compte</div>
-                        </div>
-                    </div>
-                    <div className="menu-2-dHGHFp">
-                        <div className="icon-ionic-ios-menu-xfOAAj">
-                            <img className="trac-1-sHtRgC" src="img/path-1-10@1x.png" />
-                            <img className="trac-2-sHtRgC" src="img/path-2-10@1x.png" />
-                        </div>
-                    </div>
-                    <img className="icon-search-dHGHFp" src="img/icon-ionic-ios-search@1x.png" />
-                </div>
+                <Footer />
             </div>
             <div className="prices-page-mobile screen">
                 <div className="background-IrLseF"></div>
@@ -650,7 +548,7 @@ const PricePage: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 

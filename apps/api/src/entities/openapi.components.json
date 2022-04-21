@@ -29,6 +29,9 @@
     },
     "Subscription": {
       "$ref": "./subscription/subscription.components.json#/schemas/Subscription"
+    },
+    "Country": {
+      "$ref": "./country/country.components.json#/schemas/Country"
     }
   }
 }

@@ -7,6 +7,7 @@ import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
 import { ArticleService } from './services/ArticleService';
 import { AuthService } from './services/AuthService';
+import { CountryService } from './services/CountryService';
 import { CryptoService } from './services/CryptoService';
 import { SubscriptionService } from './services/SubscriptionService';
 import { ThemesService } from './services/ThemesService';
@@ -19,6 +20,7 @@ export class ApiClient {
 
     public readonly article: ArticleService;
     public readonly auth: AuthService;
+    public readonly country: CountryService;
     public readonly crypto: CryptoService;
     public readonly subscription: SubscriptionService;
     public readonly themes: ThemesService;
@@ -29,7 +31,7 @@ export class ApiClient {
 
     constructor(config?: Partial<OpenAPIConfig>, HttpRequest: HttpRequestConstructor = AxiosHttpRequest) {
         this.request = new HttpRequest({
-            BASE: config?.BASE ?? 'http://localhost:8080/api',
+            BASE: config?.BASE ?? 'http://localhost:3333/api',
             VERSION: config?.VERSION ?? '3.0.0',
             WITH_CREDENTIALS: config?.WITH_CREDENTIALS ?? false,
             CREDENTIALS: config?.CREDENTIALS ?? 'include',
@@ -42,6 +44,7 @@ export class ApiClient {
 
         this.article = new ArticleService(this.request);
         this.auth = new AuthService(this.request);
+        this.country = new CountryService(this.request);
         this.crypto = new CryptoService(this.request);
         this.subscription = new SubscriptionService(this.request);
         this.themes = new ThemesService(this.request);

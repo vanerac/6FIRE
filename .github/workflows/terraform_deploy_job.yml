@@ -16,6 +16,13 @@ jobs:
         with:
           role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
           aws-region: eu-west-3
+      - name: Terraform state cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./terraform/terraform.tfstate
+            ./terraform/terraform.tfstate.backup
+          key: $GITHUB_REPOSITORY
       - run: terraform init
         working-directory: terraform/
         name: terraform init
@@ -34,9 +41,34 @@ jobs:
         working-directory: terraform/
         run: terraform import aws_ecr_repository.client 6fire-client
         continue-on-error: true
+      - name: Import RDS
+        working-directory: terraform/
+        run: terraform import aws_rds_cluster.default rds-6fire-cluster
+        continue-on-error: true
+      - name: Import ECS Cluster
+        working-directory: terraform/
+        run: terraform import aws_ecs_cluster.default 6fire-ecs-cluster
+        continue-on-error: true
+      - name: Import ECS Client Service
+        working-directory: terraform/
+        run: terraform import aws_ecs_service.client 6fire-ecs-cluster/6fire-ecs-service-client
+        continue-on-error: true
+      - name: Import ECS API Service
+        working-directory: terraform/
+        run: terraform import aws_ecs_service.api 6fire-ecs-cluster/6fire-ecs-service-api
+        continue-on-error: true
+      - name: Import ECS Dashboard Service
+        working-directory: terraform/
+        run: terraform import aws_ecs_service.dashboard 6fire-ecs-cluster/6fire-ecs-service-dashboard
+        continue-on-error: true
       - name: Plan deployement
         working-directory: terraform/
         run: terraform plan -out=plan.file -input=false
       - name: Apply deployement
         working-directory: terraform/
         run: terraform apply -input=false plan.file
+      - name: Upload state as artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          path: terraform/terraform.tfstate
+          name: terraform.tfstate

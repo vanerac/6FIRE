@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
+import Footer from './components/footer';
+import Header from './components/header';
 
-const CryptoWallet: NextPage = () => {
+const CryptoWallet: NextPage = (props: any) => {
     return (
-        <body style={{ margin: 0 }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="crypto-wallet" />
-            <div
-                className="crypto-wallet screen"
-                //   onclick="window.open('javascript:HideOverlay(%27crypto-wallet%27%2C%20%27animate-disappear%27);', '_self');"
-            >
+            <div className="crypto-wallet screen">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="background-XPwy4i"></div>
                 <div className="h1-XPwy4i lato-bold-white-20px">Portefeuille Cryptomonnaies</div>
                 <div className="date-XPwy4i lato-normal-white-16px">Mis à jour le 25 mars 2022</div>
@@ -143,165 +143,6 @@ const CryptoWallet: NextPage = () => {
                         </span>
                     </div>
                 </div>
-                <div className="footer-XPwy4i">
-                    <div className="background-1KzJpa"></div>
-                    <div className="menu-footer-1KzJpa">
-                        <div className="mentions-lgales-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-T8CBm0 sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-1KzJpa sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-1KzJpa">
-                        <div className="groupe-2-GmUeld">
-                            <img className="groupe-1-d5AwTm" src="img/group-1-11@1x.png" />
-                        </div>
-                        <img className="effect-GmUeld" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-1KzJpa" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-1KzJpa">
-                        <div className="ellipse-17695-v7gikA hidden"></div>
-                        <img className="icon-instagram-v7gikA" src="img/fontawsome--instagram--7@1x.png" />
-                    </div>
-                    <div className="groupe-3010-1KzJpa">
-                        <div className="ellipse-17696-zjNoSr hidden"></div>
-                        <img className="icon-simple-tiktok-zjNoSr" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
-                <div className="header-XPwy4i">
-                    <div className="rectangle-3483-P2FJgl"></div>
-                    <div className="logo-P2FJgl">
-                        <div className="groupe-1483-Mf9t8i hidden">
-                            <img className="groupe-1482-PR043A" src="img/group-1482-20@1x.png" />
-                        </div>
-                        <img className="effect-Mf9t8i" src="img/effect-13@1x.png" />
-                    </div>
-                    <div className="thme-sombre-P2FJgl">
-                        <img className="icon-ionic-ios-moon-TXAl0J" src="img/icon-ionic-ios-moon-7@1x.png" />
-                        <div className="toogle-button-TXAl0J">
-                            <div className="rectangle-3485-bUqpCN"></div>
-                            <div className="ellipse-17688-bUqpCN"></div>
-                        </div>
-                    </div>
-                    <div className="menu-P2FJgl">
-                        <div className="rectangle-3484-izuuFL"></div>
-                        <div className="espace-trading-crypto-izuuFL">
-                            <div className="formations-DoXA0r lato-normal-white-14px">Espace Trading &amp; Crypto</div>
-                            <img className="ligne-8-DoXA0r hidden" src="img/line-8-22@1x.png" />
-                        </div>
-                        <a
-                            href="trading-formations.html"
-                            //   onclick="window.event.stopPropagation()"
-                        >
-                            <div className="formations-izuuFL">
-                                <div className="formations-D3SZeP lato-normal-white-14px">Formations</div>
-                                <img className="ligne-8-D3SZeP hidden" src="img/line-8-12@1x.png" />
-                                <div className="icon-actif-D3SZeP">
-                                    <div className="ellipse-17693-hDrVnx"></div>
-                                    <img
-                                        className="font-awsome-graduation-cap-hDrVnx"
-                                        src="img/fontawsome--graduation-cap--3@1x.png"
-                                    />
-                                </div>
-                            </div>
-                        </a>
-                        <div className="forex-izuuFL">
-                            <div className="formations-5UPxOu lato-normal-white-14px">Forex</div>
-                            <img className="ligne-8-5UPxOu hidden" src="img/line-8-12@1x.png" />
-                            <div className="icon-actif-5UPxOu">
-                                <div className="ellipse-17693-xTAm9w"></div>
-                                <img
-                                    className="font-awsome-dollar-sign-xTAm9w"
-                                    src="img/fontawsome--dollar-sign--2@1x.png"
-                                />
-                            </div>
-                        </div>
-                        <div className="crypto-wallet-izuuFL">
-                            <div className="club-premium-8iF6ou lato-normal-white-14px">Crypto Wallet</div>
-                            <img className="ligne-8-8iF6ou" src="img/line-8-37@1x.png" />
-                            <div className="icon-actif-8iF6ou">
-                                <div className="ellipse-17693-2DG3xx"></div>
-                                <img className="font-awsome-wallet-2DG3xx" src="img/fontawsome--wallet--5@1x.png" />
-                            </div>
-                        </div>
-                        <div className="bot-trading-izuuFL">
-                            <div className="formations-30M2f8 lato-normal-white-14px">Bot Trading</div>
-                            <img className="ligne-8-30M2f8 hidden" src="img/line-8-12@1x.png" />
-                            <div className="icon-actif-30M2f8">
-                                <div className="ellipse-17693-yRUv62"></div>
-                                <img className="icon-awesome-robot-yRUv62" src="img/icon-awesome-robot-2@1x.png" />
-                            </div>
-                        </div>
-                        <a
-                            href="nos-trades.html"
-                            //   onclick="window.event.stopPropagation()"
-                        >
-                            <div className="trading-izuuFL">
-                                <div className="rectangle-3556-GE8E7j"></div>
-                                <div className="trading-GE8E7j lato-bold-white-14px">Nos trades</div>
-                                <div className="icon-actif-GE8E7j">
-                                    <div className="ellipse-17693-6A4EEv"></div>
-                                    <img
-                                        className="icon-simple-graphcool-6A4EEv"
-                                        src="img/icon-simple-graphcool-2@1x.png"
-                                    />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="espace-membre-P2FJgl">
-                        <div className="connexion-famnLU">
-                            <div className="club-premium-D83CQa lato-normal-white-14px">Mon compte</div>
-                            <img className="ligne-8-D83CQa hidden" src="img/line-8-13@1x.png" />
-                        </div>
-                    </div>
-                    <div className="menu-2-P2FJgl">
-                        <div className="icon-ionic-ios-menu-WakCzF">
-                            <img className="trac-1-ZcsST0" src="img/path-1-10@1x.png" />
-                            <img className="trac-2-ZcsST0" src="img/path-2-10@1x.png" />
-                        </div>
-                        <div className="menu-2-WakCzF hidden">
-                            <div className="background-cGZ274"></div>
-                            <div className="groupe-1487-cGZ274">
-                                <img className="ligne-10-67Ixsr" src="img/line-10-10@1x.png" />
-                                <img className="ligne-11-67Ixsr" src="img/line-11-10@1x.png" />
-                            </div>
-                            <div className="numro-de-tlphone-cGZ274">
-                                <img className="ligne-6-nx0UNh" src="img/line-6-12@1x.png" />
-                                <div className="mes-donnes-personnelles-nx0UNh lato-normal-white-14px">
-                                    Mes données personnelles
-                                </div>
-                                <div className="ma-licence-nx0UNh lato-normal-white-14px">Ma licence</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="search-bar-P2FJgl">
-                        <img className="icon-search-d52WLF" src="img/icon-ionic-ios-search-13@1x.png" />
-                        <div className="search-bar-d52WLF hidden">
-                            <div className="rectangle-3603-i8frgx"></div>
-                            <div className="search-bar-i8frgx">
-                                <img className="rectangle-3604-uV95cC" src="img/rectangle-3604-1@1x.png" />
-                                <img className="rectangle-3605-uV95cC" src="img/rectangle-3605-1@1x.png" />
-                                <div className="rechercher-uV95cC lato-normal-manatee-14px">Rechercher…</div>
-                                <img className="icon-search-uV95cC" src="img/icon-ionic-ios-search-14@1x.png" />
-                            </div>
-                            <div className="groupe-1487-i8frgx">
-                                <img className="ligne-10-4NeRWS" src="img/line-10-10@1x.png" />
-                                <img className="ligne-11-4NeRWS" src="img/line-11-10@1x.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <img className="trac-1042-XPwy4i" src="img/path-1042@1x.png" />
                 <div className="bouton-affi-XPwy4i">
                     <div className="rectangle-8-9pCLeb"></div>
@@ -329,6 +170,7 @@ const CryptoWallet: NextPage = () => {
                     </div>
                     <img className="ligne-41-0Hq04G" src="img/line-41-2@1x.png" />
                 </div>
+                <Footer />
             </div>
             <div className="crypto-wallet-mobile screen">
                 <div className="avertissement-i4rvow">
@@ -535,7 +377,7 @@ const CryptoWallet: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 

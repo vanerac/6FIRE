@@ -1,12 +1,15 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Footer from './components/footer';
+import Header from './components/header';
 
-const HomePage: NextPage = () => {
+const HomePage: NextPage = (props: any) => {
     return (
-        <body style={{ margin: 0, background: '#ffffff' }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="articles-details-entreprise" />
             <div className="articles-details-entreprise screen">
                 <div className="background-pYC6Z9" />
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="photography-pYC6Z9">
                     <div className="groupe-de-masques-326-hN4iYT">
                         <Image src="/img/mask-group-326-2@1x.png" layout="fill" objectFit="cover" />
@@ -154,153 +157,6 @@ const HomePage: NextPage = () => {
                         <div className="rectangle-3501-7VMJx4"></div>
                     </div>
                 </div>
-                <div className="footer-pYC6Z9">
-                    <div className="background-xESAN9"></div>
-                    <div className="menu-footer-xESAN9">
-                        <div className="mentions-lgales-A9zL2X sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-A9zL2X sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-A9zL2X sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-A9zL2X sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-p5bPj6 sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-A9zL2X sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-xESAN9 sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-xESAN9">
-                        <div className="groupe-2-xM1yEt">
-                            <div className="groupe-1-812EKB">
-                                <Image layout="fill" src="/img/group-1-9@1x.png" />
-                            </div>
-                        </div>
-                        <div className="effect-xM1yEt">
-                            <Image layout="fill" src="/img/effect-12@1x.png" />
-                        </div>
-                    </div>
-                    <div className="ligne-31-xESAN9">
-                        <Image layout="fill" src="/img/line-31-1@1x.png" />
-                    </div>
-                    <div className="groupe-3011-xESAN9">
-                        <div className="icon-instagram-vxhDy3">
-                            <Image layout="fill" src="/img/fontawsome--instagram--8@1x.png" />
-                        </div>
-                    </div>
-                    <div className="groupe-3010-xESAN9">
-                        <div className="icon-simple-tiktok-OerTqJ">
-                            <Image layout="fill" src="/img/icon-simple-tiktok-1@1x.png" />
-                        </div>
-                    </div>
-                </div>
-                <div className="header-pYC6Z9">
-                    <div className="rectangle-3483-n2HFDc"></div>
-                    <div className="logo-n2HFDc">
-                        <div className="effect-AL4Lcx">
-                            <Image layout="fill" src="/img/effect-13@1x.png" />
-                        </div>
-                    </div>
-                    <div className="thme-sombre-n2HFDc">
-                        <div className="icon-ionic-ios-moon-s9EYwt">
-                            <Image layout="fill" src="/img/icon-ionic-ios-moon-1@1x.png" />
-                        </div>
-                        <div className="toogle-button-s9EYwt">
-                            <div className="rectangle-3485-xwnxG8"></div>
-                            <div className="ellipse-17688-xwnxG8"></div>
-                        </div>
-                    </div>
-                    <div className="espace-membre-n2HFDc">
-                        <div className="espace-membre-f0xP5E">
-                            <div className="connexion-RPvWGa">
-                                <div className="club-premium-9X9LA6 lato-normal-white-14px">Mon compte</div>
-                            </div>
-                        </div>
-                        <div className="menu-2-f0xP5E">
-                            <div className="icon-ionic-ios-menu-xcqESx">
-                                <div className="trac-1-5hYTkF">
-                                    <Image layout="fill" src="/img/path-1-10@1x.png" />
-                                </div>
-                                <div className="trac-2-5hYTkF">
-                                    <Image layout="fill" src="/img/path-2-10@1x.png" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="search-bar-f0xP5E">
-                            <div className="icon-search-mDO8rZ">
-                                <Image layout="fill" src="/img/icon-ionic-ios-search-11@1x.png" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="menu-n2HFDc">
-                        <div className="rectangle-3484-Lnx6ti"></div>
-                        <div className="cryptommonnaies-Lnx6ti">
-                            <div className="club-premium-bsdNxy lato-normal-white-14px">Cryptommonaies</div>
-                            <div className="icon-actif-bsdNxy">
-                                <div className="groupe-1490-UxdmIl">
-                                    <Image layout="fill" src="/img/group-1490-1@1x.png" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="nft-Lnx6ti">
-                            <div className="trading-lxNxJI lato-normal-white-14px">NFT</div>
-                            <div className="icon-lxNxJI">
-                                <div className="ellipse-17691-K3LjwD"></div>
-                                <div className="nft-K3LjwD">
-                                    <Image layout="fill" src="/img/nft-1@1x.png" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="play-to-earn-Lnx6ti">
-                            <div className="trading-hxe8YI lato-normal-white-14px">Play to Earn</div>
-                            <div className="icon-hxe8YI">
-                                <div className="ellipse-17691-CtOo9a"></div>
-                                <div className="gamepad-CtOo9a">
-                                    <div className="trac-1021-xZlR4W">
-                                        <Image layout="fill" src="/img/path-1021@1x.png" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="immobiler-Lnx6ti">
-                            <div className="trading-68WRso lato-normal-white-14px">Immobilier</div>
-                            <div className="icon-68WRso">
-                                <div className="ellipse-17691-H3Zfxb"></div>
-                                <div className="groupe-1502-H3Zfxb">
-                                    <div className="groupe-1504-YfczOP">
-                                        <Image layout="fill" src="/img/group-1504-3@1x.png" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="e-commerce-Lnx6ti">
-                            <div className="trading-YtFWbi lato-normal-white-14px">E-Commerce</div>
-                            <div className="icon-YtFWbi">
-                                <div className="ellipse-17692-YQzl1x"></div>
-                                <div className="website-YQzl1x">
-                                    <Image layout="fill" src="/img/website-1@1x.png" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="autres-thmes-Lnx6ti">
-                            <div className="autres-thmatiques-EYyKKh">
-                                <div className="trading-LLGuJJ lato-normal-white-14px">Autres thématiques</div>
-                            </div>
-                        </div>
-                        <a href="trading.html">
-                            <div className="trading-Lnx6ti">
-                                <div className="rectangle-3556-bHhxdm"></div>
-                                <div className="trading-bHhxdm lato-bold-white-14px">
-                                    Espace <br />
-                                    Trading &amp; Crypto
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
                 <div className="bandeau-call-to-action-pYC6Z9">
                     <div className="groupe-de-masques-329-f6PEkN">
                         <Image layout="fill" src="/img/mask-group-329-1@1x.png" />
@@ -332,6 +188,7 @@ const HomePage: NextPage = () => {
                         <Image layout="fill" src="/img/line-41-2@1x.png" />
                     </div>
                 </div>
+                <Footer />
             </div>
             <div className="articles-details-entreprise-mobile screen">
                 <div className="background-gHf5I6"></div>
@@ -594,7 +451,7 @@ const HomePage: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 

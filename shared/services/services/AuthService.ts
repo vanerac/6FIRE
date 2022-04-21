@@ -67,17 +67,132 @@ export class AuthService {
             firstName: string;
             lastName: string;
             telephone: string;
-            countryId: number;
+            countryId?: number;
+            CGU: boolean;
         },
-    ): CancelablePromise<{
-        token?: string;
-    }> {
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/auth/register',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Verify
+     * Verify code in query params
+     * @param code Verification code
+     * @returns any OK
+     * @throws ApiError
+     */
+    public verify(
+        code: string,
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/auth/verify',
+            query: {
+                'code': code,
+            },
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * VerifyNew
+     * Generate a new verification code of type in query params
+     * @param type Type of verification code
+     * @returns any OK
+     * @throws ApiError
+     */
+    public verifyNew(
+        type: 'EMAIL' | 'PHONE',
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/auth/verifyNewUser',
+            query: {
+                'type': type,
+            },
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * ForgotPassword
+     * Forgot password
+     * @param requestBody
+     * @returns any OK
+     * @throws ApiError
+     */
+    public forgotPassword(
+        requestBody?: any,
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/auth/password/forgot',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Reset password with a code and new password
+     * @param requestBody Reset password with a code and new password
+     * @returns any OK
+     * @throws ApiError
+     */
+    public resetPassword(
+        requestBody: any,
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/auth/password/reset',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Change password
+     * @param requestBody Change password
+     * @returns any OK
+     * @throws ApiError
+     */
+    public changePassword(
+        requestBody: any,
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/auth/password/change',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
                 422: `Validation Error`,
                 500: `Internal Server Error`,
             },

@@ -1,5 +1,9 @@
 /* screen - homepage-1 */
 
+.body {
+  margin: O;
+}
+
 .homepage-1 {
   background-color: var(--white);
   height: 100vh;
@@ -238,7 +242,17 @@
 .homepage-1 .background-1CdAvu {
   background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
   background-color: transparent;
-  height: 100%;
+  /* height: 100%; */
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-1 .background-404 {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  /* height: calc(100% - 263px); */
   left: 0px;
   position: absolute;
   top: 0px;
@@ -415,6 +429,7 @@
   right: 0px;
   top: 0px;
   width: 300px;
+  cursor: pointer;
 }
 
 .homepage-1 .groupe-de-masques-323-XPBk3x {

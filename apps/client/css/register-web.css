@@ -1,5 +1,9 @@
 /* screen - register-mobile */
 
+.body {
+    margin: 0;
+}
+
 .register-mobile {
     background-color: var(--white);
     height: 100vh;
@@ -266,6 +270,7 @@
     right: 11px;
     top: 3px;
     width: 13px;
+    cursor: pointer;
 }
 
 .register-mobile .ligne-7-WPm9xl {
@@ -297,6 +302,7 @@
     position: absolute;
     right: calc(49.79% - 95px);
     width: 190px;
+    cursor: pointer;
 }
 
 .register-mobile .button-cration-de-compte-TU0AFD {
@@ -726,6 +732,7 @@ input {
     right: 11px;
     top: 3px;
     width: 13px;
+    cursor: pointer;
 }
 
 .register-web .ligne-7-YId6x8 {
@@ -757,6 +764,7 @@ input {
     left: calc(50% - 95px);
     position: absolute;
     width: 190px;
+    cursor: pointer;
 }
 
 .register-web .button-cration-de-compte-43BKS5 {
@@ -780,7 +788,7 @@ input {
 }
 
 .register-web .crer-un-compte-C8EDSj {
-    /* background-color: transparent; */
+    background-color: transparent;
     bottom: calc(42.86% - 8px);
     color: var(--onyx);
     font-family: var(--font-family-lato);
@@ -791,9 +799,9 @@ input {
     left: 20px;
     letter-spacing: 0px;
     line-height: 14px;
-    /* position: absolute; */
+    position: absolute;
     text-align: center;
-    /* width: calc(100.00% - 37px); */
+    width: calc(100.00% - 37px);
 }
 
 .register-web .dj-inscrit-connectez-vous-WxaGAS {

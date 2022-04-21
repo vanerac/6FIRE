@@ -1,5 +1,9 @@
 /* screen - homepage */
 
+.body {
+  margin: 0;
+}
+
 .homepage {
   background-color: var(--white);
   height: 100vh;
@@ -151,6 +155,7 @@
   position: absolute;
   top: 0px;
   width: 100%;
+  cursor: pointer;
 }
 
 .homepage .nous-rejoindre-f3cQ2w {
@@ -202,6 +207,7 @@
   position: absolute;
   top: 0px;
   width: 100%;
+  cursor: pointer;
 }
 
 .homepage .connexion-FL6OPd {
@@ -695,6 +701,7 @@
   left: 101px;
   position: absolute;
   width: calc(100.00% - 201px);
+  cursor: pointer;
 }
 
 .homepage-2 .rectangle-3470-vZJ39L {
@@ -824,8 +831,8 @@
 }
 
 .homepage-button-animation .background-cB6ICl {
-  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
-  background-color: transparent;
+  background: #121212;
+  /* background-color: transparent; */
   height: 100%;
   left: 0px;
   position: absolute;
@@ -836,7 +843,7 @@
 .homepage-button-animation .club-priv-dinvestisseur-cB6ICl {
   background-color: transparent;
   bottom: calc(45.28% - 11px);
-  height: 24px;
+  height: 300px;
   left: 92px;
   letter-spacing: 0.00px;
   line-height: 18px;
@@ -994,12 +1001,6 @@
 }
 @media screen and (max-width: 427px) {
   .screen.homepage { 
-    display: none;
-   }
-  .screen.homepage-2 { 
-    display: none;
-   }
-  .screen.homepage-button-animation { 
     display: none;
    }
 }

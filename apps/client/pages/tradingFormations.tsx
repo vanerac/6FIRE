@@ -1,10 +1,13 @@
 import type { NextPage } from 'next';
+import Footer from './components/footer';
+import Header from './components/header';
 
-const TradingFormations: NextPage = () => {
+const TradingFormations: NextPage = (props: any) => {
     return (
-        <body style={{ margin: 0, background: '#ffffff' }}>
+        <div>
             <input type="hidden" id="anPageName" name="page" value="trading-formations" />
             <div className="trading-formations screen">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="background-L4Kmv7"></div>
                 <div className="article-L4Kmv7 hidden">
                     <img className="groupe-de-masques-324-I1nHFm" src="img/mask-group-324-2@1x.png" />
@@ -14,159 +17,6 @@ const TradingFormations: NextPage = () => {
                     <div className="club-premium-a003g8 lato-bold-white-16px">Twitter ajoute l’option Ethereum</div>
                     <img className="icon-twitter-I1nHFm" src="img/image-874-1@1x.png" />
                     <div className="rectangle-3502-I1nHFm"></div>
-                </div>
-                <div className="footer-L4Kmv7">
-                    <div className="background-5O9Pml"></div>
-                    <div className="menu-footer-5O9Pml">
-                        <div className="mentions-lgales-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-8QbL7k sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-5O9Pml sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-5O9Pml">
-                        <div className="groupe-2-yYiS5q">
-                            <img className="groupe-1-1PbFDC" src="img/group-1-10@1x.png" />
-                        </div>
-                        <img className="effect-yYiS5q" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-5O9Pml" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-5O9Pml">
-                        <div className="ellipse-17695-GVH5d3 hidden"></div>
-                        <img className="icon-instagram-GVH5d3" src="img/fontawsome--instagram--1@1x.png" />
-                    </div>
-                    <div className="groupe-3010-5O9Pml">
-                        <div className="ellipse-17696-EFvSk5 hidden"></div>
-                        <img className="icon-simple-tiktok-EFvSk5" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
-                <div className="header-L4Kmv7">
-                    <div className="rectangle-3483-7V8uSq"></div>
-                    <div className="logo-7V8uSq">
-                        <div className="groupe-1483-1mrxpX hidden">
-                            <img className="groupe-1482-VsxwSQ" src="img/group-1482-13@1x.png" />
-                        </div>
-                        <img className="effect-1mrxpX" src="img/effect-13@1x.png" />
-                    </div>
-                    <div className="thme-sombre-7V8uSq">
-                        <img className="icon-ionic-ios-moon-xT4xmf" src="img/icon-ionic-ios-moon-1@1x.png" />
-                        <div className="toogle-button-xT4xmf">
-                            <div className="rectangle-3485-L40rJi"></div>
-                            <div className="ellipse-17688-L40rJi"></div>
-                        </div>
-                    </div>
-                    <div className="menu-7V8uSq">
-                        <div className="rectangle-3484-LdomJT"></div>
-                        <div className="espace-trading-crypto-LdomJT">
-                            <div className="formations-8XkrAY lato-normal-white-14px">Espace Trading &amp; Crypto</div>
-                            <img className="ligne-8-8XkrAY hidden" src="img/line-8-22@1x.png" />
-                        </div>
-                        <div className="formations-LdomJT">
-                            <div className="club-premium-hbskOF lato-normal-white-14px">Formations</div>
-                            <img className="ligne-8-hbskOF" src="img/line-8-23@1x.png" />
-                            <div className="icon-actif-hbskOF">
-                                <div className="ellipse-17693-hleXe8"></div>
-                                <img
-                                    className="font-awsome-graduation-cap-hleXe8"
-                                    src="img/fontawsome--graduation-cap--2@1x.png"
-                                />
-                            </div>
-                        </div>
-                        <div className="forex-LdomJT">
-                            <div className="formations-mrKxvG lato-normal-white-14px">Forex</div>
-                            <img className="ligne-8-mrKxvG hidden" src="img/line-8-12@1x.png" />
-                            <div className="icon-actif-mrKxvG">
-                                <div className="ellipse-17693-c2xpkG"></div>
-                                <img
-                                    className="font-awsome-dollar-sign-c2xpkG"
-                                    src="img/fontawsome--dollar-sign--2@1x.png"
-                                />
-                            </div>
-                        </div>
-                        {/* <a href="javascript:ShowOverlay('crypto-wallet', 'animate-appear');"> */}
-                        <div className="crypto-wallet-LdomJT">
-                            <div className="formations-YzLUiC lato-normal-white-14px">Crypto Wallet</div>
-                            <img className="ligne-8-YzLUiC hidden" src="img/line-8-12@1x.png" />
-                            <div className="icon-actif-YzLUiC">
-                                <div className="ellipse-17693-ijtOC6"></div>
-                                <img className="font-awsome-wallet-ijtOC6" src="img/fontawsome--wallet--2@1x.png" />
-                            </div>
-                        </div>
-                        {/* </a> */}
-                        <div className="bot-trading-LdomJT">
-                            <div className="formations-RVZ8dC lato-normal-white-14px">Bot Trading</div>
-                            <img className="ligne-8-RVZ8dC hidden" src="img/line-8-12@1x.png" />
-                            <div className="icon-actif-RVZ8dC">
-                                <div className="ellipse-17693-uCqR6W"></div>
-                                <img className="icon-awesome-robot-uCqR6W" src="img/icon-awesome-robot-2@1x.png" />
-                            </div>
-                        </div>
-                        <a href="nos-trades.html">
-                            <div className="trading-LdomJT">
-                                <div className="rectangle-3556-Bi3V6Y"></div>
-                                <div className="trading-Bi3V6Y lato-bold-white-14px">Nos trades</div>
-                                <div className="icon-actif-Bi3V6Y">
-                                    <div className="ellipse-17693-qYW5AI"></div>
-                                    <img
-                                        className="icon-simple-graphcool-qYW5AI"
-                                        src="img/icon-simple-graphcool-2@1x.png"
-                                    />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="espace-membre-7V8uSq">
-                        <div className="connexion-pr8zKI">
-                            <div className="club-premium-njjt6O lato-normal-white-14px">Mon compte</div>
-                            <img className="ligne-8-njjt6O hidden" src="img/line-8-13@1x.png" />
-                        </div>
-                    </div>
-                    <div className="menu-2-7V8uSq">
-                        <div className="icon-ionic-ios-menu-JrJAhg">
-                            <img className="trac-1-SqsBqJ" src="img/path-1-10@1x.png" />
-                            <img className="trac-2-SqsBqJ" src="img/path-2-10@1x.png" />
-                        </div>
-                        <div className="menu-2-JrJAhg hidden">
-                            <div className="background-EYhnnV"></div>
-                            <div className="groupe-1487-EYhnnV">
-                                <img className="ligne-10-hxDXPz" src="img/line-10-10@1x.png" />
-                                <img className="ligne-11-hxDXPz" src="img/line-11-10@1x.png" />
-                            </div>
-                            <div className="numro-de-tlphone-EYhnnV">
-                                <img className="ligne-6-XN1DNT" src="img/line-6-12@1x.png" />
-                                <div className="mes-donnes-personnelles-XN1DNT lato-normal-white-14px">
-                                    Mes données personnelles
-                                </div>
-                                <div className="ma-licence-XN1DNT lato-normal-white-14px">Ma licence</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="search-bar-7V8uSq">
-                        <img className="icon-search-R6BjOl" src="img/icon-ionic-ios-search-11@1x.png" />
-                        <div className="search-bar-R6BjOl hidden">
-                            <div className="rectangle-3603-7nNyQ7"></div>
-                            <div className="search-bar-7nNyQ7">
-                                <img className="rectangle-3604-1Uhmoo" src="img/rectangle-3604-1@1x.png" />
-                                <img className="rectangle-3605-1Uhmoo" src="img/rectangle-3605-1@1x.png" />
-                                <div className="rechercher-1Uhmoo lato-normal-manatee-14px">Rechercher…</div>
-                                <img className="icon-search-1Uhmoo" src="img/icon-ionic-ios-search-10@1x.png" />
-                            </div>
-                            <div className="groupe-1487-7nNyQ7">
-                                <img className="ligne-10-APALnB" src="img/line-10-10@1x.png" />
-                                <img className="ligne-11-APALnB" src="img/line-11-10@1x.png" />
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div className="prvisualisation-articles-L4Kmv7">
                     <div className="article-nOHLIk">
@@ -273,6 +123,7 @@ const TradingFormations: NextPage = () => {
                     </div>
                     <img className="ligne-41-hJ5gjz" src="img/line-41-2@1x.png" />
                 </div>
+                <Footer />
             </div>
             <div className="trading-formations-mobile screen">
                 <div className="background-R4fmnF"></div>
@@ -946,7 +797,7 @@ const TradingFormations: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 

@@ -87,10 +87,14 @@
                   "type": "string"
                 },
                 "telephone": {
-                  "type": "string"
+                  "type": "string",
+                  "pattern": "^[0-9]{10}$"
                 },
                 "countryId": {
                   "type": "number"
+                },
+                "CGU": {
+                  "type": "boolean"
                 }
               },
               "required": [
@@ -99,27 +103,18 @@
                 "firstName",
                 "lastName",
                 "telephone",
-                "countryId"
+                "CGU"
               ]
             }
           }
         }
       },
       "responses": {
-        "201": {
-          "description": "User created",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "token": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
+        "200": {
+          "description": "User created"
+        },
+        "400": {
+          "description": "Bad Request"
         },
         "422": {
           "description": "Validation Error"
@@ -149,6 +144,229 @@
         },
         "401": {
           "description": "Unauthorized"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    }
+  },
+  "verify": {
+    "get": {
+      "description": "Verify code in query params",
+      "operationId": "verify",
+      "parameters": [
+        {
+          "name": "code",
+          "in": "query",
+          "description": "Verification code",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      },
+      "tags": [
+        "Auth"
+      ],
+      "summary": "Verify",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ]
+    }
+  },
+  "verifyNew": {
+    "get": {
+      "description": "Generate a new verification code of type in query params",
+      "operationId": "verifyNew",
+      "parameters": [
+        {
+          "name": "type",
+          "in": "query",
+          "description": "Type of verification code",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "EMAIL",
+              "PHONE"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      },
+      "tags": [
+        "Auth"
+      ],
+      "summary": "VerifyNew",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ]
+    }
+  },
+  "forgotPassword": {
+    "post": {
+      "description": "Forgot password",
+      "operationId": "forgotPassword",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "description": "Email of the user"
+                }
+              },
+              "required": [
+                "email"
+              ]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      },
+      "tags": [
+        "Auth"
+      ],
+      "summary": "ForgotPassword"
+    }
+  },
+  "resetPassword": {
+    "post": {
+      "tags": [
+        "Auth"
+      ],
+      "description": "Reset password with a code and new password",
+      "operationId": "resetPassword",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "newPassword": {
+                  "type": "string"
+                },
+                "confirmPassword": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "newPassword",
+                "confirmPassword"
+              ]
+            }
+          }
+        },
+        "description": "Reset password with a code and new password",
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    }
+  },
+  "changePassword": {
+    "post": {
+      "tags": [
+        "Auth"
+      ],
+      "description": "Change password",
+      "operationId": "changePassword",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "oldPassword": {
+                  "type": "string"
+                },
+                "newPassword": {
+                  "type": "string"
+                },
+                "confirmPassword": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "oldPassword",
+                "newPassword",
+                "confirmPassword"
+              ]
+            }
+          }
+        },
+        "description": "Change password",
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
         },
         "500": {
           "description": "Internal Server Error"

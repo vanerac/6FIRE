@@ -1,5 +1,9 @@
 /* screen - articles-details */
 
+body{
+  margin: 0;
+}
+
 .articles-details {
   background-color: var(--white);
   height: 100vh;

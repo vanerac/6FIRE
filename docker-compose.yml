@@ -26,7 +26,7 @@ services:
       context: .
       dockerfile: docker/api/Dockerfile
     ports:
-      - "8080:8080"
+      - "8080:3333"
     depends_on:
       - db
     environment:
@@ -43,10 +43,10 @@ services:
       dockerfile: docker/client/Dockerfile
     ports:
       - "3000:3000"
-    depends_on:
-      - api
-    links:
-      - api
+    #    depends_on:
+    #      - api
+    #    links:
+    #      - api
     restart: unless-stopped
 
   dashboard:
@@ -54,21 +54,21 @@ services:
       context: .
       dockerfile: docker/dashboard/Dockerfile
     ports:
-      - "3000:3001"
+      - "3001:3000"
     depends_on:
       - api
     links:
       - api
     restart: unless-stopped
 
-  bot:
-    build:
-      context: .
-      dockerfile: docker/bot/Dockerfile
-    ports:
-      - "8080:8080"
-    depends_on:
-      - api
-    links:
-      - api
-    restart: unless-stopped
+#  bot:
+#    build:
+#      context: .
+#      dockerfile: docker/bot/Dockerfile
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - api
+#    links:
+#      - api
+#    restart: unless-stopped
