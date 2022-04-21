@@ -1,22 +1,9 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-// import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
-// import checkAuth from './components/checkAuth';
-import Cookies from 'universal-cookie';
-import { useEffect } from 'react';
-import router from 'next/router';
 
 const Cgv: NextPage = (props: any) => {
-    const cookies = new Cookies();
-
-    useEffect(() => {
-        if (!cookies.get('API_TOKEN')) {
-            router.replace('/');
-        }
-    }, []);
-
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
@@ -282,4 +269,3 @@ const Cgv: NextPage = (props: any) => {
 };
 
 export default Cgv;
-// export default checkAuth(Cgv);
