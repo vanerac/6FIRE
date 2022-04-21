@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import { ApiClient, CryptoHolding } from '@shared/services';
+
+const apiClient = new ApiClient();
 
 export default function TradingCrypto() {
+    const [$cryptoHoldings, setCryptoHoldings] = useState<CryptoHolding[]>([]);
+    const [$messages, setMessages] = useState<{ id: number; message: string; date: string }[]>([]);
+
+    useEffect(() => {
+        apiClient.crypto
+            .getAllCrypto()
+            .then(
+                ({
+                    cryptos,
+                    messages,
+                }: {
+                    cryptos: CryptoHolding[];
+                    messages: { id: number; message: string; date: string }[];
+                }) => {
+                    setCryptoHoldings(cryptos);
+                    setMessages(messages);
+                },
+            );
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="trading-crypto" />

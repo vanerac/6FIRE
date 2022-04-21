@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import { ApiClient, Theme } from '@shared/services';
+
+const apiClient = new ApiClient();
 
 export default function ThemesArticles() {
+    const [themes, setThemes] = useState<Theme[]>([]);
+
+    useEffect(() => {
+        apiClient.themes.getThemes().then(setThemes);
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="themes-articles" />

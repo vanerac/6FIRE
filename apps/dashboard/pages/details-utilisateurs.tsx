@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
 
-export default function DetailsUtilisateurs() {
+import { ApiClient, User } from '@shared/services';
+
+const apiClient = new ApiClient();
+
+// get userId from params
+export default function DetailsUtilisateurs(args: any) {
+    const { userId } = args.match.params;
+
+    const [$user, setUser] = useState<User | null>(null);
+
+    useEffect(() => {
+        apiClient.user.getUser(userId).then(setUser);
+    }, []);
+
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="details-utilisateurs" />

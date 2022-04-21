@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import { ApiClient, Article } from '@shared/services';
 
+const apiClient = new ApiClient();
 export default function Articles() {
+    const [$articles, setArticles] = useState<Article[]>([]);
+
+    useEffect(() => {
+        // Todo: Note: Api can return an Error object ?
+        apiClient.article.getArticles().then((articles) => setArticles(articles as Article[]));
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="articles-historique-articles" />

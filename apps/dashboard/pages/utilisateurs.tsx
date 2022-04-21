@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import { ApiClient, User } from '@shared/services';
+
+const apiClient = new ApiClient();
 
 export default function Utilisateurs() {
+    const [$users, setUsers] = useState<User[]>([]);
+
+    useEffect(() => {
+        apiClient.user.getUsers().then(setUsers);
+    }, []);
+
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="utilisateurs" />
