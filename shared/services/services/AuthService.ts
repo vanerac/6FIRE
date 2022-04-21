@@ -66,9 +66,7 @@ export class AuthService {
             password: string;
             firstName: string;
             lastName: string;
-            countryId: number;
             telephone: string;
-            confirm_password: string;
             CGU: boolean;
         },
     ): CancelablePromise<any> {
@@ -125,6 +123,73 @@ export class AuthService {
             query: {
                 'type': type,
             },
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * ForgotPassword
+     * Forgot password
+     * @param requestBody
+     * @returns any OK
+     * @throws ApiError
+     */
+    public forgotPassword(
+        requestBody?: any,
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/auth/password/forgot',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Reset password with a code and new password
+     * @param requestBody Reset password with a code and new password
+     * @returns any OK
+     * @throws ApiError
+     */
+    public resetPassword(
+        requestBody: any,
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/auth/password/reset',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Change password
+     * @param requestBody Change password
+     * @returns any OK
+     * @throws ApiError
+     */
+    public changePassword(
+        requestBody: any,
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/auth/password/change',
+            body: requestBody,
+            mediaType: 'application/json',
             errors: {
                 400: `Bad Request`,
                 422: `Validation Error`,

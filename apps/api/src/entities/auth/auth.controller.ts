@@ -5,6 +5,49 @@ import { AWSsendEmail, sendSMS } from '../../tools/notifications.tools';
 
 const client = new PrismaClient();
 
+const passwordResetCode = async (userId) => {
+    // create a new code
+    // store it in the database
+
+    // send an email to the user with the code
+    // send an sms to the user with the code
+
+    const code = Math.floor(Math.random() * 1000000);
+    const user = await client.user.findFirst({
+        where: {
+            userId,
+        },
+    });
+    if (!user) {
+        return false;
+    }
+    const passwordReset = await client.passwordReset.create({
+        data: {
+            user: {
+                connect: {
+                    userId,
+                },
+            },
+            token: code.toString(),
+        },
+    });
+    if (!passwordReset) {
+        return false;
+    }
+    const { email } = user;
+    const sms = user.telephone;
+    const emailMessage = `Your password reset code is ${code}`;
+    const smsMessage = `Your password reset code is ${code}`;
+
+    return Promise.all([
+        AWSsendEmail({ email, subject: 'Password reset code', message: emailMessage }),
+        sendSMS({
+            phoneNumber: sms,
+            message: smsMessage,
+        }),
+    ]);
+};
+
 const createVerificationCode = async (
     user: { id: number; email: string; telephone: string },
     type: 'EMAIL' | 'PHONE',
@@ -36,12 +79,10 @@ export default class AuthController {
     static async register(req: Request, res: Response, next: NextFunction) {
         let user = undefined;
         try {
-            const { email, password, firstName, lastName, countryId, telephone, confirm_password, CGU } = req.body;
+            const { email, password, firstName, lastName, telephone, CGU } = req.body;
 
             console.log(req.body);
-            if (
-                [CGU, email, password, confirm_password, firstName, lastName, countryId, telephone].includes(undefined)
-            ) {
+            if ([CGU, email, password, firstName, lastName, telephone].includes(undefined)) {
                 console.log('missing fields');
                 return res.status(400).json({
                     message: 'Missing required fields',
@@ -53,11 +94,11 @@ export default class AuthController {
                     firstName,
                     lastName,
                     telephone,
-                    country: {
-                        connect: {
-                            id: +countryId,
-                        },
-                    },
+                    // country: {
+                    //     connect: {
+                    //         id: +countryId,
+                    //     },
+                    // },
                     email,
                     password: hashPassword(password),
                     CGU: !!CGU,
@@ -66,13 +107,15 @@ export default class AuthController {
 
             return res.status(200);
         } catch (error) {
-            console.log(error);
             if (error.code === 'P2002') {
                 return res.status(400).json({
                     message: 'User already exists',
                 });
             }
-            next(error);
+            return next(error);
+            // return res.status(500).json({
+            //     message: 'Internal server error',
+            // });
         } finally {
             if (user)
                 Promise.all([createVerificationCode(user, 'PHONE'), createVerificationCode(user, 'EMAIL')]).catch(
@@ -81,7 +124,7 @@ export default class AuthController {
         }
     }
 
-    static async login(req: Request, res: Response) {
+    static async login(req: Request, res: Response, next: NextFunction) {
         try {
             const { email, password } = req.body;
 
@@ -111,15 +154,15 @@ export default class AuthController {
                 });
             }
 
-            if (!user.verifiedEmail && !user.verifiedPhone) {
-                await Promise.all([
-                    await createVerificationCode(user, 'PHONE'),
-                    await createVerificationCode(user, 'EMAIL'),
-                ]);
-                return res.status(401).json({
-                    message: 'User not verified',
-                });
-            }
+            // if (!user.verifiedEmail && !user.verifiedPhone) {
+            //     await Promise.all([
+            //         await createVerificationCode(user, 'PHONE'),
+            //         await createVerificationCode(user, 'EMAIL'),
+            //     ]);
+            //     return res.status(401).json({
+            //         message: 'User not verified',
+            //     });
+            // }
 
             delete user.password;
             delete user.telephone;
@@ -130,9 +173,7 @@ export default class AuthController {
                 token,
             });
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
@@ -141,7 +182,7 @@ export default class AuthController {
         res.sendStatus(200);
     }
 
-    static async verify(req: Request, res: Response) {
+    static async verify(req: Request, res: Response, next: NextFunction) {
         try {
             const { code } = req.query;
 
@@ -203,6 +244,125 @@ export default class AuthController {
             });
 
             res.sendStatus(200);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async verifyNew(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { type } = req.query;
+
+            const { user } = req;
+
+            await createVerificationCode(
+                { id: user.id, email: user.email, telephone: user.telephone },
+                type as 'PHONE' | 'EMAIL',
+            );
+
+            res.sendStatus(200);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async resetPassword(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { code, newPassword, confirmPassword } = req.body;
+
+            const verification = await client.passwordReset.findFirst({
+                where: {
+                    token: code,
+                },
+                select: {
+                    id: true,
+                    token: true,
+                    createdAt: true,
+                    userId: true,
+                },
+            });
+
+            if (!verification) {
+                return res.status(400).json({
+                    message: 'Invalid code',
+                });
+            }
+
+            const { createdAt } = verification;
+            const now = new Date();
+            const diff = now.getTime() - createdAt.getTime();
+            const diffMinutes = Math.round(diff / 60000);
+
+            if (diffMinutes > 15) {
+                return res.status(400).json({
+                    message: 'Code expired',
+                });
+            }
+
+            if (newPassword !== confirmPassword) {
+                return res.status(400).json({
+                    message: 'Passwords do not match',
+                });
+            }
+
+            const user = await client.user.findFirst({
+                where: {
+                    id: +verification.userId,
+                },
+            });
+
+            if (!user) {
+                return res.status(400).json({
+                    message: 'User not found',
+                });
+            }
+
+            await client.user.update({
+                data: {
+                    password: newPassword,
+                },
+                where: {
+                    id: user.id,
+                },
+            });
+
+            await client.passwordReset.delete({
+                where: {
+                    id: verification.id,
+                },
+            });
+
+            res.sendStatus(200);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async forgotPassword(req: Request, res: Response) {
+        try {
+            const { email } = req.body;
+            const user = await client.user.findFirst({
+                where: {
+                    email,
+                },
+                select: {
+                    id: true,
+                    email: true,
+                    verifiedEmail: true,
+                },
+            });
+            if (!user) {
+                return res.status(400).json({
+                    message: 'User not found',
+                });
+            }
+            if (!user.verifiedEmail) {
+                return res.status(400).json({
+                    message: 'User not verified',
+                });
+            }
+            await passwordResetCode(user.id);
+            res.sendStatus(200);
         } catch (e) {
             res.status(500).json({
                 message: e.message,
@@ -210,16 +370,50 @@ export default class AuthController {
         }
     }
 
-    static async verifyNew(req: Request, res: Response) {
+    static async changePassword(req: Request, res: Response) {
         try {
-            const { type } = req.query;
+            const { user } = req;
+            const { oldPassword, newPassword, confirmPassword } = req.body;
 
-            const { user } = req.session;
+            const userPassword = await client.user.findFirst({
+                where: {
+                    id: user.id,
+                },
+                select: {
+                    password: true,
+                },
+            });
 
-            await createVerificationCode(
-                { id: user.id, email: user.email, telephone: user.telephone },
-                type as 'PHONE' | 'EMAIL',
-            );
+            if (!userPassword) {
+                return res.status(400).json({
+                    message: 'User not found',
+                });
+            }
+
+            if (confirmPassword !== newPassword) {
+                return res.status(400).json({
+                    message: 'Passwords do not match',
+                });
+            }
+
+            const isValid = checkPassword(oldPassword, userPassword.password);
+
+            if (!isValid) {
+                return res.status(400).json({
+                    message: 'Invalid password',
+                });
+            }
+
+            const hashedPassword = await hashPassword(newPassword);
+
+            await client.user.update({
+                data: {
+                    password: hashedPassword,
+                },
+                where: {
+                    id: user.id,
+                },
+            });
 
             res.sendStatus(200);
         } catch (e) {

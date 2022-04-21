@@ -86,15 +86,9 @@
                 "lastName": {
                   "type": "string"
                 },
-                "countryId": {
-                  "type": "number"
-                },
                 "telephone": {
                   "type": "string",
                   "pattern": "^[0-9]{10}$"
-                },
-                "confirm_password": {
-                  "type": "string"
                 },
                 "CGU": {
                   "type": "boolean"
@@ -103,7 +97,6 @@
               "required": [
                 "email",
                 "password",
-                "confirm_password",
                 "firstName",
                 "lastName",
                 "telephone",
@@ -238,6 +231,145 @@
           "bearerAuth": []
         }
       ]
+    }
+  },
+  "forgotPassword": {
+    "post": {
+      "description": "Forgot password",
+      "operationId": "forgotPassword",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "description": "Email of the user"
+                }
+              },
+              "required": [
+                "email"
+              ]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      },
+      "tags": [
+        "Auth"
+      ],
+      "summary": "ForgotPassword"
+    }
+  },
+  "resetPassword": {
+    "post": {
+      "tags": [
+        "Auth"
+      ],
+      "description": "Reset password with a code and new password",
+      "operationId": "resetPassword",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "newPassword": {
+                  "type": "string"
+                },
+                "confirmPassword": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "newPassword",
+                "confirmPassword"
+              ]
+            }
+          }
+        },
+        "description": "Reset password with a code and new password",
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    }
+  },
+  "changePassword": {
+    "post": {
+      "tags": [
+        "Auth"
+      ],
+      "description": "Change password",
+      "operationId": "changePassword",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "oldPassword": {
+                  "type": "string"
+                },
+                "newPassword": {
+                  "type": "string"
+                },
+                "confirmPassword": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "oldPassword",
+                "newPassword",
+                "confirmPassword"
+              ]
+            }
+          }
+        },
+        "description": "Change password",
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
     }
   }
 }

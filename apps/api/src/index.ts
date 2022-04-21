@@ -63,7 +63,14 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
     next();
 });
-
+app.use((err, req, res, $next) => {
+    // format error
+    console.log('error', err);
+    res.status(err.status || 500).json({
+        message: err.message,
+        errors: err.errors,
+    });
+});
 app.use(
     OpenApiValidator.middleware({
         apiSpec: openApiDocument,
@@ -72,10 +79,10 @@ app.use(
             allowUnknownQueryParameters: false,
             coerceTypes: false,
         },
-        validateResponses: {
-            removeAdditional: 'failing',
-            onError: (any) => console.error('middleware', any), // todo: temporary solution
-        },
+        // validateResponses: {
+        //     removeAdditional: 'failing',
+        //     onError: console.error, // todo: temporary solution
+        // },
         validateFormats: 'full',
         // ignoreUndocumented: true,
         operationHandlers: false,
@@ -121,6 +128,7 @@ app.use((err, req, res, $next) => {
     res.status(err.status || 500).json({
         message: err.message,
         errors: err.errors,
+
     });
 });
 
