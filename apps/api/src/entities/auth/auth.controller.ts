@@ -113,9 +113,6 @@ export default class AuthController {
                 });
             }
             return next(error);
-            // return res.status(500).json({
-            //     message: 'Internal server error',
-            // });
         } finally {
             if (user)
                 Promise.all([createVerificationCode(user, 'PHONE'), createVerificationCode(user, 'EMAIL')]).catch(
@@ -338,7 +335,7 @@ export default class AuthController {
         }
     }
 
-    static async forgotPassword(req: Request, res: Response) {
+    static async forgotPassword(req: Request, res: Response, next: NextFunction) {
         try {
             const { email } = req.body;
             const user = await client.user.findFirst({
@@ -364,13 +361,11 @@ export default class AuthController {
             await passwordResetCode(user.id);
             res.sendStatus(200);
         } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+            next(e);
         }
     }
 
-    static async changePassword(req: Request, res: Response) {
+    static async changePassword(req: Request, res: Response, next: NextFunction) {
         try {
             const { user } = req;
             const { oldPassword, newPassword, confirmPassword } = req.body;
@@ -417,9 +412,7 @@ export default class AuthController {
 
             res.sendStatus(200);
         } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+            next(e);
         }
     }
 }

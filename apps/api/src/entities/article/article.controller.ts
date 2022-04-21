@@ -1,11 +1,11 @@
 import { CRUDController } from '../../types';
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
 export default class ArticleController implements CRUDController {
-    static async getAll(req: Request, res: Response) {
+    static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: userId } = req.user;
             const userSubscriptionLevel = await prisma.userSubscription.findFirst({
@@ -40,11 +40,11 @@ export default class ArticleController implements CRUDController {
             });
             res.status(200).json(articles);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    static async getById(req: Request, res: Response) {
+    static async getById(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: articleId } = req.params;
             const { id: userId } = req.user;
@@ -102,11 +102,11 @@ export default class ArticleController implements CRUDController {
             });
             res.status(200).json(article);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    static async create(req: Request, res: Response) {
+    static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const { title, content, themeId, recommendedArticleIds } = req.body;
             const article = await prisma.article.create({
@@ -136,12 +136,11 @@ export default class ArticleController implements CRUDController {
             }
             res.status(200).json(article);
         } catch (error) {
-            console.log(error);
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    static async update(req: Request, res: Response) {
+    static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: articleId } = req.params;
             const { title, content, themesId, recommendedArticleIds } = req.body;
@@ -169,11 +168,11 @@ export default class ArticleController implements CRUDController {
             }
             res.status(200).json(article);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    static async delete(req: Request, res: Response) {
+    static async delete(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: articleId } = req.params;
             const article = await prisma.article.delete({
@@ -183,7 +182,7 @@ export default class ArticleController implements CRUDController {
             });
             res.status(200).json(article);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 }
