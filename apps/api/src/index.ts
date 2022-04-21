@@ -24,7 +24,14 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
     next();
 });
-
+app.use((err, req, res, $next) => {
+    // format error
+    console.log('error', err);
+    res.status(err.status || 500).json({
+        message: err.message,
+        errors: err.errors,
+    });
+});
 app.use(
     OpenApiValidator.middleware({
         apiSpec: openApiDocument,
@@ -33,10 +40,10 @@ app.use(
             allowUnknownQueryParameters: false,
             coerceTypes: false,
         },
-        validateResponses: {
-            removeAdditional: 'failing',
-            onError: console.error, // todo: temporary solution
-        },
+        // validateResponses: {
+        //     removeAdditional: 'failing',
+        //     onError: console.error, // todo: temporary solution
+        // },
         validateFormats: 'full',
         operationHandlers: false,
         fileUploader: {
@@ -80,14 +87,6 @@ app.use(
 );
 
 app.use(express.static(configuration.UPLOAD_DIR));
-
-app.use((err, req, res, $next) => {
-    // format error
-    res.status(err.status || 500).json({
-        message: err.message,
-        errors: err.errors,
-    });
-});
 
 app.get('/', (req, res) => {
     prisma.$queryRaw`SELECT version()`.then((result: QueryResultRow) => {
