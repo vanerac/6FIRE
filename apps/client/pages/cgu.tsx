@@ -1,11 +1,9 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-// import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
 
-const HomePage: NextPage = (props: any) => {
-    console.log(props);
+const Cgu: NextPage = (props: any) => {
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
@@ -270,4 +268,4 @@ const HomePage: NextPage = (props: any) => {
     );
 };
 
-export default HomePage;
+export default Cgu;
