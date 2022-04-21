@@ -2,8 +2,20 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Header from './components/header';
 import Footer from './components/footer';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import router from 'next/router';
+import { useEffect } from 'react';
 
-const HomePage: NextPage = (props: any) => {
+const ArticlesDetails: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />
@@ -480,4 +492,5 @@ const HomePage: NextPage = (props: any) => {
     );
 };
 
-export default HomePage;
+// export default checkAuth(ArticlesDetails);
+export default ArticlesDetails;

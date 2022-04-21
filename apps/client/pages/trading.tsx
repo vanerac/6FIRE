@@ -1,8 +1,20 @@
 import type { NextPage } from 'next';
 import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import router from 'next/router';
+import { useEffect } from 'react';
 
-const HomePage: NextPage = (props: any) => {
+const Trading: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="trading" />
@@ -341,10 +353,7 @@ const HomePage: NextPage = (props: any) => {
                 </div>
             </div>
             <div id="overlay-trading-forex" className="overlay" style={{ minHeight: '1382px' }}>
-                <div
-                    className="trading-forex screen"
-                    // onclick="window.open('javascript:HideOverlay(%27trading-forex%27%2C%20%27animate-disappear%27);', '_self');"
-                >
+                <div className="trading-forex screen">
                     <div className="background-GY9xoT"></div>
                     <div className="article-GY9xoT hidden">
                         <img className="groupe-de-masques-324-6ArdAu" src="img/mask-group-324-2@1x.png" />
@@ -766,33 +775,8 @@ const HomePage: NextPage = (props: any) => {
                     </div>
                 </div>
             </div>
-            {/* <script>
-      var overlay_id = "overlay-trading-forex";
-      document.getElementById(overlay_id).addEventListener(
-        "click",
-        function (event) {
-          var overlay_id = "overlay-trading-forex";
-          var e = event || window.event;
-          var overlayElement = document.getElementById(overlay_id);
-          var overlayContainer = overlayElement.getElementsByClassName("trading-forex");
-          var clickedDiv = e.toElement || e.target;
-          var dismissButton = clickedDiv.parentElement.id == overlay_id;
-          var clickOutsideOverlay = false;
-          if (overlayContainer.length > 0) {
-            clickOutsideOverlay = !overlayContainer[0].contains(clickedDiv) || overlayContainer[0] == clickedDiv;
-          }
-          if (dismissButton || clickOutsideOverlay) {
-            HideOverlay("trading-forex", "animate-disappear");
-          }
-        },
-        false
-      );
-    </script> */}
             <div id="overlay-bot-trading" className="overlay" style={{ minHeight: '1382px' }}>
-                <div
-                    className="bot-trading screen"
-                    // onclick="window.open('javascript:HideOverlay(%27bot-trading%27%2C%20%27animate-disappear%27);', '_self');"
-                >
+                <div className="bot-trading screen">
                     <img className="background-FwUAid" src="img/background@1x.png" />
                     <img className="groupe-de-masques-327-FwUAid" src="img/mask-group-327-1@1x.png" />
                     <div className="rectangle-3558-FwUAid"></div>
@@ -807,10 +791,7 @@ const HomePage: NextPage = (props: any) => {
                             <div className="club-premium-JxfHBf lato-bold-white-14px">ACCÈS AU BOT</div>
                         </div>
                         <div className="groupe-3013-rgUu6r">
-                            <a
-                                href="bot-trading-traders.html"
-                                // onclick="window.event.stopPropagation()"
-                            >
+                            <a href="bot-trading-traders.html">
                                 <img className="rectangle-3560-prXDZd" src="img/rectangle-3560@1x.png" />
                             </a>
                             <div className="club-premium-prXDZd lato-bold-white-14px">TRADERS</div>
@@ -1923,66 +1904,9 @@ const HomePage: NextPage = (props: any) => {
                     </div>
                 </div>
             </div>
-            {/* <script>
-      var overlay_id = "overlay-crypto-wallet";
-      document.getElementById(overlay_id).addEventListener(
-        "click",
-        function (event) {
-          var overlay_id = "overlay-crypto-wallet";
-          var e = event || window.event;
-          var overlayElement = document.getElementById(overlay_id);
-          var overlayContainer = overlayElement.getElementsByClassName("crypto-wallet");
-          var clickedDiv = e.toElement || e.target;
-          var dismissButton = clickedDiv.parentElement.id == overlay_id;
-          var clickOutsideOverlay = false;
-          if (overlayContainer.length > 0) {
-            clickOutsideOverlay = !overlayContainer[0].contains(clickedDiv) || overlayContainer[0] == clickedDiv;
-          }
-          if (dismissButton || clickOutsideOverlay) {
-            HideOverlay("crypto-wallet", "animate-disappear");
-          }
-        },
-        false
-      );
-    </script>
-    <script>
-      ShowOverlay = function (overlayName, animationName) {
-        overlayName = "overlay-" + overlayName;
-        var cssClasses = document.getElementById(overlayName).classNameName.split(" ");
-        var last = cssClasses.slice(-1)[0];
-        if (last.lastIndexOf("animate") == -1) {
-          document.getElementById(overlayName).classNameName =
-            document.getElementById(overlayName).classNameName + " " + animationName;
-        }
-        if (window.loadAsyncSrc != undefined) {
-          loadAsyncSrc();
-        }
-      };
-      HideOverlay = function (overlayName, animationName) {
-        overlayName = "overlay-" + overlayName;
-        var cssClasses = document.getElementById(overlayName).classNameName.split(" ");
-        var last = cssClasses.slice(-1)[0];
-        if (last.lastIndexOf("animate") != -1) {
-          cssClasses.splice(-1);
-          cssClasses.push(animationName);
-          document.getElementById(overlayName).classNameName = cssClasses.join(" ");
-
-          cssClasses.splice(-1);
-          setTimeout(function () {
-            document.getElementById(overlayName).classNameName = cssClasses.join(" ");
-          }, 1100);
-        }
-        var vids = document.getElementsByTagName("video");
-        if (vids) {
-          for (var i = 0; i < vids.length; i++) {
-            var video = vids.item(i);
-            video.pause();
-          }
-        }
-      };
-    </script> */}
         </div>
     );
 };
 
-export default HomePage;
+// export default checkAuth(Trading);
+export default Trading;
