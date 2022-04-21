@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
-import { ApiClient, CryptoHolding } from '@shared/services';
-
-const apiClient = new ApiClient();
+import { CryptoHolding } from '@shared/services';
+import apiClient from '@shared/tools/apiClient';
 
 export default function TradingCrypto() {
     const [$cryptoHoldings, setCryptoHoldings] = useState<CryptoHolding[]>([]);
     const [$messages, setMessages] = useState<{ id: number; message: string; date: string }[]>([]);
 
     useEffect(() => {
-        apiClient.crypto
-            .getAllCrypto()
+        apiClient()
+            .crypto.getAllCrypto()
             .then(
                 ({
                     cryptos,

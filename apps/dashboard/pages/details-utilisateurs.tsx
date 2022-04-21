@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
 
-import { ApiClient, User } from '@shared/services';
-
-const apiClient = new ApiClient();
+import { User } from '@shared/services';
+import apiClient from '@shared/tools/apiClient';
 
 // get userId from params
 export default function DetailsUtilisateurs(args: any) {
@@ -12,7 +11,7 @@ export default function DetailsUtilisateurs(args: any) {
     const [$user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
-        apiClient.user.getUser(userId).then(setUser);
+        apiClient().user.getUser(userId).then(setUser);
     }, []);
 
     return (

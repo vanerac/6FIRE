@@ -4,7 +4,7 @@ import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
 import { useState } from 'react';
-import { ApiClient } from '@shared/services';
+import apiClient from '@shared/tools/apiClient';
 // import axios from 'axios';
 
 const Home: NextPage = (props: any) => {
@@ -23,7 +23,6 @@ const Home: NextPage = (props: any) => {
     const [errorCgu, setErrorCgu] = useState('');
 
     const create_account = () => {
-        const apiClient = new ApiClient();
         let isValid = true;
 
         if (userName === '') {
@@ -74,8 +73,8 @@ const Home: NextPage = (props: any) => {
         }
 
         if (!isValid) return;
-        apiClient.auth
-            .register({
+        apiClient()
+            .auth.register({
                 password: password,
                 CGU: cguChecked,
                 email: userMail,
