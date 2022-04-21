@@ -10,11 +10,9 @@ import cookieParser from 'cookie-parser';
 import * as Sentry from '@sentry/node';
 import * as Tracing from '@sentry/tracing';
 
-declare module 'express-session' {
-    export interface SessionData {
-        user: User;
-
-        [key: string]: any;
+declare module 'express' {
+    interface Request {
+        user?: User;
     }
 }
 
@@ -47,6 +45,16 @@ app.use(Sentry.Handlers.errorHandler());
 const openApiDocument = require(configuration.OPENAPI_SPEC_DEFINITION);
 const prisma = new PrismaClient();
 
+// Parser * Loggers
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use((req: Request, res: Response, next: NextFunction) => {
+    console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
+    next();
+});
+
+// CORS
 app.use(
     cors({
         origin: '*',
@@ -55,14 +63,8 @@ app.use(
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-app.use((req: Request, res: Response, next: NextFunction) => {
-    console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
-    next();
-});
+// Format error response
 app.use((err, req, res, $next) => {
     // format error
     console.log('error', err);
@@ -71,6 +73,7 @@ app.use((err, req, res, $next) => {
         errors: err.errors,
     });
 });
+// Validate OpenAPI
 app.use(
     OpenApiValidator.middleware({
         apiSpec: openApiDocument,
@@ -79,6 +82,7 @@ app.use(
             allowUnknownQueryParameters: false,
             coerceTypes: false,
         },
+        ignoreUndocumented: true,
         // validateResponses: {
         //     removeAdditional: 'failing',
         //     onError: console.error, // todo: temporary solution
@@ -128,7 +132,6 @@ app.use((err, req, res, $next) => {
     res.status(err.status || 500).json({
         message: err.message,
         errors: err.errors,
-
     });
 });
 

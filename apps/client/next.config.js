@@ -5,6 +5,9 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    experimental: {
+        externalDir: true,
+    },
 };
 
 const sentryWebpackPluginOptions = {

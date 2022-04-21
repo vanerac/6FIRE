@@ -9,8 +9,8 @@ const passwordResetCode = async (userId) => {
     // create a new code
     // store it in the database
 
-    // send an email to the user with the code
-    // send an sms to the user with the code
+    // email the user with the code
+    // send a sms to the user with the code
 
     const code = Math.floor(Math.random() * 1000000);
     const user = await client.user.findFirst({
@@ -105,7 +105,7 @@ export default class AuthController {
                 },
             });
 
-            return res.status(200);
+            return res.sendStatus(200);
         } catch (error) {
             if (error.code === 'P2002') {
                 return res.status(400).json({
