@@ -72,6 +72,65 @@ const HomePage: NextPage = (props: any) => {
                             <p>La troisième erreur la plus courante, est le manque de compréhension des marchés de cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on trouve à la quatrième place des erreurs les plus courantes les investisseurs qui ont envoyé leurs cryptomonnaies avant d’avoir la certitude de recevoir un paiement en retour. La cinquième place est occupée par ceux qui ont acheté au plus haut… Pour revendre au plus bas</p>
                         </div>
                     </div>
+
+                    {/* More article you would love to reaa */}
+
+                    <div className="article-widget">
+                        <h2 className="article_title lato-bold-white-16px">DANS LA MÊME CATÉGORIE</h2>
+
+                        <div className="more_articles">
+                            <div className="grid">
+
+                                {/* single article */}
+                                <div className="single_article">
+                                    <div className="artitle_thum">
+                                        <Image layout="fill" src="/img/mask-group-321-2@1x.png" />
+                                    </div>
+                                    <div className="cat_and_date">
+                                        <div className="category">
+                                            <p className="lato-normal-milano-red-12px line">Play to Earn</p>
+                                            <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
+                                        </div>
+                                    </div>
+                                    <div className="article_title">
+                                        <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
+                                    </div>
+                                </div>
+
+                                {/* single article */}
+                                <div  className="single_article">
+                                    <div className="artitle_thum">
+                                        <Image layout="fill" src="/img/mask-group-322-2@1x.png" />
+                                    </div>
+                                    <div className="cat_and_date">
+                                        <div className="category">
+                                            <p className="lato-normal-milano-red-12px  line">E-Commerce</p>
+                                            <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
+                                        </div>
+                                    </div>
+                                    <div className="article_title">
+                                        <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
+                                    </div>
+                                </div>
+
+                                {/* single article */}
+                                <div className="single_article">
+                                    <div className="artitle_thum">
+                                        <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
+                                    </div>
+                                    <div className="cat_and_date">
+                                        <div className="category">
+                                            <p className="lato-normal-milano-red-12px  line">Crypto</p>
+                                            <p className="article_date lato-light-manatee-12px">19 février 2022</p>
+                                        </div>
+                                    </div>
+                                    <div className="article_title">
+                                        <h4 className="title">Les 5 erreurs à éviter en crypton</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <Footer />
