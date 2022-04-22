@@ -1,8 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import { PaymentType, PrismaClient } from '@prisma/client';
 import { CRUDController } from '../../types';
 
 const prisma = new PrismaClient();
+// const mollieClient = createMollieClient({ apiKey: configuration.MOLLIE_API_KEY });
 
 export default class SubscriptionController extends CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction) {
@@ -37,15 +38,18 @@ export default class SubscriptionController extends CRUDController {
 
     static async create(req: Request, res: Response, next: NextFunction) {
         try {
-            const { name, description, price, level } = req.body;
+            const { name, description, price, level, refreshRate } = req.body;
             const subscription = await prisma.subscription.create({
                 data: {
                     name,
                     description,
                     price,
                     level,
+                    refreshRate,
+                    subscriptionType: refreshRate ? PaymentType.SUBSCRIPTION : PaymentType.ONETIME,
                 },
             });
+
             res.json(subscription);
         } catch (error) {
             next(error);
@@ -67,6 +71,7 @@ export default class SubscriptionController extends CRUDController {
                     level,
                 },
             });
+            // Todo: update mollie subscription
             res.json(subscription);
         } catch (error) {
             next(error);
@@ -81,6 +86,7 @@ export default class SubscriptionController extends CRUDController {
                     id: +id,
                 },
             });
+            // Todo: delete mollie subscription
             res.json(subscription);
         } catch (error) {
             next(error);

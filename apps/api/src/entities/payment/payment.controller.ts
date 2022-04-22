@@ -1,6 +1,6 @@
 import { CRUDController } from '../../types';
-import { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import { NextFunction, Request, Response } from 'express';
+import { PaymentType, PrismaClient } from '@prisma/client';
 import createMollieClient from '@mollie/api-client';
 import configuration from '../../../configuration';
 
@@ -8,22 +8,9 @@ const mollieClient = createMollieClient({ apiKey: configuration.MOLLIE_API_KEY }
 
 const prisma = new PrismaClient();
 
-//enum PaymentType {
-//   SUBSCRIPTION
-//   ONETIME
-// }
-//model Payment {
-//   id          Int         @id @default(autoincrement())
-//   amount      Int
-//   userId      Int
-//   paymentId   String
-//   paymentType PaymentType
-//   date        DateTime    @default(now())
-//   User        User        @relation(fields: [userId], references: [id])
-// }
 export default class PaymentController implements CRUDController {
     //  CRUD On payments
-    static async getAll(req: Request, res: Response) {
+    static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
             // // Retrieve the first 15 payments.
             // const payments = mollieClient.payments.page({ limit: 15 });
@@ -32,144 +19,223 @@ export default class PaymentController implements CRUDController {
             // todo: add filter
             // todo: add sort
 
-            const payments = await prisma.payment.findMany();
+            const payments = await prisma.userSubscription.findMany();
             res.status(200).json(payments);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    static async getOne(req: Request, res: Response) {
+    static async getOne(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
-            const payment = await prisma.payment.findFirst({
+            const payment = await prisma.userSubscription.findFirst({
                 where: {
                     id: +id,
                 },
             });
             res.status(200).json(payment);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    static async getByPaymentId(req: Request, res: Response) {
+    static async getByPaymentId(req: Request, res: Response, next: NextFunction) {
         try {
             const { paymentId } = req.params;
             const payment = await mollieClient.payments.get(paymentId);
             res.status(200).json(payment);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    // await mollieClient.payments.create({
-    //     amount: {
-    //         value: '10.00',
-    //         currency: 'EUR',
-    //     },
-    //     description: 'My first API payment',
-    //     redirectUrl: 'https://yourwebshop.example.org/order/123456',
-    //     webhookUrl: 'https://yourwebshop.example.org/webhook',
-    // });
-    // Todo
-    static async create(req: Request, res: Response) {
+    static async create(req: Request, res: Response, next: NextFunction) {
         try {
-            const { amount, userId, paymentId, paymentType } = req.body;
+            const { subscriptionId, offerId } = req.body;
+            const { user } = req;
 
-            const payment = await prisma.payment.create({
-                data: {
-                    amount: +amount,
-                    userId: +userId,
-                    paymentId,
-                    paymentType,
+            // Request gives us: subscriptionId, offerId, user (session info)
+            // We check that the subscriptionId is valid
+            const subscription = await prisma.subscription.findFirst({
+                where: {
+                    id: +subscriptionId,
                 },
             });
-            res.status(201).json(payment);
+
+            // We check that the offerId is valid
+            // Todo: verify if offer is valid
+            const offer = await prisma.offer.findFirst({
+                where: {
+                    id: +offerId,
+                },
+            });
+
+            // we apply the offer to the subscription price
+            let { price } = subscription;
+            if (offer) {
+                //TODO verify that the offer is valid
+
+                if (offer.offerType === 'POURCENTAGE') {
+                    price = price - (price * offer.value) / 100;
+                } else {
+                    price = price - offer.value;
+                }
+            }
+
+            // we create a mollie customer
+            const customer = await mollieClient.customers.create({
+                name: user.firstName,
+                email: user.email,
+            });
+
+            let payment;
+            // depending on the subscription type, we create a payment or a subscription
+            if (subscription.subscriptionType === PaymentType.ONETIME) {
+                // we create a payment
+                payment = await mollieClient.payments.create({
+                    amount: {
+                        value: price.toString(),
+                        currency: 'EUR',
+                    },
+                    description: 'My first API payment',
+                    redirectUrl: 'https://yourwebshop.example.org/order/123456',
+                    webhookUrl: 'https://yourwebshop.example.org/webhook',
+                    metadata: {
+                        subscriptionId,
+                        offerId,
+                    },
+                    customerId: customer.id,
+                });
+            } else {
+                // we create a subscription
+                payment = await mollieClient.customers_subscriptions.create({
+                    amount: {
+                        value: price.toString(),
+                        currency: 'EUR',
+                    },
+                    customerId: customer.id,
+                    webhookUrl: `${process.env.APP_URL}/api/payments/webhook`,
+                    testmode: process.env.NODE_ENV === 'development',
+                    description: subscription.description,
+                    interval: subscription.refreshRate.toString(), // invalid
+                    startDate: new Date().toISOString(),
+                });
+            }
+
+            // we store the payment id and the customer id in the database
+            // Todo: does the user already have a subscription?
+            //  if so, we need to update the subscription
+            await prisma.userSubscription.create({
+                data: {
+                    User: {
+                        connect: {
+                            id: user.id,
+                        },
+                    },
+                    Subscription: {
+                        connect: {
+                            id: subscription.id,
+                        },
+                    },
+                    paymentId: payment.id,
+                    customerId: customer.id,
+                    status: 'PENDING',
+                },
+            });
+
+            await prisma.offerUsage.create({
+                data: {
+                    User: {
+                        connect: {
+                            id: user.id,
+                        },
+                    },
+                    Offer: {
+                        connect: {
+                            id: offer.id,
+                        },
+                    },
+                },
+            });
+
+            res.status(200).json({
+                paymentUrl: payment.getPaymentUrl(),
+            });
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    static async update(req: Request, res: Response) {
+    static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
-            const { amount, userId, paymentId, paymentType } = req.body;
-            const payment = await prisma.payment.update({
+            const { userId, paymentId } = req.body;
+            const payment = await prisma.userSubscription.update({
                 where: {
                     id: +id,
                 },
                 data: {
-                    amount: +amount,
                     userId: +userId,
                     paymentId,
-                    paymentType,
                 },
             });
             res.status(200).json(payment);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    static async delete(req: Request, res: Response) {
+    static async delete(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
-            const payment = await prisma.payment.delete({
+            const { user } = req;
+            const payment = await prisma.userSubscription.findFirst({
+                where: {
+                    id: +id,
+                    userId: +user.id,
+                    status: 'ACTIVE',
+                },
+            });
+            if (!payment) {
+                throw new Error('Payment not found');
+            }
+            await mollieClient.customers_subscriptions.cancel(payment.paymentId, {
+                customerId: payment.customerId,
+            });
+            await prisma.userSubscription.delete({
                 where: {
                     id: +id,
                 },
             });
             res.status(200).json(payment);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 
-    // static async webhooksStatus(req: Request, res: Response) {
-    //     //POST /payments/webhook HTTP/1.0
-    //     // Host: webshop.example.org
-    //     // Via: 1.1 tinyproxy (tinyproxy/1.8.3)
-    //     // Content-Type: application/x-www-form-urlencoded
-    //     // Accept: */*
-    //     // Accept-Encoding: deflate, gzip
-    //     // Content-Length: 16
-    //     //
-    //     // id=tr_d0b0E3EA3v
-    //     // const payment = await mollieClient.payments.get(id);
-    //     // update database
-    //     // res.sendStatus(200);
-    //     //
-    //     // const { id } = req.body;
-    //     //
-    //     // const status = await mollieClient.payments.get(id);
-    //     // console.log(status);
-    //     //
-    //     // //     open = "open",
-    //     // //     canceled = "canceled",
-    //     // //     pending = "pending",
-    //     // //     authorized = "authorized",
-    //     // //     expired = "expired",
-    //     // //     failed = "failed",
-    //     // //     paid = "paid"
-    //     //
-    //     // if (!status) {
-    //     //     return res.sendStatus(404);
-    //     // }
-    //     //
-    //     // await prisma.payment.upsert({
-    //     //     where: {
-    //     //         paymentId: String(id),
-    //     //     },
-    //     //     update: {
-    //     //         status: status.status,
-    //     //     },
-    //     //     create: {
-    //     //         paymentId: id,
-    //     //         status: status.status,
-    //     //         amount: status.amount.value,
-    //     //         paymentType: status.method,
-    //     //     },
-    //     // });
-    // }
+    static async webhooksStatus(req: Request, res: Response) {
+        const { id } = req.body;
+
+        const status = await mollieClient.payments.get(id);
+
+        if (!status) {
+            return res.sendStatus(404);
+        }
+
+        const subscription = await prisma.userSubscription.findFirst({
+            where: {
+                paymentId: id,
+            },
+        });
+
+        await prisma.userSubscription.update({
+            where: {
+                id: subscription.id,
+            },
+            data: {
+                status: status.status,
+            },
+        });
+    }
 }

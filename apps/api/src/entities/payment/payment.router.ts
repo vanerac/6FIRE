@@ -7,15 +7,18 @@
 
 import { Router } from 'express';
 import PaymentController from './payment.controller';
+import { isAdmin } from '../../tools/auth.tools';
 
 const router = Router();
 
-router.get('/', PaymentController.getAll);
-router.get('/:id', PaymentController.getOne);
+router.get('/', isAdmin, PaymentController.getAll);
+router.get('/:id', isAdmin, PaymentController.getOne);
 router.post('/', PaymentController.create);
-router.put('/:id', PaymentController.update);
+router.put('/:id', isAdmin, PaymentController.update);
 router.delete('/:id', PaymentController.delete);
-router.get('/payment/:id', PaymentController.getByPaymentId);
+router.get('/payment/:id', isAdmin, PaymentController.getByPaymentId);
 
 // webhooks
-// router.post('/webhooks/status', PaymentController.webhooksStatus);
+router.post('/webhooks/status', PaymentController.webhooksStatus);
+
+export default router;

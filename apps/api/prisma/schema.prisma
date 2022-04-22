@@ -20,6 +20,11 @@ enum PaymentType {
   ONETIME
 }
 
+enum OfferType {
+  POURCENTAGE
+  FIXED
+}
+
 model User {
   id                Int                 @id @default(autoincrement())
   userId            String              @unique @default(uuid())
@@ -39,10 +44,11 @@ model User {
   TraderFollows     TraderFollows[]
   UserSubscription  UserSubscription[]
 
-  Payment Payment[]
+
   PasswordReset PasswordReset[]
 
 
+  OfferUsage OfferUsage[]
   @@unique([email, verifiedEmail])
   @@unique([telephone, verifiedPhone])
 }
@@ -71,11 +77,14 @@ model Subscription {
   name             String
   description      String
   refreshRate      Int // in days
+  subscriptionType PaymentType
   price            Int
   level            Int                @default(0)
+//  mollieId         String
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @default(now())
   UserSubscription UserSubscription[]
+  Offer            Offer[]
 }
 
 model UserSubscription {
@@ -84,9 +93,32 @@ model UserSubscription {
   subscriptionId Int
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @default(now())
+  paymentId      String          // Mollie payment id
+  customerId     String       // Mollie customer id
+  status         String       // Mollie status
   User           User         @relation(fields: [userId], references: [id])
   Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
 }
+
+model Offer {
+  id             Int          @id @default(autoincrement())
+  value          Int
+  offerType      OfferType
+  subscriptionId Int
+  singleUse      Boolean      @default(false)
+  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  OfferUsage     OfferUsage[]
+}
+
+model OfferUsage {
+  id      Int      @id @default(autoincrement())
+  offerId Int
+  userId  Int
+  date    DateTime @default(now())
+  Offer   Offer    @relation(fields: [offerId], references: [id])
+  User    User     @relation(fields: [userId], references: [id])
+}
+
 
 model Theme {
   id                Int       @id @default(autoincrement())
@@ -174,14 +206,4 @@ model TraderFollows {
   User          User          @relation(fields: [userId], references: [id])
   CuratedTrader CuratedTrader @relation(fields: [traderId], references: [id])
 
-}
-
-model Payment {
-  id          Int         @id @default(autoincrement())
-  amount      Int
-  userId      Int
-  paymentId   String
-  paymentType PaymentType
-  date        DateTime    @default(now())
-  User        User        @relation(fields: [userId], references: [id])
 }

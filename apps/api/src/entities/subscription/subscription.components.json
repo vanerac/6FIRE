@@ -12,6 +12,12 @@
         "description": {
           "type": "string"
         },
+        "refreshRate": {
+          "type": "integer"
+        },
+        "subscriptionType": {
+          "type": "string"
+        },
         "price": {
           "type": "integer"
         },
@@ -19,14 +25,19 @@
           "type": "integer"
         },
         "createdAt": {
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "updatedAt": {
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
-      }
+      },
+      "required": [
+        "name",
+        "description",
+        "subscriptionType",
+        "price",
+        "level"
+      ]
     }
   }
 }

@@ -103,6 +103,15 @@
     },
     "/country/{id}": {
       "$ref": "./country/country.path.json#/withId"
+    },
+    "/payment/": {
+      "$ref": "./payment/payment.path.json#/noId"
+    },
+    "/payment/{id}": {
+      "$ref": "./payment/payment.path.json#/withId"
+    },
+    "/payment/payment/{id}": {
+      "$ref": "./payment/payment.path.json#/getPayment"
     }
   },
   "components": {
@@ -130,6 +139,9 @@
       },
       "Country": {
         "$ref": "./openapi.components.json#/schemas/Country"
+      },
+      "UserSubscription": {
+        "$ref": "./openapi.components.json#/schemas/UserSubscription"
       }
     }
   }

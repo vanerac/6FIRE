@@ -6,6 +6,13 @@ export async function verifySubscription(userId: string) {
     const userSubscription = await prisma.userSubscription.findFirst({
         where: {
             userId: +userId,
+            status: 'active',
+        },
+        orderBy: {
+            createdAt: 'desc',
+            Subscription: {
+                level: 'desc',
+            },
         },
     });
 
@@ -51,6 +58,7 @@ export async function verifySubscriptionLevel(userId: string, level: number) {
     const userSubscription = await prisma.userSubscription.findFirst({
         where: {
             userId: +userId,
+            status: 'active',
         },
     });
 

@@ -17,11 +17,13 @@ export type { Subscription } from './models/Subscription';
 export type { Theme } from './models/Theme';
 export type { Trader } from './models/Trader';
 export type { User } from './models/User';
+export type { UserSubscription } from './models/UserSubscription';
 
 export { ArticleService } from './services/ArticleService';
 export { AuthService } from './services/AuthService';
 export { CountryService } from './services/CountryService';
 export { CryptoService } from './services/CryptoService';
+export { PaymentService } from './services/PaymentService';
 export { SubscriptionService } from './services/SubscriptionService';
 export { ThemesService } from './services/ThemesService';
 export { TradersService } from './services/TradersService';

@@ -9,6 +9,7 @@ import { ArticleService } from './services/ArticleService';
 import { AuthService } from './services/AuthService';
 import { CountryService } from './services/CountryService';
 import { CryptoService } from './services/CryptoService';
+import { PaymentService } from './services/PaymentService';
 import { SubscriptionService } from './services/SubscriptionService';
 import { ThemesService } from './services/ThemesService';
 import { TradersService } from './services/TradersService';
@@ -22,6 +23,7 @@ export class ApiClient {
     public readonly auth: AuthService;
     public readonly country: CountryService;
     public readonly crypto: CryptoService;
+    public readonly payment: PaymentService;
     public readonly subscription: SubscriptionService;
     public readonly themes: ThemesService;
     public readonly traders: TradersService;
@@ -46,6 +48,7 @@ export class ApiClient {
         this.auth = new AuthService(this.request);
         this.country = new CountryService(this.request);
         this.crypto = new CryptoService(this.request);
+        this.payment = new PaymentService(this.request);
         this.subscription = new SubscriptionService(this.request);
         this.themes = new ThemesService(this.request);
         this.traders = new TradersService(this.request);
