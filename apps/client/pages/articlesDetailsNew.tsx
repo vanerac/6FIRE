@@ -76,7 +76,7 @@ const HomePage: NextPage = (props: any) => {
                     {/* More article you would love to reaa */}
 
                     <div className="article-widget">
-                        <h2 className="article_title lato-bold-white-16px">DANS LA MÊME CATÉGORIE</h2>
+                        <h2 className="article_category_title lato-bold-white-16px">DANS LA MÊME CATÉGORIE</h2>
 
                         <div className="more_articles">
                             <div className="grid">
