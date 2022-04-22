@@ -2456,6 +2456,19 @@
           },
           "banned": {
             "type": "boolean"
+          },
+          "UserSubscription": {
+            "type": "object",
+            "properties": {
+              "Subscription": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },

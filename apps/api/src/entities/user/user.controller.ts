@@ -13,6 +13,15 @@ export class UserController implements CRUDController {
             const users = prisma.user.findMany({
                 select: {
                     password: false,
+                    UserSubscription: {
+                        select: {
+                            Subscription: {
+                                select: {
+                                    name: true,
+                                },
+                            },
+                        },
+                    },
                 },
             });
             res.json(users);
