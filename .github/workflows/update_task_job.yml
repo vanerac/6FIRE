@@ -1,0 +1,27 @@
+# Update ecs task definition
+# Path: .github/workflows/update_task_job.yml
+
+on: [ workflow_call ]
+name: Update task definition
+
+
+# run command ecs deploy 6fire-ecs-cluster 6fire-ecs-service-client --tag latest
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directories:
+          - api
+          - client
+          - dashboard
+    steps:
+      - name: login to AWS
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
+          aws-region: eu-west-3
+      - name: Create new task definition revision
+        run: |
+          TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition 6fire-ecs-task-definition-family-${{matrix.directories}} --region "eu-west-3")
+          aws ecs register-task-definition --region "eu-west-3" --cli-input-json "$TASK_DEFINITION"

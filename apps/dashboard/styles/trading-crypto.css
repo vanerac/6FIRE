@@ -1,0 +1,949 @@
+/* screen - trading-crypto */
+
+.trading-crypto {
+    background-color: var(--zircon);
+    height: 1420px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 1600px;
+}
+
+.trading-crypto .analytics-0HdJvR {
+    background-color: transparent;
+    height: auto;
+    left: 356px;
+    letter-spacing: 0.10px;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 108px;
+    white-space: nowrap;
+    width: auto;
+}
+
+/*.trading-crypto .top-navigation-0HdJvR {*/
+/*  background-color: transparent;*/
+/*  height: 68px;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 1600px;*/
+/*}*/
+
+/*.trading-crypto .rectangle-IFpJuP {*/
+/*  background-color: var(--vulcan);*/
+/*  box-shadow: 0px 1px 4px #15223214;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
+
+/*.trading-crypto .top-navigation-search-IFpJuP {*/
+/*  background-color: transparent;*/
+/*  height: 24px;*/
+/*  left: calc(19.34% - 17px);*/
+/*  position: absolute;*/
+/*  top: calc(50.00% - 12px);*/
+/*  width: 90px;*/
+/*}*/
+
+/*.trading-crypto .x00-general-01-icons-F2OGYX {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 24px;*/
+/*}*/
+
+/*.trading-crypto .color-5g4dUl {*/
+/*  background-color: transparent;*/
+/*  height: calc(100.00% - 7px);*/
+/*  left: 3px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 3px;*/
+/*  width: 17px;*/
+/*}*/
+
+/*.trading-crypto .search-F2OGYX {*/
+/*  background-color: transparent;*/
+/*  height: calc(100.00% - 2px);*/
+/*  letter-spacing: 0.00px;*/
+/*  line-height: 20px;*/
+/*  position: absolute;*/
+/*  right: -2px;*/
+/*  text-align: left;*/
+/*  top: 3px;*/
+/*  white-space: nowrap;*/
+/*  width: 60px;*/
+/*}*/
+
+/*.trading-crypto .user-group-IFpJuP {*/
+/*  background-color: transparent;*/
+/*  height: 36px;*/
+/*  position: absolute;*/
+/*  right: 40px;*/
+/*  top: calc(43.75% - 16px);*/
+/*  width: 117px;*/
+/*}*/
+
+/*.trading-crypto .users-avatar-photo-2-states-yBRndw {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 36px;*/
+/*}*/
+
+/*.trading-crypto .oval-rB6h0L {*/
+/*  background-color: transparent;*/
+/*  border-radius: 18px;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
+
+/*.trading-crypto .image-rB6h0L {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
+
+/*.trading-crypto .monica-simons-yBRndw {*/
+/*  background-color: transparent;*/
+/*  bottom: calc(46.43% - 10px);*/
+/*  height: 22px;*/
+/*  letter-spacing: 0.00px;*/
+/*  line-height: 20px;*/
+/*  position: absolute;*/
+/*  right: calc(35.14% - 15px);*/
+/*  text-align: left;*/
+/*  white-space: nowrap;*/
+/*  width: 43px;*/
+/*}*/
+
+/*.trading-crypto .icons-chevron-down-yBRndw {*/
+/*  background-color: transparent;*/
+/*  height: 24px;*/
+/*  position: absolute;*/
+/*  right: 0px;*/
+/*  top: 5px;*/
+/*  width: 24px;*/
+/*}*/
+
+/*.trading-crypto .trac-399-Pr2TkJ {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 0px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
+
+/*.trading-crypto .trac-400-Pr2TkJ {*/
+/*  background-color: transparent;*/
+/*  height: 8px;*/
+/*  left: 5px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: calc(48.67% - 4px);*/
+/*  width: calc(100.00% - 9px);*/
+/*}*/
+
+/*.trading-crypto .groupe-2-IFpJuP {*/
+/*  background-color: transparent;*/
+/*  bottom: calc(50.00% - 10px);*/
+/*  height: 21px;*/
+/*  left: 40px;*/
+/*  position: absolute;*/
+/*  width: 113px;*/
+/*}*/
+
+/*.trading-crypto .groupe-1-bggexA {*/
+/*  background-color: transparent;*/
+/*  height: 100%;*/
+/*  left: 1px;*/
+/*  object-fit: cover;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  width: 100%;*/
+/*}*/
+
+.trading-crypto .buttons-btn-text-icon-0HdJvR {
+    background-color: transparent;
+    height: 32px;
+    left: 1298px;
+    position: absolute;
+    top: 124px;
+    width: 240px;
+}
+
+.trading-crypto .type-M8x5OR {
+    background-color: var(--caribbean-green);
+    border-radius: 4px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .groupe-393-M8x5OR {
+    background-color: transparent;
+    height: 20px;
+    left: 12px;
+    position: absolute;
+    top: calc(50.00% - 10px);
+    width: calc(100.00% - 24px);
+}
+
+.trading-crypto .text-5hPid0 {
+    background-color: transparent;
+    height: 22px;
+    left: 0px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    top: 15.00%;
+    white-space: nowrap;
+    width: 218px;
+}
+
+.trading-crypto .page-espace-trading-crypto-0HdJvR {
+    background-color: transparent;
+    height: 568px;
+    left: 307px;
+    position: absolute;
+    top: 181px;
+    width: 1259px;
+}
+
+.trading-crypto .rectangle-632-O2UxC4 {
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px #00000029;
+    height: calc(100.00% - 18px);
+    left: 0px;
+    position: absolute;
+    top: 18px;
+    width: 100%;
+}
+
+.trading-crypto .titre-O2UxC4 {
+    background-color: transparent;
+    height: 36px;
+    left: 39px;
+    position: absolute;
+    top: 0px;
+    width: 256px;
+}
+
+.trading-crypto .rectangle-633-uE0hqr {
+    background-color: var(--blue-ribbon);
+    border-radius: 10px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .analytics-uE0hqr {
+    background-color: transparent;
+    height: 22px;
+    left: 5.47%;
+    letter-spacing: 0.06px;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    white-space: nowrap;
+    width: 89.84%;
+}
+
+.trading-crypto .titre-page-O2UxC4 {
+    background-color: transparent;
+    height: 40px;
+    left: 39px;
+    position: absolute;
+    top: 56px;
+    width: 268px;
+}
+
+.trading-crypto .ligne-6-TOCziR {
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+}
+
+.trading-crypto .axie-infinity-play-to-earn-TOCziR {
+    background-color: transparent;
+    bottom: 4px;
+    height: 19px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    width: calc(100.00% - 34px);
+}
+
+.trading-crypto .titre-TOCziR {
+    background-color: transparent;
+    height: 14px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100.00% - 24px);
+}
+
+.trading-crypto .editeur-O2UxC4 {
+    background-color: transparent;
+    bottom: 26px;
+    height: 402px;
+    left: 39px;
+    position: absolute;
+    width: 917px;
+}
+
+.trading-crypto .rectangle-16882-wqESeD {
+    background-color: var(--white);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .notes-details-text-editor-wqESeD {
+    background-color: transparent;
+    height: 9.70%;
+    left: 1.09%;
+    object-fit: cover;
+    position: absolute;
+    top: 0.75%;
+    width: 65.98%;
+}
+
+.trading-crypto .paragraphe-O2UxC4 {
+    background-color: transparent;
+    height: 14px;
+    left: 39px;
+    letter-spacing: 0.00px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    top: calc(20.94% - 3px);
+    width: 244px;
+}
+
+.trading-crypto .pages-nos-trades-0HdJvR {
+    background-color: transparent;
+    height: 568px;
+    left: 307px;
+    position: absolute;
+    top: 788px;
+    width: 1259px;
+}
+
+.trading-crypto .rectangle-632-rLO8zg {
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px #00000029;
+    height: calc(100.00% - 18px);
+    left: 0px;
+    position: absolute;
+    top: 18px;
+    width: 100%;
+}
+
+.trading-crypto .titre-rLO8zg {
+    background-color: transparent;
+    height: 36px;
+    left: 39px;
+    position: absolute;
+    top: 0px;
+    width: 256px;
+}
+
+.trading-crypto .rectangle-633-Dd2UZo {
+    background-color: var(--blue-ribbon);
+    border-radius: 10px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .analytics-Dd2UZo {
+    background-color: transparent;
+    height: 22px;
+    left: 25.00%;
+    letter-spacing: 0.06px;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    white-space: nowrap;
+    width: 50.78%;
+}
+
+.trading-crypto .titre-page-rLO8zg {
+    background-color: transparent;
+    height: 40px;
+    left: 39px;
+    position: absolute;
+    top: 56px;
+    width: 268px;
+}
+
+.trading-crypto .ligne-6-owZxKI {
+    background-color: transparent;
+    bottom: 0px;
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+}
+
+.trading-crypto .axie-infinity-play-to-earn-owZxKI {
+    background-color: transparent;
+    bottom: 4px;
+    height: 19px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: 12px;
+    position: absolute;
+    text-align: left;
+    width: calc(100.00% - 34px);
+}
+
+.trading-crypto .titre-owZxKI {
+    background-color: transparent;
+    height: 14px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: calc(100.00% - 24px);
+}
+
+.trading-crypto .editeur-rLO8zg {
+    background-color: transparent;
+    bottom: 26px;
+    height: 402px;
+    left: 39px;
+    position: absolute;
+    width: 917px;
+}
+
+.trading-crypto .rectangle-16882-R7xu0G {
+    background-color: var(--white);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .notes-details-text-editor-R7xu0G {
+    background-color: transparent;
+    height: 9.70%;
+    left: 1.09%;
+    object-fit: cover;
+    position: absolute;
+    top: 0.75%;
+    width: 65.98%;
+}
+
+.trading-crypto .paragraphe-rLO8zg {
+    background-color: transparent;
+    height: 14px;
+    left: 39px;
+    letter-spacing: 0.00px;
+    line-height: 10px;
+    position: absolute;
+    text-align: left;
+    top: calc(20.94% - 3px);
+    width: 244px;
+}
+
+.trading-crypto .sidebar-0HdJvR {
+    background-color: transparent;
+    height: 1352px;
+    left: 0px;
+    position: absolute;
+    top: 68px;
+    width: 250px;
+}
+
+.trading-crypto .shape-CixfV8 {
+    background-color: var(--white);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .settings-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(41.54% - 22px);
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-xAyKLc {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(37.65% - 23px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 60px;
+}
+
+.trading-crypto .icons-navigation-icon-12-states-xAyKLc {
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
+}
+
+.trading-crypto .ic_setting-xstOdY {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .broker-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(29.54% - 15px);
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-wTcobN {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(34.97% - 16px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 47px;
+}
+
+.trading-crypto .font-awsome-handshake-wTcobN {
+    background-color: transparent;
+    bottom: 20px;
+    height: 13px;
+    left: 21px;
+    object-fit: cover;
+    position: absolute;
+    width: 21px;
+}
+
+.trading-crypto .crypto-wallet-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(25.54% - 13px);
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-cP0SIY {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(49.23% - 49px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 100px;
+}
+
+.trading-crypto .font-awsome-bitcoin-cP0SIY {
+    background-color: transparent;
+    height: 19px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: calc(50.00% - 10px);
+    width: 19px;
+}
+
+.trading-crypto .trading-crypto-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(17.54% - 9px);
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .frame-XO9ZZQ {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .line-XO9ZZQ {
+    background-color: var(--blue-ribbon);
+    border-radius: 10px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 4px;
+}
+
+.trading-crypto .name-XO9ZZQ {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(39.62% - 49px);
+    text-align: left;
+    white-space: nowrap;
+    width: 124px;
+}
+
+.trading-crypto .font-awsome-pen-XO9ZZQ {
+    background-color: transparent;
+    height: 19px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: 16px;
+    width: 19px;
+}
+
+.trading-crypto .thmes-articles-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 124px;
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-IlXUXi {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(44.35% - 51px);
+    text-align: left;
+    white-space: nowrap;
+    width: 115px;
+}
+
+.trading-crypto .icons-navigation-icon-12-states-IlXUXi {
+    background-color: transparent;
+    height: 22px;
+    left: 24px;
+    position: absolute;
+    top: calc(50.00% - 11px);
+    width: 16px;
+}
+
+.trading-crypto .font-awsome-bookmark-xKSfUg {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.trading-crypto .customers-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 72px;
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-w1l4ze {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(43.24% - 35px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 82px;
+}
+
+.trading-crypto .icons-navigation-icon-12-states-w1l4ze {
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
+}
+
+.trading-crypto .ic_users-NxgnFU {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .home-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 20px;
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-Pmxgxw {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(34.41% - 15px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 44px;
+}
+
+.trading-crypto .icons-navigation-icon-12-states-Pmxgxw {
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
+}
+
+.trading-crypto .ic_home-4MkzWg {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .articles-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 176px;
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-b870mG {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(36.57% - 20px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 55px;
+}
+
+.trading-crypto .icons-navigation-icon-12-states-b870mG {
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
+}
+
+.trading-crypto .ic_invoice-xpxX1p {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.trading-crypto .icon-ionic-ios-arrow-down-b870mG {
+    background-color: transparent;
+    bottom: calc(50.00% - 3px);
+    height: 7px;
+    left: 191px;
+    object-fit: cover;
+    position: absolute;
+    width: 12px;
+}
+
+.trading-crypto .bot-trading-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(21.54% - 11px);
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-CafU47 {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(43.84% - 37px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 84px;
+}
+
+.trading-crypto .font-awsome-robot-CafU47 {
+    background-color: transparent;
+    height: 17px;
+    left: 20px;
+    object-fit: cover;
+    position: absolute;
+    top: 17px;
+    width: 21px;
+}
+
+.trading-crypto .pays-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(33.54% - 17px);
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-faCDxX {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(32.99% - 12px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 36px;
+}
+
+.trading-crypto .font-awsome-globe-europe-faCDxX {
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    left: 25px;
+    object-fit: cover;
+    position: absolute;
+    width: 18px;
+}
+
+.trading-crypto .abonnement-CixfV8 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(37.54% - 20px);
+    width: calc(100.00% - 20px);
+}
+
+.trading-crypto .name-nl3juf {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(47.41% - 45px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 95px;
+}
+
+.trading-crypto .icon-material-payment-nl3juf {
+    background-color: transparent;
+    height: 15px;
+    left: 24px;
+    object-fit: cover;
+    position: absolute;
+    top: 18px;
+    width: 19px;
+}
+
+.trading-crypto .icon-ionic-ios-arrow-down-nl3juf {
+    background-color: transparent;
+    bottom: calc(50.00% - 3px);
+    height: 7px;
+    left: 196px;
+    object-fit: cover;
+    position: absolute;
+    width: 12px;
+}

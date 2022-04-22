@@ -1,8 +1,21 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Header from './components/header';
+import Footer from './components/footer';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import router from 'next/router';
+import { useEffect } from 'react';
 
-const HomePage: NextPage = (props: any) => {
+const ArticlesDetails: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />
@@ -17,87 +30,109 @@ const HomePage: NextPage = (props: any) => {
                 <div className="thme-sombre-SAHlos">
                     <div className="content-page-FZXT2m">
                         <div className="thme-sombre-6DMTzr">
-                            <div className="background-UtoxRq"></div>
-                            <div className="articles-UtoxRq">
-                                <div className="background-If24qc"></div>
-                                <div className="groupe-1491-If24qc">
-                                    <div className="groupe-1490-e4GPIH">
-                                        <Image src="/img/group-1490-3@1x.png" layout="fill" />
+                            <div className="background-UtoxRq">
+                                <div className="articles-UtoxRq">
+                                    <div className="background-If24qc"></div>
+                                    <div className="groupe-1491-If24qc">
+                                        <div className="groupe-1490-e4GPIH">
+                                            <Image src="/img/group-1490-3@1x.png" layout="fill" />
+                                        </div>
+                                    </div>
+                                    <div className="thmatique-If24qc lato-bold-white-16px">Crypto</div>
+                                    <div className="date-If24qc lato-normal-manatee-14px">27 Février 2022</div>
+                                    <div className="titre-If24qc lato-bold-white-22px">
+                                        Les 5 erreurs à éviter en crypto
+                                    </div>
+                                    <div className="paragraphe-If24qc lato-bold-white-16px-2">
+                                        <span className="span0-vJxPdn lato-bold-white-16px">Attention :</span>
+                                        <span className="span1-vJxPdn lato-normal-white-16px">
+                                            Vous devez faire vos propres recherches avant tout investissement. Ce
+                                            document ne peut en aucun cas être considéré comme un conseil en
+                                            investissement.
+                                            <br />
+                                            <br />
+                                            Précédemment utilisés par une population d’initiés, la cryptomonnaie et le
+                                            trading se démocratisent et attirent aujourd’hui un grand nombre
+                                            d’investisseurs. Les monnaies virtuelles font parler d’elles et attirent les
+                                            investisseurs néophytes. Cependant, pour réussir son investissement crypto
+                                            monnaie sans risque, il existe plusieurs erreurs crypto de débutant à
+                                            éviter.
+                                            <br />
+                                            <br />
+                                        </span>
+                                        <span className="span2-vJxPdn lato-bold-white-16px">
+                                            1. Ne pas suffisamment protéger ses comptes
+                                            <br />
+                                            2. Ne pas comprendre dans quoi on investit <br />
+                                            3. Se tromper d’adresse
+                                            <br />
+                                            4. Mettre tous ses oeufs dans le même panier
+                                            <br />
+                                            5. Utiliser des effets de levier
+                                            <br />
+                                            <br />
+                                        </span>
+                                        <span className="span3-vJxPdn lato-normal-white-16px">
+                                            Le sondage montre aussi quelles sont les erreurs les plus courantes commises
+                                            par les investisseurs des États-Unis. Sans grande surprise, 38 % des
+                                            personnes interrogées regrettent d’avoir cédé à la panique et vendu leurs
+                                            cryptomonnaies au lieu de patienter jusqu’à ce que les cours grimpent. 32 %
+                                            regrettent également d’avoir « tout investi sur un seul type de coin ».
+                                            <br />
+                                            <br />
+                                            La troisième erreur la plus courante, est le manque de compréhension des
+                                            marchés de cryptomonnaies : elle concerne 27 % des personnes interrogées.
+                                            Enfin, on trouve à la quatrième place des erreurs les plus courantes les
+                                            investisseurs qui ont envoyé leurs cryptomonnaies avant d’avoir la certitude
+                                            de recevoir un paiement en retour. La cinquième place est occupée par ceux
+                                            qui ont acheté au plus haut… Pour revendre au plus bas :<br />
+                                        </span>
+                                        <span className="span4-vJxPdn lato-bold-white-16px">
+                                            <br />
+                                            <br />
+                                        </span>
+                                    </div>
+                                    <div className="image-878-If24qc">
+                                        <Image src="/img/image-878-1@1x.png" layout="fill" />
+                                    </div>
+                                    <div className="paragraphe-ldv3Xu lato-bold-white-16px-2">
+                                        <span className="span0-O1dsNa lato-normal-white-16px">
+                                            34 % des personnes interrogées révèlent ainsi conserver leurs cryptomonnaies
+                                            sur Coinbase, 26 % ont choisi Robinhood, puis Binance suit avec 24 % d’entre
+                                            elles. Ce sont aussi Coinbase et Binance qui représentent les plus gros
+                                            investissements moyens : chaque personne interrogée y stocke en moyenne 2
+                                            742 dollars et 2 813 dollars respectivement.
+                                            <br />
+                                        </span>
+                                        <span className="span1-O1dsNa lato-bold-white-16px">
+                                            <br />
+                                            ➡️{' '}
+                                        </span>
+                                        <span className="span2-O1dsNa lato-bold-white-16px">
+                                            À lire également : Comment débuter dans les cryptomonnaies ? À lire
+                                            également : Comment débuter dans les cryptomonnaies ? À lire également :
+                                            Comment débuter dans les cryptomonnaies ? À lire également : Comment débuter
+                                            dans les cryptomonnaies ? À lire également : Comment débuter dans les
+                                            cryptomonnaies ? À lire également : Comment débuter dans les cryptomonnaies
+                                            ? À lire également : Comment débuter dans les cryptomonnaies ? À lire
+                                            également : Comment débuter dans les cryptomonnaies ? À lire également :
+                                            Comment débuter dans les cryptomonnaies ? À lire également : Comment débuter
+                                            dans les cryptomonnaies ? À lire également : Comment débuter dans les
+                                            cryptomonnaies ? À lire également : Comment débuter dans les cryptomonnaies
+                                            ? À lire également : Comment débuter dans les cryptomonnaies ? À lire
+                                            également : Comment débuter dans les cryptomonnaies ? À lire également :
+                                            Comment débuter dans les cryptomonnaies ? À lire également : Comment débuter
+                                            dans les cryptomonnaies ? À lire également : Comment débuter dans les
+                                            cryptomonnaies ? À lire également : Comment débuter dans les cryptomonnaies
+                                            ? À lire également : Comment débuter dans les cryptomonnaies ? À lire
+                                            également : Comment débuter dans les cryptomonnaies ? À lire également :
+                                            Comment débuter dans les cryptomonnaies ?
+                                        </span>
+                                    </div>
+                                    <div className="paragraphe-EYTrHt lato-light-manatee-14px">
+                                        Source : Cryptovantage
                                     </div>
                                 </div>
-                                <div className="thmatique-If24qc lato-bold-white-16px">Crypto</div>
-                                <div className="date-If24qc lato-normal-manatee-14px">27 Février 2022</div>
-                                <div className="titre-If24qc lato-bold-white-22px">
-                                    Les 5 erreurs à éviter en crypto
-                                </div>
-                                <div className="paragraphe-If24qc lato-bold-white-16px-2">
-                                    <span className="span0-vJxPdn lato-bold-white-16px">Attention :</span>
-                                    <span className="span1-vJxPdn lato-normal-white-16px">
-                                        Vous devez faire vos propres recherches avant tout investissement. Ce document
-                                        ne peut en aucun cas être considéré comme un conseil en investissement.
-                                        <br />
-                                        <br />
-                                        Précédemment utilisés par une population d’initiés, la cryptomonnaie et le
-                                        trading se démocratisent et attirent aujourd’hui un grand nombre
-                                        d’investisseurs. Les monnaies virtuelles font parler d’elles et attirent les
-                                        investisseurs néophytes. Cependant, pour réussir son investissement crypto
-                                        monnaie sans risque, il existe plusieurs erreurs crypto de débutant à éviter.
-                                        <br />
-                                        <br />
-                                    </span>
-                                    <span className="span2-vJxPdn lato-bold-white-16px">
-                                        1. Ne pas suffisamment protéger ses comptes
-                                        <br />
-                                        2. Ne pas comprendre dans quoi on investit <br />
-                                        3. Se tromper d’adresse
-                                        <br />
-                                        4. Mettre tous ses oeufs dans le même panier
-                                        <br />
-                                        5. Utiliser des effets de levier
-                                        <br />
-                                        <br />
-                                    </span>
-                                    <span className="span3-vJxPdn lato-normal-white-16px">
-                                        Le sondage montre aussi quelles sont les erreurs les plus courantes commises par
-                                        les investisseurs des États-Unis. Sans grande surprise, 38 % des personnes
-                                        interrogées regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies
-                                        au lieu de patienter jusqu’à ce que les cours grimpent. 32 % regrettent
-                                        également d’avoir « tout investi sur un seul type de coin ».
-                                        <br />
-                                        <br />
-                                        La troisième erreur la plus courante, est le manque de compréhension des marchés
-                                        de cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on
-                                        trouve à la quatrième place des erreurs les plus courantes les investisseurs qui
-                                        ont envoyé leurs cryptomonnaies avant d’avoir la certitude de recevoir un
-                                        paiement en retour. La cinquième place est occupée par ceux qui ont acheté au
-                                        plus haut… Pour revendre au plus bas :<br />
-                                    </span>
-                                    <span className="span4-vJxPdn lato-bold-white-16px">
-                                        <br />
-                                        <br />
-                                    </span>
-                                </div>
-                                <div className="image-878-If24qc">
-                                    <Image src="/img/image-878-1@1x.png" layout="fill" />
-                                </div>
-                                <div className="paragraphe-ldv3Xu lato-bold-white-16px-2">
-                                    <span className="span0-O1dsNa lato-normal-white-16px">
-                                        34 % des personnes interrogées révèlent ainsi conserver leurs cryptomonnaies sur
-                                        Coinbase, 26 % ont choisi Robinhood, puis Binance suit avec 24 % d’entre elles.
-                                        Ce sont aussi Coinbase et Binance qui représentent les plus gros investissements
-                                        moyens : chaque personne interrogée y stocke en moyenne 2 742 dollars et 2 813
-                                        dollars respectivement.
-                                        <br />
-                                    </span>
-                                    <span className="span1-O1dsNa lato-bold-white-16px">
-                                        <br />
-                                        ➡️{' '}
-                                    </span>
-                                    <span className="span2-O1dsNa lato-bold-white-16px">
-                                        À lire également : Comment débuter dans les cryptomonnaies ?
-                                    </span>
-                                </div>
-                                <div className="paragraphe-EYTrHt lato-light-manatee-14px">Source : Cryptovantage</div>
                             </div>
                             <div className="articles-suggrs-UtoxRq">
                                 <div className="article-nSszxI">
@@ -164,52 +199,6 @@ const HomePage: NextPage = (props: any) => {
                             </div>
                         </div>
                     </div>
-                    <div className="icon-ionic-ios-moon-FZXT2m">
-                        <Image src="/img/icon-ionic-ios-moon-1@1x.png" layout="fill" />
-                    </div>
-                </div>
-                <div className="footer-SAHlos">
-                    <div className="background-BaKdMY"></div>
-                    <div className="menu-footer-BaKdMY">
-                        <div className="mentions-lgales-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-oLo3wS sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-dKcD8f sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-BaKdMY sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-BaKdMY">
-                        <div className="groupe-2-4tGdAy">
-                            <div className="groupe-1-xjk9Ad">
-                                <Image src="/img/group-1-10@1x.png" layout="fill" />
-                            </div>
-                        </div>
-                        <div className="effect-4tGdAy">
-                            <Image src="/img/effect-12@1x.png" layout="fill" />
-                        </div>
-                    </div>
-                    <div className="ligne-31-BaKdMY">
-                        <Image src="/img/line-31-1@1x.png" layout="fill" />
-                    </div>
-                    <div className="groupe-3011-BaKdMY">
-                        <div className="icon-instagram-GiDxHj">
-                            <Image src="/img/fontawsome--instagram--1@1x.png" layout="fill" />
-                        </div>
-                    </div>
-                    <div className="groupe-3010-BaKdMY">
-                        <div className="icon-simple-tiktok-2zSnac">
-                            <Image src="/img/icon-simple-tiktok-1@1x.png" layout="fill" />
-                        </div>
-                    </div>
                 </div>
                 <div className="bandeau-call-to-action-SAHlos">
                     <div className="groupe-de-masques-329-8hnitL">
@@ -242,6 +231,7 @@ const HomePage: NextPage = (props: any) => {
                         <Image src="/img/line-41-2@1x.png" layout="fill" />
                     </div>
                 </div>
+                <Footer />
             </div>
             <div className="articles-details-mobile screen">
                 <div className="background-2dehIQ"></div>
@@ -502,4 +492,5 @@ const HomePage: NextPage = (props: any) => {
     );
 };
 
-export default HomePage;
+// export default checkAuth(ArticlesDetails);
+export default ArticlesDetails;

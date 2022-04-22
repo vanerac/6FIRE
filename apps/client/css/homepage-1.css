@@ -242,7 +242,17 @@
 .homepage-1 .background-1CdAvu {
   background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
   background-color: transparent;
-  height: 100%;
+  /* height: 100%; */
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.homepage-1 .background-404 {
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  background-color: transparent;
+  /* height: calc(100% - 263px); */
   left: 0px;
   position: absolute;
   top: 0px;

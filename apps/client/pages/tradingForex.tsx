@@ -1,14 +1,25 @@
 import type { NextPage } from 'next';
+import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import router from 'next/router';
+import { useEffect } from 'react';
 
 const TrafingForex: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="trading-forex" />
-            <div
-                className="trading-forex screen"
-                // onclick="window.open('javascript:HideOverlay(%27trading-forex%27%2C%20%27animate-disappear%27);', '_self');"
-            >
+            <div className="trading-forex screen">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="background-GY9xoT"></div>
                 <div className="article-GY9xoT hidden">
                     <img className="groupe-de-masques-324-6ArdAu" src="img/mask-group-324-2@1x.png" />
@@ -19,42 +30,6 @@ const TrafingForex: NextPage = (props: any) => {
                     <img className="icon-twitter-6ArdAu" src="img/image-874-1@1x.png" />
                     <div className="rectangle-3502-6ArdAu"></div>
                 </div>
-                <div className="footer-GY9xoT">
-                    <div className="background-MA8arR"></div>
-                    <div className="menu-footer-MA8arR">
-                        <div className="mentions-lgales-va7xFI sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-va7xFI sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-va7xFI sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-va7xFI sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-G30tHZ sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-va7xFI sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-MA8arR sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-MA8arR">
-                        <div className="groupe-2-FQgwq7">
-                            <img className="groupe-1-rETACH" src="img/group-1-10@1x.png" />
-                        </div>
-                        <img className="effect-FQgwq7" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-MA8arR" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-MA8arR">
-                        <div className="ellipse-17695-VhmydZ hidden"></div>
-                        <img className="icon-instagram-VhmydZ" src="img/fontawsome--instagram--1@1x.png" />
-                    </div>
-                    <div className="groupe-3010-MA8arR">
-                        <div className="ellipse-17696-bghyxS hidden"></div>
-                        <img className="icon-simple-tiktok-bghyxS" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="prvisualisation-articles-GY9xoT">
                     <div className="article-vOxpDG">
                         <img className="groupe-de-masques-321-o2OUYT" src="img/mask-group-321-1@1x.png" />
@@ -160,6 +135,7 @@ const TrafingForex: NextPage = (props: any) => {
                     </div>
                     <img className="ligne-41-pKxBil" src="img/line-41-2@1x.png" />
                 </div>
+                <Footer />
             </div>
             <div className="trading-forex-mobile screen">
                 <div className="background-B8d21u"></div>
@@ -301,3 +277,4 @@ const TrafingForex: NextPage = (props: any) => {
 };
 
 export default TrafingForex;
+// export default checkAuth(TrafingForex);
