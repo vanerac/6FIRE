@@ -3,7 +3,8 @@
     bottom: 0;
     height: 210px;
     left: 0px;
-    position: absolute;
+    /* position: absolute; *//* temp disable */
+    position: relative;
     width: 100%;
 }
 

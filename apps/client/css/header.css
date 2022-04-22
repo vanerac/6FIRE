@@ -927,6 +927,9 @@ input:checked + .slider:before {
 
 
 /* Code by Zihad (temp comment) */
+a{
+    text-decoration: none;
+}
 .main-nav .top-nav{
     background-color: var(--black);
     position: relative;
