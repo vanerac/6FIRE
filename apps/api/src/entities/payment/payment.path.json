@@ -94,7 +94,9 @@
         "in": "path",
         "description": "Subscription ID",
         "required": true,
-        "type": "string"
+        "schema": {
+          "type": "string"
+        }
       }
     ],
     "get": {
@@ -219,7 +221,9 @@
         "in": "path",
         "description": "Subscription ID",
         "required": true,
-        "type": "string"
+        "schema": {
+          "type": "string"
+        }
       }
     ],
     "get": {

@@ -67,7 +67,7 @@ export class PaymentService {
      * @throws ApiError
      */
     public getPaymentById(
-        id: any,
+        id: string,
     ): CancelablePromise<UserSubscription> {
         return this.httpRequest.request({
             method: 'GET',
@@ -92,7 +92,7 @@ export class PaymentService {
      * @throws ApiError
      */
     public updatePayment(
-        id: any,
+        id: string,
         requestBody: {
             /**
              * Subscription ID
@@ -128,7 +128,7 @@ export class PaymentService {
      * @throws ApiError
      */
     public deletePayment(
-        id: any,
+        id: string,
     ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
@@ -152,7 +152,7 @@ export class PaymentService {
      * @throws ApiError
      */
     public fetchPaymentById(
-        id: any,
+        id: string,
     ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'GET',

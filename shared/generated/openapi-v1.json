@@ -2250,7 +2250,9 @@
           "in": "path",
           "description": "Subscription ID",
           "required": true,
-          "type": "string"
+          "schema": {
+            "type": "string"
+          }
         }
       ],
       "get": {
@@ -2375,7 +2377,9 @@
           "in": "path",
           "description": "Subscription ID",
           "required": true,
-          "type": "string"
+          "schema": {
+            "type": "string"
+          }
         }
       ],
       "get": {
@@ -2628,6 +2632,12 @@
           "description": {
             "type": "string"
           },
+          "refreshRate": {
+            "type": "integer"
+          },
+          "subscriptionType": {
+            "type": "string"
+          },
           "price": {
             "type": "integer"
           },
@@ -2635,14 +2645,19 @@
             "type": "integer"
           },
           "createdAt": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "updatedAt": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "name",
+          "description",
+          "subscriptionType",
+          "price",
+          "level"
+        ]
       },
       "Country": {
         "type": "object",
