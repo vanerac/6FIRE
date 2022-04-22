@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import router from 'next/router';
 
 const Header = (props: any) => {
     console.log(props);
@@ -196,30 +195,50 @@ const Header = (props: any) => {
             <div className="main-nav">
                 <div className="top-nav">
                     <div className="logo">
-                        <a href="./"><Image layout="fill" src="/img/effect-13@1x.png" /></a>
+                        <a href="./">
+                            <Image layout="fill" src="/img/effect-13@1x.png" />
+                        </a>
                     </div>
                     <div className="right-nav-items">right nav items</div>
                 </div>
                 <div className="main-nav-bar">
                     <div className="nav-item-wrap">
-                        <a className="no-bg" href="#"><span><Image layout="fill" src="/img/group-1490-1@1x.png" /></span>Cryptommonaies</a>
-                        <a href="#"><span><Image layout="fill" src="/img/nft-1@1x.png" /></span>NFT</a>
-                        <a href="#"><span><Image layout="fill" src="/img/path-1021-1@1x.png" /></span>Play to Earn</a>
-                        <a href="#"><span><Image layout="fill" src="/img/group-1504-1@1x.png" /></span>Immobilier</a>
-                        <a href="#"><span><Image layout="fill" src="/img/website-1@1x.png" /></span>E-Commerce</a>
+                        <a className="no-bg" href="#">
+                            <span>
+                                <Image layout="fill" src="/img/group-1490-1@1x.png" />
+                            </span>
+                            Cryptommonaies
+                        </a>
+                        <a href="#">
+                            <span>
+                                <Image layout="fill" src="/img/nft-1@1x.png" />
+                            </span>
+                            NFT
+                        </a>
+                        <a href="#">
+                            <span>
+                                <Image layout="fill" src="/img/path-1021-1@1x.png" />
+                            </span>
+                            Play to Earn
+                        </a>
+                        <a href="#">
+                            <span>
+                                <Image layout="fill" src="/img/group-1504-1@1x.png" />
+                            </span>
+                            Immobilier
+                        </a>
+                        <a href="#">
+                            <span>
+                                <Image layout="fill" src="/img/website-1@1x.png" />
+                            </span>
+                            E-Commerce
+                        </a>
                         <a href="#">Autres thématiques</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        
-        
-
-
     );
 };
 
 export default Header;
-
-
