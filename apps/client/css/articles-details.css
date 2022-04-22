@@ -2590,3 +2590,69 @@ body{
     display: none;
    }
 }
+
+
+/* Article Detisl New Style (by Zihad) 
+=======================================*/
+.article_details_wrapper{
+  margin-top: 145px;
+}
+.article_details_wrapper span{
+  position: relative !important;
+}
+.article_details_wrapper span img{
+  position: relative !important;
+  margin: inherit !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 350px !important;
+  object-fit: contain;
+  object-position: center;
+}
+.article_header span{
+  position: relative !important;
+}
+.article_header span img{
+  position: relative !important;
+  margin: inherit !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 350px !important;
+  object-fit: contain;
+  object-position: center;
+}
+.article_content{
+  max-width: 1200px;
+  margin: 30px auto;
+  background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
+  min-height: 500px;
+  padding: 30px 5%;
+}
+.author_box{
+  display: flex;
+  align-items: center;
+}
+.author_box span{
+    position: relative !important;
+    margin-right: 15px !important;
+}
+.author_box span img{
+    position: relative !important;
+    margin: inherit !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 35px !important;
+    object-fit: contain;
+    object-position: center;
+}
+.author_box .category{
+  margin-bottom: 10px;
+}
+.article_text{
+  color: #fff;
+}
+.article_content .imgbox img{
+  display: block !important;
+  margin: 30px auto !important;
+  height: calc(260px + (450 - 260) * ((100vw - 320px) / (1920 - 320))) !important;
+}
