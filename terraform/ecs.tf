@@ -369,8 +369,12 @@ DEFINITION
   volume {
     name = "6fire-efs-token"
     efs_volume_configuration {
-      file_system_id = aws_efs_file_system.main.id
-      root_directory = "/upload"
+      file_system_id     = aws_efs_file_system.main.id
+      root_directory     = "/upload"
+      transit_encryption = "ENABLED"
+      authorization_config {
+        access_point_id = aws_efs_access_point.storage.id
+      }
     }
   }
 }
@@ -487,7 +491,7 @@ resource "aws_ecs_service" "api" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups  = [aws_security_group.ecs_tasks.id, aws_security_group.lb_api.id]
+    security_groups  = [aws_security_group.ecs_tasks.id, aws_security_group.lb_api.id, aws_security_group.storage.id]
     subnets          = flatten([aws_subnet.public.*.id, aws_subnet.private.*.id, aws_subnet.storage.id])
     assign_public_ip = true
   }

@@ -9,6 +9,20 @@ resource "aws_subnet" "storage" {
   }
 }
 
+resource "aws_security_group" "storage" {
+  vpc_id = aws_vpc.main.id
+  name   = "6fire-storage"
+  ingress {
+    from_port   = 2049
+    to_port     = 2049
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    project = "6fire"
+  }
+}
+
 
 resource "aws_efs_file_system" "main" {
   creation_token         = "6fire-efs-token"

@@ -140,11 +140,20 @@ export class UserController implements CRUDController {
 
             const userSub = prisma.userSubscription.create({
                 data: {
-                    userId: +id,
-                    subscriptionId: +body.subscriptionId,
+                    User: {
+                        connect: {
+                            id: +id,
+                        },
+                    },
+                    Subscription: {
+                        connect: {
+                            id: +body.subscriptionId,
+                        },
+                    },
                     customerId: customerId.id,
                     paymentId: '',
                     status: 'active',
+                    price: 0,
                 },
             });
             res.json(userSub);
