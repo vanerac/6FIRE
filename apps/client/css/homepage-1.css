@@ -2855,6 +2855,7 @@ body{
   border: 0;
   border-bottom: 1px solid #fff;
   padding: 15px;
+  background-color: #161a1a;
   min-width: calc(220px + (350 - 220) * ((100vw - 320px) / (1920 - 320)));
 }
 .login_popup_wrapper form input[type="submit"]{

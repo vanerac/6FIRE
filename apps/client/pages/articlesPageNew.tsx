@@ -2,24 +2,20 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import router from 'next/router';
 import Footer from './components/footer';
-import LoginPopup from './components/login';
 import Header from './components/header';
 // import './loader.js'
 import $ from 'jquery';
 
-const handleForm = () => {
-    /* $('#date').val('data');
-    console.log(handleForm); */
+// const handleForm = () => {
+//     /* $('#date').val('data');
+//     console.log(handleForm); */
 
-    $('.menu__btn').on('click', function (event) {
-        event.preventDefault();
-        $('.login_popup_wrapper').toggleClass("open"); 
-   });
-   handleForm();
-};
-
-
-
+//     $('.menu__btn').on('click', function (event) {
+//         event.preventDefault();
+//         $('.login_popup_wrapper').toggleClass("open");
+//    });
+//    handleForm();
+// };
 
 const HomePage: NextPage = (props: any) => {
     console.log(props);
@@ -33,7 +29,7 @@ const HomePage: NextPage = (props: any) => {
                     {/* single article */}
                     <div
                         onClick={() => {
-                            handleForm();
+                            // handleForm();
                             router.push('/articlesDetails');
                         }}
                         className="single_article">
@@ -191,7 +187,6 @@ const HomePage: NextPage = (props: any) => {
                 </div> */}
 
             <Footer />
-            <LoginPopup />
         </div>
     );
 };

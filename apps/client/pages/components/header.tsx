@@ -2,28 +2,36 @@ import React from 'react';
 import Image from 'next/image';
 import router from 'next/router';
 import $ from 'jquery';
+import LoginPopup from './login';
 
 const handleForm = () => {
     /* $('#date').val('data');
     console.log(handleForm); */
-    $('.login_popup_wrapper').toggleClass("open");
-    
+    $('.login_popup_wrapper').toggleClass('open');
 };
 
 const Header = (props: any) => {
     console.log(props);
 
     return (
-        <div>
-            {/* Hamburger icon style */}
+        <>
+            <LoginPopup />
+
+            <div>
+                {/* Hamburger icon style */}
                 <input id="menu__toggle" type="checkbox" />
-                <label onClick={() => { handleForm(); }} className="menu__btn" htmlFor="menu__toggle">
-                <span></span>
+                <label
+                    onClick={() => {
+                        handleForm();
+                    }}
+                    className="menu__btn"
+                    htmlFor="menu__toggle">
+                    <span></span>
                 </label>
-            {/* Hamburger icon END */}
-        
-        <div className="header-top">
-            {/* <div className="header-rectangle_1"></div>
+                {/* Hamburger icon END */}
+
+                <div className="header-top">
+                    {/* <div className="header-rectangle_1"></div>
             <div className="header-logo">
                 <div className="header-image">
                     <Image layout="fill" src="/img/effect-13@1x.png" />
@@ -209,57 +217,84 @@ const Header = (props: any) => {
                 </div>
             </div> */}
 
-            <div className="main-nav">
-                <div className="top-nav">
-                    <div className="logo">
-                        <a href="./"><Image layout="fill" src="/img/effect-13@1x.png" /></a>
-                    </div>
-                    <div className="right-nav-items">
-                        <div className="dark-light">
-                            <div className="light-icon">
-                                <Image layout="fill" src="/img/icon-ionic-ios-moon-1@1x.png" />
+                    <div className="main-nav">
+                        <div className="top-nav">
+                            <div className="logo">
+                                <a href="./">
+                                    <Image layout="fill" src="/img/effect-13@1x.png" />
+                                </a>
                             </div>
-                            <label className="switch">
-                                <input type="checkbox" />
-                                <span className="slider round"></span>
-                            </label>
-                        </div>
+                            <div className="right-nav-items">
+                                <div className="dark-light">
+                                    <div className="light-icon">
+                                        <Image layout="fill" src="/img/icon-ionic-ios-moon-1@1x.png" />
+                                    </div>
+                                    <label className="switch">
+                                        <input type="checkbox" />
+                                        <span className="slider round"></span>
+                                    </label>
+                                </div>
 
-                        <a href="#" className="my-account">Mon compte</a>
-                        <div className="search-bar">
-                            <img src="" alt="" />
-                        </div>
+                                <a href="#" className="my-account">
+                                    Mon compte
+                                </a>
+                                <div className="search-bar">
+                                    <img src="" alt="" />
+                                </div>
 
-                        <div className="hamburger-icon">
-                            <div className="line"></div>
+                                <div className="hamburger-icon">
+                                    <div className="line"></div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div className="main-nav-bar">
-                    <div className="nav-grid">
-                        <div className="nav-item-wrap">
-                            <a className="no-bg" href="#"><span><Image layout="fill" src="/img/group-1490-1@1x.png" /></span>Cryptommonaies</a>
-                            <a href="#"><span><Image layout="fill" src="/img/nft-1@1x.png" /></span>NFT</a>
-                            <a href="#"><span><Image layout="fill" src="/img/path-1021-1@1x.png" /></span>Play to Earn</a>
-                            <a href="#"><span><Image layout="fill" src="/img/group-1504-1@1x.png" /></span>Immobilier</a>
-                            <a href="#"><span><Image layout="fill" src="/img/website-1@1x.png" /></span>E-Commerce</a>
-                            <a href="#">Autres thématiques</a>
-                        </div>
+                        <div className="main-nav-bar">
+                            <div className="nav-grid">
+                                <div className="nav-item-wrap">
+                                    <a className="no-bg" href="#">
+                                        <span>
+                                            <Image layout="fill" src="/img/group-1490-1@1x.png" />
+                                        </span>
+                                        Cryptommonaies
+                                    </a>
+                                    <a href="#">
+                                        <span>
+                                            <Image layout="fill" src="/img/nft-1@1x.png" />
+                                        </span>
+                                        NFT
+                                    </a>
+                                    <a href="#">
+                                        <span>
+                                            <Image layout="fill" src="/img/path-1021-1@1x.png" />
+                                        </span>
+                                        Play to Earn
+                                    </a>
+                                    <a href="#">
+                                        <span>
+                                            <Image layout="fill" src="/img/group-1504-1@1x.png" />
+                                        </span>
+                                        Immobilier
+                                    </a>
+                                    <a href="#">
+                                        <span>
+                                            <Image layout="fill" src="/img/website-1@1x.png" />
+                                        </span>
+                                        E-Commerce
+                                    </a>
+                                    <a href="#">Autres thématiques</a>
+                                </div>
 
-                        <a href="#" className="espace"> Espace <br />Trading &amp; Crypto</a>
+                                <a href="#" className="espace">
+                                    {' '}
+                                    Espace <br />
+                                    Trading &amp; Crypto
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-
-        
-        
-
-
+        </>
     );
 };
 
 export default Header;
-
-
