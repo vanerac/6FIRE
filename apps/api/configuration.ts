@@ -12,4 +12,5 @@ export default {
     MOLLIE_API_KEY: process.env.MOLLIE_API_KEY ?? '',
     SENTRY_DSN: process.env.SENTRY_DSN ?? '',
     COINMARKETCAP_API_KEY: process.env.COIN_MARKET_API_KEY ?? '',
+    SERVER_ADDRESS: process.env.SERVER_ADDRESS ?? 'http://localhost:3333',
 };

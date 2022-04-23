@@ -2,16 +2,12 @@ import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { checkPassword, generateToken, hashPassword } from '../../tools/auth.tools';
 import { AWSsendEmail, sendSMS } from '../../tools/notifications.tools';
+import { generateResetPasswordEmail, generateVerifyEmail } from '../../../templates/email';
+import configuration from '../../../configuration';
 
 const client = new PrismaClient();
 
 const passwordResetCode = async (userId) => {
-    // create a new code
-    // store it in the database
-
-    // email the user with the code
-    // send a sms to the user with the code
-
     const code = Math.floor(Math.random() * 1000000);
     const user = await client.user.findFirst({
         where: {
@@ -36,11 +32,17 @@ const passwordResetCode = async (userId) => {
     }
     const { email } = user;
     const sms = user.telephone;
-    const emailMessage = `Your password reset code is ${code}`;
     const smsMessage = `Your password reset code is ${code}`;
 
+    const emailBody = generateResetPasswordEmail({
+        reset_link: configuration.SERVER_ADDRESS + '/api/auth/password/reset?code=' + code,
+    });
     return Promise.all([
-        AWSsendEmail({ email, subject: 'Password reset code', message: emailMessage }),
+        AWSsendEmail({
+            email,
+            subject: 'Password reset code',
+            htmlMessage: emailBody,
+        }),
         sendSMS({
             phoneNumber: sms,
             message: smsMessage,
@@ -61,10 +63,12 @@ const createVerificationCode = async (
         },
     });
 
-    const messageTemplate = `Votre code de vérification est ${code}`;
+    const messageTemplate = generateVerifyEmail({
+        confirmation_link: `${configuration.SERVER_ADDRESS}/api/auth/verify?code=${code}`,
+    });
 
     if (type === 'EMAIL') {
-        await AWSsendEmail({ email: user.email, subject: 'Code de vérification', message: messageTemplate });
+        await AWSsendEmail({ email: user.email, subject: 'Code de vérification', htmlMessage: messageTemplate });
     } else {
         await sendSMS({
             phoneNumber: user.telephone,
