@@ -2744,7 +2744,8 @@
           "name": "id",
           "schema": {
             "type": "string"
-          }
+          },
+          "required": true
         }
       ],
       "get": {

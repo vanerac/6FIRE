@@ -60,7 +60,7 @@ export class AffiliationService {
      * @throws ApiError
      */
     public getAffiliationById(
-        id?: string,
+        id: string,
     ): CancelablePromise<Affiliation> {
         return this.httpRequest.request({
             method: 'GET',
@@ -80,14 +80,14 @@ export class AffiliationService {
     /**
      * Update Affiliation
      * Update Affiliation
-     * @param requestBody
      * @param id
+     * @param requestBody
      * @returns Affiliation Affiliation
      * @throws ApiError
      */
     public updateAffiliation(
+        id: string,
         requestBody: Affiliation,
-        id?: string,
     ): CancelablePromise<Affiliation> {
         return this.httpRequest.request({
             method: 'PUT',
@@ -114,7 +114,7 @@ export class AffiliationService {
      * @throws ApiError
      */
     public deleteAffiliation(
-        id?: string,
+        id: string,
     ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
