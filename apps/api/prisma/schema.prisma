@@ -80,7 +80,6 @@ model Subscription {
   subscriptionType PaymentType
   price            Int
   level            Int                @default(0)
-//  mollieId         String
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @default(now())
   UserSubscription UserSubscription[]
@@ -94,9 +93,9 @@ model UserSubscription {
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @default(now())
   price          Int
-  paymentId      String          // Mollie payment id
-  customerId     String       // Mollie customer id
-  status         String       // Mollie status
+  paymentId      String // Mollie payment id
+  customerId     String // Mollie customer id
+  status         String // Mollie status
   User           User         @relation(fields: [userId], references: [id])
   Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
 }
@@ -119,7 +118,6 @@ model OfferUsage {
   Offer   Offer    @relation(fields: [offerId], references: [id])
   User    User     @relation(fields: [userId], references: [id])
 }
-
 
 model Theme {
   id                Int       @id @default(autoincrement())
@@ -207,4 +205,15 @@ model TraderFollows {
   User          User          @relation(fields: [userId], references: [id])
   CuratedTrader CuratedTrader @relation(fields: [traderId], references: [id])
 
+}
+
+model Affiliation {
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String
+  color     String
+  icon      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  displayed Boolean  @default(true)
 }

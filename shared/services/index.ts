@@ -9,6 +9,7 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
+export type { Affiliation } from './models/Affiliation';
 export type { Article } from './models/Article';
 export type { Country } from './models/Country';
 export type { CryptoHolding } from './models/CryptoHolding';
@@ -21,6 +22,7 @@ export type { Trader } from './models/Trader';
 export type { User } from './models/User';
 export type { UserSubscription } from './models/UserSubscription';
 
+export { AffiliationService } from './services/AffiliationService';
 export { ArticleService } from './services/ArticleService';
 export { AuthService } from './services/AuthService';
 export { CountryService } from './services/CountryService';
