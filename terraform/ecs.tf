@@ -481,6 +481,10 @@ DEFINITION
 
 // ecs services
 resource "aws_ecs_service" "api" {
+  #  deployment_controller {
+  #    type = "CODE_DEPLOY"
+  #  }
+
   tags = {
     project = "6fire"
   }
@@ -491,7 +495,10 @@ resource "aws_ecs_service" "api" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups  = [aws_security_group.ecs_tasks.id, aws_security_group.lb_api.id, aws_security_group.storage.id]
+    security_groups = [
+      aws_security_group.rds_sg.id, aws_security_group.ecs_tasks.id, aws_security_group.lb_api.id,
+      aws_security_group.storage.id
+    ]
     subnets          = flatten([aws_subnet.public.*.id, aws_subnet.private.*.id, aws_subnet.storage.id])
     assign_public_ip = true
   }
@@ -503,6 +510,9 @@ resource "aws_ecs_service" "api" {
 }
 
 resource "aws_ecs_service" "client" {
+  #  deployment_controller {
+  #    type = "CODE_DEPLOY"
+  #  }
   tags = {
     project = "6fire"
   }
@@ -527,9 +537,9 @@ resource "aws_ecs_service" "client" {
 
 resource "aws_ecs_service" "dashboard" {
 
-  deployment_controller {
-    type = "CODE_DEPLOY"
-  }
+  #  deployment_controller {
+  #    type = "CODE_DEPLOY"
+  #  }
 
   tags = {
     project = "6fire"
