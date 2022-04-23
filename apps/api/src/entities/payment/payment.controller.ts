@@ -3,6 +3,8 @@ import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import createMollieClient from '@mollie/api-client';
 import configuration from '../../../configuration';
+import { AWSsendEmail } from '../../tools/notifications.tools';
+import { generateConfirmationEmail } from '../../templates/email';
 
 const mollieClient = createMollieClient({ apiKey: configuration.MOLLIE_API_KEY });
 
@@ -142,6 +144,7 @@ export default class PaymentController implements CRUDController {
                             id: subscription.id,
                         },
                     },
+                    price: price,
                     paymentId: payment.id,
                     customerId: customer.id,
                     status: 'PENDING',
@@ -224,15 +227,42 @@ export default class PaymentController implements CRUDController {
         const status = await mollieClient.payments.get(id);
 
         if (!status) {
-            return res.sendStatus(404);
+            return res.sendStatus(200);
         }
 
         const subscription = await prisma.userSubscription.findFirst({
             where: {
                 paymentId: id,
             },
+            select: {
+                Subscription: true,
+                User: true,
+                id: true,
+                createdAt: true,
+                updatedAt: true,
+                price: true,
+            },
         });
 
+        if (!subscription) {
+            return res.sendStatus(200);
+        }
+
+        if (status.status === 'canceled' || status.status === 'failed' || status.status === 'expired') {
+            // Todo: send failed email
+        } else {
+            await AWSsendEmail({
+                email: subscription.User.email,
+                subject: '6FIRE - Confirmation commande',
+                htmlMessage: generateConfirmationEmail({
+                    name: subscription.User.firstName,
+                    price: subscription.price.toString(), // format might not be right
+                    refresh: subscription.Subscription.refreshRate.toString(), // Format might not be right
+                    subscription: subscription.Subscription.name,
+                    orderDate: new Date(subscription.createdAt).toLocaleDateString(), // format might not be right
+                }),
+            });
+        }
         await prisma.userSubscription.update({
             where: {
                 id: subscription.id,

@@ -93,6 +93,7 @@ model UserSubscription {
   subscriptionId Int
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @default(now())
+  price          Int
   paymentId      String          // Mollie payment id
   customerId     String       // Mollie customer id
   status         String       // Mollie status
