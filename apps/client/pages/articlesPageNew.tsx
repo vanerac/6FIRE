@@ -8,145 +8,148 @@ import Header from './components/header';
 import $ from 'jquery';
 
 const handleForm = () => {
-    $("#date").val("data");
-    console.log('hello')
-  }
+    $('#date').val('data');
+    console.log('hello');
+};
 
 const HomePage: NextPage = (props: any) => {
     console.log(props);
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
+            <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
 
-                <div className="article_wrapper">
-                    <div className="grid">
-                        {/* single article */}
-                        <div onClick={() => router.push('/articlesDetails')}  className="single_article">
-                            <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-321-2@1x.png" />
-                            </div>
-                            <div className="cat_and_date">
-                                <div className="category">
-                                    <p className="lato-normal-milano-red-12px line">Play to Earn</p>
-                                    <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
-                                </div>
-                            </div>
-                            <div className="article_title">
-                                <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
+            <div className="article_wrapper">
+                <div className="grid">
+                    {/* single article */}
+                    <div
+                        onClick={() => {
+                            handleForm();
+                            router.push('/articlesDetails');
+                        }}
+                        className="single_article">
+                        <div className="artitle_thum">
+                            <Image layout="fill" src="/img/mask-group-321-2@1x.png" />
+                        </div>
+                        <div className="cat_and_date">
+                            <div className="category">
+                                <p className="lato-normal-milano-red-12px line">Play to Earn</p>
+                                <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
                             </div>
                         </div>
-                        {/* single article */}
-                        <div onClick={() => router.push('/articlesDetails')} className="single_article">
-                            <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-322-2@1x.png" />
-                            </div>
-                            <div className="cat_and_date">
-                                <div className="category">
-                                    <p className="lato-normal-milano-red-12px  line">E-Commerce</p>
-                                    <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
-                                </div>
-                            </div>
-                            <div className="article_title">
-                                <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
+                        <div className="article_title">
+                            <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
+                        </div>
+                    </div>
+                    {/* single article */}
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                        <div className="artitle_thum">
+                            <Image layout="fill" src="/img/mask-group-322-2@1x.png" />
+                        </div>
+                        <div className="cat_and_date">
+                            <div className="category">
+                                <p className="lato-normal-milano-red-12px  line">E-Commerce</p>
+                                <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
                             </div>
                         </div>
-                        {/* single article */}
-                        <div onClick={() => router.push('/articlesDetails')} className="single_article">
-                            <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
-                            </div>
-                            <div className="cat_and_date">
-                                <div className="category">
-                                    <p className="lato-normal-milano-red-12px  line">Crypto</p>
-                                    <p className="article_date lato-light-manatee-12px">19 février 2022</p>
-                                </div>
-                            </div>
-                            <div className="article_title">
-                                <h4 className="title">Les 5 erreurs à éviter en crypton</h4>
+                        <div className="article_title">
+                            <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
+                        </div>
+                    </div>
+                    {/* single article */}
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                        <div className="artitle_thum">
+                            <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
+                        </div>
+                        <div className="cat_and_date">
+                            <div className="category">
+                                <p className="lato-normal-milano-red-12px  line">Crypto</p>
+                                <p className="article_date lato-light-manatee-12px">19 février 2022</p>
                             </div>
                         </div>
-                        {/* single article */}
-                        <div onClick={() => router.push('/articlesDetails')} className="single_article">
-                            <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-324-1@1x.png" />
-                            </div>
-                            <div className="cat_and_date">
-                                <div className="category">
-                                    <p className="lato-normal-milano-red-12px  line">Entreprenariat</p>
-                                    <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
-                                </div>
-                            </div>
-                            <div className="article_title">
-                                <h4 className="title">Comment se lancer ?</h4>
+                        <div className="article_title">
+                            <h4 className="title">Les 5 erreurs à éviter en crypton</h4>
+                        </div>
+                    </div>
+                    {/* single article */}
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                        <div className="artitle_thum">
+                            <Image layout="fill" src="/img/mask-group-324-1@1x.png" />
+                        </div>
+                        <div className="cat_and_date">
+                            <div className="category">
+                                <p className="lato-normal-milano-red-12px  line">Entreprenariat</p>
+                                <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
                             </div>
                         </div>
-                        {/* single article */}
-                        <div onClick={() => router.push('/articlesDetails')} className="single_article">
-                            <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-325-1@1x.png" />
-                            </div>
-                            <div className="cat_and_date">
-                                <div className="category">
-                                    <p className="lato-normal-milano-red-12px  line">Crypto</p>
-                                    <p className="article_date lato-light-manatee-12px">19 février 2022</p>
-                                </div>
-                            </div>
-                            <div className="article_title">
-                                <h4 className="title">EXCLU MEMBRE CONFIRMÉ</h4>
+                        <div className="article_title">
+                            <h4 className="title">Comment se lancer ?</h4>
+                        </div>
+                    </div>
+                    {/* single article */}
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                        <div className="artitle_thum">
+                            <Image layout="fill" src="/img/mask-group-325-1@1x.png" />
+                        </div>
+                        <div className="cat_and_date">
+                            <div className="category">
+                                <p className="lato-normal-milano-red-12px  line">Crypto</p>
+                                <p className="article_date lato-light-manatee-12px">19 février 2022</p>
                             </div>
                         </div>
-                        {/* single article */}
-                        <div onClick={() => router.push('/articlesDetails')} className="single_article">
-                            <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-321-1@1x.png" />
-                            </div>
-                            <div className="cat_and_date">
-                                <div className="category">
-                                    <p className="lato-normal-milano-red-12px  line">Crypto</p>
-                                    <p className="article_date lato-light-manatee-12px">19 février 2022</p>
-                                </div>
-                            </div>
-                            <div className="article_title">
-                                <h4 className="title">Les cryptomonaies, par où commencer ?</h4>
+                        <div className="article_title">
+                            <h4 className="title">EXCLU MEMBRE CONFIRMÉ</h4>
+                        </div>
+                    </div>
+                    {/* single article */}
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                        <div className="artitle_thum">
+                            <Image layout="fill" src="/img/mask-group-321-1@1x.png" />
+                        </div>
+                        <div className="cat_and_date">
+                            <div className="category">
+                                <p className="lato-normal-milano-red-12px  line">Crypto</p>
+                                <p className="article_date lato-light-manatee-12px">19 février 2022</p>
                             </div>
                         </div>
-                        {/* single article */}
-                        <div onClick={() => router.push('/articlesDetails')} className="single_article">
-                            <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-322-1@1x.png" />
-                            </div>
-                            <div className="cat_and_date">
-                                <div className="category">
-                                    <p className="lato-normal-milano-red-12px  line">Crypto</p>
-                                    <p className="article_date lato-light-manatee-12px">19 février 2022</p>
-                                </div>
-                            </div>
-                            <div className="article_title">
-                                <h4 className="title">Pourquoi investir dans l’AVAX ?</h4>
+                        <div className="article_title">
+                            <h4 className="title">Les cryptomonaies, par où commencer ?</h4>
+                        </div>
+                    </div>
+                    {/* single article */}
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                        <div className="artitle_thum">
+                            <Image layout="fill" src="/img/mask-group-322-1@1x.png" />
+                        </div>
+                        <div className="cat_and_date">
+                            <div className="category">
+                                <p className="lato-normal-milano-red-12px  line">Crypto</p>
+                                <p className="article_date lato-light-manatee-12px">19 février 2022</p>
                             </div>
                         </div>
-                        {/* single article */}
-                        <div onClick={() => router.push('/articlesDetails')} className="single_article">
-                            <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
+                        <div className="article_title">
+                            <h4 className="title">Pourquoi investir dans l’AVAX ?</h4>
+                        </div>
+                    </div>
+                    {/* single article */}
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                        <div className="artitle_thum">
+                            <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
+                        </div>
+                        <div className="cat_and_date">
+                            <div className="category">
+                                <p className="lato-normal-milano-red-12px  line">Crypto</p>
+                                <p className="article_date lato-light-manatee-12px">19 février 2022</p>
                             </div>
-                            <div className="cat_and_date">
-                                <div className="category">
-                                    <p className="lato-normal-milano-red-12px  line">Crypto</p>
-                                    <p className="article_date lato-light-manatee-12px">19 février 2022</p>
-                                </div>
-                            </div>
-                            <div className="article_title">
-                                <h4 className="title">Pourquoi investir dans l’AVAX ?</h4>
-                            </div>
+                        </div>
+                        <div className="article_title">
+                            <h4 className="title">Pourquoi investir dans l’AVAX ?</h4>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                
-                
-                {/* <div className="call-to-action-58RGA4">
+            {/* <div className="call-to-action-58RGA4">
                     <div className="groupe-de-masques-328-ir0Byo">
                         <Image layout="fill" src="/img/mask-group-328@1x.png" />
                     </div>
@@ -160,7 +163,7 @@ const HomePage: NextPage = (props: any) => {
                         <div className="exclu-membre-confirm-Vs6vPy lato-bold-white-14px">Rejoindre</div>
                     </div>
                 </div> */}
-                {/* <div className="avertissement-58RGA4">
+            {/* <div className="avertissement-58RGA4">
                     <div className="groupe-3020-yrWeSQ">
                         <div className="rectangle-3606-F1UxfM"></div>
                         <div className="les-investissements-F1UxfM lato-normal-white-12px-2">
@@ -178,8 +181,8 @@ const HomePage: NextPage = (props: any) => {
                     </div>
                 </div> */}
 
-                <Footer />
-                <LoginPopup />
+            <Footer />
+            <LoginPopup />
         </div>
     );
 };
