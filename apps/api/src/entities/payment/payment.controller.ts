@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 import createMollieClient from '@mollie/api-client';
 import configuration from '../../../configuration';
 import { AWSsendEmail } from '../../tools/notifications.tools';
-import { generateConfirmationEmail } from '../../../templates/email';
+import { generateConfirmationEmail } from '../../templates/email';
 
 const mollieClient = createMollieClient({ apiKey: configuration.MOLLIE_API_KEY });
 

@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { checkPassword, generateToken, hashPassword } from '../../tools/auth.tools';
 import { AWSsendEmail, sendSMS } from '../../tools/notifications.tools';
-import { generateResetPasswordEmail, generateVerifyEmail } from '../../../templates/email';
+import { generateResetPasswordEmail, generateVerifyEmail } from '../../templates/email';
 import configuration from '../../../configuration';
 
 const client = new PrismaClient();
