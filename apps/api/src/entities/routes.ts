@@ -8,6 +8,7 @@ import ArticleRouter from './article/article.router';
 import TraderRouter from './trader/trader.router';
 import SubscriptionRouter from './subscription/subscription.router';
 import PaymentRouter from './payment/payment.router';
+import AffiliationRouter from './affiliation/affiliation.router';
 
 const router = Router();
 
@@ -19,5 +20,6 @@ router.use('/trader', verifyToken, TraderRouter);
 router.use('/article', verifyToken, ArticleRouter);
 router.use('/subscription', verifyToken, SubscriptionRouter);
 router.use('/payment', verifyToken, PaymentRouter);
+router.use('/affliation', verifyToken, AffiliationRouter);
 
 export default router;

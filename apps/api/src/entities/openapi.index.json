@@ -142,6 +142,9 @@
       },
       "UserSubscription": {
         "$ref": "./openapi.components.json#/schemas/UserSubscription"
+      },
+      "Affiliation": {
+        "$ref": "./openapi.components.json#/schemas/Affiliation"
       }
     }
   }

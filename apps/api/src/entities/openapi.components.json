@@ -35,6 +35,9 @@
     },
     "UserSubscription": {
       "$ref": "./payment/payment.components.json#/schemas/UserSubscription"
+    },
+    "Affiliation": {
+      "$ref": "./affiliation/affiliation.components.json#/schemas/Affiliation"
     }
   }
 }
