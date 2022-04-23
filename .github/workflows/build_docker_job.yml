@@ -38,8 +38,9 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: 6fire-${{ matrix.directories }}
           IMAGE_TAG: ${{ github.sha }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         run: |
-          docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest

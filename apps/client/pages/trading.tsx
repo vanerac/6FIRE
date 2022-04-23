@@ -1,7 +1,20 @@
 import type { NextPage } from 'next';
+import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import router from 'next/router';
+import { useEffect } from 'react';
 
-const HomePage: NextPage = (props: any) => {
+const Trading: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="trading" />
@@ -9,129 +22,8 @@ const HomePage: NextPage = (props: any) => {
                 <img className="groupe-de-masques-333-3LBGsu" src="img/mask-group-333@1x.png" />
                 <div className="background-3LBGsu"></div>
                 <div className="background-wsIV14"></div>
-                <div className="footer-3LBGsu">
-                    <div className="background-d1QyT8"></div>
-                    <div className="menu-footer-d1QyT8">
-                        <div className="mentions-lgales-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-akcOt5 sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-d1QyT8 sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-d1QyT8">
-                        <div className="groupe-2-bdR4xa">
-                            <img className="groupe-1-qHE9Ze" src="img/group-1-10@1x.png" />
-                        </div>
-                        <img className="effect-bdR4xa" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-d1QyT8" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-d1QyT8">
-                        <img className="icon-instagram-T7a3oB" src="img/fontawsome--instagram--1@1x.png" />
-                    </div>
-                    <div className="groupe-3010-d1QyT8">
-                        <img className="icon-simple-tiktok-NVC3AW" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
-                {/* <div className="header-3LBGsu">
-                    <div className="rectangle-3483-6cQg9k"></div>
-                    <a href="homepage-1.html">
-                        <div className="logo-6cQg9k">
-                            <img className="effect-OoFcV0" src="img/effect-13@1x.png" />
-                        </div>
-                    </a>
-                    <div className="thme-sombre-6cQg9k">
-                        <img className="icon-ionic-ios-moon-DstnpQ" src="img/icon-ionic-ios-moon-1@1x.png" />
-                        <div className="toogle-button-DstnpQ">
-                            <div className="rectangle-3485-n8TF81"></div>
-                            <div className="ellipse-17688-n8TF81"></div>
-                        </div>
-                    </div>
-                    <div className="menu-6cQg9k">
-                        <div className="rectangle-3484-ClRQwi"></div>
-                        <div className="espace-trading-crypto-ClRQwi">
-                            <div className="formations-44lpWH lato-normal-white-14px">Espace Trading &amp; Crypto</div>
-                            <img className="ligne-8-44lpWH" src="img/line-8-14@1x.png" />
-                        </div>
-                        <a href="trading-formations.html">
-                            <div className="formations-ClRQwi">
-                                <div className="formations-mZuVQC lato-normal-white-14px">Formations</div>
-                                <div className="icon-actif-mZuVQC">
-                                    <div className="ellipse-17693-qUpmzN"></div>
-                                    <img
-                                        className="font-awsome-graduation-cap-qUpmzN"
-                                        src="img/fontawsome--graduation-cap--3@1x.png"
-                                    />
-                                </div>
-                            </div>
-                        </a>
-                        <a href="javascript:ShowOverlay('trading-forex', 'animate-appear');">
-                            <div className="forex-ClRQwi">
-                                <div className="formations-EcY8hl lato-normal-white-14px">Forex</div>
-                                <div className="icon-actif-EcY8hl">
-                                    <div className="ellipse-17693-Cr03Va"></div>
-                                    <img
-                                        className="font-awsome-dollar-sign-Cr03Va"
-                                        src="img/fontawsome--dollar-sign--2@1x.png"
-                                    />
-                                </div>
-                            </div>
-                        </a>
-                        <a href="javascript:ShowOverlay('crypto-wallet', 'animate-appear');">
-                            <div className="crypto-wallet-ClRQwi">
-                                <div className="formations-NFBClv lato-normal-white-14px">Crypto Wallet</div>
-                                <div className="icon-actif-NFBClv">
-                                    <div className="ellipse-17693-Cjx5Iy"></div>
-                                    <img className="font-awsome-wallet-Cjx5Iy" src="img/fontawsome--wallet--2@1x.png" />
-                                </div>
-                            </div>
-                        </a>
-                        <a href="javascript:ShowOverlay('bot-trading', 'animate-appear');">
-                            <div className="bot-trading-ClRQwi">
-                                <div className="formations-wZIZgl lato-normal-white-14px">Bot Trading</div>
-                                <div className="icon-actif-wZIZgl">
-                                    <div className="ellipse-17693-lbc4XJ"></div>
-                                    <img className="icon-awesome-robot-lbc4XJ" src="img/icon-awesome-robot-2@1x.png" />
-                                </div>
-                            </div>
-                        </a>
-                        <div className="trading-ClRQwi">
-                            <div className="rectangle-3556-ktIixg"></div>
-                            <div className="trading-ktIixg lato-bold-white-14px">Nos trades</div>
-                            <div className="icon-actif-ktIixg">
-                                <div className="ellipse-17693-71gOqs"></div>
-                                <img
-                                    className="icon-simple-graphcool-71gOqs"
-                                    src="img/icon-simple-graphcool-2@1x.png"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="espace-membre-6cQg9k">
-                        <div className="connexion-nsoLx4">
-                            <div className="club-premium-uUcr3T lato-normal-white-14px">Mon compte</div>
-                        </div>
-                    </div>
-                    <div className="menu-2-6cQg9k">
-                        <div className="icon-ionic-ios-menu-iVxI5x">
-                            <img className="trac-1-iD03l0" src="img/path-1-10@1x.png" />
-                            <img className="trac-2-iD03l0" src="img/path-2-10@1x.png" />
-                        </div>
-                    </div>
-                    <div className="search-bar-6cQg9k">
-                        <img className="icon-search-7x903f" src="img/icon-ionic-ios-search-11@1x.png" />
-                    </div>
-                </div> */}
+                <Footer />
                 <div className="h2-3LBGsu lato-bold-white-14px">
                     CONTACTEZ NOUS POUR ACCÉDER AU CANAL TELEGRAM DES MEMBRES TRADING &amp; CRYPTO
                     <br />
@@ -461,10 +353,7 @@ const HomePage: NextPage = (props: any) => {
                 </div>
             </div>
             <div id="overlay-trading-forex" className="overlay" style={{ minHeight: '1382px' }}>
-                <div
-                    className="trading-forex screen"
-                    // onclick="window.open('javascript:HideOverlay(%27trading-forex%27%2C%20%27animate-disappear%27);', '_self');"
-                >
+                <div className="trading-forex screen">
                     <div className="background-GY9xoT"></div>
                     <div className="article-GY9xoT hidden">
                         <img className="groupe-de-masques-324-6ArdAu" src="img/mask-group-324-2@1x.png" />
@@ -886,33 +775,8 @@ const HomePage: NextPage = (props: any) => {
                     </div>
                 </div>
             </div>
-            {/* <script>
-      var overlay_id = "overlay-trading-forex";
-      document.getElementById(overlay_id).addEventListener(
-        "click",
-        function (event) {
-          var overlay_id = "overlay-trading-forex";
-          var e = event || window.event;
-          var overlayElement = document.getElementById(overlay_id);
-          var overlayContainer = overlayElement.getElementsByClassName("trading-forex");
-          var clickedDiv = e.toElement || e.target;
-          var dismissButton = clickedDiv.parentElement.id == overlay_id;
-          var clickOutsideOverlay = false;
-          if (overlayContainer.length > 0) {
-            clickOutsideOverlay = !overlayContainer[0].contains(clickedDiv) || overlayContainer[0] == clickedDiv;
-          }
-          if (dismissButton || clickOutsideOverlay) {
-            HideOverlay("trading-forex", "animate-disappear");
-          }
-        },
-        false
-      );
-    </script> */}
             <div id="overlay-bot-trading" className="overlay" style={{ minHeight: '1382px' }}>
-                <div
-                    className="bot-trading screen"
-                    // onclick="window.open('javascript:HideOverlay(%27bot-trading%27%2C%20%27animate-disappear%27);', '_self');"
-                >
+                <div className="bot-trading screen">
                     <img className="background-FwUAid" src="img/background@1x.png" />
                     <img className="groupe-de-masques-327-FwUAid" src="img/mask-group-327-1@1x.png" />
                     <div className="rectangle-3558-FwUAid"></div>
@@ -927,10 +791,7 @@ const HomePage: NextPage = (props: any) => {
                             <div className="club-premium-JxfHBf lato-bold-white-14px">ACCÈS AU BOT</div>
                         </div>
                         <div className="groupe-3013-rgUu6r">
-                            <a
-                                href="bot-trading-traders.html"
-                                // onclick="window.event.stopPropagation()"
-                            >
+                            <a href="bot-trading-traders.html">
                                 <img className="rectangle-3560-prXDZd" src="img/rectangle-3560@1x.png" />
                             </a>
                             <div className="club-premium-prXDZd lato-bold-white-14px">TRADERS</div>
@@ -2043,66 +1904,9 @@ const HomePage: NextPage = (props: any) => {
                     </div>
                 </div>
             </div>
-            {/* <script>
-      var overlay_id = "overlay-crypto-wallet";
-      document.getElementById(overlay_id).addEventListener(
-        "click",
-        function (event) {
-          var overlay_id = "overlay-crypto-wallet";
-          var e = event || window.event;
-          var overlayElement = document.getElementById(overlay_id);
-          var overlayContainer = overlayElement.getElementsByClassName("crypto-wallet");
-          var clickedDiv = e.toElement || e.target;
-          var dismissButton = clickedDiv.parentElement.id == overlay_id;
-          var clickOutsideOverlay = false;
-          if (overlayContainer.length > 0) {
-            clickOutsideOverlay = !overlayContainer[0].contains(clickedDiv) || overlayContainer[0] == clickedDiv;
-          }
-          if (dismissButton || clickOutsideOverlay) {
-            HideOverlay("crypto-wallet", "animate-disappear");
-          }
-        },
-        false
-      );
-    </script>
-    <script>
-      ShowOverlay = function (overlayName, animationName) {
-        overlayName = "overlay-" + overlayName;
-        var cssClasses = document.getElementById(overlayName).classNameName.split(" ");
-        var last = cssClasses.slice(-1)[0];
-        if (last.lastIndexOf("animate") == -1) {
-          document.getElementById(overlayName).classNameName =
-            document.getElementById(overlayName).classNameName + " " + animationName;
-        }
-        if (window.loadAsyncSrc != undefined) {
-          loadAsyncSrc();
-        }
-      };
-      HideOverlay = function (overlayName, animationName) {
-        overlayName = "overlay-" + overlayName;
-        var cssClasses = document.getElementById(overlayName).classNameName.split(" ");
-        var last = cssClasses.slice(-1)[0];
-        if (last.lastIndexOf("animate") != -1) {
-          cssClasses.splice(-1);
-          cssClasses.push(animationName);
-          document.getElementById(overlayName).classNameName = cssClasses.join(" ");
-
-          cssClasses.splice(-1);
-          setTimeout(function () {
-            document.getElementById(overlayName).classNameName = cssClasses.join(" ");
-          }, 1100);
-        }
-        var vids = document.getElementsByTagName("video");
-        if (vids) {
-          for (var i = 0; i < vids.length; i++) {
-            var video = vids.item(i);
-            video.pause();
-          }
-        }
-      };
-    </script> */}
         </div>
     );
 };
 
-export default HomePage;
+// export default checkAuth(Trading);
+export default Trading;

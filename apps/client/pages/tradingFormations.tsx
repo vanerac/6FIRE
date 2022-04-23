@@ -1,11 +1,25 @@
 import type { NextPage } from 'next';
+import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import router from 'next/router';
+import { useEffect } from 'react';
 
 const TradingFormations: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="trading-formations" />
             <div className="trading-formations screen">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="background-L4Kmv7"></div>
                 <div className="article-L4Kmv7 hidden">
                     <img className="groupe-de-masques-324-I1nHFm" src="img/mask-group-324-2@1x.png" />
@@ -16,42 +30,6 @@ const TradingFormations: NextPage = (props: any) => {
                     <img className="icon-twitter-I1nHFm" src="img/image-874-1@1x.png" />
                     <div className="rectangle-3502-I1nHFm"></div>
                 </div>
-                <div className="footer-L4Kmv7">
-                    <div className="background-5O9Pml"></div>
-                    <div className="menu-footer-5O9Pml">
-                        <div className="mentions-lgales-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-8QbL7k sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-dpqGqt sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-5O9Pml sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-5O9Pml">
-                        <div className="groupe-2-yYiS5q">
-                            <img className="groupe-1-1PbFDC" src="img/group-1-10@1x.png" />
-                        </div>
-                        <img className="effect-yYiS5q" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-5O9Pml" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-5O9Pml">
-                        <div className="ellipse-17695-GVH5d3 hidden"></div>
-                        <img className="icon-instagram-GVH5d3" src="img/fontawsome--instagram--1@1x.png" />
-                    </div>
-                    <div className="groupe-3010-5O9Pml">
-                        <div className="ellipse-17696-EFvSk5 hidden"></div>
-                        <img className="icon-simple-tiktok-EFvSk5" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="prvisualisation-articles-L4Kmv7">
                     <div className="article-nOHLIk">
                         <img className="groupe-de-masques-321-KUkK6l" src="img/mask-group-321-1@1x.png" />
@@ -157,6 +135,7 @@ const TradingFormations: NextPage = (props: any) => {
                     </div>
                     <img className="ligne-41-hJ5gjz" src="img/line-41-2@1x.png" />
                 </div>
+                <Footer />
             </div>
             <div className="trading-formations-mobile screen">
                 <div className="background-R4fmnF"></div>
@@ -835,3 +814,4 @@ const TradingFormations: NextPage = (props: any) => {
 };
 
 export default TradingFormations;
+// export default checkAuth(TradingFormations);

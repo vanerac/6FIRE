@@ -11,10 +11,17 @@ export class CryptoService {
     constructor(public readonly httpRequest: BaseHttpRequest) {}
 
     /**
-     * @returns CryptoHolding A successful response.
+     * @returns any A successful response.
      * @throws ApiError
      */
-    public getAllCrypto(): CancelablePromise<Array<CryptoHolding>> {
+    public getAllCrypto(): CancelablePromise<{
+        cryptos: Array<CryptoHolding>;
+        messages: Array<{
+            id: number;
+            message: string;
+            date: string;
+        }>;
+    }> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/crypto',
@@ -68,6 +75,82 @@ export class CryptoService {
             url: '/crypto/message',
             body: requestBody,
             mediaType: 'application/json',
+            errors: {
+                400: `Invalid ID supplied`,
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Crypto not found`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * @param query Search query
+     * @returns CryptoHolding A successful response.
+     * @throws ApiError
+     */
+    public searchCrypto(
+        query: string,
+    ): CancelablePromise<Array<CryptoHolding>> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/crypto/searchCoin',
+            query: {
+                'query': query,
+            },
+            errors: {
+                400: `Invalid ID supplied`,
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Crypto not found`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * @param id Crypto ID
+     * @returns any A successful response.
+     * @throws ApiError
+     */
+    public getCoinValue(
+        id: string,
+    ): CancelablePromise<{
+        value?: string;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/crypto/{id}/value',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Invalid ID supplied`,
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Crypto not found`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * @param id Crypto ID
+     * @returns any A successful response.
+     * @throws ApiError
+     */
+    public getCryptoImage(
+        id: string,
+    ): CancelablePromise<{
+        image?: string;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/crypto/coinImg/{id}',
+            path: {
+                'id': id,
+            },
             errors: {
                 400: `Invalid ID supplied`,
                 401: `Unauthorized`,

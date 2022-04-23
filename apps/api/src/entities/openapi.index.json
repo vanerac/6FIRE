@@ -35,6 +35,15 @@
     "/auth/verifyNewUser": {
       "$ref": "./auth/auth.path.json#/verifyNew"
     },
+    "/auth/password/forgot": {
+      "$ref": "./auth/auth.path.json#/forgotPassword"
+    },
+    "/auth/password/reset": {
+      "$ref": "./auth/auth.path.json#/resetPassword"
+    },
+    "/auth/password/change": {
+      "$ref": "./auth/auth.path.json#/changePassword"
+    },
     "/theme": {
       "$ref": "./theme/theme.path.json#/themes"
     },
@@ -49,6 +58,15 @@
     },
     "/crypto/message": {
       "$ref": "./crypto/crypto.path.json#/setMessage"
+    },
+    "/crypto/searchCoin": {
+      "$ref": "./crypto/crypto.path.json#/searchCrypto"
+    },
+    "/crypto/{id}/value": {
+      "$ref": "./crypto/crypto.path.json#/getCoinValue"
+    },
+    "/crypto/coinImg/{id}": {
+      "$ref": "./crypto/crypto.path.json#/getCryptoImage"
     },
     "/trader/curation": {
       "$ref": "./trader/trader.path.json#/curation"
@@ -79,6 +97,39 @@
     },
     "/subscription/{id}": {
       "$ref": "./subscription/subscription.path.json#/byId"
+    },
+    "/country": {
+      "$ref": "./country/country.path.json#/withoutId"
+    },
+    "/country/{id}": {
+      "$ref": "./country/country.path.json#/withId"
+    },
+    "/payment/": {
+      "$ref": "./payment/payment.path.json#/noId"
+    },
+    "/payment/{id}": {
+      "$ref": "./payment/payment.path.json#/withId"
+    },
+    "/payment/payment/{id}": {
+      "$ref": "./payment/payment.path.json#/getPayment"
+    },
+    "/offer/": {
+      "$ref": "./offer/offer.path.json#/withoutId"
+    },
+    "/offer/{id}": {
+      "$ref": "./offer/offer.path.json#/withId"
+    },
+    "/offer/usage/{id}": {
+      "$ref": "./offer/offer.path.json#/getUsageById"
+    },
+    "/offer/usage/": {
+      "$ref": "./offer/offer.path.json#/getAllUsage"
+    },
+    "/affiliation/": {
+      "$ref": "./affiliation/affiliation.path.json#/withoutId"
+    },
+    "/affiliation/{id}": {
+      "$ref": "./affiliation/affiliation.path.json#/withId"
     }
   },
   "components": {
@@ -103,6 +154,21 @@
       },
       "Subscription": {
         "$ref": "./openapi.components.json#/schemas/Subscription"
+      },
+      "Country": {
+        "$ref": "./openapi.components.json#/schemas/Country"
+      },
+      "UserSubscription": {
+        "$ref": "./openapi.components.json#/schemas/UserSubscription"
+      },
+      "Affiliation": {
+        "$ref": "./openapi.components.json#/schemas/Affiliation"
+      },
+      "Offer": {
+        "$ref": "./openapi.components.json#/schemas/Offer"
+      },
+      "OfferUsage": {
+        "$ref": "./openapi.components.json#/schemas/OfferUsage"
       }
     }
   }

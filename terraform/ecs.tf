@@ -194,7 +194,16 @@ resource "aws_iam_role_policy" "ecs_task_role" {
         "ecr:GetRepositoryPolicy",
         "ecr:DescribeRepositories",
         "ecr:ListImages",
-        "ecr:DescribeImages"
+        "ecr:DescribeImages",
+        "ecs:ListServices",
+        "ecs:UpdateService",
+        "ecs:ListTasks",
+        "ecs:RegisterTaskDefinition",
+        "ecs:DescribeServices",
+        "ecs:DescribeTasks",
+        "ecs:ListTaskDefinitions",
+        "ecs:DescribeTaskDefinition",
+        "ecs:DeregisterTaskDefinition"
       ],
       "Resource": "*"
     }
@@ -252,7 +261,16 @@ resource "aws_iam_role_policy" "esc_execution_role" {
         "ecr:BatchCheckLayerAvailability",
         "ecr:GetDownloadUrlForLayer",
         "logs:CreateLogStream",
-        "logs:PutLogEvents"
+        "logs:PutLogEvents",
+        "ecs:ListServices",
+        "ecs:UpdateService",
+        "ecs:ListTasks",
+        "ecs:RegisterTaskDefinition",
+        "ecs:DescribeServices",
+        "ecs:DescribeTasks",
+        "ecs:ListTaskDefinitions",
+        "ecs:DescribeTaskDefinition",
+        "ecs:DeregisterTaskDefinition"
       ],
       "Resource": "*"
     }
@@ -465,7 +483,7 @@ resource "aws_ecs_service" "api" {
   name            = "${var.ecs_service_name}-api"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.api.arn
-  desired_count   = 1
+  desired_count   = 2
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -487,7 +505,7 @@ resource "aws_ecs_service" "client" {
   name            = "${var.ecs_service_name}-client"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.client.arn
-  desired_count   = 1
+  desired_count   = 2
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -500,16 +518,22 @@ resource "aws_ecs_service" "client" {
     container_name   = "client"
     container_port   = 3000
   }
+
 }
 
 resource "aws_ecs_service" "dashboard" {
+
+  deployment_controller {
+    type = "CODE_DEPLOY"
+  }
+
   tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-dashboard"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.dashboard.arn
-  desired_count   = 1
+  desired_count   = 2
   launch_type     = "FARGATE"
 
   network_configuration {

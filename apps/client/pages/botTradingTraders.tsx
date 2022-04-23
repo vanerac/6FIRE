@@ -1,12 +1,26 @@
 import type { NextPage } from 'next';
 import router from 'next/router';
+import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import { useEffect } from 'react';
 
 const BotTradingTrader: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="bot-trading-traders" />
             <div className="bot-trading-traders screen">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+
                 <div className="background-4cm5Mv"></div>
                 <img className="groupe-de-masques-327-4cm5Mv" src="img/mask-group-327-1@1x.png" />
                 <div className="rectangle-3558-4cm5Mv"></div>
@@ -264,42 +278,6 @@ const BotTradingTrader: NextPage = (props: any) => {
                         </div>
                     </div>
                 </div>
-                <div className="footer-4cm5Mv">
-                    <div className="background-vKbuY9"></div>
-                    <div className="menu-footer-vKbuY9">
-                        <div className="mentions-lgales-yjPBFF sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-yjPBFF sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-yjPBFF sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-yjPBFF sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-lcTCVQ sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-yjPBFF sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-vKbuY9 sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-vKbuY9">
-                        <div className="groupe-2-q2noIg">
-                            <img className="groupe-1-T6b38c" src="img/group-1-11@1x.png" />
-                        </div>
-                        <img className="effect-q2noIg" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-vKbuY9" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-vKbuY9">
-                        <div className="ellipse-17695-UqxAJY hidden"></div>
-                        <img className="icon-instagram-UqxAJY" src="img/fontawsome--instagram--7@1x.png" />
-                    </div>
-                    <div className="groupe-3010-vKbuY9">
-                        <div className="ellipse-17696-Cwiuxc hidden"></div>
-                        <img className="icon-simple-tiktok-Cwiuxc" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="form-4cm5Mv">
                     <div className="rectangle-3578-33fSpM"></div>
                     <div className="vous-voulez-suivre-u-33fSpM lato-bold-white-14px">
@@ -363,6 +341,7 @@ const BotTradingTrader: NextPage = (props: any) => {
                     </div>
                     <img className="ligne-41-HM5sYg" src="img/line-41-2@1x.png" />
                 </div>
+                <Footer />
             </div>
             <div className="bot-trading-traders-mobile screen">
                 <div className="avertissement-1tYkRE">
@@ -697,4 +676,5 @@ const BotTradingTrader: NextPage = (props: any) => {
     );
 };
 
+// export default checkAuth(BotTradingTrader);
 export default BotTradingTrader;
