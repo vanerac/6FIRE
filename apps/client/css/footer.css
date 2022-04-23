@@ -6,6 +6,8 @@
     /* position: absolute; *//* temp disable */
     position: relative;
     width: 100%;
+
+    display: none; /* temp */
 }
 
 .footer-background-BaKdMY {
@@ -202,4 +204,11 @@
     position: absolute;
     top: 1px;
     width: 100%;
+}
+
+/* moble style 
+*******************/
+@media screen and (max-width: 767px) {
+    .main-nav-bar{display: none;}
+    .footer-footer-SAHlos { display: none; /* temp */}
 }

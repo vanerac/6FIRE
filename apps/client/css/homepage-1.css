@@ -2796,6 +2796,16 @@ body{
   transform: translate(0%);
 }
 
+
+@media screen and (max-width: 767px) {
+  .login_popup_wrapper{
+    width: 100%;
+  }
+  .login_popup_wrapper.open{
+    width: 100%;
+  }
+}
+
 .login_popup_wrapper .login_access_col{
   background-color: #161a1a;
   display: flex;
@@ -2889,6 +2899,7 @@ body{
 #menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
+  width: 100%;
 }
 #menu__toggle:checked ~ .login_popup_wrapper {
   visibility: visible;
@@ -2899,7 +2910,7 @@ body{
   display: flex;
   align-items: center;
   position: absolute;
-  top: 38px;
+  top: 35px;
   right: 5%;
   width: 26px;
   height: 26px;
@@ -2916,13 +2927,18 @@ body{
   background-color: #fff;
   transition-duration: 0.25s;
 }
+.menu__btn > span{
+  height: 0;
+}
 .menu__btn > span::before {
   content: "";
-  top: -8px;
+  top: -1px;
 }
 .menu__btn > span::after {
   content: "";
   top: 8px;
+  width: 75%;
+  right: 0;
 }
 .menu__box {
   display: block;

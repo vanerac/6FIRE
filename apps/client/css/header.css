@@ -953,6 +953,7 @@ a{
     position: relative !important;
     min-width: fit-content !important;
     height: fit-content !important;
+    width: 10px calc(150px + (175 - 150) * ((100vw - 320px) / (1920 - 320))) !important;
 }
 .main-nav-bar{
     background-color: var(--licorice);
@@ -983,6 +984,7 @@ a{
    font-size: 16px;
    color: #fff;
    font-family: var(--font-family-lato);
+   transition: all 0.5s ease;
 }
 .main-nav-bar .nav-item-wrap a:first-child{
     padding-left: 0;
@@ -995,6 +997,10 @@ a{
     border-radius: 50%;
     padding: 5px;
     display: inline-flex;
+    transition: all 0.5s ease;
+}
+.main-nav-bar .nav-item-wrap a:hover span{
+    background-color: red;
 }
 .main-nav-bar .nav-item-wrap a img{
     position: relative !important;
@@ -1078,4 +1084,10 @@ a{
     height: 2px;
     background: #fff;
     content: "";
+}
+
+/* moble style 
+*******************/
+@media screen and (max-width: 767px) {
+    .main-nav-bar{display: none;}
 }
