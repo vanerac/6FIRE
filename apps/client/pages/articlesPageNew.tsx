@@ -8,9 +8,18 @@ import Header from './components/header';
 import $ from 'jquery';
 
 const handleForm = () => {
-    $('#date').val('data');
-    console.log('hello');
+    /* $('#date').val('data');
+    console.log(handleForm); */
+
+    $('.menu__btn').on('click', function (event) {
+        event.preventDefault();
+        $('.login_popup_wrapper').toggleClass("open"); 
+   });
+   handleForm();
 };
+
+
+
 
 const HomePage: NextPage = (props: any) => {
     console.log(props);

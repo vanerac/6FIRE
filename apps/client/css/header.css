@@ -1051,6 +1051,8 @@ a{
     width: 30px;
     margin-left: 25px;
     cursor: pointer;
+    visibility: hidden; /* temp */
+    pointer-events: none; /* temp */
 }
 .main-nav .hamburger-icon .line{
     position: relative;

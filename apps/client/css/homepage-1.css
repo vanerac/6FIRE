@@ -2790,7 +2790,10 @@ body{
   font-family: var(--font-family-lato);
   color: #fff;
   transition: all 1s ease;
-  /* transform: translateX(100%); */
+  transform: translateX(100%);
+}
+.login_popup_wrapper.open{
+  transform: translate(0%);
 }
 
 .login_popup_wrapper .login_access_col{
@@ -2895,8 +2898,8 @@ body{
   display: flex;
   align-items: center;
   position: absolute;
-  top: 5px;
-  right: 30px;
+  top: 38px;
+  right: 5%;
   width: 26px;
   height: 26px;
   cursor: pointer;

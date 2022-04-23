@@ -1,6 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import router from 'next/router';
+import $ from 'jquery';
+
+const handleForm = () => {
+    /* $('#date').val('data');
+    console.log(handleForm); */
+    $('.login_popup_wrapper').toggleClass("open");
+    
+};
 
 const Header = (props: any) => {
     console.log(props);
@@ -9,7 +17,7 @@ const Header = (props: any) => {
         <div>
             {/* Hamburger icon style */}
                 <input id="menu__toggle" type="checkbox" />
-                <label className="menu__btn" htmlFor="menu__toggle">
+                <label onClick={() => { handleForm(); }} className="menu__btn" htmlFor="menu__toggle">
                 <span></span>
                 </label>
             {/* Hamburger icon END */}
