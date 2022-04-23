@@ -4,7 +4,8 @@ import router from 'next/router';
 import Footer from './components/footer';
 import LoginPopup from './components/login';
 import Header from './components/header';
-import './loader.js'
+// import './loader.js'
+import $ from 'jquery';
 
 const handleForm = () => {
     $("#date").val("data");
