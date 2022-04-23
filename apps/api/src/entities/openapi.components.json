@@ -32,6 +32,9 @@
     },
     "Country": {
       "$ref": "./country/country.components.json#/schemas/Country"
+    },
+    "UserSubscription": {
+      "$ref": "./payment/payment.components.json#/schemas/UserSubscription"
     }
   }
 }

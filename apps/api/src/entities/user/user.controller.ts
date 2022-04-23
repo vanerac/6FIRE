@@ -2,6 +2,8 @@ import { NextFunction, Request, Response } from 'express';
 import { CRUDController } from '../../types';
 
 import { PrismaClient } from '@prisma/client';
+import createMollieClient from '@mollie/api-client';
+import configuration from '../../../configuration';
 
 const prisma = new PrismaClient();
 
@@ -11,6 +13,15 @@ export class UserController implements CRUDController {
             const users = prisma.user.findMany({
                 select: {
                     password: false,
+                    UserSubscription: {
+                        select: {
+                            Subscription: {
+                                select: {
+                                    name: true,
+                                },
+                            },
+                        },
+                    },
                 },
             });
             res.json(users);
@@ -107,17 +118,36 @@ export class UserController implements CRUDController {
         }
     }
 
-    public static setSubscription(req: Request, res: Response, next: NextFunction) {
+    public static async setSubscription(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const { body } = req;
-            const user = prisma.userSubscription.create({
+
+            const user = await prisma.user.findFirst({
+                where: {
+                    id: +id,
+                },
+            });
+
+            if (!user) {
+                throw new Error('User not found');
+            }
+
+            const customerId = await createMollieClient({ apiKey: configuration.MOLLIE_API_KEY }).customers.create({
+                name: user.firstName,
+                email: body.email,
+            });
+
+            const userSub = prisma.userSubscription.create({
                 data: {
                     userId: +id,
                     subscriptionId: +body.subscriptionId,
+                    customerId: customerId.id,
+                    paymentId: '',
+                    status: 'active',
                 },
             });
-            res.json(user);
+            res.json(userSub);
         } catch (error) {
             next(error);
         }

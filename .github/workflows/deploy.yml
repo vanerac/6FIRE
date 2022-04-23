@@ -1,0 +1,8 @@
+on: [ workflow_call, workflow_dispatch ]
+name: Deploy
+
+jobs:
+  build_image:
+    uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
+  update_task:
+    uses: vanerac/6FIRE/.github/workflows/update_task_job.yml@main
