@@ -1,12 +1,16 @@
 import { CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
-import { PaymentType, PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import createMollieClient from '@mollie/api-client';
 import configuration from '../../../configuration';
 
 const mollieClient = createMollieClient({ apiKey: configuration.MOLLIE_API_KEY });
 
 const prisma = new PrismaClient();
+export const PaymentType = {
+    SUBSCRIPTION: 'SUBSCRIPTION',
+    ONETIME: 'ONETIME',
+};
 
 export default class PaymentController implements CRUDController {
     //  CRUD On payments

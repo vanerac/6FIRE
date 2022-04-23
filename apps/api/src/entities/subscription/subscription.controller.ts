@@ -1,9 +1,14 @@
 import { NextFunction, Request, Response } from 'express';
-import { PaymentType, PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import { CRUDController } from '../../types';
 
 const prisma = new PrismaClient();
 // const mollieClient = createMollieClient({ apiKey: configuration.MOLLIE_API_KEY });
+
+export const PaymentType = {
+    SUBSCRIPTION: 'SUBSCRIPTION',
+    ONETIME: 'ONETIME',
+};
 
 export default class SubscriptionController extends CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction) {
@@ -46,7 +51,7 @@ export default class SubscriptionController extends CRUDController {
                     price,
                     level,
                     refreshRate,
-                    subscriptionType: refreshRate ? PaymentType.SUBSCRIPTION : PaymentType.ONETIME,
+                    subscriptionType: (refreshRate ? PaymentType.SUBSCRIPTION : PaymentType.ONETIME) as any,
                 },
             });
 
