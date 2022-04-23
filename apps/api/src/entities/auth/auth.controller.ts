@@ -105,7 +105,11 @@ export default class AuthController {
                 },
             });
 
-            return res.sendStatus(200);
+            const token = generateToken(user);
+
+            return res.json({
+                token,
+            });
         } catch (error) {
             if (error.code === 'P2002') {
                 return res.status(400).json({

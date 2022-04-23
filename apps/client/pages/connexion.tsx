@@ -76,6 +76,7 @@ const Connexion: NextPage = (props: any) => {
         }
 
         if (!isValid) return;
+        console.log('ok');
         apiClient.auth
             .register({
                 password: password,
@@ -86,10 +87,14 @@ const Connexion: NextPage = (props: any) => {
                 telephone: userPhone,
             })
             .then((response) => {
-                if (response.status === 200) {
+                console.log(response);
+                if (response.token) {
                     cookies.set('API_TOKEN', response.token, { path: '/' });
                     router.push('/articlesPage');
                 }
+            })
+            .catch((error) => {
+                console.log(error);
             });
     };
 
