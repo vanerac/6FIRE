@@ -1,0 +1,188 @@
+{
+  "withId": {
+    "parameters": [
+      {
+        "in": "path",
+        "name": "id",
+        "schema": {
+          "type": "string"
+        }
+      }
+    ],
+    "get": {
+      "tags": [
+        "Affiliation"
+      ],
+      "summary": "Get Affiliation",
+      "description": "Get Affiliation",
+      "operationId": "getAffiliationById",
+      "responses": {
+        "200": {
+          "description": "Affiliation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Affiliation"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Affiliation not found"
+        },
+        "401": {
+          "description": "Unauthorized"
+        },
+        "403": {
+          "description": "Forbidden"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Affiliation"
+      ],
+      "summary": "Update Affiliation",
+      "description": "Update Affiliation",
+      "operationId": "updateAffiliation",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../openapi.components.json#/schemas/Affiliation"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "Affiliation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Affiliation"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Affiliation not found"
+        },
+        "401": {
+          "description": "Unauthorized"
+        },
+        "403": {
+          "description": "Forbidden"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Affiliation"
+      ],
+      "summary": "Delete Affiliation",
+      "description": "Delete Affiliation",
+      "operationId": "deleteAffiliation",
+      "responses": {
+        "204": {
+          "description": "Affiliation deleted"
+        },
+        "404": {
+          "description": "Affiliation not found"
+        },
+        "401": {
+          "description": "Unauthorized"
+        },
+        "403": {
+          "description": "Forbidden"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    }
+  },
+  "withoutId": {
+    "post": {
+      "tags": [
+        "Affiliation"
+      ],
+      "summary": "Create Affiliation",
+      "description": "Create Affiliation",
+      "operationId": "createAffiliation",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../openapi.components.json#/schemas/Affiliation"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "201": {
+          "description": "Affiliation created",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Affiliation"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized"
+        },
+        "403": {
+          "description": "Forbidden"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    },
+    "get": {
+      "tags": [
+        "Affiliation"
+      ],
+      "summary": "Get Affiliation",
+      "description": "Get Affiliation",
+      "operationId": "getAffiliation",
+      "responses": {
+        "200": {
+          "description": "Affiliation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "../openapi.components.json#/schemas/Affiliation"
+                }
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Affiliation not found"
+        },
+        "401": {
+          "description": "Unauthorized"
+        },
+        "403": {
+          "description": "Forbidden"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    }
+  }
+}
