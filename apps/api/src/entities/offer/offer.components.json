@@ -1,0 +1,46 @@
+{
+  "schemas": {
+    "Offer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "value": {
+          "type": "integer"
+        },
+        "offerType": {
+          "type": "string",
+          "enum": [
+            "PERCENTAGE",
+            "FIXED"
+          ]
+        },
+        "subscriptionId": {
+          "type": "integer"
+        },
+        "singleUse": {
+          "type": "boolean"
+        }
+      }
+    },
+    "OfferUsage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "offerId": {
+          "type": "integer"
+        },
+        "userId": {
+          "type": "integer"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

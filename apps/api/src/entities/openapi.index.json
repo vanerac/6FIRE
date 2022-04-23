@@ -112,6 +112,18 @@
     },
     "/payment/payment/{id}": {
       "$ref": "./payment/payment.path.json#/getPayment"
+    },
+    "/offer/": {
+      "$ref": "./offer/offer.path.json#/withoutId"
+    },
+    "/offer/{id}": {
+      "$ref": "./offer/offer.path.json#/withId"
+    },
+    "/offer/usage/{id}": {
+      "$ref": "./offer/offer.path.json#/getUsageById"
+    },
+    "/offer/usage/": {
+      "$ref": "./offer/offer.path.json#/getAllUsage"
     }
   },
   "components": {
@@ -142,6 +154,12 @@
       },
       "UserSubscription": {
         "$ref": "./openapi.components.json#/schemas/UserSubscription"
+      },
+      "Offer": {
+        "$ref": "./openapi.components.json#/schemas/Offer"
+      },
+      "OfferUsage": {
+        "$ref": "./openapi.components.json#/schemas/OfferUsage"
       }
     }
   }

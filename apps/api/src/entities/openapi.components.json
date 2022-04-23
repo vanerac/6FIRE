@@ -35,6 +35,12 @@
     },
     "UserSubscription": {
       "$ref": "./payment/payment.components.json#/schemas/UserSubscription"
+    },
+    "Offer": {
+      "$ref": "./offer/offer.components.json#/schemas/Offer"
+    },
+    "OfferUsage": {
+      "$ref": "./offer/offer.components.json#/schemas/OfferUsage"
     }
   }
 }
