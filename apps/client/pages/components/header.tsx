@@ -4,9 +4,8 @@ import router from 'next/router';
 import $ from 'jquery';
 import LoginPopup from './login';
 
+/* Hamburger toggle script */
 const handleForm = () => {
-    /* $('#date').val('data');
-    console.log(handleForm); */
     $('.login_popup_wrapper').toggleClass('open');
 };
 
@@ -250,37 +249,40 @@ const Header = (props: any) => {
                         <div className="main-nav-bar">
                             <div className="nav-grid">
                                 <div className="nav-item-wrap">
-                                    <a className="no-bg" href="#">
-                                        <span>
-                                            <Image layout="fill" src="/img/group-1490-1@1x.png" />
+                                    <a href="#">
+                                        <span className="icon">
+                                            <img src="/img/icon/Cryptomonnaies.png" alt="" />
                                         </span>
-                                        Cryptommonaies
+                                        <span className='nav-item'>Cryptommonaies</span>
                                     </a>
                                     <a href="#">
-                                        <span>
-                                            <Image layout="fill" src="/img/nft-1@1x.png" />
+                                        <span className="icon">
+                                            <img src="/img/icon/nft.png" alt="" />
                                         </span>
-                                        NFT
+                                        <span className='nav-item'>NFT</span>
                                     </a>
                                     <a href="#">
-                                        <span>
-                                            <Image layout="fill" src="/img/path-1021-1@1x.png" />
+                                        <span className="icon">
+                                            <img src="/img/icon/playtoearn.png" alt="" />
                                         </span>
-                                        Play to Earn
+                                        
+                                        <span className='nav-item'>Play to Earn</span>
                                     </a>
                                     <a href="#">
-                                        <span>
-                                            <Image layout="fill" src="/img/group-1504-1@1x.png" />
+                                        <span className="icon">
+                                            <img src="/img/icon/immobilier.png" alt="" />
                                         </span>
-                                        Immobilier
+                                        
+                                        <span className='nav-item'>Immobilier</span>
                                     </a>
                                     <a href="#">
-                                        <span>
-                                            <Image layout="fill" src="/img/website-1@1x.png" />
+                                        <span className="icon">
+                                            <img src="/img/icon/ecommerce.png" alt="" />
                                         </span>
-                                        E-Commerce
+                                        
+                                        <span className='nav-item'>E-Commerce</span>
                                     </a>
-                                    <a href="#">Autres thématiques</a>
+                                    <a href="#"><span className="nav-item">Autres thématiques</span></a>
                                 </div>
 
                                 <a href="#" className="espace">
