@@ -341,6 +341,10 @@ resource "aws_ecs_task_definition" "api" {
       {
         "name": "DATABASE_URL",
         "value": "postgres://${aws_db_instance.default.username}:${aws_db_instance.default.password}@${aws_db_instance.default.address}:${aws_db_instance.default.port}"
+      },
+      {
+        "name": "MOLLIE_API_KEY",
+        "value": "${var.api_env_mollie_api_key}"
       }
     ],
     "logConfiguration": {
