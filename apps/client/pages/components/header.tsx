@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import router from 'next/router';
+// import router from 'next/router';
 
 const Header = (props: any) => {
     console.log(props);
