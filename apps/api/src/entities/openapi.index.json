@@ -124,6 +124,12 @@
     },
     "/offer/usage/": {
       "$ref": "./offer/offer.path.json#/getAllUsage"
+    },
+    "/affiliation/": {
+      "$ref": "./affiliation/affiliation.path.json#/withoutId"
+    },
+    "/affiliation/{id}": {
+      "$ref": "./affiliation/affiliation.path.json#/withId"
     }
   },
   "components": {
