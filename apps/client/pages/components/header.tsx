@@ -6,6 +6,14 @@ const Header = (props: any) => {
     console.log(props);
 
     return (
+        <div>
+            {/* Hamburger icon style */}
+                <input id="menu__toggle" type="checkbox" />
+                <label className="menu__btn" htmlFor="menu__toggle">
+                <span></span>
+                </label>
+            {/* Hamburger icon END */}
+        
         <div className="header-top">
             {/* <div className="header-rectangle_1"></div>
             <div className="header-logo">
@@ -234,6 +242,7 @@ const Header = (props: any) => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         

@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import router from 'next/router';
 import Footer from './components/footer';
+import LoginPopup from './components/login';
 import Header from './components/header';
 
 const HomePage: NextPage = (props: any) => {
@@ -171,6 +172,7 @@ const HomePage: NextPage = (props: any) => {
                 </div> */}
 
                 <Footer />
+                <LoginPopup />
         </div>
     );
 };
