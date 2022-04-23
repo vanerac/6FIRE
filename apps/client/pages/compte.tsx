@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Header from './components/header';
 import Footer from './components/footer';
 // import checkAuth from './components/checkAuth';
