@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
-import { ApiClient, Article } from '@shared/services';
+import { Article } from '@shared/services';
+import apiClient from '@shared/tools/apiClient';
 
-const apiClient = new ApiClient();
 export default function Articles() {
     const [$articles, setArticles] = useState<Article[]>([]);
 
     useEffect(() => {
         // Todo: Note: Api can return an Error object ?
-        apiClient.article.getArticles().then((articles) => setArticles(articles as Article[]));
+        apiClient()
+            .article.getArticles()
+            .then((articles) => setArticles(articles as Article[]));
     }, []);
     return (
         <>

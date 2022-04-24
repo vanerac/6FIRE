@@ -38,7 +38,6 @@ const Connexion: NextPage = () => {
     };
 
     const create_account = () => {
-        // const apiClient = new ApiClient();
         let isValid = true;
         setError('');
 
