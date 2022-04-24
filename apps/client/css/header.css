@@ -1133,7 +1133,7 @@ ul{
 
 /* moble style 
 *******************/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
     .main-nav .top-nav{
         height: 55px;
         z-index: 11;
@@ -1171,5 +1171,12 @@ ul{
         top: 65px;
         left: 5%;
         z-index: 99;
+    }
+}
+
+/* small mobile */
+@media screen and (max-width: 400px) {
+    .main-nav .right-nav-items a.my-account{
+        font-size: 13px;
     }
 }
