@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
 import { PrismaClient } from '@prisma/client';
+import { ApiError } from '../../types';
 
 const prisma = new PrismaClient();
 
@@ -23,9 +24,16 @@ export default class OfferController {
                 },
             });
             if (!offer) {
-                return res.status(404).json({
-                    message: 'Offer not found',
-                });
+                // return res.status(404).json({
+                //     message: 'Offer not found',
+                // });
+                return next(
+                    new ApiError({
+                        message: 'Offer not found',
+                        status: 404,
+                        i18n: 'error.offer.not_found',
+                    }),
+                );
             }
             res.json(offer);
         } catch (e) {

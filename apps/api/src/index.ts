@@ -131,6 +131,7 @@ app.use((err, req, res, $next) => {
     Sentry.captureException(err);
     console.log('sent', err);
     res.status(err.status || 500).json({
+        i18n: err.i18n ?? 'error.unknown',
         message: err.message,
         errors: err.errors,
     });
