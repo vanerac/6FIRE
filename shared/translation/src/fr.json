@@ -1,0 +1,10 @@
+{
+  "error": {
+    "unexpected": "Une erreur inattendue s'est produite",
+    "auth": {
+      "missing": "Connectez-vous pour accéder à cette page",
+      "invalid": "Un probleme est survenu avec votre sessions, veuillez vous reconnecter",
+      "expired": "Votre session a expiré, veuillez vous reconnecter"
+    }
+  }
+}
