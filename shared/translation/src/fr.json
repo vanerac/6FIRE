@@ -30,6 +30,10 @@
         "not_verified": "Votre adresse email n'a pas été vérifiée"
       }
     },
+    "article": {
+      "forbidden": "Vous n'avez pas les droits pour accéder à cet article",
+      "not_found": "Article introuvable"
+    },
     "format": {
       "missing_fields": "Certains champs sont manquants"
     }
