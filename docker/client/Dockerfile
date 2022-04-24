@@ -18,6 +18,7 @@ COPY --from=install /app ./
 WORKDIR /shared
 RUN npm install axios
 RUN npm install form-data
+RUN npm install universal-cookie
 
 WORKDIR /app
 RUN npm run build

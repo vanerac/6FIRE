@@ -20,6 +20,7 @@ RUN #ls -al node_modules && exit 1
 WORKDIR /shared
 RUN npm install axios
 RUN npm install form-data
+RUN npm install universal-cookie
 
 WORKDIR /app
 RUN npm run build

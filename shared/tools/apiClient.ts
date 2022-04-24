@@ -1,5 +1,5 @@
-import Cookies from 'universal-cookie';
 import {ApiClient} from "../services";
+import Cookies from 'universal-cookie';
 
 export default function getApiClient(host: string = process.env.NEXT_PUBLIC_API_ROUTE || 'http://localhost:3333/api') {
     const cookies = new Cookies();

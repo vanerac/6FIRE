@@ -18,7 +18,8 @@
     "apps/api",
     "apps/dashboard",
     "apps/bot",
-    "shared/*"
+    "shared/*",
+    "shared/tools"
   ],
   "repository": {
     "type": "git",
