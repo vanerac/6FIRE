@@ -7,8 +7,10 @@ import { useState } from 'react';
 import { ApiClient } from '@shared/services';
 import Cookies from 'universal-cookie';
 // import checkAuth from './components/checkAuth';
+import $ from 'jquery';
+import LoginPopup from './components/login';
 
-const Connexion: NextPage = (props: any) => {
+const Connexion: NextPage = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [userSurName, setUserSurName] = useState('');
@@ -23,6 +25,14 @@ const Connexion: NextPage = (props: any) => {
     const [cguChecked, setCguChecked] = useState(false);
     const [errorCgu, setErrorCgu] = useState('');
     const cookies = new Cookies();
+
+    const handleForm = () => {
+        $('.login_popup_wrapper').toggleClass('open');
+    };
+    /* Mobile mnue toggle script */
+    const mobileToggle = () => {
+        $('.nav-item-wrap').toggleClass('open');
+    };
 
     const create_account = () => {
         const apiClient = new ApiClient();
@@ -100,6 +110,7 @@ const Connexion: NextPage = (props: any) => {
 
     return (
         <div>
+            <LoginPopup />
             <input type="hidden" id="anPageName" name="page" value="register-web" />
             <div className="register-web screen">
                 <div className="background-WxaGAS"></div>
@@ -161,6 +172,7 @@ const Connexion: NextPage = (props: any) => {
                     </div>
                     <input
                         placeholder="*Nom"
+                        value={userName}
                         onChange={(event) => {
                             setErrorUserName('');
                             setUserName(event.target.value);
@@ -182,6 +194,7 @@ const Connexion: NextPage = (props: any) => {
                     </div>
                     <input
                         placeholder="*Prénom"
+                        value={userSurName}
                         onChange={(event) => {
                             setErrorUserSurName('');
                             setUserSurName(event.target.value);
@@ -203,6 +216,7 @@ const Connexion: NextPage = (props: any) => {
                     </div>
                     <input
                         placeholder="*Email"
+                        value={userMail}
                         onChange={(event) => {
                             setErrorUserMail('');
                             setUserMail(event.target.value);
@@ -224,6 +238,7 @@ const Connexion: NextPage = (props: any) => {
                     </div>
                     <input
                         placeholder="*Mot de passe"
+                        value={password}
                         onChange={(event) => {
                             setErrorPassword('');
                             setPassword(event.target.value);
@@ -268,6 +283,7 @@ const Connexion: NextPage = (props: any) => {
                         </div>
                     </div>
                     <input
+                        value={userPhone}
                         onChange={(event) => {
                             setErrorUserPhone('');
                             setUserPhone(event.target.value);
@@ -277,23 +293,34 @@ const Connexion: NextPage = (props: any) => {
                         type="text"
                     />
                 </div>
-                <div
-                    onClick={() => {
-                        props.useStateOpenSideBar(true);
-                    }}
-                    className="connexion-WxaGAS">
-                    <div className="connexion-zebl9P">
-                        <div className="club-premium-RhkVlt lato-normal-white-14px">Club Privé</div>
-                    </div>
+                <div className="connexion-WxaGAS">
                     <div className="icon-ionic-ios-menu-zebl9P">
-                        <div className="trac-1-mD2maU">
-                            <Image layout="fill" src="/img/trac--1-1@1x.png" />
-                        </div>
-                        <div className="trac-2-mD2maU">
-                            <Image layout="fill" src="/img/trac--2-1@1x.png" />
+                        <div className="connexion-zebl9P">
+                            <div className="club-premium-RhkVlt lato-normal-white-14px">Club Privé</div>
                         </div>
                     </div>
                 </div>
+                {/* Hamburger icon style */}
+                <input id="menu__toggle" type="checkbox" />
+                <label
+                    onClick={() => {
+                        handleForm();
+                    }}
+                    className="menu__btn"
+                    htmlFor="menu__toggle">
+                    <span></span>
+                </label>
+                {/* Hamburger icon END */}
+
+                {/* Hamburger mobile */}
+                <div
+                    className="mobile-hamburger"
+                    onClick={() => {
+                        mobileToggle();
+                    }}>
+                    {/* menu */}
+                </div>
+                {/* Hamburger mobile end */}
             </div>
             <div className="register-mobile screen">
                 <div className="background-qfTrnm"></div>
@@ -355,6 +382,7 @@ const Connexion: NextPage = (props: any) => {
                         </div>
                     </div>
                     <input
+                        value={userName}
                         onChange={(event) => {
                             setErrorUserName('');
                             setUserName(event.target.value);
@@ -376,6 +404,7 @@ const Connexion: NextPage = (props: any) => {
                         </div>
                     </div>
                     <input
+                        value={userSurName}
                         onChange={(event) => {
                             setErrorUserSurName('');
                             setUserSurName(event.target.value);
@@ -397,6 +426,7 @@ const Connexion: NextPage = (props: any) => {
                         </div>
                     </div>
                     <input
+                        value={userPhone}
                         onChange={(event) => {
                             setErrorUserPhone('');
                             setUserPhone(event.target.value);
@@ -430,6 +460,7 @@ const Connexion: NextPage = (props: any) => {
                         </div>
                     </div>
                     <input
+                        value={password}
                         placeholder="*Mot de passe"
                         onChange={(event) => {
                             setErrorPassword('');
@@ -447,20 +478,31 @@ const Connexion: NextPage = (props: any) => {
                 </div>
                 <div className="dj-inscrit-connectez-vous-qfTrnm">Déjà inscrit ? Connectez vous</div>
                 <div className="connexion-qfTrnm">
-                    <div className="connexion-YLoUqo">
-                        <div className="connexion-1aVEbJ">
-                            <div className="club-premium-MoQQxl lato-normal-white-14px">Club Privé</div>
-                        </div>
-                        <div className="icon-ionic-ios-menu-1aVEbJ">
-                            <div className="trac-1-l9Kpxb">
-                                <Image layout="fill" src="/img/trac--1-1@1x.png" />
-                            </div>
-                            <div className="trac-2-l9Kpxb">
-                                <Image layout="fill" src="/img/trac--2-1@1x.png" />
-                            </div>
-                        </div>
+                    <div className="connexion-1aVEbJ">
+                        <div className="club-premium-MoQQxl lato-normal-white-14px">Club Privé</div>
                     </div>
                 </div>
+                {/* Hamburger icon style */}
+                <input id="menu__toggle" type="checkbox" />
+                <label
+                    onClick={() => {
+                        handleForm();
+                    }}
+                    className="menu__btn"
+                    htmlFor="menu__toggle">
+                    <span></span>
+                </label>
+                {/* Hamburger icon END */}
+
+                {/* Hamburger mobile */}
+                <div
+                    className="mobile-hamburger"
+                    onClick={() => {
+                        mobileToggle();
+                    }}>
+                    {/* menu */}
+                </div>
+                {/* Hamburger mobile end */}
                 <div className="numro-de-tlphone-511QbH">
                     <div className="ligne-6-DzMs4Y">
                         {errorUserMail !== '' ? (
@@ -473,6 +515,7 @@ const Connexion: NextPage = (props: any) => {
                         </div>
                     </div>
                     <input
+                        value={userMail}
                         onChange={(event) => {
                             setErrorUserMail('');
                             setUserMail(event.target.value);
