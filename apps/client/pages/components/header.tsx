@@ -229,7 +229,6 @@ const Header = (props: any) => {
                     <Image layout="fill" src="/img/icon-ionic-ios-search-11@1x.png" />
                 </div>
             </div> */}
-
                     <div className="main-nav">
                         <div className="top-nav">
                             <div className="logo">

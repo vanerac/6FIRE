@@ -32,6 +32,10 @@
   },
   "homepage": "https://github.com/vanerac/6FIRE#readme",
   "devDependencies": {
+    "@types/draft-js": "^0.11.9",
     "eslint-plugin-prettier": "^4.0.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.3.0"
   }
 }

@@ -1,25 +1,36 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { CRUDController } from '../../types';
 
 import { PrismaClient } from '@prisma/client';
+import createMollieClient from '@mollie/api-client';
+import configuration from '../../../configuration';
 
 const prisma = new PrismaClient();
 
 export class UserController implements CRUDController {
-    public static async getAll(req: Request, res: Response) {
+    public static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
             const users = prisma.user.findMany({
                 select: {
                     password: false,
+                    UserSubscription: {
+                        select: {
+                            Subscription: {
+                                select: {
+                                    name: true,
+                                },
+                            },
+                        },
+                    },
                 },
             });
             res.json(users);
         } catch (error) {
-            res.status(500).json({ error: error.message });
+            next(error);
         }
     }
 
-    public static async getOne(req: Request, res: Response) {
+    public static async getOne(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const user = await prisma.user.findFirst({
@@ -32,13 +43,11 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    public static async create(req: Request, res: Response) {
+    public static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const { body } = req;
             const user = await prisma.user.create({
@@ -48,13 +57,11 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    public static async update(req: Request, res: Response) {
+    public static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const { body } = req;
@@ -68,13 +75,11 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    public static async delete(req: Request, res: Response) {
+    public static async delete(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const user = await prisma.user.delete({
@@ -84,13 +89,11 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    public static async getSubscription(req: Request, res: Response) {
+    public static async getSubscription(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const user = await prisma.userSubscription.findMany({
@@ -111,31 +114,55 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    public static setSubscription(req: Request, res: Response) {
+    public static async setSubscription(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const { body } = req;
-            const user = prisma.userSubscription.create({
-                data: {
-                    userId: +id,
-                    subscriptionId: +body.subscriptionId,
+
+            const user = await prisma.user.findFirst({
+                where: {
+                    id: +id,
                 },
             });
-            res.json(user);
-        } catch (error) {
-            res.status(500).json({
-                message: error.message,
+
+            if (!user) {
+                throw new Error('User not found');
+            }
+
+            const customerId = await createMollieClient({ apiKey: configuration.MOLLIE_API_KEY }).customers.create({
+                name: user.firstName,
+                email: body.email,
             });
+
+            const userSub = prisma.userSubscription.create({
+                data: {
+                    User: {
+                        connect: {
+                            id: +id,
+                        },
+                    },
+                    Subscription: {
+                        connect: {
+                            id: +body.subscriptionId,
+                        },
+                    },
+                    customerId: customerId.id,
+                    paymentId: '',
+                    status: 'active',
+                    price: 0,
+                },
+            });
+            res.json(userSub);
+        } catch (error) {
+            next(error);
         }
     }
 
-    public static async removeSubscription(req: Request, res: Response) {
+    public static async removeSubscription(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const user = prisma.userSubscription.deleteMany({
@@ -145,9 +172,7 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 }

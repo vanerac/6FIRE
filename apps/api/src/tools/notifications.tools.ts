@@ -11,8 +11,8 @@ export async function AWSsendEmail({
 }: {
     email: string;
     subject: string;
-    message: string;
-    htmlMessage?: string;
+    message?: string;
+    htmlMessage: string;
     attachments?: string[];
 }) {
     // SES Email

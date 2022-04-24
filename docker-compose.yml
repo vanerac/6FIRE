@@ -35,12 +35,18 @@ services:
       DB_USER: "postgres"
       DB_PASSWORD: "postgres"
       DB_NAME: "postgres"
+      UPLOAD_DIR: "/uploads"
+      SMS_API_KEY: ""
+    volumes:
+      - "./data/uploads:/uploads"
     restart: unless-stopped
 
   client:
     build:
       context: .
       dockerfile: docker/client/Dockerfile
+      args:
+        - SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
     ports:
       - "3000:3000"
     #    depends_on:
@@ -53,6 +59,8 @@ services:
     build:
       context: .
       dockerfile: docker/dashboard/Dockerfile
+      args:
+        - SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
     ports:
       - "3001:3000"
     depends_on:

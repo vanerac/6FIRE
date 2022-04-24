@@ -32,6 +32,18 @@
     },
     "Country": {
       "$ref": "./country/country.components.json#/schemas/Country"
+    },
+    "UserSubscription": {
+      "$ref": "./payment/payment.components.json#/schemas/UserSubscription"
+    },
+    "Affiliation": {
+      "$ref": "./affiliation/affiliation.components.json#/schemas/Affiliation"
+    },
+    "Offer": {
+      "$ref": "./offer/offer.components.json#/schemas/Offer"
+    },
+    "OfferUsage": {
+      "$ref": "./offer/offer.components.json#/schemas/OfferUsage"
     }
   }
 }

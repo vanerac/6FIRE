@@ -1,30 +1,26 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
 export default class TraderController {
-    static async getTopTraders(req: Request, res: Response) {
+    static async getTopTraders(req: Request, res: Response, next: NextFunction) {
         try {
             throw new Error('Not implemented');
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    static async searchTrader(req: Request, res: Response) {
+    static async searchTrader(req: Request, res: Response, next: NextFunction) {
         try {
             throw new Error('Not implemented');
         } catch (error) {
-            res.status(500).json({
-                message: error.message,
-            });
+            next(error);
         }
     }
 
-    static async getCuration(req: Request, res: Response) {
+    static async getCuration(req: Request, res: Response, next: NextFunction) {
         try {
             const curation = prisma.curatedTrader.findMany({
                 where: {
@@ -38,14 +34,12 @@ export default class TraderController {
             res.status(200).json({
                 curation,
             });
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 
-    static async setCuration(req: Request, res: Response) {
+    static async setCuration(req: Request, res: Response, next: NextFunction) {
         // upsert, array of clientId and names from req.body
         // update if displayed is edited
         const { data } = req.body;
@@ -64,17 +58,15 @@ export default class TraderController {
                     displayed: item.displayed ?? true,
                 })),
             });
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 
-    static async followTrader(req: Request, res: Response) {
+    static async followTrader(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: traderId } = req.params;
-            const { userId } = req.session;
+            const { id: userId } = req.user;
 
             await prisma.traderFollows.create({
                 data: {
@@ -86,17 +78,15 @@ export default class TraderController {
             res.status(200).json({
                 message: 'Trader followed',
             });
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 
-    static async unfollowTrader(req: Request, res: Response) {
+    static async unfollowTrader(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: traderId } = req.params;
-            const { userId } = req.session;
+            const { id: userId } = req.user;
 
             await prisma.traderFollows.deleteMany({
                 where: {
@@ -108,16 +98,14 @@ export default class TraderController {
             res.status(200).json({
                 message: 'Trader unfollowed',
             });
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 
-    static async getFollowing(req: Request, res: Response) {
+    static async getFollowing(req: Request, res: Response, next: NextFunction) {
         try {
-            const { userId } = req.session;
+            const { id: userId } = req.user;
 
             const traders = await prisma.traderFollows.findMany({
                 where: {
@@ -136,14 +124,12 @@ export default class TraderController {
             res.status(200).json({
                 traders,
             });
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 
-    static async getFollowers(req: Request, res: Response) {
+    static async getFollowers(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: traderId } = req.params;
 
@@ -163,10 +149,8 @@ export default class TraderController {
             res.status(200).json({
                 traders,
             });
-        } catch (e) {
-            res.status(500).json({
-                message: e.message,
-            });
+        } catch (error) {
+            next(error);
         }
     }
 }

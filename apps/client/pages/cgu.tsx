@@ -1,11 +1,9 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-// import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
 
-const HomePage: NextPage = (props: any) => {
-    console.log(props);
+const Cgu: NextPage = (props: any) => {
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
@@ -214,7 +212,7 @@ const HomePage: NextPage = (props: any) => {
                                 Les investissements sont risqués par nature, les utilisateurs doivent faire leurs
                                 propres recherches avant d’entreprendre toute action et n’investir que dans les limites
                                 de leurs capacités financières. Cet article ne constitue pas un conseil en
-                                investissement.
+                                investissement .
                             </span>
                         </div>
                     </div>
@@ -270,4 +268,4 @@ const HomePage: NextPage = (props: any) => {
     );
 };
 
-export default HomePage;
+export default Cgu;

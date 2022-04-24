@@ -15,6 +15,16 @@ enum VerificationType {
   PHONE
 }
 
+enum PaymentType {
+  SUBSCRIPTION
+  ONETIME
+}
+
+enum OfferType {
+  POURCENTAGE
+  FIXED
+}
+
 model User {
   id                Int                 @id @default(autoincrement())
   userId            String              @unique @default(uuid())
@@ -33,7 +43,8 @@ model User {
   VerificationCodes VerificationCodes[]
   TraderFollows     TraderFollows[]
   UserSubscription  UserSubscription[]
-  PasswordReset PasswordReset[]
+  PasswordReset     PasswordReset[]
+  OfferUsage        OfferUsage[]
 
   @@unique([email, verifiedEmail])
   @@unique([telephone, verifiedPhone])
@@ -55,18 +66,21 @@ model VerificationCodes {
   type      VerificationType
   createdAt DateTime         @default(now())
   updatedAt DateTime         @default(now())
-  User      User             @relation(fields: [userId], references: [id])
+  User      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Subscription {
   id               Int                @id @default(autoincrement())
   name             String
   description      String
+  refreshRate      Int // in days
+  subscriptionType PaymentType
   price            Int
   level            Int                @default(0)
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @default(now())
   UserSubscription UserSubscription[]
+  Offer            Offer[]
 }
 
 model UserSubscription {
@@ -75,8 +89,31 @@ model UserSubscription {
   subscriptionId Int
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @default(now())
+  price          Int
+  paymentId      String // Mollie payment id
+  customerId     String // Mollie customer id
+  status         String // Mollie status
   User           User         @relation(fields: [userId], references: [id])
   Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+}
+
+model Offer {
+  id             Int          @id @default(autoincrement())
+  value          Int
+  offerType      OfferType
+  subscriptionId Int
+  singleUse      Boolean      @default(false)
+  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  OfferUsage     OfferUsage[]
+}
+
+model OfferUsage {
+  id      Int      @id @default(autoincrement())
+  offerId Int
+  userId  Int
+  date    DateTime @default(now())
+  Offer   Offer    @relation(fields: [offerId], references: [id])
+  User    User     @relation(fields: [userId], references: [id])
 }
 
 model Theme {
@@ -96,7 +133,28 @@ model Article {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   themesId  Int
-  Theme     Theme    @relation(fields: [themesId], references: [id])
+  Theme     Theme    @relation(fields: [themesId], references: [id], onDelete: Cascade)
+
+  Recommandation        Recommandation[]
+  ArticleRecommandation ArticleRecommandation[]
+}
+
+model Recommandation {
+  id        Int     @id @default(autoincrement())
+  articleId Int
+  Article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  ArticleRecommandation ArticleRecommandation[]
+}
+
+model ArticleRecommandation {
+  id                   Int            @id @default(autoincrement())
+  referenceArticleId   Int
+  recommandedArticleId Int
+  createdAt            DateTime       @default(now())
+  updatedAt            DateTime       @default(now())
+  Article              Article        @relation(fields: [referenceArticleId], references: [id], onDelete: Cascade)
+  Recommandation       Recommandation @relation(fields: [recommandedArticleId], references: [id], onDelete: Cascade)
 
 }
 
@@ -110,10 +168,10 @@ model Country {
 }
 
 model CryptoHolding {
-  id     Int      @id @default(autoincrement())
-  token  String
-  price  Int
-  amount Int
+  id        Int      @id @default(autoincrement())
+  token     String
+  price     Int
+  amount    Int
   updatedAt DateTime @default(now())
   createdAt DateTime @default(now())
 }
@@ -141,7 +199,18 @@ model TraderFollows {
   traderId      Int
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @default(now())
-  User          User          @relation(fields: [userId], references: [id])
-  CuratedTrader CuratedTrader @relation(fields: [traderId], references: [id])
+  User          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  CuratedTrader CuratedTrader @relation(fields: [traderId], references: [id], onDelete: Cascade)
 
+}
+
+model Affiliation {
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String
+  color     String
+  icon      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  displayed Boolean  @default(true)
 }
