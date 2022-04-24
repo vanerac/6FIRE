@@ -1,14 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
-import { ApiClient, User } from '@shared/services';
-
-const apiClient = new ApiClient();
+import { User } from '@shared/services';
+import List from '../components/list';
+import apiClient from '@shared/tools/apiClient';
 
 export default function Utilisateurs() {
-    const [$users, setUsers] = useState<User[]>([]);
+    const [$users, setUsers] = useState<User[]>([
+        {
+            id: 1,
+            userId: '1',
+            firstName: 'string',
+            lastName: 'string',
+            email: 'string',
+            password: 'string',
+            telephone: 'string',
+            countryId: 1,
+            createdAt: 'string',
+            updatedAt: 'string',
+            isAdmin: false,
+            verifiedEmail: false,
+            verifiedPhone: false,
+            banned: false,
+        },
+    ]);
+    // Date range, searchString, sort,
+    // const [filters, setFilters] = useState<{
+    //     search: string;
+    //     sort: string;
+    //     order: string;
+    // }>({
+    //     search: '',
+    //     sort: '',
+    //     order: '',
+    // });
 
     useEffect(() => {
-        apiClient.user.getUsers().then(setUsers);
+        apiClient().user.getUsers().then(setUsers);
     }, []);
 
     return (
@@ -18,43 +45,64 @@ export default function Utilisateurs() {
                 <div className="utilisateurs screen">
                     <div className="analytics-5MZdRv poppins-semibold-semi-bold-mirage-24px">Utilisateurs</div>
                     <Topbar />
-                    <div className="grid-table-5MZdRv">
-                        <div className="groupe-455-xeOetT">
-                            <div className="rectangle-616-JT596y"></div>
-                            <div className="rectangle-618-JT596y"></div>
-                            <div className="rectangle-619-JT596y"></div>
-                            <div className="rectangle-621-JT596y"></div>
-                            <div className="rectangle-622-JT596y"></div>
-                            <div className="rectangle-623-JT596y"></div>
-                            <div className="rectangle-624-JT596y"></div>
-                        </div>
-                        <div className="grid-table-xeOetT">
-                            <div className="name-bWWuxI poppins-medium-mirage-12px">ID</div>
-                            <div className="name-mXx6O7 poppins-medium-mirage-12px">Email</div>
-                            <div className="name-tukl3j poppins-medium-mirage-12px">Prénom</div>
-                            <div className="name-dxCD56 poppins-medium-mirage-12px">Nom</div>
-                            <div className="name-3ZAzzH poppins-medium-mirage-12px">Abonnement</div>
-                            <div className="name-bT9z9k poppins-medium-mirage-12px">Membre</div>
-                            <div className="name-7HnZFx poppins-medium-mirage-12px">Action</div>
-                        </div>
-                        <div className="groupe-454-xeOetT">
-                            <div className="rectangle-617-Iqebsx"></div>
-                            <div className="name-Iqebsx poppins-medium-tundora-10px">1002</div>
-                            <div className="name-C60Bva poppins-medium-tundora-10px">Elodie.elodie@gmail.com</div>
-                            <div className="name-QA5UOB poppins-medium-tundora-10px">Elodie</div>
-                            <div className="name-ku5qiJ poppins-medium-tundora-10px">Elodie</div>
-                            <div className="name-MfBHs4 poppins-medium-tundora-10px">Intermédiaire (99.99€)</div>
-                            <div className="membre-Iqebsx">
-                                <img
-                                    className="font-awsome-check-square-MGxfR5"
-                                    src="img/fontawsome--check-square--10@1x.png"
-                                />
-                            </div>
-                            <a href="details-utilisateurs.html">
-                                <img className="font-awsome-pen-Iqebsx" src="img/fontawsome--pen--1@1x.png" />
-                            </a>
-                        </div>
-                    </div>
+                    {/*<table className="grid-table-5MZdRv">*/}
+                    {/*    <th className="groupe-455-xeOetT">*/}
+                    {/*        <div className="rectangle-616-JT596y"></div>*/}
+                    {/*        <div className="rectangle-618-JT596y"></div>*/}
+                    {/*        <div className="rectangle-619-JT596y"></div>*/}
+                    {/*        <div className="rectangle-621-JT596y"></div>*/}
+                    {/*        <div className="rectangle-622-JT596y"></div>*/}
+                    {/*        <div className="rectangle-623-JT596y"></div>*/}
+                    {/*        <div className="rectangle-624-JT596y"></div>*/}
+                    {/*    </th>*/}
+                    {/*    <div className="grid-table-xeOetT">*/}
+                    {/*        <div className="name-bWWuxI poppins-medium-mirage-12px">ID</div>*/}
+                    {/*        <div className="name-mXx6O7 poppins-medium-mirage-12px">Email</div>*/}
+                    {/*        <div className="name-tukl3j poppins-medium-mirage-12px">Prénom</div>*/}
+                    {/*        <div className="name-dxCD56 poppins-medium-mirage-12px">Nom</div>*/}
+                    {/*        <div className="name-3ZAzzH poppins-medium-mirage-12px">Abonnement</div>*/}
+                    {/*        <div className="name-bT9z9k poppins-medium-mirage-12px">Membre</div>*/}
+                    {/*        <div className="name-7HnZFx poppins-medium-mirage-12px">Action</div>*/}
+                    {/*    </div>*/}
+                    {/*    <div className="groupe-454-xeOetT">*/}
+                    {/*        <div className="rectangle-617-Iqebsx"></div>*/}
+                    {/*        <div className="name-Iqebsx poppins-medium-tundora-10px">1002</div>*/}
+                    {/*        <div className="name-C60Bva poppins-medium-tundora-10px">Elodie.elodie@gmail.com</div>*/}
+                    {/*        <div className="name-QA5UOB poppins-medium-tundora-10px">Elodie</div>*/}
+                    {/*        <div className="name-ku5qiJ poppins-medium-tundora-10px">Elodie</div>*/}
+                    {/*        <div className="name-MfBHs4 poppins-medium-tundora-10px">Intermédiaire (99.99€)</div>*/}
+                    {/*        <div className="membre-Iqebsx">*/}
+                    {/*            <img*/}
+                    {/*                className="font-awsome-check-square-MGxfR5"*/}
+                    {/*                src="img/fontawsome--check-square--10@1x.png"*/}
+                    {/*            />*/}
+                    {/*        </div>*/}
+                    {/*        <a href="details-utilisateurs.html">*/}
+                    {/*            <img className="font-awsome-pen-Iqebsx" src="img/fontawsome--pen--1@1x.png" />*/}
+                    {/*        </a>*/}
+                    {/*    </div>*/}
+                    {/*</table>*/}
+
+                    <List
+                        headers={Object.keys({
+                            id: 1,
+                            userId: '1',
+                            firstName: 'string',
+                            lastName: 'string',
+                            email: 'string',
+                            password: 'string',
+                            telephone: 'string',
+                            countryId: 1,
+                            createdAt: 'string',
+                            updatedAt: 'string',
+                            isAdmin: false,
+                            verifiedEmail: false,
+                            verifiedPhone: false,
+                            banned: false,
+                        })}
+                        items={$users}
+                        onClick={console.log}
+                    />
                     <div className="search-5MZdRv">
                         <div className="rectangle-625-ST0lJ8"></div>
                         <div className="name-ST0lJ8 poppins-medium-mirage-10px">Rechercher…</div>

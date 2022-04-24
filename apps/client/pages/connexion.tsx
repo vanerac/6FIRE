@@ -4,9 +4,9 @@ import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
 import { useState } from 'react';
-import { ApiClient } from '@shared/services';
+import apiClient from '@shared/tools/apiClient';
 import Cookies from 'universal-cookie';
-// import checkAuth from './components/checkAuth';
+// import axios from 'axios';
 
 const Connexion: NextPage = (props: any) => {
     const [userName, setUserName] = useState('');
@@ -25,7 +25,6 @@ const Connexion: NextPage = (props: any) => {
     const cookies = new Cookies();
 
     const create_account = () => {
-        const apiClient = new ApiClient();
         let isValid = true;
 
         if (userName === '') {
@@ -76,9 +75,9 @@ const Connexion: NextPage = (props: any) => {
         }
 
         if (!isValid) return;
-        console.log('ok');
-        apiClient.auth
-            .register({
+
+        apiClient()
+            .auth.register({
                 password: password,
                 CGU: cguChecked,
                 email: userMail,
