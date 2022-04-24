@@ -1,12 +1,19 @@
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+import { ApiError } from '../../types';
 
 const prisma = new PrismaClient();
 
 export default class TraderController {
     static async getTopTraders(req: Request, res: Response, next: NextFunction) {
         try {
-            throw new Error('Not implemented');
+            next(
+                new ApiError({
+                    message: 'Not implemented yet',
+                    status: 501,
+                    i18n: 'error.notImplemented',
+                }),
+            );
         } catch (error) {
             next(error);
         }
@@ -14,7 +21,13 @@ export default class TraderController {
 
     static async searchTrader(req: Request, res: Response, next: NextFunction) {
         try {
-            throw new Error('Not implemented');
+            next(
+                new ApiError({
+                    message: 'Not implemented yet',
+                    status: 501,
+                    i18n: 'error.notImplemented',
+                }),
+            );
         } catch (error) {
             next(error);
         }

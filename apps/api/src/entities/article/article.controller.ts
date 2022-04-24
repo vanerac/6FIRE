@@ -1,4 +1,4 @@
-import { CRUDController } from '../../types';
+import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
@@ -60,6 +60,15 @@ export default class ArticleController implements CRUDController {
                     },
                 },
             });
+            if (!userSubscriptionLevel) {
+                next(
+                    new ApiError({
+                        message: 'User subscription level not found',
+                        status: 404,
+                        i18n: 'error.article.forbidden',
+                    }),
+                );
+            }
 
             const article = await prisma.article.findFirst({
                 where: {
@@ -100,6 +109,15 @@ export default class ArticleController implements CRUDController {
                     },
                 },
             });
+            if (!article) {
+                next(
+                    new ApiError({
+                        message: 'Article not found',
+                        status: 404,
+                        i18n: 'error.article.not_found',
+                    }),
+                );
+            }
             res.status(200).json(article);
         } catch (error) {
             next(error);
