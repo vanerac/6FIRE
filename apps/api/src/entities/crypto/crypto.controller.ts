@@ -1,4 +1,4 @@
-import { CRUDController } from '../../types';
+import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import axios from 'axios';
 
@@ -60,7 +60,13 @@ export default class CryptoController implements CRUDController {
             const { data } = response;
             const { status, error_message, data: coin } = data;
             if (status !== 200) {
-                res.status(status).json({ error_message });
+                return next(
+                    new ApiError({
+                        message: error_message,
+                        status: status,
+                        i18n: 'error.api.coinmarketcap',
+                    }),
+                );
             } else {
                 res.json(coin);
             }
@@ -92,7 +98,13 @@ export default class CryptoController implements CRUDController {
                 const { data } = response;
                 const { status, error_message, data: coinValue } = data;
                 if (status !== 200) {
-                    res.status(status).json({ error_message });
+                    return next(
+                        new ApiError({
+                            message: error_message,
+                            status: status,
+                            i18n: 'error.api.coinmarketcap',
+                        }),
+                    );
                 } else {
                     const { quote } = coinValue;
                     const { EUR } = quote;
@@ -119,7 +131,13 @@ export default class CryptoController implements CRUDController {
             const baseUrl = 'https://github.com/ErikThiart/cryptocurrency-icons/tree/master/icons';
             const { coin } = req.params;
             if (!coin) {
-                res.status(400).json({ error: 'No coin provided' });
+                return next(
+                    new ApiError({
+                        message: 'No coin provided',
+                        status: 400,
+                        i18n: 'error.api.coinimg',
+                    }),
+                );
             }
             const imgUrl = `${baseUrl}/${coin}.png`;
             res.json({ imgUrl });

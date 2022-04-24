@@ -34,6 +34,11 @@
       "forbidden": "Vous n'avez pas les droits pour accéder à cet article",
       "not_found": "Article introuvable"
     },
+    "api": {
+      "coinmarketcap": "Une erreur est survenue lors de la récupération des données de coinmarketcap",
+      "coinimg": "Une erreur est survenue lors de la récupération des images de coins"
+      }
+    },
     "format": {
       "missing_fields": "Certains champs sont manquants"
     }
