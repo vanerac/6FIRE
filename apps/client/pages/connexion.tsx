@@ -5,8 +5,8 @@ import router from 'next/router';
 // import router from 'next/router';
 import { useState } from 'react';
 import apiClient from '@shared/tools/apiClient';
+import Cookies from 'universal-cookie';
 // import axios from 'axios';
-
 
 const Connexion: NextPage = (props: any) => {
     const [userName, setUserName] = useState('');
