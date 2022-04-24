@@ -209,6 +209,5 @@
 /* moble style 
 *******************/
 @media screen and (max-width: 767px) {
-    .main-nav-bar{display: none;}
     .footer-footer-SAHlos { display: none; /* temp */}
 }
