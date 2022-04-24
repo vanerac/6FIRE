@@ -31,6 +31,7 @@ Sentry.init({
     // of transactions for performance monitoring.
     // We recommend adjusting this value in production
     tracesSampleRate: 1.0,
+    environment: configuration.NODE_ENV,
 });
 
 // RequestHandler creates a separate execution context using domains, so that every

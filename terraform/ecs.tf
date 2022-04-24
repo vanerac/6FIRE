@@ -345,6 +345,10 @@ resource "aws_ecs_task_definition" "api" {
       {
         "name": "MOLLIE_API_KEY",
         "value": "${var.api_env_mollie_api_key}"
+      },
+      {
+        "name": "NEXT_PUBLIC_NODE_ENV",
+        "value": "production"
       }
     ],
     "logConfiguration": {
@@ -415,6 +419,10 @@ resource "aws_ecs_task_definition" "client" {
     ],
     "environment": [
       {
+        "name": "NEXT_PUBLIC_NODE_ENV",
+        "value": "production"
+      },
+      {
         "name": "NEXT_PUBLIC_API_ROUTE",
         "value": "${aws_alb.api.dns_name}/api"
       }
@@ -459,6 +467,10 @@ resource "aws_ecs_task_definition" "dashboard" {
       }
     ],
     "environment": [
+      {
+        "name": "NEXT_PUBLIC_NODE_ENV",
+        "value": "production"
+      },
       {
         "name": "NEXT_PUBLIC_API_ROUTE",
         "value": "${aws_alb.api.dns_name}/api"
