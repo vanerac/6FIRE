@@ -501,7 +501,8 @@ resource "aws_ecs_service" "api" {
   #    type = "CODE_DEPLOY"
   #  }
 
-  tags = {
+  force_new_deployment = true
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-api"
@@ -529,7 +530,8 @@ resource "aws_ecs_service" "client" {
   #  deployment_controller {
   #    type = "CODE_DEPLOY"
   #  }
-  tags = {
+  force_new_deployment = true
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-client"
@@ -556,8 +558,8 @@ resource "aws_ecs_service" "dashboard" {
   #  deployment_controller {
   #    type = "CODE_DEPLOY"
   #  }
-
-  tags = {
+  force_new_deployment = true
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-dashboard"
