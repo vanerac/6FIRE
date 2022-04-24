@@ -103,7 +103,7 @@ const Connexion: NextPage = () => {
                 console.log(response);
                 if (response.token) {
                     cookies.set('API_TOKEN', response.token, { path: '/' });
-                    router.push('/articlesPage');
+                    router.push('/articlesPageNew');
                 }
             })
             .catch((error: ApiError) => {
