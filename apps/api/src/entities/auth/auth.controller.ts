@@ -2,16 +2,13 @@ import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { checkPassword, generateToken, hashPassword } from '../../tools/auth.tools';
 import { AWSsendEmail, sendSMS } from '../../tools/notifications.tools';
+import { generateResetPasswordEmail, generateVerifyEmail } from '../../templates/email';
+import configuration from '../../../configuration';
+import { ApiError } from '../../types';
 
 const client = new PrismaClient();
 
 const passwordResetCode = async (userId) => {
-    // create a new code
-    // store it in the database
-
-    // email the user with the code
-    // send a sms to the user with the code
-
     const code = Math.floor(Math.random() * 1000000);
     const user = await client.user.findFirst({
         where: {
@@ -36,11 +33,17 @@ const passwordResetCode = async (userId) => {
     }
     const { email } = user;
     const sms = user.telephone;
-    const emailMessage = `Your password reset code is ${code}`;
     const smsMessage = `Your password reset code is ${code}`;
 
+    const emailBody = generateResetPasswordEmail({
+        reset_link: configuration.SERVER_ADDRESS + '/api/auth/password/reset?code=' + code,
+    });
     return Promise.all([
-        AWSsendEmail({ email, subject: 'Password reset code', message: emailMessage }),
+        AWSsendEmail({
+            email,
+            subject: 'Password reset code',
+            htmlMessage: emailBody,
+        }),
         sendSMS({
             phoneNumber: sms,
             message: smsMessage,
@@ -61,10 +64,12 @@ const createVerificationCode = async (
         },
     });
 
-    const messageTemplate = `Votre code de vérification est ${code}`;
+    const messageTemplate = generateVerifyEmail({
+        confirmation_link: `${configuration.SERVER_ADDRESS}/api/auth/verify?code=${code}`,
+    });
 
     if (type === 'EMAIL') {
-        await AWSsendEmail({ email: user.email, subject: 'Code de vérification', message: messageTemplate });
+        await AWSsendEmail({ email: user.email, subject: 'Code de vérification', htmlMessage: messageTemplate });
     } else {
         await sendSMS({
             phoneNumber: user.telephone,
@@ -83,10 +88,13 @@ export default class AuthController {
 
             console.log(req.body);
             if ([CGU, email, password, firstName, lastName, telephone].includes(undefined)) {
-                console.log('missing fields');
-                return res.status(400).json({
-                    message: 'Missing required fields',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Missing required fields',
+                        i18n: 'error.format.missing_fields',
+                    }),
+                );
             }
 
             user = await client.user.create({
@@ -105,7 +113,11 @@ export default class AuthController {
                 },
             });
 
-            return res.sendStatus(200);
+            const token = generateToken(user);
+
+            return res.json({
+                token,
+            });
         } catch (error) {
             if (error.code === 'P2002') {
                 return res.status(400).json({
@@ -140,26 +152,24 @@ export default class AuthController {
             });
 
             if (!user) {
-                return res.status(401).json({
-                    message: 'Invalid credentials',
-                });
+                return next(
+                    new ApiError({
+                        status: 401,
+                        message: 'Invalid credentials',
+                        i18n: 'error.auth.credentials.invalid',
+                    }),
+                );
             }
 
             if (!checkPassword(password, user.password)) {
-                return res.status(401).json({
-                    message: 'Invalid credentials',
-                });
+                return next(
+                    new ApiError({
+                        status: 401,
+                        message: 'Invalid credentials',
+                        i18n: 'error.auth.credentials.invalid',
+                    }),
+                );
             }
-
-            // if (!user.verifiedEmail && !user.verifiedPhone) {
-            //     await Promise.all([
-            //         await createVerificationCode(user, 'PHONE'),
-            //         await createVerificationCode(user, 'EMAIL'),
-            //     ]);
-            //     return res.status(401).json({
-            //         message: 'User not verified',
-            //     });
-            // }
 
             delete user.password;
             delete user.telephone;
@@ -197,9 +207,13 @@ export default class AuthController {
             });
 
             if (!verification) {
-                return res.status(400).json({
-                    message: 'Invalid code',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Invalid code',
+                        i18n: 'error.auth.verification.invalid',
+                    }),
+                );
             }
 
             const { User, type, createdAt } = verification;
@@ -209,9 +223,13 @@ export default class AuthController {
             const diffMinutes = Math.round(diff / 60000);
 
             if (diffMinutes > 15) {
-                return res.status(400).json({
-                    message: 'Code expired',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Code expired',
+                        i18n: 'error.auth.verification.expired',
+                    }),
+                );
             }
 
             if (type === 'PHONE') {
@@ -280,9 +298,13 @@ export default class AuthController {
             });
 
             if (!verification) {
-                return res.status(400).json({
-                    message: 'Invalid code',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Invalid code',
+                        i18n: 'error.auth.password.reset.code.invalid',
+                    }),
+                );
             }
 
             const { createdAt } = verification;
@@ -291,15 +313,23 @@ export default class AuthController {
             const diffMinutes = Math.round(diff / 60000);
 
             if (diffMinutes > 15) {
-                return res.status(400).json({
-                    message: 'Code expired',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Code expired',
+                        i18n: 'error.auth.password.reset.code.expired',
+                    }),
+                );
             }
 
             if (newPassword !== confirmPassword) {
-                return res.status(400).json({
-                    message: 'Passwords do not match',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Passwords do not match',
+                        i18n: 'error.auth.password.reset.unmatched',
+                    }),
+                );
             }
 
             const user = await client.user.findFirst({
@@ -309,9 +339,13 @@ export default class AuthController {
             });
 
             if (!user) {
-                return res.status(400).json({
-                    message: 'User not found',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'User not found',
+                        i18n: 'error.user.not_found',
+                    }),
+                );
             }
 
             await client.user.update({
@@ -349,14 +383,22 @@ export default class AuthController {
                 },
             });
             if (!user) {
-                return res.status(400).json({
-                    message: 'User not found',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'User not found',
+                        i18n: 'error.user.not_found',
+                    }),
+                );
             }
             if (!user.verifiedEmail) {
-                return res.status(400).json({
-                    message: 'User not verified',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'User not verified',
+                        i18n: 'error.user.email.not_verified',
+                    }),
+                );
             }
             await passwordResetCode(user.id);
             res.sendStatus(200);
@@ -380,23 +422,41 @@ export default class AuthController {
             });
 
             if (!userPassword) {
-                return res.status(400).json({
-                    message: 'User not found',
-                });
+                // return res.status(400).json({
+                //     message: 'User not found',
+                // });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'User not found',
+                        i18n: 'error.user.not_found',
+                    }),
+                );
             }
 
             if (confirmPassword !== newPassword) {
-                return res.status(400).json({
-                    message: 'Passwords do not match',
-                });
+                // return res.status(400).json({
+                //     message: 'Passwords do not match',
+                // });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Passwords do not match',
+                        i18n: 'error.user.password.not_match',
+                    }),
+                );
             }
 
             const isValid = checkPassword(oldPassword, userPassword.password);
 
             if (!isValid) {
-                return res.status(400).json({
-                    message: 'Invalid password',
-                });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Invalid password',
+                        i18n: 'error.user.password.invalid',
+                    }),
+                );
             }
 
             const hashedPassword = await hashPassword(newPassword);

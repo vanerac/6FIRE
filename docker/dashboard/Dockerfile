@@ -15,6 +15,8 @@ ENV SENTRY_AUTH_TOKEN $SENTRY_AUTH_TOKEN
 COPY shared/ /shared/
 COPY --from=install /app ./
 
+RUN #ls -al node_modules && exit 1
+
 WORKDIR /shared
 RUN npm install axios
 RUN npm install form-data

@@ -1,8 +1,19 @@
 import type { NextPage } from 'next';
 import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import { useEffect } from 'react';
+import router from 'next/router';
 
 const CryptoWallet: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="crypto-wallet" />
@@ -382,3 +393,4 @@ const CryptoWallet: NextPage = (props: any) => {
 };
 
 export default CryptoWallet;
+// export default checkAuth(CryptoWallet);

@@ -1,11 +1,11 @@
-// @ts-ignore
-import cookieCutter from 'cookie-cutter';
-import {ApiClient} from '../services';
+import Cookies from 'universal-cookie';
+import {ApiClient} from "../services";
 
-export default function apiClient() {
-    // get token from cookies
-    const token = cookieCutter.get('myCookieName');
+export default function getApiClient(host: string = process.env.NEXT_PUBLIC_API_ROUTE) {
+    const cookies = new Cookies();
+    cookies.get('API_TOKEN');
     return new ApiClient({
-        TOKEN: token,
+        TOKEN: cookies.get('API_TOKEN'),
+        BASE: host || 'http://localhost:8080'
     });
 }

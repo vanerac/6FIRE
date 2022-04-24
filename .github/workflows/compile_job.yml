@@ -1,4 +1,4 @@
-on: [workflow_call, workflow_dispatch]
+on: [ workflow_call, workflow_dispatch ]
 name: Compile Job
 jobs:
   lint:
@@ -26,5 +26,7 @@ jobs:
       - uses: actions/setup-node@v2.4.1
         with:
           node-version: '16'
+      - run: npx prisma generate
+        if: ${{ matrix.directories }} == 'apps/api'
       - run: npx tsc
         working-directory: ${{ matrix.directories }}

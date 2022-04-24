@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Topbar from '../components/topbar';
 
-import { User } from '@shared/services';
-import apiClient from '@shared/tools/apiClient';
+// import { ApiClient } from '@shared/services';
+// const apiClient = new ApiClient();
 
 // get userId from params
-export default function DetailsUtilisateurs(args: any) {
-    const { userId } = args.match.params;
-
-    const [$user, setUser] = useState<User | null>(null);
-
-    useEffect(() => {
-        apiClient().user.getUser(userId).then(setUser);
-    }, []);
+export default function DetailsUtilisateurs($args: any) {
+    // const { userId } = args.match.params;
+    //
+    // const [$user, setUser] = useState<User | null>(null);
+    //
+    // useEffect(() => {
+    //     apiClient.user.getUser(userId).then(setUser);
+    // }, []);
 
     return (
         <>

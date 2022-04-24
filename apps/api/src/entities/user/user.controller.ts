@@ -1,7 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
-import { CRUDController } from '../../types';
+import { ApiError, CRUDController } from '../../types';
 
 import { PrismaClient } from '@prisma/client';
+import createMollieClient from '@mollie/api-client';
+import configuration from '../../../configuration';
 
 const prisma = new PrismaClient();
 
@@ -11,6 +13,15 @@ export class UserController implements CRUDController {
             const users = prisma.user.findMany({
                 select: {
                     password: false,
+                    UserSubscription: {
+                        select: {
+                            Subscription: {
+                                select: {
+                                    name: true,
+                                },
+                            },
+                        },
+                    },
                 },
             });
             res.json(users);
@@ -107,17 +118,51 @@ export class UserController implements CRUDController {
         }
     }
 
-    public static setSubscription(req: Request, res: Response, next: NextFunction) {
+    public static async setSubscription(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
             const { body } = req;
-            const user = prisma.userSubscription.create({
-                data: {
-                    userId: +id,
-                    subscriptionId: +body.subscriptionId,
+
+            const user = await prisma.user.findFirst({
+                where: {
+                    id: +id,
                 },
             });
-            res.json(user);
+
+            if (!user) {
+                return next(
+                    new ApiError({
+                        status: 404,
+                        i18n: 'error.user.not_found',
+                        message: 'User not found',
+                    }),
+                );
+            }
+
+            const customerId = await createMollieClient({ apiKey: configuration.MOLLIE_API_KEY }).customers.create({
+                name: user.firstName,
+                email: body.email,
+            });
+
+            const userSub = prisma.userSubscription.create({
+                data: {
+                    User: {
+                        connect: {
+                            id: +id,
+                        },
+                    },
+                    Subscription: {
+                        connect: {
+                            id: +body.subscriptionId,
+                        },
+                    },
+                    customerId: customerId.id,
+                    paymentId: '',
+                    status: 'active',
+                    price: 0,
+                },
+            });
+            res.json(userSub);
         } catch (error) {
             next(error);
         }

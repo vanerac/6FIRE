@@ -5,6 +5,7 @@ import configuration from '../../configuration';
 import { User } from '@shared/services';
 
 import { PrismaClient } from '@prisma/client';
+import { ApiError } from '../types';
 
 const prisma = new PrismaClient();
 
@@ -60,10 +61,13 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
     const access_token = getAccessToken(req);
 
     if (!access_token) {
-        return res.status(401).send({
-            status: 'error',
-            message: 'Access denied. No token provided.',
-        });
+        return next(
+            new ApiError({
+                status: 401,
+                message: 'Unauthorized',
+                i18n: 'error.auth.missing',
+            }),
+        );
     }
 
     try {
@@ -72,23 +76,32 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
             req.user = decoded;
             next();
         } else {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Invalid token.',
-            });
+            return next(
+                new ApiError({
+                    status: 401,
+                    message: 'Unauthorized',
+                    i18n: 'error.auth.invalid',
+                }),
+            );
         }
     } catch (error: any) {
         if (error.name === 'TokenExpiredError') {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Token expired.',
-            });
+            return next(
+                new ApiError({
+                    status: 401,
+                    message: 'Access denied. Token expired.',
+                    i18n: 'error.auth.expired',
+                }),
+            );
         } else {
             console.log(error);
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Invalid token.',
-            });
+            return next(
+                new ApiError({
+                    status: 401,
+                    message: 'Access denied. Invalid token.',
+                    i18n: 'error.auth.invalid',
+                }),
+            );
         }
     }
 };
@@ -98,10 +111,13 @@ export async function isAdmin(req: Request, res: Response, next: NextFunction) {
         const { user } = req;
 
         if (!user) {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. No token provided.',
-            });
+            return next(
+                new ApiError({
+                    status: 401,
+                    message: 'Access denied. No token provided.',
+                    i18n: 'error.auth.missing',
+                }),
+            );
         }
 
         prisma.user
@@ -114,18 +130,24 @@ export async function isAdmin(req: Request, res: Response, next: NextFunction) {
                 if (user.isAdmin) {
                     next();
                 } else {
-                    return res.status(401).send({
-                        status: 'error',
-                        message: 'Access denied. Invalid token.',
-                    });
+                    return next(
+                        new ApiError({
+                            status: 401,
+                            message: 'Access denied. Invalid token.',
+                            i18n: 'error.auth.invalid',
+                        }),
+                    );
                 }
             });
     } catch (error: any) {
         console.log(error);
-        return res.status(401).send({
-            status: 'error',
-            message: 'Access denied. Invalid token.',
-        });
+        return next(
+            new ApiError({
+                status: 401,
+                message: 'Access denied. Invalid token.',
+                i18n: 'error.auth.invalid',
+            }),
+        );
     }
 }
 

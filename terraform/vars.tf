@@ -94,3 +94,11 @@ variable "rds_cluster_identifier" {
 variable "az_count" {
   default = 2
 }
+
+
+variable "api_env_mollie_api_key" {
+  description = "The Mollie API key"
+  type        = string
+  default     = "mollie-api-key"
+  sensitive   = true
+}

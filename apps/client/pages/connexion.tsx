@@ -7,7 +7,8 @@ import { useState } from 'react';
 import apiClient from '@shared/tools/apiClient';
 // import axios from 'axios';
 
-const Home: NextPage = (props: any) => {
+
+const Connexion: NextPage = (props: any) => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [userSurName, setUserSurName] = useState('');
@@ -21,6 +22,7 @@ const Home: NextPage = (props: any) => {
     const [showPassword, setShowPassword] = useState('password');
     const [cguChecked, setCguChecked] = useState(false);
     const [errorCgu, setErrorCgu] = useState('');
+    const cookies = new Cookies();
 
     const create_account = () => {
         let isValid = true;
@@ -73,6 +75,7 @@ const Home: NextPage = (props: any) => {
         }
 
         if (!isValid) return;
+
         apiClient()
             .auth.register({
                 password: password,
@@ -82,8 +85,15 @@ const Home: NextPage = (props: any) => {
                 lastName: userSurName,
                 telephone: userPhone,
             })
-            .then(() => {
-                router.push('/articlesPage');
+            .then((response) => {
+                console.log(response);
+                if (response.token) {
+                    cookies.set('API_TOKEN', response.token, { path: '/' });
+                    router.push('/articlesPage');
+                }
+            })
+            .catch((error) => {
+                console.log(error);
             });
     };
 
@@ -477,4 +487,4 @@ const Home: NextPage = (props: any) => {
     );
 };
 
-export default Home;
+export default Connexion;

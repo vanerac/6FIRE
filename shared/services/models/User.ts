@@ -17,4 +17,9 @@ export type User = {
     verifiedEmail?: boolean;
     verifiedPhone?: boolean;
     banned?: boolean;
+    UserSubscription?: {
+        Subscription?: {
+            name?: string;
+        };
+    };
 };
