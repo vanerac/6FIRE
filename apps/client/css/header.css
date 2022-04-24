@@ -945,16 +945,9 @@ a{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: calc(50px + (120 - 50) * ((100vw - 320px) / (1920 - 320)));
 }
-.logo span{
-    position: relative !important;
-}
-.logo img{
-    position: relative !important;
-    min-width: fit-content !important;
-    height: fit-content !important;
-    width: 10px calc(150px + (175 - 150) * ((100vw - 320px) / (1920 - 320))) !important;
-}
+
 .main-nav-bar{
     background-color: var(--licorice);
     display: flex;

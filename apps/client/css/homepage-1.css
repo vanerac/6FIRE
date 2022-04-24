@@ -2711,7 +2711,7 @@ body{
 .article_wrapper{
   max-width: 1400px;
   margin: 145px auto 80px;
-  padding: 0 5%;
+  padding: 0 3%;
   margin-top: calc(145px + 3%);
   background-color: var(--black-3);
 }

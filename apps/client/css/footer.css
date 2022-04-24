@@ -1,213 +1,44 @@
-.footer-footer-SAHlos {
-    background-color: transparent;
-    bottom: 0;
-    height: 210px;
-    left: 0px;
-    /* position: absolute; *//* temp disable */
-    position: relative;
-    width: 100%;
+#footer_block{
+    background-color: #121212;
+    padding: 30px 5%;
+    font-family: var(--font-family-lato);
 
-    display: none; /* temp */
 }
-
-.footer-background-BaKdMY {
-    background-color: var(--licorice);
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
+#footer_block a{
+    transition: all 0.5s ease;
+}
+#footer_block a:hover{
+    color: #b30f10;
+}
+#footer_block .footer-logo img{
+    max-width: calc(90px + (120 - 90) * ((100vw - 320px) / (1920 - 320)));
     width: 100%;
 }
-
-.footer-menu-footer-BaKdMY {
-    background-color: transparent;
-    height: 20px;
-    position: absolute;
-    right: 185px;
-    top: calc(47.37% - 9px);
-    width: 470px;
+#footer_block .footer-nav .social img{max-width: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));}
+#footer_block .footer-nav .social a {display: inline-block; margin: 0 15px;}
+#footer_block .copyright{text-align: center; color: #909090; font-size: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))); padding: 15px 0;}
+#footer_block .footer-menu-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+    max-width: 1750px;
+    margin: auto;
+    padding: 0 3%;
+    border-bottom: 1px solid #707070;
+    padding-bottom: calc(15px + (35 - 15) * ((100vw - 320px) / (1920 - 320)));
 }
+#footer_block .footer-menu-wrapper .footer-nav-items{display: flex; align-items: center; margin-top: 15px;}
+#footer_block .footer-menu-wrapper .footer-nav-items li{padding: 5px 15px;}
+#footer_block .footer-menu-wrapper .footer-nav-items li a{color: #fff; display: inline-block; color: #747474;}
+#footer_block .footer-menu-wrapper .footer-nav-items li a:hover{color: #b30f10;}
 
-.footer-mentions-lgales-dKcD8f {
-    background-color: transparent;
-    height: calc(100% + 2px);
-    left: 70px;
-    letter-spacing: 0.56px;
-    line-height: 14px;
-    position: absolute;
-    text-align: left;
-    top: 3px;
-    white-space: nowrap;
-    width: 111px;
-}
-
-.footer-cgu-dKcD8f {
-    background-color: transparent;
-    height: calc(100% + 2px);
-    left: calc(45.12% - 13px);
-    letter-spacing: 0.56px;
-    line-height: 14px;
-    position: absolute;
-    text-align: left;
-    top: 3px;
-    white-space: nowrap;
-    width: 29px;
-}
-
-.footer-cgv-dKcD8f {
-    background-color: transparent;
-    height: calc(100% + 2px);
-    letter-spacing: 0.56px;
-    line-height: 14px;
-    position: absolute;
-    right: calc(44.47% - 12px);
-    text-align: left;
-    top: 3px;
-    white-space: nowrap;
-    width: 27px;
-}
-
-.footer-politique-de-confidentialit-dKcD8f {
-    background-color: transparent;
-    height: calc(100% + 2px);
-    letter-spacing: 0.56px;
-    line-height: 14px;
-    position: absolute;
-    right: -2px;
-    text-align: left;
-    top: 3px;
-    white-space: nowrap;
-    width: 181px;
-}
-
-.footer-politique-de-confidentialit-oLo3wS {
-    background-color: transparent;
-    height: calc(100% + 2px);
-    letter-spacing: 0.56px;
-    line-height: 14px;
-    position: absolute;
-    right: 0px;
-    text-align: left;
-    top: 3px;
-    white-space: nowrap;
-    width: 181px;
-}
-
-.footer-contact-dKcD8f {
-    background-color: transparent;
-    height: calc(100% + 2px);
-    left: 0px;
-    letter-spacing: 0.56px;
-    line-height: 14px;
-    position: absolute;
-    text-align: left;
-    top: 3px;
-    white-space: nowrap;
-    width: 52px;
-}
-
-.footer-x2022-6-fire-invest-BaKdMY {
-    background-color: transparent;
-    bottom: 18px;
-    height: 23px;
-    letter-spacing: 0.56px;
-    line-height: 14px;
-    opacity: 0.5;
-    position: absolute;
-    right: calc(49.88% - 74px);
-    text-align: left;
-    white-space: nowrap;
-    width: 149px;
-}
-
-.footer-logo-BaKdMY {
-    background-color: transparent;
-    height: 58px;
-    left: 191px;
-    position: absolute;
-    top: calc(33.01% - 19px);
-    width: 199px;
-}
-
-.footer-groupe-2-4tGdAy {
-    background-color: transparent;
-    bottom: calc(50% - 10px);
-    height: 21px;
-    position: absolute;
-    right: 0px;
-    width: 113px;
-}
-
-.footer-groupe-1-xjk9Ad {
-    background-color: transparent;
-    height: 100%;
-    left: 1px;
-    object-fit: cover;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-}
-
-.footer-effect-4tGdAy {
-    background-color: transparent;
-    height: 100%;
-    left: 0px;
-    object-fit: cover;
-    position: absolute;
-    top: 0px;
-    width: 86px;
-}
-
-.footer-ligne-31-BaKdMY {
-    background-color: transparent;
-    bottom: 31.58%;
-    height: 1px;
-    left: 72px;
-    object-fit: cover;
-    position: absolute;
-    width: calc(100% - 143px);
-}
-
-.footer-groupe-3011-BaKdMY {
-    background-color: transparent;
-    height: 21px;
-    position: absolute;
-    right: 215px;
-    top: calc(26.53% - 6px);
-    width: 21px;
-}
-
-.footer-icon-instagram-GiDxHj {
-    background-color: transparent;
-    height: 100%;
-    left: 1px;
-    object-fit: cover;
-    position: absolute;
-    top: 1px;
-    width: 100%;
-}
-
-.footer-groupe-3010-BaKdMY {
-    background-color: transparent;
-    height: 18px;
-    position: absolute;
-    right: 185px;
-    top: calc(26.87% - 5px);
-    width: 16px;
-}
-
-.footer-icon-simple-tiktok-2zSnac {
-    background-color: transparent;
-    height: 100%;
-    left: 1px;
-    object-fit: cover;
-    position: absolute;
-    top: 1px;
-    width: 100%;
-}
-
-/* moble style 
-*******************/
-@media screen and (max-width: 767px) {
-    .footer-footer-SAHlos { display: none; /* temp */}
+/* Footer responsive 
+**********************/
+@media screen and (max-width: 850px) {
+    #footer_block .footer-menu-wrapper{flex-direction: column; text-align: center;}
+    .footer-logo {
+        margin-bottom: 30px;
+    }
+    #footer_block .footer-menu-wrapper .footer-nav-items{justify-content: center; flex-wrap: wrap;}
 }
