@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import router from 'next/router';
+// import router from 'next/router';
 import $ from 'jquery';
 import LoginPopup from './login';
 
@@ -24,7 +24,9 @@ const Header = (props: any) => {
                 {/* Hamburger icon style */}
                 <input id="menu__toggle" type="checkbox" />
                 <label
-                    onClick={() => {handleForm(); }}
+                    onClick={() => {
+                        handleForm();
+                    }}
                     className="menu__btn"
                     htmlFor="menu__toggle">
                     <span></span>
@@ -32,7 +34,13 @@ const Header = (props: any) => {
                 {/* Hamburger icon END */}
 
                 {/* Hamburger mobile */}
-                    <div className="mobile-hamburger" onClick={() => {mobileToggle(); }}>menu</div>
+                <div
+                    className="mobile-hamburger"
+                    onClick={() => {
+                        mobileToggle();
+                    }}>
+                    menu
+                </div>
                 {/* Hamburger mobile end */}
 
                 <div className="header-top">
@@ -261,7 +269,7 @@ const Header = (props: any) => {
                                                 <span className="icon">
                                                     <img src="/img/icon/Cryptomonnaies.png" alt="" />
                                                 </span>
-                                                <span className='nav-item'>Cryptommonaies</span>
+                                                <span className="nav-item">Cryptommonaies</span>
                                             </a>
                                         </li>
                                         <li>
@@ -269,7 +277,7 @@ const Header = (props: any) => {
                                                 <span className="icon">
                                                     <img src="/img/icon/nft.png" alt="" />
                                                 </span>
-                                                <span className='nav-item'>NFT</span>
+                                                <span className="nav-item">NFT</span>
                                             </a>
                                         </li>
                                         <li>
@@ -277,8 +285,8 @@ const Header = (props: any) => {
                                                 <span className="icon">
                                                     <img src="/img/icon/playtoearn.png" alt="" />
                                                 </span>
-                                                
-                                                <span className='nav-item'>Play to Earn</span>
+
+                                                <span className="nav-item">Play to Earn</span>
                                             </a>
                                         </li>
                                         <li>
@@ -286,8 +294,8 @@ const Header = (props: any) => {
                                                 <span className="icon">
                                                     <img src="/img/icon/immobilier.png" alt="" />
                                                 </span>
-                                                
-                                                <span className='nav-item'>Immobilier</span>
+
+                                                <span className="nav-item">Immobilier</span>
                                             </a>
                                         </li>
                                         <li>
@@ -295,23 +303,39 @@ const Header = (props: any) => {
                                                 <span className="icon">
                                                     <img src="/img/icon/ecommerce.png" alt="" />
                                                 </span>
-                                                
-                                                <span className='nav-item'>E-Commerce</span>
+
+                                                <span className="nav-item">E-Commerce</span>
                                             </a>
                                         </li>
-                                        <li><a href="#"><span className="nav-item">Autres thématiques</span></a>
-                                            <ul className='dropdown'>
-                                                <li><a href="#"><span className='nav-item'>Cryptommonaies</span></a></li>
-                                                <li><a href="#"><span className='nav-item'>Immobilier</span></a></li>
-                                                <li><a href="#"><span className='nav-item'>NFT</span></a></li>
-                                                <li><a href="#"><span className='nav-item'>Play to Earn</span></a></li>
+                                        <li>
+                                            <a href="#">
+                                                <span className="nav-item">Autres thématiques</span>
+                                            </a>
+                                            <ul className="dropdown">
+                                                <li>
+                                                    <a href="#">
+                                                        <span className="nav-item">Cryptommonaies</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span className="nav-item">Immobilier</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span className="nav-item">NFT</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span className="nav-item">Play to Earn</span>
+                                                    </a>
+                                                </li>
                                             </ul>
-                                        
                                         </li>
                                     </ul>
-                                    
                                 </div>
-
 
                                 <a href="#" className="espace">
                                     {' '}
