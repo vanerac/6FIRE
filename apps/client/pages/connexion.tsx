@@ -4,11 +4,13 @@ import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
 import { useState } from 'react';
-import { ApiClient } from '@shared/services';
+import { ApiError } from '@shared/services';
 import Cookies from 'universal-cookie';
 // import checkAuth from './components/checkAuth';
 import $ from 'jquery';
 import LoginPopup from './components/login';
+import getAPIClient from '@shared/tools/apiClient';
+// import translate from '@shared/translation'
 
 const Connexion: NextPage = () => {
     const [userName, setUserName] = useState('');
@@ -24,6 +26,7 @@ const Connexion: NextPage = () => {
     const [showPassword, setShowPassword] = useState('password');
     const [cguChecked, setCguChecked] = useState(false);
     const [errorCgu, setErrorCgu] = useState('');
+    const [error, setError] = useState('');
     const cookies = new Cookies();
 
     const handleForm = () => {
@@ -35,8 +38,9 @@ const Connexion: NextPage = () => {
     };
 
     const create_account = () => {
-        const apiClient = new ApiClient();
+        // const apiClient = new ApiClient();
         let isValid = true;
+        setError('');
 
         if (userName === '') {
             setErrorUserName("Votre nom d'utilisateur est obligatoire");
@@ -86,9 +90,8 @@ const Connexion: NextPage = () => {
         }
 
         if (!isValid) return;
-        console.log('ok');
-        apiClient.auth
-            .register({
+        getAPIClient()
+            .auth.register({
                 password: password,
                 CGU: cguChecked,
                 email: userMail,
@@ -103,8 +106,15 @@ const Connexion: NextPage = () => {
                     router.push('/articlesPage');
                 }
             })
-            .catch((error) => {
-                console.log(error);
+            .catch((error: ApiError) => {
+                setError(error.body.i18n);
+                setUserName('');
+                setPassword('');
+                setUserSurName('');
+                setUserMail('');
+                setUserPhone('');
+                setCguChecked(false);
+                console.log(error.body.i18n);
             });
     };
 
@@ -134,6 +144,7 @@ const Connexion: NextPage = () => {
                         type="checkbox"
                         id="cgu"
                         name="cgu"
+                        checked={cguChecked}
                         onChange={() => {
                             if (cguChecked === false) {
                                 setErrorCgu('');
@@ -261,6 +272,9 @@ const Connexion: NextPage = () => {
                     </div>
                 </div>
                 <div onClick={create_account} className="button-sign-in-WxaGAS">
+                    <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                        {error}
+                    </div>
                     <div className="button-cration-de-compte-43BKS5">
                         <div className="rectangle-3470-C8EDSj"></div>
                         <div className="crer-un-compte-C8EDSj">Créer un compte</div>
@@ -471,6 +485,9 @@ const Connexion: NextPage = () => {
                     />
                 </div>
                 <div onClick={create_account} className="button-sign-in-qfTrnm">
+                    <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                        {error}
+                    </div>
                     <div className="button-cration-de-compte-TU0AFD">
                         <div className="rectangle-3470-1QO1gL"></div>
                         <div className="crer-un-compte-1QO1gL">Créer un compte</div>

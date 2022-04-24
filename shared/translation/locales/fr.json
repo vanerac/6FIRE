@@ -28,7 +28,8 @@
       "not_found": "Utilisateur introuvable",
       "email": {
         "not_verified": "Votre adresse email n'a pas été vérifiée"
-      }
+      },
+      "duplicate": "Cet utilisateur existe déjà"
     },
     "article": {
       "forbidden": "Vous n'avez pas les droits pour accéder à cet article",

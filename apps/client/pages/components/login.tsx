@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 // import Image from 'next/image';
 // import router from 'next/router';
+import { ApiError } from '@shared/services';
+import router from 'next/router';
+import Cookies from 'universal-cookie';
+import getAPIClient from '@shared/tools/apiClient';
 
 const LoginPopup = (props: any) => {
     console.log(props);
@@ -9,23 +13,44 @@ const LoginPopup = (props: any) => {
     const [passwordError, setPasswordError] = useState('');
     const [mail, setMail] = useState('');
     const [mailError, setMailError] = useState('');
-    // let isValid = true;
+    let isValid = true;
+    const [error, setError] = useState('');
+    const cookies = new Cookies();
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        if (password.length < 6) {
+
+        if (password.length < 8) {
             setPasswordError('Votre mot de passe doit contenir au moins 8 caractères');
         }
         if (mail === '') {
             setMailError('Votre mail est obligatoire');
-            // isValid = false;
+            isValid = false;
         } else if (
             !mail.match(
                 /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
             )
         ) {
             setMailError("Votre mail n'est pas valide");
-            // isValid = false;
+            isValid = false;
+        }
+        if (isValid) {
+            getAPIClient()
+                .auth.login({
+                    email: mail,
+                    password: password,
+                })
+                .then((response: any) => {
+                    console.log(response);
+                    if (response.token) {
+                        cookies.set('API_TOKEN', response.token, { path: '/' });
+                        router.push('/articlesPage');
+                    }
+                })
+                .catch((error: ApiError) => {
+                    console.log(error.body.i18n);
+                    setError(error.body.i18n);
+                });
         }
         console.log(mail, password);
     };
@@ -70,6 +95,7 @@ const LoginPopup = (props: any) => {
                             Mot de passe oublié ?
                         </a>
                     </div>
+                    {error && <span style={{ color: 'red' }}>{error}</span>}
                     <div className="item-center">
                         <input onClick={handleSubmit} type="submit" value={'Me connecter'} />
                     </div>

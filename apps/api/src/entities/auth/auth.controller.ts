@@ -120,9 +120,16 @@ export default class AuthController {
             });
         } catch (error) {
             if (error.code === 'P2002') {
-                return res.status(400).json({
-                    message: 'User already exists',
-                });
+                // return res.status(400).json({
+                //     message: 'User already exists',
+                // });
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'User already exists',
+                        i18n: 'error.user.duplicate',
+                    }),
+                );
             }
             return next(error);
         } finally {
