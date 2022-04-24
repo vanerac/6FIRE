@@ -20,7 +20,7 @@ const LoginPopup = (props: any) => {
                         type="password"
                         name="password"
                         id="log_password"
-                        placeholder="* Mot de passe"
+                        placeholder="*Mot de passe"
                     />
                     <div className="item-center">
                         <a href="#" className="reset_password">
