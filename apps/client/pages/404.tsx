@@ -7,7 +7,19 @@ import Header from './components/header';
 const NotFoundPage: NextPage = (props: any) => {
     return (
         <div>
-            <input type="hidden" id="anPageName" name="page" value="homepage-1" />
+            <div className="not_found_page">
+                <div>
+                    <div className="logo">
+                        <img src="/img/404.png" alt="" />
+                        <p>Oups, la page que vous recherchez est introuvable</p>
+                        <a href="#" className="primary-button">
+                            <span>Retour à l’accueil</span> 
+                            <div className="right-arrow"><img src="/img/icon/right-arrow.png" alt="" /></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {/* <input type="hidden" id="anPageName" name="page" value="homepage-1" />
             <div className="homepage-1 screen">
                 <Footer />
                 <div style={{ height: 'calc(100% - 263px)' }} className="background-1CdAvu">
@@ -35,8 +47,8 @@ const NotFoundPage: NextPage = (props: any) => {
                         <Image layout="fill" src="/img/line-41-2@1x.png" />
                     </div>
                 </div>
-            </div>
-            <div className="homepage-1-mobile screen">
+            </div> */}
+            {/* <div className="homepage-1-mobile screen">
                 <div className="background-3xxVvY"></div>
                 <div className="rectangle-3484-3xxVvY"></div>
                 <div className="logo-3xxVvY">
@@ -134,7 +146,7 @@ const NotFoundPage: NextPage = (props: any) => {
                 <div className="ligne-41-3xxVvY">
                     <Image layout="fill" src="/img/ligne-41-15@1x.png" />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
