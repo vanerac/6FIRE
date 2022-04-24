@@ -9,6 +9,7 @@ import { QueryResultRow } from 'pg';
 import cookieParser from 'cookie-parser';
 import * as Sentry from '@sentry/node';
 import * as Tracing from '@sentry/tracing';
+import { ApiError } from './types';
 
 declare module 'express' {
     interface Request {
@@ -68,8 +69,11 @@ app.use(
 // Format error response
 app.use((err, req, res, $next) => {
     // format error
-    console.log('error', err);
+    if (!(err instanceof ApiError)) {
+        Sentry.captureException(err);
+    }
     res.status(err.status || 500).json({
+        i18n: err.i18n ?? 'error.unknown',
         message: err.message,
         errors: err.errors,
     });
@@ -126,10 +130,10 @@ app.get('/', (req, res) => {
 app.use('/public', express.static(configuration.UPLOAD_DIR));
 
 app.use((err, req, res, $next) => {
-    // format error
-    console.log('error', err);
-    Sentry.captureException(err);
-    console.log('sent', err);
+    if (!(err instanceof ApiError)) {
+        Sentry.captureException(err);
+    }
+
     res.status(err.status || 500).json({
         i18n: err.i18n ?? 'error.unknown',
         message: err.message,
