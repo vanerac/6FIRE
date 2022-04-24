@@ -37,10 +37,13 @@
     "api": {
       "coinmarketcap": "Une erreur est survenue lors de la récupération des données de coinmarketcap",
       "coinimg": "Une erreur est survenue lors de la récupération des images de coins"
-      }
     },
-    "format": {
-      "missing_fields": "Certains champs sont manquants"
-    }
+    "offer": {
+      "not_found": "Offre introuvable"
+    },
+    "notImplemented": "Cette fonctionnalité n'est pas encore implémentée"
+  },
+  "format": {
+    "missing_fields": "Certains champs sont manquants"
   }
 }

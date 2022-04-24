@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { CRUDController } from '../../types';
+import { ApiError, CRUDController } from '../../types';
 
 import { PrismaClient } from '@prisma/client';
 import createMollieClient from '@mollie/api-client';
@@ -130,7 +130,13 @@ export class UserController implements CRUDController {
             });
 
             if (!user) {
-                throw new Error('User not found');
+                return next(
+                    new ApiError({
+                        status: 404,
+                        i18n: 'error.user.not_found',
+                        message: 'User not found',
+                    }),
+                );
             }
 
             const customerId = await createMollieClient({ apiKey: configuration.MOLLIE_API_KEY }).customers.create({
