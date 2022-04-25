@@ -3203,6 +3203,7 @@ body{
 ***************************/
 .infor-form{
   color: #fff;
+  margin-top: 25px;
 }
 .infor-form form{
     display: flex;
@@ -3326,6 +3327,10 @@ body{
   .infor-form form{
     flex-direction: column;
     row-gap: 15px;
+  }
+  .price-cart{
+    flex-direction: column;
+    row-gap: 30px;
   }
 }
 @media screen and (max-width: 480px) {
