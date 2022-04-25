@@ -11,7 +11,7 @@ const PolitiqueConfidentialite: NextPage = (props: any) => {
 
             <div className="general_text_wrapper">
                 <div className="main-title">
-                    <h3 className="title">Conditions Générales de Vente</h3>
+                    <h3 className="title">Politique de Confidentialité</h3>
                 </div>
 
                 {/* Text box with title, you can copy to generate new text block */}
