@@ -3146,3 +3146,57 @@ body{
 .button-sign-in-WxaGAS .primary-button:hover img{
   filter: brightness(0) invert(0);
 }
+
+
+/* Compte and other general page style 
+****************************************/
+.account-wrapper{
+  max-width: 1400px;
+  margin: 145px auto 80px;
+  padding: 0 3%;
+  margin-top: calc(145px + 3%);
+  background-color: var(--black-3);
+  font-family: var(--font-family-lato);
+  color: #fff;
+  min-height: 40vh;
+}
+.account-wrapper .main-title .title{
+  font-size: 16px;
+  line-height: 1.5;
+}
+.account-wrapper .main-title .title span{
+  display: block;
+}
+.account-wrapper .informaion-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: calc(15px + (35 - 15) * ((100vw - 320px) / (1920 - 320)));
+  margin-top: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+}
+.account-wrapper .single-info{
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  color: #161a1a;
+}
+.account-wrapper .single-info p{
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 600;
+
+}
+.account-wrapper .single-info p span{
+  display: block;
+  font-weight: normal;
+}
+/* Responsive */
+@media screen and (max-width: 767px) {
+  .account-wrapper .informaion-wrapper{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .account-wrapper .informaion-wrapper{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
