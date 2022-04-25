@@ -246,10 +246,10 @@ const Connexion: NextPage = (props: any) => {
                     </div>
                 </div>
                 <div onClick={create_account} className="button-sign-in-WxaGAS">
-                    <div className="button-cration-de-compte-43BKS5">
-                        <div className="rectangle-3470-C8EDSj"></div>
-                        <div className="crer-un-compte-C8EDSj">Créer un compte</div>
-                    </div>
+                    <a href="#" className="primary-button">
+                        <span>Créer un compte</span> 
+                        <div className="right-arrow"><img src="/img/icon/right-arrow.png" alt="" /></div>
+                    </a>
                 </div>
                 <div className="dj-inscrit-connectez-vous-WxaGAS">
                     <Link href="/">

@@ -3132,3 +3132,18 @@ body{
   width: 100%;
   
 }
+
+/* Connexion page button style */
+.button-sign-in-WxaGAS .primary-button{
+  display: inline-flex;
+  background-color: transparent;
+  border: 1px solid #3a3a3a;
+  color: #3a3a3d;
+}
+.button-sign-in-WxaGAS .primary-button:hover{
+  background-color: #fff;
+  color: #3a3a3a;
+}
+.button-sign-in-WxaGAS .primary-button:hover img{
+  filter: brightness(0) invert(0);
+}
