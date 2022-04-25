@@ -2797,6 +2797,13 @@ body{
 }
 
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .login_popup_wrapper{
+    width: 50%;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
   .login_popup_wrapper{
     width: 100%;
@@ -2845,6 +2852,7 @@ body{
 }
 .login_popup_wrapper form{
   margin: 45px 0;
+  padding: 0 15px;
 }
 .login_popup_wrapper .reset_password{
     color: #fff;
