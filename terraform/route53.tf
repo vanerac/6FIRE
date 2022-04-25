@@ -15,8 +15,12 @@ variable "subdomains" {
   ]
 }
 
-data "aws_route53_zone" "test" {
+data "aws_route53_zone" "default" {
   name = "6fireinvest.com"
+}
+
+data "aws_route53_zone" "fr" {
+  name = "6fireinvest.fr"
 }
 
 data "aws_route53_zone" "zone" {
@@ -100,6 +104,17 @@ resource "aws_acm_certificate" "default" {
 }
 
 
+// redirect fr to 6fireinvest.com
+#resource "aws_route53_record" "fr" {
+#  name    = "6fireinvest.fr"
+#  type    = "A"
+#  zone_id = data.aws_route53_zone.fr.zone_id
+#  records = [
+#    aws_acm_certificate.default.domain_name,
+#  ]
+#
+#}
+
 resource "aws_route53_record" "ssl" {
   for_each = {
   for dvo in aws_acm_certificate.default.domain_validation_options : dvo.domain_name => {
@@ -110,7 +125,7 @@ resource "aws_route53_record" "ssl" {
   }
 
 
-  zone_id = data.aws_route53_zone.test.zone_id
+  zone_id = data.aws_route53_zone.default.zone_id
   name    = each.value.name
   type    = each.value.type
   ttl     = 60

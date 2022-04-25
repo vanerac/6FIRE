@@ -107,8 +107,13 @@ resource "aws_alb_listener" "api" {
   port              = "80"
   protocol          = "HTTP"
   default_action {
-    target_group_arn = aws_alb_target_group.api.id
-    type             = "forward"
+    #    target_group_arn = aws_alb_target_group.api.id
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
   }
 }
 // add 443
@@ -135,8 +140,13 @@ resource "aws_alb_listener" "client" {
   port              = "80"
   protocol          = "HTTP"
   default_action {
-    target_group_arn = aws_alb_target_group.client.id
-    type             = "forward"
+    #    target_group_arn = aws_alb_target_group.api.id
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
   }
 }
 // add 443
@@ -163,8 +173,13 @@ resource "aws_alb_listener" "dashboard" {
   port              = "80"
   protocol          = "HTTP"
   default_action {
-    target_group_arn = aws_alb_target_group.dashboard.id
-    type             = "forward"
+    #    target_group_arn = aws_alb_target_group.api.id
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
   }
 }
 
