@@ -1,13 +1,15 @@
 import { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+import { Scraper } from '@shared/scraper/scrape';
+import configuration from '../../../configuration';
 
 const prisma = new PrismaClient();
 
 export default class TraderController {
     static async getTopTraders(req: Request, res: Response) {
         try {
-            // Todo: Implement Apify client
-            throw new Error('Not implemented');
+            const traders = await Scraper.getInstance(configuration.APIFY_API_KEY).scrapeLeaderboards();
+            res.status(200).json(traders);
         } catch (error) {
             res.status(500).json({
                 message: error.message,

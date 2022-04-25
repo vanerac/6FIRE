@@ -1,16 +1,24 @@
-import { ApifyClient } from 'apify-client';
+import {ApifyClient} from 'apify-client';
 import * as querystring from 'querystring';
-import { Trader } from './types';
+import {Trader} from "./types";
 
 export class Scraper {
+    private static instance: Scraper;
     private ApifyClient: ApifyClient;
     private readonly actor = 'tugkan/binance-futures-leaderboard';
 
-    constructor(private token: string) {
+    private constructor(private token: string) {
         console.log('Scraper constructor', token);
         this.ApifyClient = new ApifyClient({
             token,
         });
+    }
+
+    static getInstance(apiKey: string): Scraper {
+        if (this.instance) {
+            return this.instance;
+        }
+        return this.instance = new Scraper(apiKey)
     }
 
     async scrapeLeaderboards(): Promise<Trader[]> {
@@ -54,14 +62,14 @@ export class Scraper {
             },
         };
 
-        const { defaultDatasetId } = await this.ApifyClient.actor(this.actor).call(options);
+        const {defaultDatasetId} = await this.ApifyClient.actor(this.actor).call(options);
 
-        const { items } = await this.ApifyClient.dataset(defaultDatasetId).listItems();
+        const {items} = await this.ApifyClient.dataset(defaultDatasetId).listItems();
 
         return items as any[];
     }
 
-    async scrapeProfile(profileIds: string[]): Promise<Trader[]> {
+    async scrapeProfile(profileIds: string[]): Promise<Trader> {
         const urls = profileIds.map((profileId) => {
             return {
                 url: `https://www.binance.com/fr/futures-activity/leaderboard?type=myProfile&tradeType=PERPETUAL&encryptedUid=${profileId}`,
@@ -79,10 +87,10 @@ export class Scraper {
             },
         };
 
-        const { defaultDatasetId } = await this.ApifyClient.actor(this.actor).call(options);
+        const {defaultDatasetId} = await this.ApifyClient.actor(this.actor).call(options);
 
-        const { items } = await this.ApifyClient.dataset(defaultDatasetId).listItems();
+        const {items} = await this.ApifyClient.dataset(defaultDatasetId).listItems();
 
-        return items as any[];
+        return items as any;
     }
 }

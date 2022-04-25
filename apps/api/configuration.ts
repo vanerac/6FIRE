@@ -10,4 +10,5 @@ export default {
     SMS_API_KEY: process.env.SMS_API_KEY ?? '',
     UPLOAD_DIR: process.env.UPLOAD_DIR ?? '../../data/uploads',
     COINMARKETCAP_API_KEY: process.env.COIN_MARKET_API_KEY ?? '',
+    APIFY_API_KEY: process.env.APIFY_API_KEY ?? '',
 };
