@@ -16,7 +16,6 @@ const Cgv: NextPage = (props: any) => {
                 {/* Text box with title, you can copy to generate new text block */}
                 <div className="text">
                     {/* Text title */}
-                    <h4 className="title">paragraph title will goes here</h4>
                     <p>
                         Les présentes conditions générales de vente (ci-après les CGV) sont applicables à la vente en
                         ligne des services de la Société sur le Site, dont l’accès est libre et gratuit à tout
