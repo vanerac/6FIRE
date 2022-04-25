@@ -13,4 +13,5 @@ export default {
     SENTRY_DSN: process.env.SENTRY_DSN ?? '',
     COINMARKETCAP_API_KEY: process.env.COIN_MARKET_API_KEY ?? '',
     SERVER_ADDRESS: process.env.SERVER_ADDRESS ?? 'http://localhost:3333',
+    NODE_ENV: process.env.NODE_ENV || 'development',
 };

@@ -345,6 +345,10 @@ resource "aws_ecs_task_definition" "api" {
       {
         "name": "MOLLIE_API_KEY",
         "value": "${var.api_env_mollie_api_key}"
+      },
+      {
+        "name": "NEXT_PUBLIC_NODE_ENV",
+        "value": "production"
       }
     ],
     "logConfiguration": {
@@ -415,8 +419,12 @@ resource "aws_ecs_task_definition" "client" {
     ],
     "environment": [
       {
-        "name": "API_HOST",
-        "value": "${aws_alb.api.dns_name}"
+        "name": "NEXT_PUBLIC_NODE_ENV",
+        "value": "production"
+      },
+      {
+        "name": "NEXT_PUBLIC_API_ROUTE",
+        "value": "${aws_alb.api.dns_name}/api"
       }
     ],
     "logConfiguration": {
@@ -460,8 +468,12 @@ resource "aws_ecs_task_definition" "dashboard" {
     ],
     "environment": [
       {
-        "name": "API_HOST",
-        "value": "${aws_alb.api.dns_name}"
+        "name": "NEXT_PUBLIC_NODE_ENV",
+        "value": "production"
+      },
+      {
+        "name": "NEXT_PUBLIC_API_ROUTE",
+        "value": "${aws_alb.api.dns_name}/api"
       }
     ],
     "logConfiguration": {
@@ -489,7 +501,8 @@ resource "aws_ecs_service" "api" {
   #    type = "CODE_DEPLOY"
   #  }
 
-  tags = {
+  force_new_deployment = true
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-api"
@@ -517,7 +530,8 @@ resource "aws_ecs_service" "client" {
   #  deployment_controller {
   #    type = "CODE_DEPLOY"
   #  }
-  tags = {
+  force_new_deployment = true
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-client"
@@ -544,8 +558,8 @@ resource "aws_ecs_service" "dashboard" {
   #  deployment_controller {
   #    type = "CODE_DEPLOY"
   #  }
-
-  tags = {
+  force_new_deployment = true
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-dashboard"

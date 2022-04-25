@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
-import { ApiClient, Theme } from '@shared/services';
-
-const apiClient = new ApiClient();
+import { Theme } from '@shared/services';
+import apiClient from '@shared/tools/apiClient';
 
 export default function ThemesArticles() {
     const [$themes, setThemes] = useState<Theme[]>([]);
 
     useEffect(() => {
-        apiClient.themes.getThemes().then(setThemes);
+        apiClient().themes.getThemes().then(setThemes);
     }, []);
     return (
         <>

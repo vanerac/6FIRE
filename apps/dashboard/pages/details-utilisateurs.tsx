@@ -2,7 +2,6 @@ import React from 'react';
 import Topbar from '../components/topbar';
 
 // import { ApiClient } from '@shared/services';
-
 // const apiClient = new ApiClient();
 
 // get userId from params
