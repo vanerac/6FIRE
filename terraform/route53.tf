@@ -81,3 +81,14 @@ resource "aws_route53_record" "dashboard" {
   }
   #  provider = aws.account_route53
 }
+
+
+resource "aws_acm_certificate" "default" {
+  domain_name               = "6fireinvest.fr"
+  validation_method         = "DNS"
+  subject_alternative_names = [
+    "*.6fireinvest.fr",
+    "*.6fireinvest.com",
+  ]
+  #  provider = aws.account_acm
+}
