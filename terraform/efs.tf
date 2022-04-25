@@ -2,7 +2,7 @@
 
 resource "aws_subnet" "storage" {
   vpc_id            = aws_vpc.main.id
-  availability_zone = "eu-west-3a"
+  availability_zone = "eu-west-1a"
   cidr_block        = cidrsubnet(aws_vpc.main.cidr_block, 8, var.az_count + 10)
   tags              = {
     project = "6fire"
@@ -27,7 +27,7 @@ resource "aws_security_group" "storage" {
 resource "aws_efs_file_system" "main" {
   creation_token         = "6fire-efs-token"
   performance_mode       = "generalPurpose"
-  availability_zone_name = "eu-west-3a"
+  availability_zone_name = "eu-west-1a"
   tags                   = {
     project = "6fire"
   }

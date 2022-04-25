@@ -15,6 +15,10 @@ variable "subdomains" {
   ]
 }
 
+data "aws_route53_zone" "test" {
+  name = "6fireinvest.com"
+}
+
 data "aws_route53_zone" "zone" {
   for_each     = toset(var.domains)
   name         = each.value
@@ -80,4 +84,45 @@ resource "aws_route53_record" "dashboard" {
     zone_id                = aws_alb.dashboard.zone_id
   }
   #  provider = aws.account_route53
+}
+
+
+resource "aws_acm_certificate" "default" {
+  domain_name               = "6fireinvest.com"
+  validation_method         = "DNS"
+  subject_alternative_names = [
+    "*.6fireinvest.com",
+  ]
+  tags = {
+    project = "6fire"
+  }
+  #  provider = aws.account_acm
+}
+
+
+resource "aws_route53_record" "ssl" {
+  for_each = {
+  for dvo in aws_acm_certificate.default.domain_validation_options : dvo.domain_name => {
+    name   = dvo.resource_record_name
+    record = dvo.resource_record_value
+    type   = dvo.resource_record_type
+  }
+  }
+
+
+  zone_id = data.aws_route53_zone.test.zone_id
+  name    = each.value.name
+  type    = each.value.type
+  ttl     = 60
+  records = [
+    each.value.record,
+  ]
+
+  allow_overwrite = true
+}
+
+
+resource "aws_acm_certificate_validation" "default" {
+  certificate_arn         = aws_acm_certificate.default.arn
+  validation_record_fqdns = [for record in aws_route53_record.ssl : record.fqdn]
 }

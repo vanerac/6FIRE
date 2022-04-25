@@ -355,7 +355,7 @@ resource "aws_ecs_task_definition" "api" {
       "logDriver": "awslogs",
       "options": {
         "awslogs-group": "${aws_cloudwatch_log_group.api.name}",
-        "awslogs-region": "eu-west-3",
+        "awslogs-region": "eu-west-1",
         "awslogs-stream-prefix": "api"
       }
     },
@@ -431,7 +431,7 @@ resource "aws_ecs_task_definition" "client" {
       "logDriver": "awslogs",
       "options": {
         "awslogs-group": "${aws_cloudwatch_log_group.client.name}",
-        "awslogs-region": "eu-west-3",
+        "awslogs-region": "eu-west-1",
         "awslogs-stream-prefix": "client"
       }
     }
@@ -480,7 +480,7 @@ resource "aws_ecs_task_definition" "dashboard" {
       "logDriver": "awslogs",
       "options": {
         "awslogs-group": "${aws_cloudwatch_log_group.dashboard.name}",
-        "awslogs-region": "eu-west-3",
+        "awslogs-region": "eu-west-1",
         "awslogs-stream-prefix": "dashboard"
       }
     }
