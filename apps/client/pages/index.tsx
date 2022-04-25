@@ -1,10 +1,7 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
-import router from 'next/router';
-import Image from 'next/image';
 import Footer from './components/footer';
 
-const HomePage: NextPage = (props: any) => {
+const HomePage: NextPage = ($props: any) => {
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="homepage" />
@@ -20,13 +17,17 @@ const HomePage: NextPage = (props: any) => {
                     </div>
                     <div className="mb-equal">
                         <a href="#" className="primary-button">
-                            <span>Nous rejoindre</span> 
-                            <div className="right-arrow"><img src="/img/icon/right-arrow.png" alt="" /></div>
+                            <span>Nous rejoindre</span>
+                            <div className="right-arrow">
+                                <img src="/img/icon/right-arrow.png" alt="" />
+                            </div>
                         </a>
                     </div>
                     <div className="mb-equal">
                         <p className="big-text">Visionner la vidéo obligatoire pour comprendre le club privé 6FIRE</p>
-                        <div className="scroll-icon"><img src="img/icon-material-keyboard-arrow-down@1x.png" alt="" /></div>
+                        <div className="scroll-icon">
+                            <img src="img/icon-material-keyboard-arrow-down@1x.png" alt="" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,7 +42,7 @@ const HomePage: NextPage = (props: any) => {
             {/* Index Photo block END */}
 
             {/* Footer */}
-            
+
             <Footer />
         </div>
     );

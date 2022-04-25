@@ -273,8 +273,10 @@ const Connexion: NextPage = () => {
                 <div onClick={create_account} className="button-sign-in-WxaGAS">
                     <a href="#" className="primary-button">
                         {error}
-                        <span>Créer un compte</span> 
-                        <div className="right-arrow"><img src="/img/icon/right-arrow.png" alt="" /></div>
+                        <span>Créer un compte</span>
+                        <div className="right-arrow">
+                            <img src="/img/icon/right-arrow.png" alt="" />
+                        </div>
                     </a>
                 </div>
                 <div className="dj-inscrit-connectez-vous-WxaGAS">
