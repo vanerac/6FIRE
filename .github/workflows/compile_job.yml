@@ -9,6 +9,7 @@ jobs:
           - apps/api
           - apps/client
           - apps/dashboard
+          - apps/bot
       fail-fast: true
     runs-on: ubuntu-latest
     steps:
@@ -22,11 +23,12 @@ jobs:
             ./apps/api/node_modules
             ./apps/client/node_modules
             ./apps/dashboard/node_modules
+            ./apps/bot/node_modules
           key: modules-${{ hashFiles('package-lock.json') }}
       - uses: actions/setup-node@v2.4.1
         with:
           node-version: '16'
       - run: npx prisma generate
-        if: ${{ matrix.directories }} == 'apps/api'
+        if: ${{ matrix.directories }} == 'apps/api' || ${{ matrix.directories }} == 'apps/bot'
       - run: npx tsc
         working-directory: ${{ matrix.directories }}
