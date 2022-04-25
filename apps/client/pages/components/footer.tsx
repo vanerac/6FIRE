@@ -18,10 +18,10 @@ const Footer = (props: any) => {
                             <a href="#"><img src="/img/icon-simple-tiktok-1@1x.png" alt="social icon" /></a>
                         </div>
                         <ul className='footer-nav-items'>
-                            <li><a href="#">Mentions légales</a></li>
-                            <li><a href="#">CGU</a></li>
-                            <li><a href="#">CGV</a></li>
-                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="/mentionsLegales">Mentions légales</a></li>
+                            <li><a href="/cgu">CGU</a></li>
+                            <li><a href="/cgv">CGV</a></li>
+                            <li><a href="/politiqueConfidentialite">Politique de confidentialité</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
