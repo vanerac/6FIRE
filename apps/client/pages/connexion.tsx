@@ -271,13 +271,13 @@ const Connexion: NextPage = () => {
                     </div>
                 </div>
                 <div onClick={create_account} className="button-sign-in-WxaGAS">
-                    <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
+                    <a href="#" className="primary-button">
                         {error}
-                    </div>
-                    <div className="button-cration-de-compte-43BKS5">
-                        <div className="rectangle-3470-C8EDSj"></div>
-                        <div className="crer-un-compte-C8EDSj">Créer un compte</div>
-                    </div>
+                        <span>Créer un compte</span>
+                        <div className="right-arrow">
+                            <img src="/img/icon/right-arrow.png" alt="" />
+                        </div>
+                    </a>
                 </div>
                 <div className="dj-inscrit-connectez-vous-WxaGAS">
                     <Link href="/">

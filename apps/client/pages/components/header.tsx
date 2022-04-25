@@ -233,7 +233,7 @@ const Header = (props: any) => {
                         <div className="top-nav">
                             <div className="logo">
                                 <a href="./">
-                                    <Image layout="fill" src="/img/effect-13@1x.png" />
+                                    <img src="/img/logo/logo.svg" alt="" />
                                 </a>
                             </div>
                             <div className="right-nav-items">

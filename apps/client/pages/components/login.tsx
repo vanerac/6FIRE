@@ -87,7 +87,7 @@ const LoginPopup = (props: any) => {
                         type="password"
                         name="password"
                         id="log_password"
-                        placeholder="* Mot de passe"
+                        placeholder="*Mot de passe"
                     />
                     {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
                     <div className="item-center">

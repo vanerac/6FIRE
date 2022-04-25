@@ -2711,7 +2711,7 @@ body{
 .article_wrapper{
   max-width: 1400px;
   margin: 145px auto 80px;
-  padding: 0 5%;
+  padding: 0 3%;
   margin-top: calc(145px + 3%);
   background-color: var(--black-3);
 }
@@ -2797,6 +2797,13 @@ body{
 }
 
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .login_popup_wrapper{
+    width: 50%;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
   .login_popup_wrapper{
     width: 100%;
@@ -2845,6 +2852,7 @@ body{
 }
 .login_popup_wrapper form{
   margin: 45px 0;
+  padding: 0 15px;
 }
 .login_popup_wrapper .reset_password{
     color: #fff;
@@ -2974,4 +2982,167 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* 404 page style 
+*******************/
+.not_found_page{
+  height: calc(100vh - 138px);
+  margin-top: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #161a1a;
+  padding: 5%;
+  color: #fff;
+  font-family: var(--font-family-lato);
+  text-align: center;
+}
+.not_found_page .primary-button{margin-top: 30px;}
+.not_found_page .logo img{max-width: calc(200px + (600 - 200) * ((100vw - 320px) / (1920 - 320))); width: 100%; display: block; margin: auto;}
+.not_found_page .logo p{font-size: calc(14px + (22 - 14) * ((100vw - 320px) / (1920 - 320)));}
+
+.primary-button{
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  border-radius: 50px;
+  padding: 10px 25px;
+  color: #fff;
+  min-width: 200px;
+  transition: all 0.5s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-lato);
+}
+
+.primary-button span{margin-right: 0px;}
+.primary-button .right-arrow{
+    width: 0px;
+    transition: all 0.5s ease;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-button img{width: 100%;}
+.primary-button:hover .right-arrow{
+    margin-left: 5px;
+    width: 18px;
+}
+
+/* Generral text page like privacy policy and others
+***************************************************/
+.general_text_wrapper{
+  margin: calc(144px + 3%) auto;
+  margin-bottom: 3%;
+  color: #fff;
+  font-family: var(--font-family-lato);
+  max-width: 1400px;
+  padding: 0 3%;
+}
+.general_text_wrapper p:not(:last-child){
+  margin: 0;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+.general_text_wrapper .main-title .title{
+  font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+}
+.general_text_wrapper .text:not(:last-child) {
+  margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+}
+.general_text_wrapper .text .title{
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+  margin-top: 0;
+}
+
+/* Responsive this section */
+@media screen and (max-width: 767px) {
+  .general_text_wrapper{
+    margin: calc(103px + 5%) auto;
+    margin-bottom: 30px;
+  }
+}
+
+/* Homepage/index page header block 
+***********************************/
+.index-header{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-family-lato);
+  padding: 0 30px;
+  line-height: 1.5;
+}
+.index-header .mb-equal:not(:last-child){
+  margin-bottom: calc(40px + (80 - 40) * ((100vw - 320px) / (1920 - 320)));
+  display: block;
+}
+.index-header .index-logo img{
+  max-width: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
+}
+.index-header .scroll-icon img{
+  max-width: 19px;
+  margin-top: 10px;
+}
+.index-header p{
+  color: #99999f;
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+}
+.index-header p.big-text{
+  color: #fff;
+  font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+}
+.index-header .primary-button{
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+.index-header .primary-button:hover{
+  background-color: #fff;
+  color: #000;
+}
+.index-header .primary-button:hover img{
+  filter: brightness(0) invert(0);
+}
+
+/* index photo block
+==================== */
+.index-photo-block{
+  background-color: #121212;
+  padding: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+}
+.index-photo-block .contanier{
+  margin:  auto;
+  font-family: var(--font-family-lato);
+  max-width: 1400px;
+  padding: 0 3%;
+}
+.index-photo-block .contanier img{
+  max-width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  
+}
+
+/* Connexion page button style */
+.button-sign-in-WxaGAS .primary-button{
+  display: inline-flex;
+  background-color: transparent;
+  border: 1px solid #3a3a3a;
+  color: #3a3a3d;
+}
+.button-sign-in-WxaGAS .primary-button:hover{
+  background-color: #fff;
+  color: #3a3a3a;
+}
+.button-sign-in-WxaGAS .primary-button:hover img{
+  filter: brightness(0) invert(0);
 }
