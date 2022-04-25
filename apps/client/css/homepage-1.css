@@ -2980,11 +2980,12 @@ body{
 /* 404 page style 
 *******************/
 .not_found_page{
-  height: 100vh;
+  height: calc(100vh - 138px);
+  margin-top: 138px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #222;
+  background: #161a1a;
   padding: 5%;
   color: #fff;
   font-family: var(--font-family-lato);
@@ -2993,7 +2994,6 @@ body{
 .not_found_page .primary-button{margin-top: 30px;}
 .not_found_page .logo img{max-width: calc(200px + (600 - 200) * ((100vw - 320px) / (1920 - 320))); width: 100%; display: block; margin: auto;}
 .not_found_page .logo p{font-size: calc(14px + (22 - 14) * ((100vw - 320px) / (1920 - 320)));}
-.not_found_page .logo{}
 
 .primary-button{
   position: relative;
@@ -3019,3 +3019,36 @@ body{
     width: 18px;
 }
 
+/* Generral text page like privacy policy and others
+***************************************************/
+.general_text_wrapper{
+  margin: calc(144px + 3%) auto;
+  margin-bottom: 3%;
+  color: #fff;
+  font-family: var(--font-family-lato);
+  max-width: 1400px;
+  padding: 0 3%;
+}
+.general_text_wrapper p:not(:last-child){
+  margin: 0;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+.general_text_wrapper .main-title .title{
+  font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+}
+.general_text_wrapper .text:not(:last-child) {
+  margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+}
+.general_text_wrapper .text .title{
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+  margin-top: 0;
+}
+
+/* Responsive this section */
+@media screen and (max-width: 767px) {
+  .general_text_wrapper{
+    margin: calc(103px + 5%) auto;
+    margin-bottom: 30px;
+  }
+}
