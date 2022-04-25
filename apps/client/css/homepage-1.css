@@ -3015,13 +3015,20 @@ body{
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-family-lato);
 }
+
 .primary-button span{margin-right: 0px;}
 .primary-button .right-arrow{
     width: 0px;
     transition: all 0.5s ease;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.primary-button img{width: 100%;}
 .primary-button:hover .right-arrow{
     margin-left: 5px;
     width: 18px;
@@ -3059,4 +3066,69 @@ body{
     margin: calc(103px + 5%) auto;
     margin-bottom: 30px;
   }
+}
+
+/* Homepage/index page header block 
+***********************************/
+.index-header{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-family-lato);
+  padding: 0 30px;
+  line-height: 1.5;
+}
+.index-header .mb-equal:not(:last-child){
+  margin-bottom: calc(40px + (80 - 40) * ((100vw - 320px) / (1920 - 320)));
+  display: block;
+}
+.index-header .index-logo img{
+  max-width: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
+}
+.index-header .scroll-icon img{
+  max-width: 19px;
+  margin-top: 10px;
+}
+.index-header p{
+  color: #99999f;
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+}
+.index-header p.big-text{
+  color: #fff;
+  font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+}
+.index-header .primary-button{
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+.index-header .primary-button:hover{
+  background-color: #fff;
+  color: #000;
+}
+.index-header .primary-button:hover img{
+  filter: brightness(0) invert(0);
+}
+
+/* index photo block
+==================== */
+.index-photo-block{
+  background-color: #121212;
+  padding: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+}
+.index-photo-block .contanier{
+  margin:  auto;
+  font-family: var(--font-family-lato);
+  max-width: 1400px;
+  padding: 0 3%;
+}
+.index-photo-block .contanier img{
+  max-width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  
 }
