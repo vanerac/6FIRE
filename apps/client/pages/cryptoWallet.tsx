@@ -1,14 +1,24 @@
 import type { NextPage } from 'next';
+import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import { useEffect } from 'react';
+import router from 'next/router';
 
 const CryptoWallet: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="crypto-wallet" />
-            <div
-                className="crypto-wallet screen"
-                //   onclick="window.open('javascript:HideOverlay(%27crypto-wallet%27%2C%20%27animate-disappear%27);', '_self');"
-            >
+            <div className="crypto-wallet screen">
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="background-XPwy4i"></div>
                 <div className="h1-XPwy4i lato-bold-white-20px">Portefeuille Cryptomonnaies</div>
                 <div className="date-XPwy4i lato-normal-white-16px">Mis à jour le 25 mars 2022</div>
@@ -144,42 +154,6 @@ const CryptoWallet: NextPage = (props: any) => {
                         </span>
                     </div>
                 </div>
-                <div className="footer-XPwy4i">
-                    <div className="background-1KzJpa"></div>
-                    <div className="menu-footer-1KzJpa">
-                        <div className="mentions-lgales-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-T8CBm0 sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-dKw8vr sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-1KzJpa sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-1KzJpa">
-                        <div className="groupe-2-GmUeld">
-                            <img className="groupe-1-d5AwTm" src="img/group-1-11@1x.png" />
-                        </div>
-                        <img className="effect-GmUeld" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-1KzJpa" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-1KzJpa">
-                        <div className="ellipse-17695-v7gikA hidden"></div>
-                        <img className="icon-instagram-v7gikA" src="img/fontawsome--instagram--7@1x.png" />
-                    </div>
-                    <div className="groupe-3010-1KzJpa">
-                        <div className="ellipse-17696-zjNoSr hidden"></div>
-                        <img className="icon-simple-tiktok-zjNoSr" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <img className="trac-1042-XPwy4i" src="img/path-1042@1x.png" />
                 <div className="bouton-affi-XPwy4i">
                     <div className="rectangle-8-9pCLeb"></div>
@@ -207,6 +181,7 @@ const CryptoWallet: NextPage = (props: any) => {
                     </div>
                     <img className="ligne-41-0Hq04G" src="img/line-41-2@1x.png" />
                 </div>
+                <Footer />
             </div>
             <div className="crypto-wallet-mobile screen">
                 <div className="avertissement-i4rvow">
@@ -418,3 +393,4 @@ const CryptoWallet: NextPage = (props: any) => {
 };
 
 export default CryptoWallet;
+// export default checkAuth(CryptoWallet);

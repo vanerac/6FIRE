@@ -5,6 +5,7 @@ import configuration from '../../configuration';
 import { User } from '@shared/services';
 
 import { PrismaClient } from '@prisma/client';
+import { ApiError } from '../types';
 
 const prisma = new PrismaClient();
 
@@ -60,96 +61,98 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
     const access_token = getAccessToken(req);
 
     if (!access_token) {
-        return res.status(401).send({
-            status: 'error',
-            message: 'Access denied. No token provided.',
-        });
+        return next(
+            new ApiError({
+                status: 401,
+                message: 'Unauthorized',
+                i18n: 'error.auth.missing',
+            }),
+        );
     }
 
     try {
         const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
         if (typeof decoded != 'string' && decoded.id) {
-            req.session.user = decoded;
+            req.user = decoded;
             next();
         } else {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Invalid token.',
-            });
+            return next(
+                new ApiError({
+                    status: 401,
+                    message: 'Unauthorized',
+                    i18n: 'error.auth.invalid',
+                }),
+            );
         }
     } catch (error: any) {
         if (error.name === 'TokenExpiredError') {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Token expired.',
-            });
+            return next(
+                new ApiError({
+                    status: 401,
+                    message: 'Access denied. Token expired.',
+                    i18n: 'error.auth.expired',
+                }),
+            );
         } else {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Invalid token.',
-            });
+            console.log(error);
+            return next(
+                new ApiError({
+                    status: 401,
+                    message: 'Access denied. Invalid token.',
+                    i18n: 'error.auth.invalid',
+                }),
+            );
         }
     }
 };
 
 export async function isAdmin(req: Request, res: Response, next: NextFunction) {
-    if (req.session.user && !req.session.user.isAdmin) {
-        return res.status(401).send({
-            status: 'error',
-            message: 'Access denied. You are not an admin.',
-        });
-    }
-
-    const access_token = getAccessToken(req);
-
-    if (!access_token) {
-        return res.status(401).send({
-            status: 'error',
-            message: 'Access denied. No token provided.',
-        });
-    }
-
     try {
-        const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
+        const { user } = req;
 
-        if (typeof decoded != 'string' && decoded.id) {
-            req.session.user = decoded;
-            next();
-        } else {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Invalid token.',
-            });
+        if (!user) {
+            return next(
+                new ApiError({
+                    status: 401,
+                    message: 'Access denied. No token provided.',
+                    i18n: 'error.auth.missing',
+                }),
+            );
         }
 
-        const user = await prisma.user.findFirst({
-            where: {
-                id: decoded.id,
-            },
-        });
-        if (!user.isAdmin) {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. User is not admin.',
+        prisma.user
+            .findFirst({
+                where: {
+                    id: user.id,
+                },
+            })
+            .then((user: User & any) => {
+                if (user.isAdmin) {
+                    next();
+                } else {
+                    return next(
+                        new ApiError({
+                            status: 401,
+                            message: 'Access denied. Invalid token.',
+                            i18n: 'error.auth.invalid',
+                        }),
+                    );
+                }
             });
-        }
     } catch (error: any) {
-        if (error.name === 'TokenExpiredError') {
-            return res.status(401).send({
-                status: 'error',
-                message: 'Access denied. Token expired.',
-            });
-        } else {
-            return res.status(401).send({
-                status: 'error',
+        console.log(error);
+        return next(
+            new ApiError({
+                status: 401,
                 message: 'Access denied. Invalid token.',
-            });
-        }
+                i18n: 'error.auth.invalid',
+            }),
+        );
     }
 }
 
 export async function parseToken(req: Request, res: Response, next: NextFunction) {
-    // Parse token, decode it and set req.session.user
+    // Parse token, decode it and set req.user
     try {
         const bearerHeader = req.headers['Authorization'] || req.headers['authorization'] || req.cookies['API_TOKEN'];
         if (!bearerHeader) {
@@ -165,7 +168,7 @@ export async function parseToken(req: Request, res: Response, next: NextFunction
         }
         const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
         if (typeof decoded != 'string' && decoded.id) {
-            req.session.user = decoded;
+            req.user = decoded;
         }
         next();
     } catch (e) {

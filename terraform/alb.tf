@@ -30,7 +30,7 @@ resource "aws_security_group" "ecs_tasks" {
   vpc_id      = aws_vpc.main.id
   ingress {
     protocol        = "tcp"
-    from_port       = 3000
+    from_port       = 2000 // was 3000
     to_port         = 3333
     security_groups = [aws_security_group.lb_api.id]
   }
@@ -76,6 +76,8 @@ resource "aws_alb_target_group" "api" {
   vpc_id      = aws_vpc.main.id
   target_type = "ip"
 }
+
+
 resource "aws_alb_target_group" "client" {
   tags = {
     project = "6fire"
@@ -105,10 +107,31 @@ resource "aws_alb_listener" "api" {
   port              = "80"
   protocol          = "HTTP"
   default_action {
+    #    target_group_arn = aws_alb_target_group.api.id
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+}
+// add 443
+resource "aws_alb_listener" "ssl_api" {
+  tags = {
+    project = "6fire"
+  }
+  load_balancer_arn = aws_alb.api.id
+  port              = "443"
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+  certificate_arn   = aws_acm_certificate.default.arn
+  default_action {
     target_group_arn = aws_alb_target_group.api.id
     type             = "forward"
   }
 }
+
 resource "aws_alb_listener" "client" {
   tags = {
     project = "6fire"
@@ -117,10 +140,31 @@ resource "aws_alb_listener" "client" {
   port              = "80"
   protocol          = "HTTP"
   default_action {
+    #    target_group_arn = aws_alb_target_group.api.id
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+}
+// add 443
+resource "aws_alb_listener" "ssl_client" {
+  tags = {
+    project = "6fire"
+  }
+  load_balancer_arn = aws_alb.client.id
+  port              = "443"
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+  certificate_arn   = aws_acm_certificate.default.arn
+  default_action {
     target_group_arn = aws_alb_target_group.client.id
     type             = "forward"
   }
 }
+
 resource "aws_alb_listener" "dashboard" {
   tags = {
     project = "6fire"
@@ -128,6 +172,27 @@ resource "aws_alb_listener" "dashboard" {
   load_balancer_arn = aws_alb.dashboard.id
   port              = "80"
   protocol          = "HTTP"
+  default_action {
+    #    target_group_arn = aws_alb_target_group.api.id
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+}
+
+// add 443
+resource "aws_alb_listener" "ssl_dashboard" {
+  tags = {
+    project = "6fire"
+  }
+  load_balancer_arn = aws_alb.dashboard.id
+  port              = "443"
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+  certificate_arn   = aws_acm_certificate.default.arn
   default_action {
     target_group_arn = aws_alb_target_group.dashboard.id
     type             = "forward"

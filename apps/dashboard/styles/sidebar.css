@@ -1,0 +1,466 @@
+
+.sidebar {
+    background-color: var(--zircon);
+    height: 1001px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 200px;
+    left: 500px;
+}
+
+.sidebar-ele2Hq {
+    background-color: transparent;
+    height: 933px;
+    left: 0px;
+    position: absolute;
+    top: 68px;
+    width: 250px;
+
+}
+
+.sidebar .shape-XkWNKf {
+    background-color: var(--white);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.sidebar .settings-XkWNKf {
+    background-color: transparent;
+    bottom: calc(38.71% - 20px);
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-2Oj03V {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(37.65% - 23px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 60px;
+}
+
+.sidebar .icons-navigation-icon-12-states-2Oj03V {
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
+}
+
+.sidebar .ic_setting-i3k1Bq {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.sidebar .broker-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(43.59% - 23px);
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-3x69ME {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(34.97% - 16px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 47px;
+}
+
+.sidebar .font-awsome-handshake-3x69ME {
+    background-color: transparent;
+    bottom: 20px;
+    height: 13px;
+    left: 21px;
+    object-fit: cover;
+    position: absolute;
+    width: 21px;
+}
+
+.sidebar .crypto-wallet-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(37.68% - 20px);
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-LeUA6D {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(49.23% - 49px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 100px;
+}
+
+.sidebar .font-awsome-bitcoin-LeUA6D {
+    background-color: transparent;
+    height: 19px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: calc(50.00% - 10px);
+    width: 19px;
+}
+
+.sidebar .trading-crypto-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(25.88% - 13px);
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-afY0mi {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(39.62% - 49px);
+    text-align: left;
+    white-space: nowrap;
+    width: 124px;
+}
+
+.sidebar .font-awsome-pen-afY0mi {
+    background-color: transparent;
+    height: 19px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: 16px;
+    width: 19px;
+}
+
+.sidebar .thmes-articles-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 124px;
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-EIDGsO {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    right: calc(44.35% - 51px);
+    text-align: left;
+    white-space: nowrap;
+    width: 115px;
+}
+
+.sidebar .icons-navigation-icon-12-states-EIDGsO {
+    background-color: transparent;
+    height: 22px;
+    left: 24px;
+    position: absolute;
+    top: calc(50.00% - 11px);
+    width: 16px;
+}
+
+.sidebar .font-awsome-bookmark-NB7Zji {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.sidebar .customers-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 72px;
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-YIkv3o {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(43.24% - 35px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 82px;
+}
+
+.sidebar .icons-navigation-icon-12-states-YIkv3o {
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
+}
+
+.sidebar .ic_users-nfIzVJ {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.sidebar .home-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 20px;
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-2TfG3R {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(34.41% - 15px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 44px;
+}
+
+.sidebar .icons-navigation-icon-12-states-2TfG3R {
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
+}
+
+.sidebar .ic_home-xFKJxx {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.sidebar .articles-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(19.98% - 10px);
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-HHzC6a {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(36.57% - 20px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 55px;
+}
+
+.sidebar .icons-navigation-icon-12-states-HHzC6a {
+    background-color: transparent;
+    height: 24px;
+    left: 20px;
+    position: absolute;
+    top: calc(50.00% - 12px);
+    width: 24px;
+}
+
+.sidebar .ic_invoice-jkbsAr {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.sidebar .icon-ionic-ios-arrow-down-HHzC6a {
+    background-color: transparent;
+    bottom: calc(50.00% - 3px);
+    height: 7px;
+    left: 191px;
+    object-fit: cover;
+    position: absolute;
+    width: 12px;
+}
+
+.sidebar .bot-trading-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(31.78% - 17px);
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-9RnfQM {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(43.84% - 37px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 84px;
+}
+
+.sidebar .font-awsome-robot-9RnfQM {
+    background-color: transparent;
+    height: 17px;
+    left: 20px;
+    object-fit: cover;
+    position: absolute;
+    top: 17px;
+    width: 21px;
+}
+
+.sidebar .pays-XkWNKf {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: calc(49.49% - 26px);
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .frame-eRDn7v {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.sidebar .line-eRDn7v {
+    background-color: var(--blue-ribbon);
+    border-radius: 10px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 4px;
+}
+
+.sidebar .name-eRDn7v {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(32.99% - 12px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 36px;
+}
+
+.sidebar .font-awsome-globe-europe-eRDn7v {
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    left: 25px;
+    object-fit: cover;
+    position: absolute;
+    width: 18px;
+}
+
+.sidebar .abonnement-XkWNKf {
+    background-color: transparent;
+    bottom: calc(44.61% - 23px);
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    width: calc(100.00% - 20px);
+}
+
+.sidebar .name-0GglTk {
+    background-color: transparent;
+    bottom: calc(36.67% - 8px);
+    height: 22px;
+    left: calc(47.41% - 45px);
+    letter-spacing: 0.10px;
+    line-height: 14px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: 95px;
+}
+
+.sidebar .icon-material-payment-0GglTk {
+    background-color: transparent;
+    height: 15px;
+    left: 24px;
+    object-fit: cover;
+    position: absolute;
+    top: 18px;
+    width: 19px;
+}
+
+.sidebar .icon-ionic-ios-arrow-down-0GglTk {
+    background-color: transparent;
+    bottom: calc(50.00% - 3px);
+    height: 7px;
+    left: 196px;
+    object-fit: cover;
+    position: absolute;
+    width: 12px;
+}

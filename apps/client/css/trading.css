@@ -1033,7 +1033,7 @@
   left: calc(50% - 480px);
   object-fit: cover;
   position: absolute;
-  width: 33px;
+  /* width: 33px; */
 }
 
 .trading .icon-actif-WACo3F {
@@ -2084,7 +2084,7 @@
   left: 51px;
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 300px);
+  /* width: 75px; */
 }
 
 .trading-mobile .paragraph-538M6x {
@@ -2102,13 +2102,13 @@
 .trading-mobile .paragraph-NapEEx {
   background-color: transparent;
   height: 19px;
-  left: calc(22.10% - 14px);
+  left: 81px;
   letter-spacing: 0.00px;
   line-height: 14px;
   position: absolute;
   text-align: left;
   top: calc(42.54% - 8px);
-  width: 62px;
+  width: calc(100% - 105px);
 }
 
 .trading-mobile .ligne-38-vUb3bC {
@@ -2118,7 +2118,7 @@
   left: 81px;
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 393px);
+  width: 35px;
 }
 
 .trading-mobile .icon-actif-vUb3bC {
@@ -2202,7 +2202,7 @@
   left: 81px;
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 354px);
+  /* width: calc(100.00% - 354px); */
 }
 
 .trading-mobile .icon-actif-538M6x {
@@ -2275,7 +2275,7 @@
   left: 81px;
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 350px);
+  /* width: calc(100.00% - 350px); */
 }
 
 .trading-mobile .icon-actif-NapEEx {
@@ -2348,7 +2348,7 @@
   left: 81px;
   object-fit: cover;
   position: absolute;
-  width: calc(100.00% - 362px);
+  /* width: calc(100.00% - 362px); */
 }
 
 .trading-mobile .icon-actif-k7d0T5 {

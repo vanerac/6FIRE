@@ -1,49 +1,26 @@
 import type { NextPage } from 'next';
+import Footer from './components/footer';
 import Header from './components/header';
+// import checkAuth from './components/checkAuth';
+import Cookies from 'universal-cookie';
+import { useEffect } from 'react';
+import router from 'next/router';
 
 const NosTrades: NextPage = (props: any) => {
+    const cookies = new Cookies();
+
+    useEffect(() => {
+        if (!cookies.get('API_TOKEN')) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="nos-trades" />
-            <div
-                className="nos-trades screen"
-                // onclick="window.open('javascript:history.back()', '_self');"
-            >
-                <div className="background-kCjjkp"></div>
-                <div className="footer-kCjjkp">
-                    <div className="background-WTxHBw"></div>
-                    <div className="menu-footer-WTxHBw">
-                        <div className="mentions-lgales-3zsThR sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-3zsThR sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-3zsThR sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-3zsThR sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="politique-de-confidentialit-kGOUce sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-3zsThR sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-WTxHBw sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-WTxHBw">
-                        <div className="groupe-2-o3c6f2">
-                            <img className="groupe-1-b2PYR3" src="img/group-1-11@1x.png" />
-                        </div>
-                        <img className="effect-o3c6f2" src="img/effect-12@1x.png" />
-                    </div>
-                    <img className="ligne-31-WTxHBw" src="img/line-31-1@1x.png" />
-                    <div className="groupe-3011-WTxHBw">
-                        <img className="icon-instagram-qHYfna" src="img/fontawsome--instagram--7@1x.png" />
-                    </div>
-                    <div className="groupe-3010-WTxHBw">
-                        <img className="icon-simple-tiktok-VcGkLM" src="img/icon-simple-tiktok-1@1x.png" />
-                    </div>
-                </div>
+            <div className="nos-trades screen">
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+                <div className="background-kCjjkp"></div>
                 <div className="background-DslP8q"></div>
                 <div className="club-premium-kCjjkp lato-bold-white-16px">REJOIGNEZ NOTRE CANAL PRIVÉ TELEGRAM</div>
                 <div className="club-premium-DslP8q lato-normal-white-14px">
@@ -90,6 +67,7 @@ const NosTrades: NextPage = (props: any) => {
                     Vous aurez accès à toutes nos positions crypto &amp; forex en temps réel, nos points d’entrés, de
                     sortis, nos analyses et notre stratégie.
                 </div>
+                <Footer />
             </div>
             <div className="nos-trades-mobile screen">
                 <div className="avertissement-rYj0qk">
@@ -206,3 +184,4 @@ const NosTrades: NextPage = (props: any) => {
 };
 
 export default NosTrades;
+// export default checkAuth(NosTrades);

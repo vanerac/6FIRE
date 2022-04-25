@@ -517,8 +517,8 @@
                     "type": "string",
                     "pattern": "^[0-9]{10}$"
                   },
-                  "confirm_password": {
-                    "type": "string"
+                  "countryId": {
+                    "type": "number"
                   },
                   "CGU": {
                     "type": "boolean"
@@ -527,11 +527,9 @@
                 "required": [
                   "email",
                   "password",
-                  "confirm_password",
                   "firstName",
                   "lastName",
                   "telephone",
-                  "countryId",
                   "CGU"
                 ]
               }
@@ -960,10 +958,43 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CryptoHolding"
-                  }
+                  "type": "object",
+                  "properties": {
+                    "cryptos": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CryptoHolding"
+                      }
+                    },
+                    "messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "format": "int64"
+                          },
+                          "message": {
+                            "type": "string"
+                          },
+                          "date": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "message",
+                          "date"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "cryptos",
+                    "messages"
+                  ]
                 }
               }
             }
@@ -2123,6 +2154,699 @@
           }
         }
       }
+    },
+    "/payment/": {
+      "get": {
+        "description": "Get all user subscriptions",
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "getPayments",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserSubscription"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new subscription",
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "createPayment",
+        "requestBody": {
+          "description": "Payment object that needs to be added to the store",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "subscriptionId": {
+                    "type": "string",
+                    "description": "Subscription ID"
+                  },
+                  "offerId": {
+                    "type": "string",
+                    "description": "Offer ID"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSubscription"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/payment/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Subscription ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "description": "Get a single subscription",
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "getPaymentById",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSubscription"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "description": "Update a subscription",
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "updatePayment",
+        "requestBody": {
+          "description": "Payment object that needs to be updated in the store",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "subscriptionId": {
+                    "type": "string",
+                    "description": "Subscription ID"
+                  },
+                  "offerId": {
+                    "type": "string",
+                    "description": "Offer ID"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSubscription"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a subscription",
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "deletePayment",
+        "responses": {
+          "204": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSubscription"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/payment/payment/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Subscription ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "description": "Get a single subscription",
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "fetchPaymentById",
+        "responses": {
+          "200": {
+            "description": "A successful response."
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/offer/": {
+      "get": {
+        "description": "Get all offers",
+        "tags": [
+          "Offers"
+        ],
+        "operationId": "getAllOffers",
+        "responses": {
+          "200": {
+            "description": "Offers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Offer"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "post": {
+        "description": "Create offer",
+        "tags": [
+          "Offers"
+        ],
+        "operationId": "createOffer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Offer"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Offer created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Offer"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/offer/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "description": "Offer ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "description": "Get offer by id",
+        "tags": [
+          "Offers"
+        ],
+        "operationId": "getOfferById",
+        "responses": {
+          "200": {
+            "description": "Offer",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Offer"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Offer not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "description": "Update offer by id",
+        "tags": [
+          "Offers"
+        ],
+        "operationId": "updateOfferById",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Offer"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Offer",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Offer"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Offer not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete offer by id",
+        "tags": [
+          "Offers"
+        ],
+        "operationId": "deleteOfferById",
+        "responses": {
+          "204": {
+            "description": "Offer deleted"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Offer not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/offer/usage/{id}": {
+      "get": {
+        "description": "Get usage by ID",
+        "tags": [
+          "Usage"
+        ],
+        "operationId": "getUsageById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Usage ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usage",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfferUsage"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/offer/usage/": {
+      "get": {
+        "description": "Get all usage",
+        "tags": [
+          "Usage"
+        ],
+        "operationId": "getAllUsage",
+        "responses": {
+          "200": {
+            "description": "Usage",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OfferUsage"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/affiliation/": {
+      "post": {
+        "tags": [
+          "Affiliation"
+        ],
+        "summary": "Create Affiliation",
+        "description": "Create Affiliation",
+        "operationId": "createAffiliation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Affiliation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Affiliation created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Affiliation"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Affiliation"
+        ],
+        "summary": "Get Affiliation",
+        "description": "Get Affiliation",
+        "operationId": "getAffiliation",
+        "responses": {
+          "200": {
+            "description": "Affiliation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Affiliation"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Affiliation not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/affiliation/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "tags": [
+          "Affiliation"
+        ],
+        "summary": "Get Affiliation",
+        "description": "Get Affiliation",
+        "operationId": "getAffiliationById",
+        "responses": {
+          "200": {
+            "description": "Affiliation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Affiliation"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Affiliation not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Affiliation"
+        ],
+        "summary": "Update Affiliation",
+        "description": "Update Affiliation",
+        "operationId": "updateAffiliation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Affiliation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Affiliation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Affiliation"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Affiliation not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Affiliation"
+        ],
+        "summary": "Delete Affiliation",
+        "description": "Delete Affiliation",
+        "operationId": "deleteAffiliation",
+        "responses": {
+          "204": {
+            "description": "Affiliation deleted"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Affiliation not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -2173,6 +2897,19 @@
           },
           "banned": {
             "type": "boolean"
+          },
+          "UserSubscription": {
+            "type": "object",
+            "properties": {
+              "Subscription": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -2283,8 +3020,59 @@
           },
           "themeId": {
             "type": "string"
+          },
+          "recommendedArticleIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ArticleRecommandation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Recommandation": {
+                  "type": "object",
+                  "properties": {
+                    "Article": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        },
+                        "themesId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "required": [
+          "id",
+          "title",
+          "content",
+          "hidden",
+          "createdAt",
+          "updatedAt",
+          "themeId"
+        ]
       },
       "Subscription": {
         "type": "object",
@@ -2298,6 +3086,12 @@
           "description": {
             "type": "string"
           },
+          "refreshRate": {
+            "type": "integer"
+          },
+          "subscriptionType": {
+            "type": "string"
+          },
           "price": {
             "type": "integer"
           },
@@ -2305,14 +3099,19 @@
             "type": "integer"
           },
           "createdAt": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "updatedAt": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "name",
+          "description",
+          "subscriptionType",
+          "price",
+          "level"
+        ]
       },
       "Country": {
         "type": "object",
@@ -2343,6 +3142,108 @@
           "createdAt",
           "updatedAt"
         ]
+      },
+      "UserSubscription": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "userId": {
+            "type": "integer"
+          },
+          "subscriptionId": {
+            "type": "integer"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "paymentId": {
+            "type": "string"
+          },
+          "customerId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Affiliation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "displayed": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Offer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "value": {
+            "type": "integer"
+          },
+          "offerType": {
+            "type": "string",
+            "enum": [
+              "PERCENTAGE",
+              "FIXED"
+            ]
+          },
+          "subscriptionId": {
+            "type": "integer"
+          },
+          "singleUse": {
+            "type": "boolean"
+          }
+        }
+      },
+      "OfferUsage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "offerId": {
+            "type": "integer"
+          },
+          "userId": {
+            "type": "integer"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
       }
     }
   }

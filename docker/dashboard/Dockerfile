@@ -10,9 +10,19 @@ FROM node:lts-alpine as build
 
 WORKDIR /app
 
-COPY shared/config/tsconfig.json /shared/config/tsconfig.json
+ARG SENTRY_AUTH_TOKEN=1234567890
+ENV SENTRY_AUTH_TOKEN $SENTRY_AUTH_TOKEN
+COPY shared/ /shared/
 COPY --from=install /app ./
 
+RUN #ls -al node_modules && exit 1
+
+WORKDIR /shared
+RUN npm install axios
+RUN npm install form-data
+RUN npm install universal-cookie
+
+WORKDIR /app
 RUN npm run build
 
 FROM node:lts-alpine as run
