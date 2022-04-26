@@ -10,6 +10,9 @@ import cookieParser from 'cookie-parser';
 import * as Sentry from '@sentry/node';
 import * as Tracing from '@sentry/tracing';
 import { ApiError } from './types';
+import multer from 'multer';
+
+import { v4 as uuid } from 'uuid';
 
 declare module 'express' {
     interface Request {
@@ -98,9 +101,15 @@ app.use(
         operationHandlers: false,
         fileUploader: {
             dest: configuration.UPLOAD_DIR,
-            limits: {
-                fileSize: 10 * 1024 * 1024,
-            },
+            storage: multer.diskStorage({
+                destination: (req, file, cb) => {
+                    cb(null, configuration.UPLOAD_DIR);
+                },
+                filename: (req, file, cb) => {
+                    console.log(file.originalname);
+                    cb(null, `${uuid()}-${file.originalname}`);
+                },
+            }),
         },
         // validateSecurity: {
         //     handlers: {

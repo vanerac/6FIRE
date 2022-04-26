@@ -23,4 +23,8 @@ export type Article = {
             };
         };
     }>;
+    banner?: Blob;
+    header?: Blob;
+    bannerUrl?: string;
+    headerUrl?: string;
 };
