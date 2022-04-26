@@ -152,6 +152,15 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                 </div>
+
+                <div className="more-articles">
+                    <button type='submit' className="primary-button">
+                        <span>voir plus</span>
+                        <div className="right-arrow">
+                            <img src="/img/icon-ionic-ios-arrow-forward-2@1x.png" alt="" />
+                        </div>
+                    </button>
+                </div>
             </div>
 
             {/* <div className="call-to-action-58RGA4">
