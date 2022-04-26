@@ -4,18 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "exit 0",
     "start": "ts-node src/index.ts",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apify-client": "^2.2.0",
+    "@sentry/tracing": "^6.19.6",
     "dotenv": "^16.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.14.0"
+    "@prisma/client": "^3.12.0",
+    "@sentry/node": "^6.19.6",
+    "@types/node": "^17.0.27",
+    "apify-client": "^2.3.0",
+    "axios": "^0.27.1",
+    "eslint": "^8.14.0",
+    "form-data": "^4.0.0",
+    "querystring": "^0.2.1",
+    "redis": "^4.0.6",
+    "typescript": "^4.6.3"
   }
 }
