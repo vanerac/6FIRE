@@ -1,6 +1,13 @@
 import { PrismaClient } from '@prisma/client';
-import { Trader } from '@shared/services';
 import * as Sentry from '@sentry/node';
+
+export type Trader = {
+    id?: string;
+    name?: string;
+    displayed?: boolean | null;
+    createdAt?: string | null;
+    updatedAt?: string | null;
+};
 
 const prisma = new PrismaClient();
 
