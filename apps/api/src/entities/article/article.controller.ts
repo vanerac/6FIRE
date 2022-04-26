@@ -3,6 +3,7 @@ import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import path from 'path';
 import configuration from '../../../configuration';
+import * as fs from 'fs';
 
 const prisma = new PrismaClient();
 
@@ -171,6 +172,7 @@ export default class ArticleController implements CRUDController {
         try {
             const { id: articleId } = req.params;
             const { title, content, themesId, recommendedArticleIds } = req.body;
+            // Todo: update photo
             const article = await prisma.article.update({
                 where: {
                     id: +articleId,
@@ -207,6 +209,12 @@ export default class ArticleController implements CRUDController {
                     id: +articleId,
                 },
             });
+
+            const [$http, $base, $public, headerPath] = article.headerUrl.split('/');
+            const [$http2, $base2, $public2, bannerPath] = article.bannerUrl.split('/');
+            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
+            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, bannerPath));
+
             res.status(200).json(article);
         } catch (error) {
             next(error);
