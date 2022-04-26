@@ -5,7 +5,7 @@ export default function getApiClient(host: string = process.env.NEXT_PUBLIC_API_
     const cookies = new Cookies();
     cookies.get('API_TOKEN');
     return new ApiClient({
-        APIFY_TOKEN: cookies.get('API_TOKEN'),
+        TOKEN: cookies.get('API_TOKEN'),
         BASE: host || 'http://localhost:3333/api'
     });
 }
