@@ -1,38 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
-import { Scraper } from '../../../../../shared/scraper/scrape';
-import configuration from '../../../configuration';
-
-import { ApiError } from '../../types';
-
 const prisma = new PrismaClient();
 
 export default class TraderController {
-    static async getTopTraders(req: Request, res: Response, next: NextFunction) {
-        try {
-            const traders = await Scraper.getInstance(configuration.APIFY_API_KEY).scrapeLeaderboards();
-            res.status(200).json(traders);
-        } catch (error) {
-            console.error(error);
-            next(error);
-        }
-    }
-
-    static async searchTrader(req: Request, res: Response, next: NextFunction) {
-        try {
-            next(
-                new ApiError({
-                    message: 'Not implemented yet',
-                    status: 501,
-                    i18n: 'error.notImplemented',
-                }),
-            );
-        } catch (error) {
-            next(error);
-        }
-    }
-
     static async getCuration(req: Request, res: Response, next: NextFunction) {
         try {
             const curation = prisma.curatedTrader.findMany({

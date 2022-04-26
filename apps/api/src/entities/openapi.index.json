@@ -80,12 +80,6 @@
     "/trader/trader/{id}/followers": {
       "$ref": "./trader/trader.path.json#/traderFollowers"
     },
-    "/trader/curation/top": {
-      "$ref": "./trader/trader.path.json#/scrapeTop"
-    },
-    "/trader/curation/search": {
-      "$ref": "./trader/trader.path.json#/searchTrader"
-    },
     "/article/": {
       "$ref": "./article/article.path.json#/noId"
     },
