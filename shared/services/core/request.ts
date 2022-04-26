@@ -1,15 +1,15 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import axios, {AxiosError, AxiosRequestConfig, AxiosResponse} from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import FormData from 'form-data';
 
-import {ApiError} from './ApiError';
-import type {ApiRequestOptions} from './ApiRequestOptions';
-import type {ApiResult} from './ApiResult';
-import type {OnCancel} from './CancelablePromise';
-import {CancelablePromise} from './CancelablePromise';
-import type {OpenAPIConfig} from './OpenAPI';
+import { ApiError } from './ApiError';
+import type { ApiRequestOptions } from './ApiRequestOptions';
+import type { ApiResult } from './ApiResult';
+import { CancelablePromise } from './CancelablePromise';
+import type { OnCancel } from './CancelablePromise';
+import type { OpenAPIConfig } from './OpenAPI';
 
 const isDefined = <T>(value: T | null | undefined): value is Exclude<T, null | undefined> => {
     return value !== undefined && value !== null;
@@ -139,7 +139,7 @@ const resolve = async <T>(options: ApiRequestOptions, resolver?: T | Resolver<T>
 };
 
 const getHeaders = async (config: OpenAPIConfig, options: ApiRequestOptions, formData?: FormData): Promise<Record<string, string>> => {
-    const token = await resolve(options, config.APIFY_TOKEN);
+    const token = await resolve(options, config.TOKEN);
     const username = await resolve(options, config.USERNAME);
     const password = await resolve(options, config.PASSWORD);
     const additionalHeaders = await resolve(options, config.HEADERS);
@@ -151,11 +151,11 @@ const getHeaders = async (config: OpenAPIConfig, options: ApiRequestOptions, for
         ...options.headers,
         ...formHeaders,
     })
-        .filter(([_, value]) => isDefined(value))
-        .reduce((headers, [key, value]) => ({
-            ...headers,
-            [key]: String(value),
-        }), {} as Record<string, string>);
+    .filter(([_, value]) => isDefined(value))
+    .reduce((headers, [key, value]) => ({
+        ...headers,
+        [key]: String(value),
+    }), {} as Record<string, string>);
 
     if (isStringWithValue(token)) {
         headers['Authorization'] = `Bearer ${token}`;

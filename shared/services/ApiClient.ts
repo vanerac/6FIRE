@@ -1,22 +1,22 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type {BaseHttpRequest} from './core/BaseHttpRequest';
-import type {OpenAPIConfig} from './core/OpenAPI';
-import {AxiosHttpRequest} from './core/AxiosHttpRequest';
+import type { BaseHttpRequest } from './core/BaseHttpRequest';
+import type { OpenAPIConfig } from './core/OpenAPI';
+import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
-import {AffiliationService} from './services/AffiliationService';
-import {ArticleService} from './services/ArticleService';
-import {AuthService} from './services/AuthService';
-import {CountryService} from './services/CountryService';
-import {CryptoService} from './services/CryptoService';
-import {OffersService} from './services/OffersService';
-import {PaymentService} from './services/PaymentService';
-import {SubscriptionService} from './services/SubscriptionService';
-import {ThemesService} from './services/ThemesService';
-import {TradersService} from './services/TradersService';
-import {UsageService} from './services/UsageService';
-import {UserService} from './services/UserService';
+import { AffiliationService } from './services/AffiliationService';
+import { ArticleService } from './services/ArticleService';
+import { AuthService } from './services/AuthService';
+import { CountryService } from './services/CountryService';
+import { CryptoService } from './services/CryptoService';
+import { OffersService } from './services/OffersService';
+import { PaymentService } from './services/PaymentService';
+import { SubscriptionService } from './services/SubscriptionService';
+import { ThemesService } from './services/ThemesService';
+import { TradersService } from './services/TradersService';
+import { UsageService } from './services/UsageService';
+import { UserService } from './services/UserService';
 
 type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
 
@@ -43,7 +43,7 @@ export class ApiClient {
             VERSION: config?.VERSION ?? '3.0.0',
             WITH_CREDENTIALS: config?.WITH_CREDENTIALS ?? false,
             CREDENTIALS: config?.CREDENTIALS ?? 'include',
-            APIFY_TOKEN: config?.APIFY_TOKEN,
+            TOKEN: config?.TOKEN,
             USERNAME: config?.USERNAME,
             PASSWORD: config?.PASSWORD,
             HEADERS: config?.HEADERS,
