@@ -11,6 +11,10 @@ resource "aws_cloudwatch_log_group" "dashboard" {
   name = "6fire-dashboard"
 }
 
+resource "aws_cloudwatch_log_group" "bot" {
+  name = "6fire-bot"
+}
+
 // Auto Scalling policies
 resource "aws_appautoscaling_target" "api_autoscaling_target" {
   max_capacity       = 5
@@ -161,15 +165,15 @@ resource "aws_iam_role" "ecs_task_role" {
   ]
 }
 EOF
-  tags               = {
+  tags = {
     project = "6fire"
   }
 }
 
 // Role policy
 resource "aws_iam_role_policy" "ecs_task_role" {
-  name   = "ecs_task_role"
-  role   = aws_iam_role.ecs_task_role.id
+  name = "ecs_task_role"
+  role = aws_iam_role.ecs_task_role.id
   // attach AmazonEC2ContainerRegistryFullAccess policy to ecs_task_role
   policy = <<EOF
 {
@@ -233,7 +237,7 @@ resource "aws_iam_role" "esc_execution_role" {
   ]
 }
 EOF
-  tags               = {
+  tags = {
     project = "6fire"
   }
 }
@@ -494,6 +498,56 @@ DEFINITION
 
 }
 
+// bot task def
+resource "aws_ecs_task_definition" "bot" {
+  tags = {
+    project = "6fire"
+  }
+  family                   = "${var.ecs_task_definition_family}-bot"
+  execution_role_arn       = aws_iam_role.esc_execution_role.arn
+  task_role_arn            = aws_iam_role.ecs_task_role.arn
+  container_definitions    = <<DEFINITION
+[
+  {
+    "cpu": 512,
+    "essential": true,
+    "image": "${aws_ecr_repository.bot.repository_url}:latest",
+    "memory": 2048,
+    "name": "bot",
+    "networkMode": "awsvpc",
+    "awsvpcConfiguration": {
+      "securityGroups": [
+        "${aws_security_group.ecs_tasks.id}"
+      ],
+      "assignPublicIp": "ENABLED"
+    },
+    "environment": [
+      {
+        "name": "NODE_ENV",
+        "value": "production"
+      },
+      {
+      "name": "REDIS_URL",
+      "value": "redis://${aws_elasticache_cluster.default.cache_nodes.0.address}:${aws_elasticache_cluster.default.port}"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${aws_cloudwatch_log_group.bot.name}",
+        "awslogs-region": "eu-west-1",
+        "awslogs-stream-prefix": "bot"
+      }
+    }
+  }
+]
+DEFINITION
+  network_mode             = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = 512
+  memory                   = 2048
+}
+
 
 // ecs services
 resource "aws_ecs_service" "api" {
@@ -502,7 +556,7 @@ resource "aws_ecs_service" "api" {
   #  }
 
   force_new_deployment = true
-  tags                 = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-api"
@@ -531,7 +585,7 @@ resource "aws_ecs_service" "client" {
   #    type = "CODE_DEPLOY"
   #  }
   force_new_deployment = true
-  tags                 = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-client"
@@ -559,7 +613,7 @@ resource "aws_ecs_service" "dashboard" {
   #    type = "CODE_DEPLOY"
   #  }
   force_new_deployment = true
-  tags                 = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-dashboard"
@@ -577,5 +631,27 @@ resource "aws_ecs_service" "dashboard" {
     target_group_arn = aws_alb_target_group.dashboard.id
     container_name   = "dashboard"
     container_port   = 3000
+  }
+}
+
+
+resource "aws_ecs_service" "bot" {
+  #  deployment_controller {
+  #    type = "CODE_DEPLOY"
+  #  }
+  force_new_deployment = true
+  tags = {
+    project = "6fire"
+  }
+  name            = "${var.ecs_service_name}-bot"
+  cluster         = aws_ecs_cluster.default.id
+  task_definition = aws_ecs_task_definition.bot.arn
+  desired_count   = 1
+  launch_type     = "FARGATE"
+
+  network_configuration {
+    security_groups  = [aws_security_group.ecs_tasks.id, aws_security_group.redis.id]
+    subnets          = aws_subnet.private.*.id
+    assign_public_ip = true
   }
 }

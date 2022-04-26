@@ -17,6 +17,11 @@ variable "ecr_name_client" {
   default     = "6fire-client"
 }
 
+variable "ecr_name_bot" {
+  description = "The name of the bot"
+  type        = string
+  default     = "6fire-bot"
+}
 
 // ecs variables
 variable "ecs_cluster_name" {
