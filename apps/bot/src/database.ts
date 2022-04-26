@@ -25,6 +25,7 @@ export default class Database {
                 User: {
                     select: {
                         userId: true,
+                        telegramId: true,
                     },
                 },
             },
