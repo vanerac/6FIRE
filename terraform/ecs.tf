@@ -165,15 +165,15 @@ resource "aws_iam_role" "ecs_task_role" {
   ]
 }
 EOF
-  tags               = {
+  tags = {
     project = "6fire"
   }
 }
 
 // Role policy
 resource "aws_iam_role_policy" "ecs_task_role" {
-  name   = "ecs_task_role"
-  role   = aws_iam_role.ecs_task_role.id
+  name = "ecs_task_role"
+  role = aws_iam_role.ecs_task_role.id
   // attach AmazonEC2ContainerRegistryFullAccess policy to ecs_task_role
   policy = <<EOF
 {
@@ -237,7 +237,7 @@ resource "aws_iam_role" "esc_execution_role" {
   ]
 }
 EOF
-  tags               = {
+  tags = {
     project = "6fire"
   }
 }
@@ -560,7 +560,7 @@ resource "aws_ecs_service" "api" {
   #  }
 
   force_new_deployment = true
-  tags                 = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-api"
@@ -589,7 +589,7 @@ resource "aws_ecs_service" "client" {
   #    type = "CODE_DEPLOY"
   #  }
   force_new_deployment = true
-  tags                 = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-client"
@@ -617,7 +617,7 @@ resource "aws_ecs_service" "dashboard" {
   #    type = "CODE_DEPLOY"
   #  }
   force_new_deployment = true
-  tags                 = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-dashboard"
@@ -644,7 +644,7 @@ resource "aws_ecs_service" "bot" {
   #    type = "CODE_DEPLOY"
   #  }
   force_new_deployment = true
-  tags                 = {
+  tags = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-bot"
@@ -655,7 +655,7 @@ resource "aws_ecs_service" "bot" {
 
   network_configuration {
     security_groups  = [aws_security_group.ecs_tasks.id, aws_security_group.redis.id]
-    subnets          = aws_subnet.private.*.id
+    subnets          = flatten([aws_subnet.private.*.id, aws_subnet.public.*.id])
     assign_public_ip = true
   }
 }
