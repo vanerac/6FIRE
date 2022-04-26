@@ -171,12 +171,7 @@ export default class ArticleController implements CRUDController {
     static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: articleId } = req.params;
-<<<<<<< HEAD
             const { title, content, themeId, recommendedArticleIds } = req.body;
-=======
-            const { title, content, themesId, recommendedArticleIds } = req.body;
-            // Todo: update photo
->>>>>>> 58979dba26f476856f312d4995b473847c27b444
             const article = await prisma.article.update({
                 where: {
                     id: +articleId,
