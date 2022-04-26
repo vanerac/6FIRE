@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 const HomePage: NextPage = (props: any) => {
     const cookies = new Cookies();
     const [themeName, setThemeName] = useState('');
-    const [articles, setArticles] = useState<Article[]>([]);
+    const [articles, setArticles] = useState<Article>();
     const apiClient = getAPIClient();
     const { query } = useRouter();
 
@@ -30,9 +30,9 @@ const HomePage: NextPage = (props: any) => {
             setThemeName(res.name);
         });
 
-        apiClient.article.getArticleById(query.articleId as any).then((res: any) => {
+        apiClient.article.getArticleById(query.articleId as any).then((res) => {
             console.log('res => ', res);
-            setArticles(res);
+            setArticles(res as Article);
         });
     }, [query]);
 

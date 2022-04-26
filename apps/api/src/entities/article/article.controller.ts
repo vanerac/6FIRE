@@ -35,7 +35,7 @@ export default class ArticleController implements CRUDController {
                     content: true,
                     createdAt: true,
                     updatedAt: true,
-                    themesId: true,
+                    themeId: true,
                 },
             });
             res.status(200).json(articles);
@@ -86,7 +86,7 @@ export default class ArticleController implements CRUDController {
                     content: true,
                     createdAt: true,
                     updatedAt: true,
-                    themesId: true,
+                    themeId: true,
                     ArticleRecommandation: {
                         select: {
                             // id: false,
@@ -100,7 +100,7 @@ export default class ArticleController implements CRUDController {
                                             content: true,
                                             createdAt: true,
                                             updatedAt: true,
-                                            themesId: true,
+                                            themeId: true,
                                         },
                                     },
                                 },
@@ -131,7 +131,7 @@ export default class ArticleController implements CRUDController {
                 data: {
                     title,
                     content,
-                    themesId: +themeId,
+                    themeId: +themeId,
                     hidden: false,
                 },
             });
@@ -161,7 +161,7 @@ export default class ArticleController implements CRUDController {
     static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: articleId } = req.params;
-            const { title, content, themesId, recommendedArticleIds } = req.body;
+            const { title, content, themeId, recommendedArticleIds } = req.body;
             const article = await prisma.article.update({
                 where: {
                     id: +articleId,
@@ -169,7 +169,7 @@ export default class ArticleController implements CRUDController {
                 data: {
                     title,
                     content,
-                    themesId,
+                    themeId,
                 },
             });
             if (recommendedArticleIds.length > 0) {
