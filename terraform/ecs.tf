@@ -165,15 +165,15 @@ resource "aws_iam_role" "ecs_task_role" {
   ]
 }
 EOF
-  tags = {
+  tags               = {
     project = "6fire"
   }
 }
 
 // Role policy
 resource "aws_iam_role_policy" "ecs_task_role" {
-  name = "ecs_task_role"
-  role = aws_iam_role.ecs_task_role.id
+  name   = "ecs_task_role"
+  role   = aws_iam_role.ecs_task_role.id
   // attach AmazonEC2ContainerRegistryFullAccess policy to ecs_task_role
   policy = <<EOF
 {
@@ -237,7 +237,7 @@ resource "aws_iam_role" "esc_execution_role" {
   ]
 }
 EOF
-  tags = {
+  tags               = {
     project = "6fire"
   }
 }
@@ -529,6 +529,10 @@ resource "aws_ecs_task_definition" "bot" {
       {
       "name": "REDIS_URL",
       "value": "redis://${aws_elasticache_cluster.default.cache_nodes.0.address}:${aws_elasticache_cluster.default.port}"
+      },
+      {
+        "name": "DATABASE_URL",
+        "value": "postgres://${aws_db_instance.default.username}:${aws_db_instance.default.password}@${aws_db_instance.default.address}:${aws_db_instance.default.port}"
       }
     ],
     "logConfiguration": {
@@ -556,7 +560,7 @@ resource "aws_ecs_service" "api" {
   #  }
 
   force_new_deployment = true
-  tags = {
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-api"
@@ -585,7 +589,7 @@ resource "aws_ecs_service" "client" {
   #    type = "CODE_DEPLOY"
   #  }
   force_new_deployment = true
-  tags = {
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-client"
@@ -613,7 +617,7 @@ resource "aws_ecs_service" "dashboard" {
   #    type = "CODE_DEPLOY"
   #  }
   force_new_deployment = true
-  tags = {
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-dashboard"
@@ -640,7 +644,7 @@ resource "aws_ecs_service" "bot" {
   #    type = "CODE_DEPLOY"
   #  }
   force_new_deployment = true
-  tags = {
+  tags                 = {
     project = "6fire"
   }
   name            = "${var.ecs_service_name}-bot"

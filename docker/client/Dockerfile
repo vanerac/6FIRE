@@ -16,7 +16,7 @@ COPY shared/ /shared/
 COPY --from=install /app ./
 
 WORKDIR /shared
-RUN npm install axios
+RUN npm install axios@0.26.1
 RUN npm install form-data
 RUN npm install universal-cookie
 

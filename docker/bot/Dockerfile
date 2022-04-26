@@ -8,7 +8,7 @@ COPY apps/bot ./apps/bot
 COPY shared/config ./shared/config
 
 RUN npm install
-RUN npm install axios form-data apify-client
+RUN #npm install axios form-data apify-client
 
 WORKDIR /app/apps/bot
 
@@ -29,7 +29,7 @@ COPY apps/api/prisma ./apps/bot/prisma
 WORKDIR /app/apps/bot
 
 RUN npm install
-RUN npm i axios form-data
+RUN #npm i axios0.26.1 form-data
 
 RUN npx prisma generate --schema prisma/schema.prisma
 
