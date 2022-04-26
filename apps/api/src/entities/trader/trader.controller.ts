@@ -1,5 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+
+import { Scraper } from '@shared/scraper/scrape';
+import configuration from '../../../configuration';
+
 import { ApiError } from '../../types';
 
 const prisma = new PrismaClient();
@@ -7,13 +11,8 @@ const prisma = new PrismaClient();
 export default class TraderController {
     static async getTopTraders(req: Request, res: Response, next: NextFunction) {
         try {
-            next(
-                new ApiError({
-                    message: 'Not implemented yet',
-                    status: 501,
-                    i18n: 'error.notImplemented',
-                }),
-            );
+            const traders = await Scraper.getInstance(configuration.APIFY_API_KEY).scrapeLeaderboards();
+            res.status(200).json(traders);
         } catch (error) {
             next(error);
         }
