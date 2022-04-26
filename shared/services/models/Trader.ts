@@ -3,8 +3,9 @@
 /* eslint-disable */
 
 export type Trader = {
-    id?: string;
+    id?: number;
     name?: string;
+    clientId?: string;
     displayed?: boolean | null;
     createdAt?: string | null;
     updatedAt?: string | null;

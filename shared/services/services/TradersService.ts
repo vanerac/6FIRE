@@ -31,21 +31,16 @@ export class TradersService {
 
     /**
      * Update curation
-     * @param id Trader ID
      * @param requestBody
      * @returns Trader Success
      * @throws ApiError
      */
     public updateTraderCuration(
-        id: number,
         requestBody?: Array<Trader>,
     ): CancelablePromise<Trader> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/trader/curation',
-            path: {
-                'id': id,
-            },
             body: requestBody,
             mediaType: 'application/json',
             errors: {

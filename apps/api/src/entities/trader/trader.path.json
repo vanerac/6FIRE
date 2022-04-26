@@ -137,18 +137,6 @@
       ],
       "operationId": "updateTraderCuration",
       "description": "Update curation",
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "Trader ID",
-          "required": true,
-          "schema": {
-            "type": "integer",
-            "format": "int64"
-          }
-        }
-      ],
       "requestBody": {
         "content": {
           "application/json": {

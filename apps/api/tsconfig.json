@@ -9,7 +9,8 @@
   "include": [
     "src/**/*",
     "src/*",
-    "../../shared/generated/openapi-v1.json"
+    "../../shared/generated/openapi-v1.json",
+    "../../shared/scraper"
   ],
   "exclude": [
   ]

@@ -17,6 +17,7 @@ services:
       - "6379:6379"
     environment:
       REDIS_PASSWORD: "redis"
+      REDIS_DB: "0"
     volumes:
       - "./data/redis:/data"
     restart: unless-stopped
@@ -74,7 +75,7 @@ services:
       context: .
       dockerfile: docker/bot/Dockerfile
     environment:
-      REDIS_URL: "redis://redis:6379"
+      REDIS_URL: "redis://redis:6379@redis:6379/0"
       APIFY_TOKEN: ""
       TELEGRAM_TOKEN: ""
     depends_on:
