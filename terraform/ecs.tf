@@ -355,7 +355,7 @@ resource "aws_ecs_task_definition" "api" {
         "value": "production"
       },
       {
-        "name": "BACKEND_URL"
+        "name": "BACKEND_URL",
         "value": "${aws_alb.api.dns_name}"
       }
     ],
