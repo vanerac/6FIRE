@@ -170,6 +170,30 @@ const HomePage: NextPage = (props: any) => {
                             </div>
                         </div>
                     </div>
+
+                    <div className="treading-wrapper">
+                        <img src="/img/mask-group-329-1@1x.png" alt="" className="tradingBg" />
+                        <div className="tread-container">
+                            <div className="text">
+                                <div className="title">OFFRE TRADING</div>
+                                <ul>
+                                    <li>+ Stratégies d’investissement</li>
+                                    <li>+ Alertes des meilleurs Traders</li>
+                                    <li>+ Portefeuille Crypto</li>
+                                    <li>+ Canal privé Telegram</li>
+                                </ul>
+                            </div>
+
+                            <div className="btnBox">
+                                <button type='submit' className="primary-button">
+                                    <span>Rejoindre</span>
+                                    <div className="right-arrow">
+                                        <img src="/img/icon/right-arrow.png" alt="" />
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <Footer />
             </div>

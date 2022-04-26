@@ -3015,6 +3015,8 @@ body{
   align-items: center;
   justify-content: center;
   font-family: var(--font-family-lato);
+  border: 0;
+  cursor: pointer;
 }
 
 .primary-button span{margin-right: 0px;}
