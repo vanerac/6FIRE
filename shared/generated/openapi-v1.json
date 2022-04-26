@@ -2813,6 +2813,13 @@
           },
           "subscriptionLevel": {
             "type": "integer"
+          },
+          "icon": {
+            "type": "string",
+            "format": "binary"
+          },
+          "iconUrl": {
+            "type": "string"
           }
         }
       },
@@ -2942,6 +2949,20 @@
                 }
               }
             }
+          },
+          "banner": {
+            "type": "string",
+            "format": "binary"
+          },
+          "header": {
+            "type": "string",
+            "format": "binary"
+          },
+          "bannerUrl": {
+            "type": "string"
+          },
+          "headerUrl": {
+            "type": "string"
           }
         },
         "required": [

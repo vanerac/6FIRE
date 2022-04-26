@@ -23,6 +23,13 @@
         },
         "subscriptionLevel": {
           "type": "integer"
+        },
+        "icon": {
+          "type": "string",
+          "format": "binary"
+        },
+        "iconUrl": {
+          "type": "string"
         }
       }
     }

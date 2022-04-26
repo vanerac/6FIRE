@@ -138,8 +138,8 @@ export default class AuthController {
             return next(error);
         } finally {
             if (user)
-                Promise.all([createVerificationCode(user, 'PHONE'), createVerificationCode(user, 'EMAIL')]).catch(
-                    () => undefined,
+                Promise.all([/*createVerificationCode(user, 'PHONE'),*/ createVerificationCode(user, 'EMAIL')]).catch(
+                    console.error,
                 );
         }
     }

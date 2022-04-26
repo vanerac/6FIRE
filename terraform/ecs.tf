@@ -353,6 +353,10 @@ resource "aws_ecs_task_definition" "api" {
       {
         "name": "NEXT_PUBLIC_NODE_ENV",
         "value": "production"
+      },
+      {
+        "name": "BACKEND_URL"
+        "value": "${aws_alb.api.dns_name}"
       }
     ],
     "logConfiguration": {

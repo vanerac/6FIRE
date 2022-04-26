@@ -7,19 +7,19 @@ export async function AWSsendEmail({
     subject,
     message,
     htmlMessage,
-    attachments,
 }: {
     email: string;
     subject: string;
     message?: string;
     htmlMessage: string;
-    attachments?: string[];
 }) {
     // SES Email
 
     const ses = new aws.SES({
         apiVersion: '2010-12-01',
-        region: 'eu-west-3',
+        region: 'eu-west-1',
+        accessKeyId: configuration.AWS_ACCESS_KEY_ID,
+        secretAccessKey: configuration.AWS_SECRET_ACCESS_KEY,
     });
 
     const params = {
@@ -32,21 +32,12 @@ export async function AWSsendEmail({
                     Charset: 'UTF-8',
                     Data: htmlMessage || message,
                 },
-                Text: {
-                    Charset: 'UTF-8',
-                    Data: message,
-                },
             },
             Subject: {
                 Charset: 'UTF-8',
                 Data: subject,
             },
         },
-        Attachments: attachments?.map((attachment) => ({
-            Content: attachment,
-            ContentType: 'application/octet-stream',
-            Filename: attachment.split('/').pop(),
-        })),
         Source: configuration.EMAIL_SENDER,
     };
 

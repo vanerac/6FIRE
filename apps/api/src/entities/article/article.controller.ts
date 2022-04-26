@@ -1,6 +1,9 @@
 import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+import path from 'path';
+import configuration from '../../../configuration';
+import * as fs from 'fs';
 
 const prisma = new PrismaClient();
 
@@ -64,7 +67,7 @@ export default class ArticleController implements CRUDController {
                 next(
                     new ApiError({
                         message: 'User subscription level not found',
-                        status: 404,
+                        status: 403,
                         i18n: 'error.article.forbidden',
                     }),
                 );
@@ -125,6 +128,10 @@ export default class ArticleController implements CRUDController {
     }
 
     static async create(req: Request, res: Response, next: NextFunction) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const { banner, header } = req.files;
+        console.log(banner, header);
         try {
             const { title, content, themeId, recommendedArticleIds } = req.body;
             const article = await prisma.article.create({
@@ -133,6 +140,8 @@ export default class ArticleController implements CRUDController {
                     content,
                     themeId: +themeId,
                     hidden: false,
+                    bannerUrl: banner ? path.join(configuration.BACKEND_URL, 'public/', banner[0].filename) : null,
+                    headerUrl: header ? path.join(configuration.BACKEND_URL, 'public/', header[0].filename) : null,
                 },
             });
             if (recommendedArticleIds?.length) {
@@ -154,6 +163,7 @@ export default class ArticleController implements CRUDController {
             }
             res.status(200).json(article);
         } catch (error) {
+            console.error(error);
             next(error);
         }
     }
@@ -161,7 +171,12 @@ export default class ArticleController implements CRUDController {
     static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: articleId } = req.params;
+<<<<<<< HEAD
             const { title, content, themeId, recommendedArticleIds } = req.body;
+=======
+            const { title, content, themesId, recommendedArticleIds } = req.body;
+            // Todo: update photo
+>>>>>>> 58979dba26f476856f312d4995b473847c27b444
             const article = await prisma.article.update({
                 where: {
                     id: +articleId,
@@ -198,6 +213,12 @@ export default class ArticleController implements CRUDController {
                     id: +articleId,
                 },
             });
+
+            const [$http, $base, $public, headerPath] = article.headerUrl.split('/');
+            const [$http2, $base2, $public2, bannerPath] = article.bannerUrl.split('/');
+            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
+            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, bannerPath));
+
             res.status(200).json(article);
         } catch (error) {
             next(error);
