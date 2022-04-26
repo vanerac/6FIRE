@@ -17,4 +17,5 @@ export default {
     NODE_ENV: process.env.NODE_ENV || 'development',
     AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID ?? '',
     AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY ?? '',
+    BACKEND_URL: process.env.BACKEND_URL ?? 'http://localhost:3333',
 };

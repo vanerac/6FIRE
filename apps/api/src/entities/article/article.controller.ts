@@ -1,6 +1,8 @@
 import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+import path from 'path';
+import configuration from '../../../configuration';
 
 const prisma = new PrismaClient();
 
@@ -64,7 +66,7 @@ export default class ArticleController implements CRUDController {
                 next(
                     new ApiError({
                         message: 'User subscription level not found',
-                        status: 404,
+                        status: 403,
                         i18n: 'error.article.forbidden',
                     }),
                 );
@@ -125,6 +127,10 @@ export default class ArticleController implements CRUDController {
     }
 
     static async create(req: Request, res: Response, next: NextFunction) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const { banner, header } = req.files;
+        console.log(banner, header);
         try {
             const { title, content, themeId, recommendedArticleIds } = req.body;
             const article = await prisma.article.create({
@@ -133,6 +139,8 @@ export default class ArticleController implements CRUDController {
                     content,
                     themesId: +themeId,
                     hidden: false,
+                    bannerUrl: banner ? path.join(configuration.BACKEND_URL, 'public/', banner[0].filename) : null,
+                    headerUrl: header ? path.join(configuration.BACKEND_URL, 'public/', header[0].filename) : null,
                 },
             });
             if (recommendedArticleIds?.length) {
@@ -154,6 +162,7 @@ export default class ArticleController implements CRUDController {
             }
             res.status(200).json(article);
         } catch (error) {
+            console.error(error);
             next(error);
         }
     }

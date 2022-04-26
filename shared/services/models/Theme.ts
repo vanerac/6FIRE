@@ -9,4 +9,6 @@ export type Theme = {
     createdAt?: string;
     updatedAt?: string;
     subscriptionLevel?: number;
+    icon?: Blob;
+    iconUrl?: string;
 };

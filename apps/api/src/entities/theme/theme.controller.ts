@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
 import { CRUDController } from '../../types';
 import { PrismaClient } from '@prisma/client';
+import path from 'path';
+import configuration from '../../../configuration';
 
 const client = new PrismaClient();
 
@@ -26,8 +28,15 @@ export default class ThemeController implements CRUDController {
 
     static async create(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
+            const icon = req.file;
             const { name, subscriptionLevel } = req.body;
-            const theme = await client.theme.create({ data: { name, subscriptionLevel } });
+            const theme = await client.theme.create({
+                data: {
+                    name,
+                    subscriptionLevel,
+                    iconUrl: path.join(configuration.BACKEND_URL, 'public/', icon.filename),
+                },
+            });
             res.status(201).json(theme);
         } catch (error) {
             next(error);
