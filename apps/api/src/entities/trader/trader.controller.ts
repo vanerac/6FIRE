@@ -1,37 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
-import { Scraper } from '@shared/scraper/scrape';
-import configuration from '../../../configuration';
-
-import { ApiError } from '../../types';
-
 const prisma = new PrismaClient();
 
 export default class TraderController {
-    static async getTopTraders(req: Request, res: Response, next: NextFunction) {
-        try {
-            const traders = await Scraper.getInstance(configuration.APIFY_API_KEY).scrapeLeaderboards();
-            res.status(200).json(traders);
-        } catch (error) {
-            next(error);
-        }
-    }
-
-    static async searchTrader(req: Request, res: Response, next: NextFunction) {
-        try {
-            next(
-                new ApiError({
-                    message: 'Not implemented yet',
-                    status: 501,
-                    i18n: 'error.notImplemented',
-                }),
-            );
-        } catch (error) {
-            next(error);
-        }
-    }
-
     static async getCuration(req: Request, res: Response, next: NextFunction) {
         try {
             const curation = prisma.curatedTrader.findMany({
@@ -54,23 +26,35 @@ export default class TraderController {
     static async setCuration(req: Request, res: Response, next: NextFunction) {
         // upsert, array of clientId and names from req.body
         // update if displayed is edited
-        const { data } = req.body;
+        const data = req.body;
 
+        console.log(data);
         try {
-            prisma.curatedTrader.upsert({
-                where: {
-                    id: data.map((item) => item.id),
-                },
-                update: {
-                    displayed: data.map((item) => item.displayed),
-                },
-                create: data.map((item) => ({
-                    id: item.id,
-                    name: item.name,
-                    displayed: item.displayed ?? true,
-                })),
+            await Promise.all(
+                data.map(async (trader) => {
+                    await prisma.curatedTrader.upsert({
+                        where: {
+                            id: trader.id ?? -1,
+                        },
+                        update: {
+                            name: trader.name,
+                            displayed: trader.displayed,
+                        },
+                        create: {
+                            clientId: trader.clientId,
+                            name: trader.name,
+                            displayed: trader.displayed,
+                            rank: trader.rank ?? 0,
+                        },
+                    });
+                }),
+            );
+
+            res.status(200).json({
+                message: 'Successfully updated curation',
             });
         } catch (error) {
+            console.error(error);
             next(error);
         }
     }

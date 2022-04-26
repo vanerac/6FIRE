@@ -5,7 +5,6 @@
 import configuration from '../configuration';
 import Cache from './cache';
 import EventEmitter from 'events';
-import * as Sentry from '@sentry/node';
 
 const cache = new Cache();
 export default class TelegramBot {
@@ -33,21 +32,13 @@ export default class TelegramBot {
     }
 
     private static async sendMessage(chatId, message) {
-        const transaction = Sentry.startTransaction({
-            op: 'http',
-            name: 'send message',
+        return fetch(`https://api.telegram.org/bot${configuration.TELEGRAM_TOKEN}/sendMessage`, {
+            method: 'POST',
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: message,
+            }),
         });
-        try {
-            return fetch(`https://api.telegram.org/bot${configuration.TELEGRAM_TOKEN}/sendMessage`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    chat_id: chatId,
-                    text: message,
-                }),
-            });
-        } finally {
-            transaction.finish();
-        }
     }
 
     public async listenMessageQueue(): Promise<void> {

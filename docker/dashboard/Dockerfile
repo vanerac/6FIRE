@@ -18,7 +18,7 @@ COPY --from=install /app ./
 RUN #ls -al node_modules && exit 1
 
 WORKDIR /shared
-RUN npm install axios
+RUN npm install axios@0.26.1
 RUN npm install form-data
 RUN npm install universal-cookie
 

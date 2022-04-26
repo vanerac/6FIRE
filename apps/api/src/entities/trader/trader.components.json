@@ -4,10 +4,13 @@
       "type": "object",
       "properties": {
         "id": {
+          "type": "number"
+        },
+        "name": {
           "type": "string",
           "nullable": false
         },
-        "name": {
+        "clientId": {
           "type": "string",
           "nullable": false
         },

@@ -1,4 +1,4 @@
-import { Position } from '@shared/scraper/types';
+import { Position } from './cache';
 
 export interface ScrapeDifferential {
     opened: Position[];
@@ -18,7 +18,7 @@ export function calculateClosePercentage(open: Position, close: Position) {
     return (closeValue - openValue) / openValue;
 }
 
-export function scrapeDifferential(current: Position[], previous: Position[]): ScrapeDifferential {
+export function positionDifferential(current: Position[], previous: Position[]): ScrapeDifferential {
     const opened: Position[] = [];
     const closed: Position[] = [];
 
