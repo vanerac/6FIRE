@@ -19,7 +19,7 @@ export type Article = {
                 content?: string;
                 createdAt?: string;
                 updatedAt?: string;
-                themesId?: string;
+                themeId?: string;
             };
         };
     }>;

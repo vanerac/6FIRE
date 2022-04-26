@@ -56,7 +56,7 @@
                       "updatedAt": {
                         "type": "string"
                       },
-                      "themesId": {
+                      "themeId": {
                         "type": "string"
                       }
                     }

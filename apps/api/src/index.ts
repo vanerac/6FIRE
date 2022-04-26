@@ -63,10 +63,10 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 // CORS
 app.use(
     cors({
-        origin: '*',
-        credentials: true,
-        allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-        methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
+        // origin: '*',
+        // credentials: true,
+        // allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'senty-trace'],
+        // methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );
 

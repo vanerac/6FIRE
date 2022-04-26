@@ -115,7 +115,11 @@ export default class AuthController {
 
             const token = generateToken(user);
 
-            return res.json({
+            return res.cookie(
+                'API_TOKEN',
+                     token,
+                   { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3)},
+            ).json({
                 token,
             });
         } catch (error) {
@@ -183,7 +187,11 @@ export default class AuthController {
 
             const token = generateToken(user);
 
-            return res.json({
+            return res.cookie(
+                'API_TOKEN',
+                     token,
+                   { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3)},
+            ).json({
                 token,
             });
         } catch (error) {
