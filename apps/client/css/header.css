@@ -1147,6 +1147,9 @@ ul{
         background: #161a1a;
         transform: translateX(-100%);
         transition: all 1s ease;
+        justify-content: flex-end;
+        padding-right: calc(30px + (60 - 30) * ((100vw - 320px) / (1024 - 320)));
+        padding-left: calc(30px + (60 - 30) * ((100vw - 320px) / (1024 - 320)));
     }
     .main-nav-bar .nav-item-wrap.open{
         transform: translateX(0%);
@@ -1154,6 +1157,13 @@ ul{
     .main-nav-bar .nav-item-wrap > ul {
         align-items: flex-start;
         flex-direction: column;
+        width: 100%;
+    }
+    .main-nav-bar .nav-item-wrap > ul > li{
+        border-bottom: 1px solid #555;
+        width: 100%;
+        text-align: right;
+
     }
     .mobile-hamburger{
         display: block;

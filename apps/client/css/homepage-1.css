@@ -3057,7 +3057,7 @@ body{
     justify-content: center;
 }
 
-.primary-button img{width: 100%;}
+.primary-button .right-arrow img{width: 100%;}
 .primary-button:hover .right-arrow{
     margin-left: 5px;
     width: 18px;
@@ -3559,5 +3559,158 @@ body{
   }
   .table-wrapper .user-wrap .rank{
     left: 5px;
+  }
+}
+
+
+/* Crypto Wallet  */
+.crypto_wrapper{
+  width: 100%;
+  padding: 30px 3%;
+  max-width: 1400px;
+  min-height: 50vh;
+  margin: 138px auto 0;
+  color: #fff;
+  font-family: var(--font-family-lato);
+  margin-bottom: 45px;
+
+}
+
+.crypto_wrapper .header-block{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  align-items: center;
+  min-height: 200px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.crypto_wrapper .header-block .graph-wrapper{
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.crypto_wrapper .header-block .graph-wrapper .round-box{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #f7931a;
+}
+.crypto_wrapper .header-block .left-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.crypto_wrapper .header-block .left-col .title{
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.crypto_wrapper .header-block .left-col span.sub{
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.crypto_wrapper .header-block .primary-button{
+  margin-top: 20px;
+  background-color: #fcd435;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 600;
+  font-size: 12px;
+  min-width: 220px;
+}
+.crypto_wrapper .header-block .primary-button:hover .right-arrow img{
+  filter: brightness(0) invert(0);
+}
+.table-block{
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  margin-top: 60px;
+}
+.table-block .icon-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(30px + (80 - 30) * ((100vw - 320px) / (1920 - 320)));
+  padding: 20px;
+  border-bottom: 1px solid #3a3a3a;
+  flex-wrap: wrap;
+}
+.table-block .icon-row .single-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10%;
+
+}
+.table-block .icon-row .single-item p span{
+  display: block;
+}
+.table-block .icon-row .single-item p{margin: 0; margin-left: 10px;}
+
+.table-block .currency-row{
+  padding: 15px;
+  display: flex;
+}
+.table-block .currency-row .euro{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3a3a3a;
+  border-radius: 3px;
+  height: 25px;
+  width: 25px;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.table-block .currency-row .custom-input{
+  color: #fff;
+  outline: 0;
+  appearance: none;
+  width: 100%;
+}
+
+.article-block{
+  background-color: #161a1a;
+  min-height: 25vh;
+  margin-top: 15px;
+  padding: 30px;
+  color: #fff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.article-block .title{
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.article-block p{
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+.copyright-inner{
+  background-color: #0e0f0f;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.copyright-inner p{
+  color: #99999f;
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+}
+
+/* responsive */
+@media screen and (max-width: 600px) {
+  .crypto_wrapper .header-block{
+    grid-template-columns: auto;
+    justify-content: center;
   }
 }
