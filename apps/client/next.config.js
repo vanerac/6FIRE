@@ -8,6 +8,9 @@ const nextConfig = {
     experimental: {
         externalDir: true,
     },
+    env: {
+        NEXT_PUBLIC_API_ROUTE: 'https://api.6fireinvest.com/api',
+    },
 };
 
 const sentryWebpackPluginOptions = {
