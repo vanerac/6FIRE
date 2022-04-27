@@ -18,6 +18,27 @@ FROM node:lts as run
 
 WORKDIR /app
 
+ARG AWS_ACCESS_KEY_ID=''
+ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
+
+ARG AWS_SECRET_ACCESS_KEY=''
+ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
+
+ARG SMS_API_KEY=''
+ENV SMS_API_KEY $SMS_API_KEY
+
+ARG MOLLIE_API_KEY=''
+ENV MOLLIE_API_KEY $MOLLIE_API_KEY
+
+ARG COINMARKETCAP_API_KEY=''
+ENV COINMARKETCAP_API_KEY $COINMARKETCAP_API_KEY
+
+ARG SENTRY_DSN=''
+ENV SENTRY_DSN $SENTRY_DSN
+
+ARG JWT_SECRET=''
+ENV JWT_SECRET $JWT_SECRET
+
 COPY --from=install /app/build/apps/api ./apps/api
 COPY --from=install /app/apps/api/package.json ./apps/api/package.json
 COPY --from=install /app/apps/api/package-lock.json ./apps/api/package-lock.json

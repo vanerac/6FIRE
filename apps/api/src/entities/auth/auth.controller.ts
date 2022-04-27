@@ -36,7 +36,7 @@ const passwordResetCode = async (userId) => {
     const smsMessage = `Your password reset code is ${code}`;
 
     const emailBody = generateResetPasswordEmail({
-        reset_link: configuration.SERVER_ADDRESS + '/api/auth/password/reset?code=' + code,
+        reset_link: configuration.BACKEND_URL + '/api/auth/password/reset?code=' + code,
     });
     return Promise.all([
         AWSsendEmail({
@@ -65,7 +65,7 @@ const createVerificationCode = async (
     });
 
     const messageTemplate = generateVerifyEmail({
-        confirmation_link: `${configuration.SERVER_ADDRESS}/api/auth/verify?code=${code}`,
+        confirmation_link: `${configuration.BACKEND_URL}/api/auth/verify?code=${code}`,
     });
 
     if (type === 'EMAIL') {
@@ -115,11 +115,7 @@ export default class AuthController {
 
             const token = generateToken(user);
 
-            return res.cookie(
-                'API_TOKEN',
-                     token,
-                   { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3)},
-            ).json({
+            return res.cookie('API_TOKEN', token, { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3) }).json({
                 token,
             });
         } catch (error) {
@@ -187,11 +183,7 @@ export default class AuthController {
 
             const token = generateToken(user);
 
-            return res.cookie(
-                'API_TOKEN',
-                     token,
-                   { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3)},
-            ).json({
+            return res.cookie('API_TOKEN', token, { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3) }).json({
                 token,
             });
         } catch (error) {
