@@ -37,6 +37,10 @@ const Connexion: NextPage = () => {
         $('.nav-item-wrap').toggleClass('open');
     };
 
+    if (cookies.get('API_TOKEN')) {
+        router.push('/articlesPage');
+    }
+
     const create_account = () => {
         let isValid = true;
         setError('');
@@ -102,7 +106,7 @@ const Connexion: NextPage = () => {
                 console.log(response);
                 if (response.token) {
                     cookies.set('API_TOKEN', response.token, { path: '/' });
-                    router.push('/articlesPageNew');
+                    router.push('/articlesPage');
                 }
             })
             .catch((error: ApiError) => {

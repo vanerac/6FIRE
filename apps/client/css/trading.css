@@ -37,7 +37,7 @@
   background: linear-gradient(180deg, #000000 0%, #161a1a 89.61%);
   background-color: transparent;
   bottom: calc(46.87% - 386px);
-  height: 100%;
+  /* height: 100%; */
   left: 0px;
   top: 297px;
   position: absolute;
@@ -1617,7 +1617,7 @@
   background-color: transparent;
   height: 21px;
   position: absolute;
-  right: calc(22.45% - 5px);
+  right: 95px;
   top: calc(20.19% - 4px);
   width: 21px;
 }

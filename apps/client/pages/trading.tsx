@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Footer from './components/footer';
+// import Footer from './components/footer';
 import Header from './components/header';
 // import checkAuth from './components/checkAuth';
 import Cookies from 'universal-cookie';
@@ -23,7 +23,6 @@ const Trading: NextPage = (props: any) => {
                 <div className="background-3LBGsu"></div>
                 <div className="background-wsIV14"></div>
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
-                <Footer />
                 <div className="h2-3LBGsu lato-bold-white-14px">
                     CONTACTEZ NOUS POUR ACCÉDER AU CANAL TELEGRAM DES MEMBRES TRADING &amp; CRYPTO
                     <br />
@@ -1901,6 +1900,7 @@ const Trading: NextPage = (props: any) => {
                                 Prochainement, une explication complète sera disponible sur MIR ! 💸
                             </span>
                         </div>
+                        {/* <Footer /> */}
                     </div>
                 </div>
             </div>

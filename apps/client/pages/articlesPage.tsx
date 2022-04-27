@@ -67,7 +67,7 @@ const HomePage: NextPage = (props: any) => {
                             key={article.id}
                             onClick={() => {
                                 router.push({
-                                    pathname: '/articlesDetailsNew',
+                                    pathname: '/articlesDetails',
                                     query: {
                                         articleId: article.id,
                                         themeId: article.themeId,
@@ -98,7 +98,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     ))}
                     {/* single article
-                    <div onClick={() => router.push('/articlesDetailsNew')} className="single_article">
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <Image layout="fill" src="/img/mask-group-322-2@1x.png" />
                         </div>
@@ -113,7 +113,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                     single article
-                    <div onClick={() => router.push('/articlesDetailsNew')} className="single_article">
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
                         </div>
@@ -128,7 +128,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                     single article
-                    <div onClick={() => router.push('/articlesDetailsNew')} className="single_article">
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <Image layout="fill" src="/img/mask-group-324-1@1x.png" />
                         </div>
@@ -143,7 +143,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                     single article
-                    <div onClick={() => router.push('/articlesDetailsNew')} className="single_article">
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <Image layout="fill" src="/img/mask-group-325-1@1x.png" />
                         </div>
@@ -158,7 +158,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                     single article
-                    <div onClick={() => router.push('/articlesDetailsNew')} className="single_article">
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <Image layout="fill" src="/img/mask-group-321-1@1x.png" />
                         </div>
@@ -173,7 +173,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                     single article
-                    <div onClick={() => router.push('/articlesDetailsNew')} className="single_article">
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <Image layout="fill" src="/img/mask-group-322-1@1x.png" />
                         </div>
@@ -188,7 +188,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
                     </div>
                     single article
-                    <div onClick={() => router.push('/articlesDetailsNew')} className="single_article">
+                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
                         </div>
