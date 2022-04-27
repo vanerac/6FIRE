@@ -19,6 +19,7 @@ import '../css/header.css';
 import '../css/footer.css';
 import { useState } from 'react';
 import Sidebar from './components/sideBar';
+import Head from 'next/head';
 // import Cookies from 'universal-cookie';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -29,6 +30,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <>
+            <Head>
+                <link rel="shortcut icon" href="/logo-single.png" />
+            </Head>
             <Component {...pageProps} useStateOpenSideBar={setIsOpenSideBar} />
             <Sidebar sideBarState={isOpenSideBar} setIsOpenSideBar={setIsOpenSideBar} />
         </>

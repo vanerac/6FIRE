@@ -44,7 +44,7 @@ const LoginPopup = (props: any) => {
                     console.log(response);
                     if (response.token) {
                         cookies.set('API_TOKEN', response.token, { path: '/' });
-                        router.push('/articlesPageNew');
+                        router.push('/articlesPage');
                     }
                 })
                 .catch((error: ApiError) => {
