@@ -2,6 +2,16 @@ FROM node:lts-alpine as install
 
 WORKDIR /app
 
+
+ARG AWS_ACCESS_KEY_ID=''
+ARG AWS_SECRET_ACCESS_KEY=''
+ARG SMS_API_KEY=''
+ARG MOLLIE_API_KEY=''
+ARG COINMARKETCAP_API_KEY=''
+ARG SENTRY_DSN=''
+ARG JWT_SECRET=''
+ARG SENTRY_AUTH_TOKEN=''
+
 COPY package.json .
 COPY package-lock.json .
 COPY apps/bot ./apps/bot

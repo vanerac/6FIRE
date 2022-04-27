@@ -15,7 +15,13 @@ ENV SENTRY_AUTH_TOKEN $SENTRY_AUTH_TOKEN
 COPY shared/ /shared/
 COPY --from=install /app ./
 
-RUN #ls -al node_modules && exit 1
+ARG AWS_ACCESS_KEY_ID=''
+ARG AWS_SECRET_ACCESS_KEY=''
+ARG SMS_API_KEY=''
+ARG MOLLIE_API_KEY=''
+ARG COINMARKETCAP_API_KEY=''
+ARG SENTRY_DSN=''
+ARG JWT_SECRET=''
 
 WORKDIR /shared
 RUN npm install axios@0.26.1
