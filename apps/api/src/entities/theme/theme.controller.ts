@@ -10,7 +10,7 @@ const client = new PrismaClient();
 export default class ThemeController implements CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            const themes = await client.theme.findMany();
+            const themes = await client.theme.findMany(); // Todo: Filter by permissions ?
             res.status(200).json(themes);
         } catch (error) {
             next(error);
