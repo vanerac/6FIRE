@@ -428,7 +428,7 @@ resource "aws_ecs_task_definition" "client" {
       },
       {
         "name": "NEXT_PUBLIC_API_ROUTE",
-        "value": "${aws_alb.api.dns_name}/api"
+        "value": "https://api.6fireinvest.com/api"
       }
     ],
     "logConfiguration": {
@@ -477,7 +477,7 @@ resource "aws_ecs_task_definition" "dashboard" {
       },
       {
         "name": "NEXT_PUBLIC_API_ROUTE",
-        "value": "${aws_alb.api.dns_name}/api"
+        "value": "https://api.6fireinvest.com/api"
       }
     ],
     "logConfiguration": {
