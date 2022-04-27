@@ -42,9 +42,9 @@ ENV JWT_SECRET $JWT_SECRET
 COPY --from=install /app/build/apps/api ./apps/api
 COPY --from=install /app/apps/api/package.json ./apps/api/package.json
 COPY --from=install /app/apps/api/package-lock.json ./apps/api/package-lock.json
-COPY apps/api/src/templates/email/order_confirmation/email.html ./apps/api/src/template/email/order_confirmation/email.html
-COPY apps/api/src/templates/email/password_reset/email.txt ./apps/api/src/template/email/password_reset/email.txt
-COPY apps/api/src/templates/email/verify_email/email.html ./apps/api/src/template/email/verify_email/email.html
+COPY apps/api/src/templates/email/order_confirmation/email.html ./apps/api/src/templates/email/order_confirmation/email.html
+COPY apps/api/src/templates/email/password_reset/email.html ./apps/api/src/templates/email/password_reset/email.html
+COPY apps/api/src/templates/email/verify_email/email.html ./apps/api/src/templates/email/verify_email/email.html
 
 COPY --from=install /app/build/shared ./shared
 COPY shared/config/tsconfig.json ./shared/config/tsconfig.json
