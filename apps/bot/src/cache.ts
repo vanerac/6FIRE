@@ -28,9 +28,10 @@ export default class Cache extends EventEmitter {
     static async getInstance() {
         if (!this.instance) {
             this.instance = new Cache();
+            console.log('Cache instance created');
             await this.instance.client.connect();
-        }
-        return Cache.instance;
+        } else console.log('Cache instance already exists');
+        return this.instance;
     }
 
     static async destroy() {
@@ -54,12 +55,18 @@ export default class Cache extends EventEmitter {
     }
 
     async addMessage(chatId: string, message: string) {
-        this.emit('message_add');
+        const parsedData = JSON.stringify({ chatId, message });
+        await this.client.sendCommand(['RPUSH', 'pending_messages', parsedData]);
         console.log('Message Added to queue');
-        await this.client.rpush('pending_messages', { message, chatId });
+        this.emit('message_add', parsedData);
     }
 
-    async getMessage(): Promise<{ chatId: string; message: string }> {
-        return await this.client.lpop('pending_messages');
+    async getMessage(): Promise<{ chatId: string; message: string } | null> {
+        const data = await this.client.sendCommand(['LPOP', 'pending_messages']);
+        if (data) {
+            return JSON.parse(data);
+        } else {
+            return null;
+        }
     }
 }

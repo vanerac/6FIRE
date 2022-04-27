@@ -17,7 +17,7 @@ Sentry.init({
 
 const bot = new TelegramBot();
 
-bot.listenMessageQueue();
+// bot.listenMessageQueue();
 
 const listeners: {
     traderId: string;
@@ -30,6 +30,7 @@ async function handleUpdate(trader: Trader, data: Position[]) {
     await cache.setTrader(trader.clientId, data);
 
     if (!oldPositionsState) {
+        console.log('No old positions state');
         return;
     }
 
@@ -37,10 +38,13 @@ async function handleUpdate(trader: Trader, data: Position[]) {
     // calculate the difference between the 2 arrays
     const difference = positionDifferential(data, oldPositionsState);
 
-    if (!(difference.closed || difference.opened)) {
+    const message = `${difference.closed.length} closed positions and ${difference.opened.length} opened positions`;
+    cache.addMessage('@vanerac', message);
+    if (!(difference.closed.length || difference.opened.length)) {
+        console.log('no difference');
         return;
     }
-    const message = `${difference.closed.length} closed positions and ${difference.opened.length} opened positions`;
+
     const followers = await Database.getFollowers(trader.id);
     followers.forEach((follower) => {
         cache.addMessage(follower.User.telegramId, message);
@@ -57,10 +61,11 @@ async function updateListeners() {
     if (!newListeners.length) {
         return;
     }
-    await Cache.getInstance();
+    await Cache.getInstance().catch((e) => console.error(e));
     newListeners.forEach((trader) => {
+        console.log('Adding listener', trader.clientId);
         const listener = pnlWatcher.listen({
-            delay: 15000,
+            delay: 1000,
             encryptedUid: trader.clientId,
             tradeType: 'PERPETUAL',
         });
@@ -72,6 +77,8 @@ async function updateListeners() {
             handleUpdate(trader, data);
         });
     });
+
+    bot.listenMessageQueue(await Cache.getInstance());
 }
 
 setInterval(updateListeners, 1000 * 60 * 5); // every 5m
