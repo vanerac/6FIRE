@@ -66,6 +66,20 @@
             }
           }
         },
+        "Theme": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "iconUrl": {
+              "type": "string"
+            }
+          }
+        },
         "banner": {
           "type": "string",
           "format": "binary"

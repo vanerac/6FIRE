@@ -3,25 +3,57 @@ import type { NextPage } from 'next';
 import Header from './components/header';
 import Footer from './components/footer';
 // import checkAuth from './components/checkAuth';
-import Cookies from 'universal-cookie';
 import router from 'next/router';
 import { useEffect } from 'react';
+import { useCookies } from 'react-cookie';
+import getAPIClient from '@shared/tools/apiClient';
 
 const Compte: NextPage = (props: any) => {
-    const cookies = new Cookies();
+    const [cookies] = useCookies(['API_TOKEN']);
+    let $apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
-        if (!cookies.get('API_TOKEN')) {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
             router.replace('/');
+            return;
         }
+        $apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
 
     return (
-        <>
+        <div>
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
-            account page
+            <div className="account-wrapper">
+                <div className="main-title">
+                    <h1 className="title">
+                        Compte <span>Marc Durand, marcdurand@gmail.com</span>
+                    </h1>
+                </div>
+                <div className="informaion-wrapper">
+                    <div className="single-info">
+                        <img src="/img/info-icon/person.png" alt="" />
+                        <p>
+                            Informations personnelles <span>Modifiez vos données personnelles</span>
+                        </p>
+                    </div>
+                    <div className="single-info">
+                        <img src="/img/info-icon/security.png" alt="" />
+                        <p>
+                            Connexion et sécurité <span>Mettez à jour votre mot de passe</span>
+                        </p>
+                    </div>
+                    <div className="single-info">
+                        <img src="/img/info-icon/card.png" alt="" />
+                        <p>
+                            Abonnement et paiement{' '}
+                            <span>Gérez, modifiez votre abonnement et vos informations de paiement</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
             <Footer />
-        </>
+        </div>
     );
 };
 

@@ -20,6 +20,7 @@ export type { Subscription } from './models/Subscription';
 export type { Theme } from './models/Theme';
 export type { Trader } from './models/Trader';
 export type { User } from './models/User';
+export type { UserStatus } from './models/UserStatus';
 export type { UserSubscription } from './models/UserSubscription';
 
 export { AffiliationService } from './services/AffiliationService';
