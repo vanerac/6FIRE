@@ -3,6 +3,7 @@
 /* eslint-disable */
 import type { Subscription } from '../models/Subscription';
 import type { User } from '../models/User';
+import type { UserStatus } from '../models/UserStatus';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
@@ -178,6 +179,22 @@ export class UserService {
             path: {
                 'id': id,
             },
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * get the current user stats
+     * @returns UserStatus successful operation
+     * @throws ApiError
+     */
+    public getMeStats(): CancelablePromise<UserStatus> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/user/me',
             errors: {
                 400: `Invalid user supplied`,
                 500: `Internal server error`,
