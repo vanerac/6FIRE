@@ -28,21 +28,20 @@ const Compte: NextPage = (props: any) => {
                 <div className="breadcurm">
                     <span>Compte</span>
                     <img src="/img/info-icon/right-arrow.png" alt="" />
-                    <span>Informations personnelles</span>
+                    <span>Connexion et sécurité</span>
                 </div>
                 <div className="main-title">
                     <h1 className="title">
-                        Informations personnelles<span>Modifiez vos données personnelles</span>
+                        Connexion et sécurité <span>Mettez à jour votre mot de passe</span>
                     </h1>
                 </div>
 
                 <div className="infor-form">
                     <form action="#">
                         <div className="input-wrap">
-                            <input type="text" placeholder="* Nom" />
-                            <input type="text" placeholder="* Prénom" />
-                            <input type="email" placeholder="* Email" />
-                            <input type="tel" placeholder="* Numéro de téléphone" />
+                            <input type="password" placeholder="* Mot de passe actuel" />
+                            <input type="password" placeholder="* Nouveau mot de passe" />
+                            <input type="password" placeholder="* Confirmation du nouveau mot de passe" />
                         </div>
 
                         <div className="send_btn">

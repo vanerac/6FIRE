@@ -24,7 +24,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "../../shared/services/**/*.ts"
   ],
   "exclude": [
     "node_modules"

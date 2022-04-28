@@ -19,18 +19,28 @@ import '../css/header.css';
 import '../css/footer.css';
 import { useState } from 'react';
 import Sidebar from './components/sideBar';
+
+import Head from 'next/head';
+
+import { CookiesProvider, useCookies } from 'react-cookie';
+
 // import Cookies from 'universal-cookie';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [isOpenSideBar, setIsOpenSideBar] = useState(false);
     // set a cookie to avoid the user to be redirected to the login page in developpement mode
-    // const cookies = new Cookies();
-    // cookies.set('API_TOKEN', 'OK', { path: '/' });
+    const [$cookies, setCookies] = useCookies(['API_TOKEN']);
+    setCookies('API_TOKEN', 'OK', { path: '/' });
 
     return (
         <>
-            <Component {...pageProps} useStateOpenSideBar={setIsOpenSideBar} />
-            <Sidebar sideBarState={isOpenSideBar} setIsOpenSideBar={setIsOpenSideBar} />
+            <Head>
+                <link rel="shortcut icon" href="/logo-single.png" />
+            </Head>
+            <CookiesProvider>
+                <Component {...pageProps} useStateOpenSideBar={setIsOpenSideBar} />
+                <Sidebar sideBarState={isOpenSideBar} setIsOpenSideBar={setIsOpenSideBar} />
+            </CookiesProvider>
         </>
     );
 }

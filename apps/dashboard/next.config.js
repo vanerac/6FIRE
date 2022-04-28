@@ -1,4 +1,5 @@
 const { withSentryConfig } = require('@sentry/nextjs');
+const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
@@ -7,6 +8,9 @@ const nextConfig = {
     },
     experimental: {
         externalDir: true,
+    },
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'styles')],
     },
 };
 const sentryWebpackPluginOptions = {

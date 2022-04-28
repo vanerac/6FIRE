@@ -1,11 +1,12 @@
-import {ApiClient} from "../services";
-import Cookies from 'universal-cookie';
+import { ApiClient } from '../services';
 
-export default function getApiClient(host: string = process.env.NEXT_PUBLIC_API_ROUTE || 'http://localhost:3333/api') {
-    const cookies = new Cookies();
-    cookies.get('API_TOKEN');
+export default function getApiClient(
+    token: string,
+    host: string = process.env.NEXT_PUBLIC_API_ROUTE || 'http://localhost:3333/api',
+) {
+    console.log(token);
     return new ApiClient({
-        TOKEN: cookies.get('API_TOKEN'),
-        BASE: host || 'http://localhost:3333/api'
+        TOKEN: token,
+        BASE: host || 'http://localhost:3333/api',
     });
 }
