@@ -260,6 +260,7 @@ export default class PaymentController implements CRUDController {
                     refresh: subscription.Subscription.refreshRate.toString(), // Format might not be right
                     subscription: subscription.Subscription.name,
                     orderDate: new Date(subscription.createdAt).toLocaleDateString(), // format might not be right
+                    email: subscription.User.email,
                 }),
             });
         }
