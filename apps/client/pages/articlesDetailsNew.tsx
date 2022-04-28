@@ -39,7 +39,7 @@ const HomePage: NextPage = (props: any) => {
         });
     }, [query]);
 
-    const convertDate = (date: string) => {
+    const $convertDate = (date: string) => {
         const date_unix = new Date(date).getTime() / 1000;
         const now = new Date().getTime() / 1000;
         const diff = now - date_unix;
