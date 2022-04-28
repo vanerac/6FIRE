@@ -24,6 +24,8 @@ import Cookies from 'universal-cookie';
 
 import Head from 'next/head';
 
+import { CookiesProvider } from 'react-cookie';
+
 // import Cookies from 'universal-cookie';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -37,8 +39,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Head>
                 <link rel="shortcut icon" href="/logo-single.png" />
             </Head>
-            <Component {...pageProps} useStateOpenSideBar={setIsOpenSideBar} />
-            <Sidebar sideBarState={isOpenSideBar} setIsOpenSideBar={setIsOpenSideBar} />
+            <CookiesProvider>
+                <Component {...pageProps} useStateOpenSideBar={setIsOpenSideBar} />
+                <Sidebar sideBarState={isOpenSideBar} setIsOpenSideBar={setIsOpenSideBar} />
+            </CookiesProvider>
         </>
     );
 }
