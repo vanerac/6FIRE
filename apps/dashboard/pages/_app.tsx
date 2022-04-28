@@ -53,9 +53,12 @@ import '../styles/articles-creer-un-article-1.css';
 // New
 import '../styles/topbar.css';
 
+// SASS Variables are in here
 import type { AppProps } from 'next/app';
+import vars from '../styles/main.module.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
+    console.log(vars.primaryColor);
     return <Component {...pageProps} />;
 }
 
