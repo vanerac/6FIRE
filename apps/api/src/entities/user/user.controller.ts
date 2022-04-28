@@ -182,6 +182,25 @@ export class UserController implements CRUDController {
         }
     }
 
+    public static async getLinkingCode(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id } = req.user;
+            const user = await prisma.user.findFirst({
+                where: {
+                    id: +id,
+                },
+                select: {
+                    telegramLinkingCode: true,
+                },
+            });
+            res.json({
+                code: user.telegramLinkingCode,
+            });
+        } catch (error) {
+            next(error);
+        }
+    }
+
     public static async me(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.user;

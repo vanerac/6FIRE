@@ -45,4 +45,30 @@ export default class Database {
             },
         });
     }
+
+    static async setUpdateChatId(code: string, chatId: number) {
+        return await prisma.user.update({
+            where: {
+                telegramLinkingCode: code,
+            },
+            data: {
+                telegramId: chatId,
+            },
+            select: {
+                email: true,
+            },
+        });
+    }
+
+    static async getUserFromChatId(chatId: number) {
+        return await prisma.user.findFirst({
+            where: {
+                telegramId: chatId,
+            },
+            select: {
+                userId: true,
+                email: true,
+            },
+        });
+    }
 }

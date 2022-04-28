@@ -23,6 +23,9 @@
     "/user/me": {
       "$ref": "./user/user.path.json#/me"
     },
+    "/me/getLinkingCode": {
+      "$ref": "./user/user.path.json#/getLinkingCode"
+    },
     "/auth/login": {
       "$ref": "./auth/auth.path.json#/login"
     },

@@ -202,4 +202,22 @@ export class UserService {
         });
     }
 
+    /**
+     * get the current user linking code
+     * @returns any successful operation
+     * @throws ApiError
+     */
+    public getLinkingCode(): CancelablePromise<{
+        code?: string;
+    }> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/me/getLinkingCode',
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
 }

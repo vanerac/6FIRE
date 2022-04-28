@@ -5,15 +5,47 @@
 import configuration from '../configuration';
 import Cache from './cache';
 import EventEmitter from 'events';
+import Slimbot from 'slimbot';
+import Database from './database';
 
-const cache = new Cache();
+const slimbot = new Slimbot(configuration.TELEGRAM_TOKEN);
+
+// const cache = new Cache();
 export default class TelegramBot {
     // Listen
 
     private _lockUpdate = new EventEmitter();
+    private cache: Cache;
 
     constructor() {
         // Instantiated bot
+        this.cache = new Cache();
+        slimbot.startPolling();
+
+        slimbot.on('message', async (message) => {
+            if (message.text.match(/^\/start .{36}$/)) {
+                const [$commande, code] = message.text.split(' ');
+                try {
+                    const user = await Database.setUpdateChatId(code, message.chat.id);
+                    await slimbot.sendMessage(message.chat.id, 'Compte lie a: ' + user.email);
+                } catch (error) {
+                    await slimbot.sendMessage(message.chat.id, 'Erreur lors de la verification de votre code');
+                }
+            } else if (message.text.match('/info')) {
+                let user;
+
+                try {
+                    user = await Database.getUserFromChatId(message.chat.id);
+                    await slimbot.sendMessage(message.chat.id, 'Compte lie a: ' + user.email);
+                } catch (error) {
+                    await slimbot.sendMessage(message.chat.id, 'Aucun compte lie a cette adresse');
+                }
+            } else
+                await slimbot.sendMessage(
+                    message.chat.id,
+                    'Commande Invalide. faites `/start {code}` pour commencer a recevoir des notifications',
+                );
+        });
     }
 
     private _lock = false;
@@ -23,7 +55,7 @@ export default class TelegramBot {
     }
 
     private set lock(value) {
-        if (this._lock !== true) {
+        if (value !== true) {
             this._lockUpdate.emit('locked');
         } else {
             this._lockUpdate.emit('unlocked');
@@ -32,20 +64,15 @@ export default class TelegramBot {
     }
 
     private static async sendMessage(chatId, message) {
-        return fetch(`https://api.telegram.org/bot${configuration.TELEGRAM_TOKEN}/sendMessage`, {
-            method: 'POST',
-            body: JSON.stringify({
-                chat_id: chatId,
-                text: message,
-            }),
-        });
+        return slimbot.sendMessage(chatId, message);
     }
 
-    public async listenMessageQueue(): Promise<void> {
+    public async listenMessageQueue(cacheInstance: Cache): Promise<void> {
         // Listener on the message queue
-        cache.on('message_add', () => {
+        cacheInstance.on('message_add', () => {
             //  call this.consumeMessageQueue()
             // Function must not be ran in parallel
+            console.log('Got a new message to send');
             if (this.lock) {
                 return;
             } else this.consumeMessageQueue();
@@ -54,6 +81,7 @@ export default class TelegramBot {
         this._lockUpdate.on('unlocked', () => {
             //  call this.consumeMessageQueue()
             // Function must not be ran in parallel
+            console.log('Queue unlocked');
             this.consumeMessageQueue();
         });
     }
@@ -62,25 +90,26 @@ export default class TelegramBot {
         // The bot sends messages to the queue and this function handles sending the messages
         // The function must respect the telegram rate limit
 
-        this.lock = true;
         // Get the message from the cache
-        const message = await cache.getMessage(); // message is popped from queue
+        const message = await this.cache.getMessage(); // message is popped from queue
         // If there is no message, return
         if (!message) {
-            this.lock = false;
+            // this.lock = false;
             return;
         }
-        console.log('Sending message');
+        this.lock = true;
         // Send the message to the telegram bot
         try {
             await TelegramBot.sendMessage(message.chatId, message.message);
         } catch (error) {
+            console.log(error);
             // If its a rate limit, wait for a second and try again
             if (error.response.status === 429) {
                 await new Promise((resolve) => setTimeout(resolve, 1000));
                 await TelegramBot.sendMessage(message.chatId, message.message);
             }
         }
+        this.lock = false;
         console.log('Message sent');
     }
 }
