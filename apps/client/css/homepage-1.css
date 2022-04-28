@@ -3792,6 +3792,8 @@ body{
   justify-content: center;
   display: flex;
   font-size: 16px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .pricing_table .single_table.active .price_head .title{
   background-color: #b30f10;
@@ -3916,8 +3918,6 @@ body{
 }
 .pricing_table .single_table.active_seller .title{
   position: relative;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
 }
 .pricing_table .single_table.active_seller .title .best-seller{
   background: rgb(255,238,126);
