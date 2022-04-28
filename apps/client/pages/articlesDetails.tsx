@@ -4,10 +4,9 @@ import Header from './components/header';
 import Footer from './components/footer';
 import { useEffect, useState } from 'react';
 import Cookies from 'universal-cookie';
-import router from 'next/router';
+import router, { useRouter } from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { Article } from '@shared/services';
-import { useRouter } from 'next/router';
 
 const HomePage: NextPage = (props: any) => {
     const cookies = new Cookies();
