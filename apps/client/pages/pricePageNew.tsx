@@ -131,6 +131,76 @@ const PricePage: NextPage = (props: any) => {
                         </div>
                     </div>
                 </div>
+
+                {/* Pricing table 2 */}
+                <div className="pricing_second_block">
+                    <div className="pricing_table">
+
+                    {/* single table */}
+                    <div className="single_table">
+                        <div className="price_head">
+                            <div className="title"><h3>Novice <span>(Pour les débutants/frileux)</span></h3></div>
+                            <div className="price">49,99€ <span>/mois</span></div>
+
+                            <div className="small-des">
+                                <p>Économisez 50 euros en prenant la licence novice d’un an !</p>
+                            </div>
+                            
+                            <button type='submit' className="primary-button">
+                                <span>Commencer</span>
+                                <div className="right-arrow">
+                                    <img src="/img/icon/right-arrow.png" alt="" />
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* single table */}
+                    <div className="single_table active_seller">
+                        <div className="price_head">
+                            <div className="title">
+                                <h3>INTERMÉDIAIRE <span>(Pour les ambitieux, qui veulent trader)</span></h3>
+                                <button className="best-seller">BEST SELLER</button>
+                            </div>
+                            <div className="price">99,99€ <span>/mois</span></div>
+
+                            <div className="small-des">
+                                <p>Économisez 600 euros en prenant la licence intermédiaire d’un an !</p>
+                            </div>
+                            
+                            <button type='submit' className="primary-button">
+                                <span>Commencer</span>
+                                <div className="right-arrow">
+                                    <img src="/img/icon/right-arrow.png" alt="" />
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* single table */}
+                    <div className="single_table active_seller">
+                        <div className="price_head">
+                            <div className="title">
+                                <h3>PARTENAIRE <span>Licence annuelle</span></h3>
+                                <button className="best-seller">BEST SELLER</button>
+                            </div>
+                            <div className="price">199,99€ <span>/mois</span></div>
+
+                            <div className="small-des">
+                                <p>Économisez 1600 euros en prenant la licence intermédiaire d’un an !</p>
+                            </div>
+                            
+                            <button type='submit' className="primary-button">
+                                <span>Commencer</span>
+                                <div className="right-arrow">
+                                    <img src="/img/icon/right-arrow.png" alt="" />
+                                </div>
+                            </button>
+                            
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </div>
 
 

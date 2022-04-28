@@ -3887,3 +3887,53 @@ body{
     width: 100%;
   }
 }
+
+/* Pricing secong box */
+.pricing_second_block{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  padding-bottom: 45px;
+  overflow: visible;
+  padding: 0 3% 45px;
+}
+.pricing_second_block .pricing_table{
+  text-align: center;
+}
+.pricing_second_block .pricing_table .primary-button{
+  margin-bottom: 30px;
+}
+.pricing_table .single_table .price_head{
+  width: 100%;
+}
+.pricing_table .single_table.active_seller .title{
+  background: rgb(17,17,17);
+  background: linear-gradient(90deg, rgba(17,17,17,1) 0%, rgba(138,13,14,1) 100%);
+}
+.pricing_table .single_table.active_seller .small-des p{
+  color: #b30f10;
+}
+.pricing_table .single_table.active_seller .title{
+  position: relative;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.pricing_table .single_table.active_seller .title .best-seller{
+  background: rgb(255,238,126);
+  background: linear-gradient(90deg, rgba(255,238,126,1) 0%, rgba(224,134,47,1) 100%);
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 20px;
+  max-width: fit-content;
+  border: 0;
+  cursor: pointer;
+
+}
+.pricing_second_block .pricing_table .single_table{
+  overflow: visible;
+}
