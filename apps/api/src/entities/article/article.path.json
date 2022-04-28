@@ -154,7 +154,6 @@
           "name": "page",
           "in": "path",
           "description": "Pagination page",
-          "required": false,
           "schema": {
             "type": "number"
           }
@@ -163,7 +162,6 @@
           "name": "limit",
           "in": "path",
           "description": "Pagination size",
-          "required": false,
           "schema": {
             "type": "number"
           }
