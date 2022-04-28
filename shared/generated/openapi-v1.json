@@ -1675,6 +1675,24 @@
         "tags": [
           "Article"
         ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Pagination page",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Pagination size",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
         "description": "Get all articles",
         "operationId": "getArticles",
         "responses": {

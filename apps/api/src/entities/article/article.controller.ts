@@ -11,20 +11,22 @@ export default class ArticleController implements CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: userId, isAdmin } = req.user;
-            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                where: {
-                    userId,
-                },
-                select: {
-                    Subscription: {
-                        select: {
-                            level: true,
-                        },
-                    },
-                },
-            });
+            const { page = 0, limit = 20 } = req.query;
+
             let where = {};
             if (!isAdmin) {
+                const userSubscriptionLevel = await prisma.userSubscription.findFirst({
+                    where: {
+                        userId,
+                    },
+                    select: {
+                        Subscription: {
+                            select: {
+                                level: true,
+                            },
+                        },
+                    },
+                });
                 where = {
                     hidden: false,
                     Theme: {
@@ -36,6 +38,8 @@ export default class ArticleController implements CRUDController {
             }
             const articles = await prisma.article.findMany({
                 where: where,
+                take: +limit,
+                skip: Math.max(0, +page - 1) * +limit,
                 select: {
                     id: true,
                     title: true,
