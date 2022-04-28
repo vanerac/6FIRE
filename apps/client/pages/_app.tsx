@@ -20,19 +20,17 @@ import '../css/footer.css';
 import { useState } from 'react';
 import Sidebar from './components/sideBar';
 
-import Cookies from 'universal-cookie';
-
 import Head from 'next/head';
 
-import { CookiesProvider } from 'react-cookie';
+import { CookiesProvider, useCookies } from 'react-cookie';
 
 // import Cookies from 'universal-cookie';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [isOpenSideBar, setIsOpenSideBar] = useState(false);
     // set a cookie to avoid the user to be redirected to the login page in developpement mode
-    const cookies = new Cookies();
-    cookies.set('API_TOKEN', 'OK', { path: '/' });
+    const [$cookies, setCookies] = useCookies(['API_TOKEN']);
+    setCookies('API_TOKEN', 'OK', { path: '/' });
 
     return (
         <>

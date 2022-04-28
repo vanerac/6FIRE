@@ -10,7 +10,7 @@ const prisma = new PrismaClient();
 export default class ArticleController implements CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
-            const { id: userId } = req.user;
+            const { id: userId, isAdmin } = req.user;
             const userSubscriptionLevel = await prisma.userSubscription.findFirst({
                 where: {
                     userId,
@@ -23,15 +23,19 @@ export default class ArticleController implements CRUDController {
                     },
                 },
             });
-            const articles = await prisma.article.findMany({
-                where: {
+            let where = {};
+            if (!isAdmin) {
+                where = {
                     hidden: false,
                     Theme: {
                         subscriptionLevel: {
                             lte: userSubscriptionLevel?.Subscription.level,
                         },
                     },
-                },
+                };
+            }
+            const articles = await prisma.article.findMany({
+                where: where,
                 select: {
                     id: true,
                     title: true,
@@ -39,6 +43,12 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    Theme: {
+                        select: {
+                            name: true,
+                            iconUrl: true,
+                        },
+                    },
                 },
             });
             res.status(200).json(articles);
@@ -50,7 +60,7 @@ export default class ArticleController implements CRUDController {
     static async getById(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: articleId } = req.params;
-            const { id: userId } = req.user;
+            const { id: userId, isAdmin } = req.user;
             const userSubscriptionLevel = await prisma.userSubscription.findFirst({
                 where: {
                     userId,
@@ -73,6 +83,20 @@ export default class ArticleController implements CRUDController {
                 );
             }
 
+            const where = {
+                id: +articleId,
+                hidden: undefined,
+                Theme: undefined,
+            };
+            if (!isAdmin) {
+                where.hidden = false;
+                where.Theme = {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel?.Subscription.level,
+                    },
+                };
+            }
+
             const article = await prisma.article.findFirst({
                 where: {
                     id: +articleId,
@@ -90,6 +114,12 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    Theme: {
+                        select: {
+                            name: true,
+                            iconUrl: true,
+                        },
+                    },
                     ArticleRecommandation: {
                         select: {
                             // id: false,
