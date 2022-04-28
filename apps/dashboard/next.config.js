@@ -12,6 +12,7 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+    cssModules: true
 };
 const sentryWebpackPluginOptions = {
     // Additional config options for the Sentry Webpack plugin. Keep in mind that

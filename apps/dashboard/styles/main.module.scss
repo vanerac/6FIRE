@@ -4,3 +4,13 @@ $primary-color: #64FF00;
 :export {
   primaryColor: $primary-color
 }
+
+
+/* demo */
+.demo{
+  list-style: none;
+  li{
+    font-size: 14px;
+    color: red;
+  }
+}
