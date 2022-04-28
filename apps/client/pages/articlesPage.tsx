@@ -6,12 +6,13 @@ import Header from './components/header';
 import getAPIClient from '@shared/tools/apiClient';
 import { useEffect, useState } from 'react';
 import { Article, Theme } from '@shared/services';
-import Cookies from 'universal-cookie';
+import { useCookies } from 'react-cookie';
 
 const HomePage: NextPage = (props: any) => {
     const [articles, setArticles] = useState<Article[]>([]);
     const [themes, setThemes] = useState<Theme[]>([]);
-    const cookies = new Cookies();
+    const [cookies] = useCookies(['API_TOKEN']);
+    let apiClient = getAPIClient(cookies['API_TOKEN']);
 
     const convertDate = (date: string) => {
         const date_unix = new Date(date).getTime() / 1000;
@@ -33,19 +34,19 @@ const HomePage: NextPage = (props: any) => {
     };
 
     useEffect(() => {
-        if (!cookies.get('API_TOKEN')) {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
             router.replace('/');
             return;
         }
+        apiClient = getAPIClient(cookies['API_TOKEN']);
         const fetchData = async () => {
-            const apiClient = getAPIClient();
             const response = await apiClient.article.getArticles();
 
             console.log('articles => ', response);
             setArticles(response as Article[]);
         };
         const fetchThemes = async () => {
-            const apiClient = getAPIClient();
             const response = await apiClient.themes.getThemes();
             console.log('thmes => ', response);
             setThemes(response as Theme[]);

@@ -2,18 +2,23 @@ import type { NextPage } from 'next';
 import Footer from './components/footer';
 import Header from './components/header';
 // import checkAuth from './components/checkAuth';
-import Cookies from 'universal-cookie';
 import router from 'next/router';
 import { useEffect } from 'react';
 import Image from 'next/image';
+import { useCookies } from 'react-cookie';
+import getAPIClient from '@shared/tools/apiClient';
 
 const TrafingForex: NextPage = (props: any) => {
-    const cookies = new Cookies();
+    const [cookies] = useCookies(['API_TOKEN']);
+    let $apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
-        if (!cookies.get('API_TOKEN')) {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
             router.replace('/');
+            return;
         }
+        $apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
 
     return (
