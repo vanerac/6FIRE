@@ -32,7 +32,7 @@ const prisma = new PrismaClient();
 
 export const generateToken = (user: any): string => {
     return jwt.sign(user, configuration.JWT_SECRET || 'secret', {
-        expiresIn: '1h',
+        expiresIn: '72h',
     });
 };
 

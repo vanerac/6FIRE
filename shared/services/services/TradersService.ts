@@ -31,21 +31,16 @@ export class TradersService {
 
     /**
      * Update curation
-     * @param id Trader ID
      * @param requestBody
      * @returns Trader Success
      * @throws ApiError
      */
     public updateTraderCuration(
-        id: number,
         requestBody?: Array<Trader>,
     ): CancelablePromise<Trader> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/trader/curation',
-            path: {
-                'id': id,
-            },
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -141,59 +136,6 @@ export class TradersService {
             url: '/trader/trader/{id}/followers',
             path: {
                 'id': id,
-            },
-            errors: {
-                400: `Bad Request`,
-                401: `Unauthorized`,
-                403: `Forbidden`,
-                404: `Not Found`,
-                500: `Internal Server Error`,
-            },
-        });
-    }
-
-    /**
-     * Get the top traders from Binance
-     * @param limit Limit
-     * @returns Trader Success
-     * @throws ApiError
-     */
-    public getTopTraders(
-        limit?: number,
-    ): CancelablePromise<Array<Trader>> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/trader/curation/top',
-            query: {
-                'limit': limit,
-            },
-            errors: {
-                400: `Bad Request`,
-                401: `Unauthorized`,
-                403: `Forbidden`,
-                404: `Not Found`,
-                500: `Internal Server Error`,
-            },
-        });
-    }
-
-    /**
-     * Search for a trader on Binance
-     * @param query Query
-     * @param limit Limit
-     * @returns Trader Success
-     * @throws ApiError
-     */
-    public searchTrader(
-        query: string,
-        limit?: number,
-    ): CancelablePromise<Array<Trader>> {
-        return this.httpRequest.request({
-            method: 'GET',
-            url: '/trader/curation/search',
-            query: {
-                'query': query,
-                'limit': limit,
             },
             errors: {
                 400: `Bad Request`,

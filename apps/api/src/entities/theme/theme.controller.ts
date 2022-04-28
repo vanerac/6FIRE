@@ -1,6 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import { CRUDController } from '../../types';
 import { PrismaClient } from '@prisma/client';
+import path from 'path';
+import configuration from '../../../configuration';
+import * as fs from 'fs';
 
 const client = new PrismaClient();
 
@@ -26,8 +29,15 @@ export default class ThemeController implements CRUDController {
 
     static async create(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
+            const icon = req.file;
             const { name, subscriptionLevel } = req.body;
-            const theme = await client.theme.create({ data: { name, subscriptionLevel } });
+            const theme = await client.theme.create({
+                data: {
+                    name,
+                    subscriptionLevel,
+                    iconUrl: path.join(configuration.BACKEND_URL, 'public/', icon.filename),
+                },
+            });
             res.status(201).json(theme);
         } catch (error) {
             next(error);
@@ -37,6 +47,7 @@ export default class ThemeController implements CRUDController {
     static async update(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             const { id } = req.params;
+            // Todo: update photo
             const { name, subscriptionLevel } = req.body;
             const theme = await client.theme.update({
                 where: { id: +id },
@@ -52,6 +63,8 @@ export default class ThemeController implements CRUDController {
         try {
             const { id } = req.params;
             const theme = await client.theme.delete({ where: { id: +id } });
+            const [$http, $base, $public, headerPath] = theme.iconUrl.split('/');
+            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
             res.status(200).json(theme);
         } catch (error) {
             next(error);

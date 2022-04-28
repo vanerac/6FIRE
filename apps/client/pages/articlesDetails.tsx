@@ -2,495 +2,248 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Header from './components/header';
 import Footer from './components/footer';
-// import checkAuth from './components/checkAuth';
+import { useEffect, useState } from 'react';
 import Cookies from 'universal-cookie';
 import router from 'next/router';
-import { useEffect } from 'react';
+import getAPIClient from '@shared/tools/apiClient';
+import { Article } from '@shared/services';
+import { useRouter } from 'next/router';
 
-const ArticlesDetails: NextPage = (props: any) => {
+const HomePage: NextPage = (props: any) => {
     const cookies = new Cookies();
+    const [themeName, setThemeName] = useState('');
+    const [articles, setArticles] = useState<Article>();
+    const apiClient = getAPIClient();
+    const { query } = useRouter();
 
     useEffect(() => {
+        console.log('query');
         if (!cookies.get('API_TOKEN')) {
             router.replace('/');
+            return;
         }
-    }, []);
+
+        if (!query.themeId || !query.themeId) return;
+
+        apiClient.themes.getTheme(+query.themeId).then((res: any) => {
+            console.log('res => ', res);
+            setThemeName(res.name);
+        });
+
+        apiClient.article.getArticleById(query.articleId as any).then((res) => {
+            console.log('res => ', res);
+            setArticles(res as Article);
+        });
+    }, [query]);
+
+    const convertDate = (date: string) => {
+        const date_unix = new Date(date).getTime() / 1000;
+        const now = new Date().getTime() / 1000;
+        const diff = now - date_unix;
+        const days = Math.floor(diff / 86400);
+        const hours = Math.floor((diff - days * 86400) / 3600);
+        const minutes = Math.floor((diff - days * 86400 - hours * 3600) / 60);
+        const seconds = Math.floor(diff - days * 86400 - hours * 3600 - minutes * 60);
+        if (days > 0) {
+            return `${days} jours`;
+        } else if (hours > 0) {
+            return `${hours} heures`;
+        } else if (minutes > 0) {
+            return `${minutes} minutes`;
+        } else {
+            return `${seconds} secondes`;
+        }
+    };
 
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />
-            <div className="articles-details screen">
-                <div className="photography-SAHlos">
-                    <div className="groupe-de-masques-326-o80O4f">
-                        <Image src="/img/mask-group-326-1@1x.png" layout="fill" objectFit="cover" />
-                    </div>
-                    <div className="rectangle-3501-o80O4f"></div>
-                </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
-                <div className="thme-sombre-SAHlos">
-                    <div className="content-page-FZXT2m">
-                        <div className="thme-sombre-6DMTzr">
-                            <div className="background-UtoxRq">
-                                <div className="articles-UtoxRq">
-                                    <div className="background-If24qc"></div>
-                                    <div className="groupe-1491-If24qc">
-                                        <div className="groupe-1490-e4GPIH">
-                                            <Image src="/img/group-1490-3@1x.png" layout="fill" />
+            <div className="article-details-block">
+                {articles ? (
+                    <>
+                        <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
+
+                        <div className="article_details_wrapper">
+                            <div className="article_header">
+                                <Image src="/img/mask-group-326-1@1x.png" layout="fill" objectFit="cover" />
+                            </div>
+
+                            <div className="article_content">
+                                <div className="author_box">
+                                    <div className="author-photo">
+                                        <Image src="/img/group-1490-3@1x.png" layout="fill" />
+                                    </div>
+                                    <div className="category_date">
+                                        <div className="category lato-bold-white-16px">{themeName}</div>
+                                        <div className="date lato-normal-manatee-14px">
+                                            <span>{convertDate(articles.createdAt)}</span>
                                         </div>
                                     </div>
-                                    <div className="thmatique-If24qc lato-bold-white-16px">Crypto</div>
-                                    <div className="date-If24qc lato-normal-manatee-14px">27 Février 2022</div>
-                                    <div className="titre-If24qc lato-bold-white-22px">
-                                        Les 5 erreurs à éviter en crypto
-                                    </div>
-                                    <div className="paragraphe-If24qc lato-bold-white-16px-2">
-                                        <span className="span0-vJxPdn lato-bold-white-16px">Attention :</span>
-                                        <span className="span1-vJxPdn lato-normal-white-16px">
-                                            Vous devez faire vos propres recherches avant tout investissement. Ce
-                                            document ne peut en aucun cas être considéré comme un conseil en
-                                            investissement.
-                                            <br />
-                                            <br />
-                                            Précédemment utilisés par une population d’initiés, la cryptomonnaie et le
-                                            trading se démocratisent et attirent aujourd’hui un grand nombre
-                                            d’investisseurs. Les monnaies virtuelles font parler d’elles et attirent les
-                                            investisseurs néophytes. Cependant, pour réussir son investissement crypto
-                                            monnaie sans risque, il existe plusieurs erreurs crypto de débutant à
-                                            éviter.
-                                            <br />
-                                            <br />
-                                        </span>
-                                        <span className="span2-vJxPdn lato-bold-white-16px">
-                                            1. Ne pas suffisamment protéger ses comptes
-                                            <br />
-                                            2. Ne pas comprendre dans quoi on investit <br />
-                                            3. Se tromper d’adresse
-                                            <br />
-                                            4. Mettre tous ses oeufs dans le même panier
-                                            <br />
-                                            5. Utiliser des effets de levier
-                                            <br />
-                                            <br />
-                                        </span>
-                                        <span className="span3-vJxPdn lato-normal-white-16px">
-                                            Le sondage montre aussi quelles sont les erreurs les plus courantes commises
-                                            par les investisseurs des États-Unis. Sans grande surprise, 38 % des
-                                            personnes interrogées regrettent d’avoir cédé à la panique et vendu leurs
-                                            cryptomonnaies au lieu de patienter jusqu’à ce que les cours grimpent. 32 %
-                                            regrettent également d’avoir « tout investi sur un seul type de coin ».
-                                            <br />
-                                            <br />
-                                            La troisième erreur la plus courante, est le manque de compréhension des
-                                            marchés de cryptomonnaies : elle concerne 27 % des personnes interrogées.
-                                            Enfin, on trouve à la quatrième place des erreurs les plus courantes les
-                                            investisseurs qui ont envoyé leurs cryptomonnaies avant d’avoir la certitude
-                                            de recevoir un paiement en retour. La cinquième place est occupée par ceux
-                                            qui ont acheté au plus haut… Pour revendre au plus bas :<br />
-                                        </span>
-                                        <span className="span4-vJxPdn lato-bold-white-16px">
-                                            <br />
-                                            <br />
-                                        </span>
-                                    </div>
-                                    <div className="image-878-If24qc">
-                                        <Image src="/img/image-878-1@1x.png" layout="fill" />
-                                    </div>
-                                    <div className="paragraphe-ldv3Xu lato-bold-white-16px-2">
-                                        <span className="span0-O1dsNa lato-normal-white-16px">
-                                            34 % des personnes interrogées révèlent ainsi conserver leurs cryptomonnaies
-                                            sur Coinbase, 26 % ont choisi Robinhood, puis Binance suit avec 24 % d’entre
-                                            elles. Ce sont aussi Coinbase et Binance qui représentent les plus gros
-                                            investissements moyens : chaque personne interrogée y stocke en moyenne 2
-                                            742 dollars et 2 813 dollars respectivement.
-                                            <br />
-                                        </span>
-                                        <span className="span1-O1dsNa lato-bold-white-16px">
-                                            <br />
-                                            ➡️{' '}
-                                        </span>
-                                        <span className="span2-O1dsNa lato-bold-white-16px">
-                                            À lire également : Comment débuter dans les cryptomonnaies ? À lire
-                                            également : Comment débuter dans les cryptomonnaies ? À lire également :
-                                            Comment débuter dans les cryptomonnaies ? À lire également : Comment débuter
-                                            dans les cryptomonnaies ? À lire également : Comment débuter dans les
-                                            cryptomonnaies ? À lire également : Comment débuter dans les cryptomonnaies
-                                            ? À lire également : Comment débuter dans les cryptomonnaies ? À lire
-                                            également : Comment débuter dans les cryptomonnaies ? À lire également :
-                                            Comment débuter dans les cryptomonnaies ? À lire également : Comment débuter
-                                            dans les cryptomonnaies ? À lire également : Comment débuter dans les
-                                            cryptomonnaies ? À lire également : Comment débuter dans les cryptomonnaies
-                                            ? À lire également : Comment débuter dans les cryptomonnaies ? À lire
-                                            également : Comment débuter dans les cryptomonnaies ? À lire également :
-                                            Comment débuter dans les cryptomonnaies ? À lire également : Comment débuter
-                                            dans les cryptomonnaies ? À lire également : Comment débuter dans les
-                                            cryptomonnaies ? À lire également : Comment débuter dans les cryptomonnaies
-                                            ? À lire également : Comment débuter dans les cryptomonnaies ? À lire
-                                            également : Comment débuter dans les cryptomonnaies ? À lire également :
-                                            Comment débuter dans les cryptomonnaies ?
-                                        </span>
-                                    </div>
-                                    <div className="paragraphe-EYTrHt lato-light-manatee-14px">
-                                        Source : Cryptovantage
+                                </div>
+
+                                <div className="artitle_title">
+                                    <h2 className="title lato-bold-white-22px">{articles.title}</h2>
+                                </div>
+
+                                <div className="article_text lato-normal-white-16px">{articles.content}</div>
+
+                                {/* <p>
+                                        Attention : Vous devez faire vos propres recherches avant tout investissement.
+                                        Ce document ne peut en aucun cas être considéré comme un conseil en
+                                        investissement.
+                                    </p>
+
+                                    <p>
+                                        Précédemment utilisés par une population d’initiés, la cryptomonnaie et le
+                                        trading se démocratisent et attirent aujourd’hui un grand nombre
+                                        d’investisseurs. Les monnaies virtuelles font parler d’elles et attirent les
+                                        investisseurs néophytes. Cependant, pour réussir son investissement crypto
+                                        monnaie sans éviter
+                                    </p>
+
+                                    <ol>
+                                        <li>Ne pas suffisamment protéger ses comptes</li>
+                                        <li>Ne pas comprendre dans quoi on investit</li>
+                                        <li>Se tromper d’adresse</li>
+                                        <li>Mettre tous ses oeufs dans le même panier</li>
+                                        <li>Utiliser des effets de levier</li>
+                                    </ol>
+
+                                    <p>
+                                        Le sondage montre aussi quelles sont les erreurs les plus courantes commises par
+                                        les investisseurs des États-Unis. Sans grande surprise, 38 % des personnes
+                                        interrogées regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies
+                                        au lieu de patienter jusqu’à ce que les cours grimpent. 32 % regrettent
+                                        également d’avoir « tout investi sur un seul type de coin ».
+                                    </p>
+
+                                    <p>
+                                        La troisième erreur la plus courante, est le manque de compréhension des marchés
+                                        de cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on
+                                        trouve à la quatrième place des erreurs les plus courantes les investisseurs qui
+                                        ont envoyé leurs cryptomonnaies avant d’avoir la certitude de recevoir un
+                                        paiement en retour. La cinquième place est occupée par ceux qui ont acheté au
+                                        plus haut… Pour revendre au plus bas
+                                    </p> */}
+
+                                {/* <div className="imgbox">
+                                    <Image src="/img/image-878-1@1x.png" layout="fill" />
+                                </div> */}
+
+                                {/* <div className="article_text lato-normal-white-16px">
+                                    <p>
+                                        Attention : Vous devez faire vos propres recherches avant tout investissement.
+                                        Ce document ne peut en aucun cas être considéré comme un conseil en
+                                        investissement.
+                                    </p>
+
+                                    <p>
+                                        Précédemment utilisés par une population d’initiés, la cryptomonnaie et le
+                                        trading se démocratisent et attirent aujourd’hui un grand nombre
+                                        d’investisseurs. Les monnaies virtuelles font parler d’elles et attirent les
+                                        investisseurs néophytes. Cependant, pour réussir son investissement crypto
+                                        monnaie sans éviter
+                                    </p>
+
+                                    <ol>
+                                        <li>Ne pas suffisamment protéger ses comptes</li>
+                                        <li>Ne pas comprendre dans quoi on investit</li>
+                                        <li>Se tromper d’adresse</li>
+                                        <li>Mettre tous ses oeufs dans le même panier</li>
+                                        <li>Utiliser des effets de levier</li>
+                                    </ol>
+
+                                    <p>
+                                        Le sondage montre aussi quelles sont les erreurs les plus courantes commises par
+                                        les investisseurs des États-Unis. Sans grande surprise, 38 % des personnes
+                                        interrogées regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies
+                                        au lieu de patienter jusqu’à ce que les cours grimpent. 32 % regrettent
+                                        également d’avoir « tout investi sur un seul type de coin ».
+                                    </p>
+
+                                    <p>
+                                        La troisième erreur la plus courante, est le manque de compréhension des marchés
+                                        de cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on
+                                        trouve à la quatrième place des erreurs les plus courantes les investisseurs qui
+                                        ont envoyé leurs cryptomonnaies avant d’avoir la certitude de recevoir un
+                                        paiement en retour. La cinquième place est occupée par ceux qui ont acheté au
+                                        plus haut… Pour revendre au plus bas
+                                    </p>
+                                </div> */}
+                            </div>
+
+                            {/* More article you would love to reaa */}
+
+                            <div className="article-widget">
+                                <h2 className="article_category_title lato-bold-white-16px">DANS LA MÊME CATÉGORIE</h2>
+
+                                <div className="more_articles">
+                                    <div className="grid">
+                                        {/* single article */}
+                                        <div className="single_article">
+                                            <div className="artitle_thum">
+                                                <Image layout="fill" src="/img/mask-group-321-2@1x.png" />
+                                            </div>
+                                            <div className="cat_and_date">
+                                                <div className="category">
+                                                    <p className="lato-normal-milano-red-12px line">Play to Earn</p>
+                                                    <p className="article_date lato-light-manatee-12px">
+                                                        Il y a 2 heures
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="article_title">
+                                                <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
+                                            </div>
+                                        </div>
+
+                                        {/* single article */}
+                                        <div className="single_article">
+                                            <div className="artitle_thum">
+                                                <Image layout="fill" src="/img/mask-group-322-2@1x.png" />
+                                            </div>
+                                            <div className="cat_and_date">
+                                                <div className="category">
+                                                    <p className="lato-normal-milano-red-12px  line">E-Commerce</p>
+                                                    <p className="article_date lato-light-manatee-12px">
+                                                        Il y a 2 heures
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="article_title">
+                                                <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
+                                            </div>
+                                        </div>
+
+                                        {/* single article */}
+                                        <div className="single_article">
+                                            <div className="artitle_thum">
+                                                <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
+                                            </div>
+                                            <div className="cat_and_date">
+                                                <div className="category">
+                                                    <p className="lato-normal-milano-red-12px  line">Crypto</p>
+                                                    <p className="article_date lato-light-manatee-12px">
+                                                        19 février 2022
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="article_title">
+                                                <h4 className="title">Les 5 erreurs à éviter en crypton</h4>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="articles-suggrs-UtoxRq">
-                                <div className="article-nSszxI">
-                                    <div className="groupe-de-masques-321-bYoJkL">
-                                        <Image src="/img/mask-group-321-1@1x.png" layout="fill" />
-                                    </div>
-                                    <div className="club-premium-bYoJkL lato-normal-milano-red-12px">Crypto</div>
-                                    <div className="ligne-12-bYoJkL">
-                                        <Image src="/img/line-12-1@1x.png" layout="fill" />
-                                    </div>
-                                    <div className="club-premium-82SpCC lato-light-manatee-12px">Il y a 2 heures</div>
-                                    <div className="club-premium-hCTZUn lato-bold-white-16px">
-                                        Les cryptomonaies, par où commencer ?
-                                    </div>
-                                    <div className="rectangle-3498-bYoJkL"></div>
-                                </div>
-                                <div className="article-Gu9a67">
-                                    <div className="groupe-de-masques-322-rGeS6B">
-                                        <Image src="/img/mask-group-322-1@1x.png" layout="fill" />
-                                    </div>
-                                    <div className="club-premium-rGeS6B lato-normal-milano-red-12px">Crypto</div>
-                                    <div className="ligne-13-rGeS6B">
-                                        <Image src="/img/line-12-1@1x.png" layout="fill" />
-                                    </div>
-                                    <div className="club-premium-C57It0 lato-light-manatee-12px">19 février 2022</div>
-                                    <div className="club-premium-WhnPne lato-bold-white-16px">
-                                        Pourquoi investir dans l’AVAX ?
-                                    </div>
-                                    <div className="rectangle-3500-rGeS6B"></div>
-                                </div>
-                                <div className="article-zxQ2ay">
-                                    <div className="groupe-de-masques-323-CSPbxp">
-                                        <Image src="/img/mask-group-323-1@1x.png" layout="fill" />
-                                    </div>
-                                    <div className="club-premium-CSPbxp lato-normal-milano-red-12px">Crypto</div>
-                                    <div className="ligne-14-CSPbxp">
-                                        <Image src="/img/line-12-1@1x.png" layout="fill" />
-                                    </div>
-                                    <div className="club-premium-jUVbQI lato-light-manatee-12px">19 février 2022</div>
-                                    <div className="club-premium-uJ7Dgi lato-bold-white-16px">
-                                        Les 5 erreurs à éviter en crypto
-                                    </div>
-                                    <div className="rectangle-3501-CSPbxp"></div>
-                                </div>
-                                <div className="rectangle-3574-nSszxI"></div>
-                                <div className="dans-la-mme-catgorie-nSszxI lato-bold-white-16px">
-                                    DANS LA MÊME CATÉGORIE
-                                </div>
-                            </div>
-                            <div className="podcast-UtoxRq">
-                                <div className="background-EcYMaB"></div>
-                                <div className="groupe-de-masques-330-EcYMaB">
-                                    <Image src="/img/mask-group-330@1x.png" layout="fill" />
-                                </div>
-                                <div className="paragraphe-EcYMaB">PODCAST - Ecouter l’article</div>
-                                <div className="rectangle-3576-EcYMaB"></div>
-                                <div className="icon-play-EcYMaB">
-                                    <Image src="/img/icon-ionic-ios-play-circle@1x.png" layout="fill" />
-                                </div>
-                                <div className="rectangle-3577-EcYMaB"></div>
-                                <div className="ellipse-17697-EcYMaB"></div>
-                                <div className="paragraphe-ElS1b1 lato-normal-manatee-10px">1:30</div>
-                                <div className="paragraphe-I9j6Jc lato-normal-manatee-10px">3:10</div>
-                            </div>
                         </div>
-                    </div>
-                </div>
-                <div className="bandeau-call-to-action-SAHlos">
-                    <div className="groupe-de-masques-329-8hnitL">
-                        <Image src="/img/mask-group-329-1@1x.png" layout="fill" />
-                    </div>
-                    <div className="club-premium-8hnitL lato-bold-white-18px">OFFRE TRADING</div>
-                    <div className="club-premium-Bskei5 lato-normal-white-14px">+ Stratégies d’investissement</div>
-                    <div className="club-premium-bk5Axy lato-normal-white-14px">+ Canal privé Telegram</div>
-                    <div className="club-premium-1QkNQb lato-normal-white-14px">+ Portefeuille Crypto</div>
-                    <div className="club-premium-gonYmE lato-normal-white-14px">+ Alertes des meilleurs Traders</div>
-                    <div className="button-8hnitL">
-                        <div className="rectangle-3572-lzMUXo"></div>
-                        <div className="exclu-membre-confirm-lzMUXo lato-bold-white-14px">Rejoindre</div>
-                    </div>
-                </div>
-                <div className="avertissement-SAHlos">
-                    <div className="groupe-3020-lrVfn3">
-                        <div className="rectangle-3606-odgq3x"></div>
-                        <div className="les-investissements-odgq3x lato-normal-white-12px-2">
-                            <span className="span0-PCVd7X lato-bold-white-12px">Les investissements sont risqués.</span>
-                            <span className="span1-PCVd7X lato-normal-white-12px">
-                                Les investissements sont risqués par nature, les utilisateurs doivent faire leurs
-                                propres recherches avant d’entreprendre toute action et n’investir que dans les limites
-                                de leurs capacités financières. Cet article ne constitue pas un conseil en
-                                investissement.
-                            </span>
-                        </div>
-                    </div>
-                    <div className="ligne-41-lrVfn3">
-                        <Image src="/img/line-41-2@1x.png" layout="fill" />
-                    </div>
-                </div>
-                <Footer />
-            </div>
-            <div className="articles-details-mobile screen">
-                <div className="background-2dehIQ"></div>
-                <div className="rectangle-3484-2dehIQ"></div>
-                <div className="logo-2dehIQ">
-                    <div className="effect-93CbwD">
-                        <Image src="/img/effect-47@1x.png" layout="fill" />
-                    </div>
-                </div>
-                <div className="toogle-button-2dehIQ">
-                    <div className="icon-ionic-ios-moon-Xl9l4B">
-                        <Image src="/img/icon-ionic-ios-moon-15@1x.png" layout="fill" />
-                    </div>
-                    <div className="toogle-button-Xl9l4B">
-                        <div className="rectangle-3485-cx5bPs"></div>
-                        <div className="ellipse-17688-cx5bPs"></div>
-                    </div>
-                </div>
-                <div className="search-bar-2dehIQ">
-                    <div className="icon-search-1mrfex">
-                        <Image src="/img/icon-ionic-ios-search-27@1x.png" layout="fill" />
-                    </div>
-                </div>
-                <div className="rectangle-3607-2dehIQ"></div>
-                <div className="groupe-3022-2dehIQ">
-                    <div className="rectangle-3556-effLNT"></div>
-                    <div className="trading-effLNT lato-bold-white-14px">Espace Trading &amp; Crypto</div>
-                </div>
-                <div className="menu-2dehIQ">
-                    <div className="icon-ionic-ios-menu-cbAYAA">
-                        <div className="trac-1-JgeFVk">
-                            <Image src="/img/path-1-10@1x.png" layout="fill" />
-                        </div>
-                        <div className="trac-2-JgeFVk">
-                            <Image src="/img/path-2-10@1x.png" layout="fill" />
-                        </div>
-                    </div>
-                </div>
-                <div className="avertissement-2dehIQ">
-                    <div className="groupe-3020-h0m8Ul">
-                        <div className="rectangle-3606-bsnLxh"></div>
-                        <div className="les-investissements-bsnLxh lato-normal-white-12px-2">
-                            <span className="span0-Lpwn1a lato-bold-white-12px">Les investissements sont risqués.</span>
-                            <span className="span1-Lpwn1a lato-normal-white-12px">
-                                Les investissements sont risqués par nature, les utilisateurs doivent faire leurs
-                                propres recherches avant d’entreprendre toute action et n’investir que dans les limites
-                                de leurs capacités financières. Cet article ne constitue pas un conseil en
-                                investissement.
-                            </span>
-                        </div>
-                    </div>
-                    <div className="ligne-41-h0m8Ul">
-                        <Image src="/img/ligne-41-15@1x.png" layout="fill" />
-                    </div>
-                </div>
-                <div className="footer-2dehIQ">
-                    <div className="background-fjxQyr"></div>
-                    <div className="menu-footer-fjxQyr">
-                        <div className="mentions-lgales-Hxb8yD sourcesanspro-semi-bold-sonic-silver-14px">
-                            Mentions légales
-                        </div>
-                        <div className="cgu-Hxb8yD sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
-                        <div className="cgv-Hxb8yD sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
-                        <div className="politique-de-confidentialit-Hxb8yD sourcesanspro-semi-bold-sonic-silver-14px">
-                            Politique de confidentialité
-                        </div>
-                        <div className="contact-Hxb8yD sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
-                    </div>
-                    <div className="x2022-6-fire-invest-fjxQyr sourcesanspro-semi-bold-gray-14px">
-                        Ⓒ 2022 - 6FIRE INVEST
-                    </div>
-                    <div className="logo-fjxQyr">
-                        <div className="groupe-2-qecIay">
-                            <div className="groupe-1-P8pZ3Y">
-                                <Image src="/img/group-1-7-1x-png@1x.png" layout="fill" />
-                            </div>
-                        </div>
-                        <div className="effect-qecIay">
-                            <Image src="/" layout="fill" />
-                        </div>
-                    </div>
-                    <div className="ligne-31-fjxQyr">
-                        <Image src="/img/effect-12@1x.png" layout="fill" />
-                    </div>
-                    <div className="groupe-3011-fjxQyr">
-                        <div className="icon-instagram-zW0HYU">
-                            <Image src="/img/fontawsome--instagram--1@1x.png" layout="fill" />
-                        </div>
-                    </div>
-                    <div className="groupe-3010-fjxQyr">
-                        <div className="icon-simple-tiktok-MZkVhM">
-                            <Image src="/img/icon-simple-tiktok-1@1x.png" layout="fill" />
-                        </div>
-                    </div>
-                    <div className="icon-paper_plane-fjxQyr">
-                        <Image src="/img/icon-awesome-telegram-plane-1@1x.png" layout="fill" />
-                    </div>
-                </div>
-                <div className="photography-2dehIQ">
-                    <div className="groupe-de-masques-326-xqCpo5">
-                        <Image src="/img/groupe-de-masques-326-4@1x.png" layout="fill" objectFit="cover" />
-                    </div>
-                    <div className="rectangle-3501-xqCpo5"></div>
-                </div>
-                <div className="articles-2dehIQ">
-                    <div className="background-phuo6u"></div>
-                    <div className="groupe-1491-phuo6u">
-                        <div className="groupe-1490-vsfiZX">
-                            <Image src="/img/groupe-1490-14@1x.png" layout="fill" />
-                        </div>
-                    </div>
-                    <div className="thmatique-phuo6u lato-bold-white-16px">Crypto</div>
-                    <div className="date-phuo6u lato-normal-manatee-14px">27 Février 2022</div>
-                    <div className="titre-phuo6u lato-bold-white-22px">Les 5 erreurs à éviter en crypto</div>
-                    <div className="paragraphe-phuo6u lato-bold-white-16px-2">
-                        <span className="span0-vNxwlO lato-bold-white-16px">Attention :</span>
-                        <span className="span1-vNxwlO lato-normal-white-16px">
-                            Vous devez faire vos propres recherches avant tout investissement. Ce document ne peut en
-                            aucun cas être considéré comme un conseil en investissement.
-                            <br />
-                            <br />
-                            Précédemment utilisés par une population d’initiés, la cryptomonnaie et le trading se
-                            démocratisent et attirent aujourd’hui un grand nombre d’investisseurs. Les monnaies
-                            virtuelles font parler d’elles et attirent les investisseurs néophytes. Cependant, pour
-                            réussir son investissement crypto monnaie sans risque, il existe plusieurs erreurs crypto de
-                            débutant à éviter.
-                            <br />
-                            <br />
-                        </span>
-                        <span className="span2-vNxwlO lato-bold-white-16px">
-                            1. Ne pas suffisamment protéger ses comptes
-                            <br />
-                            2. Ne pas comprendre dans quoi on investit <br />
-                            3. Se tromper d’adresse
-                            <br />
-                            4. Mettre tous ses oeufs dans le même panier
-                            <br />
-                            5. Utiliser des effets de levier
-                            <br />
-                            <br />
-                        </span>
-                        <span className="span3-vNxwlO lato-normal-white-16px">
-                            Le sondage montre aussi quelles sont les erreurs les plus courantes commises par les
-                            investisseurs des États-Unis. Sans grande surprise, 38 % des personnes interrogées
-                            regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies au lieu de patienter
-                            jusqu’à ce que les cours grimpent. 32 % regrettent également d’avoir « tout investi sur un
-                            seul type de coin ».
-                            <br />
-                            <br />
-                            La troisième erreur la plus courante, est le manque de compréhension des marchés de
-                            cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on trouve à la
-                            quatrième place des erreurs les plus courantes les investisseurs qui ont envoyé leurs
-                            cryptomonnaies avant d’avoir la certitude de recevoir un paiement en retour. La cinquième
-                            place est occupée par ceux qui ont acheté au plus haut… Pour revendre au plus bas :<br />
-                        </span>
-                        <span className="span4-vNxwlO lato-bold-white-16px">
-                            <br />
-                            <br />
-                        </span>
-                    </div>
-                    <div className="image-878-phuo6u">
-                        <Image src="/img/image-878-3@1x.png" layout="fill" />
-                    </div>
-                    <div className="paragraphe-KPfjJy lato-bold-white-16px-2">
-                        <span className="span0-J52GAQ lato-normal-white-16px">
-                            34 % des personnes interrogées révèlent ainsi conserver leurs cryptomonnaies sur Coinbase,
-                            26 % ont choisi Robinhood, puis Binance suit avec 24 % d’entre elles. Ce sont aussi Coinbase
-                            et Binance qui représentent les plus gros investissements moyens : chaque personne
-                            interrogée y stocke en moyenne 2 742 dollars et 2 813 dollars respectivement.
-                            <br />
-                        </span>
-                        <span className="span1-J52GAQ lato-bold-white-16px">
-                            <br />
-                            ➡️{' '}
-                        </span>
-                        <span className="span2-J52GAQ lato-bold-white-16px">
-                            À lire également : Comment débuter dans les cryptomonnaies ?
-                        </span>
-                    </div>
-                    <div className="paragraphe-BiNo5c lato-light-manatee-14px">Source : Cryptovantage</div>
-                </div>
-                <div className="podcast-2dehIQ">
-                    <div className="background-4JPS9P"></div>
-                    <div className="groupe-de-masques-330-4JPS9P">
-                        <Image src="/img/groupe-de-masques-330-1@1x.png" layout="fill" />
-                    </div>
-                    <div className="paragraphe-4JPS9P lato-bold-black-14px-2">
-                        PODCAST <br />
-                        Ecouter l’article
-                    </div>
-                    <div className="rectangle-3576-4JPS9P"></div>
-                    <div className="icon-play-4JPS9P">
-                        <Image src="/img/icon-ionic-ios-play-circle-1@1x.png" layout="fill" />
-                    </div>
-                    <div className="rectangle-3577-4JPS9P"></div>
-                    <div className="ellipse-17697-4JPS9P"></div>
-                    <div className="paragraphe-7XJn5U lato-normal-manatee-10px">1:30</div>
-                    <div className="paragraphe-yxs1W3 lato-normal-manatee-10px">3:10</div>
-                </div>
-                <div className="articles-suggrs-2dehIQ">
-                    <div className="article-QGLQPp">
-                        <div className="groupe-de-masques-321-l7vsWe">
-                            <Image src="/img/groupe-de-masques-321-17@1x.png" layout="fill" />
-                        </div>
-                        <div className="club-premium-l7vsWe lato-normal-milano-red-12px">Crypto</div>
-                        <div className="ligne-12-l7vsWe">
-                            <Image src="/img/ligne-12-17@1x.png" layout="fill" />
-                        </div>
-                        <div className="club-premium-58H99N lato-light-manatee-12px">Il y a 2 heures</div>
-                        <div className="club-premium-0yEjox lato-bold-white-16px">
-                            Les cryptomonaies, par où commencer ?
-                        </div>
-                        <div className="rectangle-3498-l7vsWe"></div>
-                    </div>
-                    <div className="article-axHTKx">
-                        <div className="groupe-de-masques-322-xW4K8r">
-                            <Image src="/img/groupe-de-masques-322-17@1x.png" layout="fill" />
-                        </div>
-                        <div className="club-premium-xW4K8r lato-normal-milano-red-12px">Crypto</div>
-                        <div className="ligne-13-xW4K8r">
-                            <Image src="/img/ligne-13-14@1x.png" layout="fill" />
-                        </div>
-                        <div className="club-premium-9HwQWZ lato-light-manatee-12px">19 février 2022</div>
-                        <div className="club-premium-n4aZ4g lato-bold-white-16px">Pourquoi investir dans l’AVAX ?</div>
-                        <div className="rectangle-3500-xW4K8r"></div>
-                    </div>
-                    <div className="article-aysllt">
-                        <div className="groupe-de-masques-323-C3L9DI">
-                            <Image src="/img/groupe-de-masques-323-17@1x.png" layout="fill" />
-                        </div>
-                        <div className="club-premium-C3L9DI lato-normal-milano-red-12px">Crypto</div>
-                        <div className="ligne-14-C3L9DI">
-                            <Image src="/img/ligne-14-17@1x.png" layout="fill" />
-                        </div>
-                        <div className="club-premium-BLprxR lato-light-manatee-12px">19 février 2022</div>
-                        <div className="club-premium-ngAgVQ lato-bold-white-16px">Les 5 erreurs à éviter en crypto</div>
-                        <div className="rectangle-3501-C3L9DI"></div>
-                    </div>
-                    <div className="rectangle-3574-QGLQPp"></div>
-                    <div className="dans-la-mme-catgorie-QGLQPp lato-bold-white-16px">DANS LA MÊME CATÉGORIE</div>
-                </div>
-                <div className="call-to-action-2dehIQ">
-                    <div className="groupe-de-masques-328-lhYvXK">
-                        <Image src="/img/groupe-de-masques-328-1@1x.png" layout="fill" />
-                    </div>
-                    <div className="club-premium-lhYvXK lato-bold-white-18px">OFFRE TRADING</div>
-                    <div className="club-premium-TRg9a0 lato-normal-white-14px">+ Stratégies d’investissement</div>
-                    <div className="club-premium-dxAFDD lato-normal-white-14px">+ Canal privé Telegram</div>
-                    <div className="club-premium-YbP9mk lato-normal-white-14px">+ Portefeuille Crypto</div>
-                    <div className="club-premium-12ninl lato-normal-white-14px">+ Alertes des meilleurs Traders</div>
-                    <div className="button-lhYvXK">
-                        <div className="rectangle-3572-zGoy1r"></div>
-                        <div className="exclu-membre-confirm-zGoy1r lato-bold-white-14px">Rejoindre</div>
-                    </div>
-                </div>
+                        <Footer />
+                    </>
+                ) : (
+                    <>loading</>
+                )}
             </div>
         </div>
     );
 };
 
-// export default checkAuth(ArticlesDetails);
-export default ArticlesDetails;
+export default HomePage;

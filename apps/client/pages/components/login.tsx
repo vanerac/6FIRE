@@ -57,59 +57,71 @@ const LoginPopup = (props: any) => {
 
     return (
         <div className="login_popup_wrapper">
-            <div className="login_access_col">
-                <div className="title-wrap">
-                    <div className="title">
-                        SE CONNECTER <span>Pour accéder à votre compte</span>
+            {cookies.get('API_TOKEN') ? (
+                <>login</>
+            ) : (
+                <>
+                    <div className="login_access_col">
+                        <div className="title-wrap">
+                            <div className="title">
+                                SE CONNECTER <span>Pour accéder à votre compte</span>
+                            </div>
+                        </div>
+                        <form action="#">
+                            <input
+                                onChange={(event) => {
+                                    setMailError('');
+                                    setMail(event.target.value);
+                                }}
+                                className="input_item"
+                                style={
+                                    mailError ? { borderBottom: '1px solid red' } : { borderBottom: '1px solid #fff' }
+                                }
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="* Email"
+                            />
+                            {mailError && <span style={{ color: 'red' }}>{mailError}</span>}
+                            <input
+                                className="input_item"
+                                onChange={(event) => {
+                                    setPasswordError('');
+                                    setPassword(event.target.value);
+                                }}
+                                style={
+                                    passwordError
+                                        ? { borderBottom: '1px solid red' }
+                                        : { borderBottom: '1px solid #fff' }
+                                }
+                                type="password"
+                                name="password"
+                                id="log_password"
+                                placeholder="*Mot de passe"
+                            />
+                            {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
+                            <div className="item-center">
+                                <a href="#" className="reset_password">
+                                    Mot de passe oublié ?
+                                </a>
+                            </div>
+                            {error && <span style={{ color: 'red' }}>{error}</span>}
+                            <div className="item-center">
+                                <input onClick={handleSubmit} type="submit" value={'Me connecter'} />
+                            </div>
+                        </form>
                     </div>
-                </div>
-                <form action="#">
-                    <input
-                        onChange={(event) => {
-                            setMailError('');
-                            setMail(event.target.value);
-                        }}
-                        className="input_item"
-                        style={mailError ? { borderBottom: '1px solid red' } : { borderBottom: '1px solid #fff' }}
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="* Email"
-                    />
-                    {mailError && <span style={{ color: 'red' }}>{mailError}</span>}
-                    <input
-                        className="input_item"
-                        onChange={(event) => {
-                            setPasswordError('');
-                            setPassword(event.target.value);
-                        }}
-                        style={passwordError ? { borderBottom: '1px solid red' } : { borderBottom: '1px solid #fff' }}
-                        type="password"
-                        name="password"
-                        id="log_password"
-                        placeholder="*Mot de passe"
-                    />
-                    {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
-                    <div className="item-center">
-                        <a href="#" className="reset_password">
-                            Mot de passe oublié ?
-                        </a>
+                    <div className="register_col">
+                        <div className="title-wrap">
+                            <div className="title">VOUS N’AVEZ PAS DE COMPTE ?</div>
+                            {/* close side bar */}
+                            <a className="register_btn" href="#">
+                                Créer un compte
+                            </a>
+                        </div>
                     </div>
-                    {error && <span style={{ color: 'red' }}>{error}</span>}
-                    <div className="item-center">
-                        <input onClick={handleSubmit} type="submit" value={'Me connecter'} />
-                    </div>
-                </form>
-            </div>
-            <div className="register_col">
-                <div className="title-wrap">
-                    <div className="title">VOUS N’AVEZ PAS DE COMPTE ?</div>
-                    {/* close side bar */}
-                    <a className="register_btn" href="#">
-                        Créer un compte
-                    </a>
-                </div>
-            </div>
+                </>
+            )}
         </div>
     );
 };

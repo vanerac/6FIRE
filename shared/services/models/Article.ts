@@ -19,8 +19,12 @@ export type Article = {
                 content?: string;
                 createdAt?: string;
                 updatedAt?: string;
-                themesId?: string;
+                themeId?: string;
             };
         };
     }>;
+    banner?: Blob;
+    header?: Blob;
+    bannerUrl?: string;
+    headerUrl?: string;
 };

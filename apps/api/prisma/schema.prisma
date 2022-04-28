@@ -34,6 +34,7 @@ model User {
   password          String
   telephone         String
   CGU               Boolean
+  telegramId        String?
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @default(now())
   isAdmin           Boolean             @default(false)
@@ -120,6 +121,7 @@ model Theme {
   id                Int       @id @default(autoincrement())
   name              String
   subscriptionLevel Int
+  iconUrl           String
   createdAt         DateTime  @default(now())
   updatedAt         DateTime  @default(now())
   Article           Article[]
@@ -129,11 +131,13 @@ model Article {
   id        Int      @id @default(autoincrement())
   title     String
   content   String
+  bannerUrl String
+  headerUrl    String
   hidden    Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  themesId  Int
-  Theme     Theme    @relation(fields: [themesId], references: [id], onDelete: Cascade)
+  themeId  Int
+  Theme     Theme    @relation(fields: [themeId], references: [id], onDelete: Cascade)
 
   Recommandation        Recommandation[]
   ArticleRecommandation ArticleRecommandation[]

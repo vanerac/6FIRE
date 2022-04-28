@@ -185,7 +185,7 @@ const HomePage: NextPage = (props: any) => {
                             </div>
 
                             <div className="btnBox">
-                                <button type='submit' className="primary-button">
+                                <button type="submit" className="primary-button">
                                     <span>Rejoindre</span>
                                     <div className="right-arrow">
                                         <img src="/img/icon/right-arrow.png" alt="" />

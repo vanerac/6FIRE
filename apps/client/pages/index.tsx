@@ -16,7 +16,7 @@ const HomePage: NextPage = ($props: any) => {
                         <p>Rejoindre le club d’investisseur</p>
                     </div>
                     <div className="mb-equal">
-                        <a href="#" className="primary-button">
+                        <a href="connexion" className="primary-button">
                             <span>Nous rejoindre</span>
                             <div className="right-arrow">
                                 <img src="/img/icon/right-arrow.png" alt="" />

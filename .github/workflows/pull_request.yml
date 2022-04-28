@@ -16,6 +16,6 @@ jobs:
   compile:
     needs: [ lint, openapi, prisma ]
     uses: vanerac/6FIRE/.github/workflows/compile_job.yml@main
-  test:
-    needs: [ lint, openapi, compile, prisma ]
-    uses: vanerac/6FIRE/.github/workflows/test_job.yml@main
+#  test:
+#    needs: [ lint, openapi, compile, prisma ]
+#    uses: vanerac/6FIRE/.github/workflows/test_job.yml@main

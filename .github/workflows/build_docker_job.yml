@@ -14,6 +14,7 @@ jobs:
           - api
           - client
           - dashboard
+          - bot
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -28,7 +29,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@master
         with:
           role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
-          aws-region: eu-west-3
+          aws-region: eu-west-1
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
@@ -39,8 +40,24 @@ jobs:
           ECR_REPOSITORY: 6fire-${{ matrix.directories }}
           IMAGE_TAG: ${{ github.sha }}
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          API_SENTRY_DSN: ${{ secrets.API_SENTRY_DSN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          SMS_API_KEY: ${{ secrets.SMS_API_KEY }}
+          MOLLIE_API_KEY: ${{ secrets.MOLLIE_API_KEY }}
+          COINMARKETCAP_API_KEY: ${{ secrets.COINMARKETCAP_API_KEY }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
         run: |
-          docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
+          docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN \
+            --build-arg SENTRY_DSN=$API_SENTRY_DSN \
+            --build-arg AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
+            --build-arg AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
+            --build-arg SMS_API_KEY=$SMS_API_KEY \
+            --build-arg MOLLIE_API_KEY=$MOLLIE_API_KEY \
+            --build-arg COINMARKETCAP_API_KEY=$COINMARKETCAP_API_KEY \
+            --build-arg JWT_SECRET=$JWT_SECRET
+          
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest

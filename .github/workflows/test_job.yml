@@ -9,6 +9,7 @@ jobs:
           - apps/api
           - apps/client
           - apps/dashboard
+          - app/bot
       fail-fast: true
     runs-on: ubuntu-latest
     steps:
@@ -22,6 +23,7 @@ jobs:
             ./apps/api/node_modules
             ./apps/client/node_modules
             ./apps/dashboard/node_modules
+            ./app/bot/node_modules
           key: modules-${{ hashFiles('package-lock.json') }}
       - uses: actions/setup-node@v2.4.1
         with:

@@ -10,6 +10,9 @@ import cookieParser from 'cookie-parser';
 import * as Sentry from '@sentry/node';
 import * as Tracing from '@sentry/tracing';
 import { ApiError } from './types';
+import multer from 'multer';
+
+import { v4 as uuid } from 'uuid';
 
 declare module 'express' {
     interface Request {
@@ -31,6 +34,7 @@ Sentry.init({
     // Set tracesSampleRate to 1.0 to capture 100%
     // of transactions for performance monitoring.
     // We recommend adjusting this value in production
+    release: process.env.RELEASE_VERSION,
     tracesSampleRate: 1.0,
     environment: configuration.NODE_ENV,
 });
@@ -59,10 +63,10 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 // CORS
 app.use(
     cors({
-        origin: '*',
-        credentials: true,
-        allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-        methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
+        // origin: '*',
+        // credentials: true,
+        // allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'senty-trace'],
+        // methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );
 
@@ -97,9 +101,15 @@ app.use(
         operationHandlers: false,
         fileUploader: {
             dest: configuration.UPLOAD_DIR,
-            limits: {
-                fileSize: 10 * 1024 * 1024,
-            },
+            storage: multer.diskStorage({
+                destination: (req, file, cb) => {
+                    cb(null, configuration.UPLOAD_DIR);
+                },
+                filename: (req, file, cb) => {
+                    console.log(file.originalname);
+                    cb(null, `${uuid()}-${file.originalname}`);
+                },
+            }),
         },
         // validateSecurity: {
         //     handlers: {

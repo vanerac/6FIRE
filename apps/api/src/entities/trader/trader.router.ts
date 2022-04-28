@@ -4,9 +4,6 @@ import { isAdmin } from '../../tools/auth.tools';
 
 const router = Router();
 
-router.get('/curation/top', TraderController.getTopTraders);
-router.get('/trader/search', isAdmin, TraderController.searchTrader);
-
 router.get('/curation', isAdmin, TraderController.getCuration);
 router.put('/curation', isAdmin, TraderController.setCuration);
 

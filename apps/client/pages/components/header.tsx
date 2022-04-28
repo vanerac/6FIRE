@@ -3,6 +3,7 @@ import Image from 'next/image';
 // import router from 'next/router';
 import $ from 'jquery';
 import LoginPopup from './login';
+import Cookies from 'universal-cookie';
 
 /* Hamburger toggle script */
 const handleForm = () => {
@@ -15,6 +16,7 @@ const mobileToggle = () => {
 
 const Header = (props: any) => {
     console.log(props);
+    const cookies = new Cookies();
 
     return (
         <>
@@ -232,7 +234,7 @@ const Header = (props: any) => {
                     <div className="main-nav">
                         <div className="top-nav">
                             <div className="logo">
-                                <a href="./">
+                                <a href={cookies.get('API_TOKEN') ? '/' : '/articlesPage'}>
                                     <img src="/img/logo/logo.svg" alt="" />
                                 </a>
                             </div>

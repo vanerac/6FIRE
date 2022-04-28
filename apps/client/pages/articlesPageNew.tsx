@@ -4,7 +4,6 @@ import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
 // import './loader.js'
-import $ from 'jquery';
 
 // const handleForm = () => {
 //     /* $('#date').val('data');
@@ -154,7 +153,7 @@ const HomePage: NextPage = (props: any) => {
                 </div>
 
                 <div className="more-articles">
-                    <button type='submit' className="primary-button">
+                    <button type="submit" className="primary-button">
                         <span>voir plus</span>
                         <div className="right-arrow">
                             <img src="/img/icon-ionic-ios-arrow-forward-2@1x.png" alt="" />
