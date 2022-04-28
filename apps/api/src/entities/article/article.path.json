@@ -152,7 +152,7 @@
       "parameters": [
         {
           "name": "page",
-          "in": "path",
+          "in": "query",
           "description": "Pagination page",
           "schema": {
             "type": "number"
@@ -160,7 +160,7 @@
         },
         {
           "name": "limit",
-          "in": "path",
+          "in": "query",
           "description": "Pagination size",
           "schema": {
             "type": "number"

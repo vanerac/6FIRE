@@ -44,7 +44,7 @@ export class ArticleService {
         return this.httpRequest.request({
             method: 'GET',
             url: '/article/',
-            path: {
+            query: {
                 'page': page,
                 'limit': limit,
             },
