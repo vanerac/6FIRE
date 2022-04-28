@@ -23,6 +23,7 @@ import Sidebar from './components/sideBar';
 import Head from 'next/head';
 
 import { CookiesProvider, useCookies } from 'react-cookie';
+import ReactGA from 'react-ga';
 
 // import Cookies from 'universal-cookie';
 
@@ -32,6 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     const [$cookies, setCookies] = useCookies(['API_TOKEN']);
     setCookies('API_TOKEN', 'OK', { path: '/' });
 
+    ReactGA.initialize(''); // TODO
     return (
         <>
             <Head>
