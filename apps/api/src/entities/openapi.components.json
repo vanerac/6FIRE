@@ -44,6 +44,9 @@
     },
     "OfferUsage": {
       "$ref": "./offer/offer.components.json#/schemas/OfferUsage"
+    },
+    "UserStatus": {
+      "$ref": "./user/user.components.json#/schemas/UserStatus"
     }
   }
 }

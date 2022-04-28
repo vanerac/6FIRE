@@ -61,6 +61,33 @@
           }
         }
       }
+    },
+    "UserStatus": {
+      "type": "object",
+      "properties": {
+        "UserSubscription": {
+          "type": "object",
+          "properties": {
+            "Subscription": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "level": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

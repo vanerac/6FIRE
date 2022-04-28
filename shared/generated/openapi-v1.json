@@ -400,6 +400,47 @@
         }
       }
     },
+    "/user/me": {
+      "get": {
+        "description": "get the current user stats",
+        "operationId": "getMeStats",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserStatus"
+                }
+              }
+            },
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid user supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/auth/login": {
       "post": {
         "tags": [
@@ -3157,6 +3198,33 @@
           "date": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "UserStatus": {
+        "type": "object",
+        "properties": {
+          "UserSubscription": {
+            "type": "object",
+            "properties": {
+              "Subscription": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  },
+                  "level": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
           }
         }
       }

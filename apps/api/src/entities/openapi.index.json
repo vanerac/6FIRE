@@ -20,6 +20,9 @@
     "/user/{id}/subscription": {
       "$ref": "./user/user.path.json#/subscription"
     },
+    "/user/me": {
+      "$ref": "./user/user.path.json#/me"
+    },
     "/auth/login": {
       "$ref": "./auth/auth.path.json#/login"
     },
@@ -163,6 +166,9 @@
       },
       "OfferUsage": {
         "$ref": "./openapi.components.json#/schemas/OfferUsage"
+      },
+      "UserStatus": {
+        "$ref": "./openapi.components.json#/schemas/UserStatus"
       }
     }
   }
