@@ -30,7 +30,6 @@ async function handleUpdate(trader: Trader, data: Position[]) {
     await cache.setTrader(trader.clientId, data);
 
     if (!oldPositionsState) {
-        console.log('No old positions state');
         return;
     }
 
@@ -39,9 +38,7 @@ async function handleUpdate(trader: Trader, data: Position[]) {
     const difference = positionDifferential(data, oldPositionsState);
 
     const message = `${difference.closed.length} closed positions and ${difference.opened.length} opened positions`;
-    cache.addMessage('@vanerac', message);
     if (!(difference.closed.length || difference.opened.length)) {
-        console.log('no difference');
         return;
     }
 
