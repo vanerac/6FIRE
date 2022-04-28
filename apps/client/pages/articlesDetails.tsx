@@ -3,27 +3,35 @@ import Image from 'next/image';
 import Header from './components/header';
 import Footer from './components/footer';
 import { useEffect, useState } from 'react';
-import Cookies from 'universal-cookie';
-import router from 'next/router';
+import router, { useRouter } from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { Article } from '@shared/services';
-import { useRouter } from 'next/router';
+import { useCookies } from 'react-cookie';
 
+// const cookies = new Cookies();
 const HomePage: NextPage = (props: any) => {
-    const cookies = new Cookies();
     const [themeName, setThemeName] = useState('');
     const [articles, setArticles] = useState<Article>();
-    const apiClient = getAPIClient();
     const { query } = useRouter();
+    const [cookies] = useCookies(['API_TOKEN']);
+    let apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
-        console.log('query');
-        if (!cookies.get('API_TOKEN')) {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
             router.replace('/');
             return;
         }
+        apiClient = getAPIClient(cookies['API_TOKEN']);
+    }, []);
 
-        if (!query.themeId || !query.themeId) return;
+    useEffect(() => {
+        console.log('query', cookies);
+
+        if (!query.themeId || !query.themeId) {
+            router.replace('/');
+            return;
+        }
 
         apiClient.themes.getTheme(+query.themeId).then((res: any) => {
             console.log('res => ', res);

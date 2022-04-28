@@ -3,13 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ApiError } from '@shared/services';
-import Cookies from 'universal-cookie';
 // import checkAuth from './components/checkAuth';
 import $ from 'jquery';
 import LoginPopup from './components/login';
 import getAPIClient from '@shared/tools/apiClient';
+import { useCookies } from 'react-cookie';
 // import translate from '@shared/translation'
 
 const Connexion: NextPage = () => {
@@ -27,7 +27,17 @@ const Connexion: NextPage = () => {
     const [cguChecked, setCguChecked] = useState(false);
     const [errorCgu, setErrorCgu] = useState('');
     const [error, setError] = useState('');
-    const cookies = new Cookies();
+    const [cookies, setCookie] = useCookies(['API_TOKEN']);
+    let apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+        apiClient = getAPIClient(cookies['API_TOKEN']);
+    }, []);
 
     const handleForm = () => {
         $('.login_popup_wrapper').toggleClass('open');
@@ -37,7 +47,7 @@ const Connexion: NextPage = () => {
         $('.nav-item-wrap').toggleClass('open');
     };
 
-    if (cookies.get('API_TOKEN')) {
+    if (cookies['API_TOKEN']) {
         router.push('/articlesPage');
     }
 
@@ -93,8 +103,8 @@ const Connexion: NextPage = () => {
         }
 
         if (!isValid) return;
-        getAPIClient()
-            .auth.register({
+        apiClient.auth
+            .register({
                 password: password,
                 CGU: cguChecked,
                 email: userMail,
@@ -105,7 +115,7 @@ const Connexion: NextPage = () => {
             .then((response) => {
                 console.log(response);
                 if (response.token) {
-                    cookies.set('API_TOKEN', response.token, { path: '/' });
+                    setCookie('API_TOKEN', response.token, { path: '/' });
                     router.push('/articlesPage');
                 }
             })

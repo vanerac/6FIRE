@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import Image from 'next/image';
 // import router from 'next/router';
 import { ApiError } from '@shared/services';
 import router from 'next/router';
-import Cookies from 'universal-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import { useCookies } from 'react-cookie';
 
 const LoginPopup = (props: any) => {
     console.log(props);
@@ -15,7 +15,18 @@ const LoginPopup = (props: any) => {
     const [mailError, setMailError] = useState('');
     let isValid = true;
     const [error, setError] = useState('');
-    const cookies = new Cookies();
+
+    const [cookies, setCookies] = useCookies(['API_TOKEN']);
+    let apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+        apiClient = getAPIClient(cookies['API_TOKEN']);
+    }, []);
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
@@ -35,15 +46,15 @@ const LoginPopup = (props: any) => {
             isValid = false;
         }
         if (isValid) {
-            getAPIClient()
-                .auth.login({
+            apiClient.auth
+                .login({
                     email: mail,
                     password: password,
                 })
                 .then((response: any) => {
                     console.log(response);
                     if (response.token) {
-                        cookies.set('API_TOKEN', response.token, { path: '/' });
+                        setCookies('API_TOKEN', response.token, { path: '/' });
                         router.push('/articlesPage');
                     }
                 })
@@ -57,7 +68,7 @@ const LoginPopup = (props: any) => {
 
     return (
         <div className="login_popup_wrapper">
-            {cookies.get('API_TOKEN') ? (
+            {cookies['API_TOKEN'] ? (
                 <>login</>
             ) : (
                 <>
