@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Topbar from '../components/topbar';
-import { Theme } from '@shared/services';
-import apiClient from '@shared/tools/apiClient';
+// import { Theme } from '@shared/services';
+// import apiClient from '@shared/tools/apiClient';
 
 export default function ThemesArticles() {
-    const [$themes, setThemes] = useState<Theme[]>([]);
-
-    useEffect(() => {
-        apiClient().themes.getThemes().then(setThemes);
-    }, []);
+    // const [$themes, setThemes] = useState<Theme[]>([]);
+    //
+    // useEffect(() => {
+    //     apiClient().themes.getThemes().then(setThemes);
+    // }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="themes-articles" />

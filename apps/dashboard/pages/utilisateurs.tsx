@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Topbar from '../components/topbar';
-import { User } from '@shared/services';
-import List from '../components/list';
-import apiClient from '@shared/tools/apiClient';
+// import { User } from '@shared/services';
+// import apiClient from '@shared/tools/apiClient';
 
 export default function Utilisateurs() {
-    const [$users, setUsers] = useState<User[]>([
-        {
-            id: 1,
-            userId: '1',
-            firstName: 'string',
-            lastName: 'string',
-            email: 'string',
-            password: 'string',
-            telephone: 'string',
-            countryId: 1,
-            createdAt: 'string',
-            updatedAt: 'string',
-            isAdmin: false,
-            verifiedEmail: false,
-            verifiedPhone: false,
-            banned: false,
-        },
-    ]);
+    // const [$users, setUsers] = useState<User[]>([
+    //     {
+    //         id: 1,
+    //         userId: '1',
+    //         firstName: 'string',
+    //         lastName: 'string',
+    //         email: 'string',
+    //         password: 'string',
+    //         telephone: 'string',
+    //         countryId: 1,
+    //         createdAt: 'string',
+    //         updatedAt: 'string',
+    //         isAdmin: false,
+    //         verifiedEmail: false,
+    //         verifiedPhone: false,
+    //         banned: false,
+    //     },
+    // ]);
     // Date range, searchString, sort,
     // const [filters, setFilters] = useState<{
     //     search: string;
@@ -34,9 +33,9 @@ export default function Utilisateurs() {
     //     order: '',
     // });
 
-    useEffect(() => {
-        apiClient().user.getUsers().then(setUsers);
-    }, []);
+    // useEffect(() => {
+    //     apiClient().user.getUsers().then(setUsers);
+    // }, []);
 
     return (
         <>
@@ -83,26 +82,26 @@ export default function Utilisateurs() {
                     {/*    </div>*/}
                     {/*</table>*/}
 
-                    <List
-                        headers={Object.keys({
-                            id: 1,
-                            userId: '1',
-                            firstName: 'string',
-                            lastName: 'string',
-                            email: 'string',
-                            password: 'string',
-                            telephone: 'string',
-                            countryId: 1,
-                            createdAt: 'string',
-                            updatedAt: 'string',
-                            isAdmin: false,
-                            verifiedEmail: false,
-                            verifiedPhone: false,
-                            banned: false,
-                        })}
-                        items={$users}
-                        onClick={console.log}
-                    />
+                    {/*<List*/}
+                    {/*    headers={Object.keys({*/}
+                    {/*        id: 1,*/}
+                    {/*        userId: '1',*/}
+                    {/*        firstName: 'string',*/}
+                    {/*        lastName: 'string',*/}
+                    {/*        email: 'string',*/}
+                    {/*        password: 'string',*/}
+                    {/*        telephone: 'string',*/}
+                    {/*        countryId: 1,*/}
+                    {/*        createdAt: 'string',*/}
+                    {/*        updatedAt: 'string',*/}
+                    {/*        isAdmin: false,*/}
+                    {/*        verifiedEmail: false,*/}
+                    {/*        verifiedPhone: false,*/}
+                    {/*        banned: false,*/}
+                    {/*    })}*/}
+                    {/*    items={$users}*/}
+                    {/*    onClick={console.log}*/}
+                    {/*/>*/}
                     <div className="search-5MZdRv">
                         <div className="rectangle-625-ST0lJ8"></div>
                         <div className="name-ST0lJ8 poppins-medium-mirage-10px">Rechercher…</div>
