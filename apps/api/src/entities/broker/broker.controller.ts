@@ -4,15 +4,7 @@ import path from 'path';
 import configuration from '../../../configuration';
 
 const client = new PrismaClient();
-//model Broker {
-//   id        Int      @id @default(autoincrement())
-//   name      String
-//   url       String
-//   imageUrl  String
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @default(now())
-//   displayed Boolean  @default(true)
-// }
+
 export default class BrokerController {
     static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
