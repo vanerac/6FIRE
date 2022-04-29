@@ -96,6 +96,7 @@ export default function ArticlesCreationEntreprise() {
                 } as ArticlePro)
                 .then(
                     (res) => {
+                        setArticle(res as Article);
                         alert('Article created');
                     },
                     (error) => {

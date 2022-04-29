@@ -13,7 +13,7 @@ export default function CryptoWallet() {
     const [$error, setError] = useState('');
     const [$holdings, setHoldings] = useState<CryptoHolding[]>([]);
     const [$message, setMessage] = useState<string>();
-    const [date, setDate] = useState<string>();
+    const [$date, setDate] = useState<string>();
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -36,7 +36,7 @@ export default function CryptoWallet() {
         );
     }, []);
 
-    const save = () => {
+    const $save = () => {
         setLoading(true);
         apiClient.crypto.setCryptos($holdings).then(
             (holdinds) => {

@@ -42,7 +42,7 @@ export default function BrokerCreation() {
         );
     }, []);
 
-    const saveBroker = () => {
+    const $saveBroker = () => {
         if ($broker) {
             // update
             apiClient.broker
@@ -79,7 +79,7 @@ export default function BrokerCreation() {
         }
     };
 
-    const deleteBroker = () => {
+    const $deleteBroker = () => {
         if (!$broker) return;
 
         apiClient.broker.deleteBroker($broker.id as any).then(
