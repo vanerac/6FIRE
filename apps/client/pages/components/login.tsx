@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // import Image from 'next/image';
 // import router from 'next/router';
 import { ApiError } from '@shared/services';
@@ -15,18 +15,17 @@ const LoginPopup = (props: any) => {
     const [mailError, setMailError] = useState('');
     let isValid = true;
     const [error, setError] = useState('');
-
     const [cookies, setCookies] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    useEffect(() => {
-        if (!cookies['API_TOKEN']) {
-            console.log('no token');
-            router.replace('/');
-            return;
-        }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
-    }, []);
+    // useEffect(() => {
+    //     if (!cookies['API_TOKEN']) {
+    //         console.log('no token');
+    //         router.replace('/');
+    //         return;
+    //     }
+    //     apiClient = getAPIClient(cookies['API_TOKEN']);
+    // }, []);
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
