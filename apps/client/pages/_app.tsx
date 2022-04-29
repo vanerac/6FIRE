@@ -17,7 +17,6 @@ import '../css/crypto-wallet.css';
 import '../css/nos-trades.css';
 import '../css/header.css';
 import '../css/footer.css';
-import { useState } from 'react';
 
 import Head from 'next/head';
 
