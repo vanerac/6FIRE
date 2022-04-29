@@ -117,7 +117,7 @@ export default function AbonnementGestionAbonnements() {
                                     <div className="name-Y7Pog2 poppins-medium-blue-ribbon-14px">Code promo</div>
                                 </div>
                             </a>
-                            <a href="abonnement-essai-gratuit.tsx">
+                            <a href="deprecated/abonnement-essai-gratuit.tsx">
                                 <div className="essai-gratuit-GPOmSE">
                                     <img className="frame-WzPg83" src="img/frame-11@1x.png" />
                                     <div className="name-WzPg83 poppins-medium-blue-ribbon-14px">Essai gratuit</div>

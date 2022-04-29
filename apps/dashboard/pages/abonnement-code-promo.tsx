@@ -113,7 +113,7 @@ export default function AbonnementCodePromo() {
                                 <div className="frame-dzTL34"></div>
                                 <div className="name-dzTL34 poppins-medium-blue-ribbon-14px">Code promo</div>
                             </div>
-                            <a href="abonnement-essai-gratuit.tsx">
+                            <a href="deprecated/abonnement-essai-gratuit.tsx">
                                 <div className="essai-gratuit-llocrr">
                                     <img className="frame-3fgvlm" src="img/frame-11@1x.png" />
                                     <div className="name-3fgvlm poppins-medium-blue-ribbon-14px">Essai gratuit</div>

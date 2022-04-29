@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
 import getAPIClient from '@shared/tools/apiClient';
-import { Offer } from '@shared/services';
+import { Subscription } from '@shared/services';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 
@@ -11,7 +11,21 @@ export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
 
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [$offer, setOffer] = useState<Offer>();
+    const [subscription, setSubscription] = useState<Subscription>();
+
+    const [name, $setName] = useState('');
+    const [price, $setPrice] = useState('');
+    const [duration, $setDuration] = useState(''); // days
+    const [description, $setDescription] = useState('');
+
+    const [type, $setType] = useState(''); // subscriotion or one time
+    const [visible, $setVisible] = useState(false);
+    const [isBestSeller, $setIsBestSeller] = useState(false);
+
+    const [hasFreeTrial, $setHasFreeTrial] = useState(false);
+    const [freeTrialDuration, $setFreeTrialDuration] = useState('');
+
+    const [subscriptionLevel, $setSubscriptionLevel] = useState<number>();
 
     const id = '1';
     useEffect(() => {
@@ -21,9 +35,9 @@ export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
             return;
         }
 
-        apiClient.offers.getOfferById(id).then(
+        apiClient.subscription.getSubscriptionById(id as any).then(
             (res) => {
-                setOffer(res);
+                setSubscription(res);
                 setLoading(false);
             },
             (error) => {
@@ -32,6 +46,68 @@ export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
             },
         );
     }, []);
+
+    const updateSubscription = () => {
+        const newSubscription: Subscription = {
+            level: subscriptionLevel as number,
+            name: name,
+            price: price as unknown as number, // this will break
+            refreshRate: duration as unknown as number, // this will break
+            description: description,
+            subscriptionType: type,
+            hidden: visible,
+            isBestValue: isBestSeller,
+            hasFreeTrial: hasFreeTrial,
+            freeTrialDays: +freeTrialDuration,
+        };
+
+        apiClient.subscription
+            .updateSubscriptionById(subscription?.id as any, { ...newSubscription, ...(subscription as Subscription) })
+            .then(
+                (res) => {
+                    setSubscription(res);
+                    setLoading(false);
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                },
+            );
+    };
+
+    const createSubscription = () => {
+        const newSubscription: Subscription = {
+            level: subscriptionLevel as number,
+            name: name,
+            price: price as unknown as number, // this will break
+            refreshRate: duration as unknown as number, // this will break
+            description: description,
+            subscriptionType: type,
+            hidden: visible,
+            isBestValue: isBestSeller,
+            hasFreeTrial: hasFreeTrial,
+            freeTrialDays: +freeTrialDuration,
+        };
+
+        apiClient.subscription.createSubscription({ ...newSubscription, ...(subscription as Subscription) }).then(
+            (res) => {
+                setSubscription(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
+    const $save = () => {
+        if (subscription) {
+            updateSubscription();
+        } else {
+            createSubscription();
+        }
+    };
 
     return (
         <>

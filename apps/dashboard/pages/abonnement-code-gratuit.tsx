@@ -121,7 +121,7 @@ export default function AbonnementCodeGratuit() {
                                     <div className="name-yaS4ec poppins-medium-blue-ribbon-14px">Code promo</div>
                                 </div>
                             </a>
-                            <a href="abonnement-essai-gratuit.tsx">
+                            <a href="deprecated/abonnement-essai-gratuit.tsx">
                                 <div className="essai-gratuit-pxBTHT">
                                     <img className="frame-DyYjTG" src="img/frame-11@1x.png" />
                                     <div className="name-DyYjTG poppins-medium-blue-ribbon-14px">Essai gratuit</div>
