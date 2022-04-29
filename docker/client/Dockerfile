@@ -31,6 +31,7 @@ RUN npm install universal-cookie
 RUN npm install react-cookie
 
 WORKDIR /app
+RUN npm install react-cookie
 RUN npm run build
 
 FROM node:lts-alpine as run
