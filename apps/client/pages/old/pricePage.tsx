@@ -1,24 +1,49 @@
 import type { NextPage } from 'next';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from '../components/footer';
+import Header from '../components/header';
 // import checkAuth from './components/checkAuth';
 import router from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import { Subscription } from '@services/index';
 
+// Todo: same as abonnements.tsx ??
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
-    let $apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
-            console.log('no token');
             router.replace('/');
-            return;
         }
-        $apiClient = getAPIClient(cookies['API_TOKEN']);
+
+        apiClient.subscription
+            .getSubscriptions()
+            .then((subscriptions) => {
+                setSubscriptions(subscriptions);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            });
     }, []);
+
+    const subcribe = (subscriptionId: string) => {
+        apiClient.payment
+            .createPayment({
+                subscriptionId,
+                // OfferId ??
+            })
+            .then((payment) => {
+                // Todo a popup instead ?
+                router.push(payment.paymentUrl);
+            });
+    };
 
     return (
         <div>

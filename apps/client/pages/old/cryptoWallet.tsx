@@ -1,15 +1,20 @@
 import type { NextPage } from 'next';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from '../components/footer';
+import Header from '../components/header';
 // import checkAuth from './components/checkAuth';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import { CryptoHolding } from '@services/index';
 
 const CryptoWallet: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let $apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [cryptos, setCryptos] = useState<CryptoHolding[]>([]);
+    const [message, setMessage] = useState<{ id: number; message: string; date: string }>();
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -18,6 +23,19 @@ const CryptoWallet: NextPage = (props: any) => {
             return;
         }
         $apiClient = getAPIClient(cookies['API_TOKEN']);
+
+        setLoading(true);
+        $apiClient.crypto
+            .getAllCrypto()
+            .then(({ cryptos, messages: [message] }) => {
+                setLoading(false);
+                setCryptos(cryptos);
+                setMessage(message);
+            })
+            .catch((error) => {
+                setLoading(false);
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            });
     }, []);
     return (
         <div>

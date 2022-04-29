@@ -3,6 +3,10 @@ import Image from 'next/image';
 import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
+import { useEffect, useState } from 'react';
+import { Article, Theme } from '@shared/services';
+import { useCookies } from 'react-cookie';
+import getAPIClient from '@shared/tools/apiClient';
 // import './loader.js'
 
 // const handleForm = () => {
@@ -18,6 +22,59 @@ import Header from './components/header';
 
 const HomePage: NextPage = (props: any) => {
     console.log(props);
+
+    const [articles, setArticles] = useState<Article[]>([]);
+    const [themes, setThemes] = useState<Theme[]>([]);
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
+    const [pagination, setPagination] = useState<any>({
+        page: 1,
+        limit: 20,
+    });
+
+    // Todo: can functions be async ?
+    const fetchArticles = async () => {
+        try {
+            const response = await apiClient.article.getArticles({
+                ...pagination,
+            });
+            setArticles(response as Article[]);
+        } catch (error: any) {
+            setError(error.i18n ?? error.message ?? 'Unknown error');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const loadMoreArticles = () => {
+        setPagination({
+            ...pagination,
+            page: pagination.page + 1,
+        });
+        fetchArticles();
+    };
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.themes.getThemes().then(
+            (response: Theme[]) => {
+                setThemes(response);
+            },
+            (error) => {
+                console.log(error);
+            },
+        );
+
+        fetchArticles();
+    }, []);
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />

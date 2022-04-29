@@ -130,6 +130,12 @@
     },
     "/affiliation/{id}": {
       "$ref": "./affiliation/affiliation.path.json#/withId"
+    },
+    "/broker": {
+      "$ref": "./broker/broker.path.json#/noId"
+    },
+    "/broker/{id}": {
+      "$ref": "./broker/broker.path.json#/withId"
     }
   },
   "components": {
@@ -172,6 +178,9 @@
       },
       "UserStatus": {
         "$ref": "./openapi.components.json#/schemas/UserStatus"
+      },
+      "Broker": {
+        "$ref": "./openapi.components.json#/schemas/Broker"
       }
     }
   }

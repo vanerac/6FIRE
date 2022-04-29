@@ -3,18 +3,53 @@ import type { NextPage } from 'next';
 import Header from './components/header';
 import Footer from './components/footer';
 // import checkAuth from './components/checkAuth';
-import Cookies from 'universal-cookie';
 import router from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
+import getAPIClient from '@shared/tools/apiClient';
+import { Subscription } from '@shared/services';
 
 const Abonnement: NextPage = (props: any) => {
-    const cookies = new Cookies();
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     useEffect(() => {
-        if (!cookies.get('API_TOKEN')) {
+        if (!cookies['API_TOKEN']) {
             router.replace('/');
         }
+
+        apiClient.subscription
+            .getSubscriptions()
+            .then((subscriptions) => {
+                setSubscriptions(subscriptions);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            });
     }, []);
+
+    const subcribe = (subscriptionId: string) => {
+        setLoading(true);
+        apiClient.payment
+            .createPayment({
+                subscriptionId,
+                // OfferId ??
+            })
+            .then((payment) => {
+                // Todo a popup instead ?
+                setLoading(false);
+                router.push(payment.paymentUrl as string);
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            });
+    };
 
     return (
         <div>

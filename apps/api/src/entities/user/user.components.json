@@ -65,6 +65,18 @@
     "UserStatus": {
       "type": "object",
       "properties": {
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
         "UserSubscription": {
           "type": "object",
           "properties": {

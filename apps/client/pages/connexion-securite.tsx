@@ -4,13 +4,18 @@ import Header from './components/header';
 import Footer from './components/footer';
 // import checkAuth from './components/checkAuth';
 import router from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
-    let $apiClient = getAPIClient(cookies['API_TOKEN']);
+    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [oldPassword, setOldPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -18,8 +23,26 @@ const Compte: NextPage = (props: any) => {
             router.replace('/');
             return;
         }
-        $apiClient = getAPIClient(cookies['API_TOKEN']);
+        apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
+
+    const updatePassword = () => {
+        setLoading(true);
+        apiClient.auth
+            .changePassword({
+                oldPassword: oldPassword,
+                confirmPassword: confirmPassword,
+                newPassword: newPassword,
+            })
+            .then(() => {
+                setLoading(false);
+                setError('');
+            })
+            .catch((error) => {
+                setLoading(false);
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            });
+    };
 
     return (
         <div>

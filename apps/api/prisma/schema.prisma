@@ -219,3 +219,13 @@ model Affiliation {
   updatedAt DateTime @default(now())
   displayed Boolean  @default(true)
 }
+
+model Broker {
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String
+  imageUrl  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  displayed Boolean  @default(true)
+}

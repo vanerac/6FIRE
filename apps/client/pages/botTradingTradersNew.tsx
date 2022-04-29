@@ -3,13 +3,17 @@ import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
 // import checkAuth from './components/checkAuth';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import { Trader } from '@shared/services';
 
 const BotTradingTrader: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
-    let $apiClient = getAPIClient(cookies['API_TOKEN']);
+    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [traders, setTraders] = useState<Trader[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -17,8 +21,53 @@ const BotTradingTrader: NextPage = (props: any) => {
             router.replace('/');
             return;
         }
-        $apiClient = getAPIClient(cookies['API_TOKEN']);
+        apiClient = getAPIClient(cookies['API_TOKEN']);
+
+        setLoading(true);
+        apiClient.traders
+            .getTraderCuration()
+            .then((res) => {
+                // Todo: return the subscription status of the user
+                setTraders(res);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            });
     }, []);
+
+    const followTrader = (traderId: number) => {
+        apiClient.traders
+            .followTrader(traderId)
+            .then(() => {
+                traders.map((trader) => {
+                    if (trader.id === traderId) {
+                        // trader.isFollowing = true;
+                    }
+                });
+                setTraders(traders);
+            })
+            .catch((err) => {
+                setError(err.message);
+            });
+    };
+
+    const unfollowTrader = (traderId: number) => {
+        apiClient.traders
+            .unfollowTrader(traderId)
+            .then(() => {
+                traders.map((trader) => {
+                    if (trader.id === traderId) {
+                        // trader.isFollowing = false;
+                    }
+                });
+                setTraders(traders);
+            })
+            .catch((err) => {
+                setError(err.message);
+            });
+    };
 
     return (
         <div>

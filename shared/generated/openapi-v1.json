@@ -824,6 +824,7 @@
           "content": {
             "application/json": {
               "schema": {
+                "type": "object",
                 "properties": {
                   "oldPassword": {
                     "type": "string"
@@ -1376,7 +1377,19 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Trader"
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Trader"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "isFollowing": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -2205,7 +2218,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserSubscription"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/UserSubscription"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "paymentUrl": {
+                          "type": "string",
+                          "description": "Payment URL"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -2829,6 +2855,230 @@
           }
         }
       }
+    },
+    "/broker": {
+      "get": {
+        "description": "Get all brokers",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "getBrokers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Broker"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new broker",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "createBroker",
+        "requestBody": {
+          "description": "Broker to create",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Broker"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "image": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Broker"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broker/{id}": {
+      "get": {
+        "description": "Get a broker",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "getBroker",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Broker id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Broker"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Update a broker",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "updateBroker",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Broker id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Broker to update",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Broker"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "image": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Broker"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a broker",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "deleteBroker",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Broker id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "A successful response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3268,6 +3518,18 @@
       "UserStatus": {
         "type": "object",
         "properties": {
+          "email": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
           "UserSubscription": {
             "type": "object",
             "properties": {
@@ -3289,6 +3551,35 @@
                 }
               }
             }
+          }
+        }
+      },
+      "Broker": {
+        "description": "Broker",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "displayed": {
+            "type": "boolean"
           }
         }
       }

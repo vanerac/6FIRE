@@ -209,6 +209,10 @@ export class UserController implements CRUDController {
                     id: +id,
                 },
                 include: {
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
                     UserSubscription: {
                         select: {
                             Subscription: {

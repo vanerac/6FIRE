@@ -21,6 +21,7 @@ const ArticlesDetailsEntreprise: NextPage = (props: any) => {
             setIsLoading(true);
         }
         $apiClient = getAPIClient(cookies['API_TOKEN']);
+        // Todo: Meme chose que pour articleDetail ?
     }, []);
 
     return (

@@ -15,7 +15,7 @@ const HomePage: NextPage = (props: any) => {
     const { query } = useRouter();
 
     const [cookies] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -23,7 +23,6 @@ const HomePage: NextPage = (props: any) => {
             router.replace('/');
             return;
         }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
 
     useEffect(() => {

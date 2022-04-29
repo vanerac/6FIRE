@@ -3,13 +3,17 @@ import type { NextPage } from 'next';
 import Header from './components/header';
 // import checkAuth from './components/checkAuth';
 import router from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import { Broker } from '@shared/services';
 
 const Trading: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
-    let $apiClient = getAPIClient(cookies['API_TOKEN']);
+    const $apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [brokers, setBrokers] = useState<Broker[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -17,7 +21,18 @@ const Trading: NextPage = (props: any) => {
             router.replace('/');
             return;
         }
-        $apiClient = getAPIClient(cookies['API_TOKEN']);
+
+        setLoading(true);
+        $apiClient.broker
+            .getBrokers()
+            .then((res) => {
+                setBrokers(res as Broker[]);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            });
     }, []);
 
     return (
