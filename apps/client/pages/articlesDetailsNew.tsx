@@ -3,7 +3,61 @@ import Image from 'next/image';
 import Header from './components/header';
 import Footer from './components/footer';
 
+import { useEffect, useState } from 'react';
+import router, { useRouter } from 'next/router';
+import getAPIClient from '@shared/tools/apiClient';
+import { Article } from '@shared/services';
+import { useCookies } from 'react-cookie';
+
 const HomePage: NextPage = (props: any) => {
+    const [$themeName, setThemeName] = useState('');
+    const [$articles, setArticles] = useState<Article>();
+    const { query } = useRouter();
+
+    const [cookies] = useCookies(['API_TOKEN']);
+    let apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+        apiClient = getAPIClient(cookies['API_TOKEN']);
+    }, []);
+
+    useEffect(() => {
+        if (!query.themeId || !query.themeId) {
+            router.replace('/');
+            return;
+        }
+
+        apiClient.article.getArticleById(query.articleId as any).then((res) => {
+            console.log('res => ', res);
+            setArticles(res as Article);
+            setThemeName((res as Article)?.Theme?.name as string);
+        });
+    }, [query]);
+
+    const $convertDate = (date: string) => {
+        const date_unix = new Date(date).getTime() / 1000;
+        const now = new Date().getTime() / 1000;
+        const diff = now - date_unix;
+        const days = Math.floor(diff / 86400);
+        const hours = Math.floor((diff - days * 86400) / 3600);
+        const minutes = Math.floor((diff - days * 86400 - hours * 3600) / 60);
+        const seconds = Math.floor(diff - days * 86400 - hours * 3600 - minutes * 60);
+        if (days > 0) {
+            return `${days} jours`;
+        } else if (hours > 0) {
+            return `${hours} heures`;
+        } else if (minutes > 0) {
+            return `${minutes} minutes`;
+        } else {
+            return `${seconds} secondes`;
+        }
+    };
+
     return (
         <div>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />

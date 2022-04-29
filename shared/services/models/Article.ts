@@ -23,6 +23,11 @@ export type Article = {
             };
         };
     }>;
+    Theme?: {
+        id?: string;
+        name?: string;
+        iconUrl?: string;
+    };
     banner?: Blob;
     header?: Blob;
     bannerUrl?: string;

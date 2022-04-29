@@ -28,9 +28,10 @@ export default class Cache extends EventEmitter {
     static async getInstance() {
         if (!this.instance) {
             this.instance = new Cache();
+
             await this.instance.client.connect();
         }
-        return Cache.instance;
+        return this.instance;
     }
 
     static async destroy() {
@@ -53,13 +54,18 @@ export default class Cache extends EventEmitter {
         await this.client.hSet(traderId, 'positions', JSON.stringify(positions));
     }
 
-    async addMessage(chatId: string, message: string) {
-        this.emit('message_add');
-        console.log('Message Added to queue');
-        await this.client.rpush('pending_messages', { message, chatId });
+    async addMessage(chatId: number, message: string) {
+        const parsedData = JSON.stringify({ chatId, message });
+        await this.client.sendCommand(['RPUSH', 'pending_messages', parsedData]);
+        this.emit('message_add', parsedData);
     }
 
-    async getMessage(): Promise<{ chatId: string; message: string }> {
-        return await this.client.lpop('pending_messages');
+    async getMessage(): Promise<{ chatId: number; message: string } | null> {
+        const data = await this.client.sendCommand(['LPOP', 'pending_messages']);
+        if (data) {
+            return JSON.parse(data);
+        } else {
+            return null;
+        }
     }
 }

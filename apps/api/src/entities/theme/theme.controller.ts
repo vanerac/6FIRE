@@ -10,7 +10,39 @@ const client = new PrismaClient();
 export default class ThemeController implements CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            const themes = await client.theme.findMany();
+            const { id: userId, isAdmin } = req.user;
+
+            let where = {};
+            if (!isAdmin) {
+                const userPermissions = await client.user.findFirst({
+                    where: {
+                        userId: String(userId),
+                    },
+                    include: {
+                        UserSubscription: {
+                            select: {
+                                Subscription: {
+                                    select: {
+                                        level: true,
+                                    },
+                                },
+                            },
+                        },
+                    },
+                });
+                const sortedPermissions = userPermissions.UserSubscription.sort((a, b) => {
+                    return a.Subscription.level - b.Subscription.level;
+                }).pop();
+                where = {
+                    subscriptionLevel: {
+                        gte: sortedPermissions.Subscription.level,
+                    },
+                };
+            }
+
+            // sort and get highest level
+
+            const themes = await client.theme.findMany({ where });
             res.status(200).json(themes);
         } catch (error) {
             next(error);
@@ -20,7 +52,37 @@ export default class ThemeController implements CRUDController {
     static async getOne(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             const { id } = req.params;
-            const theme = await client.theme.findFirst({ where: { id: +id } });
+            const { id: userId, isAdmin } = req.user;
+            let where = { id: +id };
+
+            if (!isAdmin) {
+                const userPermissions = await client.user.findFirst({
+                    where: {
+                        userId: String(userId),
+                    },
+                    include: {
+                        UserSubscription: {
+                            select: {
+                                Subscription: {
+                                    select: {
+                                        level: true,
+                                    },
+                                },
+                            },
+                        },
+                    },
+                });
+                const sortedPermissions = userPermissions.UserSubscription.sort((a, b) => {
+                    return a.Subscription.level - b.Subscription.level;
+                }).pop();
+                where = Object.assign(where, {
+                    subscriptionLevel: {
+                        gte: sortedPermissions.Subscription.level,
+                    },
+                });
+            }
+
+            const theme = await client.theme.findFirst({ where });
             res.status(200).json(theme);
         } catch (error) {
             next(error);

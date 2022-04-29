@@ -7,12 +7,14 @@ export function generateEmail({
     subscription,
     price,
     refresh,
+    email,
 }: {
     name: string;
     orderDate: string;
     subscription: string;
     price: string;
     refresh: string;
+    email: string;
 }) {
     // read file email.html
     const emailTemplate = fs.readFileSync(path.resolve(__dirname, 'email.html'));
@@ -24,5 +26,6 @@ export function generateEmail({
         .replace('{{orderDate}}', orderDate)
         .replace('{{subscription}}', subscription)
         .replace('{{price}}', price)
-        .replace('{{refresh}}', refresh);
+        .replace('{{refresh}}', refresh)
+        .replace('{{email}}', email);
 }

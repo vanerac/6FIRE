@@ -352,7 +352,7 @@ resource "aws_ecs_task_definition" "api" {
       },
       {
         "name": "BACKEND_URL",
-        "value": "${aws_alb.api.dns_name}"
+        "value": "${aws_lb.api.dns_name}"
       }
     ],
     "logConfiguration": {
@@ -578,7 +578,7 @@ resource "aws_ecs_service" "api" {
     assign_public_ip = true
   }
   load_balancer {
-    target_group_arn = aws_alb_target_group.api.id
+    target_group_arn = aws_lb_target_group.api.id
     container_name   = "api"
     container_port   = 3333
   }
@@ -604,7 +604,7 @@ resource "aws_ecs_service" "client" {
     assign_public_ip = true
   }
   load_balancer {
-    target_group_arn = aws_alb_target_group.client.id
+    target_group_arn = aws_lb_target_group.client.id
     container_name   = "client"
     container_port   = 3000
   }
@@ -632,7 +632,7 @@ resource "aws_ecs_service" "dashboard" {
     assign_public_ip = true
   }
   load_balancer {
-    target_group_arn = aws_alb_target_group.dashboard.id
+    target_group_arn = aws_lb_target_group.dashboard.id
     container_name   = "dashboard"
     container_port   = 3000
   }

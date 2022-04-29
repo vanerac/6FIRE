@@ -26,26 +26,27 @@ enum OfferType {
 }
 
 model User {
-  id                Int                 @id @default(autoincrement())
-  userId            String              @unique @default(uuid())
-  firstName         String
-  lastName          String
-  email             String
-  password          String
-  telephone         String
-  CGU               Boolean
-  telegramId        String?
-  createdAt         DateTime            @default(now())
-  updatedAt         DateTime            @default(now())
-  isAdmin           Boolean             @default(false)
-  verifiedEmail     Boolean             @default(false)
-  verifiedPhone     Boolean             @default(false)
-  banned            Boolean             @default(false)
-  VerificationCodes VerificationCodes[]
-  TraderFollows     TraderFollows[]
-  UserSubscription  UserSubscription[]
-  PasswordReset     PasswordReset[]
-  OfferUsage        OfferUsage[]
+  id                  Int                 @id @default(autoincrement())
+  userId              String              @unique @default(uuid())
+  firstName           String
+  lastName            String
+  email               String
+  password            String
+  telephone           String
+  CGU                 Boolean
+  telegramId          Int?                @unique
+  telegramLinkingCode String              @unique @default(uuid())
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @default(now())
+  isAdmin             Boolean             @default(false)
+  verifiedEmail       Boolean             @default(false)
+  verifiedPhone       Boolean             @default(false)
+  banned              Boolean             @default(false)
+  VerificationCodes   VerificationCodes[]
+  TraderFollows       TraderFollows[]
+  UserSubscription    UserSubscription[]
+  PasswordReset       PasswordReset[]
+  OfferUsage          OfferUsage[]
 
   @@unique([email, verifiedEmail])
   @@unique([telephone, verifiedPhone])
@@ -132,11 +133,11 @@ model Article {
   title     String
   content   String
   bannerUrl String
-  headerUrl    String
+  headerUrl String
   hidden    Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  themeId  Int
+  themeId   Int
   Theme     Theme    @relation(fields: [themeId], references: [id], onDelete: Cascade)
 
   Recommandation        Recommandation[]

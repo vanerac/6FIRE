@@ -16,7 +16,8 @@
   "dependencies": {
     "@sentry/tracing": "^6.19.6",
     "binance-leaderboard-listener": "^1.0.1",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "slimbot": "^5.1.0"
   },
   "devDependencies": {
     "@prisma/client": "^3.12.0",

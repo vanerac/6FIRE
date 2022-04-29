@@ -37,6 +37,7 @@ const passwordResetCode = async (userId) => {
 
     const emailBody = generateResetPasswordEmail({
         reset_link: configuration.BACKEND_URL + '/api/auth/password/reset?code=' + code,
+        email,
     });
     return Promise.all([
         AWSsendEmail({
@@ -66,6 +67,7 @@ const createVerificationCode = async (
 
     const messageTemplate = generateVerifyEmail({
         confirmation_link: `${configuration.BACKEND_URL}/api/auth/verify?code=${code}`,
+        email: user.email,
     });
 
     if (type === 'EMAIL') {

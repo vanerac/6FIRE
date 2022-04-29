@@ -31,14 +31,23 @@ export class ArticleService {
 
     /**
      * Get all articles
+     * @param page Pagination page
+     * @param limit Pagination size
      * @returns Article Articles response
      * @returns Error Unexpected error
      * @throws ApiError
      */
-    public getArticles(): CancelablePromise<Array<Article> | Error> {
+    public getArticles(
+        page?: number,
+        limit?: number,
+    ): CancelablePromise<Array<Article> | Error> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/article/',
+            query: {
+                'page': page,
+                'limit': limit,
+            },
         });
     }
 
