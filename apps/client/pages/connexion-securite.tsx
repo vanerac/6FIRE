@@ -7,6 +7,7 @@ import router from 'next/router';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import Head from 'next/head';
 
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -46,6 +47,9 @@ const Compte: NextPage = (props: any) => {
 
     return (
         <div>
+            <Head>
+                <title>Compte - Crypto Trader</title>
+            </Head>
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
             <div className="account-wrapper">
                 <div className="breadcurm">

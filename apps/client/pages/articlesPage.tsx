@@ -7,6 +7,7 @@ import getAPIClient from '@shared/tools/apiClient';
 import { useEffect, useState } from 'react';
 import { Article, Theme } from '@services/index';
 import { useCookies } from 'react-cookie';
+import Head from 'next/head';
 
 const HomePage: NextPage = (props: any) => {
     const [articles, setArticles] = useState<Article[]>([]);
@@ -62,6 +63,9 @@ const HomePage: NextPage = (props: any) => {
 
     return (
         <div>
+            <Head>
+                <title>Articles</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
             <div className="article_wrapper">

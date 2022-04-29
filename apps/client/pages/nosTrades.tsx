@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import Head from 'next/head';
 
 const NosTrades: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -22,6 +23,9 @@ const NosTrades: NextPage = (props: any) => {
 
     return (
         <div>
+            <Head>
+                <title>Nos trades - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="nos-trades" />
             <div className="nos-trades screen">
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />

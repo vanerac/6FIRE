@@ -18,7 +18,6 @@ import '../css/nos-trades.css';
 import '../css/header.css';
 import '../css/footer.css';
 import { useState } from 'react';
-import Sidebar from './components/sideBar';
 
 import Head from 'next/head';
 
@@ -39,7 +38,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Head>
             <CookiesProvider>
                 <Component {...pageProps} useStateOpenSideBar={setIsOpenSideBar} />
-                <Sidebar sideBarState={isOpenSideBar} setIsOpenSideBar={setIsOpenSideBar} />
             </CookiesProvider>
         </>
     );

@@ -8,6 +8,7 @@ import router, { useRouter } from 'next/router';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Article, ArticlePro } from '@shared/services';
+import Head from 'next/head';
 
 const ArticlesDetailsEntreprise: NextPage = (props: any) => {
     const [$themeName, setThemeName] = useState('');
@@ -516,6 +517,9 @@ const ArticlesDetailsEntreprise: NextPage = (props: any) => {
         //     </div>
         // </div>
         <div>
+            <Head>
+                <title>Articles Détails</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />
             <div className="article-details-block">
                 {!loading ? (

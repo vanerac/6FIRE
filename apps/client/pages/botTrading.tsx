@@ -6,6 +6,7 @@ import Header from './components/header';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import Head from 'next/head';
 
 const BotTrading: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -36,6 +37,9 @@ const BotTrading: NextPage = (props: any) => {
 
     return (
         <div>
+            <Head>
+                <title>Bot Trading - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="bot-trading" />
             <div className="bot-trading screen">
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />

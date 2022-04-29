@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Header from './components/header';
 import Footer from './components/footer';
-
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import router, { useRouter } from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
@@ -69,6 +69,9 @@ const HomePage: NextPage = (props: any) => {
 
     return (
         <div>
+            <Head>
+                <title>{$articles?.title} - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />
             <div className="article-details-block">
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />

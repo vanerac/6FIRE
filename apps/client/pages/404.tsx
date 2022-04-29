@@ -2,12 +2,15 @@ import type { NextPage } from 'next';
 // import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
+import Head from 'next/head';
 
 const NotFoundPage: NextPage = (props: any) => {
     return (
         <div>
+            <Head>
+                <title>404 - Not Found</title>
+            </Head>
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
-
             <div className="not_found_page">
                 <div>
                     <div className="logo">

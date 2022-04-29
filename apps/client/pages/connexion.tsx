@@ -11,6 +11,7 @@ import LoginPopup from './components/login';
 import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 // import translate from '@shared/translation'
+import Head from 'next/head';
 
 const Connexion: NextPage = () => {
     const [userName, setUserName] = useState('');
@@ -133,6 +134,9 @@ const Connexion: NextPage = () => {
 
     return (
         <div>
+            <Head>
+                <title>Connexion</title>
+            </Head>
             <LoginPopup />
             <input type="hidden" id="anPageName" name="page" value="register-web" />
             <div className="register-web screen">
