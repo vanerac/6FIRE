@@ -15,7 +15,7 @@ export class CryptoService {
      * @throws ApiError
      */
     public getAllCrypto(): CancelablePromise<{
-        cryptos: CryptoHolding;
+        cryptos: Array<CryptoHolding>;
         messages: {
             id?: number;
             message?: string;

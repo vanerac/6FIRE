@@ -46,7 +46,7 @@ export default function BrokerCreation() {
         if ($broker) {
             // update
             apiClient.broker
-                .updateBroker($broker.id as any, {
+                .updateBroker($broker.id as unknown as string, {
                     ...$broker,
                     name: $name,
                     url: $url,

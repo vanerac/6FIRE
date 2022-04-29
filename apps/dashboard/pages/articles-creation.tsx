@@ -75,7 +75,7 @@ export default function ArticlesCreation() {
                 .createArticle({
                     title: articleTitle,
                     content: articleContents,
-                    themeId: selectedTheme?.id,
+                    themeId: selectedTheme?.id as number,
                     recommendedArticleIds: selectedArticles.map((a) => a.id),
                     header: thumbnail,
                     banner: banner,
@@ -102,7 +102,7 @@ export default function ArticlesCreation() {
                 banner: banner,
             };
 
-            apiClient.article.updateArticleById(article.id as unknown as number, newArticle).then(
+            apiClient.article.updateArticleById(article.id, newArticle as unknown as Article).then(
                 (res) => {
                     setArticle(res as Article);
                     alert('Article updated');

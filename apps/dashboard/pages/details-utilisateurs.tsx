@@ -55,7 +55,7 @@ export default function DetailsUtilisateurs($args: any) {
             note: note,
         };
 
-        apiClient.user.updateUser(user?.id as number, newUser).then(
+        apiClient.user.updateUser(user.id, newUser).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
@@ -74,7 +74,7 @@ export default function DetailsUtilisateurs($args: any) {
         const password = prompt('New password');
         if (!password) return;
 
-        apiClient.user.updateUser(user?.id as number, { ...user, password }).then(
+        apiClient.user.updateUser(user.id, { ...user, password }).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
@@ -89,7 +89,7 @@ export default function DetailsUtilisateurs($args: any) {
     const $cancelSubscription = () => {
         if (!user || !user.id) return alert('No user');
 
-        apiClient.user.deleteUserSubscription(user?.id as unknown as string).then(
+        apiClient.user.deleteUserSubscription(user.id).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
@@ -104,7 +104,7 @@ export default function DetailsUtilisateurs($args: any) {
     const $deleteUser = () => {
         if (!user || !user.id) return alert('No user');
 
-        apiClient.user.deleteUser(user?.id as number).then(
+        apiClient.user.deleteUser(user.id).then(
             (res) => {
                 setUser(res);
                 setLoading(false);

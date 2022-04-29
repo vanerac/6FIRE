@@ -1049,7 +1049,10 @@
                   "type": "object",
                   "properties": {
                     "cryptos": {
-                      "$ref": "#/components/schemas/CryptoHolding"
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CryptoHolding"
+                      }
                     },
                     "messages": {
                       "type": "object",
@@ -3275,7 +3278,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "number"
           },
           "title": {
             "type": "string"
@@ -3293,12 +3296,12 @@
             "type": "string"
           },
           "themeId": {
-            "type": "string"
+            "type": "number"
           },
           "recommendedArticleIds": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "number"
             }
           },
           "ArticleRecommandation": {
@@ -3313,7 +3316,7 @@
                       "type": "object",
                       "properties": {
                         "id": {
-                          "type": "string"
+                          "type": "number"
                         },
                         "title": {
                           "type": "string"
@@ -3328,7 +3331,7 @@
                           "type": "string"
                         },
                         "themeId": {
-                          "type": "string"
+                          "type": "number"
                         }
                       }
                     }
@@ -3341,7 +3344,7 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string"
+                "type": "number"
               },
               "name": {
                 "type": "string"
@@ -3631,7 +3634,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "number"
           },
           "title": {
             "type": "string"
@@ -3673,12 +3676,12 @@
             "type": "string"
           },
           "themeId": {
-            "type": "string"
+            "type": "number"
           },
           "recommendedArticleIds": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "number"
             }
           },
           "ArticleRecommandation": {
@@ -3693,7 +3696,7 @@
                       "type": "object",
                       "properties": {
                         "id": {
-                          "type": "string"
+                          "type": "number"
                         },
                         "title": {
                           "type": "string"
@@ -3708,7 +3711,7 @@
                           "type": "string"
                         },
                         "themeId": {
-                          "type": "string"
+                          "type": "number"
                         }
                       }
                     }
@@ -3721,7 +3724,7 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string"
+                "type": "number"
               },
               "name": {
                 "type": "string"

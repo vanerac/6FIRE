@@ -14,7 +14,10 @@
                 "type": "object",
                 "properties": {
                   "cryptos": {
-                    "$ref": "../openapi.components.json#/schemas/CryptoHolding"
+                    "type": "array",
+                    "items": {
+                      "$ref": "../openapi.components.json#/schemas/CryptoHolding"
+                    }
                   },
                   "messages": {
                     "type": "object",

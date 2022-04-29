@@ -11,7 +11,7 @@ export default function CryptoWallet() {
 
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [$holdings, setHoldings] = useState<CryptoHolding[]>([]);
+    const [$holdings, setHoldings] = useState<CryptoHolding[]>();
     const [$message, setMessage] = useState<string>();
     const [$date, setDate] = useState<string>();
 
@@ -23,7 +23,7 @@ export default function CryptoWallet() {
         }
 
         apiClient.crypto.getAllCrypto().then(
-            ({ cryptos, messages: [message] }) => {
+            ({ cryptos, messages: message }) => {
                 setHoldings(cryptos);
                 setMessage(message.message);
                 setDate(message.date);
@@ -38,7 +38,8 @@ export default function CryptoWallet() {
 
     const $save = () => {
         setLoading(true);
-        apiClient.crypto.setCryptos($holdings).then(
+
+        apiClient.crypto.setCryptos($holdings as CryptoHolding[]).then(
             (holdinds) => {
                 setHoldings(holdinds);
                 setLoading(false);
