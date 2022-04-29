@@ -15,12 +15,13 @@ export default function DetailsUtilisateurs($args: any) {
 
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [$user, setUser] = useState<User>();
+    const [user, setUser] = useState<User>();
 
-    const [$email, $setEmail] = useState('');
-    const [$firstName, $setFirstName] = useState('');
-    const [$lastName, $setLastName] = useState('');
-    const [$telephone, $setTelephone] = useState('');
+    const [email, $setEmail] = useState('');
+    const [firstName, $setFirstName] = useState('');
+    const [lastName, $setLastName] = useState('');
+    const [telephone, $setTelephone] = useState('');
+    const [note, $setNote] = useState('');
 
     const id = 1; // TODO
     useEffect(() => {
@@ -43,11 +44,18 @@ export default function DetailsUtilisateurs($args: any) {
     }, []);
 
     const $updateUser = () => {
-        if (!$user || !$user.id) return alert('No user');
+        if (!user || !user.id) return alert('No user');
 
-        // TODO: doesnt pickup changed user Info
+        const newUser = {
+            ...user,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+            telephone: telephone,
+            note: note,
+        };
 
-        apiClient.user.updateUser($user?.id as number, $user as User).then(
+        apiClient.user.updateUser(user?.id as number, newUser).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
@@ -60,13 +68,13 @@ export default function DetailsUtilisateurs($args: any) {
     };
 
     const $changePassword = () => {
-        if (!$user || !$user.id) return alert('No user');
+        if (!user || !user.id) return alert('No user');
 
         // TODO: this will be changed to a route that changes the password to a random string
         const password = prompt('New password');
         if (!password) return;
 
-        apiClient.user.updateUser($user?.id as number, { ...$user, password }).then(
+        apiClient.user.updateUser(user?.id as number, { ...user, password }).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
@@ -79,9 +87,9 @@ export default function DetailsUtilisateurs($args: any) {
     };
 
     const $cancelSubscription = () => {
-        if (!$user || !$user.id) return alert('No user');
+        if (!user || !user.id) return alert('No user');
 
-        apiClient.user.deleteUserSubscription($user?.id as unknown as string).then(
+        apiClient.user.deleteUserSubscription(user?.id as unknown as string).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
@@ -94,9 +102,9 @@ export default function DetailsUtilisateurs($args: any) {
     };
 
     const $deleteUser = () => {
-        if (!$user || !$user.id) return alert('No user');
+        if (!user || !user.id) return alert('No user');
 
-        apiClient.user.deleteUser($user?.id as number).then(
+        apiClient.user.deleteUser(user?.id as number).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
