@@ -3410,6 +3410,18 @@
           "level": {
             "type": "integer"
           },
+          "hidden": {
+            "type": "boolean"
+          },
+          "isBestValue": {
+            "type": "boolean"
+          },
+          "hasFreeTrial": {
+            "type": "boolean"
+          },
+          "freeTrialDays": {
+            "type": "integer"
+          },
           "createdAt": {
             "type": "string"
           },

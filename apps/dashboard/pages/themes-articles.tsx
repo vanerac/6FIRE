@@ -1,14 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import getAPIClient from '@shared/tools/apiClient';
+import { Theme } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 // import { Theme } from '@shared/services';
 // import apiClient from '@shared/tools/apiClient';
 
 export default function ThemesArticles() {
-    // const [$themes, setThemes] = useState<Theme[]>([]);
-    //
-    // useEffect(() => {
-    //     apiClient().themes.getThemes().then(setThemes);
-    // }, []);
+    // const { query } = useRouter();
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$themes, setThemes] = useState<Theme[]>([]);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.themes.getThemes().then(
+            (res) => {
+                setThemes(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="themes-articles" />
