@@ -104,6 +104,7 @@ export default function ArticlesCreation() {
 
             apiClient.article.updateArticleById(article.id as unknown as number, newArticle).then(
                 (res) => {
+                    setArticle(res as Article);
                     alert('Article updated');
                 },
                 (error) => {
