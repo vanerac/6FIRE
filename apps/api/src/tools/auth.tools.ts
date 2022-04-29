@@ -70,6 +70,7 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
         );
     }
 
+    console.log(jwt.verify(access_token, configuration.JWT_SECRET || 'secret'))
     try {
         const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
         if (typeof decoded != 'string' && decoded.id) {
@@ -85,6 +86,7 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
             );
         }
     } catch (error: any) {
+        console.log(error);
         if (error.name === 'TokenExpiredError') {
             return next(
                 new ApiError({

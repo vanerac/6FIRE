@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ApiError } from '@shared/services';
 // import checkAuth from './components/checkAuth';
 import $ from 'jquery';
@@ -28,16 +28,16 @@ const Connexion: NextPage = () => {
     const [errorCgu, setErrorCgu] = useState('');
     const [error, setError] = useState('');
     const [cookies, setCookie] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    useEffect(() => {
-        if (!cookies['API_TOKEN']) {
-            console.log('no token');
-            router.replace('/');
-            return;
-        }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
-    }, []);
+    // useEffect(() => {
+    //     if (!cookies['API_TOKEN']) {
+    //         console.log('no token');
+    //         router.replace('/');
+    //         return;
+    //     }
+    //     apiClient = getAPIClient(cookies['API_TOKEN']);
+    // }, []);
 
     const handleForm = () => {
         $('.login_popup_wrapper').toggleClass('open');

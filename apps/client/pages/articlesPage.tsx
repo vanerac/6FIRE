@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import router from 'next/router';
-import Footer from '../components/footer';
-import Header from '../components/header';
+import Footer from './components/footer';
+import Header from './components/header';
 import getAPIClient from '@shared/tools/apiClient';
 import { useEffect, useState } from 'react';
 import { Article, Theme } from '@services/index';
@@ -12,7 +12,8 @@ const HomePage: NextPage = (props: any) => {
     const [articles, setArticles] = useState<Article[]>([]);
     const [themes, setThemes] = useState<Theme[]>([]);
     const [cookies] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [$error, $setError] = useState('');
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
     const [pagination, $setPagination] = useState<any>({
         page: 1,
         limit: 20,
@@ -38,10 +39,7 @@ const HomePage: NextPage = (props: any) => {
     };
 
     const fetchData = async () => {
-        const response = await apiClient.article.getArticles({
-            ...pagination,
-        });
-
+        const response = await apiClient.article.getArticles(pagination.page, pagination.limit);
         setArticles(response as Article[]);
     };
 
@@ -57,8 +55,7 @@ const HomePage: NextPage = (props: any) => {
             router.replace('/');
             return;
         }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
-
+        console.log('token', cookies['API_TOKEN']);
         fetchThemes();
         fetchData();
     }, []);

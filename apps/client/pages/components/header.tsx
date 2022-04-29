@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 // import router from 'next/router';
 import $ from 'jquery';
 import LoginPopup from './login';
 import { useCookies } from 'react-cookie';
+import { Theme } from '@services/index';
+import router from 'next/router';
+import getAPIClient from '@shared/tools/apiClient';
 
 /* Hamburger toggle script */
 const handleForm = () => {
@@ -17,6 +20,27 @@ const mobileToggle = () => {
 const Header = (props: any) => {
     console.log(props);
     const [cookies] = useCookies(['API_TOKEN']);
+    const [$themes, setThemes] = useState<Theme[]>([]);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const fetchThemes = async () => {
+        const response = await apiClient.themes.getThemes();
+        console.log('thmes => ', response);
+        if (response.length === 0) {
+            router.push('/pricePage');
+        }
+        setThemes(response as Theme[]);
+    };
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+        console.log('token', cookies['API_TOKEN']);
+        fetchThemes();
+    }, []);
 
     return (
         <>
@@ -264,8 +288,10 @@ const Header = (props: any) => {
                         <div className="main-nav-bar">
                             <div className="nav-grid">
                                 <div className="nav-item-wrap">
-                                    <ul id='visible-only-mobile'>
-                                        <li><a href="#">Espace Trading &amp; Crypto</a></li>
+                                    <ul id="visible-only-mobile">
+                                        <li>
+                                            <a href="#">Espace Trading &amp; Crypto</a>
+                                        </li>
                                     </ul>
                                     <ul>
                                         <li>
