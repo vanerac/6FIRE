@@ -36,5 +36,6 @@ router.post(
 router.get('/:id', ArticleController.getById);
 router.put('/:id', isAdmin, ArticleController.update);
 router.delete('/:id', isAdmin, ArticleController.delete);
+router.get('/theme/:id', ArticleController.getByTheme);
 
 export default router;

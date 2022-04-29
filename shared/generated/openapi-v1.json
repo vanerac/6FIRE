@@ -1879,6 +1879,58 @@
         }
       }
     },
+    "/article/theme/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Theme id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "tags": [
+          "Article"
+        ],
+        "description": "Get all articles by theme",
+        "operationId": "getArticlesByTheme",
+        "responses": {
+          "200": {
+            "description": "Articles response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/Article"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ArticlePro"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/subscription/": {
       "post": {
         "tags": [
