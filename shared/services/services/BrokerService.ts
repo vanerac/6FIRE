@@ -52,7 +52,7 @@ export class BrokerService {
      * @throws ApiError
      */
     public getBroker(
-        id: string,
+        id: number,
     ): CancelablePromise<Broker | Error> {
         return this.httpRequest.request({
             method: 'GET',
@@ -72,7 +72,7 @@ export class BrokerService {
      * @throws ApiError
      */
     public updateBroker(
-        id: string,
+        id: number,
         requestBody: (Broker & {
             image?: string;
         }),
@@ -95,7 +95,7 @@ export class BrokerService {
      * @throws ApiError
      */
     public deleteBroker(
-        id: string,
+        id: number,
     ): CancelablePromise<Error> {
         return this.httpRequest.request({
             method: 'DELETE',
