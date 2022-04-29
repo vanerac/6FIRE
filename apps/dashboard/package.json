@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@types/draft-js": "^0.11.9",
+    "@types/jquery": "^3.5.14",
     "@types/node": "17.0.23",
     "@types/react": "17.0.43",
     "@types/react-dom": "17.0.14",
@@ -23,6 +24,8 @@
   "dependencies": {
     "@sentry/nextjs": "^6.19.6",
     "draft-js": "^0.11.7",
+    "jquery": "^3.6.0",
+    "next": "^12.1.5",
     "sharp": "^0.30.3",
     "universal-cookie": "^4.0.4"
   }

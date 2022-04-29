@@ -5,6 +5,8 @@ import { Subscription, Theme } from '@shared/services';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 
+import style from '../styles/main.module.scss';
+
 export default function ThemesArticlesCreation() {
     // const { query } = useRouter();
     const [cookies] = useCookies(['API_TOKEN']);
@@ -108,7 +110,16 @@ export default function ThemesArticlesCreation() {
             <input type="hidden" id="anPageName" name="page" value="themes-articles-creation" />
             <div className="container-center-horizontal">
                 <div className="themes-articles-creation screen">
-                    <div className="analytics-Il3F4v poppins-semibold-semi-bold-mirage-24px">Créer un thème</div>
+                    <div id="demo" className="analytics-Il3F4v poppins-semibold-semi-bold-mirage-24px">
+                        Créer un thème
+                        <ul className={style.demo}>
+                            <li>
+                                list <span>one</span>
+                            </li>
+                            <li>list one</li>
+                            <li>list one</li>
+                        </ul>
+                    </div>
                     <Topbar />
                     <div className="action-Il3F4v">
                         <div className="buttons-btn-text-icon-rE5bZf">
