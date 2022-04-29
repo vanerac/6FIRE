@@ -15,12 +15,13 @@ export class CryptoService {
      * @throws ApiError
      */
     public getAllCrypto(): CancelablePromise<{
-        cryptos: Array<CryptoHolding>;
-        messages: Array<{
-            id: number;
-            message: string;
-            date: string;
-        }>;
+        cryptos: CryptoHolding;
+        messages: {
+            id?: number;
+            message?: string;
+            date?: string;
+            required?: any;
+        };
     }> {
         return this.httpRequest.request({
             method: 'GET',

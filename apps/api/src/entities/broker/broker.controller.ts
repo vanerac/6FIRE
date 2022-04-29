@@ -23,7 +23,7 @@ export default class BrokerController {
         try {
             const { id } = req.params;
             const broker = await client.broker.findFirst({
-                where: { id:+id },
+                where: { id: +id },
             });
             res.json(broker);
         } catch (error) {
@@ -34,6 +34,7 @@ export default class BrokerController {
     static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const { name, url } = req.body;
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             const { image } = req.files;
             const broker = await client.broker.create({
@@ -54,7 +55,7 @@ export default class BrokerController {
             const { id } = req.params;
             const { name, url } = req.body;
             const broker = await client.broker.update({
-                where: { id:+id },
+                where: { id: +id },
                 data: {
                     name,
                     url,
@@ -70,7 +71,7 @@ export default class BrokerController {
         try {
             const { id } = req.params;
             const broker = await client.broker.delete({
-                where: { id:+id },
+                where: { id: +id },
             });
             res.json(broker);
         } catch (error) {

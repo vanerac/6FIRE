@@ -27,7 +27,6 @@ enum OfferType {
 
 model User {
   id                  Int                 @id @default(autoincrement())
-  userId              String              @unique @default(uuid())
   firstName           String
   lastName            String
   email               String
@@ -55,11 +54,11 @@ model User {
 
 model PasswordReset {
   id        Int      @id @default(autoincrement())
-  userId    String   @unique
+  userId    Int      @unique
   token     String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [userId])
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model VerificationCodes {
@@ -142,7 +141,7 @@ model Article {
 
   description        String?
   salaireMoy         String?
-  tarificationMoy   String?
+  tarificationMoy    String?
   outils             String?
   creation           String?
   utilisateurs       String?

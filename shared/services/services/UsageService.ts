@@ -17,7 +17,7 @@ export class UsageService {
      * @throws ApiError
      */
     public getUsageById(
-        id: string,
+        id: number,
     ): CancelablePromise<OfferUsage> {
         return this.httpRequest.request({
             method: 'GET',

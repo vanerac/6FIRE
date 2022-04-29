@@ -268,7 +268,7 @@
           "description": "ID of the user to subscribe",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -1049,27 +1049,21 @@
                   "type": "object",
                   "properties": {
                     "cryptos": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/CryptoHolding"
-                      }
+                      "$ref": "#/components/schemas/CryptoHolding"
                     },
                     "messages": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "integer",
-                            "format": "int64"
-                          },
-                          "message": {
-                            "type": "string"
-                          },
-                          "date": {
-                            "type": "string",
-                            "format": "date-time"
-                          }
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "date": {
+                          "type": "string",
+                          "format": "date-time"
                         },
                         "required": [
                           "id",
@@ -2301,7 +2295,7 @@
           "description": "Subscription ID",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -2536,7 +2530,7 @@
           "description": "Offer ID",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -2651,7 +2645,7 @@
             "description": "Usage ID",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -3129,12 +3123,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "number",
-            "nullable": false
-          },
-          "userId": {
-            "type": "string",
-            "nullable": false
+            "type": "number"
           },
           "firstName": {
             "type": "string"
@@ -3172,6 +3161,9 @@
           "banned": {
             "type": "boolean"
           },
+          "note": {
+            "type": "string"
+          },
           "UserSubscription": {
             "type": "object",
             "properties": {
@@ -3191,8 +3183,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "nullable": false
+            "type": "number"
           },
           "name": {
             "type": "string"
@@ -3236,8 +3227,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "format": "uuid"
+            "type": "number"
           },
           "name": {
             "type": "string"
@@ -3441,7 +3431,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "number"
           },
           "name": {
             "type": "string"
