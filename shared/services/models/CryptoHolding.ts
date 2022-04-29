@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 export type CryptoHolding = {
-    id?: string;
+    id?: number;
     name?: string;
     symbol?: string;
     amount?: number;

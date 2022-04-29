@@ -4,7 +4,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "number"
         },
         "title": {
           "type": "string"
@@ -22,12 +22,12 @@
           "type": "string"
         },
         "themeId": {
-          "type": "string"
+          "type": "number"
         },
         "recommendedArticleIds": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "number"
           }
         },
         "ArticleRecommandation": {
@@ -42,7 +42,7 @@
                     "type": "object",
                     "properties": {
                       "id": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "title": {
                         "type": "string"
@@ -57,7 +57,7 @@
                         "type": "string"
                       },
                       "themeId": {
-                        "type": "string"
+                        "type": "number"
                       }
                     }
                   }
@@ -70,7 +70,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "string"
+              "type": "number"
             },
             "name": {
               "type": "string"
@@ -109,7 +109,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "number"
         },
         "title": {
           "type": "string"
@@ -151,12 +151,12 @@
           "type": "string"
         },
         "themeId": {
-          "type": "string"
+          "type": "number"
         },
         "recommendedArticleIds": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "number"
           }
         },
         "ArticleRecommandation": {
@@ -171,7 +171,7 @@
                     "type": "object",
                     "properties": {
                       "id": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "title": {
                         "type": "string"
@@ -186,7 +186,7 @@
                         "type": "string"
                       },
                       "themeId": {
-                        "type": "string"
+                        "type": "number"
                       }
                     }
                   }
@@ -199,7 +199,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "string"
+              "type": "number"
             },
             "name": {
               "type": "string"

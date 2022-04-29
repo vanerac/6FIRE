@@ -4,12 +4,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "number",
-          "nullable": false
-        },
-        "userId": {
-          "type": "string",
-          "nullable": false
+          "type": "number"
         },
         "firstName": {
           "type": "string"
