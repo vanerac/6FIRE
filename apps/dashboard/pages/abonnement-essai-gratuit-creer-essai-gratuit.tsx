@@ -27,7 +27,7 @@ export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
 
     const [subscriptionLevel, $setSubscriptionLevel] = useState<number>();
 
-    const id = '1';
+    const id = 1;
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
@@ -35,7 +35,7 @@ export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
             return;
         }
 
-        apiClient.subscription.getSubscriptionById(id as any).then(
+        apiClient.subscription.getSubscriptionById(id).then(
             (res) => {
                 setSubscription(res);
                 setLoading(false);

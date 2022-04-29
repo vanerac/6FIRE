@@ -92,6 +92,9 @@
     "/article/{id}": {
       "$ref": "./article/article.path.json#/byId"
     },
+    "/article/theme/{id}": {
+      "$ref": "./article/article.path.json#/byTheme"
+    },
     "/subscription/": {
       "$ref": "./subscription/subscription.path.json#/noId"
     },

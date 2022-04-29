@@ -7,7 +7,7 @@
         "description": "Offer ID",
         "required": true,
         "schema": {
-          "type": "string"
+          "type": "number"
         }
       }
     ],
@@ -226,7 +226,7 @@
           "description": "Usage ID",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],

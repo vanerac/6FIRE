@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
+import Head from 'next/head';
 
 const Abonnement: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -53,6 +54,9 @@ const Abonnement: NextPage = (props: any) => {
 
     return (
         <div>
+            <Head>
+                <title>Abonnement - Crypto Trader</title>
+            </Head>
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
             <div className="account-wrapper">
                 <div className="breadcurm">

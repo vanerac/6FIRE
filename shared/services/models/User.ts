@@ -4,7 +4,6 @@
 
 export type User = {
     id?: number;
-    userId?: string;
     firstName?: string;
     lastName?: string;
     email?: string;
@@ -17,6 +16,7 @@ export type User = {
     verifiedEmail?: boolean;
     verifiedPhone?: boolean;
     banned?: boolean;
+    note?: string;
     UserSubscription?: {
         Subscription?: {
             name?: string;

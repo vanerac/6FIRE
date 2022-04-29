@@ -256,7 +256,7 @@
         "description": "ID of the user to subscribe",
         "required": true,
         "schema": {
-          "type": "string"
+          "type": "number"
         }
       }
     ],

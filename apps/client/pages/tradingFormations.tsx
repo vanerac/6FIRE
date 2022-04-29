@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import Head from 'next/head';
 
 const TradingFormations: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -818,6 +819,9 @@ const TradingFormations: NextPage = (props: any) => {
         //     </div>
         // </div>
         <div>
+            <Head>
+                <title>Trading Formation</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
             <div className="article_wrapper">
