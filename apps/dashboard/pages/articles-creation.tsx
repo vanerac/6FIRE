@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
 import getAPIClient from '@shared/tools/apiClient';
-import { Article } from '@shared/services';
+import { Article, Theme } from '@shared/services';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 
@@ -11,7 +11,20 @@ export default function ArticlesCreation() {
 
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [$article, setArticle] = useState<Article>();
+    const [article, setArticle] = useState<Article>();
+    const [$articleSuggestions, $setArticleSuggestions] = useState<Article[]>([]);
+    const [$availableThemes, $setAvailableThemes] = useState<Theme[]>([]);
+
+    const [selectedTheme, $setSelectedTheme] = useState<Theme>();
+    const [selectedArticles, $setSelectedArticles] = useState<Article[]>([]);
+
+    const [articleContents, $setArticleContents] = useState<string>('');
+    const [articleTitle, $setArticleTitle] = useState('');
+
+    const [$articlePodcast, $setArticlePodcast] = useState('');
+
+    const [banner, $setBanner] = useState<Blob>();
+    const [thumbnail, $setThumbnail] = useState<Blob>();
 
     const id = 1; // TODO
 
@@ -22,10 +35,30 @@ export default function ArticlesCreation() {
             return;
         }
 
-        apiClient.article.getArticleById(id).then(
+        if (id)
+            apiClient.article.getArticleById(id).then(
+                (res) => {
+                    setArticle(res as Article);
+                    setLoading(false);
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                },
+            );
+        apiClient.article.getArticles().then(
             (res) => {
-                setArticle(res as Article);
+                $setArticleSuggestions(res as Article[]);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
+            },
+        );
+
+        apiClient.themes.getThemes().then(
+            (res) => {
+                $setAvailableThemes(res as Theme[]);
             },
             (error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
@@ -33,6 +66,54 @@ export default function ArticlesCreation() {
             },
         );
     }, []);
+
+    const $saveArticle = () => {
+        if (!article?.id) {
+            // Create
+            // TODO verify that argument are filled in correctly ?
+            apiClient.article
+                .createArticle({
+                    title: articleTitle,
+                    content: articleContents,
+                    themeId: selectedTheme?.id,
+                    recommendedArticleIds: selectedArticles.map((a) => a.id),
+                    header: thumbnail,
+                    banner: banner,
+                    hidden: false, // Todo: false by default ?
+                })
+                .then(
+                    (res) => {
+                        setArticle(res as Article);
+                    },
+                    (error) => {
+                        setError(error.i18n ?? error.message ?? 'Unknown error');
+                        setLoading(false);
+                    },
+                );
+        } else {
+            // Update
+            const newArticle = {
+                ...article,
+                title: articleTitle,
+                content: articleContents,
+                themeId: selectedTheme?.id,
+                recommendedArticleIds: selectedArticles.map((a) => a.id),
+                header: thumbnail,
+                banner: banner,
+            };
+
+            apiClient.article.updateArticleById(article.id as unknown as number, newArticle).then(
+                (res) => {
+                    alert('Article updated');
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                },
+            );
+        }
+    };
+
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="articles-creer-un-article" />

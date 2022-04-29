@@ -12,7 +12,8 @@ export default function CryptoWallet() {
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
     const [$holdings, setHoldings] = useState<CryptoHolding[]>([]);
-    const [$message, setMessage] = useState<{ id: number; message: string; date: string }>();
+    const [$message, setMessage] = useState<string>();
+    const [date, setDate] = useState<string>();
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -24,7 +25,8 @@ export default function CryptoWallet() {
         apiClient.crypto.getAllCrypto().then(
             ({ cryptos, messages: [message] }) => {
                 setHoldings(cryptos);
-                setMessage(message);
+                setMessage(message.message);
+                setDate(message.date);
                 setLoading(false);
             },
             (error) => {
@@ -33,6 +35,30 @@ export default function CryptoWallet() {
             },
         );
     }, []);
+
+    const save = () => {
+        setLoading(true);
+        apiClient.crypto.setCryptos($holdings).then(
+            (holdinds) => {
+                setHoldings(holdinds);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+        apiClient.crypto.setMessage({ message: $message }).then(
+            (message) => {
+                setMessage(message.message);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
 
     return (
         <>

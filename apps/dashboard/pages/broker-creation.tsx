@@ -13,6 +13,14 @@ export default function BrokerCreation() {
     const [$error, setError] = useState('');
     const [$broker, setBroker] = useState<Broker>();
 
+    //name
+    const [$name, $setName] = useState('');
+    // url
+    const [$url, $setUrl] = useState('');
+
+    // image
+    const [$image, $setImage] = useState<Blob>();
+
     const id = '1'; // TODO
 
     useEffect(() => {
@@ -33,6 +41,56 @@ export default function BrokerCreation() {
             },
         );
     }, []);
+
+    const saveBroker = () => {
+        if ($broker) {
+            // update
+            apiClient.broker
+                .updateBroker($broker.id as any, {
+                    ...$broker,
+                    name: $name,
+                    url: $url,
+                    image: $image as any, // Todo: this might break
+                })
+                .then(
+                    (res) => {
+                        console.log('update broker', res);
+                    },
+                    (error) => {
+                        console.log('update broker error', error);
+                    },
+                );
+        } else {
+            // create
+            apiClient.broker
+                .createBroker({
+                    name: $name,
+                    url: $url,
+                    image: $image as any, // Todo: this might break
+                })
+                .then(
+                    (res) => {
+                        console.log('create broker', res);
+                    },
+                    (error) => {
+                        console.log('create broker error', error);
+                    },
+                );
+        }
+    };
+
+    const deleteBroker = () => {
+        if (!$broker) return;
+
+        apiClient.broker.deleteBroker($broker.id as any).then(
+            () => {
+                router.replace('/');
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            },
+        );
+    };
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="broker-creer-un-broker" />

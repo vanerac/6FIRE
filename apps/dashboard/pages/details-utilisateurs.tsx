@@ -17,8 +17,12 @@ export default function DetailsUtilisateurs($args: any) {
     const [$error, setError] = useState('');
     const [$user, setUser] = useState<User>();
 
-    const id = 1; // TODO
+    const [$email, $setEmail] = useState('');
+    const [$firstName, $setFirstName] = useState('');
+    const [$lastName, $setLastName] = useState('');
+    const [$telephone, $setTelephone] = useState('');
 
+    const id = 1; // TODO
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
@@ -37,6 +41,73 @@ export default function DetailsUtilisateurs($args: any) {
             },
         );
     }, []);
+
+    const $updateUser = () => {
+        if (!$user || !$user.id) return alert('No user');
+
+        // TODO: doesnt pickup changed user Info
+
+        apiClient.user.updateUser($user?.id as number, $user as User).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
+    const $changePassword = () => {
+        if (!$user || !$user.id) return alert('No user');
+
+        // TODO: this will be changed to a route that changes the password to a random string
+        const password = prompt('New password');
+        if (!password) return;
+
+        apiClient.user.updateUser($user?.id as number, { ...$user, password }).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
+    const $cancelSubscription = () => {
+        if (!$user || !$user.id) return alert('No user');
+
+        apiClient.user.deleteUserSubscription($user?.id as unknown as string).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
+    const $deleteUser = () => {
+        if (!$user || !$user.id) return alert('No user');
+
+        apiClient.user.deleteUser($user?.id as number).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="details-utilisateurs" />
