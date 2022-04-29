@@ -17,10 +17,9 @@ export class CryptoService {
     public getAllCrypto(): CancelablePromise<{
         cryptos: Array<CryptoHolding>;
         messages: {
-            id?: number;
-            message?: string;
-            date?: string;
-            required?: any;
+            id: number;
+            message: string;
+            date: string;
         };
     }> {
         return this.httpRequest.request({

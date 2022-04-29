@@ -34,7 +34,7 @@ const CryptoWallet: NextPage = (props: any) => {
             .then(({ cryptos, messages: message }) => {
                 setLoading(false);
                 setCryptos(cryptos);
-                setMessage(message as any);
+                setMessage(message);
             })
             .catch((error) => {
                 setLoading(false);

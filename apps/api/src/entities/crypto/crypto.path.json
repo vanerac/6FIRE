@@ -32,13 +32,13 @@
                       "date": {
                         "type": "string",
                         "format": "date-time"
-                      },
-                      "required": [
-                        "id",
-                        "message",
-                        "date"
-                      ]
-                    }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "message",
+                      "date"
+                    ]
                   }
                 },
                 "required": [
