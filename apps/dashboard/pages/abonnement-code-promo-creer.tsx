@@ -13,7 +13,7 @@ export default function AbonnementCodePromoCreer() {
     const [$error, setError] = useState('');
     const [$offer, setOffer] = useState<Offer>();
 
-    const id = '1';
+    const id = 1;
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {

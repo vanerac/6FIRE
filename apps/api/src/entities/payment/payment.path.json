@@ -108,7 +108,7 @@
         "description": "Subscription ID",
         "required": true,
         "schema": {
-          "type": "string"
+          "type": "number"
         }
       }
     ],

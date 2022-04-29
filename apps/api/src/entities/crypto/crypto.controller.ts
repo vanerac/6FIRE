@@ -9,8 +9,8 @@ const prisma = new PrismaClient();
 export default class CryptoController implements CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
-            const cryptos = await prisma.cryptoHolding.findMany();
-            const journal = await prisma.cryptoJournal.findMany();
+            const cryptos = await prisma.cryptoHolding.findFirst();
+            const journal = await prisma.cryptoJournal.findFirst();
             res.json({ cryptos, journal });
         } catch (error) {
             next(error);
