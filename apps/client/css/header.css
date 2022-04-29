@@ -1124,6 +1124,36 @@ ul{
     display: none;
 }
 
+/* mobile login overlay */
+#visible-mobile{
+    display: none;
+}
+#visible-only-mobile{
+    display: none;
+}
+@media screen and (max-width: 1023px) {
+    #visible-mobile{
+        display: block;
+        margin-top: calc(15px + (60 - 15) * ((100vw - 320px) / (1023 - 320)));
+    }
+    #visible-mobile li{
+        border: 0 !important;
+    }
+    .main-nav-bar .nav-item-wrap{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center !important;
+    }
+    #visible-only-mobile{
+        display: block !important;
+    }
+    ul#visible-only-mobile li{
+        background-color: #b30f10;
+        border: 0;
+        margin-bottom: 15px;
+    }
+}
+
 /* moble style 
 *******************/
 @media screen and (max-width: 1023px) {
