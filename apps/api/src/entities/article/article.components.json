@@ -104,6 +104,126 @@
         "updatedAt",
         "themeId"
       ]
+    },
+    "ArticlePro": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "salaireMoy": {
+          "type": "string"
+        },
+        "tarificationMoy": {
+          "type": "string"
+        },
+        "outils": {
+          "type": "string"
+        },
+        "creation": {
+          "type": "string"
+        },
+        "utilisateurs": {
+          "type": "string"
+        },
+        "necessiteAudicance": {
+          "type": "string"
+        },
+        "financement": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "themeId": {
+          "type": "string"
+        },
+        "recommendedArticleIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ArticleRecommandation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Recommandation": {
+                "type": "object",
+                "properties": {
+                  "Article": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      },
+                      "themeId": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Theme": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "iconUrl": {
+              "type": "string"
+            }
+          }
+        },
+        "banner": {
+          "type": "string",
+          "format": "binary"
+        },
+        "header": {
+          "type": "string",
+          "format": "binary"
+        },
+        "bannerUrl": {
+          "type": "string"
+        },
+        "headerUrl": {
+          "type": "string"
+        }
+      }
     }
   }
 }

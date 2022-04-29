@@ -181,6 +181,9 @@
       },
       "Broker": {
         "$ref": "./openapi.components.json#/schemas/Broker"
+      },
+      "ArticlePro": {
+        "$ref": "./openapi.components.json#/schemas/ArticlePro"
       }
     }
   }

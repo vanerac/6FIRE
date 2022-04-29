@@ -11,6 +11,7 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { Affiliation } from './models/Affiliation';
 export type { Article } from './models/Article';
+export type { ArticlePro } from './models/ArticlePro';
 export type { Broker } from './models/Broker';
 export type { Country } from './models/Country';
 export type { CryptoHolding } from './models/CryptoHolding';

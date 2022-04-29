@@ -28,8 +28,8 @@ const BotTrading: NextPage = (props: any) => {
                 setLinkingCode(code ?? 'Aucun code !');
                 setLoading(false);
             })
-            .catch((err) => {
-                setError(err.message);
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
             });
     }, []);

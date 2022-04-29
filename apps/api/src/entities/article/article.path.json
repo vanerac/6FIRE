@@ -24,7 +24,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../openapi.components.json#/schemas/Article"
+                "anyOf": [
+                  {
+                    "$ref": "../openapi.components.json#/schemas/Article"
+                  },
+                  {
+                    "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                  }
+                ]
               }
             }
           }
@@ -53,7 +60,14 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../openapi.components.json#/schemas/Article"
+              "anyOf": [
+                {
+                  "$ref": "../openapi.components.json#/schemas/Article"
+                },
+                {
+                  "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                }
+              ]
             }
           }
         }
@@ -64,7 +78,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../openapi.components.json#/schemas/Article"
+                "anyOf": [
+                  {
+                    "$ref": "../openapi.components.json#/schemas/Article"
+                  },
+                  {
+                    "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                  }
+                ]
               }
             }
           }
@@ -117,7 +138,14 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../openapi.components.json#/schemas/Article"
+              "anyOf": [
+                {
+                  "$ref": "../openapi.components.json#/schemas/Article"
+                },
+                {
+                  "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                }
+              ]
             }
           }
         }
@@ -128,7 +156,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../openapi.components.json#/schemas/Article"
+                "anyOf": [
+                  {
+                    "$ref": "../openapi.components.json#/schemas/Article"
+                  },
+                  {
+                    "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                  }
+                ]
               }
             }
           }
@@ -177,7 +212,14 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "../openapi.components.json#/schemas/Article"
+                  "anyOf": [
+                    {
+                      "$ref": "../openapi.components.json#/schemas/Article"
+                    },
+                    {
+                      "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                    }
+                  ]
                 }
               }
             }

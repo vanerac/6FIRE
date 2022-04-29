@@ -50,6 +50,9 @@
     },
     "Broker": {
       "$ref": "./broker/broker.components.json#/schemas/Broker"
+    },
+    "ArticlePro": {
+      "$ref": "./article/article.components.json#/schemas/ArticlePro"
     }
   }
 }
