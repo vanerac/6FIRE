@@ -27,6 +27,7 @@ WORKDIR /shared
 RUN npm install axios@0.26.1
 RUN npm install form-data
 RUN npm install universal-cookie
+RUN npm install react-cookie
 
 WORKDIR /app
 RUN npm run build
