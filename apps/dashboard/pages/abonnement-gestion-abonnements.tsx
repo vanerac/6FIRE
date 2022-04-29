@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import getAPIClient from '@shared/tools/apiClient';
+import { Subscription } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 
 export default function AbonnementGestionAbonnements() {
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$subscription, setSubscription] = useState<Subscription[]>([]);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.subscription.getSubscriptions().then(
+            (res) => {
+                setSubscription(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
+
     return (
         <>
             <input id="anPageName" name="page" type="hidden" value="abonnement-gestion-abonnements" />
