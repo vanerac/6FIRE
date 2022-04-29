@@ -336,6 +336,7 @@
         "content": {
           "application/json": {
             "schema": {
+              "type": "object",
               "properties": {
                 "oldPassword": {
                   "type": "string"

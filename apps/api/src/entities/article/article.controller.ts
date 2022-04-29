@@ -167,7 +167,20 @@ export default class ArticleController implements CRUDController {
         const { banner, header } = req.files;
         console.log(banner, header);
         try {
-            const { title, content, themeId, recommendedArticleIds } = req.body;
+            const {
+                title,
+                content,
+                themeId,
+                recommendedArticleIds,
+                description,
+                salaireMoy,
+                tarificationMoy,
+                outils,
+                creation,
+                utilisateurs,
+                necessiteAudicance,
+                financement,
+            } = req.body;
             const article = await prisma.article.create({
                 data: {
                     title,
@@ -176,6 +189,14 @@ export default class ArticleController implements CRUDController {
                     hidden: false,
                     bannerUrl: banner ? path.join(configuration.BACKEND_URL, 'public/', banner[0].filename) : null,
                     headerUrl: header ? path.join(configuration.BACKEND_URL, 'public/', header[0].filename) : null,
+                    description,
+                    salaireMoy,
+                    tarificationMoy,
+                    outils,
+                    creation,
+                    utilisateurs,
+                    necessiteAudicance,
+                    financement,
                 },
             });
             if (recommendedArticleIds?.length) {
@@ -205,7 +226,20 @@ export default class ArticleController implements CRUDController {
     static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: articleId } = req.params;
-            const { title, content, themeId, recommendedArticleIds } = req.body;
+            const {
+                title,
+                content,
+                themeId,
+                recommendedArticleIds,
+                description,
+                salaireMoy,
+                tarificationMoy,
+                outils,
+                creation,
+                utilisateurs,
+                necessiteAudicance,
+                financement,
+            } = req.body;
             const article = await prisma.article.update({
                 where: {
                     id: +articleId,
@@ -214,6 +248,14 @@ export default class ArticleController implements CRUDController {
                     title,
                     content,
                     themeId,
+                    description,
+                    salaireMoy,
+                    tarificationMoy,
+                    outils,
+                    creation,
+                    utilisateurs,
+                    necessiteAudicance,
+                    financement,
                 },
             });
             if (recommendedArticleIds.length > 0) {

@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import router from 'next/router';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from '../components/footer';
+import Header from '../components/header';
 import getAPIClient from '@shared/tools/apiClient';
 import { useEffect, useState } from 'react';
-import { Article, Theme } from '@shared/services';
+import { Article, Theme } from '@services/index';
 import { useCookies } from 'react-cookie';
 
 const HomePage: NextPage = (props: any) => {
@@ -13,6 +13,10 @@ const HomePage: NextPage = (props: any) => {
     const [themes, setThemes] = useState<Theme[]>([]);
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [pagination, $setPagination] = useState<any>({
+        page: 1,
+        limit: 20,
+    });
 
     const convertDate = (date: string) => {
         const date_unix = new Date(date).getTime() / 1000;
@@ -33,6 +37,20 @@ const HomePage: NextPage = (props: any) => {
         }
     };
 
+    const fetchData = async () => {
+        const response = await apiClient.article.getArticles({
+            ...pagination,
+        });
+
+        setArticles(response as Article[]);
+    };
+
+    const fetchThemes = async () => {
+        const response = await apiClient.themes.getThemes();
+        console.log('thmes => ', response);
+        setThemes(response as Theme[]);
+    };
+
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
@@ -40,17 +58,6 @@ const HomePage: NextPage = (props: any) => {
             return;
         }
         apiClient = getAPIClient(cookies['API_TOKEN']);
-        const fetchData = async () => {
-            const response = await apiClient.article.getArticles();
-
-            console.log('articles => ', response);
-            setArticles(response as Article[]);
-        };
-        const fetchThemes = async () => {
-            const response = await apiClient.themes.getThemes();
-            console.log('thmes => ', response);
-            setThemes(response as Theme[]);
-        };
 
         fetchThemes();
         fetchData();

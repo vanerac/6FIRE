@@ -13,10 +13,28 @@ export default class TraderController {
                 select: {
                     id: true,
                     name: true,
+                    TraderFollows: {
+                        select: {
+                            User: {
+                                userId: true,
+                            },
+                        },
+                    },
                 },
             });
+
+            // map TraderFollows to isFollowing boolean
+            const curationWithFollows = curation.map((trader) => {
+                const isFollowing = trader.TraderFollows.some((follow) => follow.User.userId === req.user.id);
+                delete trader.TraderFollows;
+                return {
+                    ...trader,
+                    isFollowing,
+                };
+            });
+
             res.status(200).json({
-                curation,
+                curationWithFollows,
             });
         } catch (error) {
             next(error);

@@ -129,16 +129,25 @@ model Theme {
 }
 
 model Article {
-  id        Int      @id @default(autoincrement())
+  id        Int    @id @default(autoincrement())
   title     String
   content   String
   bannerUrl String
   headerUrl String
-  hidden    Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  themeId   Int
-  Theme     Theme    @relation(fields: [themeId], references: [id], onDelete: Cascade)
+
+  description        String?
+  salaireMoy         String?
+  tarificationMoy   String?
+  outils             String?
+  creation           String?
+  utilisateurs       String?
+  necessiteAudicance String?
+  financement        String?
+  hidden             Boolean  @default(false)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @default(now())
+  themeId            Int
+  Theme              Theme    @relation(fields: [themeId], references: [id], onDelete: Cascade)
 
   Recommandation        Recommandation[]
   ArticleRecommandation ArticleRecommandation[]
@@ -215,6 +224,16 @@ model Affiliation {
   url       String
   color     String
   icon      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  displayed Boolean  @default(true)
+}
+
+model Broker {
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String
+  imageUrl  String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   displayed Boolean  @default(true)

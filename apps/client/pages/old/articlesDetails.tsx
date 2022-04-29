@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from '../components/header';
+import Footer from '../components/footer';
 import { useEffect, useState } from 'react';
 import router, { useRouter } from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
-import { Article } from '@shared/services';
+import { Article } from '@services/index';
 import { useCookies } from 'react-cookie';
 
 // const cookies = new Cookies();
@@ -14,15 +14,13 @@ const HomePage: NextPage = (props: any) => {
     const [articles, setArticles] = useState<Article>();
     const { query } = useRouter();
     const [cookies] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
-            console.log('no token');
             router.replace('/');
             return;
         }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
 
     useEffect(() => {

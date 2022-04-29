@@ -208,7 +208,11 @@ export class UserController implements CRUDController {
                 where: {
                     id: +id,
                 },
-                include: {
+                select: {
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
                     UserSubscription: {
                         select: {
                             Subscription: {

@@ -12,10 +12,12 @@ export class TradersService {
 
     /**
      * Get curation
-     * @returns Trader Success
+     * @returns any Success
      * @throws ApiError
      */
-    public getTraderCuration(): CancelablePromise<Array<Trader>> {
+    public getTraderCuration(): CancelablePromise<Array<(Trader & {
+        isFollowing?: boolean;
+    })>> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/trader/curation',

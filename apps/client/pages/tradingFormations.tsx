@@ -19,6 +19,7 @@ const TradingFormations: NextPage = (props: any) => {
             return;
         }
         $apiClient = getAPIClient(cookies['API_TOKEN']);
+        // Todo: Note: meme chose que articlesPages mais avec une option de filtre
     }, []);
 
     return (

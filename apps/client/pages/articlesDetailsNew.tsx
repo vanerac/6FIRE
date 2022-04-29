@@ -6,16 +6,19 @@ import Footer from './components/footer';
 import { useEffect, useState } from 'react';
 import router, { useRouter } from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
-import { Article } from '@shared/services';
+import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
 
 const HomePage: NextPage = (props: any) => {
     const [$themeName, setThemeName] = useState('');
-    const [$articles, setArticles] = useState<Article>();
+    // Todo: Note: Article pro = Article + properties en plus
+    const [$articles, setArticles] = useState<Article | ArticlePro>();
     const { query } = useRouter();
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     const [cookies] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -23,7 +26,6 @@ const HomePage: NextPage = (props: any) => {
             router.replace('/');
             return;
         }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
 
     useEffect(() => {
@@ -32,11 +34,18 @@ const HomePage: NextPage = (props: any) => {
             return;
         }
 
-        apiClient.article.getArticleById(query.articleId as any).then((res) => {
-            console.log('res => ', res);
-            setArticles(res as Article);
-            setThemeName((res as Article)?.Theme?.name as string);
-        });
+        setLoading(true);
+        apiClient.article
+            .getArticleById(query.articleId as any)
+            .then((res) => {
+                setLoading(false);
+                setArticles(res as Article | ArticlePro);
+                setThemeName((res as Article)?.Theme?.name as string);
+            })
+            .catch((error) => {
+                setLoading(false);
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            });
     }, [query]);
 
     const $convertDate = (date: string) => {
