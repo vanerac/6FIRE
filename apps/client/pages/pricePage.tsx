@@ -16,22 +16,22 @@ const PricePage: NextPage = (props: any) => {
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
 
-    useEffect(() => {
-        if (!cookies['API_TOKEN']) {
-            router.replace('/');
-        }
+    // useEffect(() => {
+    //     if (!cookies['API_TOKEN']) {
+    //         router.replace('/');
+    //     }
 
-        apiClient.subscription
-            .getSubscriptions()
-            .then((subscriptions) => {
-                setSubscriptions(subscriptions);
-                setLoading(false);
-            })
-            .catch((error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-                setLoading(false);
-            });
-    }, []);
+    //     apiClient.subscription
+    //         .getSubscriptions()
+    //         .then((subscriptions) => {
+    //             setSubscriptions(subscriptions);
+    //             setLoading(false);
+    //         })
+    //         .catch((error) => {
+    //             setError(error.i18n ?? error.message ?? 'Unknown error');
+    //             setLoading(false);
+    //         });
+    // }, []);
 
     const $subcribe = (subscriptionId: string) => {
         setLoading(true);

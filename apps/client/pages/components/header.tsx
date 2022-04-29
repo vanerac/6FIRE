@@ -32,15 +32,15 @@ const Header = (props: any) => {
         setThemes(response as Theme[]);
     };
 
-    useEffect(() => {
-        if (!cookies['API_TOKEN']) {
-            console.log('no token');
-            router.replace('/');
-            return;
-        }
-        console.log('token', cookies['API_TOKEN']);
-        fetchThemes();
-    }, []);
+    // useEffect(() => {
+    //     if (!cookies['API_TOKEN']) {
+    //         console.log('no token');
+    //         router.replace('/');
+    //         return;
+    //     }
+    //     console.log('token', cookies['API_TOKEN']);
+    //     fetchThemes();
+    // }, []);
 
     return (
         <>
