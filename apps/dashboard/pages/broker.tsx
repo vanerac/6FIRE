@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
 import getAPIClient from '@shared/tools/apiClient';
-import { Broker } from '@shared/services';
+
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
+import { Broker as $Broker } from '@shared/services';
 
 export default function Broker() {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -11,7 +12,7 @@ export default function Broker() {
 
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [$brokers, setBrokers] = useState<Broker[]>();
+    const [$brokers, setBrokers] = useState<$Broker[]>();
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -22,7 +23,7 @@ export default function Broker() {
 
         apiClient.broker.getBrokers().then(
             (res) => {
-                setBrokers(res as Broker[]);
+                setBrokers(res as $Broker[]);
                 setLoading(false);
             },
             (error) => {

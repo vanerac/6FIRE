@@ -11,7 +11,7 @@ export default function ArticlesCreation() {
 
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [article, setArticle] = useState<Article>();
+    const [$article, setArticle] = useState<Article>();
 
     const id = 1; // TODO
 
