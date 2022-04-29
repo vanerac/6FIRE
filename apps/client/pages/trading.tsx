@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Broker } from '@shared/services';
+import Head from 'next/head';
 
 const Trading: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -37,6 +38,9 @@ const Trading: NextPage = (props: any) => {
 
     return (
         <div>
+            <Head>
+                <title>Trading - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="trading" />
             <div className="trading screen">
                 <img className="groupe-de-masques-333-3LBGsu" src="img/mask-group-333@1x.png" />

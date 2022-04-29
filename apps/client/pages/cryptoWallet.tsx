@@ -7,6 +7,7 @@ import router from 'next/router';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { CryptoHolding } from '@shared/services';
+import Head from 'next/head';
 
 const CryptoWallet: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -43,6 +44,9 @@ const CryptoWallet: NextPage = (props: any) => {
     }, []);
     return (
         <div>
+            <Head>
+                <title>Crypto Wallet - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="crypto-wallet" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
 

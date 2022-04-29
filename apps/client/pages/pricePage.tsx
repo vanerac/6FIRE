@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
+import Head from 'next/head';
 
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -52,6 +53,9 @@ const PricePage: NextPage = (props: any) => {
 
     return (
         <div>
+            <Head>
+                <title>Abonnement Prix - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="prices-page" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
 

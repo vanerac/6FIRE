@@ -51,6 +51,7 @@ const Header = (props: any) => {
                 <input id="menu__toggle" type="checkbox" />
                 <label
                     onClick={() => {
+                        console.log('click');
                         handleForm();
                     }}
                     className="menu__btn"
@@ -63,6 +64,7 @@ const Header = (props: any) => {
                 <div
                     className="mobile-hamburger"
                     onClick={() => {
+                        console.log('mobile');
                         mobileToggle();
                     }}>
                     menu
