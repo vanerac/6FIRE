@@ -39,7 +39,7 @@ export default function sideBar() {
                     <ul>
                     <li className="sidebar-dropdown">
                         <a href="#">
-                        <i className="fa fa-shopping-cart"></i>
+                        <i className="fa fa-home"></i>
                         <span>Home</span>
                         </a>
                         <div className="sidebar-submenu">
@@ -127,15 +127,24 @@ export default function sideBar() {
                         <span>Pays</span>
                         </a>
                     </li>
-                    <li>
+                    
+                    <li className="sidebar-dropdown">
                         <a href="#">
-                        <i className="fa fa-folder"></i>
+                        <i className="fas fa-money-check"></i>
                         <span>Abonnement</span>
                         </a>
+                        <div className="sidebar-submenu">
+                        <ul>
+                            <li>
+                            <a href="#">General</a>
+                            </li>
+                        </ul>
+                        </div>
                     </li>
+
                     <li>
                         <a href="#">
-                        <i className="fa fa-folder"></i>
+                        <i className="fa fa-cog"></i>
                         <span>Settings</span>
                         </a>
                     </li>
@@ -143,9 +152,7 @@ export default function sideBar() {
                 </div>
                 </div>
             </nav>
-            <main className="page-content">
-
-            </main>
+            
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ export default function Topbar() {
             <div className="top_navigation">
                 <div className="left-col">
                     <a href="./" className="logo"><img src="img/groupe-1-10@1x.png" alt="" /></a>
-                    <input className="search poppins-normal-comet-14px" value={'Search...'} />
+                    {/* <input className="search poppins-normal-comet-14px" value={'Search...'} /> */}
                 </div>
                 <div className="right-col">
                     <div className="user-accounts">
