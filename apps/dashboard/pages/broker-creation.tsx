@@ -21,7 +21,7 @@ export default function BrokerCreation() {
     // image
     const [$image, $setImage] = useState<Blob>();
 
-    const id = '1'; // TODO
+    const id = 1; // TODO
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -46,7 +46,7 @@ export default function BrokerCreation() {
         if ($broker) {
             // update
             apiClient.broker
-                .updateBroker($broker.id as any, {
+                .updateBroker($broker.id as number, {
                     ...$broker,
                     name: $name,
                     url: $url,

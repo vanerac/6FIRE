@@ -122,7 +122,7 @@ export default function ArticlesCreationEntreprise() {
                 necessiteAudicance: articleAudience,
             } as ArticlePro;
 
-            apiClient.article.updateArticleById(article.id as unknown as number, newArticle).then(
+            apiClient.article.updateArticleById(article.id, newArticle).then(
                 (res) => {
                     setArticle(res as any);
                     alert('Article updated');

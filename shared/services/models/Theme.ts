@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 export type Theme = {
-    id?: string;
+    id?: number;
     name?: string;
     description?: string;
     createdAt?: string;

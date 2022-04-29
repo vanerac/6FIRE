@@ -123,7 +123,7 @@ export class UserService {
      * @throws ApiError
      */
     public getUserSubscription(
-        id: string,
+        id: number,
     ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'GET',
@@ -146,7 +146,7 @@ export class UserService {
      * @throws ApiError
      */
     public updateUserSubscription(
-        id: string,
+        id: number,
         requestBody: Subscription,
     ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
@@ -171,7 +171,7 @@ export class UserService {
      * @throws ApiError
      */
     public deleteUserSubscription(
-        id: string,
+        id: number,
     ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'DELETE',

@@ -295,4 +295,52 @@ export default class ArticleController implements CRUDController {
             next(error);
         }
     }
+
+    static async getByTheme(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id: themeId } = req.params;
+            const articles = await prisma.article.findMany({
+                where: {
+                    themeId: +themeId,
+                },
+                select: {
+                    id: true,
+                    title: true,
+                    content: true,
+                    createdAt: true,
+                    updatedAt: true,
+                    themeId: true,
+                    Theme: {
+                        select: {
+                            name: true,
+                            iconUrl: true,
+                        },
+                    },
+                    ArticleRecommandation: {
+                        select: {
+                            // id: false,
+                            // recommandedArticleId: false,
+                            Recommandation: {
+                                select: {
+                                    Article: {
+                                        select: {
+                                            id: true,
+                                            title: true,
+                                            content: true,
+                                            createdAt: true,
+                                            updatedAt: true,
+                                            themeId: true,
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+            res.status(200).json(articles);
+        } catch (error) {
+            next(error);
+        }
+    }
 }

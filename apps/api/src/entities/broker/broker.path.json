@@ -99,7 +99,7 @@
           "description": "Broker id",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -139,7 +139,7 @@
           "description": "Broker id",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -202,7 +202,7 @@
           "description": "Broker id",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],

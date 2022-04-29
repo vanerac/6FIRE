@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 export type Country = {
-    id: string;
+    id: number;
     name: string;
     code: string;
     createdAt: string;
