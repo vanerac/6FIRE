@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import getAPIClient from '@shared/tools/apiClient';
+import { Offer } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 
 export default function AbonnementCodeGratuit() {
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$offers, setOffers] = useState<Offer[]>();
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.offers.getAllOffers().then(
+            (res) => {
+                setOffers(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
+
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="abonnement-code-gratuit" />
@@ -91,7 +121,7 @@ export default function AbonnementCodeGratuit() {
                                     <div className="name-yaS4ec poppins-medium-blue-ribbon-14px">Code promo</div>
                                 </div>
                             </a>
-                            <a href="abonnement-essai-gratuit.tsx">
+                            <a href="deprecated/abonnement-essai-gratuit.tsx">
                                 <div className="essai-gratuit-pxBTHT">
                                     <img className="frame-DyYjTG" src="img/frame-11@1x.png" />
                                     <div className="name-DyYjTG poppins-medium-blue-ribbon-14px">Essai gratuit</div>

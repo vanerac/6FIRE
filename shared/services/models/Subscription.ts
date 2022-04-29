@@ -10,6 +10,10 @@ export type Subscription = {
     subscriptionType: string;
     price: number;
     level: number;
+    hidden?: boolean;
+    isBestValue?: boolean;
+    hasFreeTrial?: boolean;
+    freeTrialDays?: number;
     createdAt?: string;
     updatedAt?: string;
 };

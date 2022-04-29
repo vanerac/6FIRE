@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import getAPIClient from '@shared/tools/apiClient';
+
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
+import { Broker as $Broker } from '@shared/services';
 
 export default function Broker() {
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$brokers, setBrokers] = useState<$Broker[]>();
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.broker.getBrokers().then(
+            (res) => {
+                setBrokers(res as $Broker[]);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="broker" />

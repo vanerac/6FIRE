@@ -264,8 +264,10 @@ const Header = (props: any) => {
                         <div className="main-nav-bar">
                             <div className="nav-grid">
                                 <div className="nav-item-wrap">
-                                    <ul id='visible-only-mobile'>
-                                        <li><a href="#">Espace Trading &amp; Crypto</a></li>
+                                    <ul id="visible-only-mobile">
+                                        <li>
+                                            <a href="#">Espace Trading &amp; Crypto</a>
+                                        </li>
                                     </ul>
                                     <ul>
                                         <li>

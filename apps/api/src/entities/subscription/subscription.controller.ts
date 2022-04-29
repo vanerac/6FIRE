@@ -43,15 +43,10 @@ export default class SubscriptionController extends CRUDController {
 
     static async create(req: Request, res: Response, next: NextFunction) {
         try {
-            const { name, description, price, level, refreshRate } = req.body;
+            const { body } = req;
             const subscription = await prisma.subscription.create({
                 data: {
-                    name,
-                    description,
-                    price,
-                    level,
-                    refreshRate,
-                    subscriptionType: (refreshRate ? PaymentType.SUBSCRIPTION : PaymentType.ONETIME) as any,
+                    ...body,
                 },
             });
 
@@ -64,16 +59,15 @@ export default class SubscriptionController extends CRUDController {
     static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
-            const { name, description, price, level } = req.body;
+
+            const { body } = req;
+
             const subscription = await prisma.subscription.update({
                 where: {
                     id: +id,
                 },
                 data: {
-                    name,
-                    description,
-                    price,
-                    level,
+                    ...body,
                 },
             });
             // Todo: update mollie subscription

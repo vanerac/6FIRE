@@ -47,6 +47,9 @@
         "banned": {
           "type": "boolean"
         },
+        "note": {
+          "type": "string"
+        },
         "UserSubscription": {
           "type": "object",
           "properties": {
