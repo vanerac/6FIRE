@@ -11,10 +11,10 @@ import { CryptoHolding } from '@services/index';
 const CryptoWallet: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let $apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [cryptos, setCryptos] = useState<CryptoHolding[]>([]);
-    const [message, setMessage] = useState<{ id: number; message: string; date: string }>();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [$cryptos, setCryptos] = useState<CryptoHolding[]>([]);
+    const [$message, setMessage] = useState<{ id: number; message: string; date: string }>();
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {

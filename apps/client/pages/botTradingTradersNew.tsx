@@ -12,8 +12,8 @@ const BotTradingTrader: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
     const [traders, setTraders] = useState<Trader[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -37,7 +37,7 @@ const BotTradingTrader: NextPage = (props: any) => {
             });
     }, []);
 
-    const followTrader = (traderId: number) => {
+    const $followTrader = (traderId: number) => {
         apiClient.traders
             .followTrader(traderId)
             .then(() => {
@@ -53,7 +53,7 @@ const BotTradingTrader: NextPage = (props: any) => {
             });
     };
 
-    const unfollowTrader = (traderId: number) => {
+    const $unfollowTrader = (traderId: number) => {
         apiClient.traders
             .unfollowTrader(traderId)
             .then(() => {

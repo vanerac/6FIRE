@@ -23,12 +23,12 @@ import getAPIClient from '@shared/tools/apiClient';
 const HomePage: NextPage = (props: any) => {
     console.log(props);
 
-    const [articles, setArticles] = useState<Article[]>([]);
-    const [themes, setThemes] = useState<Theme[]>([]);
+    const [$articles, setArticles] = useState<Article[]>([]);
+    const [$themes, setThemes] = useState<Theme[]>([]);
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
     const [pagination, setPagination] = useState<any>({
         page: 1,
         limit: 20,
@@ -48,7 +48,7 @@ const HomePage: NextPage = (props: any) => {
         }
     };
 
-    const loadMoreArticles = () => {
+    const $loadMoreArticles = () => {
         setPagination({
             ...pagination,
             page: pagination.page + 1,

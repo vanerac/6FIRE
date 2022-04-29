@@ -11,9 +11,9 @@ import { Subscription } from '@shared/services';
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [$subscriptions, setSubscriptions] = useState<Subscription[]>([]);
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -32,7 +32,7 @@ const PricePage: NextPage = (props: any) => {
             });
     }, []);
 
-    const subcribe = (subscriptionId: string) => {
+    const $subcribe = (subscriptionId: string) => {
         setLoading(true);
         apiClient.payment
             .createPayment({

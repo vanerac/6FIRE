@@ -13,7 +13,7 @@ const HomePage: NextPage = (props: any) => {
     const [themes, setThemes] = useState<Theme[]>([]);
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [pagination, setPagination] = useState<any>({
+    const [pagination, $setPagination] = useState<any>({
         page: 1,
         limit: 20,
     });

@@ -11,11 +11,11 @@ import getAPIClient from '@shared/tools/apiClient';
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [oldPassword, setOldPassword] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [oldPassword, $setOldPassword] = useState('');
+    const [newPassword, $setNewPassword] = useState('');
+    const [confirmPassword, $setConfirmPassword] = useState('');
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -26,7 +26,7 @@ const Compte: NextPage = (props: any) => {
         apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
 
-    const updatePassword = () => {
+    const $updatePassword = () => {
         setLoading(true);
         apiClient.auth
             .changePassword({

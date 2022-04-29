@@ -11,9 +11,9 @@ import { Broker } from '@shared/services';
 const Trading: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     const $apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [brokers, setBrokers] = useState<Broker[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [$brokers, setBrokers] = useState<Broker[]>([]);
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {

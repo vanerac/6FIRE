@@ -12,9 +12,9 @@ import { Subscription } from '@services/index';
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [$subscriptions, setSubscriptions] = useState<Subscription[]>([]);
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -33,7 +33,7 @@ const PricePage: NextPage = (props: any) => {
             });
     }, []);
 
-    const subcribe = (subscriptionId: string) => {
+    const $subcribe = (subscriptionId: string) => {
         apiClient.payment
             .createPayment({
                 subscriptionId,
@@ -41,7 +41,7 @@ const PricePage: NextPage = (props: any) => {
             })
             .then((payment) => {
                 // Todo a popup instead ?
-                router.push(payment.paymentUrl);
+                router.push(payment.paymentUrl as string);
             });
     };
 

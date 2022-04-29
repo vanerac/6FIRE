@@ -12,9 +12,9 @@ import { UserStatus } from '@shared/services';
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [me, setMe] = useState<UserStatus>();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [$me, setMe] = useState<UserStatus>();
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {

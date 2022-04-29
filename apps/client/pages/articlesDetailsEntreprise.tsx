@@ -15,7 +15,7 @@ const ArticlesDetailsEntreprise: NextPage = (props: any) => {
     const [$articles, setArticles] = useState<Article | ArticlePro>();
     const { query } = useRouter();
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [$error, setError] = useState('');
 
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
