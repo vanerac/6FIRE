@@ -1,17 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import getAPIClient from '@shared/tools/apiClient';
+import { Article, ArticlePro } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 // import { Article } from '@shared/services';
 // import apiClient from '@shared/tools/apiClient';
 
 export default function Articles() {
-    // const [$articles, setArticles] = useState<Article[]>([]);
-    //
-    // useEffect(() => {
-    //     // Todo: Note: Api can return an Error object ?
-    //     apiClient()
-    //         .article.getArticles()
-    //         .then((articles) => setArticles(articles as Article[]));
-    // }, []);
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$articles, setArticles] = useState<(Article | ArticlePro)[]>([]);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.article.getArticles(1, 1000).then(
+            (res) => {
+                setArticles(res as (Article | ArticlePro)[]);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="articles-historique-articles" />

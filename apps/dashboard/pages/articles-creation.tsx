@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import getAPIClient from '@shared/tools/apiClient';
+import { Article } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 
 export default function ArticlesCreation() {
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [article, setArticle] = useState<Article>();
+
+    const id = 1; // TODO
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.article.getArticleById(id).then(
+            (res) => {
+                setArticle(res as Article);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="articles-creer-un-article" />

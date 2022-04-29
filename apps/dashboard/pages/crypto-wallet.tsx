@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import getAPIClient from '@shared/tools/apiClient';
+import router from 'next/router';
+import { CryptoHolding } from '@shared/services';
+import { useCookies } from 'react-cookie';
 
 export default function CryptoWallet() {
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$holdings, setHoldings] = useState<CryptoHolding[]>([]);
+    const [$message, setMessage] = useState<{ id: number; message: string; date: string }>();
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.crypto.getAllCrypto().then(
+            ({ cryptos, messages: [message] }) => {
+                setHoldings(cryptos);
+                setMessage(message);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
+
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="crypto-wallet" />

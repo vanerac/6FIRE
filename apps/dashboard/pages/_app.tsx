@@ -55,11 +55,14 @@ import '../styles/topbar.css';
 
 // SASS Variables are in here
 import type { AppProps } from 'next/app';
-import vars from '../styles/main.module.scss';
+import { CookiesProvider } from 'react-cookie';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    console.log(vars.primaryColor);
-    return <Component {...pageProps} />;
+    return (
+        <CookiesProvider>
+            <Component {...pageProps} />;
+        </CookiesProvider>
+    );
 }
 
 export default MyApp;
