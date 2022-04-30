@@ -5,6 +5,19 @@ import { ApiError } from '@shared/services';
 import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
+import $ from 'jquery';
+
+/* if (typeof window !== "undefined"){
+    $('.mobile-hamburger').click(function(){
+        $('.login_popup_wrapper').toggleClass('open');
+    });
+} */
+if (typeof window !== "undefined"){
+    console.log("test choda");
+    $('.nav-close-btn').click(function(){
+        $('.nav-item-wrap').removeClass('open');
+    });
+}
 
 const LoginPopup = (props: any) => {
     console.log(props);
@@ -68,7 +81,14 @@ const LoginPopup = (props: any) => {
     return (
         <div className="login_popup_wrapper">
             {cookies['API_TOKEN'] ? (
-                <>login</>
+                <>
+                <div className="after_login">
+                    <ul>
+                        <li><a href="#">Mes donnees personnelles</a></li>
+                        <li><a href="#">Ma licence</a></li>
+                    </ul>
+                </div>
+                </>
             ) : (
                 <>
                     <div className="login_access_col">
