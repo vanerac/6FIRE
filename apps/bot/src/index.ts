@@ -6,6 +6,7 @@ import * as pnlWatcher from 'binance-leaderboard-listener';
 import Database, { Trader } from './database';
 import EventEmitter from 'events';
 import { positionDifferential } from './calc';
+import { amountChangeMessage, closedPositionMessage, openedPositionMessage } from './format';
 
 dotenv.config();
 
@@ -24,6 +25,18 @@ const listeners: {
     listener: EventEmitter;
 }[] = [];
 
+const formatMessage = (traderName: string, oldPositions: Position[], newPositions: Position[]): string[] => {
+    // Opening positions can be long or short
+
+    const { opened, closed } = positionDifferential(oldPositions, newPositions);
+
+    const openedPostionsMessages = openedPositionMessage(traderName, opened);
+    const closedPostionsMessages = closedPositionMessage(traderName, closed);
+    const amountChange = amountChangeMessage(traderName, oldPositions, newPositions);
+
+    return [...openedPostionsMessages, ...closedPostionsMessages, ...amountChange];
+};
+
 async function handleUpdate(trader: Trader, data: Position[]) {
     const cache = await Cache.getInstance();
     const oldPositionsState = await cache.getPositions(trader.clientId);
@@ -33,18 +46,14 @@ async function handleUpdate(trader: Trader, data: Position[]) {
         return;
     }
 
-    // console.log(oldPositionsState, data);
-    // calculate the difference between the 2 arrays
-    const difference = positionDifferential(data, oldPositionsState);
-
-    const message = `${difference.closed.length} closed positions and ${difference.opened.length} opened positions`;
-    if (!(difference.closed.length || difference.opened.length)) {
+    const messages = formatMessage(trader.name, oldPositionsState, data);
+    if (!messages.length) {
         return;
     }
 
     const followers = await Database.getFollowers(trader.id);
     followers.forEach((follower) => {
-        cache.addMessage(follower.User.telegramId, message);
+        messages.map((message) => cache.addMessage(follower.User.telegramId, message));
     });
 }
 
