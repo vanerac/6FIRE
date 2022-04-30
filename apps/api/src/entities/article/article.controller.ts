@@ -53,6 +53,7 @@ export default class ArticleController implements CRUDController {
             };
             if (isAdmin) {
                 delete args.where;
+                delete args.hidden;
             }
             const articles = await prisma.article.findMany(args);
             res.status(200).json(articles);
@@ -363,6 +364,7 @@ export default class ArticleController implements CRUDController {
             };
             if (isAdmin) {
                 delete args.where.Theme;
+                delete args.where.hidden;
             }
             const articles = await prisma.article.findMany(args);
             res.status(200).json(articles);
