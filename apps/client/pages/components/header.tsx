@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 // import router from 'next/router';
 import $ from 'jquery';
@@ -18,14 +18,14 @@ const mobileToggle = () => {
 };
 
 /* mobile main button toggel */
-if (typeof window !== "undefined"){
-    $('.mobile-hamburger').click(function(){
-        $(this).css({"z-index":"-1", 'ponter-event': 'none'});
+if (typeof window !== 'undefined') {
+    $('.mobile-hamburger').click(function () {
+        $(this).css({ 'z-index': '-1', 'ponter-event': 'none' });
     });
 }
-if (typeof window !== "undefined"){
-    $('.nav-close-btn').click(function(){
-        $('.mobile-hamburger').css({"z-index":"3", 'ponter-event': 'visible'});
+if (typeof window !== 'undefined') {
+    $('.nav-close-btn').click(function () {
+        $('.mobile-hamburger').css({ 'z-index': '3', 'ponter-event': 'visible' });
     });
 }
 
@@ -35,7 +35,7 @@ const Header = (props: any) => {
     const [$themes, setThemes] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    const fetchThemes = async () => {
+    const $fetchThemes = async () => {
         const response = await apiClient.themes.getThemes();
         console.log('thmes => ', response);
         if (response.length === 0) {
@@ -79,9 +79,8 @@ const Header = (props: any) => {
                         console.log('mobile');
                         mobileToggle();
                     }}>
-                   <label className="menu__btn"
-                    htmlFor="menu__toggle">
-                    <span></span>
+                    <label className="menu__btn" htmlFor="menu__toggle">
+                        <span></span>
                     </label>
                 </div>
 
@@ -121,7 +120,9 @@ const Header = (props: any) => {
                         <div className="main-nav-bar">
                             <div className="nav-grid">
                                 <div className="nav-item-wrap">
-                                    <div className="nav-close-btn"><img src="img/icon/close.svg" alt="" /></div>
+                                    <div className="nav-close-btn">
+                                        <img src="img/icon/close.svg" alt="" />
+                                    </div>
                                     <ul id="visible-only-mobile">
                                         <li>
                                             <a href="#">Espace Trading &amp; Crypto</a>

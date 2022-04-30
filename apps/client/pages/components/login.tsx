@@ -12,12 +12,16 @@ import $ from 'jquery';
         $('.login_popup_wrapper').toggleClass('open');
     });
 } */
-if (typeof window !== "undefined"){
-    console.log("test choda");
-    $('.nav-close-btn').click(function(){
+if (typeof window !== 'undefined') {
+    console.log('test choda');
+    $('.nav-close-btn').click(function () {
         $('.nav-item-wrap').removeClass('open');
     });
 }
+
+const handleForm = () => {
+    $('.login_popup_wrapper').toggleClass('open');
+};
 
 const LoginPopup = (props: any) => {
     console.log(props);
@@ -82,12 +86,16 @@ const LoginPopup = (props: any) => {
         <div className="login_popup_wrapper">
             {cookies['API_TOKEN'] ? (
                 <>
-                <div className="after_login">
-                    <ul>
-                        <li><a href="#">Mes donnees personnelles</a></li>
-                        <li><a href="#">Ma licence</a></li>
-                    </ul>
-                </div>
+                    <div className="after_login">
+                        <ul>
+                            <li>
+                                <a href="#">Mes donnees personnelles</a>
+                            </li>
+                            <li>
+                                <a href="#">Ma licence</a>
+                            </li>
+                        </ul>
+                    </div>
                 </>
             ) : (
                 <>
@@ -145,7 +153,13 @@ const LoginPopup = (props: any) => {
                         <div className="title-wrap">
                             <div className="title">VOUS N’AVEZ PAS DE COMPTE ?</div>
                             {/* close side bar */}
-                            <a className="register_btn" href="#">
+                            <a
+                                onClick={() => {
+                                    handleForm();
+                                    router.push('/connexion');
+                                }}
+                                className="register_btn"
+                                href="#">
                                 Créer un compte
                             </a>
                         </div>

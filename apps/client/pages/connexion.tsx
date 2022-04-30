@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
 import { useState } from 'react';
@@ -298,9 +298,15 @@ const Connexion: NextPage = () => {
                     </a>
                 </div>
                 <div className="dj-inscrit-connectez-vous-WxaGAS">
-                    <Link href="/">
-                        <a style={{ color: 'white' }}>Déjà inscrit ? Connectez vous</a>
-                    </Link>
+                    {/* <Link href="/"> */}
+                    <a
+                        onClick={() => {
+                            handleForm();
+                        }}
+                        style={{ color: 'white' }}>
+                        Déjà inscrit ? Connectez vous
+                    </a>
+                    {/* </Link> */}
                 </div>
                 <div className="numro-de-tlphone-Ae6KpX">
                     <div className="ligne-1-Ay5Yag">
@@ -510,7 +516,13 @@ const Connexion: NextPage = () => {
                         <div className="crer-un-compte-1QO1gL">Créer un compte</div>
                     </div>
                 </div>
-                <div className="dj-inscrit-connectez-vous-qfTrnm">Déjà inscrit ? Connectez vous</div>
+                <div
+                    onClick={() => {
+                        handleForm();
+                    }}
+                    className="dj-inscrit-connectez-vous-qfTrnm">
+                    Déjà inscrit ? Connectez vous
+                </div>
                 <div className="connexion-qfTrnm">
                     <div className="connexion-1aVEbJ">
                         <div className="club-premium-MoQQxl lato-normal-white-14px">Club Privé</div>
