@@ -53,6 +53,7 @@ export default class ArticleController implements CRUDController {
             };
             if (isAdmin) {
                 delete args.where;
+                delete args.hidden;
             }
             const articles = await prisma.article.findMany(args);
             res.status(200).json(articles);
@@ -299,10 +300,33 @@ export default class ArticleController implements CRUDController {
     static async getByTheme(req: Request, res: Response, next: NextFunction) {
         try {
             const { id: themeId } = req.params;
-            const articles = await prisma.article.findMany({
+            const { page = 0, limit = 20 } = req.query;
+            const { id: userId, isAdmin } = req.user;
+
+            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
                 where: {
-                    themeId: +themeId,
+                    userId,
                 },
+                select: {
+                    Subscription: {
+                        select: {
+                            level: true,
+                        },
+                    },
+                },
+            });
+            const args: any = {
+                where: {
+                    hidden: false,
+                    themeId: +themeId,
+                    Theme: {
+                        subscriptionLevel: {
+                            lte: userSubscriptionLevel?.Subscription.level,
+                        },
+                    },
+                },
+                skip: +page * +limit,
+                take: +limit,
                 select: {
                     id: true,
                     title: true,
@@ -337,7 +361,12 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
-            });
+            };
+            if (isAdmin) {
+                delete args.where.Theme;
+                delete args.where.hidden;
+            }
+            const articles = await prisma.article.findMany(args);
             res.status(200).json(articles);
         } catch (error) {
             next(error);
