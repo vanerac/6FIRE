@@ -48,9 +48,9 @@ const Connexion: NextPage = () => {
         $('.nav-item-wrap').toggleClass('open');
     };
 
-    if (cookies['API_TOKEN']) {
-        router.push('/articlesPage');
-    }
+    // if (cookies['API_TOKEN']) {
+    //     router.push('/articlesPage');
+    // }
 
     const create_account = () => {
         let isValid = true;
