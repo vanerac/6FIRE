@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 // import router from 'next/router';
 import $ from 'jquery';
@@ -7,6 +7,7 @@ import { useCookies } from 'react-cookie';
 import { Theme } from '@services/index';
 import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
+import Link from 'next/link';
 
 /* Hamburger toggle script */
 const handleForm = () => {
@@ -31,30 +32,42 @@ if (typeof window !== 'undefined') {
 
 const Header = (props: any) => {
     console.log(props);
-    const [cookies] = useCookies(['API_TOKEN']);
-    const [$themes, setThemes] = useState<Theme[]>([]);
-    const [$themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
+    const [cookies, $setCookie, removeCookie] = useCookies(['API_TOKEN']);
+    const [themes, setThemes] = useState<Theme[]>([]);
+    const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    const $fetchThemes = async () => {
+    const fetchThemes = async () => {
         const response = await apiClient.themes.getThemes();
-        console.log('themes => ', response);
         if (response.length === 0) {
             router.push('/pricePage');
         }
-        setThemes(response.slice(0, 4) as Theme[]);
-        setThemesDropDown(response.slice(4) as Theme[]);
+        const slicedThemes = [...response].slice(0, 5) as Theme[];
+        const slicedThemesDropDown = [...response].slice(5) as Theme[];
+        setThemes(slicedThemes);
+        setThemesDropDown(slicedThemesDropDown);
+        // setThemesDropDown(response.slice(4) as Theme[]);
     };
 
-    // useEffect(() => {
-    //     if (!cookies['API_TOKEN']) {
-    //         console.log('no token');
-    //         router.replace('/');
-    //         return;
-    //     }
-    //     console.log('token', cookies['API_TOKEN']);
-    //     fetchThemes();
-    // }, []);
+    useEffect(() => {
+        if (
+            router.pathname === '/cgv' ||
+            router.pathname === '/cgu' ||
+            router.pathname === '/mentionsLegales' ||
+            router.pathname === '/politiqueDeConfidentialite' ||
+            router.pathname === '/404'
+        ) {
+            console.log('no check required');
+        } else {
+            if (!cookies['API_TOKEN']) {
+                console.log('no token');
+                router.replace('/');
+                return;
+            }
+            console.log('token', cookies['API_TOKEN']);
+            fetchThemes();
+        }
+    }, []);
 
     return (
         <>
@@ -107,9 +120,9 @@ const Header = (props: any) => {
                                     </label>
                                 </div>
 
-                                <a href="#" className="my-account">
+                                {/* <a href="/compte" className="my-account">
                                     Mon compte
-                                </a>
+                                </a> */}
                                 <div className="search-bar">
                                     <img src="" alt="" />
                                 </div>
@@ -131,13 +144,23 @@ const Header = (props: any) => {
                                         </li>
                                     </ul>
                                     <ul>
-                                        {$themes.map((theme, index) => (
+                                        {themes.map((theme, index) => (
                                             <li key={index}>
-                                                <a href="#">
+                                                <a
+                                                    style={{ cursor: 'pointer' }}
+                                                    onClick={() => {
+                                                        console.log('theme', theme);
+                                                        router.push({
+                                                            pathname: '/articlesPage',
+                                                            query: {
+                                                                themeId: theme.id,
+                                                            },
+                                                        });
+                                                    }}>
                                                     <span className="icon">
                                                         <img src="/img/icon/Cryptomonnaies.png" alt="" />
                                                     </span>
-                                                    <span className="nav-item">{theme}</span>
+                                                    <span className="nav-item">{theme.name}</span>
                                                 </a>
                                             </li>
                                         ))}
@@ -176,17 +199,30 @@ const Header = (props: any) => {
                                                 <span className="nav-item">E-Commerce</span>
                                             </a>
                                         </li> */}
-                                        <li>
-                                            <a href="#">
-                                                <span className="nav-item">Autres thématiques</span>
-                                            </a>
-                                            <ul className="dropdown">
-                                                <li>
-                                                    <a href="#">
-                                                        <span className="nav-item">Cryptommonaies</span>
-                                                    </a>
-                                                </li>
-                                                <li>
+                                        {themesDropDown.length > 0 ? (
+                                            <li>
+                                                <a href="#">
+                                                    <span className="nav-item">Autres thématiques</span>
+                                                </a>
+                                                <ul className="dropdown">
+                                                    {themesDropDown.map((theme, $index) => (
+                                                        <li key={theme.id}>
+                                                            <a
+                                                                style={{ cursor: 'pointer' }}
+                                                                onClick={() => {
+                                                                    console.log('theme', theme);
+                                                                    router.push({
+                                                                        pathname: '/articlesPage',
+                                                                        query: {
+                                                                            themeId: theme.id,
+                                                                        },
+                                                                    });
+                                                                }}>
+                                                                <span className="nav-item">{theme.name}</span>
+                                                            </a>
+                                                        </li>
+                                                    ))}
+                                                    {/* <li>
                                                     <a href="#">
                                                         <span className="nav-item">Immobilier</span>
                                                     </a>
@@ -200,18 +236,28 @@ const Header = (props: any) => {
                                                     <a href="#">
                                                         <span className="nav-item">Play to Earn</span>
                                                     </a>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                                </li> */}
+                                                </ul>
+                                            </li>
+                                        ) : null}
                                     </ul>
 
                                     {/* mobile menu */}
                                     <ul id="visible-mobile">
                                         <li>
-                                            <a href="#">Mon compte</a>
+                                            <Link href="/compte">
+                                                <a>Mon compte</a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="#">Deconnexion</a>
+                                            <a
+                                                onClick={() => {
+                                                    removeCookie('API_TOKEN');
+                                                    router.push('/');
+                                                }}
+                                                href="#">
+                                                Deconnexion
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
