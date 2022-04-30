@@ -184,7 +184,11 @@ export class AuthService {
      * @throws ApiError
      */
     public changePassword(
-        requestBody: any,
+        requestBody: {
+            oldPassword: string;
+            newPassword: string;
+            confirmPassword: string;
+        },
     ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'POST',

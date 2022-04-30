@@ -6,17 +6,37 @@ const prisma = new PrismaClient();
 export default class TraderController {
     static async getCuration(req: Request, res: Response, next: NextFunction) {
         try {
-            const curation = prisma.curatedTrader.findMany({
+            const curation = await prisma.curatedTrader.findMany({
                 where: {
                     displayed: true,
                 },
                 select: {
                     id: true,
                     name: true,
+                    TraderFollows: {
+                        select: {
+                            User: {
+                                select: {
+                                    id: true,
+                                },
+                            },
+                        },
+                    },
                 },
             });
+
+            // map TraderFollows to isFollowing boolean
+            const curationWithFollows = curation.map((trader) => {
+                const isFollowing = trader.TraderFollows.some((follow) => +follow.User.id === req.user.id);
+                delete trader.TraderFollows;
+                return {
+                    ...trader,
+                    isFollowing,
+                };
+            });
+
             res.status(200).json({
-                curation,
+                curationWithFollows,
             });
         } catch (error) {
             next(error);

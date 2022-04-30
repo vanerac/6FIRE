@@ -5,14 +5,20 @@ import Footer from './components/footer';
 import Header from './components/header';
 import getAPIClient from '@shared/tools/apiClient';
 import { useEffect, useState } from 'react';
-import { Article, Theme } from '@shared/services';
+import { Article, Theme } from '@services/index';
 import { useCookies } from 'react-cookie';
+import Head from 'next/head';
 
 const HomePage: NextPage = (props: any) => {
     const [articles, setArticles] = useState<Article[]>([]);
     const [themes, setThemes] = useState<Theme[]>([]);
     const [cookies] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [$error, $setError] = useState('');
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [pagination, $setPagination] = useState<any>({
+        page: 1,
+        limit: 20,
+    });
 
     const convertDate = (date: string) => {
         const date_unix = new Date(date).getTime() / 1000;
@@ -33,31 +39,33 @@ const HomePage: NextPage = (props: any) => {
         }
     };
 
+    const fetchData = async () => {
+        const response = await apiClient.article.getArticles(pagination.page, pagination.limit);
+        setArticles(response as Article[]);
+    };
+
+    const fetchThemes = async () => {
+        const response = await apiClient.themes.getThemes();
+        console.log('thmes => ', response);
+        setThemes(response as Theme[]);
+    };
+
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
             router.replace('/');
             return;
         }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
-        const fetchData = async () => {
-            const response = await apiClient.article.getArticles();
-
-            console.log('articles => ', response);
-            setArticles(response as Article[]);
-        };
-        const fetchThemes = async () => {
-            const response = await apiClient.themes.getThemes();
-            console.log('thmes => ', response);
-            setThemes(response as Theme[]);
-        };
-
+        console.log('token', cookies['API_TOKEN']);
         fetchThemes();
         fetchData();
     }, []);
 
     return (
         <div>
+            <Head>
+                <title>Articles</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
             <div className="article_wrapper">

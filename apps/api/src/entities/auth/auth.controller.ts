@@ -12,7 +12,7 @@ const passwordResetCode = async (userId) => {
     const code = Math.floor(Math.random() * 1000000);
     const user = await client.user.findFirst({
         where: {
-            userId,
+            id: userId,
         },
     });
     if (!user) {
@@ -22,7 +22,7 @@ const passwordResetCode = async (userId) => {
         data: {
             user: {
                 connect: {
-                    userId,
+                    id: userId,
                 },
             },
             token: code.toString(),

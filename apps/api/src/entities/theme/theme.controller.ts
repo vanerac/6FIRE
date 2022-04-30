@@ -16,7 +16,7 @@ export default class ThemeController implements CRUDController {
             if (!isAdmin) {
                 const userPermissions = await client.user.findFirst({
                     where: {
-                        userId: String(userId),
+                        id: +userId,
                     },
                     include: {
                         UserSubscription: {
@@ -30,12 +30,12 @@ export default class ThemeController implements CRUDController {
                         },
                     },
                 });
-                const sortedPermissions = userPermissions.UserSubscription.sort((a, b) => {
+                const sortedPermissions = userPermissions?.UserSubscription?.sort((a, b) => {
                     return a.Subscription.level - b.Subscription.level;
                 }).pop();
                 where = {
                     subscriptionLevel: {
-                        gte: sortedPermissions.Subscription.level,
+                        gte: sortedPermissions?.Subscription?.level ?? 0,
                     },
                 };
             }
@@ -58,7 +58,7 @@ export default class ThemeController implements CRUDController {
             if (!isAdmin) {
                 const userPermissions = await client.user.findFirst({
                     where: {
-                        userId: String(userId),
+                        id: +userId,
                     },
                     include: {
                         UserSubscription: {

@@ -27,13 +27,13 @@ enum OfferType {
 
 model User {
   id                  Int                 @id @default(autoincrement())
-  userId              String              @unique @default(uuid())
   firstName           String
   lastName            String
   email               String
   password            String
   telephone           String
   CGU                 Boolean
+  note                String?
   telegramId          Int?                @unique
   telegramLinkingCode String              @unique @default(uuid())
   createdAt           DateTime            @default(now())
@@ -54,11 +54,11 @@ model User {
 
 model PasswordReset {
   id        Int      @id @default(autoincrement())
-  userId    String   @unique
+  userId    Int      @unique
   token     String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [userId])
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model VerificationCodes {
@@ -78,6 +78,10 @@ model Subscription {
   refreshRate      Int // in days
   subscriptionType PaymentType
   price            Int
+  hidden           Boolean            @default(false)
+  isBestValue      Boolean            @default(false)
+  hasFreeTrial     Boolean            @default(false)
+  freeTrialDays    Int                @default(0)
   level            Int                @default(0)
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @default(now())
@@ -129,17 +133,25 @@ model Theme {
 }
 
 model Article {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String
-  bannerUrl String
-  headerUrl String
-  hidden    Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  themeId   Int
-  Theme     Theme    @relation(fields: [themeId], references: [id], onDelete: Cascade)
-
+  id                    Int                     @id @default(autoincrement())
+  title                 String
+  content               String
+  bannerUrl             String
+  headerUrl             String
+  podcastUrl            String?
+  description           String?
+  salaireMoy            String?
+  tarificationMoy       String?
+  outils                String?
+  creation              String?
+  utilisateurs          String?
+  necessiteAudicance    String?
+  financement           String?
+  hidden                Boolean                 @default(false)
+  createdAt             DateTime                @default(now())
+  updatedAt             DateTime                @default(now())
+  themeId               Int
+  Theme                 Theme                   @relation(fields: [themeId], references: [id], onDelete: Cascade)
   Recommandation        Recommandation[]
   ArticleRecommandation ArticleRecommandation[]
 }
@@ -215,6 +227,16 @@ model Affiliation {
   url       String
   color     String
   icon      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  displayed Boolean  @default(true)
+}
+
+model Broker {
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String
+  imageUrl  String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   displayed Boolean  @default(true)

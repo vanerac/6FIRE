@@ -10,6 +10,7 @@ import SubscriptionRouter from './subscription/subscription.router';
 import PaymentRouter from './payment/payment.router';
 import AffiliationRouter from './affiliation/affiliation.router';
 import OfferRouter from './offer/offer.router';
+import BrokerRouter from './broker/broker.router';
 
 const router = Router();
 
@@ -23,5 +24,6 @@ router.use('/subscription', verifyToken, SubscriptionRouter);
 router.use('/payment', verifyToken, PaymentRouter);
 router.use('/affliation', verifyToken, AffiliationRouter);
 router.use('/offer', verifyToken, OfferRouter);
+router.use('/broker', verifyToken, BrokerRouter);
 
 export default router;

@@ -4,7 +4,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "number"
         },
         "title": {
           "type": "string"
@@ -22,12 +22,12 @@
           "type": "string"
         },
         "themeId": {
-          "type": "string"
+          "type": "number"
         },
         "recommendedArticleIds": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "number"
           }
         },
         "ArticleRecommandation": {
@@ -42,7 +42,7 @@
                     "type": "object",
                     "properties": {
                       "id": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "title": {
                         "type": "string"
@@ -57,7 +57,7 @@
                         "type": "string"
                       },
                       "themeId": {
-                        "type": "string"
+                        "type": "number"
                       }
                     }
                   }
@@ -70,7 +70,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "string"
+              "type": "number"
             },
             "name": {
               "type": "string"
@@ -104,6 +104,126 @@
         "updatedAt",
         "themeId"
       ]
+    },
+    "ArticlePro": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "salaireMoy": {
+          "type": "string"
+        },
+        "tarificationMoy": {
+          "type": "string"
+        },
+        "outils": {
+          "type": "string"
+        },
+        "creation": {
+          "type": "string"
+        },
+        "utilisateurs": {
+          "type": "string"
+        },
+        "necessiteAudicance": {
+          "type": "string"
+        },
+        "financement": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "themeId": {
+          "type": "number"
+        },
+        "recommendedArticleIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "ArticleRecommandation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Recommandation": {
+                "type": "object",
+                "properties": {
+                  "Article": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      },
+                      "themeId": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Theme": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "iconUrl": {
+              "type": "string"
+            }
+          }
+        },
+        "banner": {
+          "type": "string",
+          "format": "binary"
+        },
+        "header": {
+          "type": "string",
+          "format": "binary"
+        },
+        "bannerUrl": {
+          "type": "string"
+        },
+        "headerUrl": {
+          "type": "string"
+        }
+      }
     }
   }
 }

@@ -268,7 +268,7 @@
           "description": "ID of the user to subscribe",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -824,6 +824,7 @@
           "content": {
             "application/json": {
               "schema": {
+                "type": "object",
                 "properties": {
                   "oldPassword": {
                     "type": "string"
@@ -1054,28 +1055,25 @@
                       }
                     },
                     "messages": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "integer",
-                            "format": "int64"
-                          },
-                          "message": {
-                            "type": "string"
-                          },
-                          "date": {
-                            "type": "string",
-                            "format": "date-time"
-                          }
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "format": "int64"
                         },
-                        "required": [
-                          "id",
-                          "message",
-                          "date"
-                        ]
-                      }
+                        "message": {
+                          "type": "string"
+                        },
+                        "date": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "message",
+                        "date"
+                      ]
                     }
                   },
                   "required": [
@@ -1376,7 +1374,19 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Trader"
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Trader"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "isFollowing": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -1643,7 +1653,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Article"
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/Article"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ArticlePro"
+                  }
+                ]
               }
             }
           }
@@ -1654,7 +1671,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Article"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Article"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ArticlePro"
+                    }
+                  ]
                 }
               }
             }
@@ -1703,7 +1727,14 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Article"
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/Article"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ArticlePro"
+                      }
+                    ]
                   }
                 }
               }
@@ -1747,7 +1778,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Article"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Article"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ArticlePro"
+                    }
+                  ]
                 }
               }
             }
@@ -1776,7 +1814,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Article"
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/Article"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ArticlePro"
+                  }
+                ]
               }
             }
           }
@@ -1787,7 +1832,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Article"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Article"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ArticlePro"
+                    }
+                  ]
                 }
               }
             }
@@ -1813,6 +1865,58 @@
         "responses": {
           "204": {
             "description": "Article deleted"
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/article/theme/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Theme id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "tags": [
+          "Article"
+        ],
+        "description": "Get all articles by theme",
+        "operationId": "getArticlesByTheme",
+        "responses": {
+          "200": {
+            "description": "Articles response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/Article"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ArticlePro"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
           },
           "default": {
             "description": "Unexpected error",
@@ -2205,7 +2309,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserSubscription"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/UserSubscription"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "paymentUrl": {
+                          "type": "string",
+                          "description": "Payment URL"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -2233,7 +2350,7 @@
           "description": "Subscription ID",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -2468,7 +2585,7 @@
           "description": "Offer ID",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -2583,7 +2700,7 @@
             "description": "Usage ID",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -2829,6 +2946,230 @@
           }
         }
       }
+    },
+    "/broker": {
+      "get": {
+        "description": "Get all brokers",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "getBrokers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Broker"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new broker",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "createBroker",
+        "requestBody": {
+          "description": "Broker to create",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Broker"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "image": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Broker"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broker/{id}": {
+      "get": {
+        "description": "Get a broker",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "getBroker",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Broker id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Broker"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Update a broker",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "updateBroker",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Broker id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Broker to update",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Broker"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "image": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Broker"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a broker",
+        "tags": [
+          "Broker"
+        ],
+        "operationId": "deleteBroker",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Broker id",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "A successful response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -2837,12 +3178,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "number",
-            "nullable": false
-          },
-          "userId": {
-            "type": "string",
-            "nullable": false
+            "type": "number"
           },
           "firstName": {
             "type": "string"
@@ -2880,6 +3216,9 @@
           "banned": {
             "type": "boolean"
           },
+          "note": {
+            "type": "string"
+          },
           "UserSubscription": {
             "type": "object",
             "properties": {
@@ -2899,8 +3238,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "nullable": false
+            "type": "number"
           },
           "name": {
             "type": "string"
@@ -2944,8 +3282,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "format": "uuid"
+            "type": "number"
           },
           "name": {
             "type": "string"
@@ -2993,7 +3330,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "number"
           },
           "title": {
             "type": "string"
@@ -3011,12 +3348,12 @@
             "type": "string"
           },
           "themeId": {
-            "type": "string"
+            "type": "number"
           },
           "recommendedArticleIds": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "number"
             }
           },
           "ArticleRecommandation": {
@@ -3031,7 +3368,7 @@
                       "type": "object",
                       "properties": {
                         "id": {
-                          "type": "string"
+                          "type": "number"
                         },
                         "title": {
                           "type": "string"
@@ -3046,7 +3383,7 @@
                           "type": "string"
                         },
                         "themeId": {
-                          "type": "string"
+                          "type": "number"
                         }
                       }
                     }
@@ -3059,7 +3396,7 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string"
+                "type": "number"
               },
               "name": {
                 "type": "string"
@@ -3118,6 +3455,18 @@
           "level": {
             "type": "integer"
           },
+          "hidden": {
+            "type": "boolean"
+          },
+          "isBestValue": {
+            "type": "boolean"
+          },
+          "hasFreeTrial": {
+            "type": "boolean"
+          },
+          "freeTrialDays": {
+            "type": "integer"
+          },
           "createdAt": {
             "type": "string"
           },
@@ -3137,7 +3486,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "number"
           },
           "name": {
             "type": "string"
@@ -3268,6 +3617,18 @@
       "UserStatus": {
         "type": "object",
         "properties": {
+          "email": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
           "UserSubscription": {
             "type": "object",
             "properties": {
@@ -3289,6 +3650,155 @@
                 }
               }
             }
+          }
+        }
+      },
+      "Broker": {
+        "description": "Broker",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "displayed": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ArticlePro": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "salaireMoy": {
+            "type": "string"
+          },
+          "tarificationMoy": {
+            "type": "string"
+          },
+          "outils": {
+            "type": "string"
+          },
+          "creation": {
+            "type": "string"
+          },
+          "utilisateurs": {
+            "type": "string"
+          },
+          "necessiteAudicance": {
+            "type": "string"
+          },
+          "financement": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "themeId": {
+            "type": "number"
+          },
+          "recommendedArticleIds": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "ArticleRecommandation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Recommandation": {
+                  "type": "object",
+                  "properties": {
+                    "Article": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        },
+                        "themeId": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Theme": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              },
+              "iconUrl": {
+                "type": "string"
+              }
+            }
+          },
+          "banner": {
+            "type": "string",
+            "format": "binary"
+          },
+          "header": {
+            "type": "string",
+            "format": "binary"
+          },
+          "bannerUrl": {
+            "type": "string"
+          },
+          "headerUrl": {
+            "type": "string"
           }
         }
       }

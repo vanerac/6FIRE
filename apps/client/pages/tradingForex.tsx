@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import Head from 'next/head';
 
 const TrafingForex: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -19,6 +20,8 @@ const TrafingForex: NextPage = (props: any) => {
             return;
         }
         $apiClient = getAPIClient(cookies['API_TOKEN']);
+
+        // Todo: Note: meme chose que articlesPages mais avec une option de filtre
     }, []);
 
     return (
@@ -280,6 +283,9 @@ const TrafingForex: NextPage = (props: any) => {
         //     </div>
         // </div>
         <div>
+            <Head>
+                <title>Trading Forex</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
             <div className="article_wrapper">

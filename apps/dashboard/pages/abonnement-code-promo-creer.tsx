@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbar';
+import getAPIClient from '@shared/tools/apiClient';
+import { Offer } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 
 export default function AbonnementCodePromoCreer() {
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$offer, setOffer] = useState<Offer>();
+
+    const id = 1;
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.offers.getOfferById(id).then(
+            (res) => {
+                setOffer(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
+
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="abonnement-code-promo-creer" />

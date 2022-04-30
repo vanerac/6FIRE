@@ -11,6 +11,8 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { Affiliation } from './models/Affiliation';
 export type { Article } from './models/Article';
+export type { ArticlePro } from './models/ArticlePro';
+export type { Broker } from './models/Broker';
 export type { Country } from './models/Country';
 export type { CryptoHolding } from './models/CryptoHolding';
 export type { Error } from './models/Error';
@@ -26,6 +28,7 @@ export type { UserSubscription } from './models/UserSubscription';
 export { AffiliationService } from './services/AffiliationService';
 export { ArticleService } from './services/ArticleService';
 export { AuthService } from './services/AuthService';
+export { BrokerService } from './services/BrokerService';
 export { CountryService } from './services/CountryService';
 export { CryptoService } from './services/CryptoService';
 export { OffersService } from './services/OffersService';

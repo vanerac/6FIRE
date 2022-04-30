@@ -108,7 +108,19 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "../openapi.components.json#/schemas/Trader"
+                  "allOf": [
+                    {
+                      "$ref": "../openapi.components.json#/schemas/Trader"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "isFollowing": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }

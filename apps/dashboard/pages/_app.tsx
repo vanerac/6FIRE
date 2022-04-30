@@ -7,7 +7,7 @@
 // abonnement-code-promo.css
 // bot-trading.css
 // styleguide.css
-// abonnement-creer-un-abonnement-periode-dessai.css
+// abonnement-creer-un-abonn ement-periode-dessai.css
 // broker-creer-un-broker.css
 // themes-articles-creation.css
 // abonnement-creer-un-abonnement.css
@@ -56,11 +56,14 @@ import '../styles/sidebarNew.css';
 
 // SASS Variables are in here
 import type { AppProps } from 'next/app';
-import vars from '../styles/main.module.scss';
+import { CookiesProvider } from 'react-cookie';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    console.log(vars.primaryColor);
-    return <Component {...pageProps} />;
+    return (
+        <CookiesProvider>
+            <Component {...pageProps} />;
+        </CookiesProvider>
+    );
 }
 
 export default MyApp;

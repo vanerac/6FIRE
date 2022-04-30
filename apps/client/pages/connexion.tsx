@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ApiError } from '@shared/services';
 // import checkAuth from './components/checkAuth';
 import $ from 'jquery';
@@ -11,6 +11,7 @@ import LoginPopup from './components/login';
 import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 // import translate from '@shared/translation'
+import Head from 'next/head';
 
 const Connexion: NextPage = () => {
     const [userName, setUserName] = useState('');
@@ -28,16 +29,16 @@ const Connexion: NextPage = () => {
     const [errorCgu, setErrorCgu] = useState('');
     const [error, setError] = useState('');
     const [cookies, setCookie] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    useEffect(() => {
-        if (!cookies['API_TOKEN']) {
-            console.log('no token');
-            router.replace('/');
-            return;
-        }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
-    }, []);
+    // useEffect(() => {
+    //     if (!cookies['API_TOKEN']) {
+    //         console.log('no token');
+    //         router.replace('/');
+    //         return;
+    //     }
+    //     apiClient = getAPIClient(cookies['API_TOKEN']);
+    // }, []);
 
     const handleForm = () => {
         $('.login_popup_wrapper').toggleClass('open');
@@ -133,6 +134,9 @@ const Connexion: NextPage = () => {
 
     return (
         <div>
+            <Head>
+                <title>Connexion</title>
+            </Head>
             <LoginPopup />
             <input type="hidden" id="anPageName" name="page" value="register-web" />
             <div className="register-web screen">
@@ -294,9 +298,15 @@ const Connexion: NextPage = () => {
                     </a>
                 </div>
                 <div className="dj-inscrit-connectez-vous-WxaGAS">
-                    <Link href="/">
-                        <a style={{ color: 'white' }}>Déjà inscrit ? Connectez vous</a>
-                    </Link>
+                    {/* <Link href="/"> */}
+                    <a
+                        onClick={() => {
+                            handleForm();
+                        }}
+                        style={{ color: 'white' }}>
+                        Déjà inscrit ? Connectez vous
+                    </a>
+                    {/* </Link> */}
                 </div>
                 <div className="numro-de-tlphone-Ae6KpX">
                     <div className="ligne-1-Ay5Yag">
@@ -506,7 +516,13 @@ const Connexion: NextPage = () => {
                         <div className="crer-un-compte-1QO1gL">Créer un compte</div>
                     </div>
                 </div>
-                <div className="dj-inscrit-connectez-vous-qfTrnm">Déjà inscrit ? Connectez vous</div>
+                <div
+                    onClick={() => {
+                        handleForm();
+                    }}
+                    className="dj-inscrit-connectez-vous-qfTrnm">
+                    Déjà inscrit ? Connectez vous
+                </div>
                 <div className="connexion-qfTrnm">
                     <div className="connexion-1aVEbJ">
                         <div className="club-premium-MoQQxl lato-normal-white-14px">Club Privé</div>

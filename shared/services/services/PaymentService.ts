@@ -31,7 +31,7 @@ export class PaymentService {
     /**
      * Create a new subscription
      * @param requestBody Payment object that needs to be added to the store
-     * @returns UserSubscription A successful response.
+     * @returns any A successful response.
      * @throws ApiError
      */
     public createPayment(
@@ -45,7 +45,12 @@ export class PaymentService {
              */
             offerId?: string;
         },
-    ): CancelablePromise<UserSubscription> {
+    ): CancelablePromise<(UserSubscription & {
+        /**
+         * Payment URL
+         */
+        paymentUrl?: string;
+    })> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/payment/',
@@ -67,7 +72,7 @@ export class PaymentService {
      * @throws ApiError
      */
     public getPaymentById(
-        id: string,
+        id: number,
     ): CancelablePromise<UserSubscription> {
         return this.httpRequest.request({
             method: 'GET',
@@ -92,7 +97,7 @@ export class PaymentService {
      * @throws ApiError
      */
     public updatePayment(
-        id: string,
+        id: number,
         requestBody: {
             /**
              * Subscription ID
@@ -128,7 +133,7 @@ export class PaymentService {
      * @throws ApiError
      */
     public deletePayment(
-        id: string,
+        id: number,
     ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',

@@ -4,12 +4,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "number",
-          "nullable": false
-        },
-        "userId": {
-          "type": "string",
-          "nullable": false
+          "type": "number"
         },
         "firstName": {
           "type": "string"
@@ -47,6 +42,9 @@
         "banned": {
           "type": "boolean"
         },
+        "note": {
+          "type": "string"
+        },
         "UserSubscription": {
           "type": "object",
           "properties": {
@@ -65,6 +63,18 @@
     "UserStatus": {
       "type": "object",
       "properties": {
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
         "UserSubscription": {
           "type": "object",
           "properties": {

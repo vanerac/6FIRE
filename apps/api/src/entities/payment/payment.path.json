@@ -67,7 +67,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../openapi.components.json#/schemas/UserSubscription"
+                "allOf": [
+                  {
+                    "$ref": "../openapi.components.json#/schemas/UserSubscription"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "paymentUrl": {
+                        "type": "string",
+                        "description": "Payment URL"
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
@@ -95,7 +108,7 @@
         "description": "Subscription ID",
         "required": true,
         "schema": {
-          "type": "string"
+          "type": "number"
         }
       }
     ],

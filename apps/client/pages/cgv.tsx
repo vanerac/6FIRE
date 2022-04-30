@@ -1,10 +1,14 @@
 import type { NextPage } from 'next';
 import Footer from './components/footer';
 import Header from './components/header';
+import Head from 'next/head';
 
 const Cgv: NextPage = (props: any) => {
     return (
         <div>
+            <Head>
+                <title>CGV - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
 

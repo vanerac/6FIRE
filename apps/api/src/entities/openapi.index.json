@@ -92,6 +92,9 @@
     "/article/{id}": {
       "$ref": "./article/article.path.json#/byId"
     },
+    "/article/theme/{id}": {
+      "$ref": "./article/article.path.json#/byTheme"
+    },
     "/subscription/": {
       "$ref": "./subscription/subscription.path.json#/noId"
     },
@@ -130,6 +133,12 @@
     },
     "/affiliation/{id}": {
       "$ref": "./affiliation/affiliation.path.json#/withId"
+    },
+    "/broker": {
+      "$ref": "./broker/broker.path.json#/noId"
+    },
+    "/broker/{id}": {
+      "$ref": "./broker/broker.path.json#/withId"
     }
   },
   "components": {
@@ -172,6 +181,12 @@
       },
       "UserStatus": {
         "$ref": "./openapi.components.json#/schemas/UserStatus"
+      },
+      "Broker": {
+        "$ref": "./openapi.components.json#/schemas/Broker"
+      },
+      "ArticlePro": {
+        "$ref": "./openapi.components.json#/schemas/ArticlePro"
       }
     }
   }

@@ -8,6 +8,7 @@ import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 import { AffiliationService } from './services/AffiliationService';
 import { ArticleService } from './services/ArticleService';
 import { AuthService } from './services/AuthService';
+import { BrokerService } from './services/BrokerService';
 import { CountryService } from './services/CountryService';
 import { CryptoService } from './services/CryptoService';
 import { OffersService } from './services/OffersService';
@@ -25,6 +26,7 @@ export class ApiClient {
     public readonly affiliation: AffiliationService;
     public readonly article: ArticleService;
     public readonly auth: AuthService;
+    public readonly broker: BrokerService;
     public readonly country: CountryService;
     public readonly crypto: CryptoService;
     public readonly offers: OffersService;
@@ -53,6 +55,7 @@ export class ApiClient {
         this.affiliation = new AffiliationService(this.request);
         this.article = new ArticleService(this.request);
         this.auth = new AuthService(this.request);
+        this.broker = new BrokerService(this.request);
         this.country = new CountryService(this.request);
         this.crypto = new CryptoService(this.request);
         this.offers = new OffersService(this.request);

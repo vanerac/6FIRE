@@ -1,7 +1,5 @@
 import React from 'react';
 import Topbar from '../components/topbarNew';
-
-import style from '../styles/main.module.scss';
 import Sidebar from '../components/sidebarNew';
 
 export default function ThemesArticlesCreation() {

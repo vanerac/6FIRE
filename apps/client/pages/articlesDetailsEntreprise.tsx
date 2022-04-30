@@ -4,24 +4,69 @@ import Footer from './components/footer';
 import Header from './components/header';
 // import checkAuth from './components/checkAuth';
 import { useEffect, useState } from 'react';
-import router from 'next/router';
+import router, { useRouter } from 'next/router';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import { Article, ArticlePro } from '@shared/services';
+import Head from 'next/head';
 
 const ArticlesDetailsEntreprise: NextPage = (props: any) => {
-    const [isLoading, setIsLoading] = useState(true);
+    const [$themeName, setThemeName] = useState('');
+    // Todo: Note: Article pro = Article + properties en plus
+    const [$articles, setArticles] = useState<Article | ArticlePro>();
+    const { query } = useRouter();
+    const [loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+
     const [cookies] = useCookies(['API_TOKEN']);
-    let $apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
             router.replace('/');
             return;
-            setIsLoading(true);
         }
-        $apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
+
+    useEffect(() => {
+        if (!query.themeId || !query.themeId) {
+            router.replace('/');
+            return;
+        }
+
+        setLoading(true);
+        apiClient.article
+            .getArticleById(query.articleId as any)
+            .then((res) => {
+                setLoading(false);
+                setArticles(res as Article | ArticlePro);
+                setThemeName((res as Article)?.Theme?.name as string);
+            })
+            .catch((error) => {
+                setLoading(false);
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            });
+    }, [query]);
+
+    const $convertDate = (date: string) => {
+        const date_unix = new Date(date).getTime() / 1000;
+        const now = new Date().getTime() / 1000;
+        const diff = now - date_unix;
+        const days = Math.floor(diff / 86400);
+        const hours = Math.floor((diff - days * 86400) / 3600);
+        const minutes = Math.floor((diff - days * 86400 - hours * 3600) / 60);
+        const seconds = Math.floor(diff - days * 86400 - hours * 3600 - minutes * 60);
+        if (days > 0) {
+            return `${days} jours`;
+        } else if (hours > 0) {
+            return `${hours} heures`;
+        } else if (minutes > 0) {
+            return `${minutes} minutes`;
+        } else {
+            return `${seconds} secondes`;
+        }
+    };
 
     return (
         // <div>
@@ -472,9 +517,12 @@ const ArticlesDetailsEntreprise: NextPage = (props: any) => {
         //     </div>
         // </div>
         <div>
+            <Head>
+                <title>Articles Détails</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />
             <div className="article-details-block">
-                {!isLoading ? (
+                {!loading ? (
                     <>
                         <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
 

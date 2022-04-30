@@ -3,13 +3,17 @@ import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
 // import checkAuth from './components/checkAuth';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
+import Head from 'next/head';
 
 const BotTrading: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
-    let $apiClient = getAPIClient(cookies['API_TOKEN']);
+    const $apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [$linkingCode, setLinkingCode] = useState('');
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -17,11 +21,25 @@ const BotTrading: NextPage = (props: any) => {
             router.replace('/');
             return;
         }
-        $apiClient = getAPIClient(cookies['API_TOKEN']);
+
+        setLoading(true);
+        $apiClient.user
+            .getLinkingCode()
+            .then(({ code }) => {
+                setLinkingCode(code ?? 'Aucun code !');
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            });
     }, []);
 
     return (
         <div>
+            <Head>
+                <title>Bot Trading - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="bot-trading" />
             <div className="bot-trading screen">
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />

@@ -38,7 +38,7 @@ export default class Database {
             select: {
                 User: {
                     select: {
-                        userId: true,
+                        id: true,
                         telegramId: true,
                     },
                 },
@@ -66,7 +66,7 @@ export default class Database {
                 telegramId: chatId,
             },
             select: {
-                userId: true,
+                id: true,
                 email: true,
             },
         });

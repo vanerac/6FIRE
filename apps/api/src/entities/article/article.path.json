@@ -24,7 +24,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../openapi.components.json#/schemas/Article"
+                "anyOf": [
+                  {
+                    "$ref": "../openapi.components.json#/schemas/Article"
+                  },
+                  {
+                    "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                  }
+                ]
               }
             }
           }
@@ -53,7 +60,14 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../openapi.components.json#/schemas/Article"
+              "anyOf": [
+                {
+                  "$ref": "../openapi.components.json#/schemas/Article"
+                },
+                {
+                  "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                }
+              ]
             }
           }
         }
@@ -64,7 +78,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../openapi.components.json#/schemas/Article"
+                "anyOf": [
+                  {
+                    "$ref": "../openapi.components.json#/schemas/Article"
+                  },
+                  {
+                    "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                  }
+                ]
               }
             }
           }
@@ -117,7 +138,14 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../openapi.components.json#/schemas/Article"
+              "anyOf": [
+                {
+                  "$ref": "../openapi.components.json#/schemas/Article"
+                },
+                {
+                  "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                }
+              ]
             }
           }
         }
@@ -128,7 +156,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../openapi.components.json#/schemas/Article"
+                "anyOf": [
+                  {
+                    "$ref": "../openapi.components.json#/schemas/Article"
+                  },
+                  {
+                    "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                  }
+                ]
               }
             }
           }
@@ -177,7 +212,66 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "../openapi.components.json#/schemas/Article"
+                  "anyOf": [
+                    {
+                      "$ref": "../openapi.components.json#/schemas/Article"
+                    },
+                    {
+                      "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "byTheme": {
+    "get": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Theme id",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "tags": [
+        "Article"
+      ],
+      "description": "Get all articles by theme",
+      "operationId": "getArticlesByTheme",
+      "responses": {
+        "200": {
+          "description": "Articles response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "../openapi.components.json#/schemas/Article"
+                    },
+                    {
+                      "$ref": "../openapi.components.json#/schemas/ArticlePro"
+                    }
+                  ]
                 }
               }
             }
