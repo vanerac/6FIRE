@@ -26,6 +26,7 @@
     "draft-js": "^0.11.7",
     "jquery": "^3.6.0",
     "next": "^12.1.5",
+    "react-draft-wysiwyg": "^1.14.7",
     "sharp": "^0.30.3",
     "universal-cookie": "^4.0.4"
   }

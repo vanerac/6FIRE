@@ -8,6 +8,7 @@ import router, { useRouter } from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
+import draftToHtml from 'draftjs-to-html';
 
 const HomePage: NextPage = (props: any) => {
     const [$themeName, setThemeName] = useState('');
@@ -16,6 +17,7 @@ const HomePage: NextPage = (props: any) => {
     const { query } = useRouter();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
+    const [content, setContent] = useState('<p>Loading...</p>');
 
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
@@ -41,6 +43,8 @@ const HomePage: NextPage = (props: any) => {
                 setLoading(false);
                 setArticles(res as Article | ArticlePro);
                 setThemeName((res as Article)?.Theme?.name as string);
+
+                setContent(draftToHtml((res as Article).content as any));
             })
             .catch((error) => {
                 setLoading(false);
@@ -82,6 +86,7 @@ const HomePage: NextPage = (props: any) => {
                     </div>
 
                     <div className="article_content">
+                        <div dangerouslySetInnerHTML={{ __html: content }} />
                         <div className="author_box">
                             <div className="author-photo">
                                 <Image src="/img/group-1490-3@1x.png" layout="fill" />
