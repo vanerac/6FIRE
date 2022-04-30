@@ -1,4 +1,5 @@
-import { Position } from './cache';
+/* eslint-disable */
+import {Position} from './cache';
 
 export function openedPositionMessage(traderName: string, openPosition: Position[]): string[] {
     return openPosition.map((position) => {
