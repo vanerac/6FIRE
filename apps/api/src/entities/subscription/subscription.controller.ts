@@ -14,18 +14,18 @@ export default class SubscriptionController extends CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
             const { isAdmin } = req.user;
-            const where = {};
-            if (!isAdmin) {
-                Object.assign(where, {
-                    hidden: true,
-                });
-            }
-            const subscriptions = await prisma.subscription.findMany({
-                where,
+            const args = {
+                where: {
+                    hidden: false,
+                },
                 include: {
                     UserSubscription: true,
                 },
-            });
+            };
+            if (isAdmin) {
+                delete args.where;
+            }
+            const subscriptions = await prisma.subscription.findMany(args);
             res.json(subscriptions);
         } catch (error) {
             next(error);
