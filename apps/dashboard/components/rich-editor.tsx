@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { convertToRaw, EditorState } from 'draft-js';
+import React, { useEffect, useState } from 'react';
+import { EditorState } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import dynamic from 'next/dynamic';
 
@@ -9,10 +9,16 @@ export default function RichtextEditor({
     $onChange,
     $existingContent,
 }: {
-    onChange?: ($content: string) => void;
-    existingContent?: string;
+    $onChange?: ($content: string) => void;
+    $existingContent?: any;
 }) {
     const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
+
+    useEffect(() => {
+        if ($existingContent) {
+            setEditorState(EditorState.createWithContent($existingContent));
+        }
+    }, [$existingContent]);
 
     const uploadImageCallBack = async ($file: any) => {
         // const imgData = await apiClient.uploadInlineImageForArticle(file);
@@ -36,10 +42,9 @@ export default function RichtextEditor({
     // }, [editorState]);
 
     const onEditorStateChange = (editorState: EditorState) => {
-        console.log('updated');
         setEditorState(editorState);
 
-        console.log(convertToRaw(editorState.getCurrentContent()));
+        // onChange(convertToRaw(editorState.getCurrentContent()));
     };
 
     return (

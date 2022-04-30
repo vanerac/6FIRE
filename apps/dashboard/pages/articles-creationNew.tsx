@@ -30,7 +30,7 @@ export default function ArticlesCreation() {
     const [selectedTheme, $setSelectedTheme] = useState<Theme>();
     const [selectedArticles, $setSelectedArticles] = useState<Article[]>([]);
 
-    const [articleContents, $setArticleContents] = useState<string>('');
+    const [articleContentsRaw, setArticleContentsRaw] = useState<any>();
     const [articleTitle, $setArticleTitle] = useState('');
 
     const [$articlePodcast, $setArticlePodcast] = useState('');
@@ -86,7 +86,7 @@ export default function ArticlesCreation() {
             apiClient.article
                 .createArticle({
                     title: articleTitle,
-                    content: articleContents,
+                    content: JSON.stringify(articleContentsRaw),
                     themeId: selectedTheme?.id as number,
                     recommendedArticleIds: selectedArticles.map((a) => a.id),
                     header: thumbnail,
@@ -107,7 +107,7 @@ export default function ArticlesCreation() {
             const newArticle = {
                 ...article,
                 title: articleTitle,
-                content: articleContents,
+                content: articleContentsRaw,
                 themeId: selectedTheme?.id,
                 recommendedArticleIds: selectedArticles.map((a) => a.id),
                 header: thumbnail,
@@ -229,7 +229,7 @@ export default function ArticlesCreation() {
                             <div className="row-1 inline-flex">
                                 <div className="single-item">
                                     <div className="text_editor">
-                                        <RichtextEditor />
+                                        <RichtextEditor onChange={setArticleContentsRaw} />
                                     </div>
                                 </div>
                             </div>
