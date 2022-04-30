@@ -93,6 +93,11 @@
     background-color: #fff;
     padding-top: 30px;
   }
+  .mainSideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
   
   @media screen and (min-width: 768px) {
     .page-wrapper.toggled .page-content {
@@ -498,6 +503,14 @@
 
   /* Main page style 
   ********************/
+  .width-300{
+    min-width: 300px;
+  }
+  .flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .bg_red{
     background-color: #f0142f;
   }
@@ -507,12 +520,21 @@
   .bg_blue{
     background-color: #0058ff;
   }
+  .bg_yellow{
+    background-color: #ffce2b;
+  }
+  .bg_orange{
+    background-color: #fca500;
+  }
   .inline-flex{
     display: inline-flex;
     align-items: center;
   }
   .mr-30{
     margin-right: 30px;
+  }
+  .mb-30{
+    margin-bottom: 30px;
   }
   .inner-page-setup{
     display: flex;
@@ -522,6 +544,7 @@
     padding: 60px;
     background: #f4f7fc;
     width: 100%;
+    margin-left: 260px;
 }
 .table-header{
   display: flex;
@@ -543,6 +566,7 @@
   margin-top: 30px;
   border-radius: 10px;
   position: relative;
+  margin-bottom: 60px;
 }
 .table-wrapper .table-title{
   padding: 10px 40px;
@@ -606,4 +630,36 @@
 button{
   border: 0;
   cursor: pointer;
+}
+
+/* Articles page */
+
+.editor-buttons{
+  overflow: hidden;
+  border-radius: 10px;
+}
+.editor-buttons button{
+  padding: 10px 30px;
+  min-width: 120px;
+  transition: all 0.5s ease;
+}
+.editor-buttons button.active{
+  background-color: #0058ff;
+  color: #fff;
+}
+.text_editor{
+  height: 240px;
+  border: 1px solid #ccc;
+  width: 100%;
+  outline: 0;
+  appearance: none;
+  padding: 15px;
+}
+.regular-btn button{
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #fff;
+}
+.closs-btn img{
+  width: 20px;
 }

@@ -60,10 +60,6 @@ export default function ThemesArticlesCreation() {
                     </div>
                 </div>
             </div>
-
-            
-
-            
         </div>
     );
 }
