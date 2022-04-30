@@ -1211,9 +1211,16 @@ ul{
         font-family: var(--font-family-lato);
         text-transform: uppercase;
         position: absolute;
-        top: 65px;
+        top: 46px;
         right: 5%;
         z-index: 4;
+    }
+    .invisible-mobile, .main-nav .hamburger-icon{
+        display: none;
+    }
+    .main-nav .dark-light{
+        position: absolute;
+        left: 5%;
     }
 
 }

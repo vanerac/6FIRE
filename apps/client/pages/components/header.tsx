@@ -66,7 +66,7 @@ const Header = (props: any) => {
                         console.log('click');
                         handleForm();
                     }}
-                    className="menu__btn"
+                    className="menu__btn invisible-mobile"
                     htmlFor="menu__toggle">
                     <span></span>
                 </label>
@@ -79,8 +79,12 @@ const Header = (props: any) => {
                         console.log('mobile');
                         mobileToggle();
                     }}>
-                    menu
+                   <label className="menu__btn"
+                    htmlFor="menu__toggle">
+                    <span></span>
+                    </label>
                 </div>
+
                 {/* Hamburger mobile end */}
 
                 <div className="header-top">
