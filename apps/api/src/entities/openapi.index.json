@@ -139,6 +139,12 @@
     },
     "/broker/{id}": {
       "$ref": "./broker/broker.path.json#/withId"
+    },
+    "/admin/reset": {
+      "$ref": "./admin/admin.path.json#/resetPassword"
+    },
+    "/admin/config/sms": {
+      "$ref": "./admin/admin.path.json#/updateSmsConfig"
     }
   },
   "components": {

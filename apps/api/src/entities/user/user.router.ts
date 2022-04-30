@@ -10,7 +10,7 @@ router.get('/:id', isAdmin, UserController.getOne);
 router.put('/:id', isAdmin, UserController.update);
 router.delete('/:id', isAdmin, UserController.delete);
 
-router.get('/me',  UserController.me);
+router.get('/me', UserController.me);
 router.get('/me/getLinkingCode', UserController.getLinkingCode);
 
 router.get('/:id/subscription', isAdmin, UserController.getSubscription);

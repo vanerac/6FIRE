@@ -12,7 +12,6 @@ export default class ThemeController implements CRUDController {
         try {
             const { id: userId, isAdmin } = req.user;
 
-            let where = {};
             if (!isAdmin) {
                 const userPermissions = await client.user.findFirst({
                     where: {
@@ -33,17 +32,16 @@ export default class ThemeController implements CRUDController {
                 const sortedPermissions = userPermissions?.UserSubscription?.sort((a, b) => {
                     return a.Subscription.level - b.Subscription.level;
                 }).pop();
-                where = {
-                    subscriptionLevel: {
-                        gte: sortedPermissions?.Subscription?.level ?? 0,
+
+                const themes = await client.theme.findMany({
+                    where: {
+                        subscriptionLevel: {
+                            lte: sortedPermissions?.Subscription?.level ?? 0,
+                        },
                     },
-                };
-            }
-
-            // sort and get highest level
-
-            const themes = await client.theme.findMany({ where });
-            res.status(200).json(themes);
+                });
+                res.status(200).json(themes);
+            } else res.status(200).json(await client.theme.findMany());
         } catch (error) {
             next(error);
         }
