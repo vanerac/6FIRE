@@ -41,7 +41,7 @@
         },
         "required": true
       },
-      "response": {
+      "responses": {
         "200": {
           "description": "Successful response"
         },

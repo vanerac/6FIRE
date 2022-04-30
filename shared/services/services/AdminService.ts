@@ -26,18 +26,22 @@ export class AdminService {
     /**
      * Update the sms config
      * @param requestBody
+     * @returns any Successful response
      * @throws ApiError
      */
     public updateSmsConfig(
         requestBody: {
             value: string;
         },
-    ): CancelablePromise<void> {
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/admin/config/sms',
             body: requestBody,
             mediaType: 'application/json',
+            errors: {
+                400: `Bad request`,
+            },
         });
     }
 
