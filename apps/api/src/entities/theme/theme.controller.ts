@@ -16,7 +16,7 @@ export default class ThemeController implements CRUDController {
             if (!isAdmin) {
                 const userPermissions = await client.user.findFirst({
                     where: {
-                        userId: String(userId),
+                        id: +userId,
                     },
                     include: {
                         UserSubscription: {
@@ -58,7 +58,7 @@ export default class ThemeController implements CRUDController {
             if (!isAdmin) {
                 const userPermissions = await client.user.findFirst({
                     where: {
-                        userId: String(userId),
+                        id: +userId,
                     },
                     include: {
                         UserSubscription: {
