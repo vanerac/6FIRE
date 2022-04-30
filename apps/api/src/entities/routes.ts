@@ -11,6 +11,7 @@ import PaymentRouter from './payment/payment.router';
 import AffiliationRouter from './affiliation/affiliation.router';
 import OfferRouter from './offer/offer.router';
 import BrokerRouter from './broker/broker.router';
+import AdminRouter from './admin/admin.router';
 
 const router = Router();
 
@@ -25,5 +26,6 @@ router.use('/payment', verifyToken, PaymentRouter);
 router.use('/affliation', verifyToken, AffiliationRouter);
 router.use('/offer', verifyToken, OfferRouter);
 router.use('/broker', verifyToken, BrokerRouter);
+router.use('/admin', AdminRouter);
 
 export default router;

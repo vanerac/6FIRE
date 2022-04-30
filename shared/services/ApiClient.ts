@@ -5,6 +5,7 @@ import type { BaseHttpRequest } from './core/BaseHttpRequest';
 import type { OpenAPIConfig } from './core/OpenAPI';
 import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
+import { AdminService } from './services/AdminService';
 import { AffiliationService } from './services/AffiliationService';
 import { ArticleService } from './services/ArticleService';
 import { AuthService } from './services/AuthService';
@@ -23,6 +24,7 @@ type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
 
 export class ApiClient {
 
+    public readonly admin: AdminService;
     public readonly affiliation: AffiliationService;
     public readonly article: ArticleService;
     public readonly auth: AuthService;
@@ -52,6 +54,7 @@ export class ApiClient {
             ENCODE_PATH: config?.ENCODE_PATH,
         });
 
+        this.admin = new AdminService(this.request);
         this.affiliation = new AffiliationService(this.request);
         this.article = new ArticleService(this.request);
         this.auth = new AuthService(this.request);

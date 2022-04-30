@@ -3170,6 +3170,58 @@
           }
         }
       }
+    },
+    "/admin/reset": {
+      "get": {
+        "description": "Regenerate the admin password and send it by email, can be done every 12 hours",
+        "operationId": "resetPassword",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/admin/config/sms": {
+      "put": {
+        "description": "Update the sms config",
+        "operationId": "updateSmsConfig",
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "response": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
     }
   },
   "components": {
