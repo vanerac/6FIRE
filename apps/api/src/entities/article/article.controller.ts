@@ -13,31 +13,27 @@ export default class ArticleController implements CRUDController {
             const { id: userId, isAdmin } = req.user;
             const { page = 0, limit = 20 } = req.query;
 
-            let where = {};
-            if (!isAdmin) {
-                const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                    where: {
-                        userId,
-                    },
-                    select: {
-                        Subscription: {
-                            select: {
-                                level: true,
-                            },
+            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
+                where: {
+                    userId,
+                },
+                select: {
+                    Subscription: {
+                        select: {
+                            level: true,
                         },
                     },
-                });
-                where = {
+                },
+            });
+            const args: any = {
+                where: {
                     hidden: false,
                     Theme: {
                         subscriptionLevel: {
                             lte: userSubscriptionLevel?.Subscription.level,
                         },
                     },
-                };
-            }
-            const articles = await prisma.article.findMany({
-                where: where,
+                },
                 take: +limit,
                 skip: Math.max(0, +page - 1) * +limit,
                 select: {
@@ -54,7 +50,11 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
-            });
+            };
+            if (isAdmin) {
+                delete args.where;
+            }
+            const articles = await prisma.article.findMany(args);
             res.status(200).json(articles);
         } catch (error) {
             next(error);
