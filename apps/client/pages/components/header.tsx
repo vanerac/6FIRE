@@ -21,15 +21,17 @@ const Header = (props: any) => {
     console.log(props);
     const [cookies] = useCookies(['API_TOKEN']);
     const [$themes, setThemes] = useState<Theme[]>([]);
+    const [$themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     const fetchThemes = async () => {
         const response = await apiClient.themes.getThemes();
-        console.log('thmes => ', response);
+        console.log('themes => ', response);
         if (response.length === 0) {
             router.push('/pricePage');
         }
-        setThemes(response as Theme[]);
+        setThemes(response.slice(0, 4) as Theme[]);
+        setThemesDropDown(response.slice(4) as Theme[]);
     };
 
     useEffect(() => {
@@ -296,15 +298,17 @@ const Header = (props: any) => {
                                         </li>
                                     </ul>
                                     <ul>
-                                        <li>
-                                            <a href="#">
-                                                <span className="icon">
-                                                    <img src="/img/icon/Cryptomonnaies.png" alt="" />
-                                                </span>
-                                                <span className="nav-item">Cryptommonaies</span>
-                                            </a>
-                                        </li>
-                                        <li>
+                                        {$themes.map((theme, index) => (
+                                            <li key={index}>
+                                                <a href="#">
+                                                    <span className="icon">
+                                                        <img src="/img/icon/Cryptomonnaies.png" alt="" />
+                                                    </span>
+                                                    <span className="nav-item">{theme}</span>
+                                                </a>
+                                            </li>
+                                        ))}
+                                        {/* <li>
                                             <a href="#">
                                                 <span className="icon">
                                                     <img src="/img/icon/nft.png" alt="" />
@@ -338,7 +342,7 @@ const Header = (props: any) => {
 
                                                 <span className="nav-item">E-Commerce</span>
                                             </a>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <a href="#">
                                                 <span className="nav-item">Autres thématiques</span>
