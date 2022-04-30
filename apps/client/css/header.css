@@ -1162,6 +1162,13 @@ ul{
     .nav-close-btn img{
         max-width: 30px;
     }
+
+    .main-nav-bar .nav-item-wrap > ul .dropdown{
+        left: auto;
+        right: 0;
+        width: fit-content;
+        z-index: 9;
+    }
 }
 
 /* moble style 
