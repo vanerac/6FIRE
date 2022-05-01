@@ -674,6 +674,8 @@ button{
 }
 .table-filter{
   margin-top: 60px;
+  display: flex;
+  align-items: center;
 }
 .table-filter input, .table-filter select{
   border: 0;
