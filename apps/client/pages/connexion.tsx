@@ -13,6 +13,21 @@ import { useCookies } from 'react-cookie';
 // import translate from '@shared/translation'
 import Head from 'next/head';
 
+/* scroll off */
+if (typeof window !== "undefined"){
+
+    $('.scroll_off').on("click",function(){
+        if(!$('body').hasClass("overflo-y-hidden"))
+        {
+            $('body').addClass('overflo-y-hidden');
+        }
+        else
+        {
+            $('body').removeClass('overflo-y-hidden');
+        }
+    });
+}
+
 const Connexion: NextPage = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -343,7 +358,7 @@ const Connexion: NextPage = () => {
                     onClick={() => {
                         handleForm();
                     }}
-                    className="menu__btn"
+                    className="menu__btn scroll_off"
                     htmlFor="menu__toggle">
                     <span></span>
                 </label>
@@ -534,7 +549,7 @@ const Connexion: NextPage = () => {
                     onClick={() => {
                         handleForm();
                     }}
-                    className="menu__btn"
+                    className="menu__btn scroll_off"
                     htmlFor="menu__toggle">
                     <span></span>
                 </label>

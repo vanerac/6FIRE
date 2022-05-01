@@ -9,6 +9,20 @@ import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import Link from 'next/link';
 
+if (typeof window !== "undefined"){
+
+    $('.scroll_off').on("click",function(){
+        if(!$('body').hasClass("overflo-y-hidden"))
+        {
+            $('body').removeClass('overflo-y-hidden');
+        }
+        else
+        {
+            $('body').addClass('overflo-y-hidden');
+        }
+    });
+}
+
 /* Hamburger toggle script */
 const handleForm = () => {
     $('.login_popup_wrapper').toggleClass('open');
@@ -81,7 +95,7 @@ const Header = (props: any) => {
                         console.log('click');
                         handleForm();
                     }}
-                    className="menu__btn invisible-mobile"
+                    className="menu__btn scroll_off invisible-mobile"
                     htmlFor="menu__toggle">
                     <span></span>
                 </label>
@@ -94,7 +108,7 @@ const Header = (props: any) => {
                         console.log('mobile');
                         mobileToggle();
                     }}>
-                    <label className="menu__btn" htmlFor="menu__toggle">
+                    <label className="menu__btn scroll_off" htmlFor="menu__toggle">
                         <span></span>
                     </label>
                 </div>

@@ -1238,3 +1238,7 @@ ul{
         font-size: 13px;
     }
 }
+
+.scrollY_off, .overflo-y-hidden{
+    overflow-y: hidden;
+}

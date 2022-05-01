@@ -7,13 +7,23 @@ import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 import $ from 'jquery';
 
-/* if (typeof window !== "undefined"){
-    $('.mobile-hamburger').click(function(){
-        $('.login_popup_wrapper').toggleClass('open');
+/* scroll off */
+if (typeof window !== "undefined"){
+
+    $('.scroll_off, .nav-close-btn').on("click",function(){
+        if(!$('body').hasClass("overflo-y-hidden"))
+        {
+            $('body').addClass('overflo-y-hidden');
+        }
+        else
+        {
+            $('body').removeClass('overflo-y-hidden');
+        }
     });
-} */
+}
+
+/* toggle overlay */
 if (typeof window !== 'undefined') {
-    console.log('test choda');
     $('.nav-close-btn').click(function () {
         $('.nav-item-wrap').removeClass('open');
     });
