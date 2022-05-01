@@ -663,3 +663,54 @@ button{
 .closs-btn img{
   width: 20px;
 }
+#export_data{
+  border: 1px solid #d7dbec;
+  padding: 10px 25px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+#export_data i{
+  margin-right: 10px;
+}
+.table-filter{
+  margin-top: 60px;
+}
+.table-filter input, .table-filter select{
+  border: 0;
+  outline: 0;
+  padding: 10px 25px;
+  margin-right: 15px;
+  box-shadow: 0 2px 4px #ccc;
+  border-radius: 5px;
+}
+.mt-0{
+  margin-top: 0;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+td{
+  padding: 15px;
+}
+table thead{
+  font-weight: 600;
+}
+table tr:nth-child(even) {
+  background: #f8f8f8;  
+}
+.text-center{
+  text-align: center;
+}
+.inner-wrapper .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.color-light-green{
+  color: #40c69c;
+}
+.color-dard-blue{
+  color: #0058ff;
+}
