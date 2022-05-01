@@ -716,3 +716,15 @@ table tr:nth-child(even) {
 .color-dard-blue{
   color: #0058ff;
 }
+
+/* Login page style 
+------------------------*/
+.login-wrapper {background: #111;height: 100vh;display: grid;align-items: center;justify-content: center;text-align: center;}
+
+.loggin-wrap {background: #fff;margin-top: 30px;border-radius: 10px;padding: 30px;min-width: 380px;}
+
+.loggin-wrap input {padding: 10px;border: 0;border-bottom: 1px solid #222;width: 100%;padding-left: 35px;margin-bottom: 15px;}
+
+.loggin-wrap .single-input {position: relative;}
+
+.single-input i {position: absolute;top: 37%;transform: translateY(-50%);left: 10px;}
