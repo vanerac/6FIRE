@@ -1,50 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { EditorState } from 'draft-js';
+import { convertToRaw, EditorState } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import dynamic from 'next/dynamic';
+import { useCookies } from 'react-cookie';
+
+import axios from 'axios';
 
 const Editor = dynamic(() => import('react-draft-wysiwyg').then((mod) => mod.Editor), { ssr: false });
 
+//https://www.gyanblog.com/javascript/how-integrate-next-js-draft-js-strapi-create-article-upload-image-view-page/#image-upload
 export default function RichtextEditor({
-    $onChange,
-    $existingContent,
+    onChange,
+    existingContent,
 }: {
-    $onChange?: ($content: string) => void;
-    $existingContent?: any;
+    onChange: ($content: string) => void;
+    existingContent?: any;
 }) {
     const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
+    const [cookies] = useCookies(['API_TOKEN']);
 
     useEffect(() => {
-        if ($existingContent) {
-            setEditorState(EditorState.createWithContent($existingContent));
+        if (existingContent) {
+            setEditorState(EditorState.createWithContent(existingContent));
         }
-    }, [$existingContent]);
+    }, [existingContent]);
 
-    const uploadImageCallBack = async ($file: any) => {
-        // const imgData = await apiClient.uploadInlineImageForArticle(file);
-        // return Promise.resolve({
-        //     data: {
-        //         link: `${process.env.NEXT_PUBLIC_API_URL}${imgData[0].formats.small.url}`,
-        //     },
-        // });
+    const uploadImageCallBack = async (file: never) => {
+        const host: string = process.env.NEXT_PUBLIC_API_ROUTE || 'http://localhost:3333/api';
+        const path = '/upload';
+        const formData = new FormData();
+        formData.append('file', file);
+        const res = await axios.post(`${host}${path}`, formData, {
+            headers: {
+                Authorization: `Bearer ${cookies['API_TOKEN']}`,
+            },
+        });
+
+        return { data: { link: res.data.url } };
     };
-
-    // useEffect(() => {
-    //     if (existingContent) {
-    //         setEditorState(EditorState.createWithContent(convertFromHTML(existingContent as any)));
-    //     }
-    // }, [existingContent]);
-
-    // useEffect(() => {
-    //     if (onChange) {
-    //         onChange(editorState);
-    //     }
-    // }, [editorState]);
 
     const onEditorStateChange = (editorState: EditorState) => {
         setEditorState(editorState);
 
-        // onChange(convertToRaw(editorState.getCurrentContent()));
+        onChange(convertToRaw(editorState.getCurrentContent()) as any);
     };
 
     return (

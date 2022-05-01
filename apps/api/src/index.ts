@@ -1,4 +1,3 @@
-import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import Routes from './entities/routes';
 import * as OpenApiValidator from 'express-openapi-validator';
@@ -13,6 +12,7 @@ import { ApiError } from './types';
 import multer from 'multer';
 
 import { v4 as uuid } from 'uuid';
+import cors from 'cors';
 
 declare module 'express' {
     interface Request {
@@ -53,26 +53,33 @@ const prisma = new PrismaClient();
 
 // Parser * Loggers
 app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '50mb' }));
+
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
     next();
 });
 
-// CORS
+// CORS;
 app.use(
     cors({
-        // origin: '*',
-        // credentials: true,
-        // allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'senty-trace'],
-        // methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
+        origin: 'http://localhost:3000',
+        credentials: true,
+        allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'senty-trace'],
+        methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );
 
+// app.use(function (req, res, next) {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     next();
+// });
 // Format error response
 app.use((err, req, res, $next) => {
     // format error
+    console.log(err);
     if (!(err instanceof ApiError)) {
         Sentry.captureException(err);
     }
@@ -97,6 +104,7 @@ app.use(
         //     onError: console.error, // todo: temporary solution
         // },
         validateFormats: 'full',
+        ignorePaths: /.*upload/,
         // ignoreUndocumented: true,
         operationHandlers: false,
         fileUploader: {

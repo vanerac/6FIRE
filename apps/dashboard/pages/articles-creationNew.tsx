@@ -41,6 +41,10 @@ export default function ArticlesCreation() {
     const id = 1; // TODO
 
     useEffect(() => {
+        console.log(JSON.stringify(articleContentsRaw));
+    }, [articleContentsRaw]);
+
+    useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
             router.replace('/');

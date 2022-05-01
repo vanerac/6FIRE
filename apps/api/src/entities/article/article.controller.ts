@@ -147,7 +147,7 @@ export default class ArticleController implements CRUDController {
                 },
             });
             if (!article) {
-                next(
+                return next(
                     new ApiError({
                         message: 'Article not found',
                         status: 404,
