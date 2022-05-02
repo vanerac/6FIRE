@@ -26,8 +26,8 @@ import { CookiesProvider, useCookies } from 'react-cookie';
 
 function MyApp({ Component, pageProps }: AppProps) {
     // set a cookie to avoid the user to be redirected to the login page in developpement mode
-    const [$cookies, setCookies] = useCookies(['API_TOKEN']);
-    setCookies('API_TOKEN', 'OK', { path: '/' });
+    // const [$cookies, setCookies] = useCookies(['API_TOKEN']);
+    // setCookies('API_TOKEN', 'OK', { path: '/' });
 
     return (
         <>
