@@ -1890,6 +1890,22 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Pagination page",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Pagination size",
+            "schema": {
+              "type": "number"
+            }
           }
         ],
         "tags": [
@@ -3170,6 +3186,103 @@
           }
         }
       }
+    },
+    "/admin/reset": {
+      "get": {
+        "description": "Regenerate the admin password and send it by email, can be done every 12 hours",
+        "operationId": "resetPassword",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/admin/config/sms": {
+      "put": {
+        "description": "Update the sms config",
+        "operationId": "updateSmsConfig",
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/upload": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "summary": "Upload file",
+        "description": "Upload file",
+        "operationId": "uploadFile",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3220,14 +3333,20 @@
             "type": "string"
           },
           "UserSubscription": {
-            "type": "object",
-            "properties": {
-              "Subscription": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Subscription": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
                   }
+                },
+                "status": {
+                  "type": "string"
                 }
               }
             }
@@ -3256,10 +3375,6 @@
           },
           "subscriptionLevel": {
             "type": "integer"
-          },
-          "icon": {
-            "type": "string",
-            "format": "binary"
           },
           "iconUrl": {
             "type": "string"
@@ -3384,6 +3499,26 @@
                         },
                         "themeId": {
                           "type": "number"
+                        },
+                        "bannerUrl": {
+                          "type": "string"
+                        },
+                        "headerUrl": {
+                          "type": "string"
+                        },
+                        "Theme": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "iconUrl": {
+                              "type": "string"
+                            }
+                          }
                         }
                       }
                     }
@@ -3406,14 +3541,6 @@
               }
             }
           },
-          "banner": {
-            "type": "string",
-            "format": "binary"
-          },
-          "header": {
-            "type": "string",
-            "format": "binary"
-          },
           "bannerUrl": {
             "type": "string"
           },
@@ -3422,12 +3549,9 @@
           }
         },
         "required": [
-          "id",
           "title",
           "content",
           "hidden",
-          "createdAt",
-          "updatedAt",
           "themeId"
         ]
       },
@@ -3764,6 +3888,26 @@
                         },
                         "themeId": {
                           "type": "number"
+                        },
+                        "bannerUrl": {
+                          "type": "string"
+                        },
+                        "headerUrl": {
+                          "type": "string"
+                        },
+                        "Theme": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "iconUrl": {
+                              "type": "string"
+                            }
+                          }
                         }
                       }
                     }

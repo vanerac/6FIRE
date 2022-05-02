@@ -3,12 +3,12 @@
 /* eslint-disable */
 
 export type Article = {
-    id: number;
+    id?: number;
     title: string;
     content: string;
     hidden: boolean;
-    createdAt: string;
-    updatedAt: string;
+    createdAt?: string;
+    updatedAt?: string;
     themeId: number;
     recommendedArticleIds?: Array<number>;
     ArticleRecommandation?: Array<{
@@ -20,6 +20,13 @@ export type Article = {
                 createdAt?: string;
                 updatedAt?: string;
                 themeId?: number;
+                bannerUrl?: string;
+                headerUrl?: string;
+                Theme?: {
+                    id?: number;
+                    name?: string;
+                    iconUrl?: string;
+                };
             };
         };
     }>;
@@ -28,8 +35,6 @@ export type Article = {
         name?: string;
         iconUrl?: string;
     };
-    banner?: Blob;
-    header?: Blob;
     bannerUrl?: string;
     headerUrl?: string;
 };

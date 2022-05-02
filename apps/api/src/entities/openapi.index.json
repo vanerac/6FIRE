@@ -139,6 +139,57 @@
     },
     "/broker/{id}": {
       "$ref": "./broker/broker.path.json#/withId"
+    },
+    "/admin/reset": {
+      "$ref": "./admin/admin.path.json#/resetPassword"
+    },
+    "/admin/config/sms": {
+      "$ref": "./admin/admin.path.json#/updateSmsConfig"
+    },
+    "/upload": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "summary": "Upload file",
+        "description": "Upload file",
+        "operationId": "uploadFile",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
     }
   },
   "components": {

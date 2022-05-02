@@ -170,6 +170,11 @@
     justify-content: space-between;
     color: #fff;
     height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
 }
 .top_navigation .left-col{
     display: flex;

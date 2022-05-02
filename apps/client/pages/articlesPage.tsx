@@ -82,7 +82,11 @@ const HomePage: NextPage = (props: any) => {
                             }}
                             className="single_article">
                             <div className="artitle_thum">
-                                <Image layout="fill" src="/img/mask-group-321-2@1x.png" />
+                                <Image
+                                    layout="fill"
+                                    loader={() => article.headerUrl ?? '/img/mask-group-321-2@1x.png'}
+                                    src={article.headerUrl ?? '/img/mask-group-321-2@1x.png'}
+                                />
                             </div>
                             <div className="cat_and_date">
                                 <div className="category">
@@ -94,7 +98,7 @@ const HomePage: NextPage = (props: any) => {
                                         })}
                                     </p>
                                     <p className="article_date lato-light-manatee-12px">
-                                        {convertDate(article.createdAt)}
+                                        {convertDate(article.createdAt as string)}
                                     </p>
                                 </div>
                             </div>

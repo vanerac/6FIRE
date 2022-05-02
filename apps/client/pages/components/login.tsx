@@ -25,6 +25,29 @@ if (typeof window !== 'undefined') {
     });
 }
 
+/* body scroll off when overlay active
+-------------------------------------*/
+if (typeof window !== 'undefined') {
+    $('.menu__btn').click(function () {
+        if ($('body').hasClass('scrollOff')) {
+            $('body').removeClass('scrollOff');
+        } else {
+            $('body').addClass('scrollOff');
+        }
+    });
+}
+
+/* Forget password overlay wrapper
+-------------------------------------*/
+if (typeof window !== 'undefined') {
+    $('.reset_password').click(function () {
+        $('.forget_pass_overlay').addClass('show');
+    });
+    $('#return_login').click(function () {
+        $('.forget_pass_overlay').removeClass('show');
+    });
+}
+
 const handleForm = () => {
     $('.login_popup_wrapper').toggleClass('open');
 };
@@ -154,6 +177,24 @@ const LoginPopup = (props: any) => {
                                 <input onClick={handleSubmit} type="submit" value={'Me connecter'} />
                             </div>
                         </form>
+
+                        {/* forget pass overlay */}
+                        <div className="forget_pass_overlay">
+                            <div className="forget-div">
+                                <div className="title">mot de pass oublie?</div>
+                                <p>
+                                    Veuillez saisir votre numero de telephone lors de votre inscription. Vous recevrez
+                                    un code pour modifier votre mot de passe.
+                                </p>
+                                <form action="">
+                                    <input type="email" placeholder="*Email" />
+                                    <button id="pass_submit">Valider</button>
+                                </form>
+                                <div id="return_login" className="return">
+                                    Retour
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="register_col">
                         <div className="title-wrap">

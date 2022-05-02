@@ -40,6 +40,8 @@ if (typeof window !== 'undefined') {
     });
 }
 
+
+
 const Header = (props: any) => {
     console.log(props);
     const [cookies, $setCookie, removeCookie] = useCookies(['API_TOKEN']);

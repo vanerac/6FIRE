@@ -25,6 +25,7 @@ export type { User } from './models/User';
 export type { UserStatus } from './models/UserStatus';
 export type { UserSubscription } from './models/UserSubscription';
 
+export { AdminService } from './services/AdminService';
 export { AffiliationService } from './services/AffiliationService';
 export { ArticleService } from './services/ArticleService';
 export { AuthService } from './services/AuthService';
@@ -36,5 +37,6 @@ export { PaymentService } from './services/PaymentService';
 export { SubscriptionService } from './services/SubscriptionService';
 export { ThemesService } from './services/ThemesService';
 export { TradersService } from './services/TradersService';
+export { UploadService } from './services/UploadService';
 export { UsageService } from './services/UsageService';
 export { UserService } from './services/UserService';
