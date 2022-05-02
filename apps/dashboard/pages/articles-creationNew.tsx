@@ -89,11 +89,11 @@ export default function ArticlesCreation() {
     }
 
     useEffect(() => {
-        if (!cookies['API_TOKEN']) {
-            console.log('no token');
-            router.replace('/');
-            return;
-        }
+        // if (!cookies['API_TOKEN']) {
+        //     console.log('no token');
+        //     router.replace('/');
+        //     return;
+        // }
         const { id } = query;
 
         if (id)
