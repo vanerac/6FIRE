@@ -10,6 +10,25 @@ import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
 import draftToHtml from 'draftjs-to-html';
 
+const convertDate = (date: string) => {
+    const date_unix = new Date(date).getTime() / 1000;
+    const now = new Date().getTime() / 1000;
+    const diff = now - date_unix;
+    const days = Math.floor(diff / 86400);
+    const hours = Math.floor((diff - days * 86400) / 3600);
+    const minutes = Math.floor((diff - days * 86400 - hours * 3600) / 60);
+    const seconds = Math.floor(diff - days * 86400 - hours * 3600 - minutes * 60);
+    if (days > 0) {
+        return `${days} jours`;
+    } else if (hours > 0) {
+        return `${hours} heures`;
+    } else if (minutes > 0) {
+        return `${minutes} minutes`;
+    } else {
+        return `${seconds} secondes`;
+    }
+};
+
 const data = {
     blocks: [
         {
@@ -255,11 +274,21 @@ const HomePage: NextPage = (props: any) => {
                     <div className="article_content">
                         <div className="author_box">
                             <div className="author-photo">
-                                <Image src="/img/group-1490-3@1x.png" layout="fill" />
+                                <Image
+                                    loader={() =>
+                                        ($articles?.Theme?.iconUrl as string) ?? '/img/mask-group-326-1@1x.png'
+                                    }
+                                    src={($articles?.Theme?.iconUrl as string) ?? '/img/mask-group-326-1@1x.png'}
+                                    layout={'fill'}
+                                />
                             </div>
                             <div className="category_date">
-                                <div className="category lato-bold-white-16px">Crypto</div>
-                                <div className="date lato-normal-manatee-14px">27 Février 2022</div>
+                                <div className="category lato-bold-white-16px">{$articles?.Theme?.name}</div>
+                                {/*`DD-MM-YYYY`*/}
+                                {/*<div className="date lato-normal-manatee-14px">{`${$articles.}`}</div>*/}
+                                <div className="date lato-normal-manatee-14px">
+                                    Il y a {convertDate($articles?.createdAt as string)}
+                                </div>
                             </div>
                         </div>
 
@@ -393,7 +422,7 @@ const HomePage: NextPage = (props: any) => {
                                                         {article?.Theme?.name}
                                                     </p>
                                                     <p className="article_date lato-light-manatee-12px">
-                                                        Il y a 2 heures
+                                                        Il y a {convertDate(article?.createdAt as string)}
                                                     </p>
                                                 </div>
                                             </div>
