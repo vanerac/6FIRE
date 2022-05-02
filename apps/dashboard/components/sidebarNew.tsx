@@ -15,9 +15,10 @@ if (typeof window !== 'undefined') {
     });
 }
 
-export default function sideBar() {
+export default function useSideBar() {
     // Todo: Add search functionally
     // Todo: Add dropdown functionality
+
     return (
         <div className="mainSideBar">
             <div className="page-wrapper toggled">
