@@ -40,8 +40,7 @@ if (typeof window !== 'undefined') {
     });
 }
 
-const Header = (props: any) => {
-    console.log(props);
+const Header = () => {
     const [cookies, $setCookie, removeCookie] = useCookies(['API_TOKEN']);
     const [themes, setThemes] = useState<Theme[]>([]);
     const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
@@ -74,7 +73,7 @@ const Header = (props: any) => {
             //     router.replace('/');
             //     return;
             // }
-            console.log('token', cookies['API_TOKEN']);
+            // console.log('token', cookies['API_TOKEN']);
             fetchThemes();
         }
     }, []);
@@ -157,7 +156,7 @@ const Header = (props: any) => {
                                         {themes.map((theme, index) => (
                                             <li key={index}>
                                                 <a
-                                                    style={{ cursor: 'pointer' }}
+                                                    style={{ cursor: 'pointer', marginRight: '25px' }}
                                                     onClick={() => {
                                                         console.log('theme', theme);
                                                         router.push({
@@ -228,6 +227,9 @@ const Header = (props: any) => {
                                                                         },
                                                                     });
                                                                 }}>
+                                                                <span className="icon">
+                                                                    <img src="/img/icon/Cryptomonnaies.png" alt="" />
+                                                                </span>
                                                                 <span className="nav-item">{theme.name}</span>
                                                             </a>
                                                         </li>

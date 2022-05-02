@@ -6,7 +6,7 @@ const HomePage: NextPage = ($props: any) => {
     return (
         <div>
             <Head>
-                <title>Acceuil - Crypto Trader</title>
+                <title>Accueil - Tout connaitre</title>
             </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage" />
 
