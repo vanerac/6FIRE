@@ -13,6 +13,7 @@ import multer from 'multer';
 
 import { v4 as uuid } from 'uuid';
 import cors from 'cors';
+import * as fs from 'fs';
 
 declare module 'express' {
     interface Request {
@@ -55,7 +56,7 @@ const prisma = new PrismaClient();
 app.use(cookieParser());
 app.use(express.json({ limit: '50mb' }));
 
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '250mb', parameterLimit: 1000000 }));
 app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
     next();
@@ -64,7 +65,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 // CORS;
 app.use(
     cors({
-        origin: process.env.NODE_ENV === 'production' ? '*' : 'http://localhost:3000',
+        origin: '*',
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'sentry-trace'],
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
@@ -144,6 +145,8 @@ app.get('/', (req, res) => {
         });
     });
 });
+
+fs.mkdirSync(configuration.UPLOAD_DIR, { recursive: true });
 
 app.use('/public', express.static(configuration.UPLOAD_DIR));
 
