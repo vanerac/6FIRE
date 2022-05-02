@@ -14,15 +14,11 @@ import { useCookies } from 'react-cookie';
 import Head from 'next/head';
 
 /* scroll off */
-if (typeof window !== "undefined"){
-
-    $('.scroll_off').on("click",function(){
-        if(!$('body').hasClass("overflo-y-hidden"))
-        {
+if (typeof window !== 'undefined') {
+    $('.scroll_off').on('click', function () {
+        if (!$('body').hasClass('overflo-y-hidden')) {
             $('body').addClass('overflo-y-hidden');
-        }
-        else
-        {
+        } else {
             $('body').removeClass('overflo-y-hidden');
         }
     });
