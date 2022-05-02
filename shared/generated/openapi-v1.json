@@ -3333,14 +3333,20 @@
             "type": "string"
           },
           "UserSubscription": {
-            "type": "object",
-            "properties": {
-              "Subscription": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Subscription": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
                   }
+                },
+                "status": {
+                  "type": "string"
                 }
               }
             }

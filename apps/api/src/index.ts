@@ -66,7 +66,7 @@ app.use(
     cors({
         origin: process.env.NODE_ENV === 'production' ? '*' : 'http://localhost:3000',
         credentials: true,
-        allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'senty-trace'],
+        allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'sentry-trace'],
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );

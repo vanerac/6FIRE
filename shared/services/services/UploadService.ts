@@ -1,13 +1,12 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type {CancelablePromise} from '../core/CancelablePromise';
-import type {BaseHttpRequest} from '../core/BaseHttpRequest';
+import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 
 export class UploadService {
 
-    constructor(public readonly httpRequest: BaseHttpRequest) {
-    }
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
 
     /**
      * Upload file
@@ -27,9 +26,6 @@ export class UploadService {
             method: 'POST',
             url: '/upload',
             formData: formData,
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
             mediaType: 'multipart/form-data',
         });
     }

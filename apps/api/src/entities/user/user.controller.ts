@@ -10,9 +10,16 @@ const prisma = new PrismaClient();
 export class UserController implements CRUDController {
     public static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
-            const users = prisma.user.findMany({
+            const users = await prisma.user.findMany({
                 select: {
                     password: false,
+                    id: true,
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
+                    createdAt: true,
+                    updatedAt: true,
                     UserSubscription: {
                         select: {
                             Subscription: {
@@ -20,8 +27,12 @@ export class UserController implements CRUDController {
                                     name: true,
                                 },
                             },
+                            status: true,
                         },
                     },
+                },
+                orderBy: {
+                    id: 'asc',
                 },
             });
             res.json(users);
