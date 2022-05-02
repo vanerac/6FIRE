@@ -40,6 +40,12 @@ export default function ArticlesCreation() {
     const [bannerUrl, setBannerUrl] = useState<string>('img/image-1-1@1x.png');
     const [thumbnailUrl, setThumbnailUrl] = useState<string>('img/image-1-1@1x.png');
 
+    const [selectTemp, setSelectTemp] = useState<number>();
+
+    useEffect(() => {
+        console.log('temp', selectTemp);
+    }, [selectTemp]);
+
     useEffect(() => {
         console.log(JSON.stringify(articleContentsRaw));
     }, [articleContentsRaw]);
@@ -405,8 +411,14 @@ export default function ArticlesCreation() {
                                     <label className="small_title" htmlFor="">
                                         Select article
                                     </label>
-                                    <select name="" id="articleSelection" className="width-300">
-                                        <option value="0">Articles</option>
+                                    <select
+                                        onChange={(event: any) => setSelectTemp(event.target.value)}
+                                        name=""
+                                        id="articleSelection"
+                                        className="width-300">
+                                        <option value="0" disabled>
+                                            Articles
+                                        </option>
                                         {articleSuggestions.map((article, index) => (
                                             <option key={index} value={article.id}>
                                                 {article.title}
@@ -422,18 +434,17 @@ export default function ArticlesCreation() {
                             <div className="row-1 inline-flex">
                                 <div className="single-item">
                                     <div className="regular-btn">
-                                        <button
-                                            onClick={(event: never) => {
-                                                console.log(event);
-                                                setSelectedArticlesIds([
-                                                    ...selectedArticles,
-                                                    (event as any)?.target?.value,
-                                                ]);
-                                            }}
-                                            className="bg_orange"
-                                            id="podcast">
-                                            Ajouter une recommandation
-                                        </button>
+                                        {selectTemp != undefined ? (
+                                            <button
+                                                onClick={(event: never) => {
+                                                    console.log(event);
+                                                    setSelectedArticlesIds([...selectedArticles, +selectTemp]);
+                                                }}
+                                                className="bg_orange"
+                                                id="podcast">
+                                                Ajouter une recommandation
+                                            </button>
+                                        ) : null}
                                     </div>
                                 </div>
                             </div>

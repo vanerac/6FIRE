@@ -3499,6 +3499,26 @@
                         },
                         "themeId": {
                           "type": "number"
+                        },
+                        "bannerUrl": {
+                          "type": "string"
+                        },
+                        "headerUrl": {
+                          "type": "string"
+                        },
+                        "Theme": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "iconUrl": {
+                              "type": "string"
+                            }
+                          }
                         }
                       }
                     }
@@ -3868,6 +3888,26 @@
                         },
                         "themeId": {
                           "type": "number"
+                        },
+                        "bannerUrl": {
+                          "type": "string"
+                        },
+                        "headerUrl": {
+                          "type": "string"
+                        },
+                        "Theme": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "iconUrl": {
+                              "type": "string"
+                            }
+                          }
                         }
                       }
                     }
