@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response, Router } from 'express';
+import { Router } from 'express';
 import { verifyToken } from '../tools/auth.tools';
 import UserRouter from './user/user.router';
 import AuthRouter from './auth/auth.router';
@@ -12,13 +12,12 @@ import AffiliationRouter from './affiliation/affiliation.router';
 import OfferRouter from './offer/offer.router';
 import BrokerRouter from './broker/broker.router';
 import AdminRouter from './admin/admin.router';
-import path from 'path';
 import configuration from '../../configuration';
 import multer from 'multer';
 
 import { v4 as uuid } from 'uuid';
 
-const upload = multer({
+const $upload = multer({
     dest: configuration.UPLOAD_DIR,
     storage: multer.diskStorage({
         destination: function (req, file, cb) {
@@ -48,17 +47,17 @@ router.use('/broker', verifyToken, BrokerRouter);
 router.use('/admin', AdminRouter);
 
 //https://blog.logrocket.com/multer-nodejs-express-upload-file/
-router.post('/upload', upload.array('file'), (req: Request, res: Response, next: NextFunction) => {
-    try {
-        console.log('files', req.files);
-
-        res.status(200).json({
-            message: 'File uploaded !',
-            url: path.join(configuration.BACKEND_URL, 'public/', req.file?.filename ?? ''),
-        });
-    } catch (error) {
-        next(error);
-    }
-});
+// router.post('/upload', upload.array('file'), (req: Request, res: Response, next: NextFunction) => {
+//     try {
+//         console.log('files', req.files);
+//
+//         res.status(200).json({
+//             message: 'File uploaded !',
+//             url: path.join(configuration.BACKEND_URL, 'public/', req.file?.filename ?? ''),
+//         });
+//     } catch (error) {
+//         next(error);
+//     }
+// });
 
 export default router;

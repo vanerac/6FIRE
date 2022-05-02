@@ -13,7 +13,7 @@ export default function RichtextEditor({
     onChange,
     existingContent,
 }: {
-    onChange: ($content: string) => void;
+    onChange: ($content: object) => void;
     existingContent?: any;
 }) {
     const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
@@ -42,7 +42,7 @@ export default function RichtextEditor({
     const onEditorStateChange = (editorState: EditorState) => {
         setEditorState(editorState);
 
-        onChange(convertToRaw(editorState.getCurrentContent()) as any);
+        onChange(convertToRaw(editorState.getCurrentContent()));
     };
 
     return (

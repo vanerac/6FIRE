@@ -30,7 +30,7 @@ export default function ArticlesCreation() {
     const [selectedTheme, $setSelectedTheme] = useState<Theme>();
     const [selectedArticles, $setSelectedArticles] = useState<Article[]>([]);
 
-    const [articleContentsRaw, setArticleContentsRaw] = useState<any>();
+    const [articleContentsRaw, setArticleContentsRaw] = useState<object>();
     const [articleTitle, $setArticleTitle] = useState('');
 
     const [$articlePodcast, $setArticlePodcast] = useState('');
@@ -55,6 +55,7 @@ export default function ArticlesCreation() {
             apiClient.article.getArticleById(id).then(
                 (res) => {
                     setArticle(res as Article);
+                    setArticleContentsRaw(JSON.parse((res as Article).content));
                     setLoading(false);
                 },
                 (error) => {
@@ -111,7 +112,7 @@ export default function ArticlesCreation() {
             const newArticle = {
                 ...article,
                 title: articleTitle,
-                content: articleContentsRaw,
+                content: JSON.stringify(articleContentsRaw),
                 themeId: selectedTheme?.id,
                 recommendedArticleIds: selectedArticles.map((a) => a.id),
                 header: thumbnail,

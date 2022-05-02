@@ -64,7 +64,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 // CORS;
 app.use(
     cors({
-        origin: 'http://localhost:3000',
+        origin: process.env.NODE_ENV === 'production' ? '*' : 'http://localhost:3000',
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'senty-trace'],
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
