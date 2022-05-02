@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Topbar from '../components/topbar';
+import Topbar from './topbar';
 import getAPIClient from '@shared/tools/apiClient';
-import { Article, ArticlePro } from '@shared/services';
+import { Article, ArticlePro } from '@services/index';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 // import { Article } from '@shared/services';

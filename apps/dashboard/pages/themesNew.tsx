@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbarNew';
 import getAPIClient from '@shared/tools/apiClient';
+import { Theme } from '@shared/services';
 import router from 'next/router';
-import { Trader } from '@shared/services';
 import { useCookies } from 'react-cookie';
 import Sidebar from '../components/sidebarNew';
 import DataTable from '../components/data-table';
+// import { Theme } from '@shared/services';
+// import apiClient from '@shared/tools/apiClient';
 
-export default function BotTrading() {
+export default function ThemesArticles() {
+    // const { query } = useRouter();
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [$curation, setCuration] = useState<(Trader & { isFollowing?: boolean })[]>([]);
+    const [$themes, setThemes] = useState<Theme[]>([]);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -22,10 +25,9 @@ export default function BotTrading() {
             return;
         }
 
-        apiClient.traders.getTraderCuration().then(
+        apiClient.themes.getThemes().then(
             (res) => {
-                setCuration(res);
-                console.log(res);
+                setThemes(res);
                 setLoading(false);
             },
             (error) => {
@@ -57,14 +59,14 @@ export default function BotTrading() {
                                 display: 'Nom',
                             },
                             {
-                                key: 'clientId',
-                                display: 'Trader Id',
+                                key: 'subscription',
+                                display: "Niveau d'Abonnement",
                             },
                         ]}
-                        data={$curation.map((trader) => ({
-                            id: trader.id?.toString() ?? '?',
-                            name: trader.name ?? '?',
-                            clientId: trader.clientId ?? '?',
+                        data={$themes.map((theme) => ({
+                            id: theme.id?.toString() ?? '?',
+                            subscription: theme?.subscriptionLevel?.toString() ?? '?',
+                            name: theme.name ?? '?',
                             // visible: theme.hidden ? 'false' : 'true',
                         }))}
                         editCallback={console.log}

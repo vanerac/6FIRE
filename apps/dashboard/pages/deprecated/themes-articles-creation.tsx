@@ -1,5 +1,5 @@
 import React from 'react';
-import Topbar from '../../components/topbar';
+import Topbar from './topbar';
 
 import style from '../../styles/main.module.scss';
 

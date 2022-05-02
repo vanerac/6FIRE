@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Topbar from '../components/topbar';
+import Topbar from './topbar';
 import getAPIClient from '@shared/tools/apiClient';
-import { Theme } from '@shared/services';
+import { Theme } from '@services/index';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 // import { Theme } from '@shared/services';
