@@ -244,7 +244,12 @@ const HomePage: NextPage = (props: any) => {
 
                 <div className="article_details_wrapper">
                     <div className="article_header">
-                        <Image src="/img/mask-group-326-1@1x.png" layout="fill" objectFit="cover" />
+                        <Image
+                            loader={() => ($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png'}
+                            src={($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png'}
+                            layout="fill"
+                            objectFit="cover"
+                        />
                     </div>
 
                     <div className="article_content">
