@@ -6,7 +6,9 @@ import { useCookies } from 'react-cookie';
 
 import axios from 'axios';
 
-const Editor = dynamic(() => import('react-draft-wysiwyg').then((mod) => mod.Editor), { ssr: false });
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const Editor = dynamic(() => import('react-draft-wysiwyg').then((mod) => mod.Editor), { ssr: false }) as any;
 
 //https://www.gyanblog.com/javascript/how-integrate-next-js-draft-js-strapi-create-article-upload-image-view-page/#image-upload
 export default function RichtextEditor({
@@ -48,7 +50,7 @@ export default function RichtextEditor({
     return (
         <div>
             <Editor
-                editorState={editorState as any}
+                editorState={editorState}
                 toolbarClassName="toolbar-class"
                 wrapperClassName="wrapper-class"
                 editorClassName="editor-class"
