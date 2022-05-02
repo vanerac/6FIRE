@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import Link from 'next/link';
 
 if (typeof window !== 'undefined') {
     $('.sidebar-dropdown > a').click(function () {
@@ -29,10 +30,10 @@ export default function useSideBar() {
                                 <li
                                 // className="sidebar-dropdown"
                                 >
-                                    <a href="/">
+                                    <Link passHref href="/">
                                         <i className="fa fa-home"></i>
                                         <span>Home</span>
-                                    </a>
+                                    </Link>
                                     {/*<div className="sidebar-submenu">*/}
                                     {/*    <ul>*/}
                                     {/*        <li>*/}
@@ -50,10 +51,10 @@ export default function useSideBar() {
                                 <li
                                 // className="sidebar-dropdown"
                                 >
-                                    <a href="/utilisateursNew">
+                                    <Link href="/utilisateursNew" passHref>
                                         <i className="far fa-gem"></i>
                                         <span>Utilisateurs</span>
-                                    </a>
+                                    </Link>
                                     {/*<div className="sidebar-submenu">*/}
                                     {/*    <ul>*/}
                                     {/*        <li>*/}
@@ -70,11 +71,15 @@ export default function useSideBar() {
                                     <div className="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="/themesNew">Tous les themes</a>
+                                                <Link href="/themesNew" passHref>
+                                                    Tous les themes
+                                                </Link>
                                             </li>
                                             <li>
                                                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                                                <a href="/themes-articles-creationNew">Creer un theme</a>
+                                                <Link href="/themes-articles-creationNew" passHref>
+                                                    Creer un theme
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -87,10 +92,14 @@ export default function useSideBar() {
                                     <div className="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="/articlesNew">Tous les articles</a>
+                                                <Link passHref href="/articlesNew">
+                                                    Tous les articles
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a href="/articles-creationNew">Creer un article</a>
+                                                <Link passHref href="/articles-creationNew">
+                                                    Creer un article
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -109,10 +118,14 @@ export default function useSideBar() {
                                     <div className="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="/bot-trading">Tous les Traders</a>
+                                                <Link passHref href="/bot-trading">
+                                                    Tous les Traders
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a href="/bot-trading-creation">Ajouter un trader</a>
+                                                <Link passHref href="/bot-trading-creation">
+                                                    Ajouter un trader
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
