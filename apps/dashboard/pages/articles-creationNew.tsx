@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbarNew';
 import Sidebar from '../components/sidebarNew';
 import $ from 'jquery';
+import getAPIClient from '@shared/tools/apiClient';
+import { Article, Theme } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
+import RichtextEditor from '../components/rich-editor';
 
 if (typeof window !== 'undefined') {
     const selector = '.editor-buttons button';
@@ -13,6 +18,120 @@ if (typeof window !== 'undefined') {
 }
 
 export default function ArticlesCreation() {
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [article, setArticle] = useState<Article>();
+    const [$articleSuggestions, $setArticleSuggestions] = useState<Article[]>([]);
+    const [$availableThemes, $setAvailableThemes] = useState<Theme[]>([]);
+
+    const [selectedTheme, $setSelectedTheme] = useState<Theme>();
+    const [selectedArticles, $setSelectedArticles] = useState<Article[]>([]);
+
+    const [articleContentsRaw, setArticleContentsRaw] = useState<object>();
+    const [articleTitle, $setArticleTitle] = useState('');
+
+    const [$articlePodcast, $setArticlePodcast] = useState('');
+
+    const [banner, $setBanner] = useState<Blob>();
+    const [thumbnail, $setThumbnail] = useState<Blob>();
+
+    const id = 1; // TODO
+
+    useEffect(() => {
+        console.log(JSON.stringify(articleContentsRaw));
+    }, [articleContentsRaw]);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        if (id)
+            apiClient.article.getArticleById(id).then(
+                (res) => {
+                    setArticle(res as Article);
+                    setArticleContentsRaw(JSON.parse((res as Article).content));
+                    setLoading(false);
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                },
+            );
+        apiClient.article.getArticles().then(
+            (res) => {
+                $setArticleSuggestions(res as Article[]);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+
+        apiClient.themes.getThemes().then(
+            (res) => {
+                $setAvailableThemes(res as Theme[]);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
+
+    const $saveArticle = () => {
+        if (!article?.id) {
+            // Create
+            // TODO verify that argument are filled in correctly ?
+            apiClient.article
+                .createArticle({
+                    title: articleTitle,
+                    content: JSON.stringify(articleContentsRaw),
+                    themeId: selectedTheme?.id as number,
+                    recommendedArticleIds: selectedArticles.map((a) => a.id),
+                    header: thumbnail,
+                    banner: banner,
+                    hidden: false, // Todo: false by default ?
+                })
+                .then(
+                    (res) => {
+                        setArticle(res as Article);
+                    },
+                    (error) => {
+                        setError(error.i18n ?? error.message ?? 'Unknown error');
+                        setLoading(false);
+                    },
+                );
+        } else {
+            // Update
+            const newArticle = {
+                ...article,
+                title: articleTitle,
+                content: JSON.stringify(articleContentsRaw),
+                themeId: selectedTheme?.id,
+                recommendedArticleIds: selectedArticles.map((a) => a.id),
+                header: thumbnail,
+                banner: banner,
+            };
+
+            apiClient.article.updateArticleById(article.id, newArticle as unknown as Article).then(
+                (res) => {
+                    setArticle(res as Article);
+                    alert('Article updated');
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                },
+            );
+        }
+    };
+
     return (
         <div>
             <Topbar />
@@ -114,7 +233,9 @@ export default function ArticlesCreation() {
 
                             <div className="row-1 inline-flex">
                                 <div className="single-item">
-                                    <textarea className="text_editor" name="" id=""></textarea>
+                                    <div className="text_editor">
+                                        <RichtextEditor onChange={setArticleContentsRaw} />
+                                    </div>
                                 </div>
                             </div>
                         </div>

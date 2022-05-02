@@ -17,6 +17,7 @@ import { PaymentService } from './services/PaymentService';
 import { SubscriptionService } from './services/SubscriptionService';
 import { ThemesService } from './services/ThemesService';
 import { TradersService } from './services/TradersService';
+import { UploadService } from './services/UploadService';
 import { UsageService } from './services/UsageService';
 import { UserService } from './services/UserService';
 
@@ -36,6 +37,7 @@ export class ApiClient {
     public readonly subscription: SubscriptionService;
     public readonly themes: ThemesService;
     public readonly traders: TradersService;
+    public readonly upload: UploadService;
     public readonly usage: UsageService;
     public readonly user: UserService;
 
@@ -66,6 +68,7 @@ export class ApiClient {
         this.subscription = new SubscriptionService(this.request);
         this.themes = new ThemesService(this.request);
         this.traders = new TradersService(this.request);
+        this.upload = new UploadService(this.request);
         this.usage = new UsageService(this.request);
         this.user = new UserService(this.request);
     }

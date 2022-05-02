@@ -80,14 +80,6 @@
             }
           }
         },
-        "banner": {
-          "type": "string",
-          "format": "binary"
-        },
-        "header": {
-          "type": "string",
-          "format": "binary"
-        },
         "bannerUrl": {
           "type": "string"
         },

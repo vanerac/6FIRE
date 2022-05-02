@@ -51,6 +51,7 @@ export default class ThemeController implements CRUDController {
         try {
             const { id } = req.params;
             const { id: userId, isAdmin } = req.user;
+            console.log('isAdmin', isAdmin);
             let where = { id: +id };
 
             if (!isAdmin) {
@@ -79,8 +80,17 @@ export default class ThemeController implements CRUDController {
                     },
                 });
             }
+            console.log(where);
 
-            const theme = await client.theme.findFirst({ where });
+            const theme = await client.theme.findFirst({
+                where,
+                select: {
+                    id: true,
+                    name: true,
+                    iconUrl: true,
+                },
+            });
+            console.log(theme);
             res.status(200).json(theme);
         } catch (error) {
             next(error);
@@ -89,13 +99,12 @@ export default class ThemeController implements CRUDController {
 
     static async create(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            const icon = req.file;
-            const { name, subscriptionLevel } = req.body;
+            const { name, subscriptionLevel, iconUrl } = req.body;
             const theme = await client.theme.create({
                 data: {
                     name,
                     subscriptionLevel,
-                    iconUrl: path.join(configuration.BACKEND_URL, 'public/', icon.filename),
+                    iconUrl,
                 },
             });
             res.status(201).json(theme);

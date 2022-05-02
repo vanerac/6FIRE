@@ -8,7 +8,163 @@ import router, { useRouter } from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
+import draftToHtml from 'draftjs-to-html';
 
+const data = {
+    blocks: [
+        {
+            key: 'cu45i',
+            text: 'qweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqwe',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [
+                { offset: 0, length: 468, style: 'color-rgb(255,255,255)' },
+                {
+                    offset: 0,
+                    length: 468,
+                    style: 'fontsize-14.399999618530273',
+                },
+                { offset: 0, length: 468, style: 'fontfamily-Lato, sans-serif' },
+                {
+                    offset: 12,
+                    length: 24,
+                    style: 'bgcolor-rgb(255,255,255)',
+                },
+                { offset: 48, length: 24, style: 'bgcolor-rgb(255,255,255)' },
+                {
+                    offset: 84,
+                    length: 24,
+                    style: 'bgcolor-rgb(255,255,255)',
+                },
+                { offset: 120, length: 24, style: 'bgcolor-rgb(255,255,255)' },
+                {
+                    offset: 156,
+                    length: 24,
+                    style: 'bgcolor-rgb(255,255,255)',
+                },
+                { offset: 192, length: 24, style: 'bgcolor-rgb(255,255,255)' },
+                {
+                    offset: 228,
+                    length: 24,
+                    style: 'bgcolor-rgb(255,255,255)',
+                },
+                { offset: 264, length: 24, style: 'bgcolor-rgb(255,255,255)' },
+                {
+                    offset: 300,
+                    length: 24,
+                    style: 'bgcolor-rgb(255,255,255)',
+                },
+                { offset: 336, length: 24, style: 'bgcolor-rgb(255,255,255)' },
+                {
+                    offset: 372,
+                    length: 24,
+                    style: 'bgcolor-rgb(255,255,255)',
+                },
+                { offset: 408, length: 24, style: 'bgcolor-rgb(255,255,255)' },
+                {
+                    offset: 444,
+                    length: 24,
+                    style: 'bgcolor-rgb(255,255,255)',
+                },
+            ],
+            entityRanges: [],
+            data: {},
+        },
+        {
+            key: 'fe1gr',
+            text: ' ',
+            type: 'atomic',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [{ offset: 0, length: 1, key: 0 }],
+            data: {},
+        },
+        {
+            key: 'dq89a',
+            text: 'qweqweqwe',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+        },
+        {
+            key: 'dlmjn',
+            text: 'qw',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+        },
+        {
+            key: 'epmse',
+            text: 'e',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+        },
+        {
+            key: '1pta8',
+            text: 'qw',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+        },
+        {
+            key: '3u581',
+            text: 'eq',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+        },
+        {
+            key: 'fle37',
+            text: 'we',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+        },
+        {
+            key: '55ffr',
+            text: ' ',
+            type: 'atomic',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [{ offset: 0, length: 1, key: 1 }],
+            data: {},
+        },
+        {
+            key: 'eok18',
+            text: '',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+        },
+    ],
+    entityMap: {
+        '0': {
+            type: 'IMAGE',
+            mutability: 'MUTABLE',
+            data: { src: 'http://localhost:3000/img/image-1-1@1x.png', height: 'auto', width: 'auto' },
+        },
+        '1': {
+            type: 'IMAGE',
+            mutability: 'MUTABLE',
+            data: { src: 'http://localhost:3000/img/image-1-1@1x.png', height: 'auto', width: 'auto' },
+        },
+    },
+};
 const HomePage: NextPage = (props: any) => {
     const [$themeName, setThemeName] = useState('');
     // Todo: Note: Article pro = Article + properties en plus
@@ -16,6 +172,12 @@ const HomePage: NextPage = (props: any) => {
     const { query } = useRouter();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
+    const [content, setContent] = useState(
+        draftToHtml(
+            // JSON.parse((res as Article).content as any)
+            data as any,
+        ),
+    );
 
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
@@ -29,8 +191,8 @@ const HomePage: NextPage = (props: any) => {
     }, []);
 
     useEffect(() => {
-        if (!query.themeId || !query.themeId) {
-            router.replace('/');
+        if (!query.articleId) {
+            router.replace('/articlesPage');
             return;
         }
 
@@ -41,6 +203,8 @@ const HomePage: NextPage = (props: any) => {
                 setLoading(false);
                 setArticles(res as Article | ArticlePro);
                 setThemeName((res as Article)?.Theme?.name as string);
+
+                setContent(draftToHtml(JSON.parse((res as Article).content as any) ?? (data as any)));
             })
             .catch((error) => {
                 setLoading(false);
@@ -96,87 +260,88 @@ const HomePage: NextPage = (props: any) => {
                             <h2 className="title lato-bold-white-22px">Les 5 erreurs à éviter en crypto</h2>
                         </div>
 
-                        <div className="article_text lato-normal-white-16px">
-                            <p>
-                                Attention : Vous devez faire vos propres recherches avant tout investissement. Ce
-                                document ne peut en aucun cas être considéré comme un conseil en investissement.
-                            </p>
+                        <div dangerouslySetInnerHTML={{ __html: content }} />
+                        {/*<div className="article_text lato-normal-white-16px">*/}
+                        {/*    <p>*/}
+                        {/*        Attention : Vous devez faire vos propres recherches avant tout investissement. Ce*/}
+                        {/*        document ne peut en aucun cas être considéré comme un conseil en investissement.*/}
+                        {/*    </p>*/}
 
-                            <p>
-                                Précédemment utilisés par une population d’initiés, la cryptomonnaie et le trading se
-                                démocratisent et attirent aujourd’hui un grand nombre d’investisseurs. Les monnaies
-                                virtuelles font parler d’elles et attirent les investisseurs néophytes. Cependant, pour
-                                réussir son investissement crypto monnaie sans éviter
-                            </p>
+                        {/*    <p>*/}
+                        {/*        Précédemment utilisés par une population d’initiés, la cryptomonnaie et le trading se*/}
+                        {/*        démocratisent et attirent aujourd’hui un grand nombre d’investisseurs. Les monnaies*/}
+                        {/*        virtuelles font parler d’elles et attirent les investisseurs néophytes. Cependant, pour*/}
+                        {/*        réussir son investissement crypto monnaie sans éviter*/}
+                        {/*    </p>*/}
 
-                            <ol>
-                                <li>Ne pas suffisamment protéger ses comptes</li>
-                                <li>Ne pas comprendre dans quoi on investit</li>
-                                <li>Se tromper d’adresse</li>
-                                <li>Mettre tous ses oeufs dans le même panier</li>
-                                <li>Utiliser des effets de levier</li>
-                            </ol>
+                        {/*    <ol>*/}
+                        {/*        <li>Ne pas suffisamment protéger ses comptes</li>*/}
+                        {/*        <li>Ne pas comprendre dans quoi on investit</li>*/}
+                        {/*        <li>Se tromper d’adresse</li>*/}
+                        {/*        <li>Mettre tous ses oeufs dans le même panier</li>*/}
+                        {/*        <li>Utiliser des effets de levier</li>*/}
+                        {/*    </ol>*/}
 
-                            <p>
-                                Le sondage montre aussi quelles sont les erreurs les plus courantes commises par les
-                                investisseurs des États-Unis. Sans grande surprise, 38 % des personnes interrogées
-                                regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies au lieu de patienter
-                                jusqu’à ce que les cours grimpent. 32 % regrettent également d’avoir « tout investi sur
-                                un seul type de coin ».
-                            </p>
+                        {/*    <p>*/}
+                        {/*        Le sondage montre aussi quelles sont les erreurs les plus courantes commises par les*/}
+                        {/*        investisseurs des États-Unis. Sans grande surprise, 38 % des personnes interrogées*/}
+                        {/*        regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies au lieu de patienter*/}
+                        {/*        jusqu’à ce que les cours grimpent. 32 % regrettent également d’avoir « tout investi sur*/}
+                        {/*        un seul type de coin ».*/}
+                        {/*    </p>*/}
 
-                            <p>
-                                La troisième erreur la plus courante, est le manque de compréhension des marchés de
-                                cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on trouve à la
-                                quatrième place des erreurs les plus courantes les investisseurs qui ont envoyé leurs
-                                cryptomonnaies avant d’avoir la certitude de recevoir un paiement en retour. La
-                                cinquième place est occupée par ceux qui ont acheté au plus haut… Pour revendre au plus
-                                bas
-                            </p>
-                        </div>
+                        {/*    <p>*/}
+                        {/*        La troisième erreur la plus courante, est le manque de compréhension des marchés de*/}
+                        {/*        cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on trouve à la*/}
+                        {/*        quatrième place des erreurs les plus courantes les investisseurs qui ont envoyé leurs*/}
+                        {/*        cryptomonnaies avant d’avoir la certitude de recevoir un paiement en retour. La*/}
+                        {/*        cinquième place est occupée par ceux qui ont acheté au plus haut… Pour revendre au plus*/}
+                        {/*        bas*/}
+                        {/*    </p>*/}
+                        {/*</div>*/}
 
-                        <div className="imgbox">
-                            <Image src="/img/image-878-1@1x.png" layout="fill" />
-                        </div>
+                        {/*<div className="imgbox">*/}
+                        {/*    <Image src="/img/image-878-1@1x.png" layout="fill" />*/}
+                        {/*</div>*/}
 
-                        <div className="article_text lato-normal-white-16px">
-                            <p>
-                                Attention : Vous devez faire vos propres recherches avant tout investissement. Ce
-                                document ne peut en aucun cas être considéré comme un conseil en investissement.
-                            </p>
+                        {/*<div className="article_text lato-normal-white-16px">*/}
+                        {/*    <p>*/}
+                        {/*        Attention : Vous devez faire vos propres recherches avant tout investissement. Ce*/}
+                        {/*        document ne peut en aucun cas être considéré comme un conseil en investissement.*/}
+                        {/*    </p>*/}
 
-                            <p>
-                                Précédemment utilisés par une population d’initiés, la cryptomonnaie et le trading se
-                                démocratisent et attirent aujourd’hui un grand nombre d’investisseurs. Les monnaies
-                                virtuelles font parler d’elles et attirent les investisseurs néophytes. Cependant, pour
-                                réussir son investissement crypto monnaie sans éviter
-                            </p>
+                        {/*    <p>*/}
+                        {/*        Précédemment utilisés par une population d’initiés, la cryptomonnaie et le trading se*/}
+                        {/*        démocratisent et attirent aujourd’hui un grand nombre d’investisseurs. Les monnaies*/}
+                        {/*        virtuelles font parler d’elles et attirent les investisseurs néophytes. Cependant, pour*/}
+                        {/*        réussir son investissement crypto monnaie sans éviter*/}
+                        {/*    </p>*/}
 
-                            <ol>
-                                <li>Ne pas suffisamment protéger ses comptes</li>
-                                <li>Ne pas comprendre dans quoi on investit</li>
-                                <li>Se tromper d’adresse</li>
-                                <li>Mettre tous ses oeufs dans le même panier</li>
-                                <li>Utiliser des effets de levier</li>
-                            </ol>
+                        {/*    <ol>*/}
+                        {/*        <li>Ne pas suffisamment protéger ses comptes</li>*/}
+                        {/*        <li>Ne pas comprendre dans quoi on investit</li>*/}
+                        {/*        <li>Se tromper d’adresse</li>*/}
+                        {/*        <li>Mettre tous ses oeufs dans le même panier</li>*/}
+                        {/*        <li>Utiliser des effets de levier</li>*/}
+                        {/*    </ol>*/}
 
-                            <p>
-                                Le sondage montre aussi quelles sont les erreurs les plus courantes commises par les
-                                investisseurs des États-Unis. Sans grande surprise, 38 % des personnes interrogées
-                                regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies au lieu de patienter
-                                jusqu’à ce que les cours grimpent. 32 % regrettent également d’avoir « tout investi sur
-                                un seul type de coin ».
-                            </p>
+                        {/*    <p>*/}
+                        {/*        Le sondage montre aussi quelles sont les erreurs les plus courantes commises par les*/}
+                        {/*        investisseurs des États-Unis. Sans grande surprise, 38 % des personnes interrogées*/}
+                        {/*        regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies au lieu de patienter*/}
+                        {/*        jusqu’à ce que les cours grimpent. 32 % regrettent également d’avoir « tout investi sur*/}
+                        {/*        un seul type de coin ».*/}
+                        {/*    </p>*/}
 
-                            <p>
-                                La troisième erreur la plus courante, est le manque de compréhension des marchés de
-                                cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on trouve à la
-                                quatrième place des erreurs les plus courantes les investisseurs qui ont envoyé leurs
-                                cryptomonnaies avant d’avoir la certitude de recevoir un paiement en retour. La
-                                cinquième place est occupée par ceux qui ont acheté au plus haut… Pour revendre au plus
-                                bas
-                            </p>
-                        </div>
+                        {/*    <p>*/}
+                        {/*        La troisième erreur la plus courante, est le manque de compréhension des marchés de*/}
+                        {/*        cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on trouve à la*/}
+                        {/*        quatrième place des erreurs les plus courantes les investisseurs qui ont envoyé leurs*/}
+                        {/*        cryptomonnaies avant d’avoir la certitude de recevoir un paiement en retour. La*/}
+                        {/*        cinquième place est occupée par ceux qui ont acheté au plus haut… Pour revendre au plus*/}
+                        {/*        bas*/}
+                        {/*    </p>*/}
+                        {/*</div>*/}
                     </div>
 
                     {/* More article you would love to reaa */}

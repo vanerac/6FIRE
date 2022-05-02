@@ -28,8 +28,6 @@ export type Article = {
         name?: string;
         iconUrl?: string;
     };
-    banner?: Blob;
-    header?: Blob;
     bannerUrl?: string;
     headerUrl?: string;
 };

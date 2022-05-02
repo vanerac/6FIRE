@@ -17,9 +17,10 @@ export type User = {
     verifiedPhone?: boolean;
     banned?: boolean;
     note?: string;
-    UserSubscription?: {
+    UserSubscription?: Array<{
         Subscription?: {
             name?: string;
         };
-    };
+        status?: string;
+    }>;
 };

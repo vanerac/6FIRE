@@ -3238,6 +3238,51 @@
           }
         }
       }
+    },
+    "/upload": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "summary": "Upload file",
+        "description": "Upload file",
+        "operationId": "uploadFile",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3288,14 +3333,20 @@
             "type": "string"
           },
           "UserSubscription": {
-            "type": "object",
-            "properties": {
-              "Subscription": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Subscription": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
                   }
+                },
+                "status": {
+                  "type": "string"
                 }
               }
             }
@@ -3324,10 +3375,6 @@
           },
           "subscriptionLevel": {
             "type": "integer"
-          },
-          "icon": {
-            "type": "string",
-            "format": "binary"
           },
           "iconUrl": {
             "type": "string"
@@ -3473,14 +3520,6 @@
                 "type": "string"
               }
             }
-          },
-          "banner": {
-            "type": "string",
-            "format": "binary"
-          },
-          "header": {
-            "type": "string",
-            "format": "binary"
           },
           "bannerUrl": {
             "type": "string"

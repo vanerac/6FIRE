@@ -70,7 +70,6 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
         );
     }
 
-    console.log(jwt.verify(access_token, configuration.JWT_SECRET || 'secret'));
     try {
         const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
         if (typeof decoded != 'string' && decoded.id) {
@@ -148,6 +147,35 @@ export async function isAdmin(req: Request, res: Response, next: NextFunction) {
                 i18n: 'error.auth.invalid',
             }),
         );
+    }
+}
+
+export async function parseAdmin(req: Request, res: Response, next: NextFunction) {
+    try {
+        const { user } = req;
+
+        if (!user) {
+            return next();
+        }
+
+        const dbUser = await prisma.user.findFirst({
+            where: {
+                id: user.id,
+            },
+        });
+
+        if (!dbUser?.isAdmin) {
+            return next();
+        }
+
+        req.user = {
+            ...user,
+            isAdmin: dbUser?.isAdmin,
+        };
+        return next();
+    } catch (error: any) {
+        console.log(error);
+        next();
     }
 }
 
