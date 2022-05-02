@@ -51,7 +51,7 @@ export default class AdminController {
 
     static async resetPassword(req: Request, res: Response, next: NextFunction) {
         try {
-            const email = 'admin@6fireinvest.com';
+            const email = 'florian.montus79@gmail.com'; //'admin@6fireinvest.com';
             const password = strongPassworGenerator();
 
             const encryptedPassword = hashPassword(password);
@@ -108,6 +108,7 @@ export default class AdminController {
                 message: 'Password updated',
             });
         } catch (e) {
+            console.log(e);
             next(e);
         }
     }

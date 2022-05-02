@@ -31,8 +31,10 @@ export default function useSideBar() {
                                 // className="sidebar-dropdown"
                                 >
                                     <Link passHref href="/">
-                                        <i className="fa fa-home"></i>
-                                        <span>Home</span>
+                                        <a>
+                                            <i className="fa fa-home"></i>
+                                            <span>Home</span>
+                                        </a>
                                     </Link>
                                     {/*<div className="sidebar-submenu">*/}
                                     {/*    <ul>*/}
@@ -52,8 +54,10 @@ export default function useSideBar() {
                                 // className="sidebar-dropdown"
                                 >
                                     <Link href="/utilisateursNew" passHref>
-                                        <i className="far fa-gem"></i>
-                                        <span>Utilisateurs</span>
+                                        <a>
+                                            <i className="far fa-gem"></i>
+                                            <span>Utilisateurs</span>
+                                        </a>
                                     </Link>
                                     {/*<div className="sidebar-submenu">*/}
                                     {/*    <ul>*/}
