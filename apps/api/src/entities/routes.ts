@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express';
-import { isAdmin, verifyToken } from '../tools/auth.tools';
+import { isAdmin, parseAdmin, verifyToken } from '../tools/auth.tools';
 import UserRouter from './user/user.router';
 import AuthRouter from './auth/auth.router';
 import ThemeRouter from './theme/theme.router';
@@ -34,18 +34,18 @@ const upload = multer({
 
 const router = Router();
 
-router.use('/auth', AuthRouter);
-router.use('/user', verifyToken, UserRouter);
-router.use('/theme', verifyToken, ThemeRouter);
-router.use('/crypto', verifyToken, CryptoRouter);
-router.use('/trader', verifyToken, TraderRouter);
-router.use('/article', verifyToken, ArticleRouter);
-router.use('/subscription', verifyToken, SubscriptionRouter);
-router.use('/payment', verifyToken, PaymentRouter);
-router.use('/affliation', verifyToken, AffiliationRouter);
-router.use('/offer', verifyToken, OfferRouter);
-router.use('/broker', verifyToken, BrokerRouter);
-router.use('/admin', AdminRouter);
+router.use('/auth', parseAdmin, AuthRouter);
+router.use('/user', parseAdmin, verifyToken, UserRouter);
+router.use('/theme', parseAdmin, verifyToken, ThemeRouter);
+router.use('/crypto', parseAdmin, verifyToken, CryptoRouter);
+router.use('/trader', parseAdmin, verifyToken, TraderRouter);
+router.use('/article', parseAdmin, verifyToken, ArticleRouter);
+router.use('/subscription', parseAdmin, verifyToken, SubscriptionRouter);
+router.use('/payment', parseAdmin, verifyToken, PaymentRouter);
+router.use('/affliation', parseAdmin, verifyToken, AffiliationRouter);
+router.use('/offer', parseAdmin, verifyToken, OfferRouter);
+router.use('/broker', parseAdmin, verifyToken, BrokerRouter);
+router.use('/admin', parseAdmin, AdminRouter);
 
 //https://blog.logrocket.com/multer-nodejs-express-upload-file/
 router.post(
