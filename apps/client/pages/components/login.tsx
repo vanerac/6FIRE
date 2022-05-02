@@ -18,6 +18,19 @@ if (typeof window !== 'undefined') {
     });
 }
 
+/* body scroll off when overlay active 
+-------------------------------------*/
+if (typeof window !== 'undefined') {
+    $('.menu__btn').click(function() {
+        if ($("body").hasClass("scrollOff")) {
+          $("body").removeClass('scrollOff');
+        }
+        else{
+            $("body").addClass('scrollOff');
+        }
+      });
+}
+
 /* Forget password overlay wrapper 
 -------------------------------------*/
 if (typeof window !== 'undefined') {

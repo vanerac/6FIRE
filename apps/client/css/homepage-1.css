@@ -3999,3 +3999,9 @@ body{
 .forget_pass_overlay.show {
   transform: translateY(0);
 }
+
+/* Boddy scorll off when overlay menu open
+------------------------------------- */
+body.scrollOff {
+  overflow-y: hidden;
+}
