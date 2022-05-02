@@ -278,16 +278,11 @@ const HomePage: NextPage = (props: any) => {
                     <div className="article_content">
                         <div className="author_box">
                             <div className="author-photo">
-                                <Image
-                                    loader={() =>
-                                        ($articles?.Theme?.iconUrl as string) ??
-                                        'https://www.lg.com/be_fr/images/TV/features/D03_TV-UHD-UM74-A-04-Quad-Core-Processor-Desktop-v.jpg'
-                                    }
+                                <img
                                     src={
                                         ($articles?.Theme?.iconUrl as string) ??
-                                        'https://www.lg.com/be_fr/images/TV/features/D03_TV-UHD-UM74-A-04-Quad-Core-Processor-Desktop-v.jpg'
+                                        'https://webneel.com/wallpaper/sites/default/files/images/08-2018/3-nature-wallpaper-mountain.jpg'
                                     }
-                                    layout={'fill'}
                                 />
                             </div>
                             <div className="category_date">
