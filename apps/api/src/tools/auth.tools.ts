@@ -150,6 +150,35 @@ export async function isAdmin(req: Request, res: Response, next: NextFunction) {
     }
 }
 
+export async function parseAdmin(req: Request, res: Response, next: NextFunction) {
+    try {
+        const { user } = req;
+
+        if (!user) {
+            return next();
+        }
+
+        const dbUser = await prisma.user.findFirst({
+            where: {
+                id: user.id,
+            },
+        });
+
+        if (!dbUser?.isAdmin) {
+            return next();
+        }
+
+        req.user = {
+            ...user,
+            isAdmin: dbUser?.isAdmin,
+        };
+        return next();
+    } catch (error: any) {
+        console.log(error);
+        next();
+    }
+}
+
 export async function parseToken(req: Request, res: Response, next: NextFunction) {
     // Parse token, decode it and set req.user
     try {

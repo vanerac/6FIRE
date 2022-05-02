@@ -165,7 +165,7 @@ export default class ArticleController implements CRUDController {
     static async create(req: Request, res: Response, next: NextFunction) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        const { banner, header } = req.files;
+
         console.log(banner, header);
         try {
             const {
@@ -181,6 +181,8 @@ export default class ArticleController implements CRUDController {
                 utilisateurs,
                 necessiteAudicance,
                 financement,
+                bannerUrl,
+                headerUrl,
             } = req.body;
             const article = await prisma.article.create({
                 data: {
@@ -188,8 +190,8 @@ export default class ArticleController implements CRUDController {
                     content,
                     themeId: +themeId,
                     hidden: false,
-                    bannerUrl: banner ? path.join(configuration.BACKEND_URL, 'public/', banner[0].filename) : null,
-                    headerUrl: header ? path.join(configuration.BACKEND_URL, 'public/', header[0].filename) : null,
+                    bannerUrl,
+                    headerUrl,
                     description,
                     salaireMoy,
                     tarificationMoy,
