@@ -728,3 +728,26 @@ table tr:nth-child(even) {
 .loggin-wrap .single-input {position: relative;}
 
 .single-input i {position: absolute;top: 37%;transform: translateY(-50%);left: 10px;}
+#send-btn{
+  background-color: #111;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  width: 180px;
+  margin-bottom: 10px;
+  transition: all 0.5s ease;
+  border: 1px solid transparent;
+}
+#send-btn:hover{
+  background-color: #fff;
+  color: #111;
+  border-color: #111;
+  
+}
+.forget-pass{
+  transition: all 0.5s ease;
+  background-color: transparent;
+}
+.forget-pass:hover{
+  text-decoration: underline;
+}
