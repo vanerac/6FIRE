@@ -115,18 +115,26 @@ export class ArticleService {
     /**
      * Get all articles by theme
      * @param id Theme id
+     * @param page Pagination page
+     * @param limit Pagination size
      * @returns any Articles response
      * @returns Error Unexpected error
      * @throws ApiError
      */
     public getArticlesByTheme(
         id: number,
+        page?: number,
+        limit?: number,
     ): CancelablePromise<Array<(Article | ArticlePro)> | Error> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/article/theme/{id}',
             path: {
                 'id': id,
+            },
+            query: {
+                'page': page,
+                'limit': limit,
             },
         });
     }
