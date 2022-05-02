@@ -43,6 +43,8 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    bannerUrl: true,
+                    headerUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -119,6 +121,8 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    headerUrl: true,
+                    bannerUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -166,7 +170,6 @@ export default class ArticleController implements CRUDController {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
 
-        console.log(banner, header);
         try {
             const {
                 title,

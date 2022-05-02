@@ -3529,12 +3529,9 @@
           }
         },
         "required": [
-          "id",
           "title",
           "content",
           "hidden",
-          "createdAt",
-          "updatedAt",
           "themeId"
         ]
       },

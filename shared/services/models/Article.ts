@@ -3,12 +3,12 @@
 /* eslint-disable */
 
 export type Article = {
-    id: number;
+    id?: number;
     title: string;
     content: string;
     hidden: boolean;
-    createdAt: string;
-    updatedAt: string;
+    createdAt?: string;
+    updatedAt?: string;
     themeId: number;
     recommendedArticleIds?: Array<number>;
     ArticleRecommandation?: Array<{

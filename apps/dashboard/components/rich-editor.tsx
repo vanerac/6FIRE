@@ -25,6 +25,10 @@ export default function RichtextEditor({
         }
     }, [existingContent]);
 
+    useEffect(() => {
+        onChange(convertToRaw(editorState.getCurrentContent()));
+    }, [editorState]);
+
     const uploadImageCallBack = async (file: never) => {
         const host: string = process.env.NEXT_PUBLIC_API_ROUTE || 'http://localhost:3333/api';
         const path = '/upload';

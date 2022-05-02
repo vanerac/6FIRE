@@ -191,10 +191,12 @@ const HomePage: NextPage = (props: any) => {
     }, []);
 
     useEffect(() => {
-        if (!query.articleId) {
-            router.replace('/articlesPage');
-            return;
-        }
+        console.log('query', query);
+        // if (!query.articleId) {
+        //     console.log('no articleId');
+        //     router.replace('/articlesPage');
+        //     return;
+        // }
 
         setLoading(true);
         apiClient.article
@@ -257,7 +259,7 @@ const HomePage: NextPage = (props: any) => {
                         </div>
 
                         <div className="artitle_title">
-                            <h2 className="title lato-bold-white-22px">Les 5 erreurs à éviter en crypto</h2>
+                            <h2 className="title lato-bold-white-22px">{$articles?.title ?? ''}</h2>
                         </div>
 
                         <div dangerouslySetInnerHTML={{ __html: content }} />
