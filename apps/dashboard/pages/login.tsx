@@ -21,6 +21,9 @@ export default function Index() {
             .admin.resetPassword()
             .then(() => {
                 alert('Password reset');
+            })
+            .catch((err) => {
+                alert(err);
             });
     };
 
@@ -51,7 +54,7 @@ export default function Index() {
                                 </button>
                             </div>
                             <div className="single-btn">
-                                <button onChange={resetPassword} className="forget-pass">
+                                <button onClick={resetPassword} className="forget-pass">
                                     Mot de pass oublie?
                                 </button>
                             </div>

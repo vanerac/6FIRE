@@ -108,6 +108,7 @@ export default class AdminController {
                 message: 'Password updated',
             });
         } catch (e) {
+            console.log(e);
             next(e);
         }
     }
