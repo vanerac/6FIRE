@@ -2236,7 +2236,7 @@
   background-color: transparent;
   bottom: 0px;
   height: 41px;
-  left: 19px;
+  /* left: 19px; */
   position: absolute;
   width: calc(100.00% - 40px);
 }
