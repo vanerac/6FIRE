@@ -343,7 +343,10 @@ export default function ArticlesCreation() {
                             <div className="row-1 inline-flex">
                                 <div className="single-item">
                                     <div className="text_editor">
-                                        <RichtextEditor onChange={setArticleContentsRaw} />
+                                        <RichtextEditor
+                                            onChange={setArticleContentsRaw}
+                                            existingContent={articleContentsRaw}
+                                        />
                                     </div>
                                 </div>
                             </div>
