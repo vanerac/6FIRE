@@ -29,6 +29,8 @@ if (typeof window !== 'undefined') {
     });
 }
 
+
+
 const Header = (props: any) => {
     console.log(props);
     const [cookies] = useCookies(['API_TOKEN']);
