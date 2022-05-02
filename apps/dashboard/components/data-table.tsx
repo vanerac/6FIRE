@@ -1,11 +1,9 @@
 import React from 'react';
 
-
 export default function DataTable() {
     return (
         <div>
             <div className="table-wrapper">
-
                 {/* table content */}
                 <div className="table-content mt-0">
                     <table>
@@ -28,8 +26,12 @@ export default function DataTable() {
                             <td>Zihad</td>
                             <td>Hosan</td>
                             <td>Intermediaire (99,00 &euro;)</td>
-                            <td className="text-center"><i className="far fa-check-square color-light-green"></i></td>
-                            <td className="text-center"><i className='fa fa-edit color-dard-blue'></i></td>
+                            <td className="text-center">
+                                <i className="far fa-check-square color-light-green"></i>
+                            </td>
+                            <td className="text-center">
+                                <i className="fa fa-edit color-dard-blue"></i>
+                            </td>
                         </tr>
                         {/* single row */}
                         <tr>
@@ -38,8 +40,12 @@ export default function DataTable() {
                             <td>Alex</td>
                             <td>Elodie</td>
                             <td>Intermediaire (99,00 &euro;)</td>
-                            <td className="text-center"><i className="far fa-check-square color-light-green"></i></td>
-                            <td className="text-center"><i className='fa fa-edit color-dard-blue'></i></td>
+                            <td className="text-center">
+                                <i className="far fa-check-square color-light-green"></i>
+                            </td>
+                            <td className="text-center">
+                                <i className="fa fa-edit color-dard-blue"></i>
+                            </td>
                         </tr>
                         {/* single row */}
                         <tr>
@@ -48,8 +54,12 @@ export default function DataTable() {
                             <td>Corentin</td>
                             <td>Mas</td>
                             <td>Intermediaire (99,00 &euro;)</td>
-                            <td className="text-center"><i className="far fa-check-square color-light-green"></i></td>
-                            <td className="text-center"><i className='fa fa-edit color-dard-blue'></i></td>
+                            <td className="text-center">
+                                <i className="far fa-check-square color-light-green"></i>
+                            </td>
+                            <td className="text-center">
+                                <i className="fa fa-edit color-dard-blue"></i>
+                            </td>
                         </tr>
                         {/* single row */}
                         <tr>
@@ -58,8 +68,12 @@ export default function DataTable() {
                             <td>Elo</td>
                             <td>Elodie</td>
                             <td>Intermediaire (99,00 &euro;)</td>
-                            <td className="text-center"><i className="far fa-check-square color-light-green"></i></td>
-                            <td className="text-center"><i className='fa fa-edit color-dard-blue'></i></td>
+                            <td className="text-center">
+                                <i className="far fa-check-square color-light-green"></i>
+                            </td>
+                            <td className="text-center">
+                                <i className="fa fa-edit color-dard-blue"></i>
+                            </td>
                         </tr>
                         {/* single row */}
                         <tr>
@@ -68,8 +82,12 @@ export default function DataTable() {
                             <td>Flo</td>
                             <td>Elodie</td>
                             <td>Intermediaire (99,00 &euro;)</td>
-                            <td className="text-center"><i className="far fa-check-square color-light-green"></i></td>
-                            <td className="text-center"><i className='fa fa-edit color-dard-blue'></i></td>
+                            <td className="text-center">
+                                <i className="far fa-check-square color-light-green"></i>
+                            </td>
+                            <td className="text-center">
+                                <i className="fa fa-edit color-dard-blue"></i>
+                            </td>
                         </tr>
                     </table>
                 </div>

@@ -5,7 +5,6 @@ import router from 'next/router';
 import { useCookies } from 'react-cookie';
 // import { User } from '@shared/services';
 // import apiClient from '@shared/tools/apiClient';
-
 import Topbar from '../components/topbarNew';
 import Sidebar from '../components/sidebarNew';
 import DataTable from '../components/data-table';
@@ -50,12 +49,14 @@ export default function Utilisateurs() {
                 <div className="inner-wrapper">
                     <div className="header">
                         <h2 className="title">Utiliaateurs</h2>
-                        <button className='' id="export_data"><i className="fa fa-upload"></i> <span>export</span></button>
+                        <button className="" id="export_data">
+                            <i className="fa fa-upload"></i> <span>export</span>
+                        </button>
                     </div>
 
                     <div className="table-filter">
-                        <input type="text" placeholder='Rechercher' />
-                        
+                        <input type="text" placeholder="Rechercher" />
+
                         <select name="" id="">
                             <option value="0">Member</option>
                         </select>
@@ -80,11 +81,9 @@ export default function Utilisateurs() {
                                 <option value="0">Jan 2022</option>
                             </select>
                         </div>
-
                     </div>
 
                     <DataTable />
-
                 </div>
             </div>
         </div>
