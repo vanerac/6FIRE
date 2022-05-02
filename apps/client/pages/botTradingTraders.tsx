@@ -142,7 +142,7 @@ const BotTradingTrader: NextPage = () => {
                                         <button
                                             onClick={() => {
                                                 setTraders(
-                                                    traders.map((e) => {
+                                                    traders.map((e: any) => {
                                                         if (trader.id === e.id) {
                                                             e.isFollowing = false;
                                                         }
@@ -160,7 +160,7 @@ const BotTradingTrader: NextPage = () => {
                                         <button
                                             onClick={() => {
                                                 setTraders(
-                                                    traders.map((e) => {
+                                                    traders.map((e: any) => {
                                                         if (trader.id === e.id) {
                                                             e.isFollowing = true;
                                                         }
