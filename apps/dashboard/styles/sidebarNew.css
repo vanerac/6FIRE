@@ -648,12 +648,18 @@ button{
   color: #fff;
 }
 .text_editor{
-  height: 240px;
+  /* height: 240px;
   border: 1px solid #ccc;
   width: 100%;
   outline: 0;
   appearance: none;
-  padding: 15px;
+  padding: 15px; */
+}
+.text_editor img{
+  max-width: 100%;
+}
+.rdw-image-modal-size-input{
+  width: 40% !important;
 }
 .regular-btn button{
   padding: 10px 30px;
