@@ -58,6 +58,8 @@ import '../styles/sidebarNew.css';
 import type { AppProps } from 'next/app';
 import { CookiesProvider } from 'react-cookie';
 
+import 'draft-js/dist/Draft.css';
+
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <CookiesProvider>

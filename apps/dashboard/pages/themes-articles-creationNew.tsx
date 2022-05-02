@@ -1,8 +1,108 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbarNew';
 import Sidebar from '../components/sidebarNew';
+import getAPIClient from '@shared/tools/apiClient';
+import { Subscription, Theme } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 
 export default function ThemesArticlesCreation() {
+    // const { query } = useRouter();
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$theme, setTheme] = useState<Theme>();
+    const [$subscriptions, setSubscriptions] = useState<Subscription[]>([]);
+
+    const [title, $setTitle] = useState('');
+    const [selectedSubscription, $setSelectedSubscription] = useState<Subscription>();
+
+    const id = 1; // TODO
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        if (id)
+            apiClient.themes.getTheme(id).then(
+                (res) => {
+                    setTheme(res);
+                    setLoading(false);
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                },
+            );
+        apiClient.subscription.getSubscriptions().then(
+            (res) => {
+                setSubscriptions(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
+
+    const updateTheme = () => {
+        apiClient.themes
+            .updateTheme(id, {
+                ...$theme,
+                name: title,
+                subscriptionLevel: selectedSubscription?.level ?? 0,
+            })
+            .then(
+                (res) => {
+                    setTheme(res);
+                    setLoading(false);
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                },
+            );
+    };
+
+    const $deleteTheme = () => {
+        apiClient.themes.deleteTheme(id).then(
+            () => {
+                router.replace('/themes');
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
+    const createTheme = () => {
+        apiClient.themes
+            .createTheme({
+                name: title,
+                subscriptionLevel: selectedSubscription?.level ?? 0,
+            })
+            .then(
+                () => {
+                    alert('Theme created');
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                },
+            );
+    };
+
+    const $save = () => {
+        if ($theme?.id) updateTheme();
+        else createTheme();
+    };
     return (
         <div>
             <Topbar />

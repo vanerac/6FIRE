@@ -70,7 +70,6 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
         );
     }
 
-    console.log(jwt.verify(access_token, configuration.JWT_SECRET || 'secret'));
     try {
         const decoded: User & any = jwt.verify(access_token, configuration.JWT_SECRET || 'secret');
         if (typeof decoded != 'string' && decoded.id) {
