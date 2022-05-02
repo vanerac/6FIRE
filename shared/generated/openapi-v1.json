@@ -3485,23 +3485,6 @@
           "updatedAt": {
             "type": "string",
             "nullable": true
-          },
-          "curationWithFollows": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "number"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "isFollowing": {
-                  "type": "boolean"
-                }
-              }
-            }
           }
         }
       },

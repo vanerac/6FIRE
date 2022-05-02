@@ -31,10 +31,10 @@ const BotTradingTrader: NextPage = () => {
             .getTraderCuration()
             .then((res) => {
                 // Todo: return the subscription status of the user
-                setTraders(res.curationWithFollows);
+
+                setTraders(res);
                 setLoading(false);
                 console.log(Object.keys(res));
-                console.log('here => ', res.curationWithFollows);
             })
             .catch((error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
@@ -121,7 +121,7 @@ const BotTradingTrader: NextPage = () => {
                                 <td className="text-center">Suivre</td>
                             </tr>
                         </thead>
-                        {traders.map((trader: Trader) => (
+                        {traders.map((trader: Trader & any) => (
                             <tr key={trader.id}>
                                 <td className="pl-30">
                                     <div className="user-wrap">

@@ -35,9 +35,7 @@ export default class TraderController {
                 };
             });
 
-            res.status(200).json({
-                curationWithFollows,
-            });
+            res.status(200).json(curationWithFollows);
         } catch (error) {
             next(error);
         }
