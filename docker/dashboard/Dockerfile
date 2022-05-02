@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY apps/dashboard ./
 
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 FROM node:lts-alpine as build
 
@@ -24,13 +24,14 @@ ARG SENTRY_DSN=''
 ARG JWT_SECRET=''
 
 WORKDIR /shared
-RUN npm install axios@0.26.1
-RUN npm install form-data
-RUN npm install universal-cookie
-RUN npm install react-cookie
+RUN npm install axios@0.26.1 --legacy-peer-deps
+RUN npm install form-data --legacy-peer-deps
+RUN npm install universal-cookie --legacy-peer-deps
+RUN npm install react-cookie --legacy-peer-deps
+RUN npm i react react-dom
 
 WORKDIR /app
-RUN npm install react-cookie
+RUN npm install react-cookie --legacy-peer-deps
 RUN npm run build
 
 FROM node:lts-alpine as run
