@@ -4,7 +4,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
@@ -175,7 +175,11 @@ const data = {
         '0': {
             type: 'IMAGE',
             mutability: 'MUTABLE',
-            data: { src: 'http://localhost:3000/img/image-1-1@1x.png', height: 'auto', width: 'auto' },
+            data: {
+                src: 'https://www.lg.com/be_fr/images/TV/features/D03_TV-UHD-UM74-A-04-Quad-Core-Processor-Desktop-v.jpg',
+                height: 'auto',
+                width: 'auto',
+            },
         },
         '1': {
             type: 'IMAGE',
@@ -202,11 +206,11 @@ const HomePage: NextPage = (props: any) => {
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
-        if (!cookies['API_TOKEN']) {
-            console.log('no token');
-            router.replace('/');
-            return;
-        }
+        // if (!cookies['API_TOKEN']) {
+        //     console.log('no token');
+        //     router.replace('/');
+        //     return;
+        // }
     }, []);
 
     useEffect(() => {
@@ -276,14 +280,20 @@ const HomePage: NextPage = (props: any) => {
                             <div className="author-photo">
                                 <Image
                                     loader={() =>
-                                        ($articles?.Theme?.iconUrl as string) ?? '/img/mask-group-326-1@1x.png'
+                                        ($articles?.Theme?.iconUrl as string) ??
+                                        'https://www.lg.com/be_fr/images/TV/features/D03_TV-UHD-UM74-A-04-Quad-Core-Processor-Desktop-v.jpg'
                                     }
-                                    src={($articles?.Theme?.iconUrl as string) ?? '/img/mask-group-326-1@1x.png'}
+                                    src={
+                                        ($articles?.Theme?.iconUrl as string) ??
+                                        'https://www.lg.com/be_fr/images/TV/features/D03_TV-UHD-UM74-A-04-Quad-Core-Processor-Desktop-v.jpg'
+                                    }
                                     layout={'fill'}
                                 />
                             </div>
                             <div className="category_date">
-                                <div className="category lato-bold-white-16px">{$articles?.Theme?.name}</div>
+                                <div className="category lato-bold-white-16px">
+                                    {$articles?.Theme?.name ?? 'Theme Name'}
+                                </div>
                                 {/*`DD-MM-YYYY`*/}
                                 {/*<div className="date lato-normal-manatee-14px">{`${$articles.}`}</div>*/}
                                 <div className="date lato-normal-manatee-14px">
@@ -293,10 +303,16 @@ const HomePage: NextPage = (props: any) => {
                         </div>
 
                         <div className="artitle_title">
-                            <h2 className="title lato-bold-white-22px">{$articles?.title ?? ''}</h2>
+                            <h2 className="title lato-bold-white-22px">
+                                {$articles?.title ?? 'Article title very very very long to test'}
+                            </h2>
                         </div>
+                        <p />
 
-                        <div dangerouslySetInnerHTML={{ __html: content }} />
+                        <div
+                            className="article_text lato-normal-white-16px imgbox"
+                            dangerouslySetInnerHTML={{ __html: content }}
+                        />
                         {/*<div className="article_text lato-normal-white-16px">*/}
                         {/*    <p>*/}
                         {/*        Attention : Vous devez faire vos propres recherches avant tout investissement. Ce*/}
