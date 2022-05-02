@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import getApiClient from '@shared/tools/apiClient';
+import { useCookies } from 'react-cookie';
+import router from 'next/router';
 
 export default function Index() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [cookies, setCookie] = useCookies(['API_TOKEN']);
+
+    useEffect(() => {
+        if (cookies.API_TOKEN) {
+            router.replace('/');
+        }
+    }, []);
 
     const submit = () => {
         getApiClient('')
             .auth.loginAdmin({ email, password })
-            .then(() => {
-                window.location.href = '/';
+            .then((res) => {
+                setCookie('API_TOKEN', res.token, { path: '/' });
             })
             .catch(() => {
                 alert('Login failed');

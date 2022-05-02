@@ -525,8 +525,9 @@ export default class AuthController {
             }
 
             delete user.password;
-            const token = generateToken(user);
-            res.json({
+            const token = await generateToken(user);
+
+            res.cookie('API_TOKEN', token).json({
                 token,
             });
         } catch (e) {

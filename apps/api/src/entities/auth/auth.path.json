@@ -407,7 +407,22 @@
       },
       "responses": {
         "200": {
-          "description": "OK"
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "token"
+                ]
+              }
+            }
+          }
         },
         "400": {
           "description": "Bad Request"

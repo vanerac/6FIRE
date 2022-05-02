@@ -48,7 +48,9 @@ export class AuthService {
             email: string;
             password: string;
         },
-    ): CancelablePromise<any> {
+    ): CancelablePromise<{
+        token: string;
+    }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/auth/login/admin',
