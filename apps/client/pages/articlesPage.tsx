@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import router from 'next/router';
+import router, { useRouter } from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
 import getAPIClient from '@shared/tools/apiClient';
@@ -11,10 +11,11 @@ import Head from 'next/head';
 
 const HomePage: NextPage = (props: any) => {
     const [articles, setArticles] = useState<Article[]>([]);
-    const [themes, setThemes] = useState<Theme[]>([]);
+    const [themes, $setThemes] = useState<Theme[]>([]);
     const [cookies] = useCookies(['API_TOKEN']);
     const [$error, $setError] = useState('');
     const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const { query } = useRouter();
     const [pagination, $setPagination] = useState<any>({
         page: 1,
         limit: 20,
@@ -39,15 +40,12 @@ const HomePage: NextPage = (props: any) => {
         }
     };
 
-    const fetchData = async () => {
+    const fetchData = async (themeId: string | string[] | undefined) => {
+        console.log('need to fetch articles with id => ', themeId);
         const response = await apiClient.article.getArticles(pagination.page, pagination.limit);
+        // const article: Article = response[0]
+        // article.Theme?.name
         setArticles(response as Article[]);
-    };
-
-    const fetchThemes = async () => {
-        const response = await apiClient.themes.getThemes();
-        console.log('thmes => ', response);
-        setThemes(response as Theme[]);
     };
 
     useEffect(() => {
@@ -57,8 +55,7 @@ const HomePage: NextPage = (props: any) => {
             return;
         }
         console.log('token', cookies['API_TOKEN']);
-        fetchThemes();
-        fetchData();
+        fetchData(query.themeId);
     }, []);
 
     return (

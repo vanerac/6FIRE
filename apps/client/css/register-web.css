@@ -922,3 +922,9 @@ input {
         display: none;
     }
 }
+@media screen and (max-width: 1023px) {
+    .register-mobile .connexion-qfTrnm{
+        top: 25px;
+        right: 40px;
+    }
+}
