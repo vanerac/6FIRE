@@ -50,7 +50,7 @@ export default function Utilisateurs() {
                     <div className="header">
                         <h2 className="title">Utiliaateurs</h2>
                         <button className="" id="export_data">
-                            <i className="fa fa-upload"></i> <span>export</span>
+                            <i className="fa fa-upload"></i> <span>Export CSV</span>
                         </button>
                     </div>
 
@@ -83,7 +83,47 @@ export default function Utilisateurs() {
                         </div>
                     </div>
 
-                    <DataTable />
+                    <DataTable
+                        headers={[
+                            {
+                                key: 'id',
+                                display: 'ID',
+                            },
+                            {
+                                key: 'email',
+                                display: 'Email',
+                            },
+                            {
+                                key: 'firstname',
+                                display: 'Prénom',
+                            },
+                            {
+                                key: 'lastname',
+                                display: 'Nom',
+                            },
+
+                            {
+                                key: 'phone',
+                                display: 'Téléphone',
+                            },
+                            {
+                                key: 'abonnement',
+                                display: 'Abonnement',
+                            },
+                        ]}
+                        data={$users.map((user) => ({
+                            id: (user.id?.toString() as string) ?? '?',
+                            email: user.email as string,
+                            firstname: user.firstName as string,
+                            lastname: user.lastName as string,
+                            phone: user.telephone as string,
+                            abonnement:
+                                user.UserSubscription?.find((s) => s.status === 'active')?.Subscription?.name ??
+                                'Aucun',
+                        }))}
+                        editCallback={console.log}
+                        deleteCallback={console.log}
+                    />
                 </div>
             </div>
         </div>
