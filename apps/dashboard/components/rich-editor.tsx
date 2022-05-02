@@ -4,8 +4,6 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import dynamic from 'next/dynamic';
 import { useCookies } from 'react-cookie';
 
-import axios from 'axios';
-
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const Editor = dynamic(() => import('react-draft-wysiwyg').then((mod) => mod.Editor), { ssr: false }) as any;
@@ -32,13 +30,18 @@ export default function RichtextEditor({
         const path = '/upload';
         const formData = new FormData();
         formData.append('file', file);
-        const res = await axios.post(`${host}${path}`, formData, {
+        const res = await fetch(`${host}${path}`, {
+            method: 'POST',
+            body: formData,
             headers: {
                 Authorization: `Bearer ${cookies['API_TOKEN']}`,
             },
         });
 
-        return { data: { link: res.data.url } };
+        const data = await res.json();
+
+        console.log(data.url);
+        return { data: { link: data.url } };
     };
 
     const onEditorStateChange = (editorState: EditorState) => {
