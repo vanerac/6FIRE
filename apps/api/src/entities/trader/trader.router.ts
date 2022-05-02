@@ -7,6 +7,11 @@ const router = Router();
 router.get('/curation', isAdmin, TraderController.getCuration);
 router.put('/curation', isAdmin, TraderController.setCuration);
 
+router.get('/:id', isAdmin, TraderController.getById);
+router.delete('/:id', isAdmin, TraderController.deleteTrader);
+router.put('/:id', isAdmin, TraderController.updateTrader);
+router.post('/', isAdmin, TraderController.createTrader);
+
 router.post('/trader/:id/follow', TraderController.followTrader);
 router.delete('/trader/:id/follow', TraderController.unfollowTrader);
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import style from '../styles/main.module.scss';
+import style from '../../styles/main.module.scss';
 // import '../styles/loader.js'
 
 /* Hamburger toggle script */

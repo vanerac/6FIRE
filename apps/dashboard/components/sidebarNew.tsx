@@ -100,12 +100,22 @@ export default function sideBar() {
                                 {/*        <span>Trading & Crypto</span>*/}
                                 {/*    </a>*/}
                                 {/*</li>*/}
-                                {/*<li>*/}
-                                {/*    <a href="#">*/}
-                                {/*        <i className="fa fa-book"></i>*/}
-                                {/*        <span>Bot Trading</span>*/}
-                                {/*    </a>*/}
-                                {/*</li>*/}
+                                <li className="sidebar-dropdown">
+                                    <a href="#">
+                                        <i className="fa fa-book"></i>
+                                        <span>Bot Trading</span>
+                                    </a>
+                                    <div className="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="/bot-trading">Tous les Traders</a>
+                                            </li>
+                                            <li>
+                                                <a href="/bot-trading-creation">Ajouter un trader</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
                                 {/*<li>*/}
                                 {/*    <a href="#">*/}
                                 {/*        <i className="fa fa-calendar"></i>*/}
