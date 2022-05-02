@@ -114,18 +114,16 @@ const LoginPopup = (props: any) => {
     return (
         <div className="login_popup_wrapper">
             {cookies['API_TOKEN'] ? (
-                <>
-                    <div className="after_login">
-                        <ul>
-                            <li>
-                                <a href="#">Mes donnees personnelles</a>
-                            </li>
-                            <li>
-                                <a href="#">Ma licence</a>
-                            </li>
-                        </ul>
-                    </div>
-                </>
+                <div className="after_login">
+                    <ul>
+                        <li>
+                            <a href="#">Mes donnees personnelles</a>
+                        </li>
+                        <li>
+                            <a href="#">Ma licence</a>
+                        </li>
+                    </ul>
+                </div>
             ) : (
                 <>
                     <div className="login_access_col">
