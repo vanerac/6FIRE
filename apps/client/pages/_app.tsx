@@ -20,7 +20,7 @@ import '../css/footer.css';
 
 import Head from 'next/head';
 
-import { CookiesProvider, useCookies } from 'react-cookie';
+import { CookiesProvider } from 'react-cookie';
 
 // import Cookies from 'universal-cookie';
 
