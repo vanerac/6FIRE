@@ -152,7 +152,7 @@ export default function ThemesArticlesCreation() {
 
                 <div className="inner-wrapper">
                     <div className="header">
-                        <h2 className="title">Creer un theme</h2>
+                        <h2 className="title">{theme ? 'Modifier' : 'Creer'} un theme</h2>
                     </div>
 
                     <div className="table-header">
@@ -163,7 +163,7 @@ export default function ThemesArticlesCreation() {
                                 </button>
                             ) : null}
                             <button onClick={save} className={'bg_green'}>
-                                Sauvegarder les modifications
+                                {theme ? 'Sauvegarder les modifications' : 'Créer le theme'}
                             </button>
                         </div>
                     </div>
