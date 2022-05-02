@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Topbar from '../components/topbar';
+import Topbar from '../components/topbarNew';
 import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';

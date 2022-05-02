@@ -25,47 +25,55 @@ export default function sideBar() {
                     <div className="sidebar-content">
                         <div className="sidebar-menu">
                             <ul>
-                                <li className="sidebar-dropdown">
-                                    <a href="#">
+                                <li
+                                // className="sidebar-dropdown"
+                                >
+                                    <a href="/">
                                         <i className="fa fa-home"></i>
                                         <span>Home</span>
                                     </a>
-                                    <div className="sidebar-submenu">
-                                        <ul>
-                                            <li>
-                                                <a href="#">Products</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Orders</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Credit cart</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    {/*<div className="sidebar-submenu">*/}
+                                    {/*    <ul>*/}
+                                    {/*        <li>*/}
+                                    {/*            <a href="#">Products</a>*/}
+                                    {/*        </li>*/}
+                                    {/*        <li>*/}
+                                    {/*            <a href="#">Orders</a>*/}
+                                    {/*        </li>*/}
+                                    {/*        <li>*/}
+                                    {/*            <a href="#">Credit cart</a>*/}
+                                    {/*        </li>*/}
+                                    {/*    </ul>*/}
+                                    {/*</div>*/}
                                 </li>
-                                <li className="sidebar-dropdown">
-                                    <a href="#">
+                                <li
+                                // className="sidebar-dropdown"
+                                >
+                                    <a href="/utilisateursNew">
                                         <i className="far fa-gem"></i>
                                         <span>Utilisateurs</span>
                                     </a>
-                                    <div className="sidebar-submenu">
-                                        <ul>
-                                            <li>
-                                                <a href="#">General</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    {/*<div className="sidebar-submenu">*/}
+                                    {/*    <ul>*/}
+                                    {/*        <li>*/}
+                                    {/*            <a href="#">General</a>*/}
+                                    {/*        </li>*/}
+                                    {/*    </ul>*/}
+                                    {/*</div>*/}
                                 </li>
                                 <li className="sidebar-dropdown">
                                     <a href="#">
                                         <i className="fa fa-chart-line"></i>
-                                        <span>Thèmes articles</span>
+                                        <span>Thèmes</span>
                                     </a>
                                     <div className="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="#">Pie chart</a>
+                                                <a href="/themesNew">Tous les themes</a>
+                                            </li>
+                                            <li>
+                                                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                                                <a href="/themes-articles-creationNew">Creer un theme</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -78,62 +86,65 @@ export default function sideBar() {
                                     <div className="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="#">Google maps</a>
+                                                <a href="/articlesNew">Tous les articles</a>
                                             </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i className="fa fa-book"></i>
-                                        <span>Trading & Crypto</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i className="fa fa-book"></i>
-                                        <span>Bot Trading</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i className="fa fa-calendar"></i>
-                                        <span>Crypto Wallet</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i className="fa fa-folder"></i>
-                                        <span>Broker</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i className="fa fa-folder"></i>
-                                        <span>Pays</span>
-                                    </a>
-                                </li>
-
-                                <li className="sidebar-dropdown">
-                                    <a href="#">
-                                        <i className="fas fa-money-check"></i>
-                                        <span>Abonnement</span>
-                                    </a>
-                                    <div className="sidebar-submenu">
-                                        <ul>
                                             <li>
-                                                <a href="#">General</a>
+                                                <a href="/articles-creationNew">Creer un article</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
+                                {/*<li>*/}
+                                {/*    <a href="#">*/}
+                                {/*        <i className="fa fa-book"></i>*/}
+                                {/*        <span>Trading & Crypto</span>*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
+                                {/*<li>*/}
+                                {/*    <a href="#">*/}
+                                {/*        <i className="fa fa-book"></i>*/}
+                                {/*        <span>Bot Trading</span>*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
+                                {/*<li>*/}
+                                {/*    <a href="#">*/}
+                                {/*        <i className="fa fa-calendar"></i>*/}
+                                {/*        <span>Crypto Wallet</span>*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
+                                {/*<li>*/}
+                                {/*    <a href="#">*/}
+                                {/*        <i className="fa fa-folder"></i>*/}
+                                {/*        <span>Broker</span>*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
+                                {/*<li>*/}
+                                {/*    <a href="#">*/}
+                                {/*        <i className="fa fa-folder"></i>*/}
+                                {/*        <span>Pays</span>*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
 
-                                <li>
-                                    <a href="#">
-                                        <i className="fa fa-cog"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
+                                {/*<li className="sidebar-dropdown">*/}
+                                {/*    <a href="#">*/}
+                                {/*        <i className="fas fa-money-check"></i>*/}
+                                {/*        <span>Abonnement</span>*/}
+                                {/*    </a>*/}
+                                {/*    <div className="sidebar-submenu">*/}
+                                {/*        <ul>*/}
+                                {/*            <li>*/}
+                                {/*                <a href="#">General</a>*/}
+                                {/*            </li>*/}
+                                {/*        </ul>*/}
+                                {/*    </div>*/}
+                                {/*</li>*/}
+
+                                {/*<li>*/}
+                                {/*    <a href="#">*/}
+                                {/*        <i className="fa fa-cog"></i>*/}
+                                {/*        <span>Settings</span>*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
                             </ul>
                         </div>
                     </div>
