@@ -24,7 +24,7 @@ export default function BotTrading() {
 
         apiClient.traders.getTraderCuration().then(
             (res) => {
-                setCuration(res.curationWithFollows);
+                setCuration(res);
                 console.log(res);
                 setLoading(false);
             },
