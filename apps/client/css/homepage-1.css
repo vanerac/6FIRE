@@ -2865,8 +2865,6 @@ body{
 .login_popup_wrapper .after_login ul li:last-child a:before{
   display: none;
 }
-.login_popup_wrapper .after_login ul li:first-child{
-}
 
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -2891,6 +2889,8 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 .login_popup_wrapper .register_col{
   background-color: #121212;
@@ -3980,4 +3980,22 @@ body{
 }
 .pricing_second_block .pricing_table .single_table{
   overflow: visible;
+}
+
+/* Forget password overlay style
+---------------------------------- */
+.forget_pass_overlay {position: absolute;top: 0;left: 0;height: 100%;background: #161a1a;padding: 30px;text-align: center; transform: translateY(100%); transition: all 1s ease; display: flex; align-items: center; justify-content: center;}
+
+.forget_pass_overlay .title {text-transform: uppercase;}
+
+.forget_pass_overlay form input {display: block;width: 100%;padding: 16px;background: transparent;border: 0;border-bottom: 1px solid #fff;margin-bottom: 15px;}
+
+.forget_pass_overlay #pass_submit {background: transparent;border: 1px solid #666;padding: 15px 45px;border-radius: 30px;color: #666;width: 160px;cursor: pointer;}
+
+.forget_pass_overlay .return {text-decoration: underline; cursor: pointer;}
+
+.forget_pass_overlay form {margin-bottom: 15px;}
+
+.forget_pass_overlay.show {
+  transform: translateY(0);
 }

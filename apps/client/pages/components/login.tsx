@@ -13,9 +13,19 @@ import $ from 'jquery';
     });
 } */
 if (typeof window !== 'undefined') {
-    console.log('test choda');
     $('.nav-close-btn').click(function () {
         $('.nav-item-wrap').removeClass('open');
+    });
+}
+
+/* Forget password overlay wrapper 
+-------------------------------------*/
+if (typeof window !== 'undefined') {
+    $('.reset_password').click(function () {
+        $('.forget_pass_overlay').addClass('show');
+    });
+    $('#return_login').click(function () {
+        $('.forget_pass_overlay').removeClass('show');
     });
 }
 
@@ -148,6 +158,19 @@ const LoginPopup = (props: any) => {
                                 <input onClick={handleSubmit} type="submit" value={'Me connecter'} />
                             </div>
                         </form>
+
+                        {/* forget pass overlay */}
+                        <div className="forget_pass_overlay">
+                            <div className='forget-div'>
+                                <div className="title">mot de pass oublie?</div>
+                                <p>veuilez saisir votre numero de telephone lors de votre inscription. Vous recevres un code pour modifier votre mot de passse.</p>
+                                <form action="">
+                                    <input type="email" placeholder='*Email' />
+                                    <button id="pass_submit">Valider</button>
+                                </form>
+                                <div id='return_login' className="return">Retour</div>
+                            </div>
+                        </div>
                     </div>
                     <div className="register_col">
                         <div className="title-wrap">
