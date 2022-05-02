@@ -132,9 +132,9 @@ const Header = () => {
                                 {/* <a href="/compte" className="my-account">
                                     Mon compte
                                 </a> */}
-                                <div className="search-bar">
+                                {/* <div className="search-bar">
                                     <img src="" alt="" />
-                                </div>
+                                </div> */}
 
                                 <div className="hamburger-icon">
                                     <div className="line"></div>

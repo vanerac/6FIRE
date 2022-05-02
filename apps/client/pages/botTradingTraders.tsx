@@ -10,7 +10,7 @@ import { Trader } from '@shared/services';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const BotTradingTrader: NextPage = (props: any) => {
+const BotTradingTrader: NextPage = () => {
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
     const [traders, setTraders] = useState<Trader[]>([]);
@@ -80,7 +80,7 @@ const BotTradingTrader: NextPage = (props: any) => {
                 <title>Bot Trading Trader - Crypto Trader</title>
             </Head>
             <input type="hidden" id="anPageName" name="page" value="bot-trading-traders" />
-            <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+            <Header />
             <div className="boat_Trading_Header">
                 <img src="/img/mask-group-327-1@1x.png" alt="" />
                 <div className="text-wrap">
