@@ -139,11 +139,39 @@ const BotTradingTrader: NextPage = () => {
                                 <td className="red">-136.46%</td>
                                 {trader.isFollowing === true ? (
                                     <td className="text-center">
-                                        <button className="btn">Se désabonner</button>
+                                        <button
+                                            onClick={() => {
+                                                setTraders(
+                                                    traders.map((e) => {
+                                                        if (trader.id === e.id) {
+                                                            e.isFollowing = false;
+                                                        }
+                                                        return e;
+                                                    }),
+                                                );
+                                                $unfollowTrader(trader.id);
+                                            }}
+                                            className="btn">
+                                            Se désabonner
+                                        </button>
                                     </td>
                                 ) : (
                                     <td className="text-center">
-                                        <button className="btn">Suivre</button>
+                                        <button
+                                            onClick={() => {
+                                                setTraders(
+                                                    traders.map((e) => {
+                                                        if (trader.id === e.id) {
+                                                            e.isFollowing = true;
+                                                        }
+                                                        return e;
+                                                    }),
+                                                );
+                                                $followTrader(trader.id);
+                                            }}
+                                            className="btn">
+                                            Suivre
+                                        </button>
                                     </td>
                                 )}
                             </tr>
