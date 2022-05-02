@@ -20,8 +20,9 @@ export default function Index() {
             .then((res) => {
                 setCookie('API_TOKEN', res.token, { path: '/' });
             })
-            .catch(() => {
-                alert('Login failed');
+            .catch((error) => {
+                console.log(error);
+                alert(error.i18n ?? error.message ?? error);
             });
     };
 
