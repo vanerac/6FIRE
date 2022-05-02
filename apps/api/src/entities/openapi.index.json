@@ -29,6 +29,9 @@
     "/auth/login": {
       "$ref": "./auth/auth.path.json#/login"
     },
+    "/auth/login/admin": {
+      "$ref": "./auth/auth.path.json#/loginAdmin"
+    },
     "/auth/logout": {
       "$ref": "./auth/auth.path.json#/logout"
     },

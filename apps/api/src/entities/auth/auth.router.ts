@@ -5,6 +5,7 @@ import { verifyToken } from '../../tools/auth.tools';
 const router = Router();
 
 router.post('/login', AuthController.login);
+router.post('/login/admin', AuthController.loginAdmin);
 router.get('/verify', verifyToken, AuthController.verify);
 router.get('/verify/new', verifyToken, AuthController.verifyNew);
 router.post('/register', AuthController.register);

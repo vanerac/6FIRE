@@ -37,6 +37,32 @@ export class AuthService {
     }
 
     /**
+     * LoginAdmin
+     * Login
+     * @param requestBody Login
+     * @returns any OK
+     * @throws ApiError
+     */
+    public loginAdmin(
+        requestBody: {
+            email: string;
+            password: string;
+        },
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/auth/login/admin',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
      * Logout
      * Logout
      * @returns any OK

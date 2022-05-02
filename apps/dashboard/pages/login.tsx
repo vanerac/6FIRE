@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import getApiClient from '@shared/tools/apiClient';
 
 export default function Index() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const submit = () => {
+        getApiClient('')
+            .auth.loginAdmin({ email, password })
+            .then(() => {
+                window.location.href = '/';
+            })
+            .catch(() => {
+                alert('Login failed');
+            });
+    };
+
+    const resetPassword = () => {
+        getApiClient('')
+            .admin.resetPassword()
+            .then(() => {
+                alert('Password reset');
+            });
+    };
+
     return (
         <div>
             <div className="login-wrapper">
@@ -11,20 +34,26 @@ export default function Index() {
                         <form action="">
                             <div className="single-input">
                                 <i className="fas fa-envelope"></i>
-                                <input type="eamil" placeholder="Email" />
+                                <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
                             </div>
                             <div className="single-input">
                                 <i className="fas fa-lock"></i>
-                                <input type="password" placeholder="Mot de pass" />
+                                <input
+                                    onChange={(event) => setPassword(event.target.value)}
+                                    type="password"
+                                    placeholder="Mot de pass"
+                                />
                             </div>
 
                             <div className="single-btn">
-                                <button id="send-btn" type="submit">
-                                    Connexio
+                                <button onClick={submit} id="send-btn" type="submit">
+                                    Connexion
                                 </button>
                             </div>
                             <div className="single-btn">
-                                <button className="forget-pass">Mot de pass oublie?</button>
+                                <button onChange={resetPassword} className="forget-pass">
+                                    Mot de pass oublie?
+                                </button>
                             </div>
                         </form>
                     </div>

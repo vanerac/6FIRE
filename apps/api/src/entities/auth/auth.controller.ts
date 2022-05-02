@@ -484,4 +484,53 @@ export default class AuthController {
             next(e);
         }
     }
+
+    static async loginAdmin(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { email, password } = req.body;
+            const user = await client.user.findFirst({
+                where: {
+                    email,
+                    isAdmin: true,
+                },
+                select: {
+                    id: true,
+                    email: true,
+                    password: true,
+                    verifiedEmail: true,
+                    verifiedPhone: true,
+                    telephone: true,
+                    isAdmin: true,
+                },
+            });
+            if (!user) {
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'User not found',
+                        i18n: 'error.user.not_found',
+                    }),
+                );
+            }
+
+            const isValid = await checkPassword(password, user.password);
+            if (!isValid) {
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Invalid password',
+                        i18n: 'error.user.password.invalid',
+                    }),
+                );
+            }
+
+            delete user.password;
+            const token = generateToken(user);
+            res.json({
+                token,
+            });
+        } catch (e) {
+            next(e);
+        }
+    }
 }
