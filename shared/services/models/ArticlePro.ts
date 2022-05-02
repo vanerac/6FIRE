@@ -28,6 +28,13 @@ export type ArticlePro = {
                 createdAt?: string;
                 updatedAt?: string;
                 themeId?: number;
+                bannerUrl?: string;
+                headerUrl?: string;
+                Theme?: {
+                    id?: number;
+                    name?: string;
+                    iconUrl?: string;
+                };
             };
         };
     }>;

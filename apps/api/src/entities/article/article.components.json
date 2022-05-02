@@ -58,6 +58,26 @@
                       },
                       "themeId": {
                         "type": "number"
+                      },
+                      "bannerUrl": {
+                        "type": "string"
+                      },
+                      "headerUrl": {
+                        "type": "string"
+                      },
+                      "Theme": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "iconUrl": {
+                            "type": "string"
+                          }
+                        }
                       }
                     }
                   }
@@ -88,12 +108,9 @@
         }
       },
       "required": [
-        "id",
         "title",
         "content",
         "hidden",
-        "createdAt",
-        "updatedAt",
         "themeId"
       ]
     },
@@ -179,6 +196,26 @@
                       },
                       "themeId": {
                         "type": "number"
+                      },
+                      "bannerUrl": {
+                        "type": "string"
+                      },
+                      "headerUrl": {
+                        "type": "string"
+                      },
+                      "Theme": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "iconUrl": {
+                            "type": "string"
+                          }
+                        }
                       }
                     }
                   }

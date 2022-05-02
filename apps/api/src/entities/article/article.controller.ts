@@ -43,6 +43,8 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    bannerUrl: true,
+                    headerUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -119,6 +121,8 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    headerUrl: true,
+                    bannerUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -139,6 +143,14 @@ export default class ArticleController implements CRUDController {
                                             createdAt: true,
                                             updatedAt: true,
                                             themeId: true,
+                                            bannerUrl: true,
+                                            headerUrl: true,
+                                            Theme: {
+                                                select: {
+                                                    name: true,
+                                                    iconUrl: true,
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -166,7 +178,6 @@ export default class ArticleController implements CRUDController {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
 
-        console.log(banner, header);
         try {
             const {
                 title,
@@ -202,17 +213,29 @@ export default class ArticleController implements CRUDController {
                     financement,
                 },
             });
-            if (recommendedArticleIds?.length) {
+            if (recommendedArticleIds.length > 0) {
                 await Promise.all(
                     recommendedArticleIds.map(async (recommendedArticleId) => {
-                        const recommandationId = await prisma.recommandation.create({
-                            data: {
+                        let recommandedId = recommendedArticleId;
+                        const recommendationId = await prisma.recommandation.findFirst({
+                            where: {
                                 articleId: +recommendedArticleId,
                             },
                         });
+                        if (!recommendationId) {
+                            const r = await prisma.recommandation.create({
+                                data: {
+                                    articleId: +recommendedArticleId,
+                                },
+                                select: {
+                                    id: true,
+                                },
+                            });
+                            recommandedId = r.id;
+                        }
                         await prisma.articleRecommandation.create({
                             data: {
-                                recommandedArticleId: +recommandationId.id,
+                                recommandedArticleId: recommandedId,
                                 referenceArticleId: article.id,
                             },
                         });
@@ -264,9 +287,26 @@ export default class ArticleController implements CRUDController {
             if (recommendedArticleIds.length > 0) {
                 await Promise.all(
                     recommendedArticleIds.map(async (recommendedArticleId) => {
+                        let recommandedId = recommendedArticleId;
+                        const recommendationId = await prisma.recommandation.findFirst({
+                            where: {
+                                articleId: +recommendedArticleId,
+                            },
+                        });
+                        if (!recommendationId) {
+                            const r = await prisma.recommandation.create({
+                                data: {
+                                    articleId: +recommendedArticleId,
+                                },
+                                select: {
+                                    id: true,
+                                },
+                            });
+                            recommandedId = r.id;
+                        }
                         await prisma.articleRecommandation.create({
                             data: {
-                                recommandedArticleId: recommendedArticleId,
+                                recommandedArticleId: recommandedId,
                                 referenceArticleId: article.id,
                             },
                         });
@@ -275,6 +315,7 @@ export default class ArticleController implements CRUDController {
             }
             res.status(200).json(article);
         } catch (error) {
+            console.log(error);
             next(error);
         }
     }

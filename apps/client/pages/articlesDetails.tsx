@@ -10,6 +10,25 @@ import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
 import draftToHtml from 'draftjs-to-html';
 
+const convertDate = (date: string) => {
+    const date_unix = new Date(date).getTime() / 1000;
+    const now = new Date().getTime() / 1000;
+    const diff = now - date_unix;
+    const days = Math.floor(diff / 86400);
+    const hours = Math.floor((diff - days * 86400) / 3600);
+    const minutes = Math.floor((diff - days * 86400 - hours * 3600) / 60);
+    const seconds = Math.floor(diff - days * 86400 - hours * 3600 - minutes * 60);
+    if (days > 0) {
+        return `${days} jours`;
+    } else if (hours > 0) {
+        return `${hours} heures`;
+    } else if (minutes > 0) {
+        return `${minutes} minutes`;
+    } else {
+        return `${seconds} secondes`;
+    }
+};
+
 const data = {
     blocks: [
         {
@@ -191,10 +210,12 @@ const HomePage: NextPage = (props: any) => {
     }, []);
 
     useEffect(() => {
-        if (!query.articleId) {
-            router.replace('/articlesPage');
-            return;
-        }
+        console.log('query', query);
+        // if (!query.articleId) {
+        //     console.log('no articleId');
+        //     router.replace('/articlesPage');
+        //     return;
+        // }
 
         setLoading(true);
         apiClient.article
@@ -242,22 +263,37 @@ const HomePage: NextPage = (props: any) => {
 
                 <div className="article_details_wrapper">
                     <div className="article_header">
-                        <Image src="/img/mask-group-326-1@1x.png" layout="fill" objectFit="cover" />
+                        <Image
+                            loader={() => ($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png'}
+                            src={($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png'}
+                            layout="fill"
+                            objectFit="cover"
+                        />
                     </div>
 
                     <div className="article_content">
                         <div className="author_box">
                             <div className="author-photo">
-                                <Image src="/img/group-1490-3@1x.png" layout="fill" />
+                                <Image
+                                    loader={() =>
+                                        ($articles?.Theme?.iconUrl as string) ?? '/img/mask-group-326-1@1x.png'
+                                    }
+                                    src={($articles?.Theme?.iconUrl as string) ?? '/img/mask-group-326-1@1x.png'}
+                                    layout={'fill'}
+                                />
                             </div>
                             <div className="category_date">
-                                <div className="category lato-bold-white-16px">Crypto</div>
-                                <div className="date lato-normal-manatee-14px">27 Février 2022</div>
+                                <div className="category lato-bold-white-16px">{$articles?.Theme?.name}</div>
+                                {/*`DD-MM-YYYY`*/}
+                                {/*<div className="date lato-normal-manatee-14px">{`${$articles.}`}</div>*/}
+                                <div className="date lato-normal-manatee-14px">
+                                    Il y a {convertDate($articles?.createdAt as string)}
+                                </div>
                             </div>
                         </div>
 
                         <div className="artitle_title">
-                            <h2 className="title lato-bold-white-22px">Les 5 erreurs à éviter en crypto</h2>
+                            <h2 className="title lato-bold-white-22px">{$articles?.title ?? ''}</h2>
                         </div>
 
                         <div dangerouslySetInnerHTML={{ __html: content }} />
@@ -352,52 +388,82 @@ const HomePage: NextPage = (props: any) => {
                         <div className="more_articles">
                             <div className="grid">
                                 {/* single article */}
-                                <div className="single_article">
-                                    <div className="artitle_thum">
-                                        <Image layout="fill" src="/img/mask-group-321-2@1x.png" />
-                                    </div>
-                                    <div className="cat_and_date">
-                                        <div className="category">
-                                            <p className="lato-normal-milano-red-12px line">Play to Earn</p>
-                                            <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
+                                {/*<div className="single_article">*/}
+                                {/*    <div className="artitle_thum">*/}
+                                {/*        <Image layout="fill" src="/img/mask-group-321-2@1x.png" />*/}
+                                {/*    </div>*/}
+                                {/*    <div className="cat_and_date">*/}
+                                {/*        <div className="category">*/}
+                                {/*            <p className="lato-normal-milano-red-12px line">Play to Earn</p>*/}
+                                {/*            <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>*/}
+                                {/*        </div>*/}
+                                {/*    </div>*/}
+                                {/*    <div className="article_title">*/}
+                                {/*        <h4 className="title">Axie Infinity, jeu Play to Earn</h4>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
+                                {$articles?.ArticleRecommandation?.map((a, index) => {
+                                    const article = a?.Recommandation?.Article;
+
+                                    return (
+                                        <div key={index} className="single_article">
+                                            <div className="artitle_thum">
+                                                <Image
+                                                    layout="fill"
+                                                    loader={() =>
+                                                        (article?.headerUrl as string) ?? '/img/mask-group-326-1@1x.png'
+                                                    }
+                                                    src={article?.headerUrl as string}
+                                                />
+                                            </div>
+                                            <div className="cat_and_date">
+                                                <div className="category">
+                                                    <p className="lato-normal-milano-red-12px line">
+                                                        {article?.Theme?.name}
+                                                    </p>
+                                                    <p className="article_date lato-light-manatee-12px">
+                                                        Il y a {convertDate(article?.createdAt as string)}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="article_title">
+                                                <h4 className="title">{article?.title}</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="article_title">
-                                        <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
-                                    </div>
-                                </div>
+                                    );
+                                })}
 
                                 {/* single article */}
-                                <div className="single_article">
-                                    <div className="artitle_thum">
-                                        <Image layout="fill" src="/img/mask-group-322-2@1x.png" />
-                                    </div>
-                                    <div className="cat_and_date">
-                                        <div className="category">
-                                            <p className="lato-normal-milano-red-12px  line">E-Commerce</p>
-                                            <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>
-                                        </div>
-                                    </div>
-                                    <div className="article_title">
-                                        <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
-                                    </div>
-                                </div>
+                                {/*<div className="single_article">*/}
+                                {/*    <div className="artitle_thum">*/}
+                                {/*        <Image layout="fill" src="/img/mask-group-322-2@1x.png" />*/}
+                                {/*    </div>*/}
+                                {/*    <div className="cat_and_date">*/}
+                                {/*        <div className="category">*/}
+                                {/*            <p className="lato-normal-milano-red-12px  line">E-Commerce</p>*/}
+                                {/*            <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>*/}
+                                {/*        </div>*/}
+                                {/*    </div>*/}
+                                {/*    <div className="article_title">*/}
+                                {/*        <h4 className="title">Axie Infinity, jeu Play to Earn</h4>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
 
                                 {/* single article */}
-                                <div className="single_article">
-                                    <div className="artitle_thum">
-                                        <Image layout="fill" src="/img/mask-group-323-1@1x.png" />
-                                    </div>
-                                    <div className="cat_and_date">
-                                        <div className="category">
-                                            <p className="lato-normal-milano-red-12px  line">Crypto</p>
-                                            <p className="article_date lato-light-manatee-12px">19 février 2022</p>
-                                        </div>
-                                    </div>
-                                    <div className="article_title">
-                                        <h4 className="title">Les 5 erreurs à éviter en crypton</h4>
-                                    </div>
-                                </div>
+                                {/*<div className="single_article">*/}
+                                {/*    <div className="artitle_thum">*/}
+                                {/*        <Image layout="fill" src="/img/mask-group-323-1@1x.png" />*/}
+                                {/*    </div>*/}
+                                {/*    <div className="cat_and_date">*/}
+                                {/*        <div className="category">*/}
+                                {/*            <p className="lato-normal-milano-red-12px  line">Crypto</p>*/}
+                                {/*            <p className="article_date lato-light-manatee-12px">19 février 2022</p>*/}
+                                {/*        </div>*/}
+                                {/*    </div>*/}
+                                {/*    <div className="article_title">*/}
+                                {/*        <h4 className="title">Les 5 erreurs à éviter en crypton</h4>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                     </div>

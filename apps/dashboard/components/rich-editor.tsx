@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { convertToRaw, EditorState } from 'draft-js';
+import React, { useState } from 'react';
+import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import dynamic from 'next/dynamic';
 import { useCookies } from 'react-cookie';
@@ -14,16 +14,14 @@ export default function RichtextEditor({
     existingContent,
 }: {
     onChange: ($content: object) => void;
-    existingContent?: any;
+    existingContent?: object;
 }) {
-    const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
+    const [editorState, setEditorState] = useState(() =>
+        existingContent
+            ? EditorState.createWithContent(convertFromRaw(existingContent as any))
+            : EditorState.createEmpty(),
+    );
     const [cookies] = useCookies(['API_TOKEN']);
-
-    useEffect(() => {
-        if (existingContent) {
-            setEditorState(EditorState.createWithContent(existingContent));
-        }
-    }, [existingContent]);
 
     const uploadImageCallBack = async (file: never) => {
         const host: string = process.env.NEXT_PUBLIC_API_ROUTE || 'http://localhost:3333/api';

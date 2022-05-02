@@ -97,7 +97,7 @@ const HomePage: NextPage = (props: any) => {
                                         })}
                                     </p>
                                     <p className="article_date lato-light-manatee-12px">
-                                        {convertDate(article.createdAt)}
+                                        {convertDate(article.createdAt as string)}
                                     </p>
                                 </div>
                             </div>
