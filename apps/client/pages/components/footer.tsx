@@ -11,7 +11,7 @@ const Footer = (props: any) => {
                 <div className="footer-menu-wrapper">
                     <div className="footer-logo">
                         <Link href="./">
-                            <img src="/img/logo/logo-footer.svg" alt="Footer Logo" />
+                            <img src="/img/logo/6fire-footer.png" alt="Footer Logo" />
                         </Link>
                     </div>
                     <div className="footer-nav">
