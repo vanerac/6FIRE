@@ -154,7 +154,26 @@ app.get('/', (req, res) => {
     });
 });
 
-fs.mkdirSync(configuration.UPLOAD_DIR, { recursive: true });
+fs.stat(configuration.UPLOAD_DIR, (err, stats) => {
+    if (err) {
+        fs.mkdir(configuration.UPLOAD_DIR, (err) => {
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+        });
+    } else {
+        console.log('FS already exists');
+        fs.readdir(configuration.UPLOAD_DIR, (err, files) => {
+            // print filename
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+            console.log(files);
+        });
+    }
+});
 
 app.use('/public', express.static(configuration.UPLOAD_DIR));
 

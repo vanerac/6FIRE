@@ -95,7 +95,7 @@ export default function Articles() {
                             title: article.title ?? '?',
                             hidden: article.hidden ? 'false' : 'true',
                         }))}
-                        editCallback={(id) => router.replace(`/articles-creation/?id=${id}`)}
+                        editCallback={(id) => router.replace(`/articles-creationNew?id=${id}`)}
                         deleteCallback={(id) => deleteArticle(+id)}
                     />
                 </div>
