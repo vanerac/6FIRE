@@ -9,7 +9,12 @@ const Footer = (props: any) => {
         <div>
             <footer id="footer_block">
                 <div className="footer-text">
-                    <p>Les investissements sont risqués. Les investissements sont risqués par nature, les utilisateurs doivent faire leurs propres recherches avant d’entreprendre toute action et n’investir que dans les limites de leurs capacités financières. Cet article ne constitue pas un conseil en investissement.</p>
+                    <p>
+                        Les investissements sont risqués. Les investissements sont risqués par nature, les utilisateurs
+                        doivent faire leurs propres recherches avant d’entreprendre toute action et n’investir que dans
+                        les limites de leurs capacités financières. Cet article ne constitue pas un conseil en
+                        investissement.
+                    </p>
                 </div>
                 <div className="footer-menu-wrapper">
                     <div className="footer-logo">
