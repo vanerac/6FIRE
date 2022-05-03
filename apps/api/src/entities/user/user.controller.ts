@@ -220,6 +220,7 @@ export class UserController implements CRUDController {
                     id: +id,
                 },
                 select: {
+                    id: true,
                     email: true,
                     firstName: true,
                     lastName: true,
