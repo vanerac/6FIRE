@@ -114,10 +114,10 @@ export default class ThemeController implements CRUDController {
         try {
             const { id } = req.params;
             // Todo: update photo
-            const { name, subscriptionLevel } = req.body;
+            const { name, subscriptionLevel, iconUrl } = req.body;
             const theme = await client.theme.update({
                 where: { id: +id },
-                data: { name, subscriptionLevel },
+                data: { name, subscriptionLevel, iconUrl },
             });
             res.status(200).json(theme);
         } catch (error) {

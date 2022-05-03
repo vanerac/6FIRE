@@ -261,6 +261,8 @@ export default class ArticleController implements CRUDController {
                 creation,
                 utilisateurs,
                 necessiteAudicance,
+                bannerUrl,
+                headerUrl,
                 financement,
             } = req.body;
             const article = await prisma.article.update({
@@ -278,6 +280,8 @@ export default class ArticleController implements CRUDController {
                     creation,
                     utilisateurs,
                     necessiteAudicance,
+                    bannerUrl,
+                    headerUrl,
                     financement,
                 },
             });
