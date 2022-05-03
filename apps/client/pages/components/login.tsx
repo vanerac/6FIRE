@@ -6,6 +6,7 @@ import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 import $ from 'jquery';
+import Link from 'next/link';
 
 /* scroll off */
 if (typeof window !== 'undefined') {
@@ -61,7 +62,7 @@ const LoginPopup = (props: any) => {
     const [mailError, setMailError] = useState('');
     let isValid = true;
     const [error, setError] = useState('');
-    const [cookies, setCookies] = useCookies(['API_TOKEN']);
+    const [cookies, setCookies, removeCookie] = useCookies(['API_TOKEN']);
     const [isCookie, setIsCookie] = useState();
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
@@ -122,10 +123,21 @@ const LoginPopup = (props: any) => {
                 <div className="after_login">
                     <ul>
                         <li>
-                            <a href="#">Mes donnees personnelles</a>
+                            <Link href="/compte">
+                                <a>Mes donnees personnelles</a>
+                            </Link>
                         </li>
                         <li>
                             <a href="#">Ma licence</a>
+                        </li>
+                        <li>
+                            <a
+                                onClick={() => {
+                                    removeCookie('API_TOKEN');
+                                    router.push('/');
+                                }}>
+                                Se déconnecter
+                            </a>
                         </li>
                     </ul>
                 </div>

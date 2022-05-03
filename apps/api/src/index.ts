@@ -102,11 +102,11 @@ app.use((err, req, res, $next) => {
 app.use(
     OpenApiValidator.middleware({
         apiSpec: openApiDocument,
-        // validateRequests: {
-        //     removeAdditional: 'all',
-        //     allowUnknownQueryParameters: false,
-        //     coerceTypes: false,
-        // },
+        validateRequests: {
+            removeAdditional: 'all',
+            allowUnknownQueryParameters: false,
+            coerceTypes: false,
+        },
         ignoreUndocumented: true,
         // validateResponses: {
         //     removeAdditional: 'failing',
@@ -178,6 +178,7 @@ fs.stat(configuration.UPLOAD_DIR, (err, stats) => {
 app.use('/public', express.static(configuration.UPLOAD_DIR));
 
 app.use((err, req, res, $next) => {
+    console.log(err);
     if (!(err instanceof ApiError)) {
         Sentry.captureException(err);
     }

@@ -69,6 +69,9 @@
     "UserStatus": {
       "type": "object",
       "properties": {
+        "id": {
+          "type": "number"
+        },
         "email": {
           "type": "string"
         },
@@ -80,26 +83,26 @@
         },
         "telephone": {
           "type": "string"
-        },
-        "UserSubscription": {
+        }
+      }
+    },
+    "UserSub": {
+      "type": "object",
+      "properties": {
+        "Subscription": {
           "type": "object",
           "properties": {
-            "Subscription": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "level": {
-                  "type": "number"
-                }
-              }
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "price": {
+              "type": "number"
+            },
+            "level": {
+              "type": "number"
             }
           }
         }

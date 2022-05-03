@@ -23,6 +23,7 @@ export type { Theme } from './models/Theme';
 export type { Trader } from './models/Trader';
 export type { User } from './models/User';
 export type { UserStatus } from './models/UserStatus';
+export type { UserSub } from './models/UserSub';
 export type { UserSubscription } from './models/UserSubscription';
 
 export { AdminService } from './services/AdminService';

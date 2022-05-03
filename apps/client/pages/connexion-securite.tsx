@@ -12,9 +12,9 @@ import Head from 'next/head';
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [oldPassword, $setOldPassword] = useState('');
-    const [newPassword, $setNewPassword] = useState('');
-    const [confirmPassword, $setConfirmPassword] = useState('');
+    const [oldPassword, setOldPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
 
@@ -27,7 +27,7 @@ const Compte: NextPage = (props: any) => {
         apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
 
-    const $updatePassword = () => {
+    const updatePassword = () => {
         setLoading(true);
         apiClient.auth
             .changePassword({
@@ -66,13 +66,25 @@ const Compte: NextPage = (props: any) => {
                 <div className="infor-form">
                     <form action="#">
                         <div className="input-wrap">
-                            <input type="password" placeholder="* Mot de passe actuel" />
-                            <input type="password" placeholder="* Nouveau mot de passe" />
-                            <input type="password" placeholder="* Confirmation du nouveau mot de passe" />
+                            <input
+                                onChange={(e) => setOldPassword(e.target.value)}
+                                type="password"
+                                placeholder="* Mot de passe actuel"
+                            />
+                            <input
+                                onChange={(e) => setNewPassword(e.target.value)}
+                                type="password"
+                                placeholder="* Nouveau mot de passe"
+                            />
+                            <input
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                type="password"
+                                placeholder="* Confirmation du nouveau mot de passe"
+                            />
                         </div>
 
                         <div className="send_btn">
-                            <button type="submit" className="primary-button">
+                            <button onClick={() => updatePassword()} type="submit" className="primary-button">
                                 <span>Modifier</span>
                                 <div className="right-arrow">
                                     <img src="/img/icon/right-arrow.png" alt="" />
