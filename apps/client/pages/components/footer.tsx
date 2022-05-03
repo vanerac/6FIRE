@@ -8,6 +8,9 @@ const Footer = (props: any) => {
     return (
         <div>
             <footer id="footer_block">
+                {/* <div className="footer-text">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima eveniet esse tempore fugit autem culpa accusantium, similique optio amet accusamus itaque officiis quas exercitationem odio unde molestias veniam sed corrupti et quidem debitis? Sit sint fugiat, adipisci dicta autem culpa!</p>
+                </div> */}
                 <div className="footer-menu-wrapper">
                     <div className="footer-logo">
                         <Link href="./">
