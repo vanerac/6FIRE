@@ -64,7 +64,7 @@ const Header = (props: any) => {
             router.pathname === '/cgv' ||
             router.pathname === '/cgu' ||
             router.pathname === '/mentionsLegales' ||
-            router.pathname === '/politiqueDeConfidentialite' ||
+            router.pathname === '/politiqueConfidentialite' ||
             router.pathname === '/404'
         ) {
             console.log('no check required');

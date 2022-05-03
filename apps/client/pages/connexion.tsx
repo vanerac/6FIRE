@@ -195,11 +195,17 @@ const Connexion: NextPage = () => {
                         <span className="span0-qb1m9I lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
                         </span>
-                        <span className="span1-qb1m9I lato-normal-white-12px">Conditions Générales d’Utilisation</span>
+                        <span onClick={() => router.push('/cgu')} className="span1-qb1m9I lato-normal-white-12px">
+                            Conditions Générales d’Utilisation{' '}
+                        </span>
                         <span className="span2-qb1m9I lato-normal-white-12px">
                             et consentez au traitement de vos données, conformément à la{' '}
                         </span>
-                        <span className="span3-qb1m9I lato-normal-white-12px">Politique de confidentialité</span>
+                        <span
+                            onClick={() => router.push('/politiqueConfidentialite')}
+                            className="span3-qb1m9I lato-normal-white-12px">
+                            Politique de confidentialité
+                        </span>
                         <span className="span4-qb1m9I lato-normal-white-12px"> de 6FIRE.</span>
                         <br />
                         <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
@@ -416,11 +422,17 @@ const Connexion: NextPage = () => {
                         <span className="span0-J4Md4x lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
                         </span>
-                        <span className="span1-J4Md4x lato-normal-white-12px">Conditions Générales d’Utilisation</span>
+                        <span
+                            onClick={() => router.push('/politiqueConfidentialite')}
+                            className="span1-J4Md4x lato-normal-white-12px">
+                            Conditions Générales d’Utilisation{' '}
+                        </span>
                         <span className="span2-J4Md4x lato-normal-white-12px">
                             et consentez au traitement de vos données, conformément à la{' '}
                         </span>
-                        <span className="span3-J4Md4x lato-normal-white-12px">Politique de confidentialité</span>
+                        <span onClick={() => router.push('/cgu')} className="span3-J4Md4x lato-normal-white-12px">
+                            Politique de confidentialité
+                        </span>
                         <span className="span4-J4Md4x lato-normal-white-12px"> de 6FIRE.</span>
                         <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
                             {errorCgu}
