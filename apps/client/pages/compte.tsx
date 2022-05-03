@@ -7,15 +7,16 @@ import router from 'next/router';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
-import { UserStatus } from '@shared/services';
+import { UserStatus, UserSub } from '@shared/services';
 import Head from 'next/head';
 
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [$me, setMe] = useState<UserStatus>();
+    const [me, setMe] = useState<UserStatus>();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
+    const [$subs, setSubs] = useState<UserSub[]>([]);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -25,7 +26,7 @@ const Compte: NextPage = (props: any) => {
         }
         setLoading(true);
         apiClient.user
-            .getMeStats()
+            .getMyStats()
             .then((res) => {
                 setMe(res);
                 setLoading(false);
@@ -34,6 +35,9 @@ const Compte: NextPage = (props: any) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
             });
+        apiClient.user.getMySubscriptions().then((res) => {
+            setSubs(res);
+        });
     }, []);
 
     return (
@@ -45,23 +49,26 @@ const Compte: NextPage = (props: any) => {
             <div className="account-wrapper">
                 <div className="main-title">
                     <h1 className="title">
-                        Compte <span>Marc Durand, marcdurand@gmail.com</span>
+                        Compte{' '}
+                        <span>
+                            {me?.firstName}, {me?.email}
+                        </span>
                     </h1>
                 </div>
                 <div className="informaion-wrapper">
-                    <div className="single-info">
+                    <div onClick={() => router.push('/infosPersonelles')} className="single-info">
                         <img src="/img/info-icon/person.png" alt="" />
                         <p>
                             Informations personnelles <span>Modifiez vos données personnelles</span>
                         </p>
                     </div>
-                    <div className="single-info">
+                    <div onClick={() => router.push('/connexion-securite')} className="single-info">
                         <img src="/img/info-icon/security.png" alt="" />
                         <p>
                             Connexion et sécurité <span>Mettez à jour votre mot de passe</span>
                         </p>
                     </div>
-                    <div className="single-info">
+                    <div onClick={() => router.push('#')} className="single-info">
                         <img src="/img/info-icon/card.png" alt="" />
                         <p>
                             Abonnement et paiement{' '}

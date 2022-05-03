@@ -442,7 +442,7 @@ export default function ArticlesCreation() {
                                         ))}
                                     </select>
                                 </div>
-                                <div className="closs-btn">
+                                <div onClick={() => setSelectedArticlesIds([])} className="closs-btn">
                                     <img src="/img/icon/close-red.svg" alt="" />
                                 </div>
                             </div>

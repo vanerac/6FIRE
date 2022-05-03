@@ -17,11 +17,14 @@
     "/user/{id}": {
       "$ref": "./user/user.path.json#/user"
     },
-    "/user/{id}/subscription": {
+    "/user/id/{id}/subscription": {
       "$ref": "./user/user.path.json#/subscription"
     },
-    "/user/me": {
-      "$ref": "./user/user.path.json#/me"
+    "/user/me/infos": {
+      "$ref": "./user/user.path.json#/myInfos"
+    },
+    "/user/me/subscription": {
+      "$ref": "./user/user.path.json#/mySubscriptions"
     },
     "/user/me/getLinkingCode": {
       "$ref": "./user/user.path.json#/getLinkingCode"
@@ -247,6 +250,9 @@
       },
       "ArticlePro": {
         "$ref": "./openapi.components.json#/schemas/ArticlePro"
+      },
+      "UserSub": {
+        "$ref": "./openapi.components.json#/schemas/UserSub"
       }
     }
   }

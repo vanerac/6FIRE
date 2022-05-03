@@ -53,6 +53,9 @@
     },
     "ArticlePro": {
       "$ref": "./article/article.components.json#/schemas/ArticlePro"
+    },
+    "UserSub": {
+      "$ref": "./user/user.components.json#/schemas/UserSub"
     }
   }
 }

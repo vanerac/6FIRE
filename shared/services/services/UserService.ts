@@ -4,6 +4,7 @@
 import type { Subscription } from '../models/Subscription';
 import type { User } from '../models/User';
 import type { UserStatus } from '../models/UserStatus';
+import type { UserSub } from '../models/UserSub';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
@@ -127,7 +128,7 @@ export class UserService {
     ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'GET',
-            url: '/user/{id}/subscription',
+            url: '/user/id/{id}/subscription',
             path: {
                 'id': id,
             },
@@ -151,7 +152,7 @@ export class UserService {
     ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'PUT',
-            url: '/user/{id}/subscription',
+            url: '/user/id/{id}/subscription',
             path: {
                 'id': id,
             },
@@ -175,7 +176,7 @@ export class UserService {
     ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'DELETE',
-            url: '/user/{id}/subscription',
+            url: '/user/id/{id}/subscription',
             path: {
                 'id': id,
             },
@@ -191,10 +192,26 @@ export class UserService {
      * @returns UserStatus successful operation
      * @throws ApiError
      */
-    public getMeStats(): CancelablePromise<UserStatus> {
+    public getMyStats(): CancelablePromise<UserStatus> {
         return this.httpRequest.request({
             method: 'GET',
-            url: '/user/me',
+            url: '/user/me/infos',
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
+     * get the current user subscriptions
+     * @returns UserSub successful operation
+     * @throws ApiError
+     */
+    public getMySubscriptions(): CancelablePromise<Array<UserSub>> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/user/me/subscription',
             errors: {
                 400: `Invalid user supplied`,
                 500: `Internal server error`,
