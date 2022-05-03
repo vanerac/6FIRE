@@ -172,10 +172,12 @@ export default function ArticlesCreation() {
                         setSelectedArticlesIds(((res as Article).recommendedArticleIds as number[]) ?? []);
                         setLoading(false);
                         router.replace('/articles-creationNew?id=' + (res as Article).id);
+                        alert('Article created');
                     },
                     (error) => {
                         setError(error.i18n ?? error.message ?? 'Unknown error');
                         setLoading(false);
+                        alert('Erreur, verifier les champs');
                     },
                 );
         } else {
@@ -198,6 +200,7 @@ export default function ArticlesCreation() {
                 (error) => {
                     setError(error.i18n ?? error.message ?? 'Unknown error');
                     setLoading(false);
+                    alert('Erreur, verifier les champs');
                 },
             );
         }
@@ -263,12 +266,17 @@ export default function ArticlesCreation() {
                                         name=""
                                         id=""
                                         onChange={(event: any) => setSelectedThemeId(event.target.value)}>
+                                        <option value="0" disabled>
+                                            Selectionnez un theme
+                                        </option>
                                         {$availableThemes.map((theme) => (
-                                            <option key={theme.id} value={theme.id}>
+                                            <option
+                                                key={theme.id}
+                                                value={theme.id}
+                                                selected={theme.id == article?.themeId}>
                                                 {theme.name}
                                             </option>
                                         ))}
-                                        <option value="0">Articles</option>
                                     </select>
                                 </div>
                                 <div className="single-item">
@@ -368,30 +376,30 @@ export default function ArticlesCreation() {
                     </div>
 
                     {/* Podcast */}
-                    <div className="table-wrapper">
-                        <div className="table-title bg_blue">
-                            <span>Podcast</span>
-                        </div>
+                    {/*<div className="table-wrapper">*/}
+                    {/*    <div className="table-title bg_blue">*/}
+                    {/*        <span>Podcast</span>*/}
+                    {/*    </div>*/}
 
-                        {/* table content */}
-                        <div className="table-content">
-                            <div className="row-1 inline-flex">
-                                <div className="single-item mr-30">
-                                    <div className="regular-btn">
-                                        <button className="bg_yellow" id="podcast">
-                                            Ajouter un Podcast
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="single-item mr-30">
-                                    <label className="small_title" htmlFor="">
-                                        Podcast
-                                    </label>
-                                    <input type="text" placeholder="Nom du fichier" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {/*    /!* table content *!/*/}
+                    {/*    /!*<div className="table-content">*!/*/}
+                    {/*    /!*    <div className="row-1 inline-flex">*!/*/}
+                    {/*    /!*        <div className="single-item mr-30">*!/*/}
+                    {/*    /!*            <div className="regular-btn">*!/*/}
+                    {/*    /!*                <button className="bg_yellow" id="podcast">*!/*/}
+                    {/*    /!*                    Ajouter un Podcast*!/*/}
+                    {/*    /!*                </button>*!/*/}
+                    {/*    /!*            </div>*!/*/}
+                    {/*    /!*        </div>*!/*/}
+                    {/*    /!*        <div className="single-item mr-30">*!/*/}
+                    {/*    /!*            <label className="small_title" htmlFor="">*!/*/}
+                    {/*    /!*                Podcast*!/*/}
+                    {/*    /!*            </label>*!/*/}
+                    {/*    /!*            <input type="text" placeholder="Nom du fichier" />*!/*/}
+                    {/*    /!*        </div>*!/*/}
+                    {/*    /!*    </div>*!/*/}
+                    {/*    /!*</div>*!/*/}
+                    {/*</div>*/}
 
                     {/* Article Suggestion */}
                     <div className="table-wrapper">
@@ -425,7 +433,7 @@ export default function ArticlesCreation() {
                                         id="articleSelection"
                                         className="width-300">
                                         <option value="0" disabled>
-                                            Articles
+                                            Choisissez un article
                                         </option>
                                         {articleSuggestions.map((article, index) => (
                                             <option key={index} value={article.id}>

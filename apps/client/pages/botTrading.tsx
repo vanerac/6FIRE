@@ -81,7 +81,7 @@ const BotTrading: NextPage = (props: any) => {
                         <div className="rectangle-3580-N3ENNR"></div>
                         <div className="x1-N3ENNR roboto-normal-white-18px">1</div>
                         <div className="rectangle-3581-N3ENNR border-1px-white"></div>
-                        <div className="x13425656-N3ENNR lato-bold-white-14px">13425656</div>
+                        <div className="x13425656-N3ENNR lato-bold-white-14px">{$linkingCode}</div>
                         <div className="button-N3ENNR">
                             <div className="rectangle-3582-z5Txxg"></div>
                             <div className="copier-z5Txxg lato-normal-white-14px">Copier</div>
@@ -96,7 +96,7 @@ const BotTrading: NextPage = (props: any) => {
                             Activer le Bot Telegram
                         </div>
                         <div className="cliquez-sur-le-bouto-iz5Vdo lato-normal-white-14px">
-                            Cliquez sur le bouton «Rejoindre le BOT» puis envoyez START/
+                            Cliquez sur le bouton «Rejoindre le BOT» puis envoyez START/ et ton code
                             <br />
                             Vous allez recevoir ensuite un message du Bot et vous devrez coller votre identifiant que
                             vous avez déjà copié à l’étape 1.
@@ -295,7 +295,7 @@ const BotTrading: NextPage = (props: any) => {
                     <div className="rectangle-3580-YpaaMh"></div>
                     <div className="x1-YpaaMh roboto-normal-white-18px">1</div>
                     <div className="rectangle-3581-YpaaMh border-1px-white"></div>
-                    <div className="x13425656-YpaaMh lato-bold-white-14px">13425656</div>
+                    <div className="x13425656-YpaaMh lato-bold-white-14px">{$linkingCode}</div>
                     <div className="button-YpaaMh">
                         <div className="rectangle-3582-l6ErpC"></div>
                         <div className="copier-l6ErpC lato-normal-white-14px">Copier</div>
