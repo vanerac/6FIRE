@@ -241,6 +241,7 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
+            console.log(error);
             next(error);
         }
     }

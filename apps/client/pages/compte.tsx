@@ -52,19 +52,19 @@ const Compte: NextPage = (props: any) => {
                     </h1>
                 </div>
                 <div className="informaion-wrapper">
-                    <div className="single-info">
+                    <div onClick={() => router.push('/infosPersonelles')} className="single-info">
                         <img src="/img/info-icon/person.png" alt="" />
                         <p>
                             Informations personnelles <span>Modifiez vos données personnelles</span>
                         </p>
                     </div>
-                    <div className="single-info">
+                    <div onClick={() => router.push('/connexion-securite')} className="single-info">
                         <img src="/img/info-icon/security.png" alt="" />
                         <p>
                             Connexion et sécurité <span>Mettez à jour votre mot de passe</span>
                         </p>
                     </div>
-                    <div className="single-info">
+                    <div onClick={() => router.push('#')} className="single-info">
                         <img src="/img/info-icon/card.png" alt="" />
                         <p>
                             Abonnement et paiement{' '}
