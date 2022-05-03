@@ -12,6 +12,7 @@ import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 // import translate from '@shared/translation'
 import Head from 'next/head';
+import IndexHeader from './components/header_inext';
 
 /* scroll off */
 if (typeof window !== 'undefined') {
@@ -158,6 +159,7 @@ const Connexion: NextPage = () => {
                 <title>Connexion</title>
             </Head>
             <LoginPopup />
+            <IndexHeader />
             <input type="hidden" id="anPageName" name="page" value="register-web" />
             <div className="register-web screen">
                 <div className="background-WxaGAS"></div>
@@ -350,23 +352,6 @@ const Connexion: NextPage = () => {
                         type="text"
                     />
                 </div>
-                <div className="connexion-WxaGAS">
-                    <div className="icon-ionic-ios-menu-zebl9P">
-                        <div className="connexion-zebl9P">
-                            <div className="club-premium-RhkVlt lato-normal-white-14px">Club Privé</div>
-                        </div>
-                    </div>
-                </div>
-                {/* Hamburger icon style */}
-                <input id="menu__toggle" type="checkbox" />
-                <label
-                    onClick={() => {
-                        handleForm();
-                    }}
-                    className="menu__btn scroll_off"
-                    htmlFor="menu__toggle">
-                    <span></span>
-                </label>
                 {/* Hamburger icon END */}
 
                 {/* Hamburger mobile */}
@@ -543,22 +528,6 @@ const Connexion: NextPage = () => {
                     className="dj-inscrit-connectez-vous-qfTrnm">
                     Déjà inscrit ? Connectez vous
                 </div>
-                <div className="connexion-qfTrnm">
-                    <div className="connexion-1aVEbJ">
-                        <div className="club-premium-MoQQxl lato-normal-white-14px">Club Privé</div>
-                    </div>
-                </div>
-                {/* Hamburger icon style */}
-                <input id="menu__toggle" type="checkbox" />
-                <label
-                    onClick={() => {
-                        handleForm();
-                    }}
-                    className="menu__btn scroll_off"
-                    htmlFor="menu__toggle">
-                    <span></span>
-                </label>
-                {/* Hamburger icon END */}
 
                 {/* Hamburger mobile */}
                 <div

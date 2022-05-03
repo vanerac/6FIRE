@@ -2708,41 +2708,64 @@
 
 /* Article with thum block (by Zihad)
 ===================================== */
-body {
-    background-color: var(--black-3);
+body{
+  background-color: var(--black-3);
+}
+.article_wrapper{
+  max-width: 1400px;
+  margin: 145px auto 80px;
+  padding: 0 3%;
+  margin-top: calc(145px + 3%);
+  background-color: var(--black-3);
+}
+.article_wrapper .grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320)));
+  grid-row-gap: calc(25px + (60 - 25) * ((100vw - 320px) / (1920 - 320)));
+}
+.article_wrapper .grid .single_article{
+  cursor: pointer;
+}
+.article_wrapper .artitle_thum{
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  height: 205px;
+  transition: all 0.5s ease;
+}
+.article_wrapper .artitle_thum img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: all 1s ease;
+}
+.article_wrapper .artitle_thum img.hoverImg{
+  opacity: 0;
+  z-index: -1;
+}
+.single_article:hover .artitle_thum img.hoverImg{
+  opacity: 1;
+  z-index: 2;
 }
 
-.article_wrapper {
-    max-width: 1400px;
-    margin: 145px auto 80px;
-    padding: 0 3%;
-    margin-top: calc(145px + 3%);
-    background-color: var(--black-3);
+.article_wrapper .grid .single_article .artitle_thum span{
+  position: relative !important;
 }
-
-.article_wrapper .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320)));
-    grid-row-gap: calc(25px + (60 - 25) * ((100vw - 320px) / (1920 - 320)));
-}
-
-.article_wrapper .grid .single_article {
-    cursor: pointer;
-}
-
-.article_wrapper .grid .single_article .artitle_thum span {
-    position: relative !important;
-}
-
-.article_wrapper .grid .single_article .artitle_thum span img {
-    position: relative !important;
-    margin: inherit !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 200px !important;
-    object-fit: contain;
-    object-position: center;
+.article_wrapper .grid .single_article .artitle_thum span img{
+  position: relative !important;
+  margin: inherit !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 200px !important;
+  object-fit: contain;
+  object-position: center;
 }
 
 .article_wrapper .grid .single_article .cat_and_date .category {
@@ -3229,8 +3252,8 @@ body {
     display: block;
 }
 
-.index-header .index-logo img {
-    max-width: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
+.index-header .index-logo img{
+  max-width: calc(200px + (200 - 200) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .index-header .scroll-icon img {
@@ -3242,10 +3265,17 @@ body {
     color: #99999f;
     font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
 }
-
-.index-header p.big-text {
-    color: #fff;
-    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+.position-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  cursor: pointer;
+}
+.index-header p.big-text{
+  color: #fff;
+  font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .index-header .primary-button {

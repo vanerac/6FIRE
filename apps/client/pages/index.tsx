@@ -1,10 +1,26 @@
 import type { NextPage } from 'next';
 import Footer from './components/footer';
 import Head from 'next/head';
+import $ from 'jquery';
+import IndexHeader from './components/header_inext';
+
+/* scroll off */
+
+if (typeof window !== 'undefined') {
+    $('#video_trigger').click(function () {
+        $('html, body').animate(
+            {
+                scrollTop: $('#video_wrapper').offset()?.top,
+            },
+            1000,
+        );
+    });
+}
 
 const HomePage: NextPage = ($props: any) => {
     return (
         <div>
+            <IndexHeader />
             <Head>
                 <title>Accueil - Tout connaitre</title>
             </Head>
@@ -27,7 +43,7 @@ const HomePage: NextPage = ($props: any) => {
                             </div>
                         </a>
                     </div>
-                    <div className="mb-equal">
+                    <div className="mb-equal position-bottom" id="video_trigger">
                         <p className="big-text">Visionner la vidéo obligatoire pour comprendre le club privé 6FIRE</p>
                         <div className="scroll-icon">
                             <img src="img/icon-material-keyboard-arrow-down@1x.png" alt="" />
@@ -37,8 +53,8 @@ const HomePage: NextPage = ($props: any) => {
             </div>
             {/* Home header block END */}
 
-            {/* Home Photo block */}
-            <div className="index-photo-block">
+            {/* Index Photo block */}
+            <div className="index-photo-block" id="video_wrapper">
                 <div className="contanier">
                     <img src="img/cute-cat.jpg" alt="" />
                 </div>
