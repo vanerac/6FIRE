@@ -19,6 +19,9 @@
     margin-left: 25px;
     cursor: pointer;
 }
+#footer_block .footer-nav .social img:first-child {
+    margin: 0;
+}
 #footer_block .footer-nav .social a {display: inline-block; margin: 0 15px;}
 #footer_block .copyright{text-align: center; color: #909090; font-size: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))); padding: 15px 0;}
 #footer_block .footer-menu-wrapper{

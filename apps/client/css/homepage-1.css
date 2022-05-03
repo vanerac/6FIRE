@@ -3159,7 +3159,7 @@ body{
   display: block;
 }
 .index-header .index-logo img{
-  max-width: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
+  max-width: calc(200px + (200 - 200) * ((100vw - 320px) / (1920 - 320)));
 }
 .index-header .scroll-icon img{
   max-width: 19px;
@@ -3168,6 +3168,14 @@ body{
 .index-header p{
   color: #99999f;
   font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+}
+.position-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  cursor: pointer;
 }
 .index-header p.big-text{
   color: #fff;
