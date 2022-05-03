@@ -3,7 +3,7 @@ import Image from 'next/image';
 // import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ApiError } from '@shared/services';
 // import checkAuth from './components/checkAuth';
 import $ from 'jquery';
@@ -43,14 +43,20 @@ const Connexion: NextPage = () => {
     const [cookies, setCookie] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    // useEffect(() => {
-    //     if (!cookies['API_TOKEN']) {
-    //         console.log('no token');
-    //         router.replace('/');
-    //         return;
-    //     }
-    //     apiClient = getAPIClient(cookies['API_TOKEN']);
-    // }, []);
+    useEffect(() => {
+        if (cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/pricePage');
+            return;
+        }
+    }, [cookies]);
+    useEffect(() => {
+        if (cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/pricePage');
+            return;
+        }
+    }, []);
 
     const handleForm = () => {
         $('.login_popup_wrapper').toggleClass('open');
@@ -129,6 +135,9 @@ const Connexion: NextPage = () => {
                 console.log(response);
                 if (response.token) {
                     setCookie('API_TOKEN', response.token, { path: '/' });
+                    setCookie('API_TOKEN', response.token, { domain: 'localhost' });
+                    setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
+                    setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
                     router.push('/articlesPage');
                 }
             })

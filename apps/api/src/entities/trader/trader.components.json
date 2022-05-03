@@ -10,6 +10,10 @@
           "type": "string",
           "nullable": false
         },
+        "rank": {
+          "type": "number",
+          "nullable": false
+        },
         "clientId": {
           "type": "string",
           "nullable": false

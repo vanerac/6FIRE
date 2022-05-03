@@ -352,7 +352,11 @@ resource "aws_ecs_task_definition" "api" {
       },
       {
         "name": "BACKEND_URL",
-        "value": "${aws_lb.api.dns_name}"
+        "value": "https://api.6fireinvest.com"
+      },
+      {
+        "name": "UPLOAD_DIR",
+        "value": "/upload"
       }
     ],
     "logConfiguration": {
@@ -533,6 +537,10 @@ resource "aws_ecs_task_definition" "bot" {
       {
         "name": "DATABASE_URL",
         "value": "postgres://${aws_db_instance.default.username}:${aws_db_instance.default.password}@${aws_db_instance.default.address}:${aws_db_instance.default.port}"
+      },
+      {
+        "name": "TELEGRAM_TOKEN",
+        "value": "5378146044:AAE1angcH9uuJ7c5J4HXUPNqMsyDnUW-AoI"
       }
     ],
     "logConfiguration": {

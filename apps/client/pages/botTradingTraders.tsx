@@ -8,8 +8,9 @@ import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Trader } from '@shared/services';
 import Head from 'next/head';
+import Link from 'next/link';
 
-const BotTradingTrader: NextPage = (props: any) => {
+const BotTradingTrader: NextPage = () => {
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
     const [traders, setTraders] = useState<Trader[]>([]);
@@ -23,14 +24,17 @@ const BotTradingTrader: NextPage = (props: any) => {
             return;
         }
         apiClient = getAPIClient(cookies['API_TOKEN']);
+        console.log('inside');
 
         setLoading(true);
         apiClient.traders
             .getTraderCuration()
             .then((res) => {
                 // Todo: return the subscription status of the user
+
                 setTraders(res);
                 setLoading(false);
+                console.log(Object.keys(res));
             })
             .catch((error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
@@ -76,7 +80,7 @@ const BotTradingTrader: NextPage = (props: any) => {
                 <title>Bot Trading Trader - Crypto Trader</title>
             </Head>
             <input type="hidden" id="anPageName" name="page" value="bot-trading-traders" />
-            <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+            <Header />
             <div className="boat_Trading_Header">
                 <img src="/img/mask-group-327-1@1x.png" alt="" />
                 <div className="text-wrap">
@@ -87,8 +91,12 @@ const BotTradingTrader: NextPage = (props: any) => {
                     </p>
 
                     <div className="button-wrap">
-                        <a href="#">ACCÈS AU BOT</a>
-                        <a href="#">TRADERS</a>
+                        <Link href="/botTrading">
+                            <a>ACCÈS AU BOT</a>
+                        </Link>
+                        <Link href="/botTradingTraders">
+                            <a>TRADERS</a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -113,26 +121,62 @@ const BotTradingTrader: NextPage = (props: any) => {
                                 <td className="text-center">Suivre</td>
                             </tr>
                         </thead>
-                        <tr>
-                            <td className="pl-30">
-                                <div className="user-wrap">
-                                    <div className="rank">1</div>
-                                    <img src="/img/icon/user-logo.png" alt="" />
-                                    <div className="user-name">
-                                        <span className="imgTitle">
-                                            TOP TRADER <img src="/img/icon/crown.png" alt="" />
-                                        </span>
-                                        <span className="company">WetCrossBus</span>
+                        {traders.map((trader: Trader & any) => (
+                            <tr key={trader.id}>
+                                <td className="pl-30">
+                                    <div className="user-wrap">
+                                        <div className="rank">{trader.id}</div>
+                                        <img src="/img/icon/user-logo.png" alt="" />
+                                        <div className="user-name">
+                                            <span className="imgTitle">
+                                                TOP TRADER <img src="/img/icon/crown.png" alt="" />
+                                            </span>
+                                            <span className="company">{trader.name}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td className="green">1,495.44%</td>
-                            <td className="red">-136.46%</td>
-                            <td className="text-center">
-                                <button className="btn">+Suivre</button>
-                            </td>
-                        </tr>
-                        <tr>
+                                </td>
+                                <td className="green">1,495.44%</td>
+                                <td className="red">-136.46%</td>
+                                {trader.isFollowing === true ? (
+                                    <td className="text-center">
+                                        <button
+                                            onClick={() => {
+                                                setTraders(
+                                                    traders.map((e: any) => {
+                                                        if (trader.id === e.id) {
+                                                            e.isFollowing = false;
+                                                        }
+                                                        return e;
+                                                    }),
+                                                );
+                                                $unfollowTrader(trader.id);
+                                            }}
+                                            className="btn">
+                                            Se désabonner
+                                        </button>
+                                    </td>
+                                ) : (
+                                    <td className="text-center">
+                                        <button
+                                            onClick={() => {
+                                                setTraders(
+                                                    traders.map((e: any) => {
+                                                        if (trader.id === e.id) {
+                                                            e.isFollowing = true;
+                                                        }
+                                                        return e;
+                                                    }),
+                                                );
+                                                $followTrader(trader.id);
+                                            }}
+                                            className="btn">
+                                            Suivre
+                                        </button>
+                                    </td>
+                                )}
+                            </tr>
+                        ))}
+                        {/* <tr>
                             <td className="pl-30">
                                 <div className="user-wrap">
                                     <div className="rank">2</div>
@@ -295,7 +339,7 @@ const BotTradingTrader: NextPage = (props: any) => {
                             <td className="text-center">
                                 <button className="btn">+Suivre</button>
                             </td>
-                        </tr>
+                        </tr> */}
                     </table>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import Image from 'next/image';
 // import router from 'next/router';
 import { ApiError } from '@shared/services';
@@ -62,16 +62,18 @@ const LoginPopup = (props: any) => {
     let isValid = true;
     const [error, setError] = useState('');
     const [cookies, setCookies] = useCookies(['API_TOKEN']);
+    const [isCookie, setIsCookie] = useState();
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    // useEffect(() => {
-    //     if (!cookies['API_TOKEN']) {
-    //         console.log('no token');
-    //         router.replace('/');
-    //         return;
-    //     }
-    //     apiClient = getAPIClient(cookies['API_TOKEN']);
-    // }, []);
+    useEffect(() => {
+        // if (!cookies['API_TOKEN']) {
+        //     console.log('no token');
+        //     router.replace('/');
+        //     return;
+        // }
+        // apiClient = getAPIClient(cookies['API_TOKEN']);
+        setIsCookie(cookies['API_TOKEN']);
+    }, []);
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
@@ -100,6 +102,9 @@ const LoginPopup = (props: any) => {
                     console.log(response);
                     if (response.token) {
                         setCookies('API_TOKEN', response.token, { path: '/' });
+                        setCookies('API_TOKEN', response.token, { domain: 'localhost' });
+                        setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
+                        setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
                         router.push('/articlesPage');
                     }
                 })
@@ -113,19 +118,17 @@ const LoginPopup = (props: any) => {
 
     return (
         <div className="login_popup_wrapper">
-            {cookies['API_TOKEN'] ? (
-                <>
-                    <div className="after_login">
-                        <ul>
-                            <li>
-                                <a href="#">Mes donnees personnelles</a>
-                            </li>
-                            <li>
-                                <a href="#">Ma licence</a>
-                            </li>
-                        </ul>
-                    </div>
-                </>
+            {isCookie ? (
+                <div className="after_login">
+                    <ul>
+                        <li>
+                            <a href="#">Mes donnees personnelles</a>
+                        </li>
+                        <li>
+                            <a href="#">Ma licence</a>
+                        </li>
+                    </ul>
+                </div>
             ) : (
                 <>
                     <div className="login_access_col">

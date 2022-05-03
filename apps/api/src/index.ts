@@ -67,7 +67,15 @@ app.use(
     cors({
         origin: '*',
         credentials: true,
-        allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'sentry-trace'],
+        allowedHeaders: [
+            'Origin',
+            'X-Api-Key',
+            'X-Requested-With',
+            'Content-Type',
+            'Authorization',
+            'Accept',
+            'sentry-trace',
+        ],
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );
@@ -94,11 +102,11 @@ app.use((err, req, res, $next) => {
 app.use(
     OpenApiValidator.middleware({
         apiSpec: openApiDocument,
-        validateRequests: {
-            removeAdditional: 'all',
-            allowUnknownQueryParameters: false,
-            coerceTypes: false,
-        },
+        // validateRequests: {
+        //     removeAdditional: 'all',
+        //     allowUnknownQueryParameters: false,
+        //     coerceTypes: false,
+        // },
         ignoreUndocumented: true,
         // validateResponses: {
         //     removeAdditional: 'failing',
@@ -146,7 +154,26 @@ app.get('/', (req, res) => {
     });
 });
 
-fs.mkdirSync(configuration.UPLOAD_DIR, { recursive: true });
+fs.stat(configuration.UPLOAD_DIR, (err, stats) => {
+    if (err) {
+        fs.mkdir(configuration.UPLOAD_DIR, (err) => {
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+        });
+    } else {
+        console.log('FS already exists');
+        fs.readdir(configuration.UPLOAD_DIR, (err, files) => {
+            // print filename
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+            console.log(files);
+        });
+    }
+});
 
 app.use('/public', express.static(configuration.UPLOAD_DIR));
 
@@ -165,6 +192,47 @@ app.use((err, req, res, $next) => {
 app.listen(3333, () => {
     console.log('🚀 Server started on port 3333!');
 });
+
+// prisma.subscription.create({
+//     data: {
+//         hidden: true,
+//         name: 'test',
+//         description: 'test',
+//         level: 1,
+//         refreshRate: 1,
+//         subscriptionType: 'SUBSCRIPTION',
+//         price: 1,
+//     },
+// });
+
+// upsert
+prisma.subscription
+    .upsert({
+        where: {
+            id: 1,
+        },
+        create: {
+            hidden: false,
+            name: 'test',
+            description: 'test',
+            level: 1,
+            refreshRate: 1,
+            subscriptionType: 'SUBSCRIPTION',
+            price: 1,
+        },
+        update: {
+            hidden: false,
+            name: 'test',
+            description: 'test',
+            level: 1,
+            refreshRate: 1,
+            subscriptionType: 'SUBSCRIPTION',
+            price: 1,
+        },
+    })
+    .then((result) => {
+        console.log(result);
+    });
 
 process.on('unhandledRejection', (reason, p) => {
     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);

@@ -30,7 +30,7 @@ jobs:
         with:
           role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
           aws-region: eu-west-1
-      - name: Login to Amazon ECR
+      - name: Home to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
       - name: Build the tagged Docker image

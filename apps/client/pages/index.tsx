@@ -21,11 +21,11 @@ const HomePage: NextPage = ($props: any) => {
         <div>
             <IndexHeader />
             <Head>
-                <title>Acceuil - Crypto Trader</title>
+                <title>Accueil - Tout connaitre</title>
             </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage" />
 
-            {/* Index header block */}
+            {/* Home header block */}
             <div className="index-header">
                 <div>
                     <div className="index-logo mb-equal">
@@ -50,7 +50,7 @@ const HomePage: NextPage = ($props: any) => {
                     </div>
                 </div>
             </div>
-            {/* Index header block END */}
+            {/* Home header block END */}
 
             {/* Index Photo block */}
             <div className="index-photo-block" id='video_wrapper'>
@@ -58,7 +58,7 @@ const HomePage: NextPage = ($props: any) => {
                     <img src="img/cute-cat.jpg" alt="" />
                 </div>
             </div>
-            {/* Index Photo block END */}
+            {/* Home Photo block END */}
 
             {/* Footer */}
 

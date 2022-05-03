@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Topbar from '../components/topbar';
+import Topbar from '../components/topbarNew';
 import getAPIClient from '@shared/tools/apiClient';
 import { Broker } from '@shared/services';
 import router from 'next/router';

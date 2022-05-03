@@ -146,6 +146,7 @@ export default class AuthController {
         try {
             const { email, password } = req.body;
 
+            console.log(req.body);
             const user = await client.user.findFirst({
                 where: {
                     email,
@@ -159,6 +160,7 @@ export default class AuthController {
                     telephone: true,
                 },
             });
+            console.log(user);
 
             if (!user) {
                 return next(
@@ -170,7 +172,10 @@ export default class AuthController {
                 );
             }
 
+            console.log('logging in as ', user, 'with password', password, 'and hashed password', user.password);
+
             if (!checkPassword(password, user.password)) {
+                console.log('invalid password');
                 return next(
                     new ApiError({
                         status: 401,
@@ -503,6 +508,7 @@ export default class AuthController {
                     isAdmin: true,
                 },
             });
+            console.log(user);
             if (!user) {
                 return next(
                     new ApiError({
@@ -514,6 +520,7 @@ export default class AuthController {
             }
 
             const isValid = await checkPassword(password, user.password);
+            console.log('isValid', isValid);
             if (!isValid) {
                 return next(
                     new ApiError({
@@ -525,8 +532,9 @@ export default class AuthController {
             }
 
             delete user.password;
-            const token = generateToken(user);
-            res.json({
+            const token = await generateToken(user);
+
+            res.cookie('API_TOKEN', token).json({
                 token,
             });
         } catch (e) {
