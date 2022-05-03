@@ -46,6 +46,39 @@ const Trading: NextPage = (props: any) => {
                 <img className="groupe-de-masques-333-3LBGsu" src="img/mask-group-333@1x.png" />
                 <div className="background-3LBGsu"></div>
                 <div className="background-wsIV14"></div>
+                <div className="footer-3LBGsu">
+                    <div className="background-d1QyT8"></div>
+                    <div className="menu-footer-d1QyT8">
+                        <div className="mentions-lgales-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">
+                            Mentions légales
+                        </div>
+                        <div className="cgu-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
+                        <div className="cgv-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
+                        <div className="politique-de-confidentialit-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">
+                            Politique de confidentialité
+                        </div>
+                        <div className="politique-de-confidentialit-akcOt5 sourcesanspro-semi-bold-sonic-silver-14px">
+                            Politique de confidentialité
+                        </div>
+                        <div className="contact-5TxomC sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
+                    </div>
+                    <div className="x2022-6-fire-invest-d1QyT8 sourcesanspro-semi-bold-gray-14px">
+                        Ⓒ 2022 - 6FIRE INVEST
+                    </div>
+                    <div className="logo-d1QyT8">
+                        <div className="groupe-2-bdR4xa">
+                            <img className="groupe-1-qHE9Ze" src="img/group-1-10@1x.png" />
+                        </div>
+                        <img className="effect-bdR4xa" src="img/effect-12@1x.png" />
+                    </div>
+                    <img className="ligne-31-d1QyT8" src="img/line-31-1@1x.png" />
+                    <div className="groupe-3011-d1QyT8">
+                        <img className="icon-instagram-T7a3oB" src="img/fontawsome--instagram--1@1x.png" />
+                    </div>
+                    <div className="groupe-3010-d1QyT8">
+                        <img className="icon-simple-tiktok-NVC3AW" src="img/icon-simple-tiktok-1@1x.png" />
+                    </div>
+                </div>
                 <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 <div className="h2-3LBGsu lato-bold-white-14px">
                     CONTACTEZ NOUS POUR ACCÉDER AU CANAL TELEGRAM DES MEMBRES TRADING &amp; CRYPTO
