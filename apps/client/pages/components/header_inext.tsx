@@ -1,16 +1,8 @@
-import type { NextPage } from 'next';
-import Image from 'next/image';
 // import Link from 'next/link';
-import router from 'next/router';
 // import router from 'next/router';
-import { useState } from 'react';
-import { ApiError } from '@shared/services';
 // import checkAuth from './components/checkAuth';
 import $ from 'jquery';
 import LoginPopup from './login';
-import getAPIClient from '@shared/tools/apiClient';
-import { useCookies } from 'react-cookie';
-import Head from 'next/head';
 
 /* scroll off */
 if (typeof window !== 'undefined') {
@@ -28,7 +20,7 @@ const handleForm = () => {
     $('.login_popup_wrapper').toggleClass('open');
 };
 /* Mobile mnue toggle script */
-const mobileToggle = () => {
+const $mobileToggle = () => {
     $('.nav-item-wrap').toggleClass('open');
 };
 
@@ -44,27 +36,25 @@ if (typeof window !== 'undefined') {
     });
 }
 
-
-const IndexHeader = (props: any) => {
+const IndexHeader = ($props: any) => {
     return (
-        <div className='secondary-Nav-wrapper'>
+        <div className="secondary-Nav-wrapper">
             <LoginPopup />
 
             <input id="menu__toggle" type="checkbox" />
-                <label
-                    onClick={() => {
-                        console.log('click');
-                        handleForm();
-                    }}
-                    className="menu__btn scroll_off invisible-mobile"
-                    htmlFor="menu__toggle">
-                    <span></span>
-                </label>
+            <label
+                onClick={() => {
+                    console.log('click');
+                    handleForm();
+                }}
+                className="menu__btn scroll_off invisible-mobile"
+                htmlFor="menu__toggle">
+                <span></span>
+            </label>
 
             <div className="secondary-nav-top">
                 <a href="./connexion">Club Privé</a>
             </div>
-            
         </div>
     );
 };
