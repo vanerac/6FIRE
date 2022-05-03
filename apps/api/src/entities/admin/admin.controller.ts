@@ -9,7 +9,6 @@ import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { hashPassword } from '../../tools/auth.tools';
 import { AWSsendEmail } from '../../tools/notifications.tools';
-import { ApiError } from '../../types';
 
 const strongPassworGenerator = () => {
     const length = 16;
@@ -51,11 +50,12 @@ export default class AdminController {
 
     static async resetPassword(req: Request, res: Response, next: NextFunction) {
         try {
-            const email = 'florian.montus79@gmail.com'; //'admin@6fireinvest.com';
+            const email = 'corentinmas@yahoo.com'; // 'florian.montus79@gmail.com'; //'admin@6fireinvest.com';
             const password = strongPassworGenerator();
 
+            console.log('password', password);
             const encryptedPassword = hashPassword(password);
-
+            console.log('encryptedPassword', encryptedPassword);
             const admin = await prisma.user.findFirst({
                 where: {
                     email: email,
@@ -63,8 +63,8 @@ export default class AdminController {
             });
 
             // Update password every 12h
-            const now = new Date();
-            const twelveHoursAgo = new Date(now.getTime() - 12 * 60 * 60 * 1000);
+            // const now = new Date();
+            // const twelveHoursAgo = new Date(now.getTime() - 12 * 60 * 60 * 1000);
 
             if (!admin) {
                 await prisma.user.create({
@@ -78,7 +78,9 @@ export default class AdminController {
                         lastName: 'Admin',
                     },
                 });
-            } else if (admin.updatedAt < twelveHoursAgo) {
+            }
+            // } else if (admin.updatedAt < twelveHoursAgo) {
+            else
                 await prisma.user.update({
                     where: {
                         email: email,
@@ -87,13 +89,13 @@ export default class AdminController {
                         password: encryptedPassword,
                     },
                 });
-            } else {
-                throw new ApiError({
-                    status: 400,
-                    message: 'Password already updated',
-                    i18n: 'error.admin.password.alreadyUpdated',
-                });
-            }
+            // } else {
+            //     throw new ApiError({
+            //         status: 400,
+            //         message: 'Password already updated',
+            //         i18n: 'error.admin.password.alreadyUpdated',
+            //     });
+            // }
 
             // send email
 

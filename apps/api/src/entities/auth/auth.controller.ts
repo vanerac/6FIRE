@@ -170,6 +170,8 @@ export default class AuthController {
                 );
             }
 
+            console.log('logging in as ', user, 'with password', password, 'and hashed password', user.password);
+
             if (!checkPassword(password, user.password)) {
                 return next(
                     new ApiError({
