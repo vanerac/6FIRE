@@ -46,6 +46,7 @@ const Header = (props: any) => {
     const [themes, setThemes] = useState<Theme[]>([]);
     const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [isMoney, setisMoney] = useState('Espace trading & crypto');
 
     const fetchThemes = async () => {
         const response = await apiClient.themes.getThemes();
@@ -150,7 +151,7 @@ const Header = (props: any) => {
                                     </div>
                                     <ul id="visible-only-mobile">
                                         <li>
-                                            <a href="#">Espace Trading &amp; Crypto</a>
+                                            <a href="#">{isMoney}</a>
                                         </li>
                                     </ul>
                                     <ul>
@@ -174,7 +175,7 @@ const Header = (props: any) => {
                                                 </a>
                                             </li>
                                         ))}
-                                        <li>
+                                        {/* <li>
                                             <a href="#">
                                                 <span className="icon">
                                                     <img src="/img/icon/nft.png" alt="" />
@@ -208,7 +209,7 @@ const Header = (props: any) => {
 
                                                 <span className="nav-item">E-Commerce</span>
                                             </a>
-                                        </li>
+                                        </li> */}
                                         {themesDropDown.length > 0 ? (
                                             <li>
                                                 <a href="#">
@@ -275,11 +276,16 @@ const Header = (props: any) => {
                                     </ul>
                                 </div>
 
-                                <a href="#" className="espace">
+                                {/* <a href="#" className="espace">
                                     {' '}
                                     Espace <br />
                                     Trading &amp; Crypto
-                                </a>
+                                </a> */}
+                                <Link href={isMoney == 'Nos Trades' ? '/articlesPage' : '/nosTrades'}>
+                                    <a className="espace" onClick={() => setisMoney('Nos Trades')}>
+                                        {isMoney}
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
