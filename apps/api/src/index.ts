@@ -67,7 +67,15 @@ app.use(
     cors({
         origin: '*',
         credentials: true,
-        allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'sentry-trace'],
+        allowedHeaders: [
+            'Origin',
+            'X-Api-Key',
+            'X-Requested-With',
+            'Content-Type',
+            'Authorization',
+            'Accept',
+            'sentry-trace',
+        ],
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );

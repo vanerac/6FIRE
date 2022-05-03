@@ -30,7 +30,7 @@ export default function useSideBar() {
                                 <li
                                 // className="sidebar-dropdown"
                                 >
-                                    <Link passHref href="/">
+                                    <Link passHref href="/home">
                                         <a>
                                             <i className="fa fa-home"></i>
                                             <span>Home</span>

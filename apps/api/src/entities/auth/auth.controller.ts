@@ -159,6 +159,7 @@ export default class AuthController {
                     telephone: true,
                 },
             });
+            console.log(user);
 
             if (!user) {
                 return next(

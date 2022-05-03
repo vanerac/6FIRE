@@ -29,6 +29,7 @@ RUN npm install form-data --legacy-peer-deps
 RUN npm install universal-cookie --legacy-peer-deps
 RUN npm install react-cookie --legacy-peer-deps
 RUN npm i react react-dom
+RUN npm i next
 
 WORKDIR /app
 RUN npm install react-cookie --legacy-peer-deps

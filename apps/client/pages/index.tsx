@@ -10,7 +10,7 @@ const HomePage: NextPage = ($props: any) => {
             </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage" />
 
-            {/* Index header block */}
+            {/* Home header block */}
             <div className="index-header">
                 <div>
                     <div className="index-logo mb-equal">
@@ -35,15 +35,15 @@ const HomePage: NextPage = ($props: any) => {
                     </div>
                 </div>
             </div>
-            {/* Index header block END */}
+            {/* Home header block END */}
 
-            {/* Index Photo block */}
+            {/* Home Photo block */}
             <div className="index-photo-block">
                 <div className="contanier">
                     <img src="img/cute-cat.jpg" alt="" />
                 </div>
             </div>
-            {/* Index Photo block END */}
+            {/* Home Photo block END */}
 
             {/* Footer */}
 
