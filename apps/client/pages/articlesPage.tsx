@@ -113,8 +113,8 @@ const HomePage: NextPage = (props: any) => {
                     {/* Single article */}
                     <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
-                            <img className='frontImg' src="/img/mask-group-322-2@1x.png" alt="" />
-                            <img className='hoverImg' src="/img/mask-group-325-1@1x.png" alt="" />
+                            <img className="frontImg" src="/img/mask-group-322-2@1x.png" alt="" />
+                            <img className="hoverImg" src="/img/mask-group-325-1@1x.png" alt="" />
                         </div>
                         <div className="cat_and_date">
                             <div className="category">
@@ -130,8 +130,8 @@ const HomePage: NextPage = (props: any) => {
                     {/* Single article */}
                     <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
-                            <img className='frontImg' src="/img/mask-group-322-2@1x.png" alt="" />
-                            <img className='hoverImg' src="/img/mask-group-325-1@1x.png" alt="" />
+                            <img className="frontImg" src="/img/mask-group-322-2@1x.png" alt="" />
+                            <img className="hoverImg" src="/img/mask-group-325-1@1x.png" alt="" />
                         </div>
                         <div className="cat_and_date">
                             <div className="category">
@@ -147,8 +147,8 @@ const HomePage: NextPage = (props: any) => {
                     {/* Single article */}
                     <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
-                            <img className='frontImg' src="/img/mask-group-322-2@1x.png" alt="" />
-                            <img className='hoverImg' src="/img/mask-group-325-1@1x.png" alt="" />
+                            <img className="frontImg" src="/img/mask-group-322-2@1x.png" alt="" />
+                            <img className="hoverImg" src="/img/mask-group-325-1@1x.png" alt="" />
                         </div>
                         <div className="cat_and_date">
                             <div className="category">
