@@ -2670,6 +2670,10 @@ body{
 }
 .article_text{
   color: #fff;
+  line-height: 1.5;
+}
+.article_text ul li span {
+  color: #fff !important;
 }
 .article_text p span {
   display: inline-block;

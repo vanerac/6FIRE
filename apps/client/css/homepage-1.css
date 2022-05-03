@@ -2791,8 +2791,25 @@ body{
     color: #fff;
     font-family: var(--font-family-lato);
     font-size: calc(17px + (21 - 17) * ((100vw - 320px) / (1920 - 320)));
+    position: relative;
+    display: inline-flex;
+    padding-bottom: 5px;
+    transition: all 0.5s ease;
 }
-
+.article_wrapper .grid .single_article .article_title .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.article_wrapper .grid .single_article:hover .article_title .title::before{
+    opacity: 1;
+}
 .more-articles {
     margin-top: 60px;
     display: block;
