@@ -54,11 +54,7 @@ export default function DataTable({
                                         );
                                     })}
                                     <td className="text-center">
-                                        <button
-                                            className="fa fa-edit color-dard-blue"
-                                            onClick={() => editCallback(d.id)}>
-                                            {/*<i />*/}
-                                        </button>
+                                        <i onClick={() => editCallback(d.id)} className="fa fa-edit color-dard-blue" />
                                     </td>
                                     <td className="text-center">
                                         <img
