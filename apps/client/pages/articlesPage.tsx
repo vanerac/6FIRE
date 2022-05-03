@@ -42,10 +42,17 @@ const HomePage: NextPage = (props: any) => {
 
     const fetchData = async (themeId: string | string[] | undefined) => {
         console.log('need to fetch articles with id => ', themeId);
-        const response = await apiClient.article.getArticles(pagination.page, pagination.limit);
+        if (themeId)
+            setArticles(
+                (await apiClient.article.getArticlesByTheme(
+                    +(themeId as string),
+                    pagination.page,
+                    pagination.limit,
+                )) as Article[],
+            );
+        else setArticles((await apiClient.article.getArticles(pagination.page, pagination.limit)) as Article[]);
         // const article: Article = response[0]
         // article.Theme?.name
-        setArticles(response as Article[]);
     };
 
     useEffect(() => {
