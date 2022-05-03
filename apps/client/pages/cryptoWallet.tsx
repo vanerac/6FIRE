@@ -78,7 +78,8 @@ const CryptoWallet: NextPage = (props: any) => {
                             <div className="single-item" key={crypto.id}>
                                 <img src="/img/icon/c02.png" alt="" />
                                 <p>
-                                    {crypto.name}<span>{crypto.percentage}%</span>
+                                    {crypto.name}
+                                    <span>{crypto.percentage}%</span>
                                 </p>
                             </div>
                         ))}

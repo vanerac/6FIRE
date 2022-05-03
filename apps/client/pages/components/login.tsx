@@ -6,6 +6,7 @@ import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 import $ from 'jquery';
+import Link from 'next/link';
 
 /* scroll off */
 if (typeof window !== 'undefined') {
@@ -120,9 +121,9 @@ const LoginPopup = (props: any) => {
                 <div className="after_login">
                     <ul>
                         <li>
-                            <NextLink href="/compte">
+                            <Link href="/compte">
                                 <a>Mes donnees personnelles</a>
-                            </NextLink>
+                            </Link>
                         </li>
                         <li>
                             <a href="#">Ma licence</a>

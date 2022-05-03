@@ -66,13 +66,25 @@ const Compte: NextPage = (props: any) => {
                 <div className="infor-form">
                     <form action="#">
                         <div className="input-wrap">
-                            <input onChange={(e) => setOldPassword(e.taget.value)} type="password" placeholder="* Mot de passe actuel" />
-                            <input onChange={(e) => setNewPassword(e.taget.value)} type="password" placeholder="* Nouveau mot de passe" />
-                            <input onChange={(e) => setConfirmPassword(e.taget.value)} type="password" placeholder="* Confirmation du nouveau mot de passe" />
+                            <input
+                                onChange={(e) => setOldPassword(e.target.value)}
+                                type="password"
+                                placeholder="* Mot de passe actuel"
+                            />
+                            <input
+                                onChange={(e) => setNewPassword(e.target.value)}
+                                type="password"
+                                placeholder="* Nouveau mot de passe"
+                            />
+                            <input
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                type="password"
+                                placeholder="* Confirmation du nouveau mot de passe"
+                            />
                         </div>
 
                         <div className="send_btn">
-                            <button onClick={updatePassword()} type="submit" className="primary-button">
+                            <button onClick={() => updatePassword()} type="submit" className="primary-button">
                                 <span>Modifier</span>
                                 <div className="right-arrow">
                                     <img src="/img/icon/right-arrow.png" alt="" />

@@ -45,7 +45,10 @@ const Compte: NextPage = (props: any) => {
             <div className="account-wrapper">
                 <div className="main-title">
                     <h1 className="title">
-                        Compte <span>{me.name}, {me.mail}</span>
+                        Compte{' '}
+                        <span>
+                            {me.name}, {me.mail}
+                        </span>
                     </h1>
                 </div>
                 <div className="informaion-wrapper">
