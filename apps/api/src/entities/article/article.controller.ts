@@ -77,7 +77,7 @@ export default class ArticleController implements CRUDController {
                     },
                 },
             });
-            if (!userSubscriptionLevel) {
+            if (!userSubscriptionLevel && !isAdmin) {
                 next(
                     new ApiError({
                         message: 'User subscription level not found',
