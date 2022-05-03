@@ -54,7 +54,13 @@ export default function DataTable({
                                         );
                                     })}
                                     <td className="text-center">
-                                        <i onClick={() => editCallback(d.id)} className="fa fa-edit color-dard-blue" />
+                                        <img
+                                            src="/img/icon/edit.svg"
+                                            alt=""
+                                            onClick={() => editCallback(d.id)}
+                                            className="closs-btn"
+                                            style={{ width: '20px', height: '20px' }}
+                                        />
                                     </td>
                                     <td className="text-center">
                                         <img
