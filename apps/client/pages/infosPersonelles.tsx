@@ -32,12 +32,12 @@ const Compte: NextPage = (props: any) => {
         apiClient = getAPIClient(cookies['API_TOKEN']);
         setLoading(true);
         apiClient.user
-            .getMeStats()
-            .then((res) => {
+            .getMyStats()
+            .then((res: any) => {
                 setMe(res);
                 setLoading(false);
             })
-            .catch((error) => {
+            .catch((error: any) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
             });
