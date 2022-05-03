@@ -94,11 +94,11 @@ app.use((err, req, res, $next) => {
 app.use(
     OpenApiValidator.middleware({
         apiSpec: openApiDocument,
-        validateRequests: {
-            removeAdditional: 'all',
-            allowUnknownQueryParameters: false,
-            coerceTypes: false,
-        },
+        // validateRequests: {
+        //     removeAdditional: 'all',
+        //     allowUnknownQueryParameters: false,
+        //     coerceTypes: false,
+        // },
         ignoreUndocumented: true,
         // validateResponses: {
         //     removeAdditional: 'failing',

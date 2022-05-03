@@ -7,28 +7,50 @@ export default function Index() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [cookies, setCookie] = useCookies(['API_TOKEN']);
+    const apiClient = getApiClient(cookies['API_TOKEN']);
 
     useEffect(() => {
+        console.log('useEffect cookies', cookies);
         if (cookies.API_TOKEN) {
             router.replace('/');
         }
+    }, [cookies]);
+
+    useEffect(() => {
+        console.log('useEffect email', email);
+    }, [email]);
+
+    useEffect(() => {
+        console.log('useEffect password', password);
+    }, [password]);
+
+    useEffect(() => {
+        console.log('Initial load');
     }, []);
 
-    const submit = () => {
-        getApiClient('')
-            .auth.loginAdmin({ email, password })
-            .then((res) => {
-                setCookie('API_TOKEN', res.token, { path: '/' });
-            })
+    const submit = async () => {
+        apiClient.auth
+            .login({ email, password })
+            .then(
+                (res) => {
+                    console.log('Response');
+                    setCookie('API_TOKEN', res.token, { path: '/' });
+                    router.replace('/');
+                },
+                (err) => {
+                    alert(err.message);
+                    console.log('err', err);
+                },
+            )
             .catch((error) => {
                 console.log(error);
                 alert(error.i18n ?? error.message ?? error);
             });
     };
 
-    const resetPassword = () => {
-        getApiClient('')
-            .admin.resetPassword()
+    const resetPassword = async () => {
+        apiClient.admin
+            .resetPassword()
             .then(() => {
                 alert('Password reset');
             })
@@ -47,7 +69,12 @@ export default function Index() {
                         <form action="">
                             <div className="single-input">
                                 <i className="fas fa-envelope"></i>
-                                <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
+                                <input
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={email}
+                                    type="email"
+                                    placeholder="Email"
+                                />
                             </div>
                             <div className="single-input">
                                 <i className="fas fa-lock"></i>
@@ -55,6 +82,7 @@ export default function Index() {
                                     onChange={(event) => setPassword(event.target.value)}
                                     type="password"
                                     placeholder="Mot de pass"
+                                    value={password}
                                 />
                             </div>
 

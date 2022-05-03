@@ -173,6 +173,7 @@ export default class AuthController {
             console.log('logging in as ', user, 'with password', password, 'and hashed password', user.password);
 
             if (!checkPassword(password, user.password)) {
+                console.log('invalid password');
                 return next(
                     new ApiError({
                         status: 401,
@@ -505,6 +506,7 @@ export default class AuthController {
                     isAdmin: true,
                 },
             });
+            console.log(user);
             if (!user) {
                 return next(
                     new ApiError({
@@ -516,6 +518,7 @@ export default class AuthController {
             }
 
             const isValid = await checkPassword(password, user.password);
+            console.log('isValid', isValid);
             if (!isValid) {
                 return next(
                     new ApiError({
