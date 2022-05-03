@@ -174,6 +174,47 @@ app.listen(3333, () => {
     console.log('🚀 Server started on port 3333!');
 });
 
+// prisma.subscription.create({
+//     data: {
+//         hidden: true,
+//         name: 'test',
+//         description: 'test',
+//         level: 1,
+//         refreshRate: 1,
+//         subscriptionType: 'SUBSCRIPTION',
+//         price: 1,
+//     },
+// });
+
+// upsert
+prisma.subscription
+    .upsert({
+        where: {
+            id: 1,
+        },
+        create: {
+            hidden: false,
+            name: 'test',
+            description: 'test',
+            level: 1,
+            refreshRate: 1,
+            subscriptionType: 'SUBSCRIPTION',
+            price: 1,
+        },
+        update: {
+            hidden: false,
+            name: 'test',
+            description: 'test',
+            level: 1,
+            refreshRate: 1,
+            subscriptionType: 'SUBSCRIPTION',
+            price: 1,
+        },
+    })
+    .then((result) => {
+        console.log(result);
+    });
+
 process.on('unhandledRejection', (reason, p) => {
     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
     // application specific logging, throwing an error, or other logic here

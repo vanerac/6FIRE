@@ -100,6 +100,9 @@ const LoginPopup = (props: any) => {
                     console.log(response);
                     if (response.token) {
                         setCookies('API_TOKEN', response.token, { path: '/' });
+                        setCookies('API_TOKEN', response.token, { domain: 'localhost' });
+                        setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
+                        setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
                         router.push('/articlesPage');
                     }
                 })
