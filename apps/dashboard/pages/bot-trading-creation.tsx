@@ -78,11 +78,13 @@ export default function ThemesArticlesCreation() {
     const $deleteTrader = () => {
         apiClient.traders.deleteTraderById(id as unknown as number).then(
             () => {
+                alert('Trader effacé');
                 router.replace('/bot-trading');
             },
             (error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
+                alert('Erreur lors de la suppression');
             },
         );
     };
@@ -97,12 +99,13 @@ export default function ThemesArticlesCreation() {
             .then(
                 (res) => {
                     if (res?.id) alert('Trader created');
-                    else return alert('Error');
+                    else return alert('Erreur lors de la création');
                     router.push('/bot-trading-creation?id=' + res.id);
                 },
                 (error) => {
                     setError(error.i18n ?? error.message ?? 'Unknown error');
                     setLoading(false);
+                    alert('Erreur lors de la création');
                 },
             );
     };
@@ -119,13 +122,14 @@ export default function ThemesArticlesCreation() {
             ])
             .then(
                 (res) => {
-                    if (res?.id) alert('Trader created');
-                    else return alert('Error');
+                    if (res?.id) alert('Trader mis a jour');
+                    else return alert('Echec de la mise à jour');
                     router.push('/bot-trading-creation?id=' + res.id);
                 },
                 (error) => {
                     setError(error.i18n ?? error.message ?? 'Unknown error');
                     setLoading(false);
+                    alert('Echec de la mise à jour');
                 },
             );
     };

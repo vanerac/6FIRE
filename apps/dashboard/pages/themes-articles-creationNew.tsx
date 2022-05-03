@@ -101,6 +101,7 @@ export default function ThemesArticlesCreation() {
                 (error) => {
                     setError(error.i18n ?? error.message ?? 'Unknown error');
                     setLoading(false);
+                    alert('Echec de la sauvegarde, verifiez les champs');
                 },
             );
     };
@@ -108,11 +109,13 @@ export default function ThemesArticlesCreation() {
     const $deleteTheme = () => {
         apiClient.themes.deleteTheme(id as unknown as number).then(
             () => {
+                alert('Theme Supprime');
                 router.replace('/themes');
             },
             (error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
+                alert('Echec de la suppression');
             },
         );
     };
@@ -132,6 +135,7 @@ export default function ThemesArticlesCreation() {
                 (error) => {
                     setError(error.i18n ?? error.message ?? 'Unknown error');
                     setLoading(false);
+                    alert('Echec de la creation, verifiez les champs');
                 },
             );
     };
@@ -194,13 +198,16 @@ export default function ThemesArticlesCreation() {
                                         name=""
                                         id=""
                                         onChange={(event) => setSelectedSubscriptionId(event.target.value as never)}>
-                                        <option value="">Select</option>
+                                        <option value="" disabled>
+                                            Selectionnez un abonnement
+                                        </option>
                                         {subscriptions.map((subscription) => (
                                             <option
                                                 key={subscription.id}
                                                 value={subscription.id}
-                                                selected={selectedSubscriptionId?.id === subscription.id}>
-                                                {subscription.name}
+                                                selected={selectedSubscriptionId?.id == subscription.id}>
+                                                {subscription.name} - {subscription.price}€ (Niveau {subscription.level}
+                                                )
                                             </option>
                                         ))}
                                     </select>
