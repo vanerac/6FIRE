@@ -7,7 +7,7 @@ import router from 'next/router';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
-import { UserStatus } from '@shared/services';
+import { UserStatus, UserSub } from '@shared/services';
 import Head from 'next/head';
 
 const Compte: NextPage = (props: any) => {
@@ -16,6 +16,7 @@ const Compte: NextPage = (props: any) => {
     const [me, setMe] = useState<UserStatus>();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
+    const [subs, setSubs] = useState<UserSub[]>([]);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -25,7 +26,7 @@ const Compte: NextPage = (props: any) => {
         }
         setLoading(true);
         apiClient.user
-            .getMeStats()
+            .getMyStats()
             .then((res) => {
                 setMe(res);
                 setLoading(false);
@@ -34,6 +35,9 @@ const Compte: NextPage = (props: any) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
             });
+        apiClient.user.getMySubscriptions().then((res) => {
+            setSubs(res);
+        });
     }, []);
 
     return (

@@ -260,7 +260,7 @@
         }
       }
     },
-    "/user/{id}/subscription": {
+    "/user/id/{id}/subscription": {
       "parameters": [
         {
           "name": "id",
@@ -400,10 +400,10 @@
         }
       }
     },
-    "/user/me": {
+    "/user/me/infos": {
       "get": {
         "description": "get the current user stats",
-        "operationId": "getMeStats",
+        "operationId": "getMyStats",
         "tags": [
           "User"
         ],
@@ -413,6 +413,50 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserStatus"
+                }
+              }
+            },
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid user supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/me/subscription": {
+      "get": {
+        "description": "get the current user subscriptions",
+        "operationId": "getMySubscriptions",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserSub"
+                  }
                 }
               }
             },
@@ -4008,28 +4052,6 @@
           },
           "telephone": {
             "type": "string"
-          },
-          "UserSubscription": {
-            "type": "object",
-            "properties": {
-              "Subscription": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "price": {
-                    "type": "number"
-                  },
-                  "level": {
-                    "type": "number"
-                  }
-                }
-              }
-            }
           }
         }
       },
@@ -4199,6 +4221,28 @@
           },
           "headerUrl": {
             "type": "string"
+          }
+        }
+      },
+      "UserSub": {
+        "type": "object",
+        "properties": {
+          "Subscription": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "level": {
+                "type": "number"
+              }
+            }
           }
         }
       }

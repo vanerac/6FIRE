@@ -8,12 +8,4 @@ export type UserStatus = {
     firstName?: string;
     lastName?: string;
     telephone?: string;
-    UserSubscription?: {
-        Subscription?: {
-            name?: string;
-            description?: string;
-            price?: number;
-            level?: number;
-        };
-    };
 };

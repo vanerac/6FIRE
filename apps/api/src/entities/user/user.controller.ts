@@ -106,7 +106,7 @@ export class UserController implements CRUDController {
 
     public static async getSubscription(req: Request, res: Response, next: NextFunction) {
         try {
-            const { id } = req.params;
+            const { id } = req.user;
             const user = await prisma.userSubscription.findMany({
                 where: {
                     userId: +id,
@@ -242,6 +242,56 @@ export class UserController implements CRUDController {
             res.json(user);
         } catch (error) {
             console.log(error);
+            next(error);
+        }
+    }
+
+    static async getInfos(req: Request, res: Response, next: NextFunction) {
+        console.log('getInfos');
+        try {
+            const { id } = req.user;
+            const user = await prisma.user.findFirst({
+                where: {
+                    id: +id,
+                },
+                select: {
+                    id: true,
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
+                },
+            });
+            res.json(user);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async getSubscriptions(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id } = req.user;
+            const user = await prisma.user.findFirst({
+                where: {
+                    id: +id,
+                },
+                select: {
+                    UserSubscription: {
+                        select: {
+                            Subscription: {
+                                select: {
+                                    name: true,
+                                    description: true,
+                                    price: true,
+                                    level: true,
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+            res.json(user?.UserSubscription ?? []);
+        } catch (error) {
             next(error);
         }
     }
