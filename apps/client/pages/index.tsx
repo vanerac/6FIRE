@@ -14,7 +14,7 @@ const HomePage: NextPage = ($props: any) => {
             <div className="index-header">
                 <div>
                     <div className="index-logo mb-equal">
-                        <img src="/img/logo/logo.svg" alt="" />
+                        <img src="/img/logo/index-logo.png" alt="" />
                     </div>
                     <div className="mb-equal">
                         <p>Rejoindre le club d’investisseur</p>
