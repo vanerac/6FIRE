@@ -12,26 +12,26 @@ import Head from 'next/head';
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [$subscriptions, $setSubscriptions] = useState<Subscription[]>([]);
+    const [subscriptions, $setSubscriptions] = useState<Subscription[]>([]);
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
 
-    // useEffect(() => {
-    //     if (!cookies['API_TOKEN']) {
-    //         router.replace('/');
-    //     }
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            router.replace('/');
+        }
 
-    //     apiClient.subscription
-    //         .getSubscriptions()
-    //         .then((subscriptions) => {
-    //             setSubscriptions(subscriptions);
-    //             setLoading(false);
-    //         })
-    //         .catch((error) => {
-    //             setError(error.i18n ?? error.message ?? 'Unknown error');
-    //             setLoading(false);
-    //         });
-    // }, []);
+        apiClient.subscription
+            .getSubscriptions()
+            .then((subscriptions) => {
+                setSubscriptions(subscriptions);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            });
+    }, []);
 
     const $subcribe = (subscriptionId: string) => {
         setLoading(true);

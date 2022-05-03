@@ -13,9 +13,15 @@ import Head from 'next/head';
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [$me, setMe] = useState<UserStatus>();
+    const [me, setMe] = useState<UserStatus>();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
+    const [userInfo, setUserInfo] = useState({
+        name: '',
+        surname: '',
+        mail: '',
+        phone: '',
+    });
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -36,6 +42,21 @@ const Compte: NextPage = (props: any) => {
                 setLoading(false);
             });
     }, []);
+
+    // function to update user informations
+    const updateUser = async (data: any) => {
+        setLoading(true);
+        apiClient.user.updateUser(me.id ,data).then((res) => {
+            setMe(res);
+            setLoading(false);
+        }
+            ).catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            }
+        );
+    }
+
 
     return (
         <div>
@@ -58,14 +79,24 @@ const Compte: NextPage = (props: any) => {
                 <div className="infor-form">
                     <form action="#">
                         <div className="input-wrap">
-                            <input type="text" placeholder="* Nom" />
-                            <input type="text" placeholder="* Prénom" />
-                            <input type="email" placeholder="* Email" />
-                            <input type="tel" placeholder="* Numéro de téléphone" />
+                            <input onChange={(e) => setUserInfo(
+                                { ...userInfo, name: e.target.value }
+                            )} type="text" placeholder="* Nom" />
+                            <input onChange={(e) => setUserInfo(
+                                { ...userInfo, surname: e.target.value }
+                            )} type="text" placeholder="* Prénom" />
+                            <input onChange={(e) => setUserInfo(
+                                { ...userInfo, mail: e.target.value }
+                            )} type="email" placeholder="* Email" />
+                            <input onChange={(e) => setUserInfo(
+                                { ...userInfo, phone: e.target.value }
+                            )} type="tel" placeholder="* Numéro de téléphone" />
                         </div>
 
                         <div className="send_btn">
-                            <button type="submit" className="primary-button">
+                            <button onClick={
+                                () => updateUser(userInfo);
+                            } type="submit" className="primary-button">
                                 <span>Modifier</span>
                                 <div className="right-arrow">
                                     <img src="/img/icon/right-arrow.png" alt="" />

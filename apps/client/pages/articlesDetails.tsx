@@ -205,13 +205,13 @@ const HomePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    useEffect(() => {
+    // useEffect(() => {
         // if (!cookies['API_TOKEN']) {
         //     console.log('no token');
         //     router.replace('/');
         //     return;
         // }
-    }, []);
+    // }, []);
 
     useEffect(() => {
         console.log('query', query);
