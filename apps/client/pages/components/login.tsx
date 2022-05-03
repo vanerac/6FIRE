@@ -67,12 +67,9 @@ const LoginPopup = (props: any) => {
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
-        // if (!cookies['API_TOKEN']) {
-        //     console.log('no token');
-        //     router.replace('/');
-        //     return;
-        // }
-        // apiClient = getAPIClient(cookies['API_TOKEN']);
+        setIsCookie(cookies['API_TOKEN']);
+    }, [cookies]);
+    useEffect(() => {
         setIsCookie(cookies['API_TOKEN']);
     }, []);
 
@@ -100,7 +97,7 @@ const LoginPopup = (props: any) => {
                     password: password,
                 })
                 .then((response: any) => {
-                    console.log(response);
+                    // console.log(response);
                     if (response.token) {
                         setCookies('API_TOKEN', response.token, { path: '/' });
                         setCookies('API_TOKEN', response.token, { domain: 'localhost' });
@@ -114,7 +111,7 @@ const LoginPopup = (props: any) => {
                     setError(error.body.i18n);
                 });
         }
-        console.log(mail, password);
+        // console.log(mail, password);
     };
 
     return (
