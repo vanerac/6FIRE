@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Footer from './components/footer';
 import Head from 'next/head';
 import $ from 'jquery';
+import Header from './components/header';
+import IndexHeader from './components/header_inext';
 
 /* scroll off */
 
@@ -17,6 +19,7 @@ if (typeof window !== 'undefined') {
 const HomePage: NextPage = ($props: any) => {
     return (
         <div>
+            <IndexHeader />
             <Head>
                 <title>Acceuil - Crypto Trader</title>
             </Head>

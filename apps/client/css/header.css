@@ -1242,3 +1242,18 @@ ul{
 .scrollY_off, .overflo-y-hidden{
     overflow-y: hidden;
 }
+
+/* index secondary style */
+input#menu__toggle{display: none;}
+.secondary-Nav-wrapper .invisible-mobile{display: flex;}
+.secondary-nav-top {z-index: 99; height: 100px;position: absolute;top: 0;left: 0;right: 0%;display: flex;align-items: center;justify-content: flex-end;color: #fff; font-family: "Lato"; margin-right: 150px;}
+.secondary-nav-top a{
+    color: #fff;
+}
+
+@media screen and (max-width: 1023px) {
+    .secondary-nav-top{
+        height: 60px;
+        margin-right: 75px;
+    }
+}
