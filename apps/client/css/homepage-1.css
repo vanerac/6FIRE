@@ -4194,6 +4194,9 @@ body{
 .pricing_table .single_table.active_seller .small-des p {
     color: #b30f10;
 }
+.small-des {
+    padding: 0 15px;
+}
 
 .pricing_table .single_table.active_seller .title {
     position: relative;

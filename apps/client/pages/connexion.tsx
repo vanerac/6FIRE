@@ -197,11 +197,11 @@ const Connexion: NextPage = () => {
                         <span className="span0-qb1m9I lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
                         </span>
-                        <span className="span1-qb1m9I lato-normal-white-12px">Conditions Générales d’Utilisation</span>
+                        <span className="span1-qb1m9I lato-normal-white-12px"><a href="/cgu">Conditions Générales d’Utilisation</a></span>
                         <span className="span2-qb1m9I lato-normal-white-12px">
                             et consentez au traitement de vos données, conformément à la{' '}
                         </span>
-                        <span className="span3-qb1m9I lato-normal-white-12px">Politique de confidentialité</span>
+                        <span className="span3-qb1m9I lato-normal-white-12px"><a href="/politiqueConfidentialite">Politique de confidentialité</a></span>
                         <span className="span4-qb1m9I lato-normal-white-12px"> de 6FIRE.</span>
                         <br />
                         <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
