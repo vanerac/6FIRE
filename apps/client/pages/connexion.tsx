@@ -323,7 +323,7 @@ const Connexion: NextPage = () => {
                         onClick={() => {
                             handleForm();
                         }}
-                        style={{ color: 'white' }}>
+                        style={{ color: 'white', cursor: 'pointer' }}>
                         Déjà inscrit ? Connectez vous
                     </a>
                     {/* </Link> */}
