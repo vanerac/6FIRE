@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
+// import Image from 'next/image';
 import router, { useRouter } from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
@@ -90,11 +90,8 @@ const HomePage: NextPage = (props: any) => {
                             }}
                             className="single_article">
                             <div className="artitle_thum">
-                                <Image
-                                    layout="fill"
-                                    loader={() => article.headerUrl ?? '/img/mask-group-321-2@1x.png'}
-                                    src={article.headerUrl ?? '/img/mask-group-321-2@1x.png'}
-                                />
+                                <img className="frontImg" src={article.headerUrl ?? '/img/mask-group-321-2@1x.png'} />
+                                <img className="hoverImg" src={article.bannerUrl ?? '/img/mask-group-321-2@1x.png'} />
                             </div>
                             <div className="cat_and_date">
                                 <div className="category">
@@ -111,9 +108,9 @@ const HomePage: NextPage = (props: any) => {
                     ))}
 
                     {/* Single article */}
-                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                    {/* <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
-                            <img className="frontImg" src="/img/mask-group-322-2@1x.png" alt="" />
+                            <img className="frontImg" src=" /img/mask-group-322-2@1x.png" alt="" />
                             <img className="hoverImg" src="/img/mask-group-325-1@1x.png" alt="" />
                         </div>
                         <div className="cat_and_date">
@@ -125,10 +122,10 @@ const HomePage: NextPage = (props: any) => {
                         <div className="article_title">
                             <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Single article */}
-                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                    {/* <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <img className="frontImg" src="/img/mask-group-322-2@1x.png" alt="" />
                             <img className="hoverImg" src="/img/mask-group-325-1@1x.png" alt="" />
@@ -142,10 +139,10 @@ const HomePage: NextPage = (props: any) => {
                         <div className="article_title">
                             <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Single article */}
-                    <div onClick={() => router.push('/articlesDetails')} className="single_article">
+                    {/* <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <img className="frontImg" src="/img/mask-group-322-2@1x.png" alt="" />
                             <img className="hoverImg" src="/img/mask-group-325-1@1x.png" alt="" />
@@ -159,7 +156,7 @@ const HomePage: NextPage = (props: any) => {
                         <div className="article_title">
                             <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
