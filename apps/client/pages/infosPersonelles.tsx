@@ -47,7 +47,7 @@ const Compte: NextPage = (props: any) => {
     const updateUser = async (data: any) => {
         setLoading(true);
         apiClient.user
-            .updateUser(me.id, data)
+            .updateUser(me?.id as number, data)
             .then((res) => {
                 setMe(res);
                 setLoading(false);

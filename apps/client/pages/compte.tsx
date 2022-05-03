@@ -13,7 +13,7 @@ import Head from 'next/head';
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [$me, setMe] = useState<UserStatus>();
+    const [me, setMe] = useState<UserStatus>();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
 
@@ -47,7 +47,7 @@ const Compte: NextPage = (props: any) => {
                     <h1 className="title">
                         Compte{' '}
                         <span>
-                            {me.firstName}, {me.email}
+                            {me?.firstName}, {me?.email}
                         </span>
                     </h1>
                 </div>

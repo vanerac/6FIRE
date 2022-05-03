@@ -62,7 +62,7 @@ const LoginPopup = (props: any) => {
     const [mailError, setMailError] = useState('');
     let isValid = true;
     const [error, setError] = useState('');
-    const [cookies, setCookies] = useCookies(['API_TOKEN']);
+    const [cookies, $setCookie, removeCookie] = useCookies(['API_TOKEN']);
     const [isCookie, setIsCookie] = useState();
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
