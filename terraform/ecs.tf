@@ -352,7 +352,7 @@ resource "aws_ecs_task_definition" "api" {
       },
       {
         "name": "BACKEND_URL",
-        "value": "${aws_lb.api.dns_name}"
+        "value": "https://api.6fireinvest.com"
       }
     ],
     "logConfiguration": {
