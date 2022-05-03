@@ -174,7 +174,7 @@ const Header = (props: any) => {
                                                 </a>
                                             </li>
                                         ))}
-                                        {/* <li>
+                                        <li>
                                             <a href="#">
                                                 <span className="icon">
                                                     <img src="/img/icon/nft.png" alt="" />
@@ -208,7 +208,7 @@ const Header = (props: any) => {
 
                                                 <span className="nav-item">E-Commerce</span>
                                             </a>
-                                        </li> */}
+                                        </li>
                                         {themesDropDown.length > 0 ? (
                                             <li>
                                                 <a href="#">

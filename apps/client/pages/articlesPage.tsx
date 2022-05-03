@@ -107,7 +107,6 @@ const HomePage: NextPage = (props: any) => {
                             </div>
                         </div>
                     ))}
-                    {/* single article
                     <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
                             <Image layout="fill" src="/img/mask-group-322-2@1x.png" />
@@ -122,6 +121,7 @@ const HomePage: NextPage = (props: any) => {
                             <h4 className="title">Axie Infinity, jeu Play to Earn</h4>
                         </div>
                     </div>
+                    {/* single article
                     single article
                     <div onClick={() => router.push('/articlesDetails')} className="single_article">
                         <div className="artitle_thum">
