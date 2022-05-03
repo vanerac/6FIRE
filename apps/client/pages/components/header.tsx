@@ -46,7 +46,7 @@ const Header = (props: any) => {
     const [themes, setThemes] = useState<Theme[]>([]);
     const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [isMoney, setisMoney] = useState('Espace trading & crypto');
+    const [isMoney, setisMoney] = useState('');
 
     const fetchThemes = async () => {
         const response = await apiClient.themes.getThemes();
@@ -77,6 +77,24 @@ const Header = (props: any) => {
             // }
             // console.log('token', cookies['API_TOKEN']);
             fetchThemes();
+        }
+
+        if (
+            router.pathname === '/articlesDetails' ||
+            router.pathname === '/articlesPage' ||
+            router.pathname === '/cgv' ||
+            router.pathname === '/cgu' ||
+            router.pathname === '/mentionsLegales' ||
+            router.pathname === '/politiqueConfidentialite' ||
+            router.pathname === '/404' ||
+            router.pathname === '/compte' ||
+            router.pathname === '/connexion-securite' ||
+            router.pathname === '/infosPersonelles' ||
+            router.pathname === '/pricePage'
+        ) {
+            setisMoney('Espace trading & crypto');
+        } else {
+            setisMoney('Nos Trades');
         }
     }, []);
 
@@ -281,8 +299,16 @@ const Header = (props: any) => {
                                     Espace <br />
                                     Trading &amp; Crypto
                                 </a> */}
-                                <Link href={isMoney == 'Nos Trades' ? '/articlesPage' : '/nosTrades'}>
-                                    <a className="espace" onClick={() => setisMoney('Nos Trades')}>
+                                <Link href={isMoney == 'Nos Trades' ? '/articlesPage' : '/trading'}>
+                                    <a
+                                        className="espace"
+                                        onClick={() => {
+                                            if (isMoney == 'Nos Trades') {
+                                                setisMoney('Espace Trading & Crypto');
+                                            } else {
+                                                setisMoney('Nos Trades');
+                                            }
+                                        }}>
                                         {isMoney}
                                     </a>
                                 </Link>
