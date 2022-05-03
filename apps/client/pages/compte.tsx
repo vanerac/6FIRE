@@ -47,8 +47,7 @@ const Compte: NextPage = (props: any) => {
                     <h1 className="title">
                         Compte{' '}
                         <span>
-                            {/* {me.name}, {me.mail} */}
-                            user infos here
+                            {me.firstName}, {me.email}
                         </span>
                     </h1>
                 </div>
