@@ -35,6 +35,21 @@ export default function Articles() {
             },
         );
     }, []);
+
+    const deleteArticle = (articleId: number) => {
+        apiClient.article.deleteArticleById(articleId).then(
+            () => {
+                alert('Article supprimé');
+                const newArticles = $articles.filter((article) => article.id !== articleId);
+                setArticles(newArticles);
+            },
+            (error) => {
+                alert("Erreur lors de la suppression de l'article");
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            },
+        );
+    };
+
     return (
         <div>
             <Topbar />
@@ -80,8 +95,8 @@ export default function Articles() {
                             title: article.title ?? '?',
                             hidden: article.hidden ? 'false' : 'true',
                         }))}
-                        editCallback={console.log}
-                        deleteCallback={console.log}
+                        editCallback={(id) => router.replace(`/articles-creation/?id=${id}`)}
+                        deleteCallback={(id) => deleteArticle(+id)}
                     />
                 </div>
             </div>

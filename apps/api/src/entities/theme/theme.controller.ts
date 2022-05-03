@@ -1,9 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { CRUDController } from '../../types';
 import { PrismaClient } from '@prisma/client';
-import path from 'path';
-import configuration from '../../../configuration';
-import * as fs from 'fs';
 
 const client = new PrismaClient();
 
@@ -132,8 +129,8 @@ export default class ThemeController implements CRUDController {
         try {
             const { id } = req.params;
             const theme = await client.theme.delete({ where: { id: +id } });
-            const [$http, $base, $public, headerPath] = theme.iconUrl.split('/');
-            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
+            // const [$http, $base, $public, headerPath] = theme.iconUrl.split('/');
+            // fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
             res.status(200).json(theme);
         } catch (error) {
             next(error);

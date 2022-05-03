@@ -34,6 +34,20 @@ export default function BotTrading() {
             },
         );
     }, []);
+
+    const deleteTrader = (traderId: number) => {
+        apiClient.traders.deleteTraderById(traderId).then(
+            () => {
+                alert('Trader supprimé');
+                setCuration($curation.filter((trader) => trader.id !== traderId));
+            },
+            (error) => {
+                alert('Erreur lors de la suppression du trader');
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            },
+        );
+    };
+
     return (
         <div>
             <Topbar />
@@ -74,8 +88,8 @@ export default function BotTrading() {
                             clientId: trader.clientId ?? '?',
                             // visible: theme.hidden ? 'false' : 'true',
                         }))}
-                        editCallback={console.log}
-                        deleteCallback={console.log}
+                        editCallback={(id) => router.replace(`/bot-trading-creation?id=${id}`)}
+                        deleteCallback={(id) => deleteTrader(+id)}
                     />
                 </div>
             </div>

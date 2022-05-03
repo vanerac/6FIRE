@@ -61,9 +61,12 @@ export default function DataTable({
                                         </button>
                                     </td>
                                     <td className="text-center">
-                                        <i
+                                        <img
+                                            src="/img/icon/close-red.svg"
+                                            alt=""
                                             onClick={() => deleteCallback(d.id)}
-                                            className="fa fa-edit color-dard-blue"
+                                            className="closs-btn"
+                                            style={{ width: '20px', height: '20px' }}
                                         />
                                     </td>
                                 </tr>

@@ -36,6 +36,22 @@ export default function ThemesArticles() {
             },
         );
     }, []);
+
+    const deleteTheme = async (themeId: number) => {
+        console.log('deleteTheme', themeId);
+        try {
+            await apiClient.themes.deleteTheme(themeId);
+
+            alert('Theme supprimé');
+            const newThemes = $themes.filter((theme) => theme.id !== themeId);
+
+            setThemes(newThemes);
+        } catch (e) {
+            console.log(e);
+            alert('Echec de suppression');
+        }
+    };
+
     return (
         <div>
             <Topbar />
@@ -76,8 +92,8 @@ export default function ThemesArticles() {
                             name: theme.name ?? '?',
                             // visible: theme.hidden ? 'false' : 'true',
                         }))}
-                        editCallback={console.log}
-                        deleteCallback={console.log}
+                        editCallback={(id) => router.push(`/themes-articles-creationNew?id=${id}`)}
+                        deleteCallback={(id) => deleteTheme(+id)}
                     />
                 </div>
             </div>

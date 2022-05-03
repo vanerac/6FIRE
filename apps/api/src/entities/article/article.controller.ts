@@ -1,9 +1,6 @@
 import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
-import path from 'path';
-import configuration from '../../../configuration';
-import * as fs from 'fs';
 
 const prisma = new PrismaClient();
 
@@ -329,10 +326,10 @@ export default class ArticleController implements CRUDController {
                 },
             });
 
-            const [$http, $base, $public, headerPath] = article.headerUrl.split('/');
-            const [$http2, $base2, $public2, bannerPath] = article.bannerUrl.split('/');
-            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
-            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, bannerPath));
+            // const [$http, $base, $public, headerPath] = article.headerUrl.split('/');
+            // const [$http2, $base2, $public2, bannerPath] = article.bannerUrl.split('/');
+            // fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
+            // fs.unlinkSync(path.join(configuration.UPLOAD_DIR, bannerPath));
 
             res.status(200).json(article);
         } catch (error) {
