@@ -1,9 +1,6 @@
 import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
-import path from 'path';
-import configuration from '../../../configuration';
-import * as fs from 'fs';
 
 const prisma = new PrismaClient();
 
@@ -80,7 +77,7 @@ export default class ArticleController implements CRUDController {
                     },
                 },
             });
-            if (!userSubscriptionLevel) {
+            if (!userSubscriptionLevel && !isAdmin) {
                 next(
                     new ApiError({
                         message: 'User subscription level not found',
@@ -264,6 +261,8 @@ export default class ArticleController implements CRUDController {
                 creation,
                 utilisateurs,
                 necessiteAudicance,
+                bannerUrl,
+                headerUrl,
                 financement,
             } = req.body;
             const article = await prisma.article.update({
@@ -281,6 +280,8 @@ export default class ArticleController implements CRUDController {
                     creation,
                     utilisateurs,
                     necessiteAudicance,
+                    bannerUrl,
+                    headerUrl,
                     financement,
                 },
             });
@@ -329,10 +330,10 @@ export default class ArticleController implements CRUDController {
                 },
             });
 
-            const [$http, $base, $public, headerPath] = article.headerUrl.split('/');
-            const [$http2, $base2, $public2, bannerPath] = article.bannerUrl.split('/');
-            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
-            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, bannerPath));
+            // const [$http, $base, $public, headerPath] = article.headerUrl.split('/');
+            // const [$http2, $base2, $public2, bannerPath] = article.bannerUrl.split('/');
+            // fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
+            // fs.unlinkSync(path.join(configuration.UPLOAD_DIR, bannerPath));
 
             res.status(200).json(article);
         } catch (error) {
@@ -368,7 +369,7 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
-                skip: +page * +limit,
+                skip: Math.max(0, +page - 1) * +limit,
                 take: +limit,
                 select: {
                     id: true,
@@ -377,6 +378,8 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    bannerUrl: true,
+                    headerUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -409,7 +412,10 @@ export default class ArticleController implements CRUDController {
                 delete args.where.Theme;
                 delete args.where.hidden;
             }
+
+            console.log(args);
             const articles = await prisma.article.findMany(args);
+            console.log(articles);
             res.status(200).json(articles);
         } catch (error) {
             next(error);

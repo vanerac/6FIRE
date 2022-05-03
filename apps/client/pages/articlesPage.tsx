@@ -5,13 +5,12 @@ import Footer from './components/footer';
 import Header from './components/header';
 import getAPIClient from '@shared/tools/apiClient';
 import { useEffect, useState } from 'react';
-import { Article, Theme } from '@services/index';
+import { Article } from '@services/index';
 import { useCookies } from 'react-cookie';
 import Head from 'next/head';
 
 const HomePage: NextPage = (props: any) => {
     const [articles, setArticles] = useState<Article[]>([]);
-    const [themes, $setThemes] = useState<Theme[]>([]);
     const [cookies] = useCookies(['API_TOKEN']);
     const [$error, $setError] = useState('');
     const apiClient = getAPIClient(cookies['API_TOKEN']);
@@ -42,10 +41,17 @@ const HomePage: NextPage = (props: any) => {
 
     const fetchData = async (themeId: string | string[] | undefined) => {
         console.log('need to fetch articles with id => ', themeId);
-        const response = await apiClient.article.getArticles(pagination.page, pagination.limit);
+        if (themeId)
+            setArticles(
+                (await apiClient.article.getArticlesByTheme(
+                    +(themeId as string),
+                    pagination.page,
+                    pagination.limit,
+                )) as Article[],
+            );
+        else setArticles((await apiClient.article.getArticles(pagination.page, pagination.limit)) as Article[]);
         // const article: Article = response[0]
         // article.Theme?.name
-        setArticles(response as Article[]);
     };
 
     useEffect(() => {
@@ -54,9 +60,11 @@ const HomePage: NextPage = (props: any) => {
             router.replace('/');
             return;
         }
-        console.log('token', cookies['API_TOKEN']);
-        fetchData(query.themeId);
     }, []);
+
+    useEffect(() => {
+        fetchData(query.themeId);
+    }, [query]);
 
     return (
         <div>
@@ -90,13 +98,7 @@ const HomePage: NextPage = (props: any) => {
                             </div>
                             <div className="cat_and_date">
                                 <div className="category">
-                                    <p className="lato-normal-milano-red-12px line">
-                                        {themes.map((theme: Theme) => {
-                                            if (article.themeId === theme.id) {
-                                                return theme.name;
-                                            }
-                                        })}
-                                    </p>
+                                    <p className="lato-normal-milano-red-12px line">{article.Theme?.name ?? 'Theme'}</p>
                                     <p className="article_date lato-light-manatee-12px">
                                         {convertDate(article.createdAt as string)}
                                     </p>

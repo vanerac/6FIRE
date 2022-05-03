@@ -54,34 +54,34 @@ export default function Utilisateurs() {
                         </button>
                     </div>
 
-                    <div className="table-filter">
-                        <input type="text" placeholder="Rechercher" />
+                    {/*<div className="table-filter">*/}
+                    {/*    <input type="text" placeholder="Rechercher" />*/}
 
-                        <select name="" id="">
-                            <option value="0">Member</option>
-                        </select>
+                    {/*    <select name="" id="">*/}
+                    {/*        <option value="0">Member</option>*/}
+                    {/*    </select>*/}
 
-                        <select name="" id="">
-                            <option value="0">Type abonnement</option>
-                        </select>
+                    {/*    <select name="" id="">*/}
+                    {/*        <option value="0">Type abonnement</option>*/}
+                    {/*    </select>*/}
 
-                        <select name="" id="">
-                            <option value="0">Duree abonnement</option>
-                        </select>
+                    {/*    <select name="" id="">*/}
+                    {/*        <option value="0">Duree abonnement</option>*/}
+                    {/*    </select>*/}
 
-                        <select name="" id="">
-                            <option value="0">Abonnement resiller</option>
-                        </select>
+                    {/*    <select name="" id="">*/}
+                    {/*        <option value="0">Abonnement resiller</option>*/}
+                    {/*    </select>*/}
 
-                        <div className="date-wrap">
-                            <select name="" id="">
-                                <option value="0">Jan 2021</option>
-                            </select>
-                            <select name="" id="">
-                                <option value="0">Jan 2022</option>
-                            </select>
-                        </div>
-                    </div>
+                    {/*    <div className="date-wrap">*/}
+                    {/*        <select name="" id="">*/}
+                    {/*            <option value="0">Jan 2021</option>*/}
+                    {/*        </select>*/}
+                    {/*        <select name="" id="">*/}
+                    {/*            <option value="0">Jan 2022</option>*/}
+                    {/*        </select>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                     <DataTable
                         headers={[

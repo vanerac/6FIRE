@@ -18,6 +18,8 @@ export default function DataTable({
 }) {
     // order data in same order as headers
 
+    console.log(data);
+
     return (
         <div>
             <div className="table-wrapper">
@@ -30,7 +32,8 @@ export default function DataTable({
                                     <th key={index}>{header.display}</th>
                                 ))}
                                 {/*<td className="text-center">Member</td>*/}
-                                <td className="text-center">Action</td>
+                                <td className="text-center">Modifier</td>
+                                <td className="text-center">Supprimer</td>
                             </tr>
                         </thead>
 
@@ -51,12 +54,19 @@ export default function DataTable({
                                         );
                                     })}
                                     <td className="text-center">
-                                        <i onClick={() => editCallback(d.id)} className="fa fa-edit color-dard-blue" />
+                                        <button
+                                            className="fa fa-edit color-dard-blue"
+                                            onClick={() => editCallback(d.id)}>
+                                            {/*<i />*/}
+                                        </button>
                                     </td>
                                     <td className="text-center">
-                                        <i
+                                        <img
+                                            src="/img/icon/close-red.svg"
+                                            alt=""
                                             onClick={() => deleteCallback(d.id)}
-                                            className="fa fa-delete color-dard-blue"
+                                            className="closs-btn"
+                                            style={{ width: '20px', height: '20px' }}
                                         />
                                     </td>
                                 </tr>

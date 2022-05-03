@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbarNew';
 import getAPIClient from '@shared/tools/apiClient';
+import { Theme } from '@shared/services';
 import router from 'next/router';
-import { Trader } from '@shared/services';
 import { useCookies } from 'react-cookie';
 import Sidebar from '../components/sidebarNew';
 import DataTable from '../components/data-table';
+// import { Theme } from '@shared/services';
+// import apiClient from '@shared/tools/apiClient';
 
-export default function BotTrading() {
+export default function ThemesArticles() {
+    // const { query } = useRouter();
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [$curation, setCuration] = useState<(Trader & { isFollowing?: boolean })[]>([]);
+    const [$themes, setThemes] = useState<Theme[]>([]);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -22,10 +25,9 @@ export default function BotTrading() {
             return;
         }
 
-        apiClient.traders.getTraderCuration().then(
+        apiClient.themes.getThemes().then(
             (res) => {
-                setCuration(res);
-                console.log(res);
+                setThemes(res);
                 setLoading(false);
             },
             (error) => {
@@ -35,17 +37,19 @@ export default function BotTrading() {
         );
     }, []);
 
-    const deleteTrader = (traderId: number) => {
-        apiClient.traders.deleteTraderById(traderId).then(
-            () => {
-                alert('Trader supprimé');
-                setCuration($curation.filter((trader) => trader.id !== traderId));
-            },
-            (error) => {
-                alert('Erreur lors de la suppression du trader');
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-            },
-        );
+    const deleteTheme = async (themeId: number) => {
+        console.log('deleteTheme', themeId);
+        try {
+            await apiClient.themes.deleteTheme(themeId);
+
+            alert('Theme supprimé');
+            const newThemes = $themes.filter((theme) => theme.id !== themeId);
+
+            setThemes(newThemes);
+        } catch (e) {
+            console.log(e);
+            alert('Echec de suppression');
+        }
     };
 
     return (
@@ -62,8 +66,8 @@ export default function BotTrading() {
                     </div>
                     <div className="table-header">
                         <div>
-                            <a href={'/bot-trading-creation'}>
-                                <button className={'bg_green'}>Ajouter un trader</button>
+                            <a href={'/themes-articles-creationNew'}>
+                                <button className={'bg_green'}>Créer un theme</button>
                             </a>
                         </div>
                     </div>
@@ -78,18 +82,18 @@ export default function BotTrading() {
                                 display: 'Nom',
                             },
                             {
-                                key: 'clientId',
-                                display: 'Trader Id',
+                                key: 'subscription',
+                                display: "Niveau d'Abonnement",
                             },
                         ]}
-                        data={$curation.map((trader) => ({
-                            id: trader.id?.toString() ?? '?',
-                            name: trader.name ?? '?',
-                            clientId: trader.clientId ?? '?',
+                        data={$themes.map((theme) => ({
+                            id: theme.id?.toString() ?? '?',
+                            subscription: theme?.subscriptionLevel?.toString() ?? '?',
+                            name: theme.name ?? '?',
                             // visible: theme.hidden ? 'false' : 'true',
                         }))}
-                        editCallback={(id) => router.replace(`/bot-trading-creation?id=${id}`)}
-                        deleteCallback={(id) => deleteTrader(+id)}
+                        editCallback={(id) => router.push(`/themes-articles-creationNew?id=${id}`)}
+                        deleteCallback={(id) => deleteTheme(+id)}
                     />
                 </div>
             </div>

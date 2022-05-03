@@ -578,7 +578,22 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "token"
+                  ]
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -1476,6 +1491,193 @@
         },
         "responses": {
           "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Trader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/trader/{id}": {
+      "get": {
+        "tags": [
+          "traders"
+        ],
+        "operationId": "getTraderById",
+        "description": "Get a trader by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Trader ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Trader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "traders"
+        ],
+        "operationId": "deleteTraderById",
+        "description": "Delete a trader by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Trader ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "traders"
+        ],
+        "operationId": "updateTraderById",
+        "description": "Update a trader by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Trader ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Trader"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Trader"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/trader": {
+      "post": {
+        "description": "Create a new trader",
+        "operationId": "createTrader",
+        "tags": [
+          "traders"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Trader"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
             "description": "Success",
             "content": {
               "application/json": {
@@ -3468,6 +3670,10 @@
           },
           "name": {
             "type": "string",
+            "nullable": false
+          },
+          "rank": {
+            "type": "number",
             "nullable": false
           },
           "clientId": {
