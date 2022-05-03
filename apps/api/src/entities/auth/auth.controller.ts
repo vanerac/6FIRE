@@ -146,6 +146,7 @@ export default class AuthController {
         try {
             const { email, password } = req.body;
 
+            console.log(req.body);
             const user = await client.user.findFirst({
                 where: {
                     email,
