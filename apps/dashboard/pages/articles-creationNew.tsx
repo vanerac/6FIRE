@@ -40,6 +40,14 @@ export default function ArticlesCreation() {
     const [bannerUrl, setBannerUrl] = useState<string>('img/image-1-1@1x.png');
     const [thumbnailUrl, setThumbnailUrl] = useState<string>('img/image-1-1@1x.png');
 
+    useEffect(() => {
+        console.log('thumbnail update', thumbnailUrl);
+    }, [thumbnailUrl]);
+
+    useEffect(() => {
+        console.log('banner update', bannerUrl);
+    }, [bannerUrl]);
+
     const [selectTemp, setSelectTemp] = useState<number>();
 
     useEffect(() => {
