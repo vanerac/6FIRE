@@ -186,8 +186,8 @@ export default function ArticlesCreation() {
                 content: JSON.stringify(articleContentsRaw),
                 themeId: selectedThemeId as number,
                 recommendedArticleIds: selectedArticles,
-                header: thumbnailUrl,
-                banner: bannerUrl,
+                headerUrl: thumbnailUrl,
+                bannerUrl: bannerUrl,
             };
 
             apiClient.article.updateArticleById(article.id, newArticle as unknown as Article).then(
