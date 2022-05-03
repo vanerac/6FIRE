@@ -1,17 +1,16 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type {CancelablePromise} from '../core/CancelablePromise';
-import type {BaseHttpRequest} from '../core/BaseHttpRequest';
+import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 
 export class AuthService {
 
-    constructor(public readonly httpRequest: BaseHttpRequest) {
-    }
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
 
     /**
-     * Home
-     * Home
+     * Login
+     * Login
      * @param requestBody
      * @returns any Successful operation
      * @throws ApiError
@@ -39,8 +38,8 @@ export class AuthService {
 
     /**
      * LoginAdmin
-     * Home
-     * @param requestBody Home
+     * Login
+     * @param requestBody Login
      * @returns any OK
      * @throws ApiError
      */

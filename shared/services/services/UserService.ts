@@ -212,7 +212,7 @@ export class UserService {
     }> {
         return this.httpRequest.request({
             method: 'GET',
-            url: '/me/getLinkingCode',
+            url: '/user/me/getLinkingCode',
             errors: {
                 400: `Invalid user supplied`,
                 500: `Internal server error`,

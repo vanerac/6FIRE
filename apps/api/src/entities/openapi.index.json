@@ -23,7 +23,7 @@
     "/user/me": {
       "$ref": "./user/user.path.json#/me"
     },
-    "/me/getLinkingCode": {
+    "/user/me/getLinkingCode": {
       "$ref": "./user/user.path.json#/getLinkingCode"
     },
     "/auth/login": {

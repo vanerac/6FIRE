@@ -441,7 +441,7 @@
         }
       }
     },
-    "/me/getLinkingCode": {
+    "/user/me/getLinkingCode": {
       "get": {
         "description": "get the current user linking code",
         "operationId": "getLinkingCode",
