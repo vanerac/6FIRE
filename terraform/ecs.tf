@@ -353,6 +353,10 @@ resource "aws_ecs_task_definition" "api" {
       {
         "name": "BACKEND_URL",
         "value": "https://api.6fireinvest.com"
+      },
+      {
+        "name": "UPLOAD_DIR",
+        "value": "/upload"
       }
     ],
     "logConfiguration": {

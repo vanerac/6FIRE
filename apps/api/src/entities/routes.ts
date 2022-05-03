@@ -62,7 +62,7 @@ router.post(
             }
 
             const fileUrl = new URL(path.join('public/', req.file.filename), configuration.BACKEND_URL);
-            console.log(fileUrl);
+            console.log(fileUrl.href);
 
             res.status(200).json({
                 message: 'File uploaded !',

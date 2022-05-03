@@ -261,6 +261,8 @@ export default class ArticleController implements CRUDController {
                 creation,
                 utilisateurs,
                 necessiteAudicance,
+                bannerUrl,
+                headerUrl,
                 financement,
             } = req.body;
             const article = await prisma.article.update({
@@ -278,6 +280,8 @@ export default class ArticleController implements CRUDController {
                     creation,
                     utilisateurs,
                     necessiteAudicance,
+                    bannerUrl,
+                    headerUrl,
                     financement,
                 },
             });
@@ -365,7 +369,7 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
-                skip: +page * +limit,
+                skip: Math.max(0, +page - 1) * +limit,
                 take: +limit,
                 select: {
                     id: true,
@@ -374,6 +378,8 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    bannerUrl: true,
+                    headerUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -406,7 +412,10 @@ export default class ArticleController implements CRUDController {
                 delete args.where.Theme;
                 delete args.where.hidden;
             }
+
+            console.log(args);
             const articles = await prisma.article.findMany(args);
+            console.log(articles);
             res.status(200).json(articles);
         } catch (error) {
             next(error);
