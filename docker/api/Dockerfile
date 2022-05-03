@@ -61,4 +61,5 @@ RUN npm install
 RUN npx prisma generate --schema prisma/schema.prisma
 
 # Note: Added migration to launch
-CMD npx prisma db push --accept-data-loss --force-reset && node src/index.js
+# --accept-data-loss --force-reset
+CMD npx prisma db push  && node src/index.js

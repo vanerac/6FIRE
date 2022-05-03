@@ -46,6 +46,13 @@ export default function BotTrading() {
                         {/*    <i className="fa fa-upload" /> <span>Export CSV</span>*/}
                         {/*</button>*/}
                     </div>
+                    <div className="table-header">
+                        <div>
+                            <a href={'/bot-trading-creation'}>
+                                <button className={'bg_green'}>Ajouter un trader</button>
+                            </a>
+                        </div>
+                    </div>
                     <DataTable
                         headers={[
                             {

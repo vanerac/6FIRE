@@ -47,6 +47,13 @@ export default function Articles() {
                         {/*    <i className="fa fa-upload"></i> <span>Export CSV</span>*/}
                         {/*</button>*/}
                     </div>
+                    <div className="table-header">
+                        <div>
+                            <a href={'/articles-creationNew'}>
+                                <button className={'bg_green'}>Créer un article</button>
+                            </a>
+                        </div>
+                    </div>
 
                     <DataTable
                         headers={[

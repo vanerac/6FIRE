@@ -48,6 +48,13 @@ export default function ThemesArticles() {
                         {/*    <i className="fa fa-upload" /> <span>Export CSV</span>*/}
                         {/*</button>*/}
                     </div>
+                    <div className="table-header">
+                        <div>
+                            <a href={'/themes-articles-creationNew'}>
+                                <button className={'bg_green'}>Créer un theme</button>
+                            </a>
+                        </div>
+                    </div>
                     <DataTable
                         headers={[
                             {
