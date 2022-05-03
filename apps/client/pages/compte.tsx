@@ -16,7 +16,7 @@ const Compte: NextPage = (props: any) => {
     const [me, setMe] = useState<UserStatus>();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [subs, setSubs] = useState<UserSub[]>([]);
+    const [$subs, setSubs] = useState<UserSub[]>([]);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {

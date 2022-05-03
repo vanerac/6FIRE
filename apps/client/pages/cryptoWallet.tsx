@@ -118,10 +118,10 @@ const CryptoWallet: NextPage = (props: any) => {
                 </div>
 
                 <div className="article-block">
-                    <span className="title">Mise à jour du {message.date}</span>
+                    <span className="title">Mise à jour du {message?.date}</span>
 
                     <div className="text">
-                        <p>{message.message}</p>
+                        <p>{message?.message}</p>
                         {/* <p>J’ai déjà un bag dans l’ensemble des positions ci-dessous ! 💰</p>
                         <p>Explication :</p>
                         <p>- Pour 1Inch je vous laisse voir le token de la semaine est mon explication !</p>

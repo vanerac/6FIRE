@@ -162,7 +162,7 @@ const Connexion: NextPage = () => {
             <div className="register-web screen">
                 <div className="background-WxaGAS"></div>
                 <div className="logo-WxaGAS">
-                    <div className="effect-ReYaAa">
+                    <div onClick={() => router.push('/')} style={{ cursor: 'pointer' }} className="effect-ReYaAa">
                         <Image layout="fill" src="/img/effect-1@1x.png" />
                     </div>
                 </div>
