@@ -8,9 +8,14 @@ const Footer = (props: any) => {
     return (
         <div>
             <footer id="footer_block">
-                {/* <div className="footer-text">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima eveniet esse tempore fugit autem culpa accusantium, similique optio amet accusamus itaque officiis quas exercitationem odio unde molestias veniam sed corrupti et quidem debitis? Sit sint fugiat, adipisci dicta autem culpa!</p>
-                </div> */}
+                <div className="footer-text">
+                    <p>
+                        Les investissements sont risqués. Les investissements sont risqués par nature, les utilisateurs
+                        doivent faire leurs propres recherches avant d’entreprendre toute action et n’investir que dans
+                        les limites de leurs capacités financières. Cet article ne constitue pas un conseil en
+                        investissement.
+                    </p>
+                </div>
                 <div className="footer-menu-wrapper">
                     <div className="footer-logo">
                         <Link href="./">
@@ -19,14 +24,14 @@ const Footer = (props: any) => {
                     </div>
                     <div className="footer-nav">
                         <div className="social">
-                            <Link href="#">
+                            <Link href="https://www.instagram.com/6fireinvest/">
                                 <img src="/img/fontawsome--instagram--1@1x.png" alt="social icon" />
                             </Link>
-                            <Link href="#">
-                                <img src="/img/icon-simple-tiktok-1@1x.png" alt="social icon" />
-                            </Link>
-                            <Link href="#">
+                            <Link href="https://t.me/+qLDAoR3i3v43Mjdk">
                                 <img src="/img/icon-awesome-telegram-plane-9@1x.png" alt="social icon" />
+                            </Link>
+                            <Link href="https://www.tiktok.com/@haik.13?lang=fr">
+                                <img src="/img/icon-simple-tiktok-1@1x.png" alt="social icon" />
                             </Link>
                         </div>
                         <ul className="footer-nav-items">

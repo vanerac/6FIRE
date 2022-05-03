@@ -197,6 +197,7 @@ const Connexion: NextPage = () => {
                         <span className="span0-qb1m9I lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
                         </span>
+
                         <span onClick={() => router.push('/cgu')} className="span1-qb1m9I lato-normal-white-12px">
                             Conditions Générales d’Utilisation{' '}
                         </span>

@@ -151,7 +151,7 @@ const PricePage: NextPage = (props: any) => {
                                             <li>
                                                 <img src="/img/icon/plus.png" alt="" />
                                                 Accès au BOT TRADING permettant d’obtenir les alertes des meilleurs
-                                                tradeurs du monde sur Binance
+                                                traders du monde sur Binance
                                             </li>
                                             <li>
                                                 <img src="/img/icon/plus.png" alt="" />
