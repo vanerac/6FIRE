@@ -10,17 +10,17 @@ import { useCookies } from 'react-cookie';
 import Head from 'next/head';
 
 const HomePage: NextPage = (props: any) => {
-    const [articles, setArticles] = useState<Article[]>([]);
+    const [$articles, $setArticles] = useState<Article[]>([]);
     const [cookies] = useCookies(['API_TOKEN']);
     const [$error, $setError] = useState('');
-    const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const $apiClient = getAPIClient(cookies['API_TOKEN']);
     const { query } = useRouter();
-    const [pagination, $setPagination] = useState<any>({
+    const [$pagination, $setPagination] = useState<any>({
         page: 1,
         limit: 20,
     });
 
-    const convertDate = (date: string) => {
+    const $convertDate = (date: string) => {
         const date_unix = new Date(date).getTime() / 1000;
         const now = new Date().getTime() / 1000;
         const diff = now - date_unix;
@@ -39,20 +39,20 @@ const HomePage: NextPage = (props: any) => {
         }
     };
 
-    const fetchData = async (themeId: string | string[] | undefined) => {
-        console.log('need to fetch articles with id => ', themeId);
-        if (themeId)
-            setArticles(
-                (await apiClient.article.getArticlesByTheme(
-                    +(themeId as string),
-                    pagination.page,
-                    pagination.limit,
-                )) as Article[],
-            );
-        else setArticles((await apiClient.article.getArticles(pagination.page, pagination.limit)) as Article[]);
-        // const article: Article = response[0]
-        // article.Theme?.name
-    };
+    // const fetchData = async (themeId: string | string[] | undefined) => {
+    //     console.log('need to fetch articles with id => ', themeId);
+    //     if (themeId)
+    //         setArticles(
+    //             (await apiClient.article.getArticlesByTheme(
+    //                 +(themeId as string),
+    //                 pagination.page,
+    //                 pagination.limit,
+    //             )) as Article[],
+    //         );
+    //     else setArticles((await apiClient.article.getArticles(pagination.page, pagination.limit)) as Article[]);
+    //     // const article: Article = response[0]
+    //     // article.Theme?.name
+    // };
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -63,7 +63,7 @@ const HomePage: NextPage = (props: any) => {
     }, []);
 
     useEffect(() => {
-        fetchData(query.themeId);
+        // fetchData(query.themeId);
     }, [query]);
 
     return (
@@ -72,11 +72,11 @@ const HomePage: NextPage = (props: any) => {
                 <title>Articles</title>
             </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
-            <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+            <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
             <div className="article_wrapper">
                 <div className="grid">
                     {/* single article */}
-                    {articles.map((article: Article) => (
+                    {/* {articles.map((article: Article) => (
                         <div
                             key={article.id}
                             onClick={() => {
@@ -105,7 +105,7 @@ const HomePage: NextPage = (props: any) => {
                                 <h4 className="title">{article.title}</h4>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
 
                     {/* Single article */}
                     {/* <div onClick={() => router.push('/articlesDetails')} className="single_article">

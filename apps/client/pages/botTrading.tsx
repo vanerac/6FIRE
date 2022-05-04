@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import router from 'next/router';
-import Footer from './components/footer';
 import Header from './components/header';
 // import checkAuth from './components/checkAuth';
 import { useEffect, useState } from 'react';
@@ -42,7 +41,7 @@ const BotTrading: NextPage = (props: any) => {
             </Head>
             <input type="hidden" id="anPageName" name="page" value="bot-trading" />
             <div className="bot-trading screen">
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
                 <img className="background-FwUAid" src="img/background@1x.png" />
                 <img className="groupe-de-masques-327-FwUAid" src="img/mask-group-327-1@1x.png" />
                 <div className="rectangle-3558-FwUAid"></div>
@@ -207,7 +206,41 @@ const BotTrading: NextPage = (props: any) => {
                     </div>
                     <img className="ligne-41-BCxIWv" src="img/line-41-2@1x.png" />
                 </div>
-                <Footer />
+                <div className="footer-FwUAid">
+                    <div className="background-8WYuzq"></div>
+                    <div className="menu-footer-8WYuzq">
+                        <div className="mentions-lgales-76AaXN sourcesanspro-semi-bold-sonic-silver-14px">
+                            Mentions légales
+                        </div>
+                        <div className="cgu-76AaXN sourcesanspro-semi-bold-sonic-silver-14px">CGU</div>
+                        <div className="cgv-76AaXN sourcesanspro-semi-bold-sonic-silver-14px">CGV</div>
+                        <div className="politique-de-confidentialit-76AaXN sourcesanspro-semi-bold-sonic-silver-14px">
+                            Politique de confidentialité
+                        </div>
+                        <div className="politique-de-confidentialit-V0xCL2 sourcesanspro-semi-bold-sonic-silver-14px">
+                            Politique de confidentialité
+                        </div>
+                        <div className="contact-76AaXN sourcesanspro-semi-bold-sonic-silver-14px">Contact</div>
+                    </div>
+                    <div className="x2022-6-fire-invest-8WYuzq sourcesanspro-semi-bold-gray-14px">
+                        Ⓒ 2022 - 6FIRE INVEST
+                    </div>
+                    <div className="logo-8WYuzq">
+                        <div className="groupe-2-UoxHJ5">
+                            <img className="groupe-1-GAgH3l" src="img/group-1-10@1x.png" />
+                        </div>
+                        <img className="effect-UoxHJ5" src="img/effect-12@1x.png" />
+                    </div>
+                    <img className="ligne-31-8WYuzq" src="img/line-31-1@1x.png" />
+                    <div className="groupe-3011-8WYuzq">
+                        <div className="ellipse-17695-YDU9MX hidden"></div>
+                        <img className="icon-instagram-YDU9MX" src="img/fontawsome--instagram--1@1x.png" />
+                    </div>
+                    <div className="groupe-3010-8WYuzq">
+                        <div className="ellipse-17696-6Z2cAN hidden"></div>
+                        <img className="icon-simple-tiktok-6Z2cAN" src="img/icon-simple-tiktok-1@1x.png" />
+                    </div>
+                </div>
             </div>
             <div className="bot-trading-mobile screen">
                 <div className="avertissement-Pj5fjx">

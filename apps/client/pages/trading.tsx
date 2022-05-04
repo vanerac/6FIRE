@@ -79,7 +79,7 @@ const Trading: NextPage = (props: any) => {
                         <img className="icon-simple-tiktok-NVC3AW" src="img/icon-simple-tiktok-1@1x.png" />
                     </div>
                 </div>
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
                 <div className="h2-3LBGsu lato-bold-white-14px">
                     CONTACTEZ NOUS POUR ACCÉDER AU CANAL TELEGRAM DES MEMBRES TRADING &amp; CRYPTO
                     <br />

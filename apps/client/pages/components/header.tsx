@@ -43,20 +43,51 @@ if (typeof window !== 'undefined') {
 const Header = (props: any) => {
     console.log(props);
     const [cookies, $setCookie, removeCookie] = useCookies(['API_TOKEN']);
-    const [themes, setThemes] = useState<Theme[]>([]);
+    const [themes, setThemes] = useState<(Theme & { url: string })[]>([]);
     const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
     const [isMoney, setisMoney] = useState('');
 
     const fetchThemes = async () => {
-        const response = await apiClient.themes.getThemes();
-        if (response.length === 0) {
-            router.push('/pricePage');
+        if (props.isEspaceTradingCrypto == true) {
+            // const themes = {['Formations'; 'Forex'; ]}
+            // create array of themes
+            const themes = [
+                // articles formations id
+                {
+                    id: 1,
+                    name: 'Formations',
+                    url: '/tradingFormationForex',
+                },
+                // articles forex id
+                {
+                    id: 2,
+                    name: 'Forex',
+                    url: '/tradingFormationForex',
+                },
+                {
+                    id: 3,
+                    name: 'Crypto Wallet',
+                    url: '/cryptoWallet',
+                },
+                {
+                    id: 3,
+                    name: 'Bot Trading',
+                    url: '/botTrading',
+                },
+            ];
+            setThemes(themes);
+        } else {
+            const response = await apiClient.themes.getThemes();
+            if (response.length === 0) {
+                router.push('/pricePage');
+            }
+            console.log(response);
+            const slicedThemes = [...response].slice(0, 5) as Theme[];
+            const slicedThemesDropDown = [...response].slice(5) as Theme[];
+            setThemes(slicedThemes as any);
+            setThemesDropDown(slicedThemesDropDown);
         }
-        const slicedThemes = [...response].slice(0, 5) as Theme[];
-        const slicedThemesDropDown = [...response].slice(5) as Theme[];
-        setThemes(slicedThemes);
-        setThemesDropDown(slicedThemesDropDown);
         // setThemesDropDown(response.slice(4) as Theme[]);
     };
 
@@ -91,6 +122,7 @@ const Header = (props: any) => {
             router.pathname === '/connexion-securite' ||
             router.pathname === '/infosPersonelles' ||
             router.pathname === '/pricePage'
+            // router.pathname === '/tradingFormationForex'
         ) {
             setisMoney('Espace trading & crypto');
         } else {
@@ -178,13 +210,24 @@ const Header = (props: any) => {
                                                 <a
                                                     style={{ cursor: 'pointer', marginRight: '25px' }}
                                                     onClick={() => {
-                                                        console.log('theme', theme);
-                                                        router.push({
-                                                            pathname: '/articlesPage',
-                                                            query: {
-                                                                themeId: theme.id,
-                                                            },
-                                                        });
+                                                        {
+                                                            props.isEspaceTradingCrypto == false
+                                                                ? router.push({
+                                                                      pathname: '/articlesPage',
+                                                                      query: {
+                                                                          themeId: theme.id,
+                                                                      },
+                                                                  })
+                                                                : props.isEspaceTradingCrypto == true &&
+                                                                  theme.url == '/tradingFormationForex'
+                                                                ? router.push({
+                                                                      pathname: theme.url,
+                                                                      query: {
+                                                                          themeId: theme.id,
+                                                                      },
+                                                                  })
+                                                                : router.push(theme.url);
+                                                        }
                                                     }}>
                                                     <span className="icon">
                                                         <img src="/img/icon/Cryptomonnaies.png" alt="" />
@@ -309,7 +352,11 @@ const Header = (props: any) => {
                                                 setisMoney('Nos Trades');
                                             }
                                         }}>
-                                        {isMoney}
+                                        {isMoney == 'Nos Trades' ? (
+                                            <p>Nos Trades</p>
+                                        ) : (
+                                            <p>Espace Trading &amp; Crypto</p>
+                                        )}
                                     </a>
                                 </Link>
                             </div>
