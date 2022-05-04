@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
 import router from 'next/router';
 import Header from './components/header';
+import Footer from './components/footer';
 // import checkAuth from './components/checkAuth';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import Head from 'next/head';
-import Footer from './components/footer';
 
 const BotTrading: NextPage = ($props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -130,6 +130,30 @@ const BotTrading: NextPage = ($props: any) => {
                             recevrez automatiquement leurs alertes sur Telegram grâce au Bot.
                         </p>
                         <p>Exemple :</p>
+
+                        <div className="table-wrapper">
+                            <table>
+                                <tr>
+                                    <td className="pl-30">
+                                        <div className="user-wrap">
+                                            <div className="rank">2</div>
+                                            <img src="/img/icon/user-logo.png" alt="" />
+                                            <div className="user-name">
+                                                <span className="imgTitle">
+                                                    TOP TRADER <img src="/img/icon/crown.png" alt="" />
+                                                </span>
+                                                <span className="company">WetCrossBus</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="green">1,495.44%</td>
+                                    <td className="red">-136.46%</td>
+                                    <td className="text-center">
+                                        <button className="btn">+Suivre</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -143,6 +167,17 @@ const BotTrading: NextPage = ($props: any) => {
                             Contactez nous pour passer à l’étape suivant et obtenir les explications. Nous vous
                             expliquerons où et comment prendre les Trades en direct.
                         </p>
+
+                        <div className="btn-group">
+                            <button className="primary-button bg-light-blue">
+                                <img className="telegram" src="/img/icon/telegram.svg" alt="" />
+                                <span>Support Telegram</span>
+                            </button>
+                            <button className="primary-button bg-ligh-green">
+                                <img src="/img/icon/whatsapp.svg" alt="" />
+                                <span>Support WhatsApp</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

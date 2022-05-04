@@ -1,5 +1,4 @@
 /* screen - homepage-1 */
-
 .body {
     margin: O;
 }
@@ -4402,4 +4401,30 @@ body.scrollOff {
     background: linear-gradient(43deg, rgba(214,29,0,1) 0%, rgba(154,4,2,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d61d00",endColorstr="#9a0402",GradientType=1);
     margin-top: 30px;
+}
+
+.btn-group .primary-button.bg-light-blue{
+    background: #1caaef;
+}
+.btn-group .primary-button.bg-ligh-green{
+    background: #26cf49;
+}
+.btn-group{
+    gap: 25px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-box .table-wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+}
+.btn-group img{
+    max-width: 20px;
+    margin-right: 10px;
+}
+.btn-group img.telegram{
+    filter: brightness(0) invert(1);
 }
