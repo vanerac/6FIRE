@@ -3394,6 +3394,7 @@ body{
     border-radius: 10px;
     padding: 30px;
     color: #161a1a;
+    cursor: pointer;
 }
 
 .account-wrapper .single-info p {

@@ -118,7 +118,7 @@ const HomePage: NextPage = (props: any) => {
             </Head>
             <input type="hidden" id="anPageName" name="page" value="articles-details" />
             <div className="article-details-block">
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
                 {$articles ? (
                     <div className="article_details_wrapper">
                         <div className="article_header">
