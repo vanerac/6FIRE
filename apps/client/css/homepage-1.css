@@ -4281,3 +4281,112 @@ body{
 body.scrollOff {
     overflow-y: hidden;
 }
+
+/* Bot Trading page style 
+---------------------------*/
+.trading-wrapper{
+    margin: 135px auto;
+    margin-bottom: 3%;
+    color: #fff;
+    font-family: var(--font-family-lato);
+}
+
+.treading-header{
+    position: relative;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.treading-header .header-bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+.treading-header .content{
+    max-width: 1400px;
+    padding: 0 3%;
+    margin: 0 auto;
+    text-align: center;
+}
+.treading-header .content .title{
+    font-weight: 600;
+    font-size: 18px;
+}
+.content .bot-button-group{
+    border-radius: 10px;
+    background-color: #5e5667;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.content .bot-button-group a{
+    display: inline-block;
+    width: 200px;
+    padding: 10px 35px;
+    color: #fff;
+    transition: all 0.5s;
+}
+.content .bot-button-group a.active{
+    background-color: #b30f10;
+}
+.container{
+    max-width: 1400px;
+    padding: 0 3%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trading-wrapper .text-box{
+    padding: 30px;
+}
+.bg-light-black{
+    background-color: #212121;
+}
+
+.wrap .question{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.wrap .question .number{
+    margin-right: 15px;
+    color: #fff;
+    background-color: #b30f10;
+    padding: 10px;
+    transform: rotate(-10deg);
+}
+.wrap{text-align: center;}
+
+.wrap .copy{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 10px;
+}
+.copy span{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.wrap .copy .code{
+    background-color: #5e5667;
+    margin-right: 10px;
+}
+
+.copyCode{
+    background-color: #b30f10;
+}
