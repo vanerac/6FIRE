@@ -42,7 +42,7 @@ const BotTrading: NextPage = (props: any) => {
             </Head>
             <input type="hidden" id="anPageName" name="page" value="bot-trading" />
             <div className="bot-trading screen">
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
                 <img className="background-FwUAid" src="img/background@1x.png" />
                 <img className="groupe-de-masques-327-FwUAid" src="img/mask-group-327-1@1x.png" />
                 <div className="rectangle-3558-FwUAid"></div>

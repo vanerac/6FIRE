@@ -80,7 +80,7 @@ const BotTradingTrader: NextPage = () => {
                 <title>Bot Trading Trader - Crypto Trader</title>
             </Head>
             <input type="hidden" id="anPageName" name="page" value="bot-trading-traders" />
-            <Header />
+            <Header isOpenSideBar={null} isEspaceTradingCrypto={true} />
             <div className="boat_Trading_Header">
                 <img src="/img/mask-group-327-1@1x.png" alt="" />
                 <div className="text-wrap">
