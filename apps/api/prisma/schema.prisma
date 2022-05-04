@@ -101,10 +101,10 @@ model UserSubscription {
   updatedAt        DateTime     @default(now())
   endDate          DateTime?
   price            Int
-  paymentId        String // exteneral payment id
-  customerId       String // external customer id
-  status           String // updated external status
-  paymentProdvider String //  payment provider
+  paymentId        String       // exteneral payment id
+  customerId       String       // external customer id
+  status           String       // updated external status
+  paymentProdvider String       //  payment provider
   User             User         @relation(fields: [userId], references: [id])
   Subscription     Subscription @relation(fields: [subscriptionId], references: [id])
 }

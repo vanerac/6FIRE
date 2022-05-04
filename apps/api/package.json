@@ -52,6 +52,7 @@
     "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
+    "ngrok": "^4.3.1",
     "openapi-typescript": "^5.2.0",
     "openapi-typescript-codegen": "^0.20.1",
     "prettier": "^2.6.2",

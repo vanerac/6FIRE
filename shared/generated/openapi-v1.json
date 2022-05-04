@@ -2606,6 +2606,14 @@
                   "offerId": {
                     "type": "string",
                     "description": "Offer ID"
+                  },
+                  "provider": {
+                    "type": "string",
+                    "description": "Provider",
+                    "enum": [
+                      "mollie",
+                      "payline"
+                    ]
                   }
                 }
               }

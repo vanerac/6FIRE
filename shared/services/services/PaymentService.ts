@@ -44,6 +44,10 @@ export class PaymentService {
              * Offer ID
              */
             offerId?: string;
+            /**
+             * Provider
+             */
+            provider?: 'mollie' | 'payline';
         },
     ): CancelablePromise<(UserSubscription & {
         /**

@@ -6,11 +6,12 @@ import { generateConfirmationEmail } from '../../templates/email';
 import MollieService from '../../tools/payment/mollie.service';
 import PaylineService from '../../tools/payment/payline.service';
 import { PaymentService, PaymentType } from '../../tools/payment/payment.service';
-import { PaylineWeb } from '@playmoweb/payline-typescript-sdk';
 import configuration from '../../../configuration';
 
+import ngrok from 'ngrok';
+
 const prisma = new PrismaClient();
-const paylineWebService = new PaylineWeb(paylineConfig);
+// const paylineWebService = new PaylineWeb(paylineConfig);
 
 const services = {
     mollie: MollieService,
@@ -55,6 +56,8 @@ export default class PaymentController implements CRUDController {
 
             const service: PaymentService = services[provider];
 
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             const payment = await service.getPayment(paymentId);
 
             res.status(200).json(payment);
@@ -81,21 +84,16 @@ export default class PaymentController implements CRUDController {
 
             const customer = await service.getCustomer(req.user);
 
-            const userSubscription = await prisma.userSubscription.create({
-                data: {
-                    userId: req.user.id,
-                    subscriptionId: subscriptionId as number,
-                    price: subscription.price,
-                    customerId: customer.id,
-                    paymentProdvider: provider,
-                },
-            });
+            // const ngrok = require('ngrok');
+
+            configuration.BACKEND_URL = `${await ngrok.connect(3333)}/api`;
+            console.log(configuration.BACKEND_URL);
 
             const paymentIntent = await service.createPaymentIntent(
                 {
                     paymentType: PaymentType.SUBSCRIPTION,
                     subscription: subscription as any,
-                    userSubscriptionId: userSubscription.id.toString(),
+                    // userSubscriptionId: userSubscription.id.toString(),
                     clientId: customer.id,
                     amount: subscription.price,
                     description: subscription.description,
@@ -103,11 +101,36 @@ export default class PaymentController implements CRUDController {
                 },
                 {
                     cancelUrl: configuration.BACKEND_URL + '/payment/status',
-                    statusUrl: configuration.BACKEND_URL + '/payment/status',
+                    statusUrl: configuration.BACKEND_URL + '/payment/webhook/mollie',
                     successUrl: configuration.BACKEND_URL + '/payment/status',
                     failUrl: configuration.BACKEND_URL + '/payment/status',
                 },
             );
+
+            await prisma.userSubscription.create({
+                data: {
+                    User: {
+                        connect: {
+                            id: req.user.id,
+                        },
+                    },
+                    Subscription: {
+                        connect: {
+                            id: subscription.id,
+                        },
+                    },
+                    paymentId: paymentIntent.id,
+                    status: 'pending',
+                    // userId: req.user.id,
+                    // subscriptionId: subscription.id as number,
+                    price: subscription.price,
+                    customerId: customer.id,
+                    paymentProdvider: provider as string,
+                },
+            });
+
+            console.log(Object.keys(paymentIntent));
+            console.log(paymentIntent);
 
             res.status(200).json((paymentIntent as any).getPaymentUrl());
             // const { subscriptionId, offerId, paymentProvider } = req.body;
@@ -147,7 +170,7 @@ export default class PaymentController implements CRUDController {
             //     email: user.email,
             // });
 
-            let payment;
+            // let payment;
             // depending on the subscription type, we create a payment or a subscription
             // if (subscription.subscriptionType === PaymentType.ONETIME) {
             //     // we create a payment
@@ -266,6 +289,8 @@ export default class PaymentController implements CRUDController {
                 throw new Error('Provider not found');
             }
 
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             await service.cancelSubscription(payment.customerId, payment.paymentId);
             await prisma.userSubscription.delete({
                 where: {
@@ -306,8 +331,24 @@ export default class PaymentController implements CRUDController {
         }
 
         if (status.status === 'canceled' || status.status === 'failed' || status.status === 'expired') {
+            await prisma.userSubscription.update({
+                where: {
+                    id: subscription.id,
+                },
+                data: {
+                    status: status.status,
+                },
+            });
             // Todo: send failed email
-        } else {
+        } else if (status.status === 'paid') {
+            await prisma.userSubscription.update({
+                where: {
+                    id: subscription.id,
+                },
+                data: {
+                    status: 'active',
+                },
+            });
             await AWSsendEmail({
                 email: subscription.User.email,
                 subject: '6FIRE - Confirmation commande',
@@ -321,14 +362,6 @@ export default class PaymentController implements CRUDController {
                 }),
             });
         }
-        await prisma.userSubscription.update({
-            where: {
-                id: subscription.id,
-            },
-            data: {
-                status: status.status,
-            },
-        });
     }
 
     //createRefund
@@ -351,6 +384,8 @@ export default class PaymentController implements CRUDController {
                 throw new Error('Provider not found');
             }
 
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             const refund = await service.createRefund(payment.customerId, payment.paymentId);
             res.status(200).json(refund);
         } catch (error) {
@@ -362,7 +397,7 @@ export default class PaymentController implements CRUDController {
     static async paylineWebhooksStatus(req: Request, res: Response) {
         res.sendStatus(501);
 
-        const paylineWebService = new PaylineWeb(paylineConfig);
+        // const paylineWebService = new PaylineWeb(paylineConfig);
         // const { id } = req.body;
 
         // const status = await PaylineService.getPayment(id);
@@ -388,5 +423,9 @@ export default class PaymentController implements CRUDController {
         // if (!subscription) {
         //     return res.sendStatus(200);
         // }
+    }
+
+    static redirectMollie(req: Request, res: Response) {
+        res.sendStatus(200);
     }
 }

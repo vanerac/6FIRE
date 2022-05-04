@@ -1,5 +1,3 @@
-import { Subscription, User } from '@shared/services';
-
 export enum PaymentType {
     // eslint-disable-next-line no-unused-vars
     SUBSCRIPTION,
@@ -12,7 +10,7 @@ export interface PaymentOptions {
     amount: number;
     currency: string;
     description: string;
-    userSubscriptionId: string;
+    userSubscriptionId?: string;
     paymentType: PaymentType;
     subscription?: Subscription;
     paymentMethod?: string;
@@ -29,6 +27,45 @@ export interface CallbackConfig {
     cancelUrl: string;
     statusUrl: string;
 }
+
+export type User = {
+    id?: number;
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    password?: string;
+    telephone?: string;
+    countryId?: number;
+    createdAt?: string;
+    updatedAt?: string;
+    isAdmin?: boolean;
+    verifiedEmail?: boolean;
+    verifiedPhone?: boolean;
+    banned?: boolean;
+    note?: string;
+    UserSubscription?: Array<{
+        Subscription?: {
+            name?: string;
+        };
+        status?: string;
+    }>;
+};
+
+export type Subscription = {
+    id?: number;
+    name: string;
+    description: string;
+    refreshRate?: number;
+    subscriptionType: string;
+    price: number;
+    level: number;
+    hidden?: boolean;
+    isBestValue?: boolean;
+    hasFreeTrial?: boolean;
+    freeTrialDays?: number;
+    createdAt?: string;
+    updatedAt?: string;
+};
 
 export abstract class PaymentService {
     // eslint-disable-next-line no-unused-vars,@typescript-eslint/ban-ts-comment

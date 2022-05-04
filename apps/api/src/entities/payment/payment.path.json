@@ -50,11 +50,21 @@
               "properties": {
                 "subscriptionId": {
                   "type": "string",
-                  "description": "Subscription ID"
+                  "description": "Subscription ID",
+                  "required": true
                 },
                 "offerId": {
                   "type": "string",
                   "description": "Offer ID"
+                },
+                "provider": {
+                  "required": true,
+                  "type": "string",
+                  "description": "Provider",
+                  "enum": [
+                    "mollie",
+                    "payline"
+                  ]
                 }
               }
             }
