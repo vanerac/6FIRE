@@ -958,7 +958,7 @@ a{
 .main-nav-bar .nav-grid{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
     /* padding: 0 3%; */
     max-width: 1400px;
@@ -1256,4 +1256,10 @@ input#menu__toggle{display: none;}
         height: 60px;
         margin-right: 75px;
     }
+}
+
+input:-webkit-autofill {
+  transition: background-color 9999s ease-in-out 0s !important;
+  background-color: transparent !important;
+  color: #fff !important;
 }
