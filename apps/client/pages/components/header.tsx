@@ -43,7 +43,7 @@ if (typeof window !== 'undefined') {
 const Header = (props: any) => {
     console.log(props);
     const [cookies, $setCookie, removeCookie] = useCookies(['API_TOKEN']);
-    const [themes, setThemes] = useState<Theme[]>([]);
+    const [themes, setThemes] = useState<(Theme & { url: string })[]>([]);
     const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
     const [isMoney, setisMoney] = useState('');
@@ -85,7 +85,7 @@ const Header = (props: any) => {
             console.log(response);
             const slicedThemes = [...response].slice(0, 5) as Theme[];
             const slicedThemesDropDown = [...response].slice(5) as Theme[];
-            setThemes(slicedThemes);
+            setThemes(slicedThemes as any);
             setThemesDropDown(slicedThemesDropDown);
         }
         // setThemesDropDown(response.slice(4) as Theme[]);
