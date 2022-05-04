@@ -16,6 +16,7 @@ export default class TelegramBot {
 
     private _lockUpdate = new EventEmitter();
     private cache: Cache;
+    private messagesToSend = 0;
 
     constructor() {
         // Instantiated bot
@@ -72,6 +73,7 @@ export default class TelegramBot {
         cacheInstance.on('message_add', () => {
             //  call this.consumeMessageQueue()
             // Function must not be ran in parallel
+            this.messagesToSend++;
             console.log('Got a new message to send');
             if (this.lock) {
                 return;
@@ -82,7 +84,7 @@ export default class TelegramBot {
             //  call this.consumeMessageQueue()
             // Function must not be ran in parallel
             console.log('Queue unlocked');
-            this.consumeMessageQueue();
+            if (this.messagesToSend > 0) this.consumeMessageQueue();
         });
     }
 
@@ -90,24 +92,30 @@ export default class TelegramBot {
         // The bot sends messages to the queue and this function handles sending the messages
         // The function must respect the telegram rate limit
 
+        if (this.lock) {
+            console.log('Queue already locked');
+            return;
+        }
+
+        this.lock = true;
         // Get the message from the cache
         const message = await this.cache.getMessage(); // message is popped from queue
         // If there is no message, return
         if (!message) {
-            // this.lock = false;
+            console.log('No message to send, unlocking queue');
+            this.lock = false;
             return;
         }
-        this.lock = true;
         // Send the message to the telegram bot
         try {
             await TelegramBot.sendMessage(message.chatId, message.message);
+            this.messagesToSend--;
         } catch (error) {
-            console.log(error);
-            // If its a rate limit, wait for a second and try again
-            if (error.response.status === 429) {
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-                await TelegramBot.sendMessage(message.chatId, message.message);
-            }
+            console.log('Message failed to add to cache', error);
+            await this.cache.addMessage(message.chatId, message.message);
+        } finally {
+            console.log('Unlocking queue');
+            this.lock = false;
         }
         this.lock = false;
         console.log('Message sent');
