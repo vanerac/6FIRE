@@ -46,14 +46,17 @@ const Compte: NextPage = (props: any) => {
     // function to update user informations
     const updateUser = async (data: any) => {
         setLoading(true);
+        console.log(data);
         apiClient.user
             .updateUser(me?.id as number, data)
             .then((res) => {
                 setMe(res);
+                console.log(res);
                 setLoading(false);
             })
             .catch((error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
+                console.log('error');
                 setLoading(false);
             });
     };

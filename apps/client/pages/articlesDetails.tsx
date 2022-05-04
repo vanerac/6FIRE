@@ -147,7 +147,7 @@ const HomePage: NextPage = (props: any) => {
                                     {/*`DD-MM-YYYY`*/}
                                     {/*<div className="date lato-normal-manatee-14px">{`${$articles.}`}</div>*/}
                                     <div className="date lato-normal-manatee-14px">
-                                        Il y a {convertDate($articles?.createdAt as string)}
+                                        Il y a {$convertDate($articles?.createdAt as string)}
                                     </div>
                                 </div>
                             </div>
