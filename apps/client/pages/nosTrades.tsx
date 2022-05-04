@@ -28,7 +28,7 @@ const NosTrades: NextPage = (props: any) => {
             </Head>
             <input type="hidden" id="anPageName" name="page" value="nos-trades" />
             <div className="nos-trades screen">
-                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+                <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
                 <div className="background-kCjjkp"></div>
                 <div className="background-DslP8q"></div>
                 <div className="club-premium-kCjjkp lato-bold-white-16px">REJOIGNEZ NOTRE CANAL PRIVÉ TELEGRAM</div>

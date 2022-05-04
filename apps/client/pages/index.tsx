@@ -3,7 +3,6 @@ import Footer from './components/footer';
 import Head from 'next/head';
 import $ from 'jquery';
 import IndexHeader from './components/header_inext';
-
 /* scroll off */
 
 if (typeof window !== 'undefined') {
@@ -30,7 +29,7 @@ const HomePage: NextPage = ($props: any) => {
             <div className="index-header">
                 <div>
                     <div className="index-logo mb-equal">
-                        <img src="/img/logo/index-logo.png" alt="" />
+                        <img src="/img/logo/logo-home-6fire.png" alt="" />
                     </div>
                     <div className="mb-equal">
                         <p>Rejoindre le club d’investisseur</p>

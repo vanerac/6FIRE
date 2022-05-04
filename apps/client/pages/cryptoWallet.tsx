@@ -12,7 +12,7 @@ import Head from 'next/head';
 const CryptoWallet: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let $apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [cryptos, setCryptos] = useState<CryptoHolding[]>([]);
+    const [$cryptos, setCryptos] = useState<CryptoHolding[]>([]);
     const [message, setMessage] = useState<{
         id: number;
         message: string;
@@ -48,7 +48,7 @@ const CryptoWallet: NextPage = (props: any) => {
                 <title>Crypto Wallet - Crypto Trader</title>
             </Head>
             <input type="hidden" id="anPageName" name="page" value="crypto-wallet" />
-            <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
+            <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
 
             <div className="crypto_wrapper">
                 <div className="header-block">
@@ -74,7 +74,8 @@ const CryptoWallet: NextPage = (props: any) => {
 
                 <div className="table-block">
                     <div className="icon-row">
-                        {cryptos.map((crypto) => (
+                        {/* temporary commented until there is data to fetch */}
+                        {/* {$cryptos.map((crypto) => (
                             <div className="single-item" key={crypto.id}>
                                 <img src="/img/icon/c02.png" alt="" />
                                 <p>
@@ -82,8 +83,8 @@ const CryptoWallet: NextPage = (props: any) => {
                                     <span>{crypto.amount}%</span>
                                 </p>
                             </div>
-                        ))}
-                        {/*
+                        ))} */}
+
                         <div className="single-item">
                             <img src="/img/icon/c01.png" alt="" />
                             <p>
@@ -107,7 +108,7 @@ const CryptoWallet: NextPage = (props: any) => {
                             <p>
                                 SOL<span>5%</span>
                             </p>
-                        </div> */}
+                        </div>
                     </div>
                     <div className="currency-row">
                         <div className="euro">
@@ -121,8 +122,9 @@ const CryptoWallet: NextPage = (props: any) => {
                     <span className="title">Mise à jour du {message?.date}</span>
 
                     <div className="text">
-                        <p>{message?.message}</p>
-                        {/* <p>J’ai déjà un bag dans l’ensemble des positions ci-dessous ! 💰</p>
+                        {/* temporary commented until there is data to fetch
+                        <p>{message?.message}</p> */}
+                        <p>J’ai déjà un bag dans l’ensemble des positions ci-dessous ! 💰</p>
                         <p>Explication :</p>
                         <p>- Pour 1Inch je vous laisse voir le token de la semaine est mon explication !</p>
                         <p>
@@ -146,7 +148,7 @@ const CryptoWallet: NextPage = (props: any) => {
                             monde des cryptos. Cela peut attirer beaucoup de monde et Mirror en est l’un des pionniers
                             et le seul à en faire son activité principale ! Prochainement, une explication complète sera
                             disponible sur MIR ! 💸
-                        </p> */}
+                        </p>
                     </div>
                 </div>
                 <div className="copyright-inner">

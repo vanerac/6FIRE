@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import router from 'next/router';
-import Footer from './components/footer';
 import Header from './components/header';
 // import checkAuth from './components/checkAuth';
 import { useEffect, useState } from 'react';
