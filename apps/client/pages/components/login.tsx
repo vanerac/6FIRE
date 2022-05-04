@@ -129,6 +129,7 @@ const LoginPopup = (props: any) => {
                         </li>
                         <li>
                             <a
+                                style={{ cursor: 'pointer' }}
                                 onClick={() => {
                                     removeCookie('API_TOKEN');
                                     router.push('/');

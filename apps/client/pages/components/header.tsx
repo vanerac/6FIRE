@@ -47,6 +47,7 @@ const Header = (props: any) => {
     const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
     const [isMoney, setisMoney] = useState('');
+    const [isCookie, setIsCookie] = useState('');
 
     const fetchThemes = async () => {
         if (props.isEspaceTradingCrypto == true) {
@@ -92,6 +93,7 @@ const Header = (props: any) => {
     };
 
     useEffect(() => {
+        setIsCookie(cookies['API_TOKEN']);
         if (
             router.pathname === '/cgv' ||
             router.pathname === '/cgu' ||
@@ -166,7 +168,7 @@ const Header = (props: any) => {
                     <div className="main-nav">
                         <div className="top-nav">
                             <div className="logo">
-                                <a href={cookies['API_TOKEN'] ? '/' : '/articlesPage'}>
+                                <a href={isCookie ? '/articlesPage' : '/'}>
                                     <img src="/img/logo/logo.svg" alt="" />
                                 </a>
                             </div>
