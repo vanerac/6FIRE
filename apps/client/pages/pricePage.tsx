@@ -8,6 +8,8 @@ import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import Head from 'next/head';
+import PaymentWidget from './components/payment';
+import { PaylineHead } from 'react-payline';
 
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -51,10 +53,23 @@ const PricePage: NextPage = (props: any) => {
             });
     };
 
+    const instantiatePayment = (subscriptionId: number) => {
+        apiClient.payment
+            .createPayment({
+                subscriptionId: subscriptionId.toString(),
+            })
+            .then((payment) => {
+                return (
+                    <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
+                );
+            });
+    };
+
     return (
         <div>
             <Head>
                 <title>Abonnement Prix - Crypto Trader</title>
+                <PaylineHead production />
             </Head>
             <input type="hidden" id="anPageName" name="page" value="prices-page" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
@@ -87,7 +102,10 @@ const PricePage: NextPage = (props: any) => {
                                         49,99€ <span>/mois</span>
                                     </div>
 
-                                    <button type="submit" className="primary-button">
+                                    <button
+                                        onClick={() => instantiatePayment(1)}
+                                        type="submit"
+                                        className="primary-button">
                                         <span>Commencer</span>
                                         <div className="right-arrow">
                                             <img src="/img/icon/right-arrow.png" alt="" />

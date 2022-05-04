@@ -18,7 +18,7 @@ export interface PaymentOptions {
     paymentMethod?: string;
     paymentMethodId?: string;
     paymentMethodType?: string;
-    metadata: {
+    metadata?: {
         [key: string]: string;
     };
 }

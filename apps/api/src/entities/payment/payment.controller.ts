@@ -5,8 +5,9 @@ import { AWSsendEmail } from '../../tools/notifications.tools';
 import { generateConfirmationEmail } from '../../templates/email';
 import MollieService from '../../tools/payment/mollie.service';
 import PaylineService from '../../tools/payment/payline.service';
-import { PaymentService } from '../../tools/payment/payment.service';
+import { PaymentService, PaymentType } from '../../tools/payment/payment.service';
 import { PaylineWeb } from '@playmoweb/payline-typescript-sdk';
+import configuration from '../../../configuration';
 
 const prisma = new PrismaClient();
 const paylineWebService = new PaylineWeb(paylineConfig);
@@ -64,7 +65,51 @@ export default class PaymentController implements CRUDController {
 
     static async create(req: Request, res: Response, next: NextFunction) {
         try {
-            res.sendStatus(501);
+            const service = MollieService;
+
+            const { subscriptionId, provider } = req.body;
+
+            const subscription = await prisma.subscription.findFirst({
+                where: {
+                    id: +subscriptionId,
+                },
+            });
+
+            if (!subscription) {
+                throw new Error('Subscription not found');
+            }
+
+            const customer = await service.getCustomer(req.user);
+
+            const userSubscription = await prisma.userSubscription.create({
+                data: {
+                    userId: req.user.id,
+                    subscriptionId: subscriptionId as number,
+                    price: subscription.price,
+                    customerId: customer.id,
+                    paymentProdvider: provider,
+                },
+            });
+
+            const paymentIntent = await service.createPaymentIntent(
+                {
+                    paymentType: PaymentType.SUBSCRIPTION,
+                    subscription: subscription as any,
+                    userSubscriptionId: userSubscription.id.toString(),
+                    clientId: customer.id,
+                    amount: subscription.price,
+                    description: subscription.description,
+                    currency: 'EUR',
+                },
+                {
+                    cancelUrl: configuration.BACKEND_URL + '/payment/status',
+                    statusUrl: configuration.BACKEND_URL + '/payment/status',
+                    successUrl: configuration.BACKEND_URL + '/payment/status',
+                    failUrl: configuration.BACKEND_URL + '/payment/status',
+                },
+            );
+
+            res.status(200).json((paymentIntent as any).getPaymentUrl());
             // const { subscriptionId, offerId, paymentProvider } = req.body;
             // const { user } = req;
 
