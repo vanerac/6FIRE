@@ -77,7 +77,7 @@ export abstract class PaymentService {
     // @ts-ignore
 
     // eslint-disable-next-line no-unused-vars
-    public static createCustomer: (user: User) => Promise<any>;
+    public static getCustomer: (user: User) => Promise<any>;
 
     // eslint-disable-next-line no-unused-vars,@typescript-eslint/ban-ts-comment
     // @ts-ignore

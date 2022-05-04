@@ -8,6 +8,8 @@ import PaylineService from '../../tools/payment/payline.service';
 import { PaymentService, PaymentType } from '../../tools/payment/payment.service';
 import configuration from '../../../configuration';
 
+import { v4 as uuid } from 'uuid';
+
 import ngrok from 'ngrok';
 import { Payment } from '@mollie/api-client';
 
@@ -106,8 +108,8 @@ export default class PaymentController implements CRUDController {
                             ? PaymentType.SUBSCRIPTION
                             : PaymentType.ONETIME,
                     subscription: subscription as any,
-                    // userSubscriptionId: userSubscription.id.toString(),
-                    clientId: customer.id,
+                    userSubscriptionId: uuid(),
+                    clientId: customer?.id,
                     amount: subscription.price,
                     description: subscription.description,
                     currency: 'EUR',

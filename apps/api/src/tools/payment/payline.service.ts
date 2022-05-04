@@ -23,14 +23,14 @@ const paylineConfig = new Payline(
 const paylineWebService = new PaylineWeb(paylineConfig);
 
 export default class PaylineService implements PaymentService {
-    public static async createCustomer(user: User) {
+    public static async getCustomer(user: User) {
         // create wallet ?
     }
 
     public static async createPaymentIntent(opts: PaymentOptions, cbs: CallbackConfig) {
         // create payment intent
 
-        const paymentRequest = new PaylineDoWebPaymentRequest(opts.userSubscriptionId.toString())
+        const paymentRequest = new PaylineDoWebPaymentRequest(opts.userSubscriptionId)
             .setCallbackUrls(cbs.successUrl, cbs.cancelUrl, cbs.statusUrl)
             .setOrderDetails(PaylineDeliveryMode.DigitalGoods)
             .setAmount(opts.amount, PaylineCurrency.EUR);
@@ -44,9 +44,17 @@ export default class PaylineService implements PaymentService {
         else if (opts.paymentType == PaymentType.ONETIME)
             paymentRequest.setPaymentDetails(PaylineAction.AuthCapture, PaylineMode.FULL);
 
-        const v = await paylineWebService.doWebPayment(paymentRequest);
+        try {
+            const v = await paylineWebService.doWebPayment(paymentRequest);
+            return v.token;
+        } catch (e) {
+            console.log(e);
+            throw e;
+        }
 
-        v.token;
+        return {
+            id: opts.userSubscriptionId,
+        };
     }
 
     public static async cancelSubscription(customerId, paymentId) {
