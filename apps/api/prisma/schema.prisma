@@ -25,6 +25,11 @@ enum OfferType {
   FIXED
 }
 
+enum PaymentProvider {
+  MOLLIE
+  PAYLINE
+}
+
 model User {
   id                  Int                 @id @default(autoincrement())
   firstName           String
@@ -94,9 +99,10 @@ model UserSubscription {
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @default(now())
   price          Int
-  paymentId      String // Mollie payment id
-  customerId     String // Mollie customer id
-  status         String // Mollie status
+  paymentId      String  // exteneral payment id
+  customerId     String // external customer id
+  status         String // updated external status
+  paymentProdvider String //  payment provider
   User           User         @relation(fields: [userId], references: [id])
   Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
 }

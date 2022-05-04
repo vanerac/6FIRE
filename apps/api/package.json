@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@mollie/api-client": "^3.6.0",
+    "@playmoweb/payline-typescript-sdk": "^1.1.5",
     "@prisma/client": "^3.12.0",
     "@sentry/node": "^6.19.6",
     "@sentry/tracing": "^6.19.6",
