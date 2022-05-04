@@ -13,7 +13,7 @@ import Head from 'next/head';
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [me, setMe] = useState<UserStatus>();
+    const [$me, setMe] = useState<UserStatus>();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
     const [userInfo, setUserInfo] = useState({
@@ -44,18 +44,16 @@ const Compte: NextPage = (props: any) => {
             });
     }, []);
 
-    // function to update user informations
     const updateUser = async (data: any) => {
         setLoading(true);
         console.log(data);
         apiClient.user
-            .updateUser(me?.id as number, data)
+            .updateMyStats(data)
             .then((res) => {
                 setMe(res);
                 console.log('res => ', res);
                 setLoading(false);
                 alert('Modification effectuée avec succès');
-                // flush user info
                 setUserInfo({
                     firstName: '',
                     lastName: '',
