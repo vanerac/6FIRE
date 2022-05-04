@@ -59,19 +59,70 @@ const BotTrading: NextPage = (props: any) => {
                 </div>
 
                 <div className="text-box bg-light-black">
-                        <div className="wrap">
-                            <div className="question">
-                                <div className="number">1</div>
-                                <h3 className="title">Comment accéder au Bot Telegram ?</h3>
-                            </div>
-                            <p>Pour rejoindre le Bot Trading sur Telegram, copiez coller votre identifiant ci-dessous :</p>
-
-                            <div className="copy">
-                                <span className='code'>ERD251445ERD251445ERD251445</span>
-                                <span className="copyCode">Copier</span>
-                            </div>
+                    <div className="wrap">
+                        <div className="question">
+                            <div className="number">1</div>
+                            <h3 className="title">Comment accéder au Bot Telegram ?</h3>
                         </div>
+                        <p>Pour rejoindre le Bot Trading sur Telegram, copiez coller votre identifiant ci-dessous :</p>
+
+                        <div className="copy">
+                            <span className='code'>ERD251445ERD251445ERD251445</span>
+                            <span className="copyCode">Copier</span>
+                        </div>
+                    </div>
                 </div>
+
+                <div className="text-box">
+                    <div className="wrap">
+                        <div className="question">
+                            <div className="number">2</div>
+                            <h3 className="title">Activer le Bot Telegram</h3>
+                        </div>
+                        <p>Cliquez sur le bouton «Rejoindre le BOT» puis envoyez START/ et ton code</p>
+                        <p>Vous allez recevoir ensuite un message du Bot et vous devrez coller votre identifiant que vous avez déjà copié à l’étape 1.</p>
+
+                        <button className='primary-button'>REJOINDRE LE BOT</button>
+                        
+                    </div>
+                </div>
+
+            <div className="text-box bg-light-black">
+                <div className="wrap">
+                    <div className="question">
+                        <div className="number">3</div>
+                        <h3 className="title">Comment accéder au Bot Telegram ?</h3>
+                    </div>
+                    <p>Vous avez reçu un mail de confirmation suite à l’envoi de votre identifiant au Bot Telegram lors de l’étape 2.</p>
+                        <p>Cliquez sur le bouton «Confirmer mon accès au Bot» sur le mail.</p>
+                        <p><strong>Votre accès au Bot est maintenant confirmé !</strong></p>
+                </div>
+            </div>
+
+            <div className="text-box">
+                <div className="wrap">
+                    <div className="question">
+                        <div className="number">4</div>
+                        <h3 className="title">Choisissez jusqu’à 3 Traders sur la partie «Traders» de cette page</h3>
+                    </div>
+                    <p>Retrouvez sur la page Traders différents profiles Binance et leurs résultats. Vous pouvez suivre jusqu’à 3 profils, une fois que vous avez sélectionné de un jusqu’à 3 traders vous recevrez automatiquement leurs alertes sur Telegram grâce au Bot.</p>
+                    <p>Exemple :</p>
+
+                    
+                </div>
+            </div>
+
+            
+            <div className="text-box bg-light-black">
+                <div className="wrap">
+                    <div className="question">
+                        <div className="number">5</div>
+                        <h3 className="title">Où prendre les Trades ? Contactez-nous !</h3>
+                    </div>
+                    <p>Contactez nous pour passer à l’étape suivant et obtenir les explications. Nous vous expliquerons où et comment prendre les Trades en direct.</p>
+                </div>
+            </div>
+
             </div>
 
             <Footer />
