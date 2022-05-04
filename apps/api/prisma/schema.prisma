@@ -93,18 +93,18 @@ model Subscription {
 }
 
 model UserSubscription {
-  id             Int          @id @default(autoincrement())
-  userId         Int
-  subscriptionId Int
-  createdAt      DateTime     @default(now())
-  updatedAt      DateTime     @default(now())
-  price          Int
-  paymentId      String  // exteneral payment id
-  customerId     String // external customer id
-  status         String // updated external status
+  id               Int          @id @default(autoincrement())
+  userId           Int
+  subscriptionId   Int
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @default(now())
+  price            Int
+  paymentId        String // exteneral payment id
+  customerId       String // external customer id
+  status           String // updated external status
   paymentProdvider String //  payment provider
-  User           User         @relation(fields: [userId], references: [id])
-  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  User             User         @relation(fields: [userId], references: [id])
+  Subscription     Subscription @relation(fields: [subscriptionId], references: [id])
 }
 
 model Offer {

@@ -1,16 +1,20 @@
-import { User } from '@shared/services';
+import { Subscription, User } from '@shared/services';
 
-export const PaymentType = {
-    SUBSCRIPTION: 'SUBSCRIPTION',
-    ONETIME: 'ONETIME',
-};
+export enum PaymentType {
+    // eslint-disable-next-line no-unused-vars
+    SUBSCRIPTION,
+    // eslint-disable-next-line no-unused-vars
+    ONETIME,
+}
 
 export interface PaymentOptions {
+    clientId: string;
     amount: number;
     currency: string;
     description: string;
     userSubscriptionId: string;
-    paymentType: string;
+    paymentType: PaymentType;
+    subscription?: Subscription;
     paymentMethod?: string;
     paymentMethodId?: string;
     paymentMethodType?: string;

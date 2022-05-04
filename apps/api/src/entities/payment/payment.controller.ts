@@ -6,8 +6,10 @@ import { generateConfirmationEmail } from '../../templates/email';
 import MollieService from '../../tools/payment/mollie.service';
 import PaylineService from '../../tools/payment/payline.service';
 import { PaymentService } from '../../tools/payment/payment.service';
+import { PaylineWeb } from '@playmoweb/payline-typescript-sdk';
 
 const prisma = new PrismaClient();
+const paylineWebService = new PaylineWeb(paylineConfig);
 
 const services = {
     mollie: MollieService,
@@ -62,10 +64,9 @@ export default class PaymentController implements CRUDController {
 
     static async create(req: Request, res: Response, next: NextFunction) {
         try {
-            // const { subscriptionId, offerId } = req.body;
-            // const { user } = req;
-
             res.sendStatus(501);
+            // const { subscriptionId, offerId, paymentProvider } = req.body;
+            // const { user } = req;
 
             // Request gives us: subscriptionId, offerId, user (session info)
             // We check that the subscriptionId is valid
@@ -314,6 +315,9 @@ export default class PaymentController implements CRUDController {
 
     //paylineWebhooksStatus
     static async paylineWebhooksStatus(req: Request, res: Response) {
+        res.sendStatus(501);
+
+        const paylineWebService = new PaylineWeb(paylineConfig);
         // const { id } = req.body;
 
         // const status = await PaylineService.getPayment(id);
@@ -339,7 +343,5 @@ export default class PaymentController implements CRUDController {
         // if (!subscription) {
         //     return res.sendStatus(200);
         // }
-
-        res.sendStatus(501);
     }
 }

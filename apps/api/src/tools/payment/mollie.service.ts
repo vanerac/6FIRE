@@ -1,4 +1,4 @@
-import { CallbackConfig, PaymentOptions, PaymentService } from './payment.service';
+import { CallbackConfig, PaymentOptions, PaymentService, PaymentType } from './payment.service';
 import createMollieClient from '@mollie/api-client';
 import configuration from '../../../configuration';
 import { User } from '@shared/services';
@@ -36,12 +36,52 @@ export default class MollieService implements PaymentService {
         return customer;
     }
 
-    public static async createPaymentIntent(opts: PaymentOptions, cbs: CallbackConfig) {}
+    public static async createPaymentIntent(opts: PaymentOptions, cbs: CallbackConfig) {
+        console.log('mollie createPaymentIntent', opts, cbs);
+        if (opts.paymentType == PaymentType.SUBSCRIPTION) {
+            return await mollieClient.customers_subscriptions.create({
+                amount: {
+                    currency: 'EUR',
+                    value: opts.amount.toString(),
+                },
+                description: opts.description,
+                interval: opts.subscription.refreshRate.toString(), // Todo : check if format is right
+                startDate: new Date().toISOString(),
+                webhookUrl: cbs.statusUrl,
+                customerId: opts.clientId,
+                testmode: process.env.NODE_ENV === 'development',
+            });
+        } else if (opts.paymentType == PaymentType.ONETIME) {
+            return await mollieClient.payments.create({
+                amount: {
+                    currency: 'EUR',
+                    value: opts.amount.toString(),
+                },
+                description: opts.description,
+                redirectUrl: cbs.statusUrl,
+                webhookUrl: cbs.statusUrl,
+                customerId: opts.clientId,
+                testmode: process.env.NODE_ENV === 'development',
+            });
+        } else {
+            throw new Error('Unknown payment type', opts.paymentType);
+        }
+    }
 
-    public static async cancelSubscription(customerId, paymentId) {}
+    public static async cancelSubscription(customerId, paymentId) {
+        const payment = await mollieClient.payments.get(paymentId);
+        const subscription = await mollieClient.payments.cancel(payment.subscriptionId);
+        return subscription;
+    }
 
     public static async getPayment(paymentId) {
         const payment = await mollieClient.payments.get(paymentId);
         return payment;
+    }
+
+    public static async refund(paymentId) {
+        // const payment = await mollieClient.payments.get(paymentId);
+        // const refund = await mollieClient.payments.refund(payment.id);
+        // return refund;
     }
 }
