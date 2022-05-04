@@ -81,6 +81,7 @@ model Subscription {
   refreshRate      Int // in days
   subscriptionType PaymentType
   price            Int
+  paymentProvider  String?
   hidden           Boolean            @default(false)
   isBestValue      Boolean            @default(false)
   hasFreeTrial     Boolean            @default(false)
@@ -98,6 +99,7 @@ model UserSubscription {
   subscriptionId   Int
   createdAt        DateTime     @default(now())
   updatedAt        DateTime     @default(now())
+  endDate          DateTime?
   price            Int
   paymentId        String // exteneral payment id
   customerId       String // external customer id
@@ -108,12 +110,12 @@ model UserSubscription {
 }
 
 model Offer {
-  id             Int          @id @default(autoincrement())
+  id             Int           @id @default(autoincrement())
   value          Int
   offerType      OfferType
-  subscriptionId Int
-  singleUse      Boolean      @default(false)
-  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  subscriptionId Int?
+  singleUse      Boolean       @default(false)
+  Subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
   OfferUsage     OfferUsage[]
 }
 

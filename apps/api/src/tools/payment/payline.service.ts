@@ -35,6 +35,7 @@ export default class PaylineService implements PaymentService {
             .setOrderDetails(PaylineDeliveryMode.DigitalGoods)
             .setAmount(opts.amount, PaylineCurrency.EUR);
 
+        // Todo: ?? is this needed ?
         if (opts.clientId) {
             paymentRequest.setWalletId(opts.clientId);
         }
