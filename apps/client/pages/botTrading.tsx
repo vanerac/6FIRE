@@ -152,7 +152,6 @@ const BotTrading: NextPage = ($props: any) => {
                                         <button className="btn">+Suivre</button>
                                     </td>
                                 </tr>
-                                
                             </table>
                         </div>
                     </div>
@@ -171,7 +170,7 @@ const BotTrading: NextPage = ($props: any) => {
 
                         <div className="btn-group">
                             <button className="primary-button bg-light-blue">
-                                <img className='telegram' src="/img/icon/telegram.svg" alt="" />
+                                <img className="telegram" src="/img/icon/telegram.svg" alt="" />
                                 <span>Support Telegram</span>
                             </button>
                             <button className="primary-button bg-ligh-green">
