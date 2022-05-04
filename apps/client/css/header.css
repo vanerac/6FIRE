@@ -958,7 +958,7 @@ a{
 .main-nav-bar .nav-grid{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
     /* padding: 0 3%; */
     max-width: 1400px;
