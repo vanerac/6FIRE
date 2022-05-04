@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import Head from 'next/head';
-import Footer from './components/footer';
 
 const BotTrading: NextPage = ($props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -172,11 +171,11 @@ const BotTrading: NextPage = ($props: any) => {
 
                         <div className="btn-group">
                             <button className="primary-button bg-light-blue">
-                                <i className="fa-brands fa-telegram"></i>
+                                <img className='telegram' src="/img/icon/telegram.svg" alt="" />
                                 <span>Support Telegram</span>
                             </button>
                             <button className="primary-button bg-ligh-green">
-                            <i className="fa-brands fa-whatsapp"></i>
+                                <img src="/img/icon/whatsapp.svg" alt="" />
                                 <span>Support WhatsApp</span>
                             </button>
                         </div>

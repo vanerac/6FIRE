@@ -4420,3 +4420,10 @@ body.scrollOff {
     max-width: 960px;
     margin: 0 auto;
 }
+.btn-group img{
+    max-width: 20px;
+    margin-right: 10px;
+}
+.btn-group img.telegram{
+    filter: brightness(0) invert(1);
+}
