@@ -6,6 +6,8 @@ export default {
     JWT_SECRET: process.env.JWT_SECRET || 'secret',
     SMS_API_KEY: process.env.SMS_API_KEY ?? '',
     MOLLIE_API_KEY: process.env.MOLLIE_API_KEY ?? '',
+    CONSUMER_NAME: process.env.CONSUMER_NAME ?? '',
+    CONSUMER_ACCOUNT: process.env.CONSUMER_ACCOUNT ?? '',
     COINMARKETCAP_API_KEY: process.env.COIN_MARKET_API_KEY ?? '',
     AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID ?? '',
     AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY ?? '',

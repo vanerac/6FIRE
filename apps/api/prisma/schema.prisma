@@ -103,6 +103,7 @@ model UserSubscription {
   price            Int
   paymentId        String       // exteneral payment id
   customerId       String       // external customer id
+  extSubscriptionId String?      // external subscription id
   status           String       // updated external status
   paymentProdvider String       //  payment provider
   User             User         @relation(fields: [userId], references: [id])
