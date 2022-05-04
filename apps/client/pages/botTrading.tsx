@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import Head from 'next/head';
+import Footer from './components/footer';
 
 const BotTrading: NextPage = ($props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
