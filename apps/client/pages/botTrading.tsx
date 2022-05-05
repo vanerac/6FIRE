@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const BotTrading: NextPage = ($props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -55,7 +56,9 @@ const BotTrading: NextPage = ($props: any) => {
                             <a className="active" href="#">
                                 ACCÈS AU BOT
                             </a>
-                            <a href="#">TRADERS</a>
+                            <Link href="/botTradingTraders">
+                                <a>TRADERS</a>
+                            </Link>
                         </div>
                     </div>
                 </div>
