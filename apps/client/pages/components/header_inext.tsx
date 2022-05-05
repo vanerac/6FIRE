@@ -5,7 +5,7 @@ import $ from 'jquery';
 import LoginPopup from './login';
 
 /* scroll off */
-if (typeof window !== 'undefined') {
+/* if (typeof window !== 'undefined') {
     $('.scroll_off').on('click', function () {
         if (!$('body').hasClass('overflo-y-hidden')) {
             $('body').addClass('overflo-y-hidden');
@@ -13,13 +13,13 @@ if (typeof window !== 'undefined') {
             $('body').removeClass('overflo-y-hidden');
         }
     });
-}
+} */
 
 /* Hamburger toggle script */
 const handleForm = () => {
     $('.login_popup_wrapper').toggleClass('open');
 };
-/* Mobile mnue toggle script */
+/* Mobile menu toggle script */
 const $mobileToggle = () => {
     $('.nav-item-wrap').toggleClass('open');
 };
@@ -44,7 +44,6 @@ const IndexHeader = ($props: any) => {
             <input id="menu__toggle" type="checkbox" />
             <label
                 onClick={() => {
-                    console.log('click');
                     handleForm();
                 }}
                 className="menu__btn scroll_off invisible-mobile"

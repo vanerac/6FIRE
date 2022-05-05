@@ -9,7 +9,7 @@ import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import Link from 'next/link';
 
-if (typeof window !== 'undefined') {
+/* if (typeof window !== 'undefined') {
     $('.scroll_off').on('click', function () {
         if (!$('body').hasClass('overflo-y-hidden')) {
             $('body').removeClass('overflo-y-hidden');
@@ -17,7 +17,7 @@ if (typeof window !== 'undefined') {
             $('body').addClass('overflo-y-hidden');
         }
     });
-}
+} */
 
 /* Hamburger toggle script */
 const handleForm = () => {

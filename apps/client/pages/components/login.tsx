@@ -23,6 +23,7 @@ import Link from 'next/link';
 if (typeof window !== 'undefined') {
     $('.nav-close-btn').click(function () {
         $('.nav-item-wrap').removeClass('open');
+        $('body').removeClass('scrollOff');
     });
 }
 
@@ -38,11 +39,6 @@ if (typeof window !== 'undefined') {
     });
 }
 
-if (typeof window !== 'undefined') {
-    $('.nav-close-btn').click(function () {
-            $('body').removeClass('scrollOff');
-    });
-}
 
 /* Forget password overlay wrapper
 -------------------------------------*/
@@ -56,7 +52,7 @@ if (typeof window !== 'undefined') {
 }
 
 const handleForm = () => {
-    $('.login_popup_wrapper').toggleClass('open');
+    $('.login_popup_wrapper, .nav-item-wrap').toggleClass('open');
 };
 
 const LoginPopup = (props: any) => {
