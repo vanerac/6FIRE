@@ -4,8 +4,7 @@
 
 export type CryptoHolding = {
     id?: number;
-    name?: string;
-    symbol?: string;
+    token?: string;
     amount?: number;
-    price_usd?: number;
+    price?: number;
 };
