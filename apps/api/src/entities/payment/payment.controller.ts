@@ -1,4 +1,4 @@
-import { CRUDController } from '../../types';
+import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { AWSsendEmail } from '../../tools/notifications.tools';
@@ -73,8 +73,6 @@ export default class PaymentController implements CRUDController {
         try {
             const { subscriptionId, provider } = req.body;
 
-            const service: PaylineService = services[provider];
-
             const subscription = await prisma.subscription.findFirst({
                 where: {
                     id: +subscriptionId,
@@ -84,12 +82,23 @@ export default class PaymentController implements CRUDController {
                     price: true,
                     description: true,
                     id: true,
+                    paymentProvider: true,
                 },
             });
 
             if (!subscription) {
                 throw new Error('Subscription not found');
             }
+
+            if (subscription.paymentProvider && subscription.paymentProvider !== provider) {
+                throw new ApiError({
+                    status: 400,
+                    message: 'Subscription already has a payment provider',
+                    i18n: 'error.subscription.paymentProvider',
+                });
+            }
+
+            const service: PaylineService = services[provider];
 
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
@@ -142,9 +151,14 @@ export default class PaymentController implements CRUDController {
                 },
             });
 
-            res.json({
-                url: (paymentIntent as Payment).getCheckoutUrl(),
-            });
+            if (provider === 'payline')
+                res.json({
+                    token: paymentIntent.id,
+                });
+            else
+                res.json({
+                    url: (paymentIntent as Payment).getCheckoutUrl(),
+                });
         } catch (error) {
             next(error);
         }

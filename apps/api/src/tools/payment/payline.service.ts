@@ -16,8 +16,8 @@ const paylineConfig = new Payline(
     configuration.PAYLINE_SECRET_KEY,
     configuration.PAYLINE_CONTRACT_NUMBER,
     {}, // Options
-    configuration.NODE_ENV === 'production',
-    process.env.DEBUG === 'true',
+    true,
+    true,
 );
 
 const paylineWebService = new PaylineWeb(paylineConfig);
@@ -46,19 +46,17 @@ export default class PaylineService implements PaymentService {
 
         try {
             const v = await paylineWebService.doWebPayment(paymentRequest);
-            return v.token;
+            return {
+                id: v.token,
+            };
         } catch (e) {
             console.log(e);
             throw e;
         }
-
-        return {
-            id: opts.userSubscriptionId,
-        };
     }
 
-    public static async cancelSubscription(customerId, paymentId) {
-        // cancel subscription
+    public static async cancelSubscription($customerId, $paymentId) {
+        // Todo cancel subscription
     }
 
     public static async getPayment(paymentId) {

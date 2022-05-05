@@ -53,10 +53,6 @@
                   "description": "Subscription ID",
                   "required": true
                 },
-                "offerId": {
-                  "type": "string",
-                  "description": "Offer ID"
-                },
                 "provider": {
                   "required": true,
                   "type": "string",
@@ -65,8 +61,16 @@
                     "mollie",
                     "payline"
                   ]
+                },
+                "offerId": {
+                  "type": "string",
+                  "description": "Offer ID"
                 }
-              }
+              },
+              "required": [
+                "subscriptionId",
+                "provider"
+              ]
             }
           }
         }
@@ -77,16 +81,22 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
+                "anyOf": [
                   {
-                    "$ref": "../openapi.components.json#/schemas/UserSubscription"
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "description": "Checkout URL"
+                      }
+                    }
                   },
                   {
                     "type": "object",
                     "properties": {
-                      "paymentUrl": {
+                      "token": {
                         "type": "string",
-                        "description": "Payment URL"
+                        "description": "Payline token"
                       }
                     }
                   }
@@ -115,7 +125,7 @@
       {
         "name": "id",
         "in": "path",
-        "description": "Subscription ID",
+        "description": "User Subscription ID",
         "required": true,
         "schema": {
           "type": "number"

@@ -72,10 +72,10 @@ export default class MollieService implements PaymentService {
         return payment;
     }
 
-    public static async refund(paymentId) {
+    public static async refund($paymentId) {
         // const payment = await mollieClient.payments.get(paymentId);
         // const refund = await mollieClient.payments.refund(payment.id);
-        // return refund;
+        // todo return refund;
     }
 
     public static async createSubscription(id: number, customerId: string, subscription: Subscription) {
