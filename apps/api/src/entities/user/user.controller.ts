@@ -76,6 +76,7 @@ export class UserController implements CRUDController {
         try {
             const { id } = req.params;
             const { body } = req;
+            console.log(body);
             const user = await prisma.user.update({
                 where: {
                     id: +id,
@@ -86,6 +87,7 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
+            console.log(error);
             next(error);
         }
     }
@@ -291,6 +293,27 @@ export class UserController implements CRUDController {
                 },
             });
             res.json(user?.UserSubscription ?? []);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async updateInfos(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id } = req.user;
+            const { firstName, lastName, telephone, email } = req.body;
+            const user = await prisma.user.update({
+                where: {
+                    id: +id,
+                },
+                data: {
+                    firstName,
+                    email,
+                    lastName,
+                    telephone,
+                },
+            });
+            res.json(user);
         } catch (error) {
             next(error);
         }

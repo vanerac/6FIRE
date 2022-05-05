@@ -97,7 +97,7 @@ const HomePage: NextPage = (props: any) => {
                                 <div className="category">
                                     <p className="lato-normal-milano-red-12px line">{article.Theme?.name ?? 'Theme'}</p>
                                     <p className="article_date lato-light-manatee-12px">
-                                        {convertDate(article.createdAt as string)}
+                                        Il y a {convertDate(article.createdAt as string)}
                                     </p>
                                 </div>
                             </div>
