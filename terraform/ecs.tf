@@ -17,7 +17,7 @@ resource "aws_cloudwatch_log_group" "bot" {
 
 // Auto Scalling policies
 resource "aws_appautoscaling_target" "api_autoscaling_target" {
-  max_capacity       = 5
+  max_capacity       = 10
   min_capacity       = 1
   resource_id        = "service/${aws_ecs_cluster.default.name}/${aws_ecs_service.api.name}"
   scalable_dimension = "ecs:service:DesiredCount"
@@ -25,7 +25,7 @@ resource "aws_appautoscaling_target" "api_autoscaling_target" {
 }
 
 resource "aws_appautoscaling_target" "client_autoscaling_target" {
-  max_capacity       = 5
+  max_capacity       = 10
   min_capacity       = 1
   resource_id        = "service/${aws_ecs_cluster.default.name}/${aws_ecs_service.client.name}"
   scalable_dimension = "ecs:service:DesiredCount"
@@ -52,8 +52,8 @@ resource "aws_appautoscaling_policy" "api_policy_memory" {
       predefined_metric_type = "ECSServiceAverageMemoryUtilization"
     }
     scale_in_cooldown  = "60"
-    scale_out_cooldown = "60"
-    target_value       = 80
+    scale_out_cooldown = "1800"
+    target_value       = 60
   }
 }
 
@@ -69,8 +69,8 @@ resource "aws_appautoscaling_policy" "api_policy_cpu" {
       predefined_metric_type = "ECSServiceAverageCPUUtilization"
     }
     scale_in_cooldown  = "60"
-    scale_out_cooldown = "60"
-    target_value       = 80
+    scale_out_cooldown = "1800"
+    target_value       = 60
   }
 }
 
@@ -87,8 +87,8 @@ resource "aws_appautoscaling_policy" "client_policy_memory" {
       predefined_metric_type = "ECSServiceAverageMemoryUtilization"
     }
     scale_in_cooldown  = "60"
-    scale_out_cooldown = "60"
-    target_value       = 80
+    scale_out_cooldown = "1800"
+    target_value       = 50
   }
 }
 
@@ -104,8 +104,8 @@ resource "aws_appautoscaling_policy" "client_policy_cpu" {
       predefined_metric_type = "ECSServiceAverageCPUUtilization"
     }
     scale_in_cooldown  = "60"
-    scale_out_cooldown = "60"
-    target_value       = 80
+    scale_out_cooldown = "1800"
+    target_value       = 50
   }
 }
 
@@ -121,8 +121,8 @@ resource "aws_appautoscaling_policy" "dashoard_policy_memory" {
       predefined_metric_type = "ECSServiceAverageMemoryUtilization"
     }
     scale_in_cooldown  = "60"
-    scale_out_cooldown = "60"
-    target_value       = 80
+    scale_out_cooldown = "1800"
+    target_value       = 50
   }
 }
 
@@ -138,8 +138,8 @@ resource "aws_appautoscaling_policy" "dashoard_policy_cpu" {
       predefined_metric_type = "ECSServiceAverageCPUUtilization"
     }
     scale_in_cooldown  = "60"
-    scale_out_cooldown = "60"
-    target_value       = 80
+    scale_out_cooldown = "1800"
+    target_value       = 50
   }
 }
 
@@ -303,10 +303,10 @@ resource "aws_ecs_task_definition" "api" {
   container_definitions    = <<DEFINITION
 [
   {
-    "cpu": 512,
+    "cpu": 1024,
     "essential": true,
     "image": "${aws_ecr_repository.api.repository_url}:latest",
-    "memory": 1024,
+    "memory": 2048,
     "name": "api",
     "networkMode": "awsvpc",
     "awsvpcConfiguration": {
@@ -378,8 +378,8 @@ resource "aws_ecs_task_definition" "api" {
 DEFINITION
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = 512
-  memory                   = 1024
+  cpu                      = 1024
+  memory                   = 2048
   // add cloudwatch stream
 
   volume {
@@ -574,7 +574,7 @@ resource "aws_ecs_service" "api" {
   name            = "${var.ecs_service_name}-api"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.api.arn
-  desired_count   = 2
+  desired_count   = 5
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -603,7 +603,7 @@ resource "aws_ecs_service" "client" {
   name            = "${var.ecs_service_name}-client"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.client.arn
-  desired_count   = 2
+  desired_count   = 3
   launch_type     = "FARGATE"
 
   network_configuration {

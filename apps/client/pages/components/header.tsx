@@ -338,7 +338,10 @@ const Header = (props: any) => {
                                     Espace <br />
                                     Trading &amp; Crypto
                                 </a> */}
-                                <Link href={isMoney == 'Nos Trades' ? '/articlesPage' : '/trading'}>
+                                <Link
+                                    href={
+                                        isMoney == 'Nos Trades' ? '/articlesPage' : '/tradingFormationForex?themeId=1'
+                                    }>
                                     <a
                                         className="espace"
                                         onClick={() => {
