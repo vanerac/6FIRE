@@ -126,13 +126,9 @@ const LoginPopup = (props: any) => {
                             </Link>
                         </li>
                         <li>
-                            <a href="#">Ma licence</a>
-                        </li>
-                        <li>
                             <a
                                 style={{ cursor: 'pointer' }}
                                 onClick={() => {
-                                    // removeCookie('API_TOKEN');
                                     removeCookie('API_TOKEN', { path: '/' });
                                     removeCookie('API_TOKEN', { domain: 'localhost' });
                                     removeCookie('API_TOKEN', { domain: '.6fireinvest.com' });

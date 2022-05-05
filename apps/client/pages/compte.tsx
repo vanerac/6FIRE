@@ -68,7 +68,7 @@ const Compte: NextPage = (props: any) => {
                             Connexion et sécurité <span>Mettez à jour votre mot de passe</span>
                         </p>
                     </div>
-                    <div onClick={() => router.push('#')} className="single-info">
+                    <div onClick={() => router.push('/abonnement')} className="single-info">
                         <img src="/img/info-icon/card.png" alt="" />
                         <p>
                             Abonnement et paiement{' '}

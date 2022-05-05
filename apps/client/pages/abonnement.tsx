@@ -9,6 +9,7 @@ import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Abonnement: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -25,6 +26,7 @@ const Abonnement: NextPage = (props: any) => {
         apiClient.subscription
             .getSubscriptions()
             .then((subscriptions) => {
+                console.log('ici => ', subscriptions);
                 setSubscriptions(subscriptions);
                 setLoading(false);
             })
@@ -89,12 +91,14 @@ const Abonnement: NextPage = (props: any) => {
                                     <img src="/img/icon/right-arrow.png" alt="" />
                                 </div>
                             </a>
-                            <a href="#" type="submit" className="primary-button btn02">
-                                <span>Changer de Licence</span>
-                                <div className="right-arrow">
-                                    <img src="/img/icon/right-arrow.png" alt="" />
-                                </div>
-                            </a>
+                            <Link href="/pricePage">
+                                <a type="submit" className="primary-button btn02">
+                                    <span>Changer de Licence</span>
+                                    <div className="right-arrow">
+                                        <img src="/img/icon/right-arrow.png" alt="" />
+                                    </div>
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="right-col">
