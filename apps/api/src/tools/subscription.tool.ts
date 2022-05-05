@@ -7,6 +7,9 @@ export async function verifySubscription(userId: string) {
         where: {
             userId: +userId,
             status: 'active',
+            endDate: {
+                gt: new Date(),
+            },
         },
         orderBy: {
             createdAt: 'desc',
@@ -59,6 +62,9 @@ export async function verifySubscriptionLevel(userId: string, level: number) {
         where: {
             userId: +userId,
             status: 'active',
+            endDate: {
+                gt: new Date(),
+            },
         },
     });
 
@@ -77,4 +83,25 @@ export async function verifySubscriptionLevel(userId: string, level: number) {
     }
 
     return subscription.level === level;
+}
+
+export async function getSubscriptionLevel(userId: number): Promise<number> {
+    const userSubscription = await prisma.userSubscription.findFirst({
+        where: {
+            userId: +userId,
+            status: 'active',
+            endDate: {
+                gt: new Date(),
+            },
+        },
+        select: {
+            Subscription: true,
+        },
+    });
+
+    if (!userSubscription) {
+        return -1;
+    }
+
+    return userSubscription.Subscription.level;
 }

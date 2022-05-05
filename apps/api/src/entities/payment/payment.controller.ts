@@ -94,6 +94,26 @@ export default class PaymentController implements CRUDController {
                 throw new Error('Subscription not found');
             }
 
+            const existingSubscription = await prisma.userSubscription.findFirst({
+                where: {
+                    userId: +req.user.id,
+                    status: {
+                        in: ['active', 'pending'],
+                    },
+                },
+                select: {
+                    Subscription: true,
+                },
+            });
+
+            if (existingSubscription) {
+                throw new ApiError({
+                    status: 409,
+                    message: 'Subscription already exists',
+                    i18n: 'error.subscription.alreadyExists',
+                });
+            }
+
             if (subscription.paymentProvider && subscription.paymentProvider !== provider) {
                 throw new ApiError({
                     status: 400,
@@ -253,108 +273,22 @@ export default class PaymentController implements CRUDController {
             return res.sendStatus(200);
         }
 
-        if (status.status === 'canceled' || status.status === 'failed' || status.status === 'expired') {
-            let validUntil;
-            if (subscription.lastPaymentDate)
-                validUntil = new Date(
-                    subscription.lastPaymentDate.getTime() +
-                        subscription.Subscription.refreshRate * 24 * 60 * 60 * 1000,
-                );
-            else validUntil = new Date();
-            await prisma.userSubscription.update({
-                where: {
-                    id: subscription.id,
-                },
-                data: {
-                    status: status.status,
-                },
-            });
-
-            if (status.status === 'canceled') {
-                await prisma.userSubscription.update({
-                    where: {
-                        id: subscription.id,
-                    },
-                    data: {
-                        status: status.status,
-                        endDate: validUntil,
-                    },
-                });
-                await AWSsendEmail({
-                    email: subscription.User.email,
-                    subject: '6FIRE - Annulation de votre commande',
-                    htmlMessage: generateOrderCancelledEmail({
-                        name: subscription.User.firstName,
-                        date: validUntil.toLocaleDateString(),
-                    }),
-                });
-                return;
-            } else if (status.status === 'failed')
-                await AWSsendEmail({
-                    email: subscription.User.email,
-                    subject: '6FIRE - Erreur de paiement',
-                    htmlMessage: generateOrderFailedEmail({
-                        name: subscription.User.firstName,
-                        until_retry: subscription.Subscription.refreshRate.toLocaleString(),
-                    }),
-                });
-            else if (status.status === 'expired')
-                await AWSsendEmail({
-                    email: subscription.User.email,
-                    subject: '6FIRE - Votre paiement a expiré',
-                    htmlMessage: generateOrderCancelledEmail({
-                        name: subscription.User.firstName,
-                        date: new Date(subscription.createdAt).toLocaleDateString(),
-                    }),
-                });
-        } else if (status.status === 'paid') {
-            await prisma.userSubscription.update({
-                where: {
-                    id: subscription.id,
-                },
-                data: {
-                    status: 'active',
-                    lastPaymentDate: new Date(),
-                },
-            });
-            if (subscription.Subscription.subscriptionType === 'SUBSCRIPTION' && !subscription.extSubscriptionId) {
-                console.log('subscription');
-                await MollieService.createSubscription(
-                    subscription.id,
-                    subscription.customerId,
-                    subscription.Subscription as any,
-                );
-                console.log('subscription created');
-                await AWSsendEmail({
-                    email: subscription.User.email,
-                    subject: '6FIRE - Confirmation commande',
-                    htmlMessage: generateConfirmationEmail({
-                        name: subscription.User.firstName,
-                        price: subscription.price.toString(), // format might not be right
-                        refresh: subscription.Subscription.refreshRate.toString(), // Format might not be right
-                        subscription: subscription.Subscription.name,
-                        orderDate: new Date(subscription.createdAt).toLocaleDateString(), // format might not be right
-                        email: subscription.User.email,
-                    }),
-                });
-            } else if (subscription.Subscription.subscriptionType !== 'SUBSCRIPTION') {
-                console.log('subscription already created');
-                await AWSsendEmail({
-                    email: subscription.User.email,
-                    subject: '6FIRE - Confirmation commande',
-                    htmlMessage: generateConfirmationEmail({
-                        name: subscription.User.firstName,
-                        price: subscription.price.toString(), // format might not be right
-                        refresh: subscription.Subscription.refreshRate.toString(), // Format might not be right
-                        subscription: subscription.Subscription.name,
-                        orderDate: new Date(subscription.createdAt).toLocaleDateString(), // format might not be right
-                        email: subscription.User.email,
-                    }),
-                });
-            }
-
-            res.sendStatus(200);
+        let formattedStatus;
+        if (status.status === 'paid') {
+            formattedStatus = 'active';
+        } else if (status.status === 'canceled') {
+            formattedStatus = 'canceled';
+        } else if (status.status === 'expired') {
+            formattedStatus = 'expired';
+        } else if (status.status === 'failed') {
+            formattedStatus = 'failed';
+        } else {
+            formattedStatus = 'pending';
         }
+
+        this.handleSubscriptionUpdate(subscription.id, formattedStatus);
+
+        res.sendStatus(200);
     }
 
     //createRefund
@@ -419,6 +353,114 @@ export default class PaymentController implements CRUDController {
     }
 
     static redirectMollie(req: Request, res: Response) {
-        res.sendStatus(200);
+        res.redirect('https://6fireinvest.com/articlesPage');
+    }
+
+    private static async handleSubscriptionUpdate(
+        userSubscriptionId: number,
+        status: 'open' | 'active' | 'canceled' | 'expired' | 'pending' | 'refunded' | 'failed',
+    ) {
+        const userSubscription = await prisma.userSubscription.findFirst({
+            where: {
+                id: userSubscriptionId,
+            },
+            select: {
+                id: true,
+                status: true,
+                User: true,
+                Subscription: true,
+                price: true,
+                lastPaymentDate: true,
+                extSubscriptionId: true,
+                customerId: true,
+                createdAt: true,
+            },
+        });
+
+        let validUntil;
+        if (userSubscription.lastPaymentDate)
+            validUntil = new Date(
+                userSubscription.lastPaymentDate.getTime() +
+                    userSubscription.Subscription.refreshRate * 24 * 60 * 60 * 1000,
+            );
+        else validUntil = new Date();
+
+        if (status === 'active') {
+            // if its a payment or un first payment for a subscription, send email
+            if (
+                userSubscription.Subscription.subscriptionType === 'SUBSCRIPTION' &&
+                !userSubscription.extSubscriptionId
+            ) {
+                console.log('subscription');
+                await MollieService.createSubscription(
+                    userSubscription.id,
+                    userSubscription.customerId,
+                    userSubscription.Subscription as any,
+                );
+                console.log('subscription created');
+                await AWSsendEmail({
+                    email: userSubscription.User.email,
+                    subject: '6FIRE - Confirmation commande',
+                    htmlMessage: generateConfirmationEmail({
+                        name: userSubscription.User.firstName,
+                        price: userSubscription.price.toString(), // format might not be right
+                        refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                        subscription: userSubscription.Subscription.name,
+                        orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
+                        email: userSubscription.User.email,
+                    }),
+                });
+            } else if (userSubscription.Subscription.subscriptionType !== 'SUBSCRIPTION') {
+                console.log('subscription already created');
+                await AWSsendEmail({
+                    email: userSubscription.User.email,
+                    subject: '6FIRE - Confirmation commande',
+                    htmlMessage: generateConfirmationEmail({
+                        name: userSubscription.User.firstName,
+                        price: userSubscription.price.toString(), // format might not be right
+                        refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                        subscription: userSubscription.Subscription.name,
+                        orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
+                        email: userSubscription.User.email,
+                    }),
+                });
+            }
+        } else if (status === 'canceled') {
+            await prisma.userSubscription.update({
+                where: {
+                    id: userSubscription.id,
+                },
+                data: {
+                    endDate: validUntil,
+                },
+            });
+            await AWSsendEmail({
+                email: userSubscription.User.email,
+                subject: '6FIRE - Annulation de votre commande',
+                htmlMessage: generateOrderCancelledEmail({
+                    name: userSubscription.User.firstName,
+                    date: validUntil.toLocaleDateString(),
+                }),
+            });
+            return;
+        } else if (status === 'failed')
+            await AWSsendEmail({
+                email: userSubscription.User.email,
+                subject: '6FIRE - Erreur de paiement',
+                htmlMessage: generateOrderFailedEmail({
+                    name: userSubscription.User.firstName,
+                    until_retry: userSubscription.Subscription.refreshRate.toLocaleString(),
+                }),
+            });
+
+        // Final state saving
+        await prisma.userSubscription.update({
+            where: {
+                id: userSubscription.id,
+            },
+            data: {
+                status: status,
+            },
+        });
     }
 }

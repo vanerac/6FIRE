@@ -1,6 +1,7 @@
 import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+import { getSubscriptionLevel } from '../../tools/subscription.tool';
 
 const prisma = new PrismaClient();
 
@@ -10,24 +11,13 @@ export default class ArticleController implements CRUDController {
             const { id: userId, isAdmin } = req.user;
             const { page = 0, limit = 20 } = req.query;
 
-            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                where: {
-                    userId,
-                },
-                select: {
-                    Subscription: {
-                        select: {
-                            level: true,
-                        },
-                    },
-                },
-            });
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
             const args: any = {
                 where: {
                     hidden: false,
                     Theme: {
                         subscriptionLevel: {
-                            lte: userSubscriptionLevel?.Subscription.level,
+                            lte: userSubscriptionLevel,
                         },
                     },
                 },
@@ -65,18 +55,7 @@ export default class ArticleController implements CRUDController {
         try {
             const { id: articleId } = req.params;
             const { id: userId, isAdmin } = req.user;
-            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                where: {
-                    userId,
-                },
-                select: {
-                    Subscription: {
-                        select: {
-                            level: true,
-                        },
-                    },
-                },
-            });
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
             if (!userSubscriptionLevel && !isAdmin) {
                 next(
                     new ApiError({
@@ -96,7 +75,7 @@ export default class ArticleController implements CRUDController {
                 where.hidden = false;
                 where.Theme = {
                     subscriptionLevel: {
-                        lte: userSubscriptionLevel?.Subscription.level,
+                        lte: userSubscriptionLevel,
                     },
                 };
             }
@@ -107,7 +86,7 @@ export default class ArticleController implements CRUDController {
                     hidden: false,
                     Theme: {
                         subscriptionLevel: {
-                            lte: userSubscriptionLevel?.Subscription.level,
+                            lte: userSubscriptionLevel,
                         },
                     },
                 },
@@ -347,25 +326,14 @@ export default class ArticleController implements CRUDController {
             const { page = 0, limit = 20 } = req.query;
             const { id: userId, isAdmin } = req.user;
 
-            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                where: {
-                    userId,
-                },
-                select: {
-                    Subscription: {
-                        select: {
-                            level: true,
-                        },
-                    },
-                },
-            });
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
             const args: any = {
                 where: {
                     hidden: false,
                     themeId: +themeId,
                     Theme: {
                         subscriptionLevel: {
-                            lte: userSubscriptionLevel?.Subscription.level,
+                            lte: userSubscriptionLevel,
                         },
                     },
                 },

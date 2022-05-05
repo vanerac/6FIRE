@@ -111,7 +111,7 @@ export default class MollieService implements PaymentService {
                 currency: 'EUR',
                 value: '10.00',
             },
-            description: Math.random().toString(),
+            description: subscription.description,
             interval,
             startDate,
             mandateId: mandate.id,

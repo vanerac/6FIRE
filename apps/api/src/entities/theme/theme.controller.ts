@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { CRUDController } from '../../types';
 import { PrismaClient } from '@prisma/client';
+import { getSubscriptionLevel } from '../../tools/subscription.tool';
 
 const client = new PrismaClient();
 
@@ -10,30 +11,12 @@ export default class ThemeController implements CRUDController {
             const { id: userId, isAdmin } = req.user;
 
             if (!isAdmin) {
-                const userPermissions = await client.user.findFirst({
-                    where: {
-                        id: +userId,
-                    },
-                    include: {
-                        UserSubscription: {
-                            select: {
-                                Subscription: {
-                                    select: {
-                                        level: true,
-                                    },
-                                },
-                            },
-                        },
-                    },
-                });
-                const sortedPermissions = userPermissions?.UserSubscription?.sort((a, b) => {
-                    return a.Subscription.level - b.Subscription.level;
-                }).pop();
+                const userPermissions = await getSubscriptionLevel(userId);
 
                 const themes = await client.theme.findMany({
                     where: {
                         subscriptionLevel: {
-                            lte: sortedPermissions?.Subscription?.level ?? 0,
+                            lte: userPermissions,
                         },
                     },
                 });
@@ -52,28 +35,10 @@ export default class ThemeController implements CRUDController {
             let where = { id: +id };
 
             if (!isAdmin) {
-                const userPermissions = await client.user.findFirst({
-                    where: {
-                        id: +userId,
-                    },
-                    include: {
-                        UserSubscription: {
-                            select: {
-                                Subscription: {
-                                    select: {
-                                        level: true,
-                                    },
-                                },
-                            },
-                        },
-                    },
-                });
-                const sortedPermissions = userPermissions.UserSubscription.sort((a, b) => {
-                    return a.Subscription.level - b.Subscription.level;
-                }).pop();
+                const userPermissions = await getSubscriptionLevel(userId);
                 where = Object.assign(where, {
                     subscriptionLevel: {
-                        gte: sortedPermissions.Subscription.level,
+                        gte: userPermissions,
                     },
                 });
             }
