@@ -72,6 +72,14 @@ export default class ArticleController implements CRUDController {
                 Theme: undefined,
             };
             if (!isAdmin) {
+                Object.assign(where, {
+                    Theme: {
+                        subscriptionLevel: {
+                            lte: userSubscriptionLevel,
+                        },
+                    },
+                    hidden: false,
+                });
                 where.hidden = false;
                 where.Theme = {
                     subscriptionLevel: {
@@ -81,15 +89,7 @@ export default class ArticleController implements CRUDController {
             }
 
             const article = await prisma.article.findFirst({
-                where: {
-                    id: +articleId,
-                    hidden: false,
-                    Theme: {
-                        subscriptionLevel: {
-                            lte: userSubscriptionLevel,
-                        },
-                    },
-                },
+                where,
                 select: {
                     id: true,
                     title: true,
@@ -106,17 +106,17 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                     ArticleRecommandation: {
-                        where: {
-                            Recommandation: {
-                                Article: {
-                                    Theme: {
-                                        subscriptionLevel: {
-                                            lte: userSubscriptionLevel,
-                                        },
-                                    },
-                                },
-                            },
-                        },
+                        // where: {
+                        //     Recommandation: {
+                        //         Article: {
+                        //             Theme: {
+                        //                 subscriptionLevel: {
+                        //                     lte: userSubscriptionLevel,
+                        //                 },
+                        //             },
+                        //         },
+                        //     },
+                        // },
                         select: {
                             // id: false,
                             // recommandedArticleId: false,
