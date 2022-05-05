@@ -3037,28 +3037,32 @@ body{
 
 /* Hamburger Icon functional style
 ***************************************/
-#menu__toggle {
+#menu__toggle, #menu__toggle_mobile {
     display: block;
     opacity: 0;
     z-index: 7;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
+#menu__toggle:checked ~ .menu__btn > span,
+#menu__toggle_mobile:checked ~ .menu__btn > span {
     transform: rotate(45deg);
 }
 
-#menu__toggle:checked ~ .menu__btn > span::before {
+#menu__toggle:checked ~ .menu__btn > span::before,
+#menu__toggle_mobile:checked ~ .menu__btn > span::before {
     top: 0;
     transform: rotate(0);
 }
 
-#menu__toggle:checked ~ .menu__btn > span::after {
+#menu__toggle:checked ~ .menu__btn > span::after,
+#menu__toggle_mobile:checked ~ .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
     width: 100%;
 }
 
-#menu__toggle:checked ~ .login_popup_wrapper {
+#menu__toggle:checked ~ .login_popup_wrapper,
+#menu__toggle_mobile:checked ~ .login_popup_wrapper {
     visibility: visible;
     right: 50%;
     transform: translateX(0);
@@ -3269,7 +3273,7 @@ body{
 }
 
 .index-header .index-logo img{
-  max-width: calc(200px + (200 - 200) * ((100vw - 320px) / (1920 - 320)));
+  max-width: calc(300px + (380 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .index-header .scroll-icon img {
@@ -3280,6 +3284,8 @@ body{
 .index-header p {
     color: #99999f;
     font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+    margin: 0;
+    margin-top: -19px;
 }
 .position-bottom {
   position: absolute;
@@ -4009,6 +4015,7 @@ body{
 
 .pricing_wrapper .pricing_header_block .section_container .text {
     max-width: 700px;
+    padding-top: calc(10px + (65 - 10) * ((100vw - 320px) / (1920 - 320)));;
 }
 
 .pricing_wrapper .pricing_header_block .section_container .text .title {
@@ -4427,4 +4434,26 @@ body.scrollOff {
 }
 .btn-group img.telegram{
     filter: brightness(0) invert(1);
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    .content .bot-button-group{
+        flex-direction: column;
+    }
+    .wrap .copy{
+        flex-direction: column;
+    }
+    .copy span.copyCode{
+        margin-top: 15px;
+    }
+    .wrap .copy .code{
+        font-size: 11px;
+    }
+    .btn-group .primary-button.bg-ligh-green{
+        margin-top: 0;
+    }
+    .table-wrapper .user-wrap img{
+        display: none;
+    }
 }

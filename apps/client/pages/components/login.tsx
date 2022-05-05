@@ -9,7 +9,7 @@ import $ from 'jquery';
 import Link from 'next/link';
 
 /* scroll off */
-if (typeof window !== 'undefined') {
+/* if (typeof window !== 'undefined') {
     $('.scroll_off, .nav-close-btn').on('click', function () {
         if (!$('body').hasClass('overflo-y-hidden')) {
             $('body').addClass('overflo-y-hidden');
@@ -17,12 +17,13 @@ if (typeof window !== 'undefined') {
             $('body').removeClass('overflo-y-hidden');
         }
     });
-}
+} */
 
 /* toggle overlay */
 if (typeof window !== 'undefined') {
     $('.nav-close-btn').click(function () {
         $('.nav-item-wrap').removeClass('open');
+        $('body').removeClass('scrollOff');
     });
 }
 
@@ -50,7 +51,7 @@ if (typeof window !== 'undefined') {
 }
 
 const handleForm = () => {
-    $('.login_popup_wrapper').toggleClass('open');
+    $('.login_popup_wrapper, .nav-item-wrap').toggleClass('open');
 };
 
 const LoginPopup = (props: any) => {

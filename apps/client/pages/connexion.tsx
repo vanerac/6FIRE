@@ -15,7 +15,7 @@ import Head from 'next/head';
 import IndexHeader from './components/header_inext';
 
 /* scroll off */
-if (typeof window !== 'undefined') {
+/* if (typeof window !== 'undefined') {
     $('.scroll_off').on('click', function () {
         if (!$('body').hasClass('overflo-y-hidden')) {
             $('body').addClass('overflo-y-hidden');
@@ -23,7 +23,7 @@ if (typeof window !== 'undefined') {
             $('body').removeClass('overflo-y-hidden');
         }
     });
-}
+} */
 
 const Connexion: NextPage = () => {
     const [userName, setUserName] = useState('');
