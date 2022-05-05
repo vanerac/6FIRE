@@ -88,11 +88,17 @@ export async function verifySubscriptionLevel(userId: string, level: number) {
 export async function getSubscriptionLevel(userId: number): Promise<number> {
     const userSubscription = await prisma.userSubscription.findFirst({
         where: {
-            userId: +userId,
-            status: 'active',
-            endDate: {
-                gt: new Date(),
-            },
+            OR: [
+                {
+                    userId: +userId,
+                    status: 'active',
+                },
+                {
+                    endDate: {
+                        gt: new Date(),
+                    },
+                },
+            ],
         },
         select: {
             Subscription: true,

@@ -106,6 +106,17 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                     ArticleRecommandation: {
+                        where: {
+                            Recommandation: {
+                                Article: {
+                                    Theme: {
+                                        subscriptionLevel: {
+                                            lte: userSubscriptionLevel,
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         select: {
                             // id: false,
                             // recommandedArticleId: false,

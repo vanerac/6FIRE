@@ -286,7 +286,7 @@ export default class PaymentController implements CRUDController {
             formattedStatus = 'pending';
         }
 
-        this.handleSubscriptionUpdate(subscription.id, formattedStatus);
+        await PaymentController.handleSubscriptionUpdate(subscription.id, formattedStatus);
 
         res.sendStatus(200);
     }
@@ -386,11 +386,18 @@ export default class PaymentController implements CRUDController {
         else validUntil = new Date();
 
         if (status === 'active') {
-            // if its a payment or un first payment for a subscription, send email
             if (
                 userSubscription.Subscription.subscriptionType === 'SUBSCRIPTION' &&
                 !userSubscription.extSubscriptionId
             ) {
+                await prisma.userSubscription.update({
+                    where: {
+                        id: userSubscriptionId,
+                    },
+                    data: {
+                        lastPaymentDate: new Date(),
+                    },
+                });
                 console.log('subscription');
                 await MollieService.createSubscription(
                     userSubscription.id,
