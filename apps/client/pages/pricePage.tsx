@@ -8,7 +8,6 @@ import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import Head from 'next/head';
-import PaymentWidget from './components/payment';
 import { PaylineHead } from 'react-payline';
 
 const PricePage: NextPage = (props: any) => {
@@ -35,35 +34,33 @@ const PricePage: NextPage = (props: any) => {
             });
     }, []);
 
-    const $subcribe = (subscriptionId: string) => {
+    const $subcribe = ($subscriptionId: string) => {
+        // Todo: get subscription method
+        //     apiClient.payment
+        //         .createPayment({
+        //             subscriptionId: subscriptionId.toString(),
+        //             provider: '',
+        //         })
+        //         .then((payment) => {
+        //             return (
+        //                 <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
+        //             );
+        //         });
         setLoading(true);
-        apiClient.payment
-            .createPayment({
-                subscriptionId,
-                // OfferId ??
-            })
-            .then((payment) => {
-                setLoading(false);
-                // Todo a popup instead ?
-                router.push(payment.paymentUrl as string);
-            })
-            .catch((error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-                setLoading(false);
-            });
     };
 
-    const instantiatePayment = (subscriptionId: number) => {
-        apiClient.payment
-            .createPayment({
-                subscriptionId: subscriptionId.toString(),
-            })
-            .then((payment) => {
-                return (
-                    <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
-                );
-            });
-    };
+    // const instantiatePayment = (subscriptionId: number) => {
+    //     apiClient.payment
+    //         .createPayment({
+    //             subscriptionId: subscriptionId.toString(),
+    //             provider: 'payline',
+    //         })
+    //         .then((payment) => {
+    //             return (
+    //                 <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
+    //             );
+    //         });
+    // };
 
     return (
         <div>
@@ -103,7 +100,7 @@ const PricePage: NextPage = (props: any) => {
                                     </div>
 
                                     <button
-                                        onClick={() => instantiatePayment(1)}
+                                        // onClick={() => instantiatePayment(1)}
                                         type="submit"
                                         className="primary-button">
                                         <span>Commencer</span>
