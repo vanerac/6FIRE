@@ -4008,6 +4008,7 @@ body{
 
 .pricing_wrapper .pricing_header_block .section_container .text {
     max-width: 700px;
+    padding-top: calc(10px + (65 - 10) * ((100vw - 320px) / (1920 - 320)));;
 }
 
 .pricing_wrapper .pricing_header_block .section_container .text .title {
