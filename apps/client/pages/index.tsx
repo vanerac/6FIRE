@@ -30,10 +30,11 @@ const HomePage: NextPage = ($props: any) => {
                 <div>
                     <div className="index-logo mb-equal">
                         <img src="/img/logo/logo-home-6fire.png" alt="" />
-                    </div>
-                    <div className="mb-equal">
                         <p>Rejoindre le club d’investisseur</p>
                     </div>
+                    {/* <div className="mb-equal">
+                        <p>Rejoindre le club d’investisseur</p>
+                    </div> */}
                     <div className="mb-equal">
                         <a href="connexion" className="primary-button">
                             <span>Nous rejoindre</span>

@@ -24,17 +24,7 @@ const $mobileToggle = () => {
     $('.nav-item-wrap').toggleClass('open');
 };
 
-/* mobile main button toggel */
-if (typeof window !== 'undefined') {
-    $('.mobile-hamburger').click(function () {
-        $(this).css({ 'z-index': '-1', 'ponter-event': 'none' });
-    });
-}
-if (typeof window !== 'undefined') {
-    $('.nav-close-btn').click(function () {
-        $('.mobile-hamburger').css({ 'z-index': '3', 'ponter-event': 'visible' });
-    });
-}
+
 
 const IndexHeader = ($props: any) => {
     return (

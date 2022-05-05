@@ -28,17 +28,7 @@ const mobileToggle = () => {
     $('.nav-item-wrap').toggleClass('open');
 };
 
-/* mobile main button toggel */
-if (typeof window !== 'undefined') {
-    $('.mobile-hamburger').click(function () {
-        $(this).css({ 'z-index': '-1', 'ponter-event': 'none' });
-    });
-}
-if (typeof window !== 'undefined') {
-    $('.nav-close-btn').click(function () {
-        $('.mobile-hamburger').css({ 'z-index': '3', 'ponter-event': 'visible' });
-    });
-}
+
 
 const Header = (props: any) => {
     console.log(props);
@@ -150,12 +140,12 @@ const Header = (props: any) => {
 
                 {/* Hamburger mobile */}
                 <div
-                    className="mobile-hamburger"
+                    className="mobile-hamburger">
+                    <input id="menu__toggle_mobile" type="checkbox" />
+                    <label 
                     onClick={() => {
-                        console.log('mobile');
                         mobileToggle();
-                    }}>
-                    <label className="menu__btn scroll_off" htmlFor="menu__toggle">
+                    }} className="menu__btn scroll_off" htmlFor="menu__toggle_mobile">
                         <span></span>
                     </label>
                 </div>
@@ -196,9 +186,6 @@ const Header = (props: any) => {
                         <div className="main-nav-bar">
                             <div className="nav-grid">
                                 <div className="nav-item-wrap">
-                                    <div className="nav-close-btn">
-                                        <img src="img/icon/close.svg" alt="" />
-                                    </div>
                                     <ul id="visible-only-mobile">
                                         <li>
                                             <a href="#">{isMoney}</a>
