@@ -28,6 +28,8 @@ const Header = (props: any) => {
     const [isMoney, setisMoney] = useState('');
     const [isCookie, setIsCookie] = useState('');
     const [isMobileView, setIsMobileView] = useState(false);
+    const [subscriptionLevel, setSubscriptionLevel] = useState<any>();
+    const [$error, setError] = useState(false);
 
     /* Hamburger toggle script */
     const handleForm = () => {
@@ -68,9 +70,6 @@ const Header = (props: any) => {
             setThemes(themes);
         } else {
             const response = await apiClient.themes.getThemes();
-            if (response.length === 0) {
-                router.push('/pricePage');
-            }
             console.log(response);
             const slicedThemes = [...response].slice(0, 5) as Theme[];
             const slicedThemesDropDown = [...response].slice(5) as Theme[];
@@ -100,6 +99,16 @@ const Header = (props: any) => {
             fetchThemes();
         }
 
+        apiClient.subscription
+            .getSubscriptions()
+            .then((subscriptions) => {
+                console.log('ici header => ', subscriptions[0].level);
+                setSubscriptionLevel(subscriptions[0].level);
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            });
+
         if (
             router.pathname === '/articlesDetails' ||
             router.pathname === '/articlesPage' ||
@@ -111,12 +120,19 @@ const Header = (props: any) => {
             router.pathname === '/compte' ||
             router.pathname === '/connexion-securite' ||
             router.pathname === '/infosPersonelles' ||
-            router.pathname === '/pricePage'
-            // router.pathname === '/tradingFormationForex'
+            router.pathname === '/pricePage' ||
+            router.pathname === '/abonnement'
         ) {
             setisMoney('Espace trading & crypto');
         } else {
-            setisMoney('Nos Trades');
+            console.log('LA => ', subscriptionLevel);
+            // if user has the entry level subscription, redirect to the price page
+            if (subscriptionLevel >= 1) {
+                setisMoney('Nos Trades');
+            } else {
+                setisMoney('Espace trading & crypto');
+                router.push('/pricePage');
+            }
         }
     }, []);
 
