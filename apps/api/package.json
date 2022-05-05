@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@mollie/api-client": "^3.6.0",
+    "@playmoweb/payline-typescript-sdk": "^1.1.5",
     "@prisma/client": "^3.12.0",
     "@sentry/node": "^6.19.6",
     "@sentry/tracing": "^6.19.6",
@@ -51,6 +52,7 @@
     "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
+    "ngrok": "^4.3.1",
     "openapi-typescript": "^5.2.0",
     "openapi-typescript-codegen": "^0.20.1",
     "prettier": "^2.6.2",

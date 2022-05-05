@@ -228,7 +228,7 @@ prisma.subscription
             level: 1,
             refreshRate: 1,
             subscriptionType: 'SUBSCRIPTION',
-            price: 1,
+            price: 1000,
         },
     })
     .then((result) => {

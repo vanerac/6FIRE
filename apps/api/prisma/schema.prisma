@@ -25,6 +25,11 @@ enum OfferType {
   FIXED
 }
 
+enum PaymentProvider {
+  MOLLIE
+  PAYLINE
+}
+
 model User {
   id                  Int                 @id @default(autoincrement())
   firstName           String
@@ -76,6 +81,7 @@ model Subscription {
   refreshRate      Int // in days
   subscriptionType PaymentType
   price            Int
+  paymentProvider  String?
   hidden           Boolean            @default(false)
   isBestValue      Boolean            @default(false)
   hasFreeTrial     Boolean            @default(false)
@@ -88,26 +94,30 @@ model Subscription {
 }
 
 model UserSubscription {
-  id             Int          @id @default(autoincrement())
-  userId         Int
-  subscriptionId Int
-  createdAt      DateTime     @default(now())
-  updatedAt      DateTime     @default(now())
-  price          Int
-  paymentId      String // Mollie payment id
-  customerId     String // Mollie customer id
-  status         String // Mollie status
-  User           User         @relation(fields: [userId], references: [id])
-  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  id               Int          @id @default(autoincrement())
+  userId           Int
+  subscriptionId   Int
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @default(now())
+  endDate          DateTime?
+  lastPaymentDate  DateTime?
+  price            Int
+  paymentId        String       // exteneral payment id
+  customerId       String       // external customer id
+  extSubscriptionId String?      // external subscription id
+  status           String       // updated external status
+  paymentProdvider String       //  payment provider
+  User             User         @relation(fields: [userId], references: [id])
+  Subscription     Subscription @relation(fields: [subscriptionId], references: [id])
 }
 
 model Offer {
-  id             Int          @id @default(autoincrement())
+  id             Int           @id @default(autoincrement())
   value          Int
   offerType      OfferType
-  subscriptionId Int
-  singleUse      Boolean      @default(false)
-  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  subscriptionId Int?
+  singleUse      Boolean       @default(false)
+  Subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
   OfferUsage     OfferUsage[]
 }
 

@@ -41,7 +41,7 @@ router.use('/crypto', verifyToken, parseAdmin, CryptoRouter);
 router.use('/trader', verifyToken, parseAdmin, TraderRouter);
 router.use('/article', verifyToken, parseAdmin, ArticleRouter);
 router.use('/subscription', verifyToken, parseAdmin, SubscriptionRouter);
-router.use('/payment', verifyToken, parseAdmin, PaymentRouter);
+router.use('/payment', PaymentRouter);
 router.use('/affliation', verifyToken, parseAdmin, AffiliationRouter);
 router.use('/offer', verifyToken, parseAdmin, OfferRouter);
 router.use('/broker', verifyToken, parseAdmin, BrokerRouter);

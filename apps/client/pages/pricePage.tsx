@@ -8,6 +8,7 @@ import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import Head from 'next/head';
+import { PaylineHead } from 'react-payline';
 
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -33,28 +34,39 @@ const PricePage: NextPage = (props: any) => {
             });
     }, []);
 
-    const $subcribe = (subscriptionId: string) => {
+    const $subcribe = ($subscriptionId: string) => {
+        // Todo: get subscription method
+        //     apiClient.payment
+        //         .createPayment({
+        //             subscriptionId: subscriptionId.toString(),
+        //             provider: '',
+        //         })
+        //         .then((payment) => {
+        //             return (
+        //                 <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
+        //             );
+        //         });
         setLoading(true);
-        apiClient.payment
-            .createPayment({
-                subscriptionId,
-                // OfferId ??
-            })
-            .then((payment) => {
-                setLoading(false);
-                // Todo a popup instead ?
-                router.push(payment.paymentUrl as string);
-            })
-            .catch((error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-                setLoading(false);
-            });
     };
+
+    // const instantiatePayment = (subscriptionId: number) => {
+    //     apiClient.payment
+    //         .createPayment({
+    //             subscriptionId: subscriptionId.toString(),
+    //             provider: 'payline',
+    //         })
+    //         .then((payment) => {
+    //             return (
+    //                 <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
+    //             );
+    //         });
+    // };
 
     return (
         <div>
             <Head>
                 <title>Abonnement Prix - Crypto Trader</title>
+                <PaylineHead production />
             </Head>
             <input type="hidden" id="anPageName" name="page" value="prices-page" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
@@ -87,7 +99,10 @@ const PricePage: NextPage = (props: any) => {
                                         49,99€ <span>/mois</span>
                                     </div>
 
-                                    <button type="submit" className="primary-button">
+                                    <button
+                                        // onClick={() => instantiatePayment(1)}
+                                        type="submit"
+                                        className="primary-button">
                                         <span>Commencer</span>
                                         <div className="right-arrow">
                                             <img src="/img/icon/right-arrow.png" alt="" />

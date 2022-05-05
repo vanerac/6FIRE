@@ -39,17 +39,26 @@ export class PaymentService {
             /**
              * Subscription ID
              */
-            subscriptionId?: string;
+            subscriptionId: string;
+            /**
+             * Provider
+             */
+            provider: 'mollie' | 'payline';
             /**
              * Offer ID
              */
             offerId?: string;
         },
-    ): CancelablePromise<(UserSubscription & {
+    ): CancelablePromise<({
         /**
-         * Payment URL
+         * Checkout URL
          */
-        paymentUrl?: string;
+        url?: string;
+    } | {
+        /**
+         * Payline token
+         */
+        token?: string;
     })> {
         return this.httpRequest.request({
             method: 'POST',
@@ -67,7 +76,7 @@ export class PaymentService {
 
     /**
      * Get a single subscription
-     * @param id Subscription ID
+     * @param id User Subscription ID
      * @returns UserSubscription A successful response.
      * @throws ApiError
      */
@@ -91,7 +100,7 @@ export class PaymentService {
 
     /**
      * Update a subscription
-     * @param id Subscription ID
+     * @param id User Subscription ID
      * @param requestBody Payment object that needs to be updated in the store
      * @returns UserSubscription A successful response.
      * @throws ApiError
@@ -128,7 +137,7 @@ export class PaymentService {
 
     /**
      * Delete a subscription
-     * @param id Subscription ID
+     * @param id User Subscription ID
      * @returns void
      * @throws ApiError
      */

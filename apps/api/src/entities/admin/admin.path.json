@@ -2,7 +2,7 @@
   "resetPassword": {
     "get": {
       "description": "Regenerate the admin password and send it by email, can be done every 12 hours",
-      "operationId": "resetPassword",
+      "operationId": "resetAdminPassword",
       "tags": [
         "Admin"
       ],

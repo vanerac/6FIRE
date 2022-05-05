@@ -51,7 +51,7 @@ export default function Index() {
 
     const resetPassword = async () => {
         apiClient.admin
-            .resetPassword()
+            .resetAdminPassword()
             .then(() => {
                 alert('Password reset');
             })

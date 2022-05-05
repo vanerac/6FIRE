@@ -173,6 +173,7 @@ export class UserController implements CRUDController {
                     paymentId: '',
                     status: 'active',
                     price: 0,
+                    paymentProdvider: 'admin',
                 },
             });
             res.json(userSub);

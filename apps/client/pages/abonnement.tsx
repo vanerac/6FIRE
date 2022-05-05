@@ -34,23 +34,23 @@ const Abonnement: NextPage = (props: any) => {
             });
     }, []);
 
-    const $subcribe = (subscriptionId: string) => {
-        setLoading(true);
-        apiClient.payment
-            .createPayment({
-                subscriptionId,
-                // OfferId ??
-            })
-            .then((payment) => {
-                // Todo a popup instead ?
-                setLoading(false);
-                router.push(payment.paymentUrl as string);
-            })
-            .catch((error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-                setLoading(false);
-            });
-    };
+    // const $subcribe = (subscriptionId: string) => {
+    //     setLoading(true);
+    //     apiClient.payment
+    //         .createPayment({
+    //             subscriptionId,
+    //             // OfferId ??
+    //         })
+    //         .then((payment) => {
+    //             // Todo a popup instead ?
+    //             setLoading(false);
+    //             router.push(payment.paymentUrl as string);
+    //         })
+    //         .catch((error) => {
+    //             setError(error.i18n ?? error.message ?? 'Unknown error');
+    //             setLoading(false);
+    //         });
+    // };
 
     return (
         <div>
