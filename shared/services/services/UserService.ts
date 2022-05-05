@@ -204,6 +204,27 @@ export class UserService {
     }
 
     /**
+     * update the current user stats
+     * @param requestBody
+     * @returns UserStatus successful operation
+     * @throws ApiError
+     */
+    public updateMyStats(
+        requestBody: UserStatus,
+    ): CancelablePromise<UserStatus> {
+        return this.httpRequest.request({
+            method: 'PUT',
+            url: '/user/me/infos',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Invalid user supplied`,
+                500: `Internal server error`,
+            },
+        });
+    }
+
+    /**
      * get the current user subscriptions
      * @returns UserSub successful operation
      * @throws ApiError

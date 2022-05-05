@@ -1,5 +1,4 @@
 /* screen - homepage-1 */
-
 .body {
     margin: O;
 }
@@ -3038,28 +3037,32 @@ body{
 
 /* Hamburger Icon functional style
 ***************************************/
-#menu__toggle {
+#menu__toggle, #menu__toggle_mobile {
     display: block;
     opacity: 0;
     z-index: 7;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
+#menu__toggle:checked ~ .menu__btn > span,
+#menu__toggle_mobile:checked ~ .menu__btn > span {
     transform: rotate(45deg);
 }
 
-#menu__toggle:checked ~ .menu__btn > span::before {
+#menu__toggle:checked ~ .menu__btn > span::before,
+#menu__toggle_mobile:checked ~ .menu__btn > span::before {
     top: 0;
     transform: rotate(0);
 }
 
-#menu__toggle:checked ~ .menu__btn > span::after {
+#menu__toggle:checked ~ .menu__btn > span::after,
+#menu__toggle_mobile:checked ~ .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
     width: 100%;
 }
 
-#menu__toggle:checked ~ .login_popup_wrapper {
+#menu__toggle:checked ~ .login_popup_wrapper,
+#menu__toggle_mobile:checked ~ .login_popup_wrapper {
     visibility: visible;
     right: 50%;
     transform: translateX(0);
@@ -3270,7 +3273,7 @@ body{
 }
 
 .index-header .index-logo img{
-  max-width: calc(200px + (200 - 200) * ((100vw - 320px) / (1920 - 320)));
+  max-width: calc(300px + (380 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .index-header .scroll-icon img {
@@ -3281,6 +3284,8 @@ body{
 .index-header p {
     color: #99999f;
     font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+    margin: 0;
+    margin-top: -19px;
 }
 .position-bottom {
   position: absolute;
@@ -3394,6 +3399,7 @@ body{
     border-radius: 10px;
     padding: 30px;
     color: #161a1a;
+    cursor: pointer;
 }
 
 .account-wrapper .single-info p {
@@ -3618,7 +3624,7 @@ body{
 .boat_Trading_Header .text-wrap .button-wrap a {
     display: inline-block;
     padding: 10px calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-    min-width: 180px;
+    /* min-width: 180px; */
     text-align: center;
     color: #fff;
     font-size: 14px;
@@ -4009,6 +4015,7 @@ body{
 
 .pricing_wrapper .pricing_header_block .section_container .text {
     max-width: 700px;
+    padding-top: calc(10px + (65 - 10) * ((100vw - 320px) / (1920 - 320)));;
 }
 
 .pricing_wrapper .pricing_header_block .section_container .text .title {
@@ -4280,4 +4287,173 @@ body{
 ------------------------------------- */
 body.scrollOff {
     overflow-y: hidden;
+}
+
+/* Bot Trading page style 
+---------------------------*/
+.trading-wrapper{
+    margin: 135px auto;
+    margin-bottom: 3%;
+    color: #fff;
+    font-family: var(--font-family-lato);
+}
+
+.treading-header{
+    position: relative;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.treading-header .header-bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+.treading-header .content{
+    max-width: 1400px;
+    padding: 0 3%;
+    margin: 0 auto;
+    text-align: center;
+}
+.treading-header .content .title{
+    font-weight: 600;
+    font-size: 18px;
+}
+.content .bot-button-group{
+    border-radius: 10px;
+    background-color: #5e5667;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.content .bot-button-group a{
+    display: inline-block;
+    width: 200px;
+    padding: 10px 35px;
+    color: #fff;
+    transition: all 0.5s;
+}
+.content .bot-button-group a.active{
+    background-color: #b30f10;
+}
+.container{
+    max-width: 1400px;
+    padding: 0 3%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trading-wrapper .text-box{
+    padding: 30px;
+}
+.bg-light-black{
+    background-color: #212121;
+}
+
+.wrap .question{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.wrap .question .number{
+    margin-right: 15px;
+    color: #fff;
+    background-color: #b30f10;
+    padding: 10px;
+    transform: rotate(-10deg);
+}
+.wrap{text-align: center;}
+
+.wrap .copy{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 10px;
+}
+.copy span{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.wrap .copy .code{
+    background-color: #5e5667;
+    margin-right: 10px;
+}
+
+.copyCode{
+    background-color: #b30f10;
+}
+.wrap p{
+    max-width: 900px;
+    margin: 15px auto;
+}
+.wrap .primary-button{
+    background: rgb(214,29,0);
+    background: -moz-linear-gradient(43deg, rgba(214,29,0,1) 0%, rgba(154,4,2,1) 100%);
+    background: -webkit-linear-gradient(43deg, rgba(214,29,0,1) 0%, rgba(154,4,2,1) 100%);
+    background: linear-gradient(43deg, rgba(214,29,0,1) 0%, rgba(154,4,2,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d61d00",endColorstr="#9a0402",GradientType=1);
+    margin-top: 30px;
+}
+
+.btn-group .primary-button.bg-light-blue{
+    background: #1caaef;
+}
+.btn-group .primary-button.bg-ligh-green{
+    background: #26cf49;
+}
+.btn-group{
+    gap: 25px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-box .table-wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+}
+.btn-group img{
+    max-width: 20px;
+    margin-right: 10px;
+}
+.btn-group img.telegram{
+    filter: brightness(0) invert(1);
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    .content .bot-button-group{
+        flex-direction: column;
+    }
+    .wrap .copy{
+        flex-direction: column;
+    }
+    .copy span.copyCode{
+        margin-top: 15px;
+    }
+    .wrap .copy .code{
+        font-size: 11px;
+    }
+    .btn-group .primary-button.bg-ligh-green{
+        margin-top: 0;
+    }
+    .table-wrapper .user-wrap img{
+        display: none;
+    }
 }

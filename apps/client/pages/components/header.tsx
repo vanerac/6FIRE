@@ -9,7 +9,7 @@ import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
 import Link from 'next/link';
 
-if (typeof window !== 'undefined') {
+/* if (typeof window !== 'undefined') {
     $('.scroll_off').on('click', function () {
         if (!$('body').hasClass('overflo-y-hidden')) {
             $('body').removeClass('overflo-y-hidden');
@@ -17,28 +17,7 @@ if (typeof window !== 'undefined') {
             $('body').addClass('overflo-y-hidden');
         }
     });
-}
-
-/* Hamburger toggle script */
-const handleForm = () => {
-    $('.login_popup_wrapper').toggleClass('open');
-};
-/* Mobile mnue toggle script */
-const mobileToggle = () => {
-    $('.nav-item-wrap').toggleClass('open');
-};
-
-/* mobile main button toggel */
-if (typeof window !== 'undefined') {
-    $('.mobile-hamburger').click(function () {
-        $(this).css({ 'z-index': '-1', 'ponter-event': 'none' });
-    });
-}
-if (typeof window !== 'undefined') {
-    $('.nav-close-btn').click(function () {
-        $('.mobile-hamburger').css({ 'z-index': '3', 'ponter-event': 'visible' });
-    });
-}
+} */
 
 const Header = (props: any) => {
     console.log(props);
@@ -47,11 +26,21 @@ const Header = (props: any) => {
     const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
     const [isMoney, setisMoney] = useState('');
+    const [isCookie, setIsCookie] = useState('');
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    /* Hamburger toggle script */
+    const handleForm = () => {
+        $('.login_popup_wrapper').toggleClass('open');
+    };
+    /* Mobile mnue toggle script */
+    const mobileToggle = () => {
+        $('.nav-item-wrap').toggleClass('open');
+        setIsMobileView(!isMobileView);
+    };
 
     const fetchThemes = async () => {
         if (props.isEspaceTradingCrypto == true) {
-            // const themes = {['Formations'; 'Forex'; ]}
-            // create array of themes
             const themes = [
                 // articles formations id
                 {
@@ -92,6 +81,7 @@ const Header = (props: any) => {
     };
 
     useEffect(() => {
+        setIsCookie(cookies['API_TOKEN']);
         if (
             router.pathname === '/cgv' ||
             router.pathname === '/cgu' ||
@@ -149,13 +139,14 @@ const Header = (props: any) => {
                 {/* Hamburger icon END */}
 
                 {/* Hamburger mobile */}
-                <div
-                    className="mobile-hamburger"
-                    onClick={() => {
-                        console.log('mobile');
-                        mobileToggle();
-                    }}>
-                    <label className="menu__btn scroll_off" htmlFor="menu__toggle">
+                <div className="mobile-hamburger">
+                    <input id="menu__toggle_mobile" type="checkbox" />
+                    <label
+                        onClick={() => {
+                            mobileToggle();
+                        }}
+                        className="menu__btn scroll_off"
+                        htmlFor="menu__toggle_mobile">
                         <span></span>
                     </label>
                 </div>
@@ -166,7 +157,7 @@ const Header = (props: any) => {
                     <div className="main-nav">
                         <div className="top-nav">
                             <div className="logo">
-                                <a href={cookies['API_TOKEN'] ? '/' : '/articlesPage'}>
+                                <a href={isCookie ? '/articlesPage' : '/'}>
                                     <img src="/img/logo/logo.svg" alt="" />
                                 </a>
                             </div>
@@ -196,9 +187,6 @@ const Header = (props: any) => {
                         <div className="main-nav-bar">
                             <div className="nav-grid">
                                 <div className="nav-item-wrap">
-                                    <div className="nav-close-btn">
-                                        <img src="img/icon/close.svg" alt="" />
-                                    </div>
                                     <ul id="visible-only-mobile">
                                         <li>
                                             <a href="#">{isMoney}</a>
@@ -273,9 +261,11 @@ const Header = (props: any) => {
                                         </li> */}
                                         {themesDropDown.length > 0 ? (
                                             <li>
-                                                <a href="#">
-                                                    <span className="nav-item">Autres thématiques</span>
-                                                </a>
+                                                {isMobileView == false ? (
+                                                    <a href="#">
+                                                        <span className="nav-item">Autres thématiques</span>
+                                                    </a>
+                                                ) : null}
                                                 <ul className="dropdown">
                                                     {themesDropDown.map((theme, $index) => (
                                                         <li key={theme.id}>

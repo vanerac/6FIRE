@@ -1,12 +1,23 @@
 #footer_block{
     background-color: #121212;
-    padding: 30px 5%;
     font-family: var(--font-family-lato);
+
+}
+#footer_block .footer-menu-wrapper{
+    padding: 30px 5% 15px;
+}
+#footer_block .footer-text{
+    padding: 10px 5%;
+    border-top: 1px solid rgba(204, 204, 204, 0.2);
+    border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+    background-color: #151b1b;
+    margin-bottom: 30px;
 
 }
 .footer-text p{
     color: #fff;
     line-height: 1.5;
+    margin: 0;
 }
 #footer_block a{
     transition: all 0.5s ease;
@@ -38,6 +49,7 @@
     padding: 0 3%;
     border-bottom: 1px solid #707070;
     padding-bottom: calc(15px + (35 - 15) * ((100vw - 320px) / (1920 - 320)));
+    margin: 0 5%;
 }
 #footer_block .footer-menu-wrapper .footer-nav-items{display: flex; align-items: center; margin-top: 15px;}
 #footer_block .footer-menu-wrapper .footer-nav-items li{padding: 5px 15px;}

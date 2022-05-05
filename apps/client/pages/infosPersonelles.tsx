@@ -13,15 +13,16 @@ import Head from 'next/head';
 const Compte: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
     let apiClient = getAPIClient(cookies['API_TOKEN']);
-    const [me, setMe] = useState<UserStatus>();
+    const [$me, setMe] = useState<UserStatus>();
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
     const [userInfo, setUserInfo] = useState({
-        name: '',
-        surname: '',
-        mail: '',
-        phone: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        telephone: '',
     });
+    const [confirmModif, setConfirmModif] = useState(false);
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -43,17 +44,27 @@ const Compte: NextPage = (props: any) => {
             });
     }, []);
 
-    // function to update user informations
     const updateUser = async (data: any) => {
         setLoading(true);
+        console.log(data);
         apiClient.user
-            .updateUser(me?.id as number, data)
+            .updateMyStats(data)
             .then((res) => {
                 setMe(res);
+                console.log('res => ', res);
                 setLoading(false);
+                alert('Modification effectuée avec succès');
+                setUserInfo({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    telephone: '',
+                });
+                setConfirmModif(false);
             })
             .catch((error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
+                console.log('error');
                 setLoading(false);
             });
     };
@@ -80,37 +91,75 @@ const Compte: NextPage = (props: any) => {
                     <form action="#">
                         <div className="input-wrap">
                             <input
-                                onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}
+                                onChange={(e) => setUserInfo({ ...userInfo, firstName: e.target.value })}
                                 type="text"
                                 placeholder="* Nom"
+                                value={userInfo.firstName}
                             />
                             <input
-                                onChange={(e) => setUserInfo({ ...userInfo, surname: e.target.value })}
+                                onChange={(e) => setUserInfo({ ...userInfo, lastName: e.target.value })}
                                 type="text"
                                 placeholder="* Prénom"
+                                value={userInfo.lastName}
                             />
                             <input
-                                onChange={(e) => setUserInfo({ ...userInfo, mail: e.target.value })}
+                                onChange={(e) => setUserInfo({ ...userInfo, email: e.target.value })}
                                 type="email"
                                 placeholder="* Email"
+                                value={userInfo.email}
                             />
                             <input
-                                onChange={(e) => setUserInfo({ ...userInfo, phone: e.target.value })}
+                                onChange={(e) => setUserInfo({ ...userInfo, telephone: e.target.value })}
                                 type="tel"
                                 placeholder="* Numéro de téléphone"
+                                value={userInfo.telephone}
                             />
                         </div>
 
                         <div className="send_btn">
-                            <button onClick={() => updateUser(userInfo)} type="submit" className="primary-button">
-                                <span>Modifier</span>
-                                <div className="right-arrow">
-                                    <img src="/img/icon/right-arrow.png" alt="" />
-                                </div>
-                            </button>
+                            {confirmModif == false ? (
+                                <button onClick={() => setConfirmModif(true)} type="submit" className="primary-button">
+                                    <span>Modifier</span>
+                                    <div className="right-arrow">
+                                        <img src="/img/icon/right-arrow.png" alt="" />
+                                    </div>
+                                </button>
+                            ) : (
+                                <>
+                                    <button
+                                        onClick={() => {
+                                            setUserInfo({
+                                                firstName: '',
+                                                lastName: '',
+                                                email: '',
+                                                telephone: '',
+                                            });
+                                            setConfirmModif(false);
+                                        }}
+                                        type="submit"
+                                        className="primary-button">
+                                        <span>Annuler</span>
+                                        <div className="right-arrow">
+                                            <img src="/img/icon/right-arrow.png" alt="" />
+                                        </div>
+                                    </button>
+                                </>
+                            )}
                         </div>
                     </form>
                 </div>
+                {confirmModif == true && (
+                    <button
+                        style={{ marginTop: '20px' }}
+                        onClick={() => updateUser(userInfo)}
+                        type="submit"
+                        className="primary-button">
+                        <span>Enregistrer</span>
+                        <div className="right-arrow">
+                            <img src="/img/icon/right-arrow.png" alt="" />
+                        </div>
+                    </button>
+                )}
             </div>
             <Footer />
         </div>
