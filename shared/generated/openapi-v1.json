@@ -2601,11 +2601,9 @@
                 "properties": {
                   "subscriptionId": {
                     "type": "string",
-                    "description": "Subscription ID",
-                    "required": true
+                    "description": "Subscription ID"
                   },
                   "provider": {
-                    "required": true,
                     "type": "string",
                     "description": "Provider",
                     "enum": [
@@ -3503,7 +3501,7 @@
     "/admin/reset": {
       "get": {
         "description": "Regenerate the admin password and send it by email, can be done every 12 hours",
-        "operationId": "resetPassword",
+        "operationId": "resetAdminPassword",
         "tags": [
           "Admin"
         ],

@@ -2,7 +2,11 @@ import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { AWSsendEmail } from '../../tools/notifications.tools';
-import { generateConfirmationEmail } from '../../templates/email';
+import {
+    generateConfirmationEmail,
+    generateOrderCancelledEmail,
+    generateOrderFailedEmail,
+} from '../../templates/email';
 import MollieService from '../../tools/payment/mollie.service';
 import PaylineService from '../../tools/payment/payline.service';
 import { PaymentService, PaymentType } from '../../tools/payment/payment.service';
@@ -241,6 +245,7 @@ export default class PaymentController implements CRUDController {
                 price: true,
                 customerId: true,
                 extSubscriptionId: true,
+                lastPaymentDate: true,
             },
         });
 
@@ -249,6 +254,13 @@ export default class PaymentController implements CRUDController {
         }
 
         if (status.status === 'canceled' || status.status === 'failed' || status.status === 'expired') {
+            let validUntil;
+            if (subscription.lastPaymentDate)
+                validUntil = new Date(
+                    subscription.lastPaymentDate.getTime() +
+                        subscription.Subscription.refreshRate * 24 * 60 * 60 * 1000,
+                );
+            else validUntil = new Date();
             await prisma.userSubscription.update({
                 where: {
                     id: subscription.id,
@@ -257,8 +269,54 @@ export default class PaymentController implements CRUDController {
                     status: status.status,
                 },
             });
-            // Todo: send failed email
+
+            if (status.status === 'canceled') {
+                await prisma.userSubscription.update({
+                    where: {
+                        id: subscription.id,
+                    },
+                    data: {
+                        status: status.status,
+                        endDate: validUntil,
+                    },
+                });
+                await AWSsendEmail({
+                    email: subscription.User.email,
+                    subject: '6FIRE - Annulation de votre commande',
+                    htmlMessage: generateOrderCancelledEmail({
+                        name: subscription.User.firstName,
+                        date: validUntil.toLocaleDateString(),
+                    }),
+                });
+                return;
+            } else if (status.status === 'failed')
+                await AWSsendEmail({
+                    email: subscription.User.email,
+                    subject: '6FIRE - Erreur de paiement',
+                    htmlMessage: generateOrderFailedEmail({
+                        name: subscription.User.firstName,
+                        until_retry: subscription.Subscription.refreshRate.toLocaleString(),
+                    }),
+                });
+            else if (status.status === 'expired')
+                await AWSsendEmail({
+                    email: subscription.User.email,
+                    subject: '6FIRE - Votre paiement a expiré',
+                    htmlMessage: generateOrderCancelledEmail({
+                        name: subscription.User.firstName,
+                        date: new Date(subscription.createdAt).toLocaleDateString(),
+                    }),
+                });
         } else if (status.status === 'paid') {
+            await prisma.userSubscription.update({
+                where: {
+                    id: subscription.id,
+                },
+                data: {
+                    status: 'active',
+                    lastPaymentDate: new Date(),
+                },
+            });
             if (subscription.Subscription.subscriptionType === 'SUBSCRIPTION' && !subscription.extSubscriptionId) {
                 console.log('subscription');
                 await MollieService.createSubscription(
@@ -267,30 +325,35 @@ export default class PaymentController implements CRUDController {
                     subscription.Subscription as any,
                 );
                 console.log('subscription created');
-            } else {
+                await AWSsendEmail({
+                    email: subscription.User.email,
+                    subject: '6FIRE - Confirmation commande',
+                    htmlMessage: generateConfirmationEmail({
+                        name: subscription.User.firstName,
+                        price: subscription.price.toString(), // format might not be right
+                        refresh: subscription.Subscription.refreshRate.toString(), // Format might not be right
+                        subscription: subscription.Subscription.name,
+                        orderDate: new Date(subscription.createdAt).toLocaleDateString(), // format might not be right
+                        email: subscription.User.email,
+                    }),
+                });
+            } else if (subscription.Subscription.subscriptionType !== 'SUBSCRIPTION') {
                 console.log('subscription already created');
+                await AWSsendEmail({
+                    email: subscription.User.email,
+                    subject: '6FIRE - Confirmation commande',
+                    htmlMessage: generateConfirmationEmail({
+                        name: subscription.User.firstName,
+                        price: subscription.price.toString(), // format might not be right
+                        refresh: subscription.Subscription.refreshRate.toString(), // Format might not be right
+                        subscription: subscription.Subscription.name,
+                        orderDate: new Date(subscription.createdAt).toLocaleDateString(), // format might not be right
+                        email: subscription.User.email,
+                    }),
+                });
             }
 
-            await prisma.userSubscription.update({
-                where: {
-                    id: subscription.id,
-                },
-                data: {
-                    status: 'active',
-                },
-            });
-            await AWSsendEmail({
-                email: subscription.User.email,
-                subject: '6FIRE - Confirmation commande',
-                htmlMessage: generateConfirmationEmail({
-                    name: subscription.User.firstName,
-                    price: subscription.price.toString(), // format might not be right
-                    refresh: subscription.Subscription.refreshRate.toString(), // Format might not be right
-                    subscription: subscription.Subscription.name,
-                    orderDate: new Date(subscription.createdAt).toLocaleDateString(), // format might not be right
-                    email: subscription.User.email,
-                }),
-            });
+            res.sendStatus(200);
         }
     }
 

@@ -13,7 +13,7 @@ export class AdminService {
      * @returns any Successful response
      * @throws ApiError
      */
-    public resetPassword(): CancelablePromise<any> {
+    public resetAdminPassword(): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/admin/reset',

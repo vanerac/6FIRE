@@ -50,11 +50,9 @@
               "properties": {
                 "subscriptionId": {
                   "type": "string",
-                  "description": "Subscription ID",
-                  "required": true
+                  "description": "Subscription ID"
                 },
                 "provider": {
-                  "required": true,
                   "type": "string",
                   "description": "Provider",
                   "enum": [
