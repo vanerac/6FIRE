@@ -135,19 +135,24 @@ export default class CryptoController implements CRUDController {
 
     static async getCoinImg(req: Request, res: Response, next: NextFunction) {
         try {
-            const baseUrl = 'https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/icons/';
+            //https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png
+
+            //https://pro-api.coinmarketcap.com/v1/exchange/info
+
+            // Coin token
             const { coin } = req.params;
-            if (!coin) {
-                return next(
-                    new ApiError({
-                        message: 'No coin provided',
-                        status: 400,
-                        i18n: 'error.api.coinimg',
-                    }),
-                );
-            }
-            const imgUrl = `${baseUrl}/${coin}.png`;
-            res.json({ imgUrl });
+
+            const url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info';
+
+            const data = await axios.get(url, {
+                params: {
+                    symbol: coin,
+                },
+                headers: {
+                    'X-CMC_PRO_API_KEY': process.env.COINMARKETCAP_API_KEY,
+                },
+            });
+            res.json({ imgUrl: data.data.data[coin.toUpperCase()]?.logo });
         } catch (error) {
             next(error);
         }

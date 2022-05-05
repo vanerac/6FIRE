@@ -143,7 +143,7 @@ const PricePage: NextPage = (props: any) => {
                                 <div className="price_head">
                                     <div className="title">
                                         <h3>
-                                            INTERMÉDIAIRE <span>(Pour les ambitieux, qui veulent trader)</span>
+                                            INTERMÉDIAIRE <span>{/*(Pour les ambitieux, qui veulent trader)*/}</span>
                                         </h3>
                                     </div>
                                     <div className="price">
@@ -163,40 +163,60 @@ const PricePage: NextPage = (props: any) => {
                                                 <img src="/img/icon/check.png" alt="" />
                                                 Accès aux options de la Licence Novice
                                             </li>
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès au BOT TRADING permettant d’obtenir les alertes des meilleurs*/}
+                                            {/*    traders du monde sur Binance*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès à nos analyses sur les marchés*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès à notre portefeuille Crypto et nos choix en temps réel pour le*/}
+                                            {/*    long terme*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès aux signaux FOREX & CRYPTO permettant de voir en temps réel les*/}
+                                            {/*    positions que nous prenons sur les marchés*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès à nos résultats*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès à nos outils d’analyses secrets sur les marchés financiers*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Challenge 1K to 10K*/}
+                                            {/*</li>*/}
                                             <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès au BOT TRADING permettant d’obtenir les alertes des meilleurs
-                                                traders du monde sur Binance
+                                                <img src="/img/icon/check.png" alt="" /> Accès à tous les articles pour
+                                                comprendre le monde de l’investissement
                                             </li>
                                             <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès à nos analyses sur les marchés
+                                                <img src="/img/icon/check.png" alt="" /> Accès aux Bons Plans
                                             </li>
                                             <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès à notre portefeuille Crypto et nos choix en temps réel pour le
-                                                long terme
+                                                <img src="/img/icon/check.png" alt="" /> Accès aux articles permettant
+                                                de se lancer dans le monde de l’investissement sans budget à travers des
+                                                dizaines d’opportunités
                                             </li>
                                             <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès aux signaux FOREX & CRYPTO permettant de voir en temps réel les
-                                                positions que nous prenons sur les marchés
-                                            </li>
-                                            <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès à nos résultats
-                                            </li>
-                                            <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès à nos outils d’analyses secrets sur les marchés financiers
-                                            </li>
-                                            <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Challenge 1K to 10K
+                                                <img src="/img/icon/check.png" alt="" />
+                                                Accès aux rencontres et événements privés des membres en France
                                             </li>
                                             <li>
                                                 <img src="/img/icon/plus.png" alt="" />
                                                 Support 24h/24 et 7j/7 pour les membres
+                                            </li>
+                                            <li>
+                                                <img src="/img/icon/plus.png" alt="" />
+                                                Présentation des cryptomonnaies chaque semaine
                                             </li>
                                         </ul>
                                     </div>
