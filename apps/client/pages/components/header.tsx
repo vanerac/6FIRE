@@ -28,6 +28,7 @@ const Header = (props: any) => {
     const [isMoney, setisMoney] = useState('');
     const [isCookie, setIsCookie] = useState('');
     const [isMobileView, setIsMobileView] = useState(false);
+    const imgtest = '/img/icons/formations.png';
 
     /* Hamburger toggle script */
     const handleForm = () => {
@@ -47,22 +48,26 @@ const Header = (props: any) => {
                     id: 1,
                     name: 'Formations',
                     url: '/tradingFormationForex',
+                    iconUrl: '/img/icon/formations.png',
                 },
                 // articles forex id
                 {
                     id: 2,
                     name: 'Forex',
                     url: '/tradingFormationForex',
+                    iconUrl: '/img/icon/forex.png',
                 },
                 {
                     id: 3,
                     name: 'Crypto Wallet',
                     url: '/cryptoWallet',
+                    iconUrl: '/img/icon/Cryptowallet.png',
                 },
                 {
                     id: 3,
                     name: 'Bot Trading',
                     url: '/botTrading',
+                    iconUrl: '/img/icon/bottrading.png',
                 },
             ];
             setThemes(themes);
@@ -218,7 +223,7 @@ const Header = (props: any) => {
                                                         }
                                                     }}>
                                                     <span className="icon">
-                                                        <img src="/img/icon/Cryptomonnaies.png" alt="" />
+                                                        <img src={theme.iconUrl} alt="" />
                                                     </span>
                                                     <span className="nav-item">{theme.name}</span>
                                                 </a>
@@ -281,7 +286,7 @@ const Header = (props: any) => {
                                                                     });
                                                                 }}>
                                                                 <span className="icon">
-                                                                    <img src="/img/icon/Cryptomonnaies.png" alt="" />
+                                                                    <img src={theme.iconUrl} alt="" />
                                                                 </span>
                                                                 <span className="nav-item">{theme.name}</span>
                                                             </a>

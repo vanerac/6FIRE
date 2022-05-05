@@ -135,7 +135,7 @@ const HomePage: NextPage = (props: any) => {
                                 <div className="author-photo">
                                     <img
                                         src={
-                                            ($articles?.Theme?.iconUrl as string) ??
+                                            ($articles?.Theme?.iconUrl) ??
                                             'https://webneel.com/wallpaper/sites/default/files/images/08-2018/3-nature-wallpaper-mountain.jpg'
                                         }
                                     />
