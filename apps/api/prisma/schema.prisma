@@ -195,7 +195,7 @@ model Country {
 model CryptoHolding {
   id        Int      @id @default(autoincrement())
   token     String
-  price     Int
+  price     Float
   amount    Int
   updatedAt DateTime @default(now())
   createdAt DateTime @default(now())

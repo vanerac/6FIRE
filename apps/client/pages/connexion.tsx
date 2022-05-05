@@ -12,6 +12,7 @@ import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 // import translate from '@shared/translation'
 import Head from 'next/head';
+import Script from 'next/script';
 import IndexHeader from './components/header_inext';
 
 /* scroll off */
@@ -157,11 +158,19 @@ const Connexion: NextPage = () => {
         <div>
             <Head>
                 <title>Connexion</title>
+                <link href="https://homologation-payment.cdn.payline.com/cdn/styles/widget-min.css" rel="stylesheet" />
             </Head>
+            <Script src="https://homologation-payment.cdn.payline.com/cdn/scripts/widget-min.js" />
             <LoginPopup />
             <IndexHeader />
             <input type="hidden" id="anPageName" name="page" value="register-web" />
             <div className="register-web screen">
+                <div
+                    id="PaylineWidget"
+                    data-token="the token obtained in doWebPayment Response"
+                    data-template="column"
+                    data-embeddedredirectionallowed="false"
+                />
                 <div className="background-WxaGAS"></div>
                 <div className="logo-WxaGAS">
                     <div onClick={() => router.push('/')} style={{ cursor: 'pointer' }} className="effect-ReYaAa">
