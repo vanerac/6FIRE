@@ -24,8 +24,6 @@ const $mobileToggle = () => {
     $('.nav-item-wrap').toggleClass('open');
 };
 
-
-
 const IndexHeader = ($props: any) => {
     return (
         <div className="secondary-Nav-wrapper">

@@ -39,7 +39,6 @@ if (typeof window !== 'undefined') {
     });
 }
 
-
 /* Forget password overlay wrapper
 -------------------------------------*/
 if (typeof window !== 'undefined') {

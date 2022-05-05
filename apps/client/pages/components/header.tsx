@@ -28,8 +28,6 @@ const mobileToggle = () => {
     $('.nav-item-wrap').toggleClass('open');
 };
 
-
-
 const Header = (props: any) => {
     console.log(props);
     const [cookies, $setCookie, removeCookie] = useCookies(['API_TOKEN']);
@@ -139,13 +137,14 @@ const Header = (props: any) => {
                 {/* Hamburger icon END */}
 
                 {/* Hamburger mobile */}
-                <div
-                    className="mobile-hamburger">
+                <div className="mobile-hamburger">
                     <input id="menu__toggle_mobile" type="checkbox" />
-                    <label 
-                    onClick={() => {
-                        mobileToggle();
-                    }} className="menu__btn scroll_off" htmlFor="menu__toggle_mobile">
+                    <label
+                        onClick={() => {
+                            mobileToggle();
+                        }}
+                        className="menu__btn scroll_off"
+                        htmlFor="menu__toggle_mobile">
                         <span></span>
                     </label>
                 </div>
@@ -259,32 +258,32 @@ const Header = (props: any) => {
                                             </a>
                                         </li>
                                         {/* {themesDropDown.length > 0 ? ( */}
-                                            <li>
-                                                <a href="#">
-                                                    <span className="nav-item">Autres thématiques</span>
-                                                </a>
-                                                <ul className="dropdown">
-                                                    {themesDropDown.map((theme, $index) => (
-                                                        <li key={theme.id}>
-                                                            <a
-                                                                style={{ cursor: 'pointer' }}
-                                                                onClick={() => {
-                                                                    console.log('theme', theme);
-                                                                    router.push({
-                                                                        pathname: '/articlesPage',
-                                                                        query: {
-                                                                            themeId: theme.id,
-                                                                        },
-                                                                    });
-                                                                }}>
-                                                                <span className="icon">
-                                                                    <img src="/img/icon/Cryptomonnaies.png" alt="" />
-                                                                </span>
-                                                                <span className="nav-item">{theme.name}</span>
-                                                            </a>
-                                                        </li>
-                                                    ))}
-                                                    <li>
+                                        <li>
+                                            <a href="#">
+                                                <span className="nav-item">Autres thématiques</span>
+                                            </a>
+                                            <ul className="dropdown">
+                                                {themesDropDown.map((theme, $index) => (
+                                                    <li key={theme.id}>
+                                                        <a
+                                                            style={{ cursor: 'pointer' }}
+                                                            onClick={() => {
+                                                                console.log('theme', theme);
+                                                                router.push({
+                                                                    pathname: '/articlesPage',
+                                                                    query: {
+                                                                        themeId: theme.id,
+                                                                    },
+                                                                });
+                                                            }}>
+                                                            <span className="icon">
+                                                                <img src="/img/icon/Cryptomonnaies.png" alt="" />
+                                                            </span>
+                                                            <span className="nav-item">{theme.name}</span>
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                                <li>
                                                     <a href="#">
                                                         <span className="nav-item">Immobilier</span>
                                                     </a>
@@ -299,8 +298,8 @@ const Header = (props: any) => {
                                                         <span className="nav-item">Play to Earn</span>
                                                     </a>
                                                 </li>
-                                                </ul>
-                                            </li>
+                                            </ul>
+                                        </li>
                                         {/* ) : null} */}
                                     </ul>
 
