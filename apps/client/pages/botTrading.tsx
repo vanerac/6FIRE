@@ -41,7 +41,7 @@ const BotTrading: NextPage = ($props: any) => {
             <Head>
                 <title>Bot Trading - Crypto Trader</title>
             </Head>
-            <Header />
+            <Header isEspaceTradingCrypto={true} />
             <input type="hidden" id="anPageName" name="page" value="bot-trading" />
 
             {/* Treading Wrapper */}
