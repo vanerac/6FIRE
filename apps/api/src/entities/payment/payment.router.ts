@@ -23,6 +23,8 @@ router.post('/refund/:id', verifyToken, parseAdmin, isAdmin, PaymentController.c
 // webhooks
 router.post('/webhook/mollie', PaymentController.mollieWebhooksStatus);
 router.get('/webhook/mollie', PaymentController.redirectMollie);
+router.post('/webhook/stripe', PaymentController.stripeWebhooksStatus);
+router.get('/webhook/stripe', PaymentController.redirectStripe);
 router.post('/webhook/payline', PaymentController.paylineWebhooksStatus);
 
 export default router;

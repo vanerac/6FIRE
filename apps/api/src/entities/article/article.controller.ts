@@ -68,8 +68,12 @@ export default class ArticleController implements CRUDController {
 
             const where = {
                 id: +articleId,
-                hidden: undefined,
-                Theme: undefined,
+                hidden: false,
+                Theme: {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
+                    },
+                },
             };
             if (!isAdmin) {
                 Object.assign(where, {

@@ -101,9 +101,9 @@ export default class MollieService implements PaymentService {
 
         const mandate = await mollieClient.customers_mandates.create({
             customerId: customerId,
-            consumerName: configuration.CONSUMER_NAME,
+            consumerName: configuration.MOLLIE_CONSUMER_NAME,
             method: MandateMethod.directdebit,
-            consumerAccount: configuration.CONSUMER_ACCOUNT, // TODO
+            consumerAccount: configuration.MOLLIE_CONSUMER_ACCOUNT, // TODO
         });
 
         const sub = await mollieClient.customers_subscriptions.create({
