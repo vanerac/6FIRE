@@ -28,7 +28,6 @@ const Header = (props: any) => {
     const [isMoney, setisMoney] = useState('');
     const [isCookie, setIsCookie] = useState('');
     const [isMobileView, setIsMobileView] = useState(false);
-    const imgtest = '/img/icons/formations.png';
 
     /* Hamburger toggle script */
     const handleForm = () => {
@@ -82,7 +81,6 @@ const Header = (props: any) => {
             setThemes(slicedThemes as any);
             setThemesDropDown(slicedThemesDropDown);
         }
-        // setThemesDropDown(response.slice(4) as Theme[]);
     };
 
     useEffect(() => {
