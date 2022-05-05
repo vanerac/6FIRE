@@ -317,7 +317,10 @@ const Header = (props: any) => {
                                         <li>
                                             <a
                                                 onClick={() => {
-                                                    removeCookie('API_TOKEN');
+                                                    removeCookie('API_TOKEN', { path: '/' });
+                                                    removeCookie('API_TOKEN', { domain: 'localhost' });
+                                                    removeCookie('API_TOKEN', { domain: '.6fireinvest.com' });
+                                                    removeCookie('API_TOKEN', { domain: '.6fireinvest.fr' });
                                                     router.push('/');
                                                 }}
                                                 href="#">
