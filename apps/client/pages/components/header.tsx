@@ -127,7 +127,7 @@ const Header = (props: any) => {
         } else {
             console.log('LA => ', subscriptionLevel);
             // if user has the entry level subscription, redirect to the price page
-            if (subscriptionLevel >= 1) {
+            if (subscriptionLevel >= 2) {
                 setisMoney('Nos Trades');
             } else {
                 setisMoney('Espace trading & crypto');
