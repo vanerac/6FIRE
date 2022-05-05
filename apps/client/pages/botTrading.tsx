@@ -136,7 +136,7 @@ const BotTrading: NextPage = ($props: any) => {
                                 <tr>
                                     <td className="pl-30">
                                         <div className="user-wrap">
-                                            <div className="rank">2</div>
+                                            <div className="rank">1</div>
                                             <img src="/img/icon/user-logo.png" alt="" />
                                             <div className="user-name">
                                                 <span className="imgTitle">

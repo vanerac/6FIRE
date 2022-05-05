@@ -4427,3 +4427,25 @@ body.scrollOff {
 .btn-group img.telegram{
     filter: brightness(0) invert(1);
 }
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    .content .bot-button-group{
+        flex-direction: column;
+    }
+    .wrap .copy{
+        flex-direction: column;
+    }
+    .copy span.copyCode{
+        margin-top: 15px;
+    }
+    .wrap .copy .code{
+        font-size: 11px;
+    }
+    .btn-group .primary-button.bg-ligh-green{
+        margin-top: 0;
+    }
+    .table-wrapper .user-wrap img{
+        display: none;
+    }
+}
