@@ -353,7 +353,7 @@ export default class PaymentController implements CRUDController {
     }
 
     static redirectMollie(req: Request, res: Response) {
-        res.redirect('https://6fireinvest.com/articlesPage');
+        res.redirect('https://6fireinvest.com/accueil');
     }
 
     private static async handleSubscriptionUpdate(
