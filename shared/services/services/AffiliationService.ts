@@ -13,13 +13,13 @@ export class AffiliationService {
     /**
      * Create Affiliation
      * Create Affiliation
-     * @param requestBody
+     * @param requestBody 
      * @returns Affiliation Affiliation created
      * @throws ApiError
      */
     public createAffiliation(
-        requestBody: Affiliation,
-    ): CancelablePromise<Affiliation> {
+requestBody: Affiliation,
+): CancelablePromise<Affiliation> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/affiliation/',
@@ -55,13 +55,13 @@ export class AffiliationService {
     /**
      * Get Affiliation
      * Get Affiliation
-     * @param id
+     * @param id 
      * @returns Affiliation Affiliation
      * @throws ApiError
      */
     public getAffiliationById(
-        id: string,
-    ): CancelablePromise<Affiliation> {
+id: string,
+): CancelablePromise<Affiliation> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/affiliation/{id}',
@@ -80,15 +80,15 @@ export class AffiliationService {
     /**
      * Update Affiliation
      * Update Affiliation
-     * @param id
-     * @param requestBody
+     * @param id 
+     * @param requestBody 
      * @returns Affiliation Affiliation
      * @throws ApiError
      */
     public updateAffiliation(
-        id: string,
-        requestBody: Affiliation,
-    ): CancelablePromise<Affiliation> {
+id: string,
+requestBody: Affiliation,
+): CancelablePromise<Affiliation> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/affiliation/{id}',
@@ -109,13 +109,13 @@ export class AffiliationService {
     /**
      * Delete Affiliation
      * Delete Affiliation
-     * @param id
-     * @returns void
+     * @param id 
+     * @returns void 
      * @throws ApiError
      */
     public deleteAffiliation(
-        id: string,
-    ): CancelablePromise<void> {
+id: string,
+): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/affiliation/{id}',

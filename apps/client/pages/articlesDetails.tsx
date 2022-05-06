@@ -9,6 +9,7 @@ import getAPIClient from '@shared/tools/apiClient';
 import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
 import draftToHtml from 'draftjs-to-html';
+import Podcast from './components/articles/podcast/podcast';
 
 const convertDate = (date: string) => {
     const date_unix = new Date(date).getTime() / 1000;
@@ -244,6 +245,18 @@ const HomePage: NextPage = (props: any) => {
                             {/*        bas*/}
                             {/*    </p>*/}
                             {/*</div>*/}
+                        </div>
+
+                        <div>
+                            <Podcast
+                                track={{
+                                    title: $articles.title ?? 'PODCAST',
+                                    artist: 'ui',
+                                    audioSrc: 'ff',
+                                    color: '#fffff',
+                                    image: ($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png',
+                                }}
+                            />
                         </div>
 
                         {/* More article you would love to reaa */}
