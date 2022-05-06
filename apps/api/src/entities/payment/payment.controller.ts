@@ -95,25 +95,25 @@ export default class PaymentController implements CRUDController {
                 throw new Error('Subscription not found');
             }
 
-            const existingSubscription = await prisma.userSubscription.findFirst({
-                where: {
-                    userId: +req.user.id,
-                    status: {
-                        in: ['active', 'pending'],
-                    },
-                },
-                select: {
-                    Subscription: true,
-                },
-            });
+            // const existingSubscription = await prisma.userSubscription.findFirst({
+            //     where: {
+            //         userId: +req.user.id,
+            //         status: {
+            //             in: ['active', 'pending'],
+            //         },
+            //     },
+            //     select: {
+            //         Subscription: true,
+            //     },
+            // });
 
-            if (existingSubscription) {
-                throw new ApiError({
-                    status: 409,
-                    message: 'Subscription already exists',
-                    i18n: 'error.subscription.alreadyExists',
-                });
-            }
+            // if (existingSubscription) {
+            //     throw new ApiError({
+            //         status: 409,
+            //         message: 'Subscription already exists',
+            //         i18n: 'error.subscription.alreadyExists',
+            //     });
+            // }
 
             if (subscription.paymentProvider && subscription.paymentProvider !== provider) {
                 throw new ApiError({
@@ -465,29 +465,55 @@ export default class PaymentController implements CRUDController {
         res.redirect('6fireinvest.com/articlesPage');
     }
 
-    static async paylineTest(req: Request, res: Response) {
-        console.log(req.params, req.query);
-        //req.query
-        // {
-        //   notificationType: 'WEBTRS',
-        //   token: '12odVr52YmqH2Uyux2671651855854941',
-        //   paymentEndpoint: '1'
-        // }
+    static async paylineTest(req: Request, res: Response, next: NextFunction) {
+        try {
+            console.log(req.params, req.query);
+            //req.query
+            // {
+            //   notificationType: 'WEBTRS',
+            //   token: '12odVr52YmqH2Uyux2671651855854941',
+            //   paymentEndpoint: '1'
+            // }
 
-        const { $notificationType, token, paymentEndpoint } = req.query;
+            const { $notificationType, token, paymentEndpoint } = req.query;
 
-        const details = await paylineWebService.getWebPaymentDetails({
-            token: token as string,
-            version: +paymentEndpoint,
-        });
+            const details = await paylineWebService.getWebPaymentDetails({
+                token: token as string,
+                version: +paymentEndpoint,
+            });
 
-        console.log(details);
+            const userSub = await prisma.userSubscription.findFirst({
+                where: {
+                    paymentId: token as string,
+                },
+            });
 
-        if (details.result.shortMessage == 'CANCELLED') {
-            // Todo ? action failed, not order cancelled
+            if (!userSub) {
+                throw new ApiError({
+                    status: 404,
+                    message: 'Subscription not found',
+                    i18n: 'error.subscription.notFound',
+                });
+            }
+
+            console.log(details);
+
+            if (details.result.shortMessage == 'CANCELLED') {
+                // Todo ? action failed, not order cancelled
+                await prisma.userSubscription.update({
+                    where: {
+                        id: userSub.id,
+                    },
+                    data: {
+                        status: 'failed',
+                    },
+                });
+            }
+
+            res.send('ok');
+        } catch (e) {
+            next(e);
         }
-
-        res.send('ok');
     }
 
     private static async handleSubscriptionUpdate(

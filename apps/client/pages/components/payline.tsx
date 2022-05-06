@@ -38,8 +38,8 @@ export function Payment({
     successCb: () => void;
     errorCb: ($message: string) => void;
 }) {
+    const paylineApi = usePayline();
     useEffect(() => {
-        const paylineApi = usePayline();
         console.log('Token', token);
         if (token.length) (paylineApi as any).show();
         else (paylineApi as any).hide();
