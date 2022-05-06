@@ -357,7 +357,7 @@ export default class PaymentController implements CRUDController {
     //     res.redirect('https://6fireinvest.com/articlesPage');
     // }
 
-    static async stripeWebhooksStatus(req: Request, res: Response, next: NextFunction) {
+    static async stripeWebhooksStatus(req: Request, res: Response) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         let event = req.body;
@@ -484,6 +484,7 @@ export default class PaymentController implements CRUDController {
         console.log(details);
 
         if (details.result.shortMessage == 'CANCELLED') {
+            // Todo ? action failed, not order cancelled
         }
 
         res.send('ok');
