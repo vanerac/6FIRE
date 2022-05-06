@@ -79,20 +79,8 @@ export default class ArticleController implements CRUDController {
                 },
             };
             if (!isAdmin) {
-                Object.assign(where, {
-                    Theme: {
-                        subscriptionLevel: {
-                            lte: userSubscriptionLevel,
-                        },
-                    },
-                    hidden: false,
-                });
-                where.hidden = false;
-                where.Theme = {
-                    subscriptionLevel: {
-                        lte: userSubscriptionLevel,
-                    },
-                };
+                delete where.hidden;
+                delete where.Theme;
             }
 
             const article = await prisma.article.findFirst({
