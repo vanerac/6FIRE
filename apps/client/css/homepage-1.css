@@ -4532,18 +4532,24 @@ body.scrollOff {
     padding: 60px 30px;
 }
 .trading-welcome p{margin: 0;}
-
 .trading-circle-block{
-    padding: 0 10%;
+    padding: 60px 10% 60px;
     position: relative;
-    padding: 0 0px 60px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    color: #fff;
+    font-family: var(--font-family-lato);
+    min-height: 600px;
+}
+.trading-circle-block .left-col{
+    
+}
+.trading-circle-block .right-col{
+    
 }
 .trading-circle-block .circle{
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
     border: 1px solid #fff;
     display: flex;
     align-items: center;
@@ -4551,5 +4557,125 @@ body.scrollOff {
     border-radius: 50%;
 }
 .trading-circle-block .circle img{
-    max-width: 200px;
+    max-width: 170px;
+}
+.round-text-wrap{
+    display: flex;
+    align-items: baseline;
+    position: relative;
+}
+.round-text-wrap .title{
+    margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.round-text-wrap .title:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 1px;
+    background-color: #b30f10;
+}
+.round-text-wrap p{
+    margin: 0;
+    font-size: 14px;
+}
+.round-text-wrap .icon{
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.round-text-wrap .icon img{
+    max-width: 100%;
+}
+.round-text-wrap{
+    max-width: 350px;
+}
+.round-text-wrap.forex-wrap {
+    max-width: 300px;
+}
+.round-text-wrap.nos-trads-wrap {
+    max-width: 300px;
+    margin-right: -10%;
+}
+.round-text-wrap.cyrpto-wrap {
+    max-width: 415px;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+.round-text-wrap.bot-wrap{
+    max-width: 420px;
+    margin-top: 120px;
+    margin-left: 30px;
+}
+.trading-circle-block .left-col{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.icon.formation {
+    right: -33%;
+}
+.icon.forex {
+    right: -15px;
+}
+.icon.trades {
+    right: -40px;
+}
+.icon.bot {
+    right: auto;
+    left: -65px;
+}
+.icon.cyrpto {
+    right: auto;
+    left: -80px;
+}
+.round-text-wrap.forex-wrap{
+    margin: 60px 0;
+    padding-right: 30px;
+}
+
+.circle-btn-group {
+    padding: 60px 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.circle-btn-group .primary-button{
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.circle-btn-group .primary-button .right-arrow{
+    width: 15px;
+    margin-left: 10px;
+}
+.bg-blue{
+    background-color: #006cf9;
+}
+.bg-yellow{
+    background-color: #ffd200;
+}
+.primary-button.bg-yellow{
+    color: #0e0f0f;
+}
+.primary-button.bg-yellow img {
+    filter: brightness(0) invert(0);
 }
