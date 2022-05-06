@@ -99,6 +99,7 @@ export default class ArticleController implements CRUDController {
                     themeId: true,
                     headerUrl: true,
                     bannerUrl: true,
+                    podcastUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -186,7 +187,7 @@ export default class ArticleController implements CRUDController {
                 data: {
                     title,
                     content,
-                    themeId: +themeId,
+                    themeId: themeId,
                     hidden: false,
                     bannerUrl,
                     headerUrl,
@@ -200,7 +201,7 @@ export default class ArticleController implements CRUDController {
                     financement,
                 },
             });
-            if (recommendedArticleIds.length > 0) {
+            if (recommendedArticleIds?.length) {
                 await Promise.all(
                     recommendedArticleIds.map(async (recommendedArticleId) => {
                         let recommandedId = recommendedArticleId;
