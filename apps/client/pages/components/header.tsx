@@ -52,25 +52,24 @@ const Header = (props: any) => {
                     iconUrl: '/img/icon/formations.png',
                 },
                 // articles forex id
-                // {
-                //     id: 2,
-                //     name: 'Forex',
-                //     url: '/tradingFormationForex',
-                //     iconUrl: '/img/icon/forex.png',
-
-                // },
-                // {
-                //     id: 3,
-                //     name: 'Crypto Wallet',
-                //     url: '/cryptoWallet',
-                //     iconUrl: '/img/icon/Cryptowallet.png',
-                // },
-                // {
-                //     id: 3,
-                //     name: 'Bot Trading',
-                //     url: '/botTrading',
-                //     iconUrl: '/img/icon/bottrading.png',
-                // },
+                {
+                    id: 2,
+                    name: 'Forex',
+                    url: '/tradingFormationForex',
+                    iconUrl: '/img/icon/forex.png',
+                },
+                {
+                    id: 3,
+                    name: 'Crypto Wallet',
+                    url: '/cryptoWallet',
+                    iconUrl: '/img/icon/Cryptowallet.png',
+                },
+                {
+                    id: 3,
+                    name: 'Bot Trading',
+                    url: '/botTrading',
+                    iconUrl: '/img/icon/bottrading.png',
+                },
             ];
             setThemes(themes);
         } else {
@@ -184,7 +183,7 @@ const Header = (props: any) => {
                     <div className="main-nav">
                         <div className="top-nav">
                             <div className="logo">
-                                <a href={isCookie ? '/articlesPage' : '/'}>
+                                <a href={isCookie ? '/accueil' : '/'}>
                                     <img src="/img/logo/logo.svg" alt="" />
                                 </a>
                             </div>
@@ -228,7 +227,7 @@ const Header = (props: any) => {
                                                         {
                                                             props.isEspaceTradingCrypto == false
                                                                 ? router.push({
-                                                                      pathname: '/articlesPage',
+                                                                      pathname: '/accueil',
                                                                       query: {
                                                                           themeId: theme.id,
                                                                       },
@@ -301,7 +300,7 @@ const Header = (props: any) => {
                                                                 onClick={() => {
                                                                     console.log('theme', theme);
                                                                     router.push({
-                                                                        pathname: '/articlesPage',
+                                                                        pathname: '/accueil',
                                                                         query: {
                                                                             themeId: theme.id,
                                                                         },
@@ -362,10 +361,7 @@ const Header = (props: any) => {
                                     Espace <br />
                                     Trading &amp; Crypto
                                 </a> */}
-                                <Link
-                                    href={
-                                        isMoney == 'Nos Trades' ? '/articlesPage' : '/tradingFormationForex?themeId=1'
-                                    }>
+                                <Link href={isMoney == 'Nos Trades' ? '/accueil' : '/trading'}>
                                     <a
                                         className="espace"
                                         onClick={() => {
