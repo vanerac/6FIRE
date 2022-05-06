@@ -2656,8 +2656,8 @@
                     "type": "string",
                     "description": "Provider",
                     "enum": [
-                      "mollie",
-                      "payline"
+                      "payline",
+                      "stripe"
                     ]
                   },
                   "offerId": {

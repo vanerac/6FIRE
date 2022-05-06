@@ -7,22 +7,22 @@ import {
     generateOrderCancelledEmail,
     generateOrderFailedEmail,
 } from '../../templates/email';
-import MollieService from '../../tools/payment/mollie.service';
 import PaylineService from '../../tools/payment/payline.service';
 import { PaymentService, PaymentType } from '../../tools/payment/payment.service';
 import configuration from '../../../configuration';
 
 import { v4 as uuid } from 'uuid';
 
-import ngrok from 'ngrok';
 import { Payment } from '@mollie/api-client';
+import StripeService, { stripe } from '../../tools/payment/stripe.service';
 
 const prisma = new PrismaClient();
 // const paylineWebService = new PaylineWeb(paylineConfig);
 
 const services = {
-    mollie: MollieService,
+    // mollie: MollieService,
     payline: PaylineService,
+    stripe: StripeService,
 };
 
 export default class PaymentController implements CRUDController {
@@ -130,8 +130,6 @@ export default class PaymentController implements CRUDController {
 
             // const ngrok = require('ngrok');
 
-            if (process.env.NODE_ENV !== 'production') configuration.BACKEND_URL = `${await ngrok.connect(3333)}/api`;
-
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             const paymentIntent = await service.createPaymentIntent(
@@ -154,6 +152,7 @@ export default class PaymentController implements CRUDController {
                     failUrl: configuration.BACKEND_URL + '/payment/status',
                 },
             );
+            console.log(paymentIntent);
 
             await prisma.userSubscription.create({
                 data: {
@@ -243,53 +242,53 @@ export default class PaymentController implements CRUDController {
         }
     }
 
-    static async mollieWebhooksStatus(req: Request, res: Response) {
-        const { id } = req.body;
-
-        const status = await MollieService.getPayment(id);
-
-        if (!status) {
-            return res.sendStatus(200);
-        }
-
-        const subscription = await prisma.userSubscription.findFirst({
-            where: {
-                paymentId: id,
-            },
-            select: {
-                Subscription: true,
-                User: true,
-                id: true,
-                createdAt: true,
-                updatedAt: true,
-                price: true,
-                customerId: true,
-                extSubscriptionId: true,
-                lastPaymentDate: true,
-            },
-        });
-
-        if (!subscription) {
-            return res.sendStatus(200);
-        }
-
-        let formattedStatus;
-        if (status.status === 'paid') {
-            formattedStatus = 'active';
-        } else if (status.status === 'canceled') {
-            formattedStatus = 'canceled';
-        } else if (status.status === 'expired') {
-            formattedStatus = 'expired';
-        } else if (status.status === 'failed') {
-            formattedStatus = 'failed';
-        } else {
-            formattedStatus = 'pending';
-        }
-
-        await PaymentController.handleSubscriptionUpdate(subscription.id, formattedStatus);
-
-        res.sendStatus(200);
-    }
+    // static async mollieWebhooksStatus(req: Request, res: Response) {
+    //     const { id } = req.body;
+    //
+    //     const status = await MollieService.getPayment(id);
+    //
+    //     if (!status) {
+    //         return res.sendStatus(200);
+    //     }
+    //
+    //     const subscription = await prisma.userSubscription.findFirst({
+    //         where: {
+    //             paymentId: id,
+    //         },
+    //         select: {
+    //             Subscription: true,
+    //             User: true,
+    //             id: true,
+    //             createdAt: true,
+    //             updatedAt: true,
+    //             price: true,
+    //             customerId: true,
+    //             extSubscriptionId: true,
+    //             lastPaymentDate: true,
+    //         },
+    //     });
+    //
+    //     if (!subscription) {
+    //         return res.sendStatus(200);
+    //     }
+    //
+    //     let formattedStatus;
+    //     if (status.status === 'paid') {
+    //         formattedStatus = 'active';
+    //     } else if (status.status === 'canceled') {
+    //         formattedStatus = 'canceled';
+    //     } else if (status.status === 'expired') {
+    //         formattedStatus = 'expired';
+    //     } else if (status.status === 'failed') {
+    //         formattedStatus = 'failed';
+    //     } else {
+    //         formattedStatus = 'pending';
+    //     }
+    //
+    //     await PaymentController.handleSubscriptionUpdate(subscription.id, formattedStatus);
+    //
+    //     res.sendStatus(200);
+    // }
 
     //createRefund
     static async createRefund(req: Request, res: Response, next: NextFunction) {
@@ -352,13 +351,122 @@ export default class PaymentController implements CRUDController {
         // }
     }
 
-    static redirectMollie(req: Request, res: Response) {
-        res.redirect('https://6fireinvest.com/accueil');
+    // static redirectMollie(req: Request, res: Response) {
+    //     res.redirect('https://6fireinvest.com/articlesPage');
+    // }
+
+    static async stripeWebhooksStatus(req: Request, res: Response, next: NextFunction) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        let event = req.body;
+        // Replace this endpoint secret with your endpoint's unique secret
+        // If you are testing with the CLI, find the secret by running 'stripe listen'
+        // If you are using an endpoint defined with the API or dashboard, look in your webhook settings
+        // at https://dashboard.stripe.com/webhooks
+
+        const webhook = await prisma.config.findFirst({
+            where: {
+                key: 'stripe_webhook_secret',
+            },
+        });
+        const endpointSecret = webhook.value;
+
+        // Only verify the event if you have an endpoint secret defined.
+        // Otherwise use the basic event deserialized with JSON.parse
+        if (endpointSecret) {
+            // Get the signature sent by Stripe
+            const signature = req.headers['stripe-signature'];
+
+            try {
+                event = stripe.webhooks.constructEvent(req.body, signature, endpointSecret);
+            } catch (err) {
+                console.log('⚠️  Webhook signature verification failed.', err.message);
+                return res.sendStatus(400);
+            }
+        }
+
+        console.log(event);
+
+        const paymentId = event.data.object.id;
+
+        const userSubscription = await prisma.userSubscription.findFirst({
+            where: {
+                paymentId,
+            },
+            select: {
+                Subscription: true,
+                User: true,
+                id: true,
+                createdAt: true,
+                updatedAt: true,
+                price: true,
+            },
+        });
+
+        // 'checkout.session.completed',
+        //     'checkout.session.async_payment_succeeded',
+        //     'checkout.session.async_payment_failed',
+        //     'customer.subscription.deleted',
+        //     'customer.subscription.updated',
+        //     'customer.subscription.created',
+
+        if (event.data.object.payment_status === 'paid') {
+            if (event.type === 'checkout.session.completed') {
+                if (event.data.object.mode === 'subscription') {
+                    await PaymentController.handleSubscriptionUpdate(
+                        userSubscription.id,
+                        'subscription',
+                        event.data.object.subscription,
+                    );
+                } else if (event.data.object.mode === 'payment') {
+                    await PaymentController.handleSubscriptionUpdate(
+                        userSubscription.id,
+                        'payment',
+                        event.data.object.payment_intent,
+                    );
+                } else {
+                    console.warn('Unknown mode:', event.data.object.mode);
+                    // Tf did you pay ??
+                }
+            }
+        } else if (event.data.object.payment_status === 'failed') {
+            await PaymentController.handleSubscriptionUpdate(
+                userSubscription.id,
+                'failed',
+                event.data.object.payment_intent,
+            );
+        } else if (event.data.object.payment_status === 'canceled') {
+            // Todo: does this mean revoked? or timedout?
+            await PaymentController.handleSubscriptionUpdate(
+                userSubscription.id,
+                'canceled',
+                event.data.object.payment_intent,
+            );
+        } else {
+            console.log('Unknown payment status:', event.data.object.payment_status, event.data.object.id);
+            await prisma.userSubscription.update({
+                where: {
+                    id: userSubscription.id,
+                },
+                data: {
+                    paymentId: event.data.object.id,
+                    status: event.data.object.payment_status,
+                },
+            });
+        }
+
+        res.send();
+    }
+
+    static async redirectStripe(req: Request, res: Response) {
+        // Todo: on success stripe
+        res.redirect('6fireinvest.com/accueil');
     }
 
     private static async handleSubscriptionUpdate(
         userSubscriptionId: number,
-        status: 'open' | 'active' | 'canceled' | 'expired' | 'pending' | 'refunded' | 'failed',
+        status: 'active' | 'subscription' | 'payment' | 'canceled' | 'expired' | 'pending' | 'refunded' | 'failed',
+        externalSubscriptionId?: string,
     ) {
         const userSubscription = await prisma.userSubscription.findFirst({
             where: {
@@ -385,53 +493,46 @@ export default class PaymentController implements CRUDController {
             );
         else validUntil = new Date();
 
-        if (status === 'active') {
-            if (
-                userSubscription.Subscription.subscriptionType === 'SUBSCRIPTION' &&
-                !userSubscription.extSubscriptionId
-            ) {
-                await prisma.userSubscription.update({
-                    where: {
-                        id: userSubscriptionId,
-                    },
-                    data: {
-                        lastPaymentDate: new Date(),
-                    },
-                });
-                console.log('subscription');
-                await MollieService.createSubscription(
-                    userSubscription.id,
-                    userSubscription.customerId,
-                    userSubscription.Subscription as any,
-                );
-                console.log('subscription created');
-                await AWSsendEmail({
+        if (status === 'subscription') {
+            if (userSubscription.extSubscriptionId === externalSubscriptionId) return;
+            await prisma.userSubscription.update({
+                where: {
+                    id: userSubscription.id,
+                },
+                data: {
+                    extSubscriptionId: externalSubscriptionId,
+                },
+            });
+            await AWSsendEmail({
+                email: userSubscription.User.email,
+                subject: '6FIRE - Confirmation commande',
+                htmlMessage: generateConfirmationEmail({
+                    name: userSubscription.User.firstName,
+                    price: userSubscription.price.toString(), // format might not be right
+                    refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                    subscription: userSubscription.Subscription.name,
+                    orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
                     email: userSubscription.User.email,
-                    subject: '6FIRE - Confirmation commande',
-                    htmlMessage: generateConfirmationEmail({
-                        name: userSubscription.User.firstName,
-                        price: userSubscription.price.toString(), // format might not be right
-                        refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
-                        subscription: userSubscription.Subscription.name,
-                        orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
-                        email: userSubscription.User.email,
-                    }),
-                });
-            } else if (userSubscription.Subscription.subscriptionType !== 'SUBSCRIPTION') {
-                console.log('subscription already created');
-                await AWSsendEmail({
+                }),
+            });
+            status = 'active';
+        } else if (status === 'payment') {
+            // } else if (userSubscription.Subscription.subscriptionType !== 'SUBSCRIPTION') {
+            console.log('subscription already created');
+            await AWSsendEmail({
+                email: userSubscription.User.email,
+                subject: '6FIRE - Confirmation commande',
+                htmlMessage: generateConfirmationEmail({
+                    name: userSubscription.User.firstName,
+                    price: userSubscription.price.toString(), // format might not be right
+                    refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                    subscription: userSubscription.Subscription.name,
+                    orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
                     email: userSubscription.User.email,
-                    subject: '6FIRE - Confirmation commande',
-                    htmlMessage: generateConfirmationEmail({
-                        name: userSubscription.User.firstName,
-                        price: userSubscription.price.toString(), // format might not be right
-                        refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
-                        subscription: userSubscription.Subscription.name,
-                        orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
-                        email: userSubscription.User.email,
-                    }),
-                });
-            }
+                }),
+            });
+            status = 'active';
+            // }
         } else if (status === 'canceled') {
             await prisma.userSubscription.update({
                 where: {

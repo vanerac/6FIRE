@@ -20,6 +20,6 @@ jobs:
       - uses: actions/setup-node@v2.4.1
         with:
           node-version: '16'
-      - run: npm ci
+      - run: npm i
         if: steps.base-cache.outputs.cache-hit != 'true'
         name: install
