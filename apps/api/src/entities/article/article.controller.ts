@@ -402,7 +402,7 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
-                order: {
+                orderBy: {
                     createdAt: 'DESC',
                 },
             };
