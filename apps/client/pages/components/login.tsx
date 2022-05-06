@@ -223,7 +223,9 @@ const LoginPopup = (props: any) => {
                                 </p>
                                 <form action="">
                                     <input type="email" placeholder="*Email" />
-                                    <button id="pass_submit" className='get-validator-code'>Valider</button>
+                                    <button id="pass_submit" className="get-validator-code">
+                                        Valider
+                                    </button>
                                 </form>
                                 <div id="return_login" className="return">
                                     Retour
@@ -235,15 +237,15 @@ const LoginPopup = (props: any) => {
                         <div className="forget_pass_overlay get-email-code">
                             <div className="forget-div">
                                 <div className="title">mot de pass oublie?</div>
-                                <p>
-                                    Un code vous a ete envoye par email
-                                </p>
+                                <p>Un code vous a ete envoye par email</p>
                                 <form action="">
                                     <div className="custom-input-code">
                                         <input type="number" placeholder="*Code" />
-                                        <span className='write-code'>Renvoyer un code</span>
+                                        <span className="write-code">Renvoyer un code</span>
                                     </div>
-                                    <button id="pass_submit" className='confirm-password-btn'>Valider</button>
+                                    <button id="pass_submit" className="confirm-password-btn">
+                                        Valider
+                                    </button>
                                 </form>
                                 <div id="return_login" className="return-email">
                                     Retour
@@ -256,16 +258,21 @@ const LoginPopup = (props: any) => {
                             <div className="forget-div">
                                 <div className="title">modification de votre mot de pass</div>
                                 <p>
-                                    Votre mot de passe doit contenir au moins 8 caracteres escape avec des letters, au moinus un chiffre. une majuscule, et un caractere special. 
+                                    Votre mot de passe doit contenir au moins 8 caracteres escape avec des letters, au
+                                    moinus un chiffre. une majuscule, et un caractere special.
                                 </p>
                                 <form action="">
                                     <div className="custom-input-code">
                                         <input type="number" placeholder="*Nouveau mot de passe" />
-                                        <span className='write-code'><img src="/img/icon/eye-pass.svg" alt="" /></span>
+                                        <span className="write-code">
+                                            <img src="/img/icon/eye-pass.svg" alt="" />
+                                        </span>
                                     </div>
                                     <div className="custom-input-code">
                                         <input type="number" placeholder="*Confirmation du nouveau mot de passe" />
-                                        <span className='write-code'><img src="/img/icon/eye-pass.svg" alt="" /></span>
+                                        <span className="write-code">
+                                            <img src="/img/icon/eye-pass.svg" alt="" />
+                                        </span>
                                     </div>
                                     <button id="pass_submit">Valider</button>
                                 </form>
@@ -274,7 +281,6 @@ const LoginPopup = (props: any) => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div className="register_col">
                         <div className="title-wrap">
