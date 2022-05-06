@@ -104,7 +104,7 @@ const LoginPopup = (props: any) => {
                         setCookies('API_TOKEN', response.token, { domain: 'localhost' });
                         setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
                         setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
-                        router.push('/articlesPage');
+                        router.push('/accueil');
                     }
                 })
                 .catch((error: ApiError) => {
