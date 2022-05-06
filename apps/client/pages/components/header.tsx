@@ -103,6 +103,38 @@ const Header = (props: any) => {
             fetchThemes();
         }
 
+        apiClient.user
+            .getMyStats()
+            .then((res) => {
+                if (
+                    router.pathname === '/articlesDetails' ||
+                    router.pathname === '/articlesPage' ||
+                    router.pathname === '/cgv' ||
+                    router.pathname === '/cgu' ||
+                    router.pathname === '/mentionsLegales' ||
+                    router.pathname === '/politiqueConfidentialite' ||
+                    router.pathname === '/404' ||
+                    router.pathname === '/compte' ||
+                    router.pathname === '/connexion-securite' ||
+                    router.pathname === '/infosPersonelles' ||
+                    router.pathname === '/pricePage' ||
+                    router.pathname === '/abonnement'
+                ) {
+                    setisMoney('Espace trading & crypto');
+                } else {
+                    console.log('res', res.isAdmin);
+                    if (subscriptionLevel >= 2 || res.isAdmin == true) {
+                        setisMoney('Nos Trades');
+                    } else {
+                        setisMoney('Espace trading & crypto');
+                        router.push('/pricePage');
+                    }
+                }
+            })
+            .catch((error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            });
+
         apiClient.subscription
             .getSubscriptions()
             .then((subscriptions) => {
@@ -112,32 +144,6 @@ const Header = (props: any) => {
             .catch((error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
             });
-
-        if (
-            router.pathname === '/articlesDetails' ||
-            router.pathname === '/accueil' ||
-            router.pathname === '/cgv' ||
-            router.pathname === '/cgu' ||
-            router.pathname === '/mentionsLegales' ||
-            router.pathname === '/politiqueConfidentialite' ||
-            router.pathname === '/404' ||
-            router.pathname === '/compte' ||
-            router.pathname === '/connexion-securite' ||
-            router.pathname === '/infosPersonelles' ||
-            router.pathname === '/pricePage' ||
-            router.pathname === '/abonnement'
-        ) {
-            setisMoney('Espace trading & crypto');
-        } else {
-            console.log('LA => ', subscriptionLevel);
-            // if user has the entry level subscription, redirect to the price page
-            // if (subscriptionLevel >= 0) {
-            //     setisMoney('Nos Trades');
-            // } else {
-            //     setisMoney('Espace trading & crypto');
-            //     router.push('/pricePage');
-            // }
-        }
     }, []);
 
     return (
