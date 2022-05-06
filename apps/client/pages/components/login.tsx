@@ -44,10 +44,32 @@ if (typeof window !== 'undefined') {
 -------------------------------------*/
 if (typeof window !== 'undefined') {
     $('.reset_password').click(function () {
-        $('.forget_pass_overlay').addClass('show');
+        $('.forget-open-password').addClass('show');
     });
-    $('#return_login').click(function () {
-        $('.forget_pass_overlay').removeClass('show');
+    $('.return').click(function () {
+        $('.forget-open-password').removeClass('show');
+    });
+}
+
+/* Get email for forget password
+-------------------------------------*/
+if (typeof window !== 'undefined') {
+    $('.get-validator-code').click(function () {
+        $('.get-email-code').addClass('show');
+    });
+    $('.return-email').click(function () {
+        $('.get-email-code').removeClass('show');
+    });
+}
+
+/* Get email for forget password
+-------------------------------------*/
+if (typeof window !== 'undefined') {
+    $('.confirm-password-btn').click(function () {
+        $('.confirm-password-open').addClass('show');
+    });
+    $('.return-code').click(function () {
+        $('.confirm-password-open').removeClass('show');
     });
 }
 
@@ -193,7 +215,7 @@ const LoginPopup = (props: any) => {
                         </form>
 
                         {/* forget pass overlay */}
-                        <div className="forget_pass_overlay">
+                        <div className="forget_pass_overlay forget-open-password">
                             <div className="forget-div">
                                 <div className="title">mot de pass oublie?</div>
                                 <p>
@@ -202,13 +224,58 @@ const LoginPopup = (props: any) => {
                                 </p>
                                 <form action="">
                                     <input type="email" placeholder="*Email" />
-                                    <button id="pass_submit">Valider</button>
+                                    <button id="pass_submit" className='get-validator-code'>Valider</button>
                                 </form>
                                 <div id="return_login" className="return">
                                     Retour
                                 </div>
                             </div>
                         </div>
+
+                        {/* Get Email code popup */}
+                        <div className="forget_pass_overlay get-email-code">
+                            <div className="forget-div">
+                                <div className="title">mot de pass oublie?</div>
+                                <p>
+                                    Un code vous a ete envoye par email
+                                </p>
+                                <form action="">
+                                    <div className="custom-input-code">
+                                        <input type="number" placeholder="*Code" />
+                                        <span className='write-code'>Renvoyer un code</span>
+                                    </div>
+                                    <button id="pass_submit" className='confirm-password-btn'>Valider</button>
+                                </form>
+                                <div id="return_login" className="return-email">
+                                    Retour
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Update new password */}
+                        <div className="forget_pass_overlay confirm-password-open">
+                            <div className="forget-div">
+                                <div className="title">modification de votre mot de pass</div>
+                                <p>
+                                    Votre mot de passe doit contenir au moins 8 caracteres escape avec des letters, au moinus un chiffre. une majuscule, et un caractere special. 
+                                </p>
+                                <form action="">
+                                    <div className="custom-input-code">
+                                        <input type="number" placeholder="*Nouveau mot de passe" />
+                                        <span className='write-code'><img src="/img/icon/eye-pass.svg" alt="" /></span>
+                                    </div>
+                                    <div className="custom-input-code">
+                                        <input type="number" placeholder="*Confirmation du nouveau mot de passe" />
+                                        <span className='write-code'><img src="/img/icon/eye-pass.svg" alt="" /></span>
+                                    </div>
+                                    <button id="pass_submit">Valider</button>
+                                </form>
+                                <div id="return_login" className="return-code">
+                                    Retour
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div className="register_col">
                         <div className="title-wrap">
