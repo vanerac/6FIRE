@@ -1,3 +1,9 @@
+
+/* The following lines is used for tailwind configuration */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css?family=Lato:400,300,700|Poppins:400,700|Source+Sans+Pro:600|Roboto:400,700");
 
 /* The following line is used to measure usage of this code in production. For more info see our usage billing page */
