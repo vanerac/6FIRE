@@ -7,22 +7,22 @@ import {
     generateOrderCancelledEmail,
     generateOrderFailedEmail,
 } from '../../templates/email';
-import MollieService from '../../tools/payment/mollie.service';
 import PaylineService from '../../tools/payment/payline.service';
 import { PaymentService, PaymentType } from '../../tools/payment/payment.service';
 import configuration from '../../../configuration';
 
 import { v4 as uuid } from 'uuid';
 
-import ngrok from 'ngrok';
 import { Payment } from '@mollie/api-client';
+import StripeService, { stripe } from '../../tools/payment/stripe.service';
 
 const prisma = new PrismaClient();
 // const paylineWebService = new PaylineWeb(paylineConfig);
 
 const services = {
-    mollie: MollieService,
+    // mollie: MollieService,
     payline: PaylineService,
+    stripe: StripeService,
 };
 
 export default class PaymentController implements CRUDController {
@@ -130,8 +130,6 @@ export default class PaymentController implements CRUDController {
 
             // const ngrok = require('ngrok');
 
-            if (process.env.NODE_ENV !== 'production') configuration.BACKEND_URL = `${await ngrok.connect(3333)}/api`;
-
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             const paymentIntent = await service.createPaymentIntent(
@@ -154,6 +152,7 @@ export default class PaymentController implements CRUDController {
                     failUrl: configuration.BACKEND_URL + '/payment/status',
                 },
             );
+            console.log(paymentIntent);
 
             await prisma.userSubscription.create({
                 data: {
@@ -243,53 +242,53 @@ export default class PaymentController implements CRUDController {
         }
     }
 
-    static async mollieWebhooksStatus(req: Request, res: Response) {
-        const { id } = req.body;
-
-        const status = await MollieService.getPayment(id);
-
-        if (!status) {
-            return res.sendStatus(200);
-        }
-
-        const subscription = await prisma.userSubscription.findFirst({
-            where: {
-                paymentId: id,
-            },
-            select: {
-                Subscription: true,
-                User: true,
-                id: true,
-                createdAt: true,
-                updatedAt: true,
-                price: true,
-                customerId: true,
-                extSubscriptionId: true,
-                lastPaymentDate: true,
-            },
-        });
-
-        if (!subscription) {
-            return res.sendStatus(200);
-        }
-
-        let formattedStatus;
-        if (status.status === 'paid') {
-            formattedStatus = 'active';
-        } else if (status.status === 'canceled') {
-            formattedStatus = 'canceled';
-        } else if (status.status === 'expired') {
-            formattedStatus = 'expired';
-        } else if (status.status === 'failed') {
-            formattedStatus = 'failed';
-        } else {
-            formattedStatus = 'pending';
-        }
-
-        await PaymentController.handleSubscriptionUpdate(subscription.id, formattedStatus);
-
-        res.sendStatus(200);
-    }
+    // static async mollieWebhooksStatus(req: Request, res: Response) {
+    //     const { id } = req.body;
+    //
+    //     const status = await MollieService.getPayment(id);
+    //
+    //     if (!status) {
+    //         return res.sendStatus(200);
+    //     }
+    //
+    //     const subscription = await prisma.userSubscription.findFirst({
+    //         where: {
+    //             paymentId: id,
+    //         },
+    //         select: {
+    //             Subscription: true,
+    //             User: true,
+    //             id: true,
+    //             createdAt: true,
+    //             updatedAt: true,
+    //             price: true,
+    //             customerId: true,
+    //             extSubscriptionId: true,
+    //             lastPaymentDate: true,
+    //         },
+    //     });
+    //
+    //     if (!subscription) {
+    //         return res.sendStatus(200);
+    //     }
+    //
+    //     let formattedStatus;
+    //     if (status.status === 'paid') {
+    //         formattedStatus = 'active';
+    //     } else if (status.status === 'canceled') {
+    //         formattedStatus = 'canceled';
+    //     } else if (status.status === 'expired') {
+    //         formattedStatus = 'expired';
+    //     } else if (status.status === 'failed') {
+    //         formattedStatus = 'failed';
+    //     } else {
+    //         formattedStatus = 'pending';
+    //     }
+    //
+    //     await PaymentController.handleSubscriptionUpdate(subscription.id, formattedStatus);
+    //
+    //     res.sendStatus(200);
+    // }
 
     //createRefund
     static async createRefund(req: Request, res: Response, next: NextFunction) {
@@ -352,36 +351,49 @@ export default class PaymentController implements CRUDController {
         // }
     }
 
-    static redirectMollie(req: Request, res: Response) {
-        res.redirect('https://6fireinvest.com/articlesPage');
-    }
+    // static redirectMollie(req: Request, res: Response) {
+    //     res.redirect('https://6fireinvest.com/articlesPage');
+    // }
 
     static async stripeWebhooksStatus(req: Request, res: Response, next: NextFunction) {
-        // let event = request.body;
-        // // Replace this endpoint secret with your endpoint's unique secret
-        // // If you are testing with the CLI, find the secret by running 'stripe listen'
-        // // If you are using an endpoint defined with the API or dashboard, look in your webhook settings
-        // // at https://dashboard.stripe.com/webhooks
-        // const endpointSecret = 'whsec_12345';
-        // // Only verify the event if you have an endpoint secret defined.
-        // // Otherwise use the basic event deserialized with JSON.parse
-        // if (endpointSecret) {
-        //     // Get the signature sent by Stripe
-        //     const signature = request.headers['stripe-signature'];
-        //     try {
-        //         event = stripe.webhooks.constructEvent(request.body, signature, endpointSecret);
-        //     } catch (err) {
-        //         console.log('⚠️  Webhook signature verification failed.', err.message);
-        //         return response.sendStatus(400);
-        //     }
-        // }
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        let event = req.body;
+        // Replace this endpoint secret with your endpoint's unique secret
+        // If you are testing with the CLI, find the secret by running 'stripe listen'
+        // If you are using an endpoint defined with the API or dashboard, look in your webhook settings
+        // at https://dashboard.stripe.com/webhooks
+
+        const webhook = await prisma.config.findFirst({
+            where: {
+                key: 'stripe_webhook_secret',
+            },
+        });
+        const endpointSecret = webhook.value;
+
+        // Only verify the event if you have an endpoint secret defined.
+        // Otherwise use the basic event deserialized with JSON.parse
+        if (endpointSecret) {
+            // Get the signature sent by Stripe
+            const signature = req.headers['stripe-signature'];
+
+            try {
+                event = stripe.webhooks.constructEvent(req.body, signature, endpointSecret);
+            } catch (err) {
+                console.log('⚠️  Webhook signature verification failed.', err.message);
+                return res.sendStatus(400);
+            }
+        }
+
+        console.log(event);
+
         // let subscription;
-        // let status;
+        // var status;
         // // Handle the event
         // switch (event.type) {
         //     case 'customer.subscription.trial_will_end':
         //         subscription = event.data.object;
-        //         status = subscription.status;
+        //         var { status } = subscription;
         //         console.log(`Subscription status is ${status}.`);
         //         // Then define and call a method to handle the subscription trial ending.
         //         // handleSubscriptionTrialEnding(subscription);
@@ -411,17 +423,19 @@ export default class PaymentController implements CRUDController {
         //         // Unexpected event type
         //         console.log(`Unhandled event type ${event.type}.`);
         // }
-        // // Return a 200 response to acknowledge receipt of the event
-        // response.send();
+        // Return a 200 response to acknowledge receipt of the event
+        res.send();
     }
 
     static async redirectStripe(req: Request, res: Response, next: NextFunction) {
         // Todo: on success stripe
+        res.redirect('/');
     }
 
     private static async handleSubscriptionUpdate(
         userSubscriptionId: number,
         status: 'open' | 'active' | 'canceled' | 'expired' | 'pending' | 'refunded' | 'failed',
+        externalSubscriptionId?: string,
     ) {
         const userSubscription = await prisma.userSubscription.findFirst({
             where: {
@@ -462,11 +476,11 @@ export default class PaymentController implements CRUDController {
                     },
                 });
                 console.log('subscription');
-                await MollieService.createSubscription(
-                    userSubscription.id,
-                    userSubscription.customerId,
-                    userSubscription.Subscription as any,
-                );
+                // await MollieService.createSubscription(
+                //     userSubscription.id,
+                //     userSubscription.customerId,
+                //     userSubscription.Subscription as any,
+                // );
                 console.log('subscription created');
                 await AWSsendEmail({
                     email: userSubscription.User.email,

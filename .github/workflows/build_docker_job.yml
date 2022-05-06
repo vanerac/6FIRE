@@ -47,6 +47,8 @@ jobs:
           MOLLIE_API_KEY: ${{ secrets.MOLLIE_API_KEY }}
           COINMARKETCAP_API_KEY: ${{ secrets.COINMARKETCAP_API_KEY }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          STRIPE_PK: ${{ secrets.STRIPE_PK }}
+          STRIPE_SK: ${{ secrets.STRIPE_SK }}
         run: |
           docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
             --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN \
@@ -57,6 +59,8 @@ jobs:
             --build-arg MOLLIE_API_KEY=$MOLLIE_API_KEY \
             --build-arg COINMARKETCAP_API_KEY=$COINMARKETCAP_API_KEY \
             --build-arg JWT_SECRET=$JWT_SECRET
+            --build-arg STRIPE_PK=$STRIPE_PK \
+            --build-arg STRIPE_SK=$STRIPE_SK
           
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
