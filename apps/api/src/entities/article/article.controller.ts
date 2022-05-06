@@ -392,7 +392,7 @@ export default class ArticleController implements CRUDController {
                     },
                 },
                 orderBy: {
-                    createdAt: 'DESC',
+                    createdAt: 'desc',
                 },
             };
             if (isAdmin) {

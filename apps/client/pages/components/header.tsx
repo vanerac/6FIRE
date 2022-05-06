@@ -108,7 +108,7 @@ const Header = (props: any) => {
             .then((res) => {
                 if (
                     router.pathname === '/articlesDetails' ||
-                    router.pathname === '/articlesPage' ||
+                    router.pathname === '/accueil' ||
                     router.pathname === '/cgv' ||
                     router.pathname === '/cgu' ||
                     router.pathname === '/mentionsLegales' ||

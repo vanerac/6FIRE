@@ -41,7 +41,7 @@ const Trading: NextPage = () => {
             <Head>
                 <title>Trading - Crypto Trader</title>
             </Head>
-            <Header />
+            <Header isEspaceTradingCrypto={true} />
 
             {/* Tread inner */}
             <div className="trade-inner-header">
