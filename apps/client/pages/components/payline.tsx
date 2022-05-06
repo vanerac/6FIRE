@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { PaylineWidget, usePayline } from 'react-payline';
+import { PaylineProvider, PaylineWidget, usePayline } from 'react-payline';
 
 export default function PaymentWrapper({
     token,
@@ -13,18 +13,19 @@ export default function PaymentWrapper({
     show: boolean;
 }) {
     const paylineApi = usePayline();
+
     useEffect(() => {
         if (show) {
             paylineApi?.show();
         } else {
             paylineApi?.hide();
         }
-    }, [show]);
+    }, [show, paylineApi]);
 
     return (
-        // <PaylineProvider>
-        <Payment token={token} successCb={successCb} errorCb={errorCb} />
-        // </PaylineProvider>
+        <PaylineProvider>
+            <Payment token={token} successCb={successCb} errorCb={errorCb} />,
+        </PaylineProvider>
     );
 }
 
@@ -48,7 +49,7 @@ export function Payment({
         <PaylineWidget
             token={token}
             template="lightbox"
-            embeddedRedirectionAllowed={false}
+            embeddedRedirectionAllowed={true}
             onFinalStateHasBeenReached={
                 (({ state }: { state: any }) => {
                     if (state === 'PAYMENT_SUCCESS') {

@@ -7,7 +7,7 @@ import {
     generateOrderCancelledEmail,
     generateOrderFailedEmail,
 } from '../../templates/email';
-import PaylineService from '../../tools/payment/payline.service';
+import PaylineService, { paylineWebService } from '../../tools/payment/payline.service';
 import { PaymentService, PaymentType } from '../../tools/payment/payment.service';
 import configuration from '../../../configuration';
 
@@ -463,6 +463,30 @@ export default class PaymentController implements CRUDController {
     static async redirectStripe(req: Request, res: Response) {
         // Todo: on success stripe
         res.redirect('6fireinvest.com/articlesPage');
+    }
+
+    static async paylineTest(req: Request, res: Response) {
+        console.log(req.params, req.query);
+        //req.query
+        // {
+        //   notificationType: 'WEBTRS',
+        //   token: '12odVr52YmqH2Uyux2671651855854941',
+        //   paymentEndpoint: '1'
+        // }
+
+        const { $notificationType, token, paymentEndpoint } = req.query;
+
+        const details = await paylineWebService.getWebPaymentDetails({
+            token: token as string,
+            version: +paymentEndpoint,
+        });
+
+        console.log(details);
+
+        if (details.result.shortMessage == 'CANCELLED') {
+        }
+
+        res.send('ok');
     }
 
     private static async handleSubscriptionUpdate(

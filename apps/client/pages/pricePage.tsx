@@ -92,7 +92,7 @@ const PricePage: NextPage = (props: any) => {
                     {paylineToken ? (
                         <PaymentWrapper
                             token={paylineToken}
-                            successCb={console.log}
+                            successCb={() => console.log('success')}
                             errorCb={(v) => console.log(v)}
                             show={!!paylineToken}
                         />

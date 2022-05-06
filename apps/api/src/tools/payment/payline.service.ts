@@ -20,7 +20,7 @@ const paylineConfig = new Payline(
     true,
 );
 
-const paylineWebService = new PaylineWeb(paylineConfig);
+export const paylineWebService = new PaylineWeb(paylineConfig);
 
 export default class PaylineService implements PaymentService {
     public static async getCustomer(user: User) {
