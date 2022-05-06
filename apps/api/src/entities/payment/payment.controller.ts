@@ -76,6 +76,7 @@ export default class PaymentController implements CRUDController {
     static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const { subscriptionId, provider } = req.body;
+            console.log(req.body);
 
             const subscription = await prisma.subscription.findFirst({
                 where: {
@@ -321,6 +322,7 @@ export default class PaymentController implements CRUDController {
 
     //paylineWebhooksStatus
     static async paylineWebhooksStatus(req: Request, res: Response) {
+        console.log(req.body);
         res.sendStatus(501);
 
         // const paylineWebService = new PaylineWeb(paylineConfig);

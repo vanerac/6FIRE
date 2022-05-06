@@ -21,6 +21,7 @@ import '../css/footer.css';
 import Head from 'next/head';
 
 import { CookiesProvider } from 'react-cookie';
+import { PaylineHead } from 'react-payline';
 // import { PaylineProvider, withPayline } from 'react-payline';
 
 // import Cookies from 'universal-cookie';
@@ -34,13 +35,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
             <Head>
                 <link rel="shortcut icon" href="/logo-single.png" />
-                {/*<PaylineHead production />*/}
+                <PaylineHead production />
             </Head>
-            {/*<PaylineProvider>*/}
+
             <CookiesProvider>
                 <Component {...pageProps} />
             </CookiesProvider>
-            {/*</PaylineProvider>*/}
         </>
     );
 }
