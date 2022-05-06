@@ -430,22 +430,42 @@ export default class PaymentController implements CRUDController {
                 }
             }
         } else if (event.data.object.payment_status === 'failed') {
+            await PaymentController.handleSubscriptionUpdate(
+                userSubscription.id,
+                'failed',
+                event.data.object.payment_intent,
+            );
         } else if (event.data.object.payment_status === 'canceled') {
-            if (event.type === 'customer.subscription.deleted') {
-            }
+            // Todo: does this mean revoked? or timedout?
+            await PaymentController.handleSubscriptionUpdate(
+                userSubscription.id,
+                'canceled',
+                event.data.object.payment_intent,
+            );
+        } else {
+            console.log('Unknown payment status:', event.data.object.payment_status, event.data.object.id);
+            await prisma.userSubscription.update({
+                where: {
+                    id: userSubscription.id,
+                },
+                data: {
+                    paymentId: event.data.object.id,
+                    status: event.data.object.payment_status,
+                },
+            });
         }
 
         res.send();
     }
 
-    static async redirectStripe(req: Request, res: Response, next: NextFunction) {
+    static async redirectStripe(req: Request, res: Response) {
         // Todo: on success stripe
-        res.redirect('/');
+        res.redirect('6fireinvest.com/articlesPage');
     }
 
     private static async handleSubscriptionUpdate(
         userSubscriptionId: number,
-        status: 'subscription' | 'payment' | 'canceled' | 'expired' | 'pending' | 'refunded' | 'failed',
+        status: 'active' | 'subscription' | 'payment' | 'canceled' | 'expired' | 'pending' | 'refunded' | 'failed',
         externalSubscriptionId?: string,
     ) {
         const userSubscription = await prisma.userSubscription.findFirst({
@@ -495,6 +515,7 @@ export default class PaymentController implements CRUDController {
                     email: userSubscription.User.email,
                 }),
             });
+            status = 'active';
         } else if (status === 'payment') {
             // } else if (userSubscription.Subscription.subscriptionType !== 'SUBSCRIPTION') {
             console.log('subscription already created');
@@ -510,6 +531,7 @@ export default class PaymentController implements CRUDController {
                     email: userSubscription.User.email,
                 }),
             });
+            status = 'active';
             // }
         } else if (status === 'canceled') {
             await prisma.userSubscription.update({
