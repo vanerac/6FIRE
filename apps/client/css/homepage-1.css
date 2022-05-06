@@ -4243,10 +4243,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
-
+.forget-div{
+    min-width: 70%;
+}
 .forget_pass_overlay .title {
     text-transform: uppercase;
+}
+#return_login{
+    cursor: pointer;
 }
 
 .forget_pass_overlay form input {
@@ -4257,6 +4263,22 @@ body{
     border: 0;
     border-bottom: 1px solid #fff;
     margin-bottom: 15px;
+    outline: 0;
+}
+.custom-input-code{
+    position: relative;
+}
+span.write-code {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    color: #555;
+}
+span.write-code img{
+    width: 18px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
 }
 
 .forget_pass_overlay #pass_submit {
