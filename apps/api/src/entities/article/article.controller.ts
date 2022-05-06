@@ -69,7 +69,7 @@ export default class ArticleController implements CRUDController {
                 );
             }
 
-            const where = {
+            let where = {
                 id: +articleId,
                 hidden: false,
                 Theme: {
@@ -78,9 +78,10 @@ export default class ArticleController implements CRUDController {
                     },
                 },
             };
-            if (!isAdmin) {
-                delete where.hidden;
-                delete where.Theme;
+            if (isAdmin) {
+                where = {
+                    id: +articleId,
+                } as any;
             }
 
             const article = await prisma.article.findFirst({
