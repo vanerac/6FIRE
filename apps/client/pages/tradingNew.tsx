@@ -87,6 +87,7 @@ const Trading: NextPage = (props: any) => {
                         </div>
                         <div className="icon formation">
                             <img src="img/icon/formations.png" alt="" />
+                            <img src="img/trac--1048@1x.png" alt="" className="hideDesktop" />
                         </div>
                     </div>
                     <div className="round-text-wrap forex-wrap">
@@ -96,6 +97,7 @@ const Trading: NextPage = (props: any) => {
                         </div>
                         <div className="icon forex">
                             <img src="/img/icon/forex.png" alt="" />
+                            <img src="img/trac--1049@1x.png" alt="" className="hideDesktop" />
                         </div>
                     </div>
                     <div className="round-text-wrap nos-trads-wrap">
@@ -105,6 +107,7 @@ const Trading: NextPage = (props: any) => {
                         </div>
                         <div className="icon trades">
                             <img src="/img/icon/nostrades.png" alt="" />
+                            <img src="img/trac--1050@1x.png" alt="" className="hideDesktop" />
                         </div>
                     </div>
                 </div>
@@ -115,6 +118,7 @@ const Trading: NextPage = (props: any) => {
                     <div className="round-text-wrap cyrpto-wrap">
                         <div className="icon cyrpto">
                             <img src="/img/icon/cryptowallet.png" alt="" />
+                            <img src="img/trac--1051@1x.png" alt="" className="hideDesktop" />
                         </div>
                         <div className="text">
                             <h3 className="title">CRYPTO WALLET</h3>

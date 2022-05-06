@@ -4679,3 +4679,55 @@ body.scrollOff {
 .primary-button.bg-yellow img {
     filter: brightness(0) invert(0);
 }
+.hideDesktop{
+    display: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 1023px) {
+    .trading-circle-block .circle{
+        display: none;
+    }
+    .trading-circle-block{
+        grid-template-columns: auto;
+    }
+    .round-text-wrap{
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+    .trade-inner-header .container{
+        grid-template-columns: auto;
+        padding: 25px;
+    }
+    .trade-inner-header{
+        height: 100%;
+    }
+    .round-text-wrap .icon{
+        position: relative;
+        left: auto;
+        right: auto;
+        order: 1;
+    }
+    .round-text-wrap .text{
+        order: 2;
+    }
+    .trading-circle-block{
+        padding: 30px;
+    }
+    .round-text-wrap{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-gap: 15px;
+        align-items: flex-start;
+    }
+    .round-text-wrap .icon{
+        height: 100%;
+        background-color: transparent;
+        display: block;
+    }
+    .round-text-wrap .icon img:first-child{
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    .hideDesktop{display: block; height: 115px;}
+}
