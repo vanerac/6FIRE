@@ -58,7 +58,7 @@ jobs:
             --build-arg SMS_API_KEY=$SMS_API_KEY \
             --build-arg MOLLIE_API_KEY=$MOLLIE_API_KEY \
             --build-arg COINMARKETCAP_API_KEY=$COINMARKETCAP_API_KEY \
-            --build-arg JWT_SECRET=$JWT_SECRET
+            --build-arg JWT_SECRET=$JWT_SECRET \
             --build-arg STRIPE_PK=$STRIPE_PK \
             --build-arg STRIPE_SK=$STRIPE_SK
           
