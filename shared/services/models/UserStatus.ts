@@ -8,4 +8,5 @@ export type UserStatus = {
     firstName?: string;
     lastName?: string;
     telephone?: string;
+    isAdmin?: boolean;
 };
