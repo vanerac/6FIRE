@@ -387,43 +387,54 @@ export default class PaymentController implements CRUDController {
 
         console.log(event);
 
-        // let subscription;
-        // var status;
-        // // Handle the event
-        // switch (event.type) {
-        //     case 'customer.subscription.trial_will_end':
-        //         subscription = event.data.object;
-        //         var { status } = subscription;
-        //         console.log(`Subscription status is ${status}.`);
-        //         // Then define and call a method to handle the subscription trial ending.
-        //         // handleSubscriptionTrialEnding(subscription);
-        //         break;
-        //     case 'customer.subscription.deleted':
-        //         subscription = event.data.object;
-        //         status = subscription.status;
-        //         console.log(`Subscription status is ${status}.`);
-        //         // Then define and call a method to handle the subscription deleted.
-        //         // handleSubscriptionDeleted(subscriptionDeleted);
-        //         break;
-        //     case 'customer.subscription.created':
-        //         subscription = event.data.object;
-        //         status = subscription.status;
-        //         console.log(`Subscription status is ${status}.`);
-        //         // Then define and call a method to handle the subscription created.
-        //         // handleSubscriptionCreated(subscription);
-        //         break;
-        //     case 'customer.subscription.updated':
-        //         subscription = event.data.object;
-        //         status = subscription.status;
-        //         console.log(`Subscription status is ${status}.`);
-        //         // Then define and call a method to handle the subscription update.
-        //         // handleSubscriptionUpdated(subscription);
-        //         break;
-        //     default:
-        //         // Unexpected event type
-        //         console.log(`Unhandled event type ${event.type}.`);
-        // }
-        // Return a 200 response to acknowledge receipt of the event
+        const paymentId = event.data.object.id;
+
+        const userSubscription = await prisma.userSubscription.findFirst({
+            where: {
+                paymentId,
+            },
+            select: {
+                Subscription: true,
+                User: true,
+                id: true,
+                createdAt: true,
+                updatedAt: true,
+                price: true,
+            },
+        });
+
+        // 'checkout.session.completed',
+        //     'checkout.session.async_payment_succeeded',
+        //     'checkout.session.async_payment_failed',
+        //     'customer.subscription.deleted',
+        //     'customer.subscription.updated',
+        //     'customer.subscription.created',
+
+        if (event.data.object.payment_status === 'paid') {
+            if (event.type === 'checkout.session.completed') {
+                if (event.data.object.mode === 'subscription') {
+                    await PaymentController.handleSubscriptionUpdate(
+                        userSubscription.id,
+                        'subscription',
+                        event.data.object.subscription,
+                    );
+                } else if (event.data.object.mode === 'payment') {
+                    await PaymentController.handleSubscriptionUpdate(
+                        userSubscription.id,
+                        'payment',
+                        event.data.object.payment_intent,
+                    );
+                } else {
+                    console.warn('Unknown mode:', event.data.object.mode);
+                    // Tf did you pay ??
+                }
+            }
+        } else if (event.data.object.payment_status === 'failed') {
+        } else if (event.data.object.payment_status === 'canceled') {
+            if (event.type === 'customer.subscription.deleted') {
+            }
+        }
+
         res.send();
     }
 
@@ -434,7 +445,7 @@ export default class PaymentController implements CRUDController {
 
     private static async handleSubscriptionUpdate(
         userSubscriptionId: number,
-        status: 'open' | 'active' | 'canceled' | 'expired' | 'pending' | 'refunded' | 'failed',
+        status: 'subscription' | 'payment' | 'canceled' | 'expired' | 'pending' | 'refunded' | 'failed',
         externalSubscriptionId?: string,
     ) {
         const userSubscription = await prisma.userSubscription.findFirst({
@@ -462,53 +473,44 @@ export default class PaymentController implements CRUDController {
             );
         else validUntil = new Date();
 
-        if (status === 'active') {
-            if (
-                userSubscription.Subscription.subscriptionType === 'SUBSCRIPTION' &&
-                !userSubscription.extSubscriptionId
-            ) {
-                await prisma.userSubscription.update({
-                    where: {
-                        id: userSubscriptionId,
-                    },
-                    data: {
-                        lastPaymentDate: new Date(),
-                    },
-                });
-                console.log('subscription');
-                // await MollieService.createSubscription(
-                //     userSubscription.id,
-                //     userSubscription.customerId,
-                //     userSubscription.Subscription as any,
-                // );
-                console.log('subscription created');
-                await AWSsendEmail({
+        if (status === 'subscription') {
+            if (userSubscription.extSubscriptionId === externalSubscriptionId) return;
+            await prisma.userSubscription.update({
+                where: {
+                    id: userSubscription.id,
+                },
+                data: {
+                    extSubscriptionId: externalSubscriptionId,
+                },
+            });
+            await AWSsendEmail({
+                email: userSubscription.User.email,
+                subject: '6FIRE - Confirmation commande',
+                htmlMessage: generateConfirmationEmail({
+                    name: userSubscription.User.firstName,
+                    price: userSubscription.price.toString(), // format might not be right
+                    refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                    subscription: userSubscription.Subscription.name,
+                    orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
                     email: userSubscription.User.email,
-                    subject: '6FIRE - Confirmation commande',
-                    htmlMessage: generateConfirmationEmail({
-                        name: userSubscription.User.firstName,
-                        price: userSubscription.price.toString(), // format might not be right
-                        refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
-                        subscription: userSubscription.Subscription.name,
-                        orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
-                        email: userSubscription.User.email,
-                    }),
-                });
-            } else if (userSubscription.Subscription.subscriptionType !== 'SUBSCRIPTION') {
-                console.log('subscription already created');
-                await AWSsendEmail({
+                }),
+            });
+        } else if (status === 'payment') {
+            // } else if (userSubscription.Subscription.subscriptionType !== 'SUBSCRIPTION') {
+            console.log('subscription already created');
+            await AWSsendEmail({
+                email: userSubscription.User.email,
+                subject: '6FIRE - Confirmation commande',
+                htmlMessage: generateConfirmationEmail({
+                    name: userSubscription.User.firstName,
+                    price: userSubscription.price.toString(), // format might not be right
+                    refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                    subscription: userSubscription.Subscription.name,
+                    orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
                     email: userSubscription.User.email,
-                    subject: '6FIRE - Confirmation commande',
-                    htmlMessage: generateConfirmationEmail({
-                        name: userSubscription.User.firstName,
-                        price: userSubscription.price.toString(), // format might not be right
-                        refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
-                        subscription: userSubscription.Subscription.name,
-                        orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
-                        email: userSubscription.User.email,
-                    }),
-                });
-            }
+                }),
+            });
+            // }
         } else if (status === 'canceled') {
             await prisma.userSubscription.update({
                 where: {

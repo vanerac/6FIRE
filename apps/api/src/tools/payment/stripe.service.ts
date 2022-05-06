@@ -111,7 +111,6 @@ export default class StripeService extends PaymentService {
                     'checkout.session.async_payment_failed',
                     'customer.subscription.deleted',
                     'customer.subscription.updated',
-                    'customer.subscription.created',
                     // 'customer.subscription.trial_will_end',
                 ],
             });
@@ -196,18 +195,26 @@ export default class StripeService extends PaymentService {
         if (!prices.data.length) {
             console.log('Creating new price');
             const product = await StripeService.getProduct(subscription.name);
-            await stripe.prices.create({
+            const params = {
                 active: true,
                 currency: 'eur',
                 lookup_key: subscription.name,
                 unit_amount: subscription.price,
-                recurring: {
-                    interval: 'month',
-                    interval_count: 1,
-                    usage_type: 'licensed',
-                },
                 product: product.id,
-            });
+            };
+
+            if (subscription.subscriptionType === 'SUBSCRIPTION') {
+                Object.assign(params, {
+                    recurring: {
+                        interval: 'month',
+                        interval_count: 1,
+                        usage_type: 'licensed',
+                    },
+                });
+            }
+
+            await stripe.prices.create(params);
+
             return stripe.prices.list({
                 lookup_keys: [subscription.name],
                 expand: ['data.product'],
