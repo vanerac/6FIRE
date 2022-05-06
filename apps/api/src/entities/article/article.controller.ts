@@ -39,6 +39,9 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
+                orderBy: {
+                    createdAt: 'desc',
+                },
             };
             if (isAdmin) {
                 delete args.where;
@@ -342,16 +345,25 @@ export default class ArticleController implements CRUDController {
             const { id: userId, isAdmin } = req.user;
 
             const userSubscriptionLevel = await getSubscriptionLevel(userId);
-            const args: any = {
-                where: {
-                    hidden: false,
-                    themeId: +themeId,
-                    Theme: {
-                        subscriptionLevel: {
-                            lte: userSubscriptionLevel,
-                        },
+            const where = {
+                themeId: +themeId,
+                Theme: {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
                     },
                 },
+                hidden: false,
+            };
+            if (isAdmin) {
+                where.hidden = false;
+                where.Theme = {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
+                    },
+                };
+            }
+            const args: any = {
+                where,
                 skip: Math.max(0, +page - 1) * +limit,
                 take: +limit,
                 select: {
@@ -389,6 +401,9 @@ export default class ArticleController implements CRUDController {
                             },
                         },
                     },
+                },
+                order: {
+                    createdAt: 'DESC',
                 },
             };
             if (isAdmin) {
