@@ -14,6 +14,7 @@ import multer from 'multer';
 import { v4 as uuid } from 'uuid';
 import cors from 'cors';
 import * as fs from 'fs';
+import ngrok from 'ngrok';
 
 declare module 'express' {
     interface Request {
@@ -54,7 +55,14 @@ const prisma = new PrismaClient();
 
 // Parser * Loggers
 app.use(cookieParser());
-app.use(express.json({ limit: '50mb' }));
+
+app.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
+    if (req.originalUrl.includes('/webhook/stripe')) {
+        next();
+    } else {
+        express.json({ limit: '50mb' })(req, res, next);
+    }
+});
 
 app.use(express.urlencoded({ extended: true, limit: '250mb', parameterLimit: 1000000 }));
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -154,7 +162,7 @@ app.get('/', (req, res) => {
     });
 });
 
-fs.stat(configuration.UPLOAD_DIR, (err, stats) => {
+fs.stat(configuration.UPLOAD_DIR, (err) => {
     if (err) {
         fs.mkdir(configuration.UPLOAD_DIR, (err) => {
             if (err) {
@@ -190,8 +198,9 @@ app.use((err, req, res, $next) => {
     });
 });
 
-app.listen(3333, () => {
+app.listen(3333, async () => {
     console.log('🚀 Server started on port 3333!');
+    if (process.env.NODE_ENV !== 'production') configuration.BACKEND_URL = `${await ngrok.connect(3333)}/api`;
 });
 
 // prisma.subscription.create({
