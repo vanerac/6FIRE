@@ -4,6 +4,7 @@ import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
+import SideBar from '../components/sidebarNew';
 
 export default function CreerUnAbonnement() {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -12,6 +13,16 @@ export default function CreerUnAbonnement() {
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
     const [$subscription, setSubscription] = useState<Subscription>();
+
+    const [subscriptionName, setSubscriptionName] = useState('');
+    const [subscriptionPrice, setSubscriptionPrice] = useState('');
+    const [subscriptionTime, setSubscriptionTime] = useState('');
+    const [subscriptionTimeType, setSubscriptionTimeType] = useState('');
+    const [payementPlatform, setPayementPlatform] = useState('');
+    const [descriptionLine, setDescriptionLine] = useState('');
+    const [isTryingSession, setIsTryingSession] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const [isBestSeller, setIsBestSeller] = useState(false);
 
     const id = 1;
     useEffect(() => {
@@ -33,13 +44,29 @@ export default function CreerUnAbonnement() {
         );
     }, []);
 
+    // submit all data
+    const submit = () => {
+        // print all data
+        console.log(
+            subscriptionName,
+            subscriptionPrice,
+            subscriptionTime,
+            subscriptionTimeType,
+            payementPlatform,
+            descriptionLine,
+            isTryingSession,
+            isHidden,
+            isBestSeller,
+        );
+    };
+
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="abonnement-creer-un-abonnement" />
             <div className="container-center-horizontal">
                 <div className="abonnement-creer-un-abonnement screen">
                     <div className="analytics-zmtgzx poppins-semibold-semi-bold-mirage-24px">Gestion Abonnements</div>
-                    <div className="sidebar-zmtgzx">
+                    {/* <div className="sidebar-zmtgzx">
                         <div className="shape-Y3lPdD"></div>
                         <div className="settings-Y3lPdD">
                             <div className="name-kSYily poppins-medium-mirage-14px">Settings</div>
@@ -109,12 +136,18 @@ export default function CreerUnAbonnement() {
                             className="icon-ionic-ios-arrow-down-Y3lPdD"
                             src="img/icon-ionic-ios-arrow-down-10@1x.png"
                         />
-                    </div>
+                    </div> */}
                     <Topbar />
+                    <SideBar></SideBar>
                     <div className="buttons-btn-text-icon-zmtgzx">
                         <div className="type-VxCxaA"></div>
                         <div className="groupe-393-VxCxaA">
-                            <div className="text-dcnJkB poppins-normal-white-14px">Créer un abonnement</div>
+                            <div
+                                onClick={submit}
+                                style={{ cursor: 'pointer' }}
+                                className="text-dcnJkB poppins-normal-white-14px">
+                                Créer un abonnement
+                            </div>
                         </div>
                     </div>
                     <div className="informations-zmtgzx">
@@ -125,44 +158,80 @@ export default function CreerUnAbonnement() {
                         </div>
                         <div className="nom-XiDkvN">
                             <img className="ligne-6-xCRECf" src="img/ligne-6-1@1x.png" />
-                            <div className="novice-xCRECf poppins-normal-tundora-12px">Novice</div>
+                            <input
+                                onChange={(event) => setSubscriptionName(event.target.value)}
+                                defaultValue="Novice"
+                                style={{ border: '0px' }}
+                                className="novice-xCRECf poppins-normal-tundora-12px"
+                            />
                             <div className="nom-xCRECf lato-normal-comet-10px">Nom</div>
                         </div>
                         <div className="prix-XiDkvN">
                             <img className="ligne-6-EmIQcx" src="img/ligne-6-1@1x.png" />
-                            <div className="x4999-EmIQcx poppins-normal-tundora-12px">49.99 €</div>
+                            <input
+                                onChange={(event) => setSubscriptionPrice(event.target.value)}
+                                defaultValue="49.99 €"
+                                className="x4999-EmIQcx poppins-normal-tundora-12px"></input>
                             <div className="prix-EmIQcx lato-normal-comet-10px">Prix</div>
                         </div>
                         <div className="dure-XiDkvN">
                             <img className="ligne-6-3V1qvy" src="img/ligne-6-1@1x.png" />
-                            <div className="x30-3V1qvy poppins-normal-tundora-12px">30</div>
+                            <input
+                                defaultValue="30"
+                                style={{ border: '0px' }}
+                                onChange={(event) => setSubscriptionTime(event.target.value)}
+                                className="x30-3V1qvy poppins-normal-tundora-12px"
+                            />
                             <div className="dure-3V1qvy lato-normal-comet-10px">Durée</div>
                         </div>
                         <div className="type-XiDkvN">
-                            <img className="ligne-6-xBAzJw" src="img/ligne-6-46@1x.png" />
-                            <div className="mensuel-xBAzJw poppins-normal-tundora-12px">Mensuel</div>
+                            {/* <img className="ligne-6-xBAzJw" src="img/ligne-6-46@1x.png" /> */}
+                            {/* <div className="mensuel-xBAzJw poppins-normal-tundora-12px">Mensuel</div> */}
+                            <select
+                                onChange={(event) => setSubscriptionTimeType(event.target.value)}
+                                className="mensuel-xBAzJw poppins-normal-tundora-12px">
+                                <option value="">Choississez le type</option>
+                                <option>mensuel</option>
+                                <option>annuel</option>
+                            </select>
                             <div className="type-xBAzJw lato-normal-comet-10px">Type</div>
-                            <img
+                            {/* <img
                                 className="font-awsome-chevron-down-xBAzJw"
                                 src="img/fontawsome--chevron-down--10@1x.png"
-                            />
+                            /> */}
                         </div>
                         <div className="best-seller-XiDkvN">
                             <div className="best-seller-28QqGG poppins-normal-tundora-12px">Best Seller</div>
-                            <div className="rectangle-634-28QqGG border-2px-tundora"></div>
+                            <input
+                                type="checkbox"
+                                checked={isBestSeller}
+                                onChange={() => setIsBestSeller(!isBestSeller)}
+                                className="rectangle-634-28QqGG border-2px-tundora"></input>
                         </div>
                         <div className="visible-XiDkvN">
                             <div className="visible-UCabQU poppins-normal-tundora-12px">Visible</div>
-                            <div className="rectangle-634-UCabQU border-2px-tundora"></div>
+                            <input
+                                checked={isHidden}
+                                onChange={() => setIsHidden(!isHidden)}
+                                type="checkbox"
+                                className="rectangle-634-UCabQU border-2px-tundora"
+                            />
                         </div>
                         <div className="priode-dessai-XiDkvN">
-                            <div className="toggle-dtZC2P">
+                            <input
+                                className="toggle-dtZC2P"
+                                onChange={() => setIsTryingSession(!isTryingSession)}
+                                checked={isTryingSession}
+                                type="checkbox"
+                            />
+
+                            {/* <div className="toggle-dtZC2P">
                                 <div className="toggle-off-PO0xaD">
                                     <div className="rectangle-655-nrwYmd"></div>
                                     <div className="rectangle-656-nrwYmd"></div>
                                     <div className="off-nrwYmd arial-bold-white-6px">OFF</div>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="priode-dessai-dtZC2P lato-normal-comet-10px">Période d’essai</div>
                         </div>
                     </div>
@@ -175,15 +244,21 @@ export default function CreerUnAbonnement() {
                             </div>
                         </div>
                         <div className="plateforme-de-paiement-20ARZa">
-                            <img className="ligne-6-zmMem2" src="img/ligne-6-47@1x.png" />
-                            <div className="plateforme-zmMem2 poppins-normal-tundora-12px">Plateforme</div>
+                            {/* <img className="ligne-6-zmMem2" src="img/ligne-6-47@1x.png" /> */}
+                            {/* <div className="plateforme-zmMem2 poppins-normal-tundora-12px">Plateforme</div> */}
+                            <select
+                                onChange={(event) => setPayementPlatform(event.target.value)}
+                                className="mensuel-xBAzJw poppins-normal-tundora-12px">
+                                <option value="">Choississez le type</option>
+                                <option>Plateforme</option>
+                            </select>
                             <div className="plateforme-de-paiement-zmMem2 lato-normal-comet-10px">
                                 Plateforme de paiement
                             </div>
-                            <img
+                            {/* <img
                                 className="font-awsome-chevron-down-zmMem2"
                                 src="img/fontawsome--chevron-down--10@1x.png"
-                            />
+                            /> */}
                         </div>
                     </div>
                     <div className="lignes-descriptives-zmtgzx">
@@ -196,7 +271,11 @@ export default function CreerUnAbonnement() {
                         </div>
                         <div className="lignes-1-HxWojL">
                             <img className="ligne-6-PlF3x1" src="img/ligne-6-47@1x.png" />
-                            <div className="lignes-1-PlF3x1 poppins-normal-tundora-12px">Lignes 1</div>
+                            <input
+                                onChange={(event) => setDescriptionLine(event.target.value)}
+                                style={{ border: '0px' }}
+                                className="lignes-1-PlF3x1 poppins-normal-tundora-12px"
+                            />
                         </div>
                     </div>
                 </div>

@@ -29,6 +29,7 @@ export default function Index() {
     }, []);
 
     const submit = async () => {
+        console.log('submit');
         apiClient.auth
             .login({ email, password })
             .then(
@@ -88,7 +89,7 @@ export default function Index() {
                             </div>
 
                             <div className="single-btn">
-                                <button onClick={submit} id="send-btn" type="submit">
+                                <button onClick={() => submit()} type="submit">
                                     Connexion
                                 </button>
                             </div>
