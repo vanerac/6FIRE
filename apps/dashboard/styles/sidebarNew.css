@@ -855,3 +855,66 @@ input.checkBox-item{
     width: auto;
     margin-right: 10px;
 }
+
+/* Toggle button */
+.toggle input[type="checkbox"] {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    background: #bdc3c7;
+    -webkit-appearance: none;
+    border-radius: 20px;
+    outline: none;
+    transition: .4s;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border: 0;
+  }
+  
+  .toggle input:checked[type="checkbox"] {
+    background: #3498db;
+  }
+  
+  .toggle input[type="checkbox"]::before {
+    z-index: 2;
+    position: absolute;
+    content: "";
+    left: 5px;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border-radius: 50%;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: .4s;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .toggle input:checked[type="checkbox"]::before {
+    left: 60px;
+  }
+  
+  .toggle {
+    position: relative;
+    display: inline;
+  }
+  
+  .toggle label {
+    position: absolute;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    pointer-events: none;
+  }
+  
+  .toggle .onbtn {
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .toggle .ofbtn {
+    bottom: 15px;
+    right: 14px;
+    color: #34495e;
+  }

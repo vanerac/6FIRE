@@ -156,6 +156,17 @@ export default function CreerUnAbonnement() {
                                     </div>
                                 </div>
                             </div>
+
+                            <div className="row-1 inline-flex">
+                                <div className="single-item mr-30 inline-flex">
+                                <div className="toggle mr-30">
+                                    <input type="checkbox"/>
+                                    <label className="onbtn">On</label>
+                                    <label className="ofbtn">Off</label>
+                                </div>
+                                <span className="label">Periode d'essal</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
