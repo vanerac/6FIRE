@@ -73,7 +73,7 @@ const HomePage: NextPage = (props: any) => {
         console.log('query', query);
         // if (!query.articleId) {
         //     console.log('no articleId');
-        //     router.replace('/articlesPage');
+        //     router.replace('/accueil');
         //     return;
         // }
 

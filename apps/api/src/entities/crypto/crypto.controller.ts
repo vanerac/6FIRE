@@ -135,10 +135,6 @@ export default class CryptoController implements CRUDController {
 
     static async getCoinImg(req: Request, res: Response, next: NextFunction) {
         try {
-            //https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png
-
-            //https://pro-api.coinmarketcap.com/v1/exchange/info
-
             // Coin token
             const { coin } = req.params;
 

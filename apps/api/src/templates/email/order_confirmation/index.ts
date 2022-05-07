@@ -20,7 +20,9 @@ export function generateEmail({
     const emailTemplate = fs.readFileSync(path.resolve(__dirname, 'email.html'));
 
     let r;
-    if (refresh === '30') {
+    if (refresh === '365') {
+        r = 'an';
+    } else if (refresh === '30') {
         r = 'mois';
     } else {
         r = 'jours';

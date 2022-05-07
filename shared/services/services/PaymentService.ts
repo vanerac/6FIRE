@@ -43,7 +43,7 @@ export class PaymentService {
             /**
              * Provider
              */
-            provider: 'mollie' | 'payline';
+            provider: 'payline' | 'stripe';
             /**
              * Offer ID
              */

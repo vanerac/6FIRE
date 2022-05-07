@@ -19,6 +19,9 @@ export default class ThemeController implements CRUDController {
                             lte: userPermissions,
                         },
                     },
+                    orderBy: {
+                        id: 'asc',
+                    },
                 });
                 res.status(200).json(themes);
             } else res.status(200).json(await client.theme.findMany());
