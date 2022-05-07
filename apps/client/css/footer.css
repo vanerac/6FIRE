@@ -64,9 +64,4 @@
         margin-bottom: 30px;
     }
     #footer_block .footer-menu-wrapper .footer-nav-items{justify-content: center; flex-wrap: wrap;}
-
-    .footer-text p{
-        margin-bottom: 30px;
-        text-align: center;
-    }
 }

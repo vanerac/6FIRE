@@ -1,13 +1,13 @@
 
-/* The following lines is used for tailwind configuration */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url("https://fonts.googleapis.com/css?family=Lato:400,300,700|Poppins:400,700|Source+Sans+Pro:600|Roboto:400,700");
 
 /* The following line is used to measure usage of this code in production. For more info see our usage billing page */
 @import url("https://px.animaapp.com/6241740d940ffb51b6759943.623ce29b706c765eb132ff4d.XCE8WYC.hcp.png");
+
+/* The following lines is used for tailwind configuration */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .screen textarea:focus,
 .screen input:focus {

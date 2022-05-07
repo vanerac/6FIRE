@@ -166,7 +166,7 @@ const LoginPopup = (props: any) => {
                 <>
                     <div className="login_access_col">
                         <div className="title-wrap">
-                            <div className="title">
+                            <div className="title lato-light-white-16px">
                                 SE CONNECTER <span>Pour accéder à votre compte</span>
                             </div>
                         </div>
@@ -204,27 +204,34 @@ const LoginPopup = (props: any) => {
                             />
                             {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
                             <div className="item-center">
-                                <a href="#" className="reset_password">
+                                <a href="#" className="reset_password lato-light-white-16px">
                                     Mot de passe oublié ?
                                 </a>
                             </div>
                             {error && <span style={{ color: 'red' }}>{error}</span>}
-                            <div className="item-center">
-                                <input onClick={handleSubmit} type="submit" value={'Me connecter'} />
+                            <div className="item-center ">
+                                <input
+                                    className="hover:bg-white hover:text-inherit transiition linear duration-300 "
+                                    onClick={handleSubmit}
+                                    type="submit"
+                                    value={'Me connecter'}
+                                />
                             </div>
                         </form>
 
                         {/* forget pass overlay */}
                         <div className="forget_pass_overlay forget-open-password">
                             <div className="forget-div">
-                                <div className="title">mot de pass oublie?</div>
-                                <p>
+                                <div className="title lato-light-white-16px">mot de pass oublie?</div>
+                                <p className="text-lg lato-light-white-16px">
                                     Veuillez saisir votre numero de telephone lors de votre inscription. Vous recevrez
                                     un code pour modifier votre mot de passe.
                                 </p>
                                 <form action="">
                                     <input type="email" placeholder="*Email" />
-                                    <button id="pass_submit" className="get-validator-code">
+                                    <button
+                                        id="pass_submit"
+                                        className="get-validator-code hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
                                     </button>
                                 </form>
@@ -285,7 +292,7 @@ const LoginPopup = (props: any) => {
                     </div>
                     <div className="register_col">
                         <div className="title-wrap">
-                            <div className="title">VOUS N’AVEZ PAS DE COMPTE ?</div>
+                            <div className="title lato-light-white-16px">VOUS N’AVEZ PAS DE COMPTE ?</div>
                             {/* close side bar */}
                             <a
                                 onClick={() => {

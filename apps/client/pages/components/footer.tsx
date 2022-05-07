@@ -15,7 +15,7 @@ const Footer = (props: any) => {
         <div>
             <footer id="footer_block">
                 {isFooterWarning == true ? (
-                    <div className="footer-text">
+                    <div className="footer-text text-center">
                         <p>
                             <strong>Tout investissement comporte un risque.</strong> Les utilisateurs doivent faire
                             leurs propres recherches et n’investir que dans les limites de leurs capacités financières.
