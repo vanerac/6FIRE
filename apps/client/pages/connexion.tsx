@@ -88,7 +88,7 @@ const Connexion: NextPage = () => {
             isValid = false;
         }
         if (userMail === '') {
-            setErrorUserMail('Votre mail est obligatoire');
+            setErrorUserMail('Votre e-mail est obligatoire');
             isValid = false;
         } else if (
             !userMail.match(

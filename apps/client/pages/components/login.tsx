@@ -258,8 +258,8 @@ const LoginPopup = (props: any) => {
                             <div className="forget-div">
                                 <div className="title lato-light-white-16px">mot de pass oublie?</div>
                                 <p className="lato-light-white-16px px-10">
-                                    Veuillez saisir votre numero de telephone lors de votre inscription. Vous recevrez
-                                    un code pour modifier votre mot de passe.
+                                    Veuillez saisir votre num&eacute;ro de t&eacute;l&eacute;phone lors de votre
+                                    inscription. Vous recevrez un code pour modifier votre mot de passe.
                                 </p>
                                 <form action="">
                                     <input type="email" placeholder="*Email" />
@@ -279,7 +279,9 @@ const LoginPopup = (props: any) => {
                         <div className="forget_pass_overlay get-email-code">
                             <div className="forget-div">
                                 <div className="title lato-light-white-16px">mot de pass oublie?</div>
-                                <p className="lato-light-white-16px">Un code vous a ete envoye par email</p>
+                                <p className="lato-light-white-16px">
+                                    Un code vous &agrave; &eacute;t&eacute; envoy&eacute; par e-mail
+                                </p>
                                 <form action="">
                                     <div className="custom-input-code">
                                         <input type="number" placeholder="*Code" />
@@ -302,8 +304,8 @@ const LoginPopup = (props: any) => {
                             <div className="forget-div">
                                 <div className="title lato-light-white-16px">modification de votre mot de pass</div>
                                 <p className="lato-light-white-16px">
-                                    Votre mot de passe doit contenir au moins 8 caracteres escape avec des letters, au
-                                    moinus un chiffre. une majuscule, et un caractere special.
+                                    Votre mot de passe doit contenir au moins 8 caract&eacute;res sans espace avec des
+                                    lettres, au moins un chiffre. une majuscule, et un caract&egrave;re sp&eacute;cial.
                                 </p>
                                 <form action="">
                                     <div className="custom-input-code">
