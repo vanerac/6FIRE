@@ -31,11 +31,19 @@ if (typeof window !== 'undefined') {
 -------------------------------------*/
 if (typeof window !== 'undefined') {
     $('.menu__btn').click(function () {
-        if ($('body').hasClass('scrollOff')) {
+        if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
             $('body').removeClass('scrollOff');
         } else {
             $('body').addClass('scrollOff');
         }
+    });
+}
+
+if (typeof window !== 'undefined') {
+    $('.scrollRemove, .register_btn').click(function () {
+        if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
+            $('body').removeClass('scrollOff');
+        } 
     });
 }
 
@@ -209,7 +217,7 @@ const LoginPopup = (props: any) => {
                             </div>
                             {error && <span style={{ color: 'red' }}>{error}</span>}
                             <div className="item-center">
-                                <input onClick={handleSubmit} type="submit" value={'Me connecter'} />
+                                <input className='scrollRemove' onClick={handleSubmit} type="submit" value={'Me connecter'} />
                             </div>
                         </form>
 
@@ -223,7 +231,7 @@ const LoginPopup = (props: any) => {
                                 </p>
                                 <form action="">
                                     <input type="email" placeholder="*Email" />
-                                    <button id="pass_submit" className="get-validator-code">
+                                    <button id="pass_submit" className="get-validator-code scrollRemove">
                                         Valider
                                     </button>
                                 </form>
@@ -243,7 +251,7 @@ const LoginPopup = (props: any) => {
                                         <input type="number" placeholder="*Code" />
                                         <span className="write-code">Renvoyer un code</span>
                                     </div>
-                                    <button id="pass_submit" className="confirm-password-btn">
+                                    <button id="pass_submit" className="confirm-password-btn scrollRemove">
                                         Valider
                                     </button>
                                 </form>
@@ -274,7 +282,7 @@ const LoginPopup = (props: any) => {
                                             <img src="/img/icon/eye-pass.svg" alt="" />
                                         </span>
                                     </div>
-                                    <button id="pass_submit">Valider</button>
+                                    <button id="pass_submit" className='scrollRemove'>Valider</button>
                                 </form>
                                 <div id="return_login" className="return-code">
                                     Retour
