@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbarNew';
 import getAPIClient from '@shared/tools/apiClient';
-import { Subscription } from '@shared/services';
+import { ApiClient, Subscription } from '@shared/services';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 import SideBar from '../components/sidebarNew';
 
 export default function CreerUnAbonnement() {
     const [cookies] = useCookies(['API_TOKEN']);
-    const $apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     const [$loading, $setLoading] = useState(true);
     const [$error, $setError] = useState('');
@@ -23,6 +23,7 @@ export default function CreerUnAbonnement() {
     const [isTryingSession, setIsTryingSession] = useState(false);
     const [isHidden, setIsHidden] = useState(false);
     const [isBestSeller, setIsBestSeller] = useState(false);
+    const [level, setLevel] = useState('');
 
     // const id = 1;
     useEffect(() => {
@@ -44,21 +45,33 @@ export default function CreerUnAbonnement() {
         // );
     }, []);
 
-    // submit all data
     const submit = () => {
-        // print all data
-        console.log(
-            subscriptionName,
-            subscriptionPrice,
-            subscriptionTime,
-            subscriptionTimeType,
-            payementPlatform,
-            descriptionLine,
-            isTryingSession,
-            isHidden,
-            isBestSeller,
-        );
-        alert('feature coming soon');
+        const newAbonnement = {
+            // subscriptionName,
+            // subscriptionPrice,
+            // subscriptionTime,
+            // subscriptionTimeType,
+            // payementPlatform,
+            // descriptionLine,
+            // isTryingSession,
+            // isHidden,
+            // isBestSeller,
+            name: subscriptionName,
+            description: descriptionLine,
+            refreshRate: 1,
+            subscriptionType: 'SUBSCRIPTION',
+            price: +subscriptionPrice,
+            level: +level,
+            hidden: isHidden,
+            isBestValue: isBestSeller,
+            // hasFreeTrial?: boolean;
+            // freeTrialDays?: number;
+        };
+
+        apiClient.subscription.createSubscription(newAbonnement as any).then((res) => {
+            console.log('res', res);
+        });
+        // alert('feature coming soon');
     };
 
     return (
@@ -106,6 +119,12 @@ export default function CreerUnAbonnement() {
                                         Duree
                                     </label>
                                     <input type="text" onChange={(e) => setSubscriptionTime(e.target.value)} />
+                                </div>
+                                <div className="single-item mr-30">
+                                    <label className="small_title" htmlFor="">
+                                        Niveau de l'abonnement
+                                    </label>
+                                    <input type="text" onChange={(e) => setLevel(e.target.value)} />
                                 </div>
                                 <div className="single-item">
                                     <label className="small_title" htmlFor="">
@@ -201,11 +220,12 @@ export default function CreerUnAbonnement() {
                         <div className="table-content">
                             <div className="row-1 inline-flex">
                                 <div className="single-item">
-                                    <input
+                                    {/* <input
                                         type="text"
                                         onChange={(e) => setDescriptionLine(e.target.value)}
                                         // placeholder="Lignes 1"
-                                    />
+                                    /> */}
+                                    <textarea onChange={(e) => setDescriptionLine(e.target.value)}></textarea>
                                 </div>
                             </div>
                         </div>
