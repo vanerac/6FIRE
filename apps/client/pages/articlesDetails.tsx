@@ -111,7 +111,7 @@ const HomePage: NextPage = (props: any) => {
             return `${seconds} secondes`;
         }
     };
-
+    console.log($articles);
     return (
         <div>
             <Head>
@@ -247,13 +247,11 @@ const HomePage: NextPage = (props: any) => {
                             {/*</div>*/}
                         </div>
 
-                        <div>
+                        <div className="max-w-[1200px] m-auto p-[30px] relative">
                             <Podcast
                                 track={{
                                     title: $articles.title ?? 'PODCAST',
-                                    artist: 'ui',
-                                    audioSrc: 'ff',
-                                    color: '#fffff',
+                                    audioSrc: $articles.podcastUrl ?? '',
                                     image: ($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png',
                                 }}
                             />
