@@ -45,4 +45,29 @@ export class AdminService {
         });
     }
 
+    /**
+     * Set the password of a user
+     * @param requestBody
+     * @returns any Successful response
+     * @throws ApiError
+     */
+    public setUserPassword(
+        requestBody?: {
+            id: string;
+            password: string;
+        },
+    ): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/admin/setUserPassword',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad request`,
+                403: `User is not an admin`,
+                404: `User not found`,
+            },
+        });
+    }
+
 }

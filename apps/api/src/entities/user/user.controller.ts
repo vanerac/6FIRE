@@ -50,14 +50,52 @@ export class UserController implements CRUDController {
                 },
                 select: {
                     password: false,
+                    id: true,
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
+                    createdAt: true,
+                    updatedAt: true,
+                    verifiedEmail: true,
+                    note: true,
+                    UserSubscription: {
+                        select: {
+                            Subscription: {
+                                select: {
+                                    name: true,
+                                    price: true,
+                                    description: true,
+                                    id: true,
+                                    createdAt: true,
+                                    updatedAt: true,
+                                    level: true,
+                                    paymentProvider: true,
+                                },
+                            },
+                            status: true,
+                            price: true,
+                            id: true,
+                            lastPaymentDate: true,
+                            endDate: true,
+                            createdAt: true,
+                            updatedAt: true,
+                            customerId: true,
+                            extSubscriptionId: true,
+                            paymentId: true,
+                            paymentProdvider: true,
+                        },
+                    },
                 },
             });
+
             res.json(user);
         } catch (error) {
             next(error);
         }
     }
 
+    // @deprecated
     public static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const { body } = req;

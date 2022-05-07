@@ -114,4 +114,27 @@ export default class AdminController {
             next(e);
         }
     }
+
+    static async setUserPassword(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id: userId, newPassword } = req.body;
+
+            const pass = hashPassword(newPassword);
+
+            await prisma.user.update({
+                where: {
+                    id: userId,
+                },
+                data: {
+                    password: pass,
+                },
+            });
+
+            res.status(200).json({
+                message: 'Password updated',
+            });
+        } catch (e) {
+            next(e);
+        }
+    }
 }
