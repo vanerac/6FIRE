@@ -68,37 +68,37 @@ export default function Index() {
                     <img src="img/groupe-1-10@1x.png" alt="" />
 
                     <div className="loggin-wrap">
-                        <form action="">
-                            <div className="single-input">
-                                <i className="fas fa-envelope"></i>
-                                <input
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    type="email"
-                                    placeholder="Email"
-                                    value={email}
-                                />
-                            </div>
-                            <div className="single-input">
-                                <i className="fas fa-lock"></i>
-                                <input
-                                    onChange={(event) => setPassword(event.target.value)}
-                                    type="password"
-                                    placeholder="Mot de pass"
-                                    value={password}
-                                />
-                            </div>
+                        {/*<form onSubmit={submit}>*/}
+                        <div className="single-input">
+                            <i className="fas fa-envelope"></i>
+                            <input
+                                onChange={(e) => setEmail(e.target.value)}
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                            />
+                        </div>
+                        <div className="single-input">
+                            <i className="fas fa-lock"></i>
+                            <input
+                                onChange={(event) => setPassword(event.target.value)}
+                                type="password"
+                                placeholder="Mot de pass"
+                                value={password}
+                            />
+                        </div>
 
-                            <div className="single-btn">
-                                <button onClick={() => submit()} type="submit">
-                                    Connexion
-                                </button>
-                            </div>
-                            <div className="single-btn">
-                                <button onClick={resetPassword} className="forget-pass">
-                                    Mot de pass oublie?
-                                </button>
-                            </div>
-                        </form>
+                        <div className="single-btn">
+                            <button onClick={submit} id="send-btn">
+                                Connexion
+                            </button>
+                        </div>
+                        <div className="single-btn">
+                            <button onClick={resetPassword} className="forget-pass">
+                                Mot de pass oublie?
+                            </button>
+                        </div>
+                        {/*</form>*/}
                     </div>
                 </div>
             </div>
