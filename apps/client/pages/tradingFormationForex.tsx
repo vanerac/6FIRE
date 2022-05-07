@@ -39,7 +39,7 @@ const HomePage: NextPage = (props: any) => {
         }
     };
 
-    const fetchData = async (themeId: string | string[] | undefined) => {
+    const $fetchData = async (themeId: string | string[] | undefined) => {
         console.log('need to fetch articles with id => ', themeId);
         if (themeId)
             setArticles(

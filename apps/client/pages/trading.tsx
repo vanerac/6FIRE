@@ -59,11 +59,13 @@ const Trading: NextPage = () => {
                     </div>
                     <div className="button-right">
                         <div className="btn-group">
-                            <button className="primary-button">
+                            <button
+                                onClick={() => router.push('https://t.me/sixfiresupport')}
+                                className="primary-button">
                                 <img className="telegram" src="/img/icon/telegram.svg" alt="" />
                                 <span>Support Telegram</span>
                             </button>
-                            <button className="primary-button">
+                            <button onClick={() => router.push('http://wa.me/33787706356')} className="primary-button">
                                 <img src="/img/icon/whatsapp.svg" alt="" />
                                 <span>Support WhatsApp</span>
                             </button>

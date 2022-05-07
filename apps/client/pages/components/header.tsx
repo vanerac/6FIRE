@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 // import router from 'next/router';
 import $ from 'jquery';
 import LoginPopup from './login';
