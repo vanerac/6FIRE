@@ -97,6 +97,7 @@ const LoginPopup = (props: any) => {
     const [isCookie, setIsCookie] = useState();
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [emailRecovering, setEmailRecovering] = useState<string>('');
 
     useEffect(() => {
         setIsCookie(cookies['API_TOKEN']);
@@ -148,6 +149,10 @@ const LoginPopup = (props: any) => {
                 });
         }
         // console.log(mail, password);
+    };
+
+    const sendRecovering = () => {
+        apiClient.auth.forgotPassword({ email: emailRecovering });
     };
 
     return (
@@ -270,8 +275,15 @@ const LoginPopup = (props: any) => {
                                     inscription. Vous recevrez un code pour modifier votre mot de passe.
                                 </p>
                                 <form action="">
-                                    <input type="email" placeholder="*Email" />
+                                    <input
+                                        type="email"
+                                        placeholder="*Email"
+                                        onChange={(event) => setEmailRecovering(event.target.value)}
+                                    />
                                     <button
+                                        onClick={() => {
+                                            sendRecovering();
+                                        }}
                                         id="pass_submit"
                                         className="get-validator-code scrollRemove hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
