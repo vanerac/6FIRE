@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbarNew';
 import getAPIClient from '@shared/tools/apiClient';
-import { ApiClient, Subscription } from '@shared/services';
+import { Subscription } from '@shared/services';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
 import SideBar from '../components/sidebarNew';
@@ -16,9 +16,9 @@ export default function CreerUnAbonnement() {
 
     const [subscriptionName, setSubscriptionName] = useState('');
     const [subscriptionPrice, setSubscriptionPrice] = useState('');
-    const [subscriptionTime, setSubscriptionTime] = useState('');
-    const [subscriptionTimeType, setSubscriptionTimeType] = useState('');
-    const [payementPlatform, setPayementPlatform] = useState('');
+    const [$subscriptionTime, setSubscriptionTime] = useState('');
+    const [$subscriptionTimeType, setSubscriptionTimeType] = useState('');
+    const [$payementPlatform, setPayementPlatform] = useState('');
     const [descriptionLine, setDescriptionLine] = useState('');
     const [isTryingSession, setIsTryingSession] = useState(false);
     const [isHidden, setIsHidden] = useState(false);
@@ -122,7 +122,7 @@ export default function CreerUnAbonnement() {
                                 </div>
                                 <div className="single-item mr-30">
                                     <label className="small_title" htmlFor="">
-                                        Niveau de l'abonnement
+                                        Niveau de l&apos;abonnement
                                     </label>
                                     <input type="text" onChange={(e) => setLevel(e.target.value)} />
                                 </div>
