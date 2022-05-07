@@ -158,6 +158,12 @@
     "/admin/config/sms": {
       "$ref": "./admin/admin.path.json#/updateSmsConfig"
     },
+    "/admin/setUserPassword": {
+      "$ref": "./admin/admin.path.json#/setUserPassword"
+    },
+    "/admin/isAdmin": {
+      "$ref": "./admin/admin.path.json#/isAdmin"
+    },
     "/upload": {
       "post": {
         "tags": [

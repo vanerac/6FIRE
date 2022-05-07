@@ -74,6 +74,18 @@ export default function useSideBar() {
                                             <span>Bot Trading</span>
                                         </a>
                                     </Link>
+                                    <Link passHref href="utilisateurs">
+                                        <a>
+                                            <i className="fa fa-home"></i>
+                                            <span>Utilisateurs</span>
+                                        </a>
+                                    </Link>
+                                    <Link passHref href="abonnement-gestion-abonnements">
+                                        <a>
+                                            <i className="fa fa-home"></i>
+                                            <span>Abonnements</span>
+                                        </a>
+                                    </Link>
                                 </li>
 
                                 {/*<li*/}

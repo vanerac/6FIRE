@@ -5,8 +5,8 @@
     height: 1001px;
     overflow: hidden;
     overflow-x: hidden;
-    position: relative;
-    width: 1600px;
+    position: fixed;
+    width: 1565px;
 }
 
 .abonnement-creer-un-abonnement .analytics-zmtgzx {
@@ -620,7 +620,7 @@
 .abonnement-creer-un-abonnement .buttons-btn-text-icon-zmtgzx {
     background-color: transparent;
     height: 32px;
-    left: 1381px;
+    left: 1290px;
     position: absolute;
     top: 125px;
     width: 181px;
@@ -675,7 +675,7 @@
     left: 0px;
     position: absolute;
     top: 18px;
-    width: 100%;
+    width: 93%;
 }
 
 .abonnement-creer-un-abonnement .titre-XiDkvN {
@@ -777,6 +777,7 @@
     bottom: 4px;
     height: 19px;
     left: 0px;
+    border: 0px;
     letter-spacing: 0.00px;
     line-height: 12px;
     position: absolute;
@@ -1043,7 +1044,7 @@
     left: 0px;
     position: absolute;
     top: 18px;
-    width: 100%;
+    width: 93%;
 }
 
 .abonnement-creer-un-abonnement .titre-20ARZa {
@@ -1148,7 +1149,7 @@
     left: 0px;
     position: absolute;
     top: 18px;
-    width: 100%;
+    width: 93%;
 }
 
 .abonnement-creer-un-abonnement .titre-HxWojL {
