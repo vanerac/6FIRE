@@ -2720,6 +2720,7 @@ body{
   cursor: pointer;
 }
 .more_articles .grid .single_article .artitle_thum span{
+  border-radius: 10px;
   position: relative !important;
 }
 .more_articles .grid .single_article .artitle_thum span img{
