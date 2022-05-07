@@ -25,15 +25,15 @@ export class AdminService {
 
     /**
      * Update the sms config
-     * @param requestBody
+     * @param requestBody 
      * @returns any Successful response
      * @throws ApiError
      */
     public updateSmsConfig(
-        requestBody: {
-            value: string;
-        },
-    ): CancelablePromise<any> {
+requestBody: {
+value: string;
+},
+): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/admin/config/sms',
