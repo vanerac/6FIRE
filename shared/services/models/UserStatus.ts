@@ -3,12 +3,10 @@
 /* eslint-disable */
 
 export type UserStatus = {
-    UserSubscription?: {
-        Subscription?: {
-            name?: string;
-            description?: string;
-            price?: number;
-            level?: number;
-        };
-    };
+    id?: number;
+    email?: string;
+    firstName?: string;
+    lastName?: string;
+    telephone?: string;
+    isAdmin?: boolean;
 };

@@ -16,11 +16,11 @@ export class CryptoService {
      */
     public getAllCrypto(): CancelablePromise<{
         cryptos: Array<CryptoHolding>;
-        messages: Array<{
+        messages: {
             id: number;
             message: string;
             date: string;
-        }>;
+        };
     }> {
         return this.httpRequest.request({
             method: 'GET',

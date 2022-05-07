@@ -3,12 +3,11 @@
 /* eslint-disable */
 
 export type Theme = {
-    id?: string;
+    id?: number;
     name?: string;
     description?: string;
     createdAt?: string;
     updatedAt?: string;
     subscriptionLevel?: number;
-    icon?: Blob;
     iconUrl?: string;
 };

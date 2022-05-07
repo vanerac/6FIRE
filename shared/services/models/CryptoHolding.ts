@@ -3,9 +3,8 @@
 /* eslint-disable */
 
 export type CryptoHolding = {
-    id?: string;
-    name?: string;
-    symbol?: string;
+    id?: number;
+    token?: string;
     amount?: number;
-    price_usd?: number;
+    price?: number;
 };

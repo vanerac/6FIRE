@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { Article } from '../models/Article';
+import type { ArticlePro } from '../models/ArticlePro';
 import type { Error } from '../models/Error';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -14,13 +15,13 @@ export class ArticleService {
     /**
      * Create article
      * @param requestBody Article object
-     * @returns Article Article response
+     * @returns any Article response
      * @returns Error Unexpected error
      * @throws ApiError
      */
     public createArticle(
-        requestBody: Article,
-    ): CancelablePromise<Article | Error> {
+        requestBody: (Article | ArticlePro),
+    ): CancelablePromise<(Article | ArticlePro) | Error> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/article/',
@@ -33,14 +34,14 @@ export class ArticleService {
      * Get all articles
      * @param page Pagination page
      * @param limit Pagination size
-     * @returns Article Articles response
+     * @returns any Articles response
      * @returns Error Unexpected error
      * @throws ApiError
      */
     public getArticles(
         page?: number,
         limit?: number,
-    ): CancelablePromise<Array<Article> | Error> {
+    ): CancelablePromise<Array<(Article | ArticlePro)> | Error> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/article/',
@@ -54,13 +55,13 @@ export class ArticleService {
     /**
      * Get article by id
      * @param id The ID of the article
-     * @returns Article Article response
+     * @returns any Article response
      * @returns Error Unexpected error
      * @throws ApiError
      */
     public getArticleById(
         id: number,
-    ): CancelablePromise<Article | Error> {
+    ): CancelablePromise<(Article | ArticlePro) | Error> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/article/{id}',
@@ -74,14 +75,14 @@ export class ArticleService {
      * Update article by id
      * @param id The ID of the article
      * @param requestBody Article object
-     * @returns Article Article response
+     * @returns any Article response
      * @returns Error Unexpected error
      * @throws ApiError
      */
     public updateArticleById(
         id: number,
-        requestBody: Article,
-    ): CancelablePromise<Article | Error> {
+        requestBody: (Article | ArticlePro),
+    ): CancelablePromise<(Article | ArticlePro) | Error> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/article/{id}',
@@ -107,6 +108,33 @@ export class ArticleService {
             url: '/article/{id}',
             path: {
                 'id': id,
+            },
+        });
+    }
+
+    /**
+     * Get all articles by theme
+     * @param id Theme id
+     * @param page Pagination page
+     * @param limit Pagination size
+     * @returns any Articles response
+     * @returns Error Unexpected error
+     * @throws ApiError
+     */
+    public getArticlesByTheme(
+        id: number,
+        page?: number,
+        limit?: number,
+    ): CancelablePromise<Array<(Article | ArticlePro)> | Error> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/article/theme/{id}',
+            path: {
+                'id': id,
+            },
+            query: {
+                'page': page,
+                'limit': limit,
             },
         });
     }

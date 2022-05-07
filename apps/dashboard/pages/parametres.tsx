@@ -1,7 +1,27 @@
-import React from 'react';
-import Topbar from '../components/topbar';
+import React, { useEffect, useState } from 'react';
+import Topbar from '../components/topbarNew';
+import router from 'next/router';
+import getAPIClient from '@shared/tools/apiClient';
+import { useCookies } from 'react-cookie';
 
 export default function Parametres() {
+    // const { query } = useRouter();
+    const [cookies] = useCookies(['API_TOKEN']);
+    const $apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, $setLoading] = useState(true);
+    const [$error, $setError] = useState('');
+    const [$parametres, $setParametres] = useState({});
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        // Todo: Parametre SMS
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="parametres" />

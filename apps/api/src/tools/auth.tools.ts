@@ -85,6 +85,7 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
             );
         }
     } catch (error: any) {
+        console.log(error);
         if (error.name === 'TokenExpiredError') {
             return next(
                 new ApiError({
@@ -120,25 +121,23 @@ export async function isAdmin(req: Request, res: Response, next: NextFunction) {
             );
         }
 
-        prisma.user
-            .findFirst({
-                where: {
-                    id: user.id,
-                },
-            })
-            .then((user: User & any) => {
-                if (user.isAdmin) {
-                    next();
-                } else {
-                    return next(
-                        new ApiError({
-                            status: 401,
-                            message: 'Access denied. Invalid token.',
-                            i18n: 'error.auth.invalid',
-                        }),
-                    );
-                }
-            });
+        const dbUser = await prisma.user.findFirst({
+            where: {
+                id: user.id,
+            },
+        });
+
+        if (dbUser?.isAdmin) {
+            next();
+        } else {
+            return next(
+                new ApiError({
+                    status: 403,
+                    message: 'Access denied. Not admin.',
+                    i18n: 'error.auth.forbidden',
+                }),
+            );
+        }
     } catch (error: any) {
         console.log(error);
         return next(
@@ -148,6 +147,35 @@ export async function isAdmin(req: Request, res: Response, next: NextFunction) {
                 i18n: 'error.auth.invalid',
             }),
         );
+    }
+}
+
+export async function parseAdmin(req: Request, res: Response, next: NextFunction) {
+    try {
+        const { user } = req;
+
+        if (!user) {
+            return next();
+        }
+
+        const dbUser = await prisma.user.findFirst({
+            where: {
+                id: user.id,
+            },
+        });
+
+        if (!dbUser?.isAdmin) {
+            return next();
+        }
+
+        req.user = {
+            ...user,
+            isAdmin: dbUser?.isAdmin,
+        };
+        return next();
+    } catch (error: any) {
+        console.log(error);
+        next();
     }
 }
 

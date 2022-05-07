@@ -4,8 +4,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
-          "nullable": false
+          "type": "number"
         },
         "name": {
           "type": "string"
@@ -23,10 +22,6 @@
         },
         "subscriptionLevel": {
           "type": "integer"
-        },
-        "icon": {
-          "type": "string",
-          "format": "binary"
         },
         "iconUrl": {
           "type": "string"

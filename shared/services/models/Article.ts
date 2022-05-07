@@ -3,33 +3,38 @@
 /* eslint-disable */
 
 export type Article = {
-    id: string;
+    id?: number;
     title: string;
     content: string;
     hidden: boolean;
-    createdAt: string;
-    updatedAt: string;
-    themeId: string;
-    recommendedArticleIds?: Array<string>;
+    createdAt?: string;
+    updatedAt?: string;
+    themeId: number;
+    recommendedArticleIds?: Array<number>;
     ArticleRecommandation?: Array<{
         Recommandation?: {
             Article?: {
-                id?: string;
+                id?: number;
                 title?: string;
                 content?: string;
                 createdAt?: string;
                 updatedAt?: string;
-                themeId?: string;
+                themeId?: number;
+                bannerUrl?: string;
+                headerUrl?: string;
+                Theme?: {
+                    id?: number;
+                    name?: string;
+                    iconUrl?: string;
+                };
             };
         };
     }>;
     Theme?: {
-        id?: string;
+        id?: number;
         name?: string;
         iconUrl?: string;
     };
-    banner?: Blob;
-    header?: Blob;
     bannerUrl?: string;
     headerUrl?: string;
 };

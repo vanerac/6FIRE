@@ -1,5 +1,5 @@
 import React from 'react';
-import Topbar from '../components/topbar';
+import Topbar from '../components/topbarNew';
 // import { CryptoHolding } from '@shared/services';
 // import apiClient from '@shared/tools/apiClient';
 

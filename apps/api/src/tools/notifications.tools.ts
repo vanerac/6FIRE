@@ -2,6 +2,10 @@ import * as aws from 'aws-sdk';
 import configuration from '../../configuration';
 import axios from 'axios';
 
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
 export async function AWSsendEmail({
     email,
     subject,
@@ -63,6 +67,21 @@ export async function AWSsendSMS({ phoneNumber, message }: { phoneNumber: string
 export async function sendSMS({ phoneNumber, message }: { phoneNumber: string; message: string }) {
     const route = 'http://api.smspartner.fr/v1/send';
     // between 3 and 11 characters
+
+    const smsConfig = await prisma.config.findFirst({
+        where: {
+            key: 'smsTrigger',
+        },
+    });
+    if (!smsConfig) {
+        throw new Error('SMS config not found');
+    }
+
+    const { value: smsTrigger } = smsConfig;
+    if (!smsTrigger) {
+        throw new Error('SMS disabled');
+    }
+
     const isValidName = configuration.SMS_SENDER.length >= 3 && configuration.SMS_SENDER.length <= 11;
     const body = {
         apiKey: configuration.SMS_API_KEY,

@@ -16,7 +16,7 @@ resource "aws_db_subnet_group" "main" {
   name        = var.rds_cluster_identifier
   description = "6fire-backend-vpc"
   subnet_ids  = aws_subnet.private.*.id
-  tags        = {
+  tags = {
     project = "6fire"
   }
 }
@@ -47,7 +47,7 @@ resource "aws_security_group" "rds_sg" {
 resource "aws_db_instance" "default" {
   deletion_protection     = false
   depends_on              = [aws_vpc.main, aws_db_subnet_group.main]
-  instance_class          = "db.t3.small"
+  instance_class          = "db.t3.large"
   engine                  = "postgres"
   engine_version          = "13.4"
   name                    = "db6fire"
@@ -56,15 +56,17 @@ resource "aws_db_instance" "default" {
   password                = var.rds_master_password
   port                    = 5432
   allocated_storage       = 15
-  skip_final_snapshot     = true
+  apply_immediately       = true
+  skip_final_snapshot     = false
+  max_allocated_storage   = 200
   publicly_accessible     = true
   storage_type            = "gp2"
   backup_retention_period = 0
-  vpc_security_group_ids  = [
+  vpc_security_group_ids = [
     aws_security_group.rds_sg.id,
   ]
   db_subnet_group_name = aws_db_subnet_group.main.name
-  tags                 = {
+  tags = {
     project = "6fire"
   }
 }

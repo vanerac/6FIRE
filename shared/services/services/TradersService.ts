@@ -12,10 +12,12 @@ export class TradersService {
 
     /**
      * Get curation
-     * @returns Trader Success
+     * @returns any Success
      * @throws ApiError
      */
-    public getTraderCuration(): CancelablePromise<Array<Trader>> {
+    public getTraderCuration(): CancelablePromise<Array<(Trader & {
+        isFollowing?: boolean;
+    })>> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/trader/curation',
@@ -41,6 +43,109 @@ export class TradersService {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/trader/curation',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Not Found`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Get a trader by ID
+     * @param id Trader ID
+     * @returns Trader Success
+     * @throws ApiError
+     */
+    public getTraderById(
+        id: number,
+    ): CancelablePromise<Trader> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/trader/{id}',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Bad Request`,
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Not Found`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Delete a trader by ID
+     * @param id Trader ID
+     * @returns void
+     * @throws ApiError
+     */
+    public deleteTraderById(
+        id: number,
+    ): CancelablePromise<void> {
+        return this.httpRequest.request({
+            method: 'DELETE',
+            url: '/trader/{id}',
+            path: {
+                'id': id,
+            },
+            errors: {
+                400: `Bad Request`,
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Not Found`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Update a trader by ID
+     * @param id Trader ID
+     * @param requestBody
+     * @returns Trader Success
+     * @throws ApiError
+     */
+    public updateTraderById(
+        id: number,
+        requestBody?: Trader,
+    ): CancelablePromise<Trader> {
+        return this.httpRequest.request({
+            method: 'PUT',
+            url: '/trader/{id}',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Not Found`,
+                500: `Internal Server Error`,
+            },
+        });
+    }
+
+    /**
+     * Create a new trader
+     * @param requestBody
+     * @returns Trader Success
+     * @throws ApiError
+     */
+    public createTrader(
+        requestBody?: Trader,
+    ): CancelablePromise<Trader> {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/trader',
             body: requestBody,
             mediaType: 'application/json',
             errors: {

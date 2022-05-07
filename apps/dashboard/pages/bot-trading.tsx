@@ -1,122 +1,98 @@
-import React from 'react';
-import Topbar from '../components/topbar';
+import React, { useEffect, useState } from 'react';
+import Topbar from '../components/topbarNew';
+import getAPIClient from '@shared/tools/apiClient';
+import router from 'next/router';
+import { Trader } from '@shared/services';
+import { useCookies } from 'react-cookie';
+import Sidebar from '../components/sidebarNew';
+import DataTable from '../components/data-table';
 
 export default function BotTrading() {
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$curation, setCuration] = useState<(Trader & { isFollowing?: boolean })[]>([]);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.traders.getTraderCuration().then(
+            (res) => {
+                setCuration(res);
+                console.log(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
+
+    const deleteTrader = (traderId: number) => {
+        apiClient.traders.deleteTraderById(traderId).then(
+            () => {
+                alert('Trader supprimé');
+                setCuration($curation.filter((trader) => trader.id !== traderId));
+            },
+            (error) => {
+                alert('Erreur lors de la suppression du trader');
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+            },
+        );
+    };
+
     return (
-        <>
-            <input type="hidden" id="anPageName" name="page" value="bot-trading" />
-            <div className="container-center-horizontal">
-                <div className="bot-trading screen">
-                    <div className="analytics-FwUAid poppins-semibold-semi-bold-mirage-24px">Bot Trading</div>
-                    <Topbar />
-                    <div className="buttons-btn-text-icon-FwUAid">
-                        <div className="type-aOpqPg"></div>
-                        <div className="groupe-393-aOpqPg">
-                            <div className="text-MaxQYv poppins-normal-white-14px">Sauvegarder les modifications</div>
+        <div>
+            <Topbar />
+            <div className="inner-page-setup">
+                <Sidebar />
+                <div className="inner-wrapper">
+                    <div className="header">
+                        <h2 className="title">Themes</h2>
+                        {/*<button className="" id="export_data">*/}
+                        {/*    <i className="fa fa-upload" /> <span>Export CSV</span>*/}
+                        {/*</button>*/}
+                    </div>
+                    <div className="table-header">
+                        <div>
+                            <a href={'/bot-trading-creation'}>
+                                <button className={'bg_green'}>Ajouter un trader</button>
+                            </a>
                         </div>
                     </div>
-                    <div className="grid-table-FwUAid">
-                        <div className="groupe-455-j4JENI">
-                            <div className="rectangle-616-unughq"></div>
-                            <div className="rectangle-618-unughq"></div>
-                            <div className="rectangle-619-unughq"></div>
-                            <div className="rectangle-621-unughq"></div>
-                            <div className="rectangle-622-unughq"></div>
-                            <div className="rectangle-623-unughq"></div>
-                            <div className="rectangle-624-unughq"></div>
-                        </div>
-                        <div className="grid-table-j4JENI">
-                            <div className="name-oxtynY poppins-medium-mirage-12px">Classement</div>
-                            <div className="name-3W4ybs poppins-medium-mirage-12px">Trader</div>
-                            <div className="name-jYCPON poppins-medium-mirage-12px">Action</div>
-                        </div>
-                        <div className="row-1-j4JENI">
-                            <div className="rectangle-617-Eerl4i"></div>
-                            <div className="name-Eerl4i poppins-medium-tundora-10px">1</div>
-                            <div className="name-xmkh69 poppins-medium-tundora-10px">Cjuidofi</div>
-                            <img className="font-awsome-pen-Eerl4i" src="img/fontawsome--pen--12@1x.png" />
-                            <img className="font-awsome-times-Eerl4i" src="img/fontawsome--times--10@1x.png" />
-                        </div>
-                    </div>
-                    <div className="search-FwUAid">
-                        <div className="rectangle-625-QBo7gi"></div>
-                        <div className="name-QBo7gi poppins-medium-mirage-10px">Rechercher…</div>
-                    </div>
-                    <div className="sidebar-FwUAid">
-                        <div className="shape-B9DOxG"></div>
-                        <div className="settings-B9DOxG">
-                            <div className="name-kLexVW poppins-medium-mirage-14px">Settings</div>
-                            <div className="icons-navigation-icon-12-states-kLexVW">
-                                <img className="ic_setting-2T5xZq" src="img/ic-setting-11@1x.png" />
-                            </div>
-                        </div>
-                        <div className="broker-B9DOxG">
-                            <div className="name-hDxx3B poppins-medium-mirage-14px">Broker</div>
-                            <img className="font-awsome-handshake-hDxx3B" src="img/fontawsome--handshake--10@1x.png" />
-                        </div>
-                        <div className="crypto-wallet-B9DOxG">
-                            <div className="name-8vquyR poppins-medium-mirage-14px">Crypto Wallet</div>
-                            <img className="font-awsome-bitcoin-8vquyR" src="img/fontawsome--bitcoin--11@1x.png" />
-                        </div>
-                        <div className="trading-crypto-B9DOxG">
-                            <div className="name-T3zVcZ poppins-medium-mirage-14px">Trading &amp; Crypto</div>
-                            <img className="font-awsome-pen-T3zVcZ" src="img/fontawsome--pen--10@1x.png" />
-                        </div>
-                        <div className="thmes-articles-B9DOxG">
-                            <div className="name-1Babjp poppins-medium-mirage-14px">Thèmes articles</div>
-                            <div className="icons-navigation-icon-12-states-1Babjp">
-                                <img
-                                    className="font-awsome-bookmark-sVjRdd"
-                                    src="img/fontawsome--bookmark--10@1x.png"
-                                />
-                            </div>
-                        </div>
-                        <div className="customers-B9DOxG">
-                            <div className="name-bXfxuH poppins-medium-mirage-14px">Utilisateurs</div>
-                            <div className="icons-navigation-icon-12-states-bXfxuH">
-                                <img className="ic_users-KSFfvU" src="img/ic-users-11@1x.png" />
-                            </div>
-                        </div>
-                        <div className="home-B9DOxG">
-                            <div className="name-hsgSHW poppins-medium-mirage-14px">Home</div>
-                            <div className="icons-navigation-icon-12-states-hsgSHW">
-                                <img className="ic_home-1uxGiw" src="img/ic-home-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="articles-B9DOxG">
-                            <div className="name-ug6vRe poppins-medium-mirage-14px">Articles</div>
-                            <div className="icons-navigation-icon-12-states-ug6vRe">
-                                <img className="ic_invoice-sCEsBZ" src="img/ic-invoice-10@1x.png" />
-                            </div>
-                            <img
-                                className="icon-ionic-ios-arrow-down-ug6vRe"
-                                src="img/icon-ionic-ios-arrow-down-10@1x.png"
-                            />
-                        </div>
-                        <div className="bot-trading-B9DOxG">
-                            <img className="frame-IzSggY" src="img/frame-12@1x.png" />
-                            <div className="line-IzSggY"></div>
-                            <div className="name-IzSggY poppins-medium-blue-ribbon-14px">Bot Trading</div>
-                            <img className="font-awsome-robot-IzSggY" src="img/fontawsome--robot--9@1x.png" />
-                        </div>
-                        <div className="pays-B9DOxG">
-                            <div className="name-KegPus poppins-medium-mirage-14px">Pays</div>
-                            <img
-                                className="font-awsome-globe-europe-KegPus"
-                                src="img/fontawsome--globe-europe--10@1x.png"
-                            />
-                        </div>
-                        <div className="abonnement-B9DOxG">
-                            <div className="name-Lc6OK0 poppins-medium-mirage-14px">Abonnement</div>
-                            <img className="icon-material-payment-Lc6OK0" src="img/icon-material-payment-10@1x.png" />
-                            <img
-                                className="icon-ionic-ios-arrow-down-Lc6OK0"
-                                src="img/icon-ionic-ios-arrow-down-10@1x.png"
-                            />
-                        </div>
-                    </div>
+                    <DataTable
+                        headers={[
+                            {
+                                key: 'id',
+                                display: 'ID',
+                            },
+                            {
+                                key: 'name',
+                                display: 'Nom',
+                            },
+                            {
+                                key: 'clientId',
+                                display: 'Trader Id',
+                            },
+                        ]}
+                        data={$curation.map((trader) => ({
+                            id: trader.id?.toString() ?? '?',
+                            name: trader.name ?? '?',
+                            clientId: trader.clientId ?? '?',
+                            // visible: theme.hidden ? 'false' : 'true',
+                        }))}
+                        editCallback={(id) => router.replace(`/bot-trading-creation?id=${id}`)}
+                        deleteCallback={(id) => deleteTrader(+id)}
+                    />
                 </div>
             </div>
-        </>
+        </div>
     );
 }

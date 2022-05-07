@@ -2627,10 +2627,30 @@ body{
   background: linear-gradient(180deg, #000000 0%, #161a1a 100%);
   min-height: 500px;
   padding: 30px 5%;
+  position: relative;
+  margin-top: -30px;
+  border-radius: 10px;
 }
 .author_box{
   display: flex;
   align-items: center;
+}
+.author-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin-right: 15px;
+}
+.author-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .author_box span{
     position: relative !important;
@@ -2650,11 +2670,25 @@ body{
 }
 .article_text{
   color: #fff;
+  line-height: 1.5;
+}
+.article_text span {
+  color: #fff !important;
+}
+.article_text ul li span {
+  color: #fff !important;
+}
+.article_text p span {
+  display: inline-block;
+  background-color: transparent !important;
+  color: #fff !important;
 }
 .article_content .imgbox img{
   display: block !important;
   margin: 30px auto !important;
   height: calc(260px + (450 - 260) * ((100vw - 320px) / (1920 - 320))) !important;
+  width: 100% !important;
+  object-fit: contain;
 }
 
 /* More Article */

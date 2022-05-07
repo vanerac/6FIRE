@@ -1,9 +1,7 @@
 import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
-import path from 'path';
-import configuration from '../../../configuration';
-import * as fs from 'fs';
+import { getSubscriptionLevel } from '../../tools/subscription.tool';
 
 const prisma = new PrismaClient();
 
@@ -13,31 +11,16 @@ export default class ArticleController implements CRUDController {
             const { id: userId, isAdmin } = req.user;
             const { page = 0, limit = 20 } = req.query;
 
-            let where = {};
-            if (!isAdmin) {
-                const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                    where: {
-                        userId,
-                    },
-                    select: {
-                        Subscription: {
-                            select: {
-                                level: true,
-                            },
-                        },
-                    },
-                });
-                where = {
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
+            const args: any = {
+                where: {
                     hidden: false,
                     Theme: {
                         subscriptionLevel: {
-                            lte: userSubscriptionLevel?.Subscription.level,
+                            lte: userSubscriptionLevel,
                         },
                     },
-                };
-            }
-            const articles = await prisma.article.findMany({
-                where: where,
+                },
                 take: +limit,
                 skip: Math.max(0, +page - 1) * +limit,
                 select: {
@@ -47,6 +30,8 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    bannerUrl: true,
+                    headerUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -54,7 +39,15 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
-            });
+                orderBy: {
+                    createdAt: 'desc',
+                },
+            };
+            if (isAdmin) {
+                delete args.where;
+                delete args.hidden;
+            }
+            const articles = await prisma.article.findMany(args);
             res.status(200).json(articles);
         } catch (error) {
             next(error);
@@ -65,19 +58,8 @@ export default class ArticleController implements CRUDController {
         try {
             const { id: articleId } = req.params;
             const { id: userId, isAdmin } = req.user;
-            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                where: {
-                    userId,
-                },
-                select: {
-                    Subscription: {
-                        select: {
-                            level: true,
-                        },
-                    },
-                },
-            });
-            if (!userSubscriptionLevel) {
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
+            if (!userSubscriptionLevel && !isAdmin) {
                 next(
                     new ApiError({
                         message: 'User subscription level not found',
@@ -87,30 +69,23 @@ export default class ArticleController implements CRUDController {
                 );
             }
 
-            const where = {
+            let where = {
                 id: +articleId,
-                hidden: undefined,
-                Theme: undefined,
-            };
-            if (!isAdmin) {
-                where.hidden = false;
-                where.Theme = {
+                hidden: false,
+                Theme: {
                     subscriptionLevel: {
-                        lte: userSubscriptionLevel?.Subscription.level,
+                        lte: userSubscriptionLevel,
                     },
-                };
+                },
+            };
+            if (isAdmin) {
+                where = {
+                    id: +articleId,
+                } as any;
             }
 
             const article = await prisma.article.findFirst({
-                where: {
-                    id: +articleId,
-                    hidden: false,
-                    Theme: {
-                        subscriptionLevel: {
-                            lte: userSubscriptionLevel?.Subscription.level,
-                        },
-                    },
-                },
+                where,
                 select: {
                     id: true,
                     title: true,
@@ -118,6 +93,277 @@ export default class ArticleController implements CRUDController {
                     createdAt: true,
                     updatedAt: true,
                     themeId: true,
+                    headerUrl: true,
+                    bannerUrl: true,
+                    Theme: {
+                        select: {
+                            name: true,
+                            iconUrl: true,
+                        },
+                    },
+                    ArticleRecommandation: {
+                        // where: {
+                        //     Recommandation: {
+                        //         Article: {
+                        //             Theme: {
+                        //                 subscriptionLevel: {
+                        //                     lte: userSubscriptionLevel,
+                        //                 },
+                        //             },
+                        //         },
+                        //     },
+                        // },
+                        select: {
+                            // id: false,
+                            // recommandedArticleId: false,
+                            Recommandation: {
+                                select: {
+                                    Article: {
+                                        select: {
+                                            id: true,
+                                            title: true,
+                                            content: true,
+                                            createdAt: true,
+                                            updatedAt: true,
+                                            themeId: true,
+                                            bannerUrl: true,
+                                            headerUrl: true,
+                                            Theme: {
+                                                select: {
+                                                    name: true,
+                                                    iconUrl: true,
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+            if (!article) {
+                return next(
+                    new ApiError({
+                        message: 'Article not found',
+                        status: 404,
+                        i18n: 'error.article.not_found',
+                    }),
+                );
+            }
+            res.status(200).json(article);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async create(req: Request, res: Response, next: NextFunction) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+
+        try {
+            const {
+                title,
+                content,
+                themeId,
+                recommendedArticleIds,
+                description,
+                salaireMoy,
+                tarificationMoy,
+                outils,
+                creation,
+                utilisateurs,
+                necessiteAudicance,
+                financement,
+                bannerUrl,
+                headerUrl,
+            } = req.body;
+            const article = await prisma.article.create({
+                data: {
+                    title,
+                    content,
+                    themeId: +themeId,
+                    hidden: false,
+                    bannerUrl,
+                    headerUrl,
+                    description,
+                    salaireMoy,
+                    tarificationMoy,
+                    outils,
+                    creation,
+                    utilisateurs,
+                    necessiteAudicance,
+                    financement,
+                },
+            });
+            if (recommendedArticleIds.length > 0) {
+                await Promise.all(
+                    recommendedArticleIds.map(async (recommendedArticleId) => {
+                        let recommandedId = recommendedArticleId;
+                        const recommendationId = await prisma.recommandation.findFirst({
+                            where: {
+                                articleId: +recommendedArticleId,
+                            },
+                        });
+                        if (!recommendationId) {
+                            const r = await prisma.recommandation.create({
+                                data: {
+                                    articleId: +recommendedArticleId,
+                                },
+                                select: {
+                                    id: true,
+                                },
+                            });
+                            recommandedId = r.id;
+                        }
+                        await prisma.articleRecommandation.create({
+                            data: {
+                                recommandedArticleId: recommandedId,
+                                referenceArticleId: article.id,
+                            },
+                        });
+                    }),
+                );
+            }
+            res.status(200).json(article);
+        } catch (error) {
+            console.error(error);
+            next(error);
+        }
+    }
+
+    static async update(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id: articleId } = req.params;
+            const {
+                title,
+                content,
+                themeId,
+                recommendedArticleIds,
+                description,
+                salaireMoy,
+                tarificationMoy,
+                outils,
+                creation,
+                utilisateurs,
+                necessiteAudicance,
+                bannerUrl,
+                headerUrl,
+                financement,
+            } = req.body;
+            const article = await prisma.article.update({
+                where: {
+                    id: +articleId,
+                },
+                data: {
+                    title,
+                    content,
+                    themeId,
+                    description,
+                    salaireMoy,
+                    tarificationMoy,
+                    outils,
+                    creation,
+                    utilisateurs,
+                    necessiteAudicance,
+                    bannerUrl,
+                    headerUrl,
+                    financement,
+                },
+            });
+            if (recommendedArticleIds.length > 0) {
+                await Promise.all(
+                    recommendedArticleIds.map(async (recommendedArticleId) => {
+                        let recommandedId = recommendedArticleId;
+                        const recommendationId = await prisma.recommandation.findFirst({
+                            where: {
+                                articleId: +recommendedArticleId,
+                            },
+                        });
+                        if (!recommendationId) {
+                            const r = await prisma.recommandation.create({
+                                data: {
+                                    articleId: +recommendedArticleId,
+                                },
+                                select: {
+                                    id: true,
+                                },
+                            });
+                            recommandedId = r.id;
+                        }
+                        await prisma.articleRecommandation.create({
+                            data: {
+                                recommandedArticleId: recommandedId,
+                                referenceArticleId: article.id,
+                            },
+                        });
+                    }),
+                );
+            }
+            res.status(200).json(article);
+        } catch (error) {
+            console.log(error);
+            next(error);
+        }
+    }
+
+    static async delete(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id: articleId } = req.params;
+            const article = await prisma.article.delete({
+                where: {
+                    id: +articleId,
+                },
+            });
+
+            // const [$http, $base, $public, headerPath] = article.headerUrl.split('/');
+            // const [$http2, $base2, $public2, bannerPath] = article.bannerUrl.split('/');
+            // fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
+            // fs.unlinkSync(path.join(configuration.UPLOAD_DIR, bannerPath));
+
+            res.status(200).json(article);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async getByTheme(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id: themeId } = req.params;
+            const { page = 0, limit = 20 } = req.query;
+            const { id: userId, isAdmin } = req.user;
+
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
+            const where = {
+                themeId: +themeId,
+                Theme: {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
+                    },
+                },
+                hidden: false,
+            };
+            if (isAdmin) {
+                where.hidden = false;
+                where.Theme = {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
+                    },
+                };
+            }
+            const args: any = {
+                where,
+                skip: Math.max(0, +page - 1) * +limit,
+                take: +limit,
+                select: {
+                    id: true,
+                    title: true,
+                    content: true,
+                    createdAt: true,
+                    updatedAt: true,
+                    themeId: true,
+                    bannerUrl: true,
+                    headerUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -145,110 +391,19 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
-            });
-            if (!article) {
-                next(
-                    new ApiError({
-                        message: 'Article not found',
-                        status: 404,
-                        i18n: 'error.article.not_found',
-                    }),
-                );
+                orderBy: {
+                    createdAt: 'desc',
+                },
+            };
+            if (isAdmin) {
+                delete args.where.Theme;
+                delete args.where.hidden;
             }
-            res.status(200).json(article);
-        } catch (error) {
-            next(error);
-        }
-    }
 
-    static async create(req: Request, res: Response, next: NextFunction) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        const { banner, header } = req.files;
-        console.log(banner, header);
-        try {
-            const { title, content, themeId, recommendedArticleIds } = req.body;
-            const article = await prisma.article.create({
-                data: {
-                    title,
-                    content,
-                    themeId: +themeId,
-                    hidden: false,
-                    bannerUrl: banner ? path.join(configuration.BACKEND_URL, 'public/', banner[0].filename) : null,
-                    headerUrl: header ? path.join(configuration.BACKEND_URL, 'public/', header[0].filename) : null,
-                },
-            });
-            if (recommendedArticleIds?.length) {
-                await Promise.all(
-                    recommendedArticleIds.map(async (recommendedArticleId) => {
-                        const recommandationId = await prisma.recommandation.create({
-                            data: {
-                                articleId: +recommendedArticleId,
-                            },
-                        });
-                        await prisma.articleRecommandation.create({
-                            data: {
-                                recommandedArticleId: +recommandationId.id,
-                                referenceArticleId: article.id,
-                            },
-                        });
-                    }),
-                );
-            }
-            res.status(200).json(article);
-        } catch (error) {
-            console.error(error);
-            next(error);
-        }
-    }
-
-    static async update(req: Request, res: Response, next: NextFunction) {
-        try {
-            const { id: articleId } = req.params;
-            const { title, content, themeId, recommendedArticleIds } = req.body;
-            const article = await prisma.article.update({
-                where: {
-                    id: +articleId,
-                },
-                data: {
-                    title,
-                    content,
-                    themeId,
-                },
-            });
-            if (recommendedArticleIds.length > 0) {
-                await Promise.all(
-                    recommendedArticleIds.map(async (recommendedArticleId) => {
-                        await prisma.articleRecommandation.create({
-                            data: {
-                                recommandedArticleId: recommendedArticleId,
-                                referenceArticleId: article.id,
-                            },
-                        });
-                    }),
-                );
-            }
-            res.status(200).json(article);
-        } catch (error) {
-            next(error);
-        }
-    }
-
-    static async delete(req: Request, res: Response, next: NextFunction) {
-        try {
-            const { id: articleId } = req.params;
-            const article = await prisma.article.delete({
-                where: {
-                    id: +articleId,
-                },
-            });
-
-            const [$http, $base, $public, headerPath] = article.headerUrl.split('/');
-            const [$http2, $base2, $public2, bannerPath] = article.bannerUrl.split('/');
-            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
-            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, bannerPath));
-
-            res.status(200).json(article);
+            console.log(args);
+            const articles = await prisma.article.findMany(args);
+            console.log(articles);
+            res.status(200).json(articles);
         } catch (error) {
             next(error);
         }

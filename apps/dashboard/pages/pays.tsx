@@ -1,7 +1,37 @@
-import React from 'react';
-import Topbar from '../components/topbar';
+import React, { useEffect, useState } from 'react';
+import Topbar from '../components/topbarNew';
+import getAPIClient from '@shared/tools/apiClient';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
+import { Country } from '@shared/services';
 
 export default function Pays() {
+    // const { query } = useRouter();
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$countries, setCountries] = useState<Country[]>([]);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.country.getCountryList().then(
+            (res) => {
+                setCountries(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
     return (
         <>
             <input type="hidden" id="anPageName" name="page" value="pays" />

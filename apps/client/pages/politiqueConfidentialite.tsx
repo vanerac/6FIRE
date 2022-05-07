@@ -2,10 +2,14 @@ import type { NextPage } from 'next';
 // import router from 'next/router';
 import Footer from './components/footer';
 import Header from './components/header';
+import Head from 'next/head';
 
 const PolitiqueConfidentialite: NextPage = (props: any) => {
     return (
         <div>
+            <Head>
+                <title>Politique de confidentialité - Crypto Trader</title>
+            </Head>
             <input type="hidden" id="anPageName" name="page" value="homepage-1" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={true} />
 

@@ -10,11 +10,14 @@ router.get('/:id', isAdmin, UserController.getOne);
 router.put('/:id', isAdmin, UserController.update);
 router.delete('/:id', isAdmin, UserController.delete);
 
-router.get('/me', UserController.me);
+// router.get('/me', UserController.me);
 router.get('/me/getLinkingCode', UserController.getLinkingCode);
+router.get('/me/infos', UserController.getInfos);
+router.put('/me/infos', UserController.updateInfos);
+router.get('/me/subscription', UserController.getSubscriptions);
 
-router.get('/:id/subscription', isAdmin, UserController.getSubscription);
-router.put('/:id/subscription', isAdmin, UserController.setSubscription);
-router.delete('/:id/subscription', isAdmin, UserController.removeSubscription);
+router.get('id/:id/subscription', isAdmin, UserController.getSubscription);
+router.put('id/:id/subscription', isAdmin, UserController.setSubscription);
+router.delete('id/:id/subscription', isAdmin, UserController.removeSubscription);
 
 export default router;

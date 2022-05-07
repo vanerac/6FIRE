@@ -336,6 +336,7 @@
         "content": {
           "application/json": {
             "schema": {
+              "type": "object",
               "properties": {
                 "oldPassword": {
                   "type": "string"
@@ -372,6 +373,71 @@
           "description": "Internal Server Error"
         }
       }
+    }
+  },
+  "loginAdmin": {
+    "post": {
+      "tags": [
+        "Auth"
+      ],
+      "description": "Login",
+      "operationId": "loginAdmin",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "email",
+                "password"
+              ]
+            }
+          }
+        },
+        "description": "Login",
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "token"
+                ]
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "422": {
+          "description": "Validation Error"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      },
+      "tags": [
+        "Auth"
+      ],
+      "summary": "LoginAdmin"
     }
   }
 }

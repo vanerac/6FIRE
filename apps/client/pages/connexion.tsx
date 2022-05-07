@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 import router from 'next/router';
 // import router from 'next/router';
 import { useEffect, useState } from 'react';
@@ -11,6 +11,20 @@ import LoginPopup from './components/login';
 import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 // import translate from '@shared/translation'
+import Head from 'next/head';
+import Script from 'next/script';
+import IndexHeader from './components/header_inext';
+
+/* scroll off */
+/* if (typeof window !== 'undefined') {
+    $('.scroll_off').on('click', function () {
+        if (!$('body').hasClass('overflo-y-hidden')) {
+            $('body').addClass('overflo-y-hidden');
+        } else {
+            $('body').removeClass('overflo-y-hidden');
+        }
+    });
+} */
 
 const Connexion: NextPage = () => {
     const [userName, setUserName] = useState('');
@@ -28,15 +42,21 @@ const Connexion: NextPage = () => {
     const [errorCgu, setErrorCgu] = useState('');
     const [error, setError] = useState('');
     const [cookies, setCookie] = useCookies(['API_TOKEN']);
-    let apiClient = getAPIClient(cookies['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     useEffect(() => {
-        if (!cookies['API_TOKEN']) {
+        if (cookies['API_TOKEN']) {
             console.log('no token');
-            router.replace('/');
+            router.replace('/pricePage');
             return;
         }
-        apiClient = getAPIClient(cookies['API_TOKEN']);
+    }, [cookies]);
+    useEffect(() => {
+        if (cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/pricePage');
+            return;
+        }
     }, []);
 
     const handleForm = () => {
@@ -47,9 +67,9 @@ const Connexion: NextPage = () => {
         $('.nav-item-wrap').toggleClass('open');
     };
 
-    if (cookies['API_TOKEN']) {
-        router.push('/articlesPage');
-    }
+    // if (cookies['API_TOKEN']) {
+    //     router.push('/accueil');
+    // }
 
     const create_account = () => {
         let isValid = true;
@@ -116,7 +136,10 @@ const Connexion: NextPage = () => {
                 console.log(response);
                 if (response.token) {
                     setCookie('API_TOKEN', response.token, { path: '/' });
-                    router.push('/articlesPage');
+                    setCookie('API_TOKEN', response.token, { domain: 'localhost' });
+                    setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
+                    setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
+                    router.push('/accueil');
                 }
             })
             .catch((error: ApiError) => {
@@ -133,12 +156,24 @@ const Connexion: NextPage = () => {
 
     return (
         <div>
+            <Head>
+                <title>Connexion</title>
+                <link href="https://homologation-payment.cdn.payline.com/cdn/styles/widget-min.css" rel="stylesheet" />
+            </Head>
+            <Script src="https://homologation-payment.cdn.payline.com/cdn/scripts/widget-min.js" />
             <LoginPopup />
+            <IndexHeader />
             <input type="hidden" id="anPageName" name="page" value="register-web" />
             <div className="register-web screen">
+                <div
+                    id="PaylineWidget"
+                    data-token="the token obtained in doWebPayment Response"
+                    data-template="column"
+                    data-embeddedredirectionallowed="false"
+                />
                 <div className="background-WxaGAS"></div>
                 <div className="logo-WxaGAS">
-                    <div className="effect-ReYaAa">
+                    <div onClick={() => router.push('/')} style={{ cursor: 'pointer' }} className="effect-ReYaAa">
                         <Image layout="fill" src="/img/effect-1@1x.png" />
                     </div>
                 </div>
@@ -171,11 +206,18 @@ const Connexion: NextPage = () => {
                         <span className="span0-qb1m9I lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
                         </span>
-                        <span className="span1-qb1m9I lato-normal-white-12px">Conditions Générales d’Utilisation</span>
+
+                        <span onClick={() => router.push('/cgu')} className="span1-qb1m9I lato-normal-white-12px">
+                            Conditions Générales d’Utilisation{' '}
+                        </span>
                         <span className="span2-qb1m9I lato-normal-white-12px">
                             et consentez au traitement de vos données, conformément à la{' '}
                         </span>
-                        <span className="span3-qb1m9I lato-normal-white-12px">Politique de confidentialité</span>
+                        <span
+                            onClick={() => router.push('/politiqueConfidentialite')}
+                            className="span3-qb1m9I lato-normal-white-12px">
+                            Politique de confidentialité
+                        </span>
                         <span className="span4-qb1m9I lato-normal-white-12px"> de 6FIRE.</span>
                         <br />
                         <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
@@ -294,9 +336,15 @@ const Connexion: NextPage = () => {
                     </a>
                 </div>
                 <div className="dj-inscrit-connectez-vous-WxaGAS">
-                    <Link href="/">
-                        <a style={{ color: 'white' }}>Déjà inscrit ? Connectez vous</a>
-                    </Link>
+                    {/* <Link href="/"> */}
+                    <a
+                        onClick={() => {
+                            handleForm();
+                        }}
+                        style={{ color: 'white', cursor: 'pointer' }}>
+                        Déjà inscrit ? Connectez vous
+                    </a>
+                    {/* </Link> */}
                 </div>
                 <div className="numro-de-tlphone-Ae6KpX">
                     <div className="ligne-1-Ay5Yag">
@@ -320,23 +368,6 @@ const Connexion: NextPage = () => {
                         type="text"
                     />
                 </div>
-                <div className="connexion-WxaGAS">
-                    <div className="icon-ionic-ios-menu-zebl9P">
-                        <div className="connexion-zebl9P">
-                            <div className="club-premium-RhkVlt lato-normal-white-14px">Club Privé</div>
-                        </div>
-                    </div>
-                </div>
-                {/* Hamburger icon style */}
-                <input id="menu__toggle" type="checkbox" />
-                <label
-                    onClick={() => {
-                        handleForm();
-                    }}
-                    className="menu__btn"
-                    htmlFor="menu__toggle">
-                    <span></span>
-                </label>
                 {/* Hamburger icon END */}
 
                 {/* Hamburger mobile */}
@@ -386,11 +417,17 @@ const Connexion: NextPage = () => {
                         <span className="span0-J4Md4x lato-normal-white-12px">
                             En créant un compte, vous acceptez les{' '}
                         </span>
-                        <span className="span1-J4Md4x lato-normal-white-12px">Conditions Générales d’Utilisation</span>
+                        <span
+                            onClick={() => router.push('/politiqueConfidentialite')}
+                            className="span1-J4Md4x lato-normal-white-12px">
+                            Conditions Générales d’Utilisation{' '}
+                        </span>
                         <span className="span2-J4Md4x lato-normal-white-12px">
                             et consentez au traitement de vos données, conformément à la{' '}
                         </span>
-                        <span className="span3-J4Md4x lato-normal-white-12px">Politique de confidentialité</span>
+                        <span onClick={() => router.push('/cgu')} className="span3-J4Md4x lato-normal-white-12px">
+                            Politique de confidentialité
+                        </span>
                         <span className="span4-J4Md4x lato-normal-white-12px"> de 6FIRE.</span>
                         <div className="lato-normal-white-12px" style={{ color: 'red', margin: '5px' }}>
                             {errorCgu}
@@ -506,23 +543,13 @@ const Connexion: NextPage = () => {
                         <div className="crer-un-compte-1QO1gL">Créer un compte</div>
                     </div>
                 </div>
-                <div className="dj-inscrit-connectez-vous-qfTrnm">Déjà inscrit ? Connectez vous</div>
-                <div className="connexion-qfTrnm">
-                    <div className="connexion-1aVEbJ">
-                        <div className="club-premium-MoQQxl lato-normal-white-14px">Club Privé</div>
-                    </div>
-                </div>
-                {/* Hamburger icon style */}
-                <input id="menu__toggle" type="checkbox" />
-                <label
+                <div
                     onClick={() => {
                         handleForm();
                     }}
-                    className="menu__btn"
-                    htmlFor="menu__toggle">
-                    <span></span>
-                </label>
-                {/* Hamburger icon END */}
+                    className="dj-inscrit-connectez-vous-qfTrnm">
+                    Déjà inscrit ? Connectez vous
+                </div>
 
                 {/* Hamburger mobile */}
                 <div

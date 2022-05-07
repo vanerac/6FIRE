@@ -1,4 +1,3 @@
-import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import Routes from './entities/routes';
 import * as OpenApiValidator from 'express-openapi-validator';
@@ -13,6 +12,9 @@ import { ApiError } from './types';
 import multer from 'multer';
 
 import { v4 as uuid } from 'uuid';
+import cors from 'cors';
+import * as fs from 'fs';
+import ngrok from 'ngrok';
 
 declare module 'express' {
     interface Request {
@@ -53,26 +55,48 @@ const prisma = new PrismaClient();
 
 // Parser * Loggers
 app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+app.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
+    if (req.originalUrl.includes('/webhook/stripe')) {
+        next();
+    } else {
+        express.json({ limit: '50mb' })(req, res, next);
+    }
+});
+
+app.use(express.urlencoded({ extended: true, limit: '250mb', parameterLimit: 1000000 }));
 app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(`${req.method} ${req.path} ${req.secure ? 'https' : 'http'}`);
     next();
 });
 
-// CORS
+// CORS;
 app.use(
     cors({
-        // origin: '*',
-        // credentials: true,
-        // allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'senty-trace'],
-        // methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
+        origin: '*',
+        credentials: true,
+        allowedHeaders: [
+            'Origin',
+            'X-Api-Key',
+            'X-Requested-With',
+            'Content-Type',
+            'Authorization',
+            'Accept',
+            'sentry-trace',
+        ],
+        methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
     }),
 );
 
+// app.use(function (req, res, next) {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     next();
+// });
 // Format error response
 app.use((err, req, res, $next) => {
     // format error
+    console.log(err);
     if (!(err instanceof ApiError)) {
         Sentry.captureException(err);
     }
@@ -97,6 +121,7 @@ app.use(
         //     onError: console.error, // todo: temporary solution
         // },
         validateFormats: 'full',
+        ignorePaths: /.*upload/,
         // ignoreUndocumented: true,
         operationHandlers: false,
         fileUploader: {
@@ -137,9 +162,31 @@ app.get('/', (req, res) => {
     });
 });
 
+fs.stat(configuration.UPLOAD_DIR, (err) => {
+    if (err) {
+        fs.mkdir(configuration.UPLOAD_DIR, (err) => {
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+        });
+    } else {
+        console.log('FS already exists');
+        fs.readdir(configuration.UPLOAD_DIR, (err, files) => {
+            // print filename
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+            console.log(files);
+        });
+    }
+});
+
 app.use('/public', express.static(configuration.UPLOAD_DIR));
 
 app.use((err, req, res, $next) => {
+    console.log(err);
     if (!(err instanceof ApiError)) {
         Sentry.captureException(err);
     }
@@ -151,9 +198,51 @@ app.use((err, req, res, $next) => {
     });
 });
 
-app.listen(3333, () => {
+app.listen(3333, async () => {
     console.log('🚀 Server started on port 3333!');
+    if (process.env.NODE_ENV !== 'production') configuration.BACKEND_URL = `${await ngrok.connect(3333)}/api`;
 });
+
+// prisma.subscription.create({
+//     data: {
+//         hidden: true,
+//         name: 'test',
+//         description: 'test',
+//         level: 1,
+//         refreshRate: 1,
+//         subscriptionType: 'SUBSCRIPTION',
+//         price: 1,
+//     },
+// });
+
+// upsert
+prisma.subscription
+    .upsert({
+        where: {
+            id: 1,
+        },
+        create: {
+            hidden: false,
+            name: 'test',
+            description: 'test',
+            level: 1,
+            refreshRate: 1,
+            subscriptionType: 'SUBSCRIPTION',
+            price: 1,
+        },
+        update: {
+            hidden: false,
+            name: 'test',
+            description: 'test',
+            level: 1,
+            refreshRate: 1,
+            subscriptionType: 'SUBSCRIPTION',
+            price: 1000,
+        },
+    })
+    .then((result) => {
+        console.log(result);
+    });
 
 process.on('unhandledRejection', (reason, p) => {
     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);

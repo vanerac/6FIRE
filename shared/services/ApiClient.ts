@@ -5,9 +5,11 @@ import type { BaseHttpRequest } from './core/BaseHttpRequest';
 import type { OpenAPIConfig } from './core/OpenAPI';
 import { AxiosHttpRequest } from './core/AxiosHttpRequest';
 
+import { AdminService } from './services/AdminService';
 import { AffiliationService } from './services/AffiliationService';
 import { ArticleService } from './services/ArticleService';
 import { AuthService } from './services/AuthService';
+import { BrokerService } from './services/BrokerService';
 import { CountryService } from './services/CountryService';
 import { CryptoService } from './services/CryptoService';
 import { OffersService } from './services/OffersService';
@@ -15,6 +17,7 @@ import { PaymentService } from './services/PaymentService';
 import { SubscriptionService } from './services/SubscriptionService';
 import { ThemesService } from './services/ThemesService';
 import { TradersService } from './services/TradersService';
+import { UploadService } from './services/UploadService';
 import { UsageService } from './services/UsageService';
 import { UserService } from './services/UserService';
 
@@ -22,9 +25,11 @@ type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
 
 export class ApiClient {
 
+    public readonly admin: AdminService;
     public readonly affiliation: AffiliationService;
     public readonly article: ArticleService;
     public readonly auth: AuthService;
+    public readonly broker: BrokerService;
     public readonly country: CountryService;
     public readonly crypto: CryptoService;
     public readonly offers: OffersService;
@@ -32,6 +37,7 @@ export class ApiClient {
     public readonly subscription: SubscriptionService;
     public readonly themes: ThemesService;
     public readonly traders: TradersService;
+    public readonly upload: UploadService;
     public readonly usage: UsageService;
     public readonly user: UserService;
 
@@ -50,9 +56,11 @@ export class ApiClient {
             ENCODE_PATH: config?.ENCODE_PATH,
         });
 
+        this.admin = new AdminService(this.request);
         this.affiliation = new AffiliationService(this.request);
         this.article = new ArticleService(this.request);
         this.auth = new AuthService(this.request);
+        this.broker = new BrokerService(this.request);
         this.country = new CountryService(this.request);
         this.crypto = new CryptoService(this.request);
         this.offers = new OffersService(this.request);
@@ -60,6 +68,7 @@ export class ApiClient {
         this.subscription = new SubscriptionService(this.request);
         this.themes = new ThemesService(this.request);
         this.traders = new TradersService(this.request);
+        this.upload = new UploadService(this.request);
         this.usage = new UsageService(this.request);
         this.user = new UserService(this.request);
     }

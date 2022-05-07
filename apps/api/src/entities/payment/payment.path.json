@@ -52,11 +52,23 @@
                   "type": "string",
                   "description": "Subscription ID"
                 },
+                "provider": {
+                  "type": "string",
+                  "description": "Provider",
+                  "enum": [
+                    "payline",
+                    "stripe"
+                  ]
+                },
                 "offerId": {
                   "type": "string",
                   "description": "Offer ID"
                 }
-              }
+              },
+              "required": [
+                "subscriptionId",
+                "provider"
+              ]
             }
           }
         }
@@ -67,7 +79,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../openapi.components.json#/schemas/UserSubscription"
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "description": "Checkout URL"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "token": {
+                        "type": "string",
+                        "description": "Payline token"
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
@@ -92,10 +123,10 @@
       {
         "name": "id",
         "in": "path",
-        "description": "Subscription ID",
+        "description": "User Subscription ID",
         "required": true,
         "schema": {
-          "type": "string"
+          "type": "number"
         }
       }
     ],

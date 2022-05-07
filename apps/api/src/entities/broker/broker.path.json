@@ -1,0 +1,226 @@
+{
+  "noId": {
+    "get": {
+      "description": "Get all brokers",
+      "tags": [
+        "Broker"
+      ],
+      "operationId": "getBrokers",
+      "responses": {
+        "200": {
+          "description": "A successful response.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "../openapi.components.json#/schemas/Broker"
+                }
+              }
+            }
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
+        }
+      }
+    },
+    "post": {
+      "description": "Create a new broker",
+      "tags": [
+        "Broker"
+      ],
+      "operationId": "createBroker",
+      "requestBody": {
+        "description": "Broker to create",
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "../openapi.components.json#/schemas/Broker"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "responses": {
+        "201": {
+          "description": "A successful response.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Broker"
+              }
+            }
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "withId": {
+    "get": {
+      "description": "Get a broker",
+      "tags": [
+        "Broker"
+      ],
+      "operationId": "getBroker",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Broker id",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "A successful response.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Broker"
+              }
+            }
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
+        }
+      }
+    },
+    "put": {
+      "description": "Update a broker",
+      "tags": [
+        "Broker"
+      ],
+      "operationId": "updateBroker",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Broker id",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "requestBody": {
+        "description": "Broker to update",
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "../openapi.components.json#/schemas/Broker"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "A successful response.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Broker"
+              }
+            }
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
+        }
+      }
+    },
+    "delete": {
+      "description": "Delete a broker",
+      "tags": [
+        "Broker"
+      ],
+      "operationId": "deleteBroker",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Broker id",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "responses": {
+        "204": {
+          "description": "A successful response."
+        },
+        "default": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../openapi.components.json#/schemas/Error"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

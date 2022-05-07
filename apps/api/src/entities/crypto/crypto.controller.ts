@@ -10,7 +10,7 @@ export default class CryptoController implements CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
             const cryptos = await prisma.cryptoHolding.findMany();
-            const journal = await prisma.cryptoJournal.findMany();
+            const journal = await prisma.cryptoJournal.findFirst();
             res.json({ cryptos, journal });
         } catch (error) {
             next(error);
@@ -19,8 +19,9 @@ export default class CryptoController implements CRUDController {
 
     static async setCryptos(req: Request, res: Response, next: NextFunction) {
         try {
-            const { cryptos } = req.body;
-            const newCryptos = await prisma.cryptoHolding.createMany(cryptos);
+            const cryptos = req.body;
+            console.log(cryptos);
+            const newCryptos = await prisma.cryptoHolding.createMany({ data: cryptos });
             res.json(newCryptos);
         } catch (error) {
             next(error);
@@ -86,7 +87,7 @@ export default class CryptoController implements CRUDController {
             });
 
             // if coin value only updated after 10m then update it
-            if (coin.updatedAt.getTime() < new Date().getTime() - 600000) {
+            if (coin.updatedAt.getTime() < new Date().getTime() - 60000) {
                 const url = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=${coinId}&${new URLSearchParams(
                     params,
                 )}`;
@@ -96,28 +97,34 @@ export default class CryptoController implements CRUDController {
                     },
                 });
                 const { data } = response;
-                const { status, error_message, data: coinValue } = data;
-                if (status !== 200) {
+                const {
+                    status: { error_code },
+                    error_message,
+                    data: coinValue,
+                } = data;
+
+                console.log(data);
+                if (error_code !== 0 || !coinValue?.['1']) {
                     return next(
                         new ApiError({
                             message: error_message,
-                            status: status,
+                            status: error_code,
                             i18n: 'error.api.coinmarketcap',
                         }),
                     );
-                } else {
-                    const { quote } = coinValue;
-                    const { EUR } = quote;
-                    const { price } = EUR;
-                    const newCoin = await prisma.cryptoHolding.update({
-                        where: { id: +coinId },
-                        data: {
-                            price,
-                            updatedAt: new Date(),
-                        },
-                    });
-                    res.json(newCoin);
                 }
+                const { quote } = coinValue['1'];
+
+                const { EUR } = quote;
+                const { price } = EUR;
+                const newCoin = await prisma.cryptoHolding.update({
+                    where: { id: +coinId },
+                    data: {
+                        price,
+                        updatedAt: new Date(),
+                    },
+                });
+                res.json(newCoin);
             } else {
                 res.json(coin);
             }
@@ -128,19 +135,20 @@ export default class CryptoController implements CRUDController {
 
     static async getCoinImg(req: Request, res: Response, next: NextFunction) {
         try {
-            const baseUrl = 'https://github.com/ErikThiart/cryptocurrency-icons/tree/master/icons';
+            // Coin token
             const { coin } = req.params;
-            if (!coin) {
-                return next(
-                    new ApiError({
-                        message: 'No coin provided',
-                        status: 400,
-                        i18n: 'error.api.coinimg',
-                    }),
-                );
-            }
-            const imgUrl = `${baseUrl}/${coin}.png`;
-            res.json({ imgUrl });
+
+            const url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info';
+
+            const data = await axios.get(url, {
+                params: {
+                    symbol: coin,
+                },
+                headers: {
+                    'X-CMC_PRO_API_KEY': process.env.COINMARKETCAP_API_KEY,
+                },
+            });
+            res.json({ imgUrl: data.data.data[coin.toUpperCase()]?.logo });
         } catch (error) {
             next(error);
         }

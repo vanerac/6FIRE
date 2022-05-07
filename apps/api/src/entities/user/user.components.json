@@ -4,12 +4,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "number",
-          "nullable": false
-        },
-        "userId": {
-          "type": "string",
-          "nullable": false
+          "type": "number"
         },
         "firstName": {
           "type": "string"
@@ -47,15 +42,24 @@
         "banned": {
           "type": "boolean"
         },
+        "note": {
+          "type": "string"
+        },
         "UserSubscription": {
-          "type": "object",
-          "properties": {
-            "Subscription": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Subscription": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
                 }
+              },
+              "status": {
+                "type": "string"
               }
             }
           }
@@ -65,25 +69,43 @@
     "UserStatus": {
       "type": "object",
       "properties": {
-        "UserSubscription": {
+        "id": {
+          "type": "number"
+        },
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
+        "isAdmin": {
+          "type": "boolean"
+        }
+      }
+    },
+    "UserSub": {
+      "type": "object",
+      "properties": {
+        "Subscription": {
           "type": "object",
           "properties": {
-            "Subscription": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "level": {
-                  "type": "number"
-                }
-              }
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "price": {
+              "type": "number"
+            },
+            "level": {
+              "type": "number"
             }
           }
         }

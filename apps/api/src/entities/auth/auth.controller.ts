@@ -12,7 +12,7 @@ const passwordResetCode = async (userId) => {
     const code = Math.floor(Math.random() * 1000000);
     const user = await client.user.findFirst({
         where: {
-            userId,
+            id: userId,
         },
     });
     if (!user) {
@@ -22,7 +22,7 @@ const passwordResetCode = async (userId) => {
         data: {
             user: {
                 connect: {
-                    userId,
+                    id: userId,
                 },
             },
             token: code.toString(),
@@ -115,7 +115,7 @@ export default class AuthController {
                 },
             });
 
-            const token = generateToken(user);
+            const token = generateToken({ id: user.id, isAdmin: user.isAdmin });
 
             return res.cookie('API_TOKEN', token, { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3) }).json({
                 token,
@@ -146,6 +146,7 @@ export default class AuthController {
         try {
             const { email, password } = req.body;
 
+            console.log(req.body);
             const user = await client.user.findFirst({
                 where: {
                     email,
@@ -157,8 +158,10 @@ export default class AuthController {
                     verifiedEmail: true,
                     verifiedPhone: true,
                     telephone: true,
+                    isAdmin: true,
                 },
             });
+            console.log(user);
 
             if (!user) {
                 return next(
@@ -170,7 +173,10 @@ export default class AuthController {
                 );
             }
 
+            console.log('logging in as ', user, 'with password', password, 'and hashed password', user.password);
+
             if (!checkPassword(password, user.password)) {
+                console.log('invalid password');
                 return next(
                     new ApiError({
                         status: 401,
@@ -480,6 +486,58 @@ export default class AuthController {
             });
 
             res.sendStatus(200);
+        } catch (e) {
+            next(e);
+        }
+    }
+
+    static async loginAdmin(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { email, password } = req.body;
+            const user = await client.user.findFirst({
+                where: {
+                    email,
+                    isAdmin: true,
+                },
+                select: {
+                    id: true,
+                    email: true,
+                    password: true,
+                    verifiedEmail: true,
+                    verifiedPhone: true,
+                    telephone: true,
+                    isAdmin: true,
+                },
+            });
+            console.log(user);
+            if (!user) {
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'User not found',
+                        i18n: 'error.user.not_found',
+                    }),
+                );
+            }
+
+            const isValid = await checkPassword(password, user.password);
+            console.log('isValid', isValid);
+            if (!isValid) {
+                return next(
+                    new ApiError({
+                        status: 400,
+                        message: 'Invalid password',
+                        i18n: 'error.user.password.invalid',
+                    }),
+                );
+            }
+
+            delete user.password;
+            const token = await generateToken(user);
+
+            res.cookie('API_TOKEN', token).json({
+                token,
+            });
         } catch (e) {
             next(e);
         }

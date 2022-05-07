@@ -38,6 +38,9 @@ services:
       DB_NAME: "postgres"
       UPLOAD_DIR: "/uploads"
       SMS_API_KEY: ""
+      DATABASE_URL: "postgres://postgres:postgres@db:5432/postgres"
+    env_file:
+      - apps/api/.env
     volumes:
       - "./data/uploads:/uploads"
     restart: unless-stopped

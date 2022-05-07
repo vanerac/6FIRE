@@ -56,7 +56,7 @@ export class OffersService {
      * @throws ApiError
      */
     public getOfferById(
-        id: string,
+        id: number,
     ): CancelablePromise<Offer> {
         return this.httpRequest.request({
             method: 'GET',
@@ -81,7 +81,7 @@ export class OffersService {
      * @throws ApiError
      */
     public updateOfferById(
-        id: string,
+        id: number,
         requestBody: Offer,
     ): CancelablePromise<Offer> {
         return this.httpRequest.request({
@@ -108,7 +108,7 @@ export class OffersService {
      * @throws ApiError
      */
     public deleteOfferById(
-        id: string,
+        id: number,
     ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',

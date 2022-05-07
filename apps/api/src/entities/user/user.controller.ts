@@ -10,9 +10,16 @@ const prisma = new PrismaClient();
 export class UserController implements CRUDController {
     public static async getAll(req: Request, res: Response, next: NextFunction) {
         try {
-            const users = prisma.user.findMany({
+            const users = await prisma.user.findMany({
                 select: {
                     password: false,
+                    id: true,
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
+                    createdAt: true,
+                    updatedAt: true,
                     UserSubscription: {
                         select: {
                             Subscription: {
@@ -20,8 +27,12 @@ export class UserController implements CRUDController {
                                     name: true,
                                 },
                             },
+                            status: true,
                         },
                     },
+                },
+                orderBy: {
+                    id: 'asc',
                 },
             });
             res.json(users);
@@ -65,6 +76,7 @@ export class UserController implements CRUDController {
         try {
             const { id } = req.params;
             const { body } = req;
+            console.log(body);
             const user = await prisma.user.update({
                 where: {
                     id: +id,
@@ -75,6 +87,7 @@ export class UserController implements CRUDController {
             });
             res.json(user);
         } catch (error) {
+            console.log(error);
             next(error);
         }
     }
@@ -95,7 +108,7 @@ export class UserController implements CRUDController {
 
     public static async getSubscription(req: Request, res: Response, next: NextFunction) {
         try {
-            const { id } = req.params;
+            const { id } = req.user;
             const user = await prisma.userSubscription.findMany({
                 where: {
                     userId: +id,
@@ -160,6 +173,7 @@ export class UserController implements CRUDController {
                     paymentId: '',
                     status: 'active',
                     price: 0,
+                    paymentProdvider: 'admin',
                 },
             });
             res.json(userSub);
@@ -208,7 +222,12 @@ export class UserController implements CRUDController {
                 where: {
                     id: +id,
                 },
-                include: {
+                select: {
+                    id: true,
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
                     UserSubscription: {
                         select: {
                             Subscription: {
@@ -221,6 +240,79 @@ export class UserController implements CRUDController {
                             },
                         },
                     },
+                },
+            });
+            res.json(user);
+        } catch (error) {
+            console.log(error);
+            next(error);
+        }
+    }
+
+    static async getInfos(req: Request, res: Response, next: NextFunction) {
+        console.log('getInfos');
+        try {
+            const { id } = req.user;
+            const user = await prisma.user.findFirst({
+                where: {
+                    id: +id,
+                },
+                select: {
+                    id: true,
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
+                    isAdmin: true,
+                },
+            });
+            res.json(user);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async getSubscriptions(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id } = req.user;
+            const user = await prisma.user.findFirst({
+                where: {
+                    id: +id,
+                },
+                select: {
+                    UserSubscription: {
+                        select: {
+                            Subscription: {
+                                select: {
+                                    name: true,
+                                    description: true,
+                                    price: true,
+                                    level: true,
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+            res.json(user?.UserSubscription ?? []);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async updateInfos(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id } = req.user;
+            const { firstName, lastName, telephone, email } = req.body;
+            const user = await prisma.user.update({
+                where: {
+                    id: +id,
+                },
+                data: {
+                    firstName,
+                    email,
+                    lastName,
+                    telephone,
                 },
             });
             res.json(user);

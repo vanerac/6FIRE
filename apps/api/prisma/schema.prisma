@@ -25,15 +25,20 @@ enum OfferType {
   FIXED
 }
 
+enum PaymentProvider {
+  MOLLIE
+  PAYLINE
+}
+
 model User {
   id                  Int                 @id @default(autoincrement())
-  userId              String              @unique @default(uuid())
   firstName           String
   lastName            String
-  email               String
+  email               String              @unique
   password            String
   telephone           String
   CGU                 Boolean
+  note                String?
   telegramId          Int?                @unique
   telegramLinkingCode String              @unique @default(uuid())
   createdAt           DateTime            @default(now())
@@ -48,17 +53,15 @@ model User {
   PasswordReset       PasswordReset[]
   OfferUsage          OfferUsage[]
 
-  @@unique([email, verifiedEmail])
-  @@unique([telephone, verifiedPhone])
 }
 
 model PasswordReset {
   id        Int      @id @default(autoincrement())
-  userId    String   @unique
+  userId    Int      @unique
   token     String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [userId])
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model VerificationCodes {
@@ -78,6 +81,11 @@ model Subscription {
   refreshRate      Int // in days
   subscriptionType PaymentType
   price            Int
+  paymentProvider  String?
+  hidden           Boolean            @default(false)
+  isBestValue      Boolean            @default(false)
+  hasFreeTrial     Boolean            @default(false)
+  freeTrialDays    Int                @default(0)
   level            Int                @default(0)
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @default(now())
@@ -86,26 +94,30 @@ model Subscription {
 }
 
 model UserSubscription {
-  id             Int          @id @default(autoincrement())
-  userId         Int
-  subscriptionId Int
-  createdAt      DateTime     @default(now())
-  updatedAt      DateTime     @default(now())
-  price          Int
-  paymentId      String // Mollie payment id
-  customerId     String // Mollie customer id
-  status         String // Mollie status
-  User           User         @relation(fields: [userId], references: [id])
-  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  id               Int          @id @default(autoincrement())
+  userId           Int
+  subscriptionId   Int
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @default(now())
+  endDate          DateTime?
+  lastPaymentDate  DateTime?
+  price            Int
+  paymentId        String       // exteneral payment id
+  customerId       String       // external customer id
+  extSubscriptionId String?      // external subscription id
+  status           String       // updated external status
+  paymentProdvider String       //  payment provider
+  User             User         @relation(fields: [userId], references: [id])
+  Subscription     Subscription @relation(fields: [subscriptionId], references: [id])
 }
 
 model Offer {
-  id             Int          @id @default(autoincrement())
+  id             Int           @id @default(autoincrement())
   value          Int
   offerType      OfferType
-  subscriptionId Int
-  singleUse      Boolean      @default(false)
-  Subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  subscriptionId Int?
+  singleUse      Boolean       @default(false)
+  Subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
   OfferUsage     OfferUsage[]
 }
 
@@ -129,17 +141,25 @@ model Theme {
 }
 
 model Article {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String
-  bannerUrl String
-  headerUrl String
-  hidden    Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  themeId   Int
-  Theme     Theme    @relation(fields: [themeId], references: [id], onDelete: Cascade)
-
+  id                    Int                     @id @default(autoincrement())
+  title                 String
+  content               String
+  bannerUrl             String
+  headerUrl             String
+  podcastUrl            String?
+  description           String?
+  salaireMoy            String?
+  tarificationMoy       String?
+  outils                String?
+  creation              String?
+  utilisateurs          String?
+  necessiteAudicance    String?
+  financement           String?
+  hidden                Boolean                 @default(false)
+  createdAt             DateTime                @default(now())
+  updatedAt             DateTime                @default(now())
+  themeId               Int
+  Theme                 Theme                   @relation(fields: [themeId], references: [id], onDelete: Cascade)
   Recommandation        Recommandation[]
   ArticleRecommandation ArticleRecommandation[]
 }
@@ -175,7 +195,7 @@ model Country {
 model CryptoHolding {
   id        Int      @id @default(autoincrement())
   token     String
-  price     Int
+  price     Float
   amount    Int
   updatedAt DateTime @default(now())
   createdAt DateTime @default(now())
@@ -218,4 +238,22 @@ model Affiliation {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   displayed Boolean  @default(true)
+}
+
+model Broker {
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String
+  imageUrl  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  displayed Boolean  @default(true)
+}
+
+model Config {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 }

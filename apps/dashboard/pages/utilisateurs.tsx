@@ -1,41 +1,38 @@
-import React from 'react';
-import Topbar from '../components/topbar';
+import React, { useEffect, useState } from 'react';
+import Topbar from '../components/topbarNew';
+import getAPIClient from '@shared/tools/apiClient';
+import { User } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 // import { User } from '@shared/services';
 // import apiClient from '@shared/tools/apiClient';
 
 export default function Utilisateurs() {
-    // const [$users, setUsers] = useState<User[]>([
-    //     {
-    //         id: 1,
-    //         userId: '1',
-    //         firstName: 'string',
-    //         lastName: 'string',
-    //         email: 'string',
-    //         password: 'string',
-    //         telephone: 'string',
-    //         countryId: 1,
-    //         createdAt: 'string',
-    //         updatedAt: 'string',
-    //         isAdmin: false,
-    //         verifiedEmail: false,
-    //         verifiedPhone: false,
-    //         banned: false,
-    //     },
-    // ]);
-    // Date range, searchString, sort,
-    // const [filters, setFilters] = useState<{
-    //     search: string;
-    //     sort: string;
-    //     order: string;
-    // }>({
-    //     search: '',
-    //     sort: '',
-    //     order: '',
-    // });
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    // useEffect(() => {
-    //     apiClient().user.getUsers().then(setUsers);
-    // }, []);
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [$users, setUsers] = useState<User[]>([]);
+
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.user.getUsers().then(
+            (res) => {
+                setUsers(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
 
     return (
         <>

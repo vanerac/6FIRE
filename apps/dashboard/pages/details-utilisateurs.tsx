@@ -1,18 +1,120 @@
-import React from 'react';
-import Topbar from '../components/topbar';
+import React, { useEffect, useState } from 'react';
+import Topbar from '../components/topbarNew';
+import getAPIClient from '@shared/tools/apiClient';
+import { User } from '@shared/services';
+import router from 'next/router';
+import { useCookies } from 'react-cookie';
 
 // import { ApiClient } from '@shared/services';
 // const apiClient = new ApiClient();
 
 // get userId from params
 export default function DetailsUtilisateurs($args: any) {
-    // const { userId } = args.match.params;
-    //
-    // const [$user, setUser] = useState<User | null>(null);
-    //
-    // useEffect(() => {
-    //     apiClient.user.getUser(userId).then(setUser);
-    // }, []);
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+
+    const [$loading, setLoading] = useState(true);
+    const [$error, setError] = useState('');
+    const [user, setUser] = useState<User>();
+
+    const [email, $setEmail] = useState('');
+    const [firstName, $setFirstName] = useState('');
+    const [lastName, $setLastName] = useState('');
+    const [telephone, $setTelephone] = useState('');
+    const [note, $setNote] = useState('');
+
+    const id = 1; // TODO
+    useEffect(() => {
+        if (!cookies['API_TOKEN']) {
+            console.log('no token');
+            router.replace('/');
+            return;
+        }
+
+        apiClient.user.getUser(id).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    }, []);
+
+    const $updateUser = () => {
+        if (!user || !user.id) return alert('No user');
+
+        const newUser = {
+            ...user,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+            telephone: telephone,
+            note: note,
+        };
+
+        apiClient.user.updateUser(user.id, newUser).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
+    const $changePassword = () => {
+        if (!user || !user.id) return alert('No user');
+
+        // TODO: this will be changed to a route that changes the password to a random string
+        const password = prompt('New password');
+        if (!password) return;
+
+        apiClient.user.updateUser(user.id, { ...user, password }).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
+    const $cancelSubscription = () => {
+        if (!user || !user.id) return alert('No user');
+
+        apiClient.user.deleteUserSubscription(user.id).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
+
+    const $deleteUser = () => {
+        if (!user || !user.id) return alert('No user');
+
+        apiClient.user.deleteUser(user.id).then(
+            (res) => {
+                setUser(res);
+                setLoading(false);
+            },
+            (error) => {
+                setError(error.i18n ?? error.message ?? 'Unknown error');
+                setLoading(false);
+            },
+        );
+    };
 
     return (
         <>

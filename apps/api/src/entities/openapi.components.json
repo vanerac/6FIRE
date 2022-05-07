@@ -47,6 +47,15 @@
     },
     "UserStatus": {
       "$ref": "./user/user.components.json#/schemas/UserStatus"
+    },
+    "Broker": {
+      "$ref": "./broker/broker.components.json#/schemas/Broker"
+    },
+    "ArticlePro": {
+      "$ref": "./article/article.components.json#/schemas/ArticlePro"
+    },
+    "UserSub": {
+      "$ref": "./user/user.components.json#/schemas/UserSub"
     }
   }
 }

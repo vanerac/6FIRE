@@ -39,6 +39,12 @@ ENV SENTRY_DSN $SENTRY_DSN
 ARG JWT_SECRET=''
 ENV JWT_SECRET $JWT_SECRET
 
+ARG STRIPE_PK=''
+ENV STRIPE_PK $STRIPE_PK
+
+ARG STRIPE_SK=''
+ENV STRIPE_SK $STRIPE_SK
+
 COPY --from=install /app/build/apps/api ./apps/api
 COPY --from=install /app/apps/api/package.json ./apps/api/package.json
 COPY --from=install /app/apps/api/package-lock.json ./apps/api/package-lock.json
@@ -61,4 +67,5 @@ RUN npm install
 RUN npx prisma generate --schema prisma/schema.prisma
 
 # Note: Added migration to launch
-CMD npx prisma db push && node src/index.js
+# --accept-data-loss --force-reset
+CMD npx prisma db push  && node src/index.js

@@ -3,15 +3,6 @@ import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
-//model Country {
-//   id        Int      @id @default(autoincrement())
-//   name      String
-//   code      String
-//   enabled   Boolean  @default(true)
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @default(now())
-//   User      User[]
-// }
 
 export default class CountryController implements CRUDController {
     static async getAll(req: Request, res: Response, next: NextFunction) {

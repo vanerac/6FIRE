@@ -17,17 +17,23 @@
     "/user/{id}": {
       "$ref": "./user/user.path.json#/user"
     },
-    "/user/{id}/subscription": {
+    "/user/id/{id}/subscription": {
       "$ref": "./user/user.path.json#/subscription"
     },
-    "/user/me": {
-      "$ref": "./user/user.path.json#/me"
+    "/user/me/infos": {
+      "$ref": "./user/user.path.json#/myInfos"
     },
-    "/me/getLinkingCode": {
+    "/user/me/subscription": {
+      "$ref": "./user/user.path.json#/mySubscriptions"
+    },
+    "/user/me/getLinkingCode": {
       "$ref": "./user/user.path.json#/getLinkingCode"
     },
     "/auth/login": {
       "$ref": "./auth/auth.path.json#/login"
+    },
+    "/auth/login/admin": {
+      "$ref": "./auth/auth.path.json#/loginAdmin"
     },
     "/auth/logout": {
       "$ref": "./auth/auth.path.json#/logout"
@@ -77,6 +83,12 @@
     "/trader/curation": {
       "$ref": "./trader/trader.path.json#/curation"
     },
+    "/trader/{id}": {
+      "$ref": "./trader/trader.path.json#/getById"
+    },
+    "/trader": {
+      "$ref": "./trader/trader.path.json#/createTrader"
+    },
     "/trader/trader/{id}/follow": {
       "$ref": "./trader/trader.path.json#/follow"
     },
@@ -91,6 +103,9 @@
     },
     "/article/{id}": {
       "$ref": "./article/article.path.json#/byId"
+    },
+    "/article/theme/{id}": {
+      "$ref": "./article/article.path.json#/byTheme"
     },
     "/subscription/": {
       "$ref": "./subscription/subscription.path.json#/noId"
@@ -130,6 +145,63 @@
     },
     "/affiliation/{id}": {
       "$ref": "./affiliation/affiliation.path.json#/withId"
+    },
+    "/broker": {
+      "$ref": "./broker/broker.path.json#/noId"
+    },
+    "/broker/{id}": {
+      "$ref": "./broker/broker.path.json#/withId"
+    },
+    "/admin/reset": {
+      "$ref": "./admin/admin.path.json#/resetPassword"
+    },
+    "/admin/config/sms": {
+      "$ref": "./admin/admin.path.json#/updateSmsConfig"
+    },
+    "/upload": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "summary": "Upload file",
+        "description": "Upload file",
+        "operationId": "uploadFile",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -172,6 +244,15 @@
       },
       "UserStatus": {
         "$ref": "./openapi.components.json#/schemas/UserStatus"
+      },
+      "Broker": {
+        "$ref": "./openapi.components.json#/schemas/Broker"
+      },
+      "ArticlePro": {
+        "$ref": "./openapi.components.json#/schemas/ArticlePro"
+      },
+      "UserSub": {
+        "$ref": "./openapi.components.json#/schemas/UserSub"
       }
     }
   }

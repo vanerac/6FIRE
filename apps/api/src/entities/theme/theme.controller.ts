@@ -1,9 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { CRUDController } from '../../types';
 import { PrismaClient } from '@prisma/client';
-import path from 'path';
-import configuration from '../../../configuration';
-import * as fs from 'fs';
+import { getSubscriptionLevel } from '../../tools/subscription.tool';
 
 const client = new PrismaClient();
 
@@ -12,38 +10,21 @@ export default class ThemeController implements CRUDController {
         try {
             const { id: userId, isAdmin } = req.user;
 
-            let where = {};
             if (!isAdmin) {
-                const userPermissions = await client.user.findFirst({
+                const userPermissions = await getSubscriptionLevel(userId);
+
+                const themes = await client.theme.findMany({
                     where: {
-                        userId: String(userId),
-                    },
-                    include: {
-                        UserSubscription: {
-                            select: {
-                                Subscription: {
-                                    select: {
-                                        level: true,
-                                    },
-                                },
-                            },
+                        subscriptionLevel: {
+                            lte: userPermissions,
                         },
                     },
-                });
-                const sortedPermissions = userPermissions.UserSubscription.sort((a, b) => {
-                    return a.Subscription.level - b.Subscription.level;
-                }).pop();
-                where = {
-                    subscriptionLevel: {
-                        gte: sortedPermissions.Subscription.level,
+                    orderBy: {
+                        id: 'asc',
                     },
-                };
-            }
-
-            // sort and get highest level
-
-            const themes = await client.theme.findMany({ where });
-            res.status(200).json(themes);
+                });
+                res.status(200).json(themes);
+            } else res.status(200).json(await client.theme.findMany());
         } catch (error) {
             next(error);
         }
@@ -53,36 +34,28 @@ export default class ThemeController implements CRUDController {
         try {
             const { id } = req.params;
             const { id: userId, isAdmin } = req.user;
+            console.log('isAdmin', isAdmin);
             let where = { id: +id };
 
             if (!isAdmin) {
-                const userPermissions = await client.user.findFirst({
-                    where: {
-                        userId: String(userId),
-                    },
-                    include: {
-                        UserSubscription: {
-                            select: {
-                                Subscription: {
-                                    select: {
-                                        level: true,
-                                    },
-                                },
-                            },
-                        },
-                    },
-                });
-                const sortedPermissions = userPermissions.UserSubscription.sort((a, b) => {
-                    return a.Subscription.level - b.Subscription.level;
-                }).pop();
+                const userPermissions = await getSubscriptionLevel(userId);
                 where = Object.assign(where, {
                     subscriptionLevel: {
-                        gte: sortedPermissions.Subscription.level,
+                        gte: userPermissions,
                     },
                 });
             }
+            console.log(where);
 
-            const theme = await client.theme.findFirst({ where });
+            const theme = await client.theme.findFirst({
+                where,
+                select: {
+                    id: true,
+                    name: true,
+                    iconUrl: true,
+                },
+            });
+            console.log(theme);
             res.status(200).json(theme);
         } catch (error) {
             next(error);
@@ -91,13 +64,12 @@ export default class ThemeController implements CRUDController {
 
     static async create(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            const icon = req.file;
-            const { name, subscriptionLevel } = req.body;
+            const { name, subscriptionLevel, iconUrl } = req.body;
             const theme = await client.theme.create({
                 data: {
                     name,
                     subscriptionLevel,
-                    iconUrl: path.join(configuration.BACKEND_URL, 'public/', icon.filename),
+                    iconUrl,
                 },
             });
             res.status(201).json(theme);
@@ -110,10 +82,10 @@ export default class ThemeController implements CRUDController {
         try {
             const { id } = req.params;
             // Todo: update photo
-            const { name, subscriptionLevel } = req.body;
+            const { name, subscriptionLevel, iconUrl } = req.body;
             const theme = await client.theme.update({
                 where: { id: +id },
-                data: { name, subscriptionLevel },
+                data: { name, subscriptionLevel, iconUrl },
             });
             res.status(200).json(theme);
         } catch (error) {
@@ -125,8 +97,8 @@ export default class ThemeController implements CRUDController {
         try {
             const { id } = req.params;
             const theme = await client.theme.delete({ where: { id: +id } });
-            const [$http, $base, $public, headerPath] = theme.iconUrl.split('/');
-            fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
+            // const [$http, $base, $public, headerPath] = theme.iconUrl.split('/');
+            // fs.unlinkSync(path.join(configuration.UPLOAD_DIR, headerPath));
             res.status(200).json(theme);
         } catch (error) {
             next(error);

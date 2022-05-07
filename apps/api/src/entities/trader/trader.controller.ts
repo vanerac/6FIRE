@@ -6,17 +6,134 @@ const prisma = new PrismaClient();
 export default class TraderController {
     static async getCuration(req: Request, res: Response, next: NextFunction) {
         try {
-            const curation = prisma.curatedTrader.findMany({
+            const curation = await prisma.curatedTrader.findMany({
                 where: {
                     displayed: true,
                 },
                 select: {
                     id: true,
                     name: true,
+                    clientId: true,
+                    TraderFollows: {
+                        select: {
+                            User: {
+                                select: {
+                                    id: true,
+                                },
+                            },
+                        },
+                    },
                 },
             });
+
+            // map TraderFollows to isFollowing boolean
+            const curationWithFollows = curation.map((trader) => {
+                const isFollowing = trader.TraderFollows.some((follow) => +follow.User.id === req.user.id);
+                delete trader.TraderFollows;
+                return {
+                    ...trader,
+                    isFollowing,
+                };
+            });
+
+            res.status(200).json(curationWithFollows);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async getById(req: Request, res: Response, next: NextFunction) {
+        try {
+            const trader = await prisma.curatedTrader.findFirst({
+                where: {
+                    id: +req.params.id,
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    clientId: true,
+                    TraderFollows: {
+                        select: {
+                            User: {
+                                select: {
+                                    id: true,
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+
+            // map TraderFollows to isFollowing boolean
+
+            res.status(200).json(trader);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async deleteTrader(req: Request, res: Response, next: NextFunction) {
+        try {
+            await prisma.curatedTrader.delete({
+                where: {
+                    id: +req.params.id,
+                },
+            });
+
             res.status(200).json({
-                curation,
+                message: 'Trader deleted',
+            });
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async createTrader(req: Request, res: Response, next: NextFunction) {
+        try {
+            const trader = await prisma.curatedTrader.create({
+                data: {
+                    name: req.body.name,
+                    clientId: req.body.clientId,
+                    displayed: true,
+                    rank: req.body.rank,
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    clientId: true,
+                },
+            });
+
+            res.status(200).json(trader);
+        } catch (error) {
+            console.log(error);
+            next(error);
+        }
+    }
+
+    static async updateTrader(req: Request, res: Response, next: NextFunction) {
+        try {
+            const trader = await prisma.curatedTrader.update({
+                where: {
+                    id: +req.params.id,
+                },
+                data: {
+                    name: req.body.name,
+                    clientId: req.body.clientId,
+                    displayed: req.body.displayed,
+                    rank: req.body.rank,
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    clientId: true,
+                    displayed: true,
+                    rank: true,
+                },
+            });
+
+            res.status(200).json({
+                trader,
             });
         } catch (error) {
             next(error);

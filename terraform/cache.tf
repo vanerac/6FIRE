@@ -33,8 +33,9 @@ resource "aws_elasticache_subnet_group" "default" {
 resource "aws_elasticache_cluster" "default" {
   cluster_id           = "cluster6fire"
   engine               = "redis"
-  node_type            = "cache.m4.large"
+  node_type            = "cache.m4.xlarge"
   num_cache_nodes      = 1
+  apply_immediately    = true
   parameter_group_name = "default.redis3.2"
   engine_version       = "3.2.10"
   port                 = 6379

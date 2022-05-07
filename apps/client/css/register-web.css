@@ -604,6 +604,7 @@
 
 .register-web .span1-qb1m9I {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .register-web .span2-qb1m9I {
@@ -611,6 +612,7 @@
 
 .register-web .span3-qb1m9I {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .register-web .span4-qb1m9I {
@@ -921,4 +923,14 @@ input {
     .screen.register-mobile {
         display: none;
     }
+}
+@media screen and (max-width: 1023px) {
+    .register-mobile .connexion-qfTrnm{
+        top: 25px;
+        right: 40px;
+    }
+}
+
+.register-web .en-crant-un-compte-v-qVPDai a {
+    color: #fff;
 }

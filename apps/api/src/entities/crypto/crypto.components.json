@@ -4,19 +4,15 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
-          "format": "uuid"
+          "type": "number"
         },
-        "name": {
-          "type": "string"
-        },
-        "symbol": {
+        "token": {
           "type": "string"
         },
         "amount": {
           "type": "number"
         },
-        "price_usd": {
+        "price": {
           "type": "number"
         }
       }

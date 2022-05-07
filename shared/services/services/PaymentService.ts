@@ -31,7 +31,7 @@ export class PaymentService {
     /**
      * Create a new subscription
      * @param requestBody Payment object that needs to be added to the store
-     * @returns UserSubscription A successful response.
+     * @returns any A successful response.
      * @throws ApiError
      */
     public createPayment(
@@ -39,13 +39,27 @@ export class PaymentService {
             /**
              * Subscription ID
              */
-            subscriptionId?: string;
+            subscriptionId: string;
+            /**
+             * Provider
+             */
+            provider: 'payline' | 'stripe';
             /**
              * Offer ID
              */
             offerId?: string;
         },
-    ): CancelablePromise<UserSubscription> {
+    ): CancelablePromise<({
+        /**
+         * Checkout URL
+         */
+        url?: string;
+    } | {
+        /**
+         * Payline token
+         */
+        token?: string;
+    })> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/payment/',
@@ -62,12 +76,12 @@ export class PaymentService {
 
     /**
      * Get a single subscription
-     * @param id Subscription ID
+     * @param id User Subscription ID
      * @returns UserSubscription A successful response.
      * @throws ApiError
      */
     public getPaymentById(
-        id: string,
+        id: number,
     ): CancelablePromise<UserSubscription> {
         return this.httpRequest.request({
             method: 'GET',
@@ -86,13 +100,13 @@ export class PaymentService {
 
     /**
      * Update a subscription
-     * @param id Subscription ID
+     * @param id User Subscription ID
      * @param requestBody Payment object that needs to be updated in the store
      * @returns UserSubscription A successful response.
      * @throws ApiError
      */
     public updatePayment(
-        id: string,
+        id: number,
         requestBody: {
             /**
              * Subscription ID
@@ -123,12 +137,12 @@ export class PaymentService {
 
     /**
      * Delete a subscription
-     * @param id Subscription ID
+     * @param id User Subscription ID
      * @returns void
      * @throws ApiError
      */
     public deletePayment(
-        id: string,
+        id: number,
     ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
