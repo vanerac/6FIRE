@@ -63,7 +63,7 @@ const createVerificationCode = async (
     });
 
     const messageTemplate = generateVerifyEmail({
-        confirmation_link: `${configuration.BACKEND_URL}/api/auth/verify?code=${code}`,
+        confirmation_link: `${configuration.BACKEND_URL}/auth/verify?code=${code}`,
         email: user.email,
     });
 
