@@ -847,3 +847,7 @@ table tr:nth-child(even) {
 .forget-pass:hover {
     text-decoration: underline;
 }
+input.checkBox-item{
+    width: auto;
+    margin-right: 10px;
+}
