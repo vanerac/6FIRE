@@ -344,7 +344,7 @@
 
 .register-mobile .dj-inscrit-connectez-vous-qfTrnm {
     background-color: transparent;
-    bottom: 114px;
+    bottom: 150px;
     color: var(--white);
     font-family: var(--font-family-lato);
     font-size: var(--font-size-l);
@@ -761,7 +761,7 @@ input {
 
 .register-web .button-sign-in-WxaGAS {
     background-color: transparent;
-    bottom: 113px;
+    bottom: 125px;
     height: 40px;
     left: calc(50% - 95px);
     position: absolute;
