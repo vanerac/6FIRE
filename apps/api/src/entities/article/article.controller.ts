@@ -182,6 +182,7 @@ export default class ArticleController implements CRUDController {
                 financement,
                 bannerUrl,
                 headerUrl,
+                podcastUrl
             } = req.body;
             const article = await prisma.article.create({
                 data: {
@@ -199,6 +200,7 @@ export default class ArticleController implements CRUDController {
                     utilisateurs,
                     necessiteAudicance,
                     financement,
+                    podcastUrl
                 },
             });
             if (recommendedArticleIds?.length) {
