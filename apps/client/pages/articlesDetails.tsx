@@ -247,15 +247,17 @@ const HomePage: NextPage = (props: any) => {
                             {/*</div>*/}
                         </div>
 
-                        <div className="max-w-[1200px] m-auto p-[30px] relative">
-                            <Podcast
-                                track={{
-                                    title: $articles.title ?? 'PODCAST',
-                                    audioSrc: $articles.podcastUrl ?? '',
-                                    image: ($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png',
-                                }}
-                            />
-                        </div>
+                        {$articles.podcastUrl && (
+                            <div className="max-w-[1200px] m-auto p-[30px] relative">
+                                <Podcast
+                                    track={{
+                                        title: $articles.title ?? 'PODCAST',
+                                        audioSrc: $articles.podcastUrl ?? '',
+                                        image: ($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png',
+                                    }}
+                                />
+                            </div>
+                        )}
 
                         {/* More article you would love to reaa */}
 

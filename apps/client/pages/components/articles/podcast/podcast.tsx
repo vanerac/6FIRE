@@ -30,7 +30,7 @@ const Podcast = ({ track }: IPodcast) => {
         clearInterval(intervalRef.current);
         intervalRef.current = setInterval(() => {
             setTrackProgress(audioRef.current.currentTime);
-        }, [1000]);
+        }, 1000);
     };
 
     const onScrub = (e: React.ChangeEvent<{ name: string; value: string }>) => {
