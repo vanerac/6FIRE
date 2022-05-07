@@ -12,13 +12,15 @@ const Podcast = ({ track }: IPodcast) => {
     const [start, setStartTimer] = React.useState<boolean>(false);
 
     // Destructure for conciseness
-    const { title, image, audioSrc } = track;
+    const { title, image, audioSrc } = track ?? {};
 
     // Refs
-    const audioRef = React.useRef(new Audio(audioSrc));
+    const audioRef = React.useRef<HTMLMediaElement | undefined>(
+        typeof Audio !== 'undefined' ? new Audio(audioSrc) : undefined,
+    );
     const intervalRef = React.useRef<any>();
 
-    const { duration } = audioRef.current;
+    const duration = audioRef.current?.duration;
 
     const currentPercentage = duration ? `${(trackProgress / duration) * 100}%` : '0%';
     const trackStyling = `
@@ -29,15 +31,19 @@ const Podcast = ({ track }: IPodcast) => {
         // Clear any timers already running
         clearInterval(intervalRef.current);
         intervalRef.current = setInterval(() => {
-            setTrackProgress(audioRef.current.currentTime);
+            if (audioRef.current !== undefined) {
+                setTrackProgress(audioRef.current?.currentTime);
+            }
         }, 1000);
     };
 
     const onScrub = (e: React.ChangeEvent<{ name: string; value: string }>) => {
         // Clear any timers already running
         clearInterval(intervalRef.current);
-        audioRef.current.currentTime = parseInt(e.target.value);
-        setTrackProgress(audioRef.current.currentTime);
+        if (audioRef.current !== undefined) {
+            audioRef.current.currentTime = parseInt(e.target.value);
+            setTrackProgress(audioRef.current?.currentTime);
+        }
     };
 
     const onScrubEnd = () => {
@@ -57,17 +63,17 @@ const Podcast = ({ track }: IPodcast) => {
             setStartTimer(true);
         }
         if (isPlaying) {
-            audioRef.current.play();
+            audioRef.current?.play();
             console.log(trackProgress);
         } else {
-            audioRef.current.pause();
+            audioRef.current?.pause();
         }
     }, [isPlaying]);
 
     React.useEffect(() => {
         // Pause and clean up on unmount
         return () => {
-            audioRef.current.pause();
+            audioRef.current?.pause();
             clearInterval(intervalRef.current);
         };
     }, []);
