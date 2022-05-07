@@ -8,11 +8,11 @@ import SideBar from '../components/sidebarNew';
 
 export default function CreerUnAbonnement() {
     const [cookies] = useCookies(['API_TOKEN']);
-    const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const $apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    const [$loading, setLoading] = useState(true);
-    const [$error, setError] = useState('');
-    const [$subscription, setSubscription] = useState<Subscription>();
+    const [$loading, $setLoading] = useState(true);
+    const [$error, $setError] = useState('');
+    const [$subscription, $setSubscription] = useState<Subscription>();
 
     const [subscriptionName, setSubscriptionName] = useState('');
     const [subscriptionPrice, setSubscriptionPrice] = useState('');
@@ -24,7 +24,7 @@ export default function CreerUnAbonnement() {
     const [isHidden, setIsHidden] = useState(false);
     const [isBestSeller, setIsBestSeller] = useState(false);
 
-    const id = 1;
+    // const id = 1;
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
@@ -32,16 +32,16 @@ export default function CreerUnAbonnement() {
             return;
         }
 
-        apiClient.subscription.getSubscriptionById(id).then(
-            (res) => {
-                setSubscription(res);
-                setLoading(false);
-            },
-            (error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-                setLoading(false);
-            },
-        );
+        // apiClient.subscription.getSubscriptionById(id).then(
+        //     (res) => {
+        //         setSubscription(res);
+        //         setLoading(false);
+        //     },
+        //     (error) => {
+        //         setError(error.i18n ?? error.message ?? 'Unknown error');
+        //         setLoading(false);
+        //     },
+        // );
     }, []);
 
     // submit all data
@@ -58,6 +58,7 @@ export default function CreerUnAbonnement() {
             isHidden,
             isBestSeller,
         );
+        alert('feature coming soon');
     };
 
     return (
@@ -75,11 +76,9 @@ export default function CreerUnAbonnement() {
                         <h2 className="title">Gestion abonnements </h2>
                     </div>
 
-                    <div className="table-header">
+                    <div onClick={submit} className="table-header">
                         <div>
-                                <button className="bg_green">
-                                    Creer un abonnement
-                                </button>
+                            <button className="bg_green">Creer un abonnement</button>
                         </div>
                     </div>
                     <div className="table-wrapper">
@@ -92,30 +91,21 @@ export default function CreerUnAbonnement() {
                             <div className="row-1 inline-flex">
                                 <div className="single-item mr-30">
                                     <label className="small_title" htmlFor="">
-                                        Nom 
+                                        Nom
                                     </label>
-                                    <input
-                                        type="text"
-                                        placeholder="Novice"
-                                    />
+                                    <input type="text" onChange={(e) => setSubscriptionName(e.target.value)} />
                                 </div>
                                 <div className="single-item mr-30">
                                     <label className="small_title" htmlFor="">
-                                        Prix
+                                        Prix (en €)
                                     </label>
-                                    <input
-                                        type="text"
-                                        placeholder="49.99 &euro;"
-                                    />
+                                    <input type="text" onChange={(e) => setSubscriptionPrice(e.target.value)} />
                                 </div>
                                 <div className="single-item mr-30">
                                     <label className="small_title" htmlFor="">
                                         Duree
                                     </label>
-                                    <input
-                                        type="text"
-                                        placeholder="30"
-                                    />
+                                    <input type="text" onChange={(e) => setSubscriptionTime(e.target.value)} />
                                 </div>
                                 <div className="single-item">
                                     <label className="small_title" htmlFor="">
@@ -124,10 +114,13 @@ export default function CreerUnAbonnement() {
                                     <select
                                         name=""
                                         id=""
-                                    >
-                                        <option value="">
-                                            Mensuel
-                                        </option>
+                                        onChange={(e) => {
+                                            setSubscriptionTimeType(e.target.value);
+                                        }}>
+                                        <option value="Mensuel">Mensuel</option>
+                                        <option value="Trimestriel">Trimestriel</option>
+                                        <option value="Semestriel">Semestriel</option>
+                                        <option value="Annuel">Annuel</option>
                                     </select>
                                 </div>
                             </div>
@@ -136,22 +129,26 @@ export default function CreerUnAbonnement() {
                                 <div className="single-item mr-30">
                                     <div className="icon-box">
                                         <input
+                                            checked={isBestSeller}
+                                            onChange={() => setIsBestSeller(!isBestSeller)}
                                             type="checkbox"
                                             className="checkBox-item"
                                             name="Select file"
                                         />
-                                        
+
                                         <label htmlFor="test">Best seller</label>
                                     </div>
                                 </div>
                                 <div className="single-item mr-30">
                                     <div className="icon-box">
                                         <input
+                                            checked={isHidden}
+                                            onChange={() => setIsHidden(!isHidden)}
                                             type="checkbox"
                                             className="checkBox-item"
                                             name="Select file"
                                         />
-                                        
+
                                         <label htmlFor="test">Visible</label>
                                     </div>
                                 </div>
@@ -159,12 +156,16 @@ export default function CreerUnAbonnement() {
 
                             <div className="row-1 inline-flex">
                                 <div className="single-item mr-30 inline-flex">
-                                <div className="toggle mr-30">
-                                    <input type="checkbox"/>
-                                    <label className="onbtn">On</label>
-                                    <label className="ofbtn">Off</label>
-                                </div>
-                                <span className="label">Periode d'essal</span>
+                                    <div className="toggle mr-30">
+                                        <input
+                                            checked={isTryingSession}
+                                            onChange={() => setIsTryingSession(!isTryingSession)}
+                                            type="checkbox"
+                                        />
+                                        <label className="onbtn">On</label>
+                                        <label className="ofbtn">Off</label>
+                                    </div>
+                                    <span className="label">Periode d&apos;essai</span>
                                 </div>
                             </div>
                         </div>
@@ -178,21 +179,13 @@ export default function CreerUnAbonnement() {
                         {/* table content */}
                         <div className="table-content">
                             <div className="row-1 inline-flex">
-                                
                                 <div className="single-item">
                                     <label className="small_title" htmlFor="">
-                                    Plateforme de paiement
+                                        Plateforme de paiement
                                     </label>
-                                    <select
-                                        name=""
-                                        id=""
-                                    >
-                                        <option value="">
-                                            Plateforme
-                                        </option>
-                                        <option value="">
-                                            Plateforme de
-                                        </option>
+                                    <select onChange={(e) => setPayementPlatform(e.target.value)} name="" id="">
+                                        <option value="">Plateforme</option>
+                                        <option value="Stripe">Stripe</option>
                                     </select>
                                 </div>
                             </div>
@@ -207,17 +200,16 @@ export default function CreerUnAbonnement() {
                         {/* table content */}
                         <div className="table-content">
                             <div className="row-1 inline-flex">
-                                
                                 <div className="single-item">
                                     <input
                                         type="text"
-                                        placeholder="Lignes 1"
+                                        onChange={(e) => setDescriptionLine(e.target.value)}
+                                        // placeholder="Lignes 1"
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

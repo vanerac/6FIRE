@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Topbar from '../components/topbarNew';
 import getAPIClient from '@shared/tools/apiClient';
 import { User } from '@shared/services';
-import router from 'next/router';
+import router, { useRouter } from 'next/router';
 import { useCookies } from 'react-cookie';
 import SideBar from '../components/sidebarNew';
 
@@ -17,28 +17,29 @@ export default function DetailsUtilisateurs($args: any) {
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
     const [user, setUser] = useState<User>();
+    const { query } = useRouter();
 
-    const [email, setEmail] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [telephone, setTelephone] = useState('');
-    const [note, setNote] = useState('');
-    const [registrationDate, setRegistrationDate] = useState('');
-    const [mailConfirmed, setMailConfirmed] = useState(false);
+    // const [email, setEmail] = useState('');
+    // const [firstName, setFirstName] = useState('');
+    // const [lastName, setLastName] = useState('');
+    // const [telephone, setTelephone] = useState('');
+    // const [note, setNote] = useState('');
+    // const [registrationDate, setRegistrationDate] = useState('');
+    const [mailConfirmed, $setMailConfirmed] = useState(false);
     const [isMember, setIsMember] = useState(false);
-    const [userId, setUserId] = useState('');
+    // const [userId, setUserId] = useState('');
     // set all useState about subscription
-    const [subscriptionPrice, setSubscriptionPrice] = useState('');
-    const [subscriptionType, setSubscriptionType] = useState('');
-    const [subscriptionStartDate, setSubscriptionStartDate] = useState('');
-    const [subscriptionEndDate, setSubscriptionEndDate] = useState('');
-    const [subscriptionTransactionType, setSubscriptionTransactionType] = useState('');
-    const [subscriptionTransactionId, setSubscriptionTransactionId] = useState('');
+    const [$subscriptionPrice, setSubscriptionPrice] = useState('');
+    const [$subscriptionType, setSubscriptionType] = useState('');
+    const [$subscriptionStartDate, setSubscriptionStartDate] = useState('');
+    const [$subscriptionEndDate, setSubscriptionEndDate] = useState('');
+    const [$subscriptionTransactionType, setSubscriptionTransactionType] = useState('');
+    const [$subscriptionTransactionId, setSubscriptionTransactionId] = useState('');
     const [subscriptionRenewal, setSubscriptionRenewal] = useState(false);
     const [subscriptionIsActive, setSubscriptionisAcrtive] = useState(false);
-    const [subscriptionResiliationDate, setSubscriptionResiliationDate] = useState('');
+    const [$subscriptionResiliationDate, setSubscriptionResiliationDate] = useState('');
+    const [userHasNoSubscriptions, setUserHasNoSubscriptions] = useState(false);
 
-    const id = 1; // TODO
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
@@ -46,34 +47,48 @@ export default function DetailsUtilisateurs($args: any) {
             return;
         }
 
-        apiClient.user.getUser(id).then(
+        console.log('userId', query.id);
+
+        apiClient.user.getUser(query.id as any).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
+                console.log(res.UserSubscription);
+                if (res.UserSubscription) {
+                    setUserHasNoSubscriptions(true);
+                }
             },
             (error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
             },
         );
-    }, []);
+    }, [query]);
 
     const $updateUser = () => {
         if (!user || !user.id) return alert('No user');
+        console.log(query.id);
 
         const newUser = {
-            ...user,
-            email: email,
-            firstName: firstName,
-            lastName: lastName,
-            telephone: telephone,
-            note: note,
+            // ...user,
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            telephone: user.telephone,
+            note: user.note,
+            verifiedEmail: mailConfirmed,
+            // UserSubscription: {
+            //     ...user.UserSubscription,
+            // },
         };
 
-        apiClient.user.updateUser(user.id, newUser).then(
+        console.log(newUser);
+
+        apiClient.user.updateUser(user.id, newUser as User).then(
             (res) => {
                 setUser(res);
                 setLoading(false);
+                alert('User updated');
             },
             (error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
@@ -123,12 +138,18 @@ export default function DetailsUtilisateurs($args: any) {
             (res) => {
                 setUser(res);
                 setLoading(false);
+                router.push('/utilisateurs');
             },
             (error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
             },
         );
+    };
+
+    const timestampToDate = (timestamp: number) => {
+        const date = new Date(timestamp);
+        return date.toLocaleDateString('fr-FR');
     };
 
     return (
@@ -180,7 +201,8 @@ export default function DetailsUtilisateurs($args: any) {
                                             type="text"
                                             placeholder="type your mail"
                                             // value={title}
-                                            onChange={(event) => setEmail(event.target.value)}
+                                            defaultValue={user ? user.email : ''}
+                                            onChange={(event) => setUser({ ...user, email: event.target.value })}
                                         />
                                     </div>
                                     <div className="single-item mr-30">
@@ -191,7 +213,8 @@ export default function DetailsUtilisateurs($args: any) {
                                             type="text"
                                             placeholder="type your first Name"
                                             // value={title}
-                                            onChange={(event) => setFirstName(event.target.value)}
+                                            defaultValue={user ? user.firstName : ''}
+                                            onChange={(event) => setUser({ ...user, firstName: event.target.value })}
                                         />
                                     </div>
                                     <div className="single-item mr-30">
@@ -202,7 +225,8 @@ export default function DetailsUtilisateurs($args: any) {
                                             type="text"
                                             placeholder="type you last Name"
                                             // value={title}
-                                            onChange={(event) => setLastName(event.target.value)}
+                                            defaultValue={user ? user.lastName : ''}
+                                            onChange={(event) => setUser({ ...user, lastName: event.target.value })}
                                         />
                                     </div>
                                     <div className="single-item mr-30">
@@ -211,9 +235,9 @@ export default function DetailsUtilisateurs($args: any) {
                                         </label>
                                         <input
                                             type="text"
-                                            placeholder="type the user ID"
                                             // value={title}
-                                            onChange={(event) => setUserId(event.target.value)}
+                                            value={user ? user.id : ''}
+                                            // onChange={(event) => setUserId(event.target.value)}
                                         />
                                     </div>
                                     <div className="single-item mr-30">
@@ -224,7 +248,8 @@ export default function DetailsUtilisateurs($args: any) {
                                             type="text"
                                             placeholder="type the user phone number"
                                             // value={title}
-                                            onChange={(event) => setTelephone(event.target.value)}
+                                            defaultValue={user ? user.telephone : ''}
+                                            onChange={(event) => setUser({ ...user, telephone: event.target.value })}
                                         />
                                     </div>
                                 </div>
@@ -241,12 +266,12 @@ export default function DetailsUtilisateurs($args: any) {
                             <div className="row-1 inline-flex">
                                 <div className="single-item mr-30">
                                     <label className="small_title" htmlFor="">
-                                        Date d'inscription
+                                        Date d&apos;inscription
                                     </label>
                                     <input
                                         type="text"
-                                        placeholder="type the user registration date"
-                                        // value={title}
+                                        placeholder="Not available"
+                                        value={user ? timestampToDate(user.createdAt as any) : ''}
                                         // onChange={(event) => setTitle(event.target.value)}
                                     />
                                 </div>
@@ -254,8 +279,9 @@ export default function DetailsUtilisateurs($args: any) {
                                     Email confirmé
                                     <input
                                         type="checkbox"
-                                        checked={mailConfirmed}
-                                        onChange={() => setMailConfirmed(!mailConfirmed)}
+                                        // missing value isMailConfirmed
+                                        checked={user ? user.verifiedEmail : false}
+                                        onChange={() => setUser({ ...user, verifiedEmail: !user?.verifiedEmail })}
                                     />
                                 </div>
                                 <div className="single-item mr-30">
@@ -278,122 +304,127 @@ export default function DetailsUtilisateurs($args: any) {
                                         type="text"
                                         placeholder="Notes..."
                                         // value={title}
-                                        onChange={(event) => setNote(event.target.value)}
+                                        defaultValue={user ? user.note : ''}
+                                        onChange={(event) => setUser({ ...user, note: event.target.value })}
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="table-wrapper">
-                        <div className="table-title bg_blue">
-                            <span>Abonnement</span>
-                        </div>
+                    {userHasNoSubscriptions == false ? (
+                        <div className="table-wrapper">
+                            <div className="table-title bg_blue">
+                                <span>Abonnement</span>
+                            </div>
 
-                        {/* table content */}
-                        <div className="table-content">
-                            <div className="row-1 inline-flex">
-                                <div className="test">
-                                    <div className="single-item mr-30">
-                                        <label className="small_title" htmlFor="">
-                                            Prix
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="type the user subscription price"
-                                            // value={title}
-                                            onChange={(event) => setSubscriptionPrice(event.target.value)}
-                                        />
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        <label className="small_title" htmlFor="">
-                                            Type d'abonnement
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="type the user subscription type"
-                                            // value={title}
-                                            onChange={(event) => setSubscriptionType(event.target.value)}
-                                        />
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        <label className="small_title" htmlFor="">
-                                            Début
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="type the user subscription start date"
-                                            // value={title}
-                                            onChange={(event) => setSubscriptionStartDate(event.target.value)}
-                                        />
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        <label className="small_title" htmlFor="">
-                                            Fin
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="type the user subscription end date"
-                                            // value={title}
-                                            onChange={(event) => setSubscriptionEndDate(event.target.value)}
-                                        />
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        <label className="small_title" htmlFor="">
-                                            Type de transaction
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="type the user subscription transaction type"
-                                            // value={title}
-                                            onChange={(event) => setSubscriptionTransactionType(event.target.value)}
-                                        />
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        <label className="small_title" htmlFor="">
-                                            Transaction Id
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="type the user subscription transaction id"
-                                            // value={title}
-                                            onChange={(event) => setSubscriptionTransactionId(event.target.value)}
-                                        />
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        Renouvellement
-                                        <input
-                                            type="checkbox"
-                                            checked={subscriptionRenewal}
-                                            onChange={(event) => setSubscriptionRenewal(!subscriptionRenewal)}
-                                        />
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        Actif
-                                        <input
-                                            type="checkbox"
-                                            checked={subscriptionIsActive}
-                                            onChange={(event) => setSubscriptionisAcrtive(!subscriptionIsActive)}
-                                        />
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        <br></br>
-                                        <button>Modifier la transaction</button>
-                                    </div>
-                                    <div className="single-item mr-30">
-                                        <label className="small_title" htmlFor="">
-                                            Date de résiliation
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="type the user subscription end date"
-                                            // value={title}
-                                            onChange={(event) => setSubscriptionResiliationDate(event.target.value)}
-                                        />
+                            {/* table content */}
+                            <div className="table-content">
+                                <div className="row-1 inline-flex">
+                                    <div className="test">
+                                        <div className="single-item mr-30">
+                                            <label className="small_title" htmlFor="">
+                                                Prix
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="type the user subscription price"
+                                                // value={title}
+                                                onChange={(event) => setSubscriptionPrice(event.target.value)}
+                                            />
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            <label className="small_title" htmlFor="">
+                                                Type d&apos;abonnement
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="type the user subscription type"
+                                                // value={title}
+                                                onChange={(event) => setSubscriptionType(event.target.value)}
+                                            />
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            <label className="small_title" htmlFor="">
+                                                Début
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="type the user subscription start date"
+                                                // value={title}
+                                                onChange={(event) => setSubscriptionStartDate(event.target.value)}
+                                            />
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            <label className="small_title" htmlFor="">
+                                                Fin
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="type the user subscription end date"
+                                                // value={title}
+                                                onChange={(event) => setSubscriptionEndDate(event.target.value)}
+                                            />
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            <label className="small_title" htmlFor="">
+                                                Type de transaction
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="type the user subscription transaction type"
+                                                // value={title}
+                                                onChange={(event) => setSubscriptionTransactionType(event.target.value)}
+                                            />
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            <label className="small_title" htmlFor="">
+                                                Transaction Id
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="type the user subscription transaction id"
+                                                // value={title}
+                                                onChange={(event) => setSubscriptionTransactionId(event.target.value)}
+                                            />
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            Renouvellement
+                                            <input
+                                                type="checkbox"
+                                                checked={subscriptionRenewal}
+                                                onChange={() => setSubscriptionRenewal(!subscriptionRenewal)}
+                                            />
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            Actif
+                                            <input
+                                                type="checkbox"
+                                                checked={subscriptionIsActive}
+                                                onChange={() => setSubscriptionisAcrtive(!subscriptionIsActive)}
+                                            />
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            <br></br>
+                                            <button>Modifier la transaction</button>
+                                        </div>
+                                        <div className="single-item mr-30">
+                                            <label className="small_title" htmlFor="">
+                                                Date de résiliation
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="type the user subscription end date"
+                                                // value={title}
+                                                onChange={(event) => setSubscriptionResiliationDate(event.target.value)}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    ) : (
+                        <p>L&apos;utilisateur n&apos;a pas d&apos;abonnement !</p>
+                    )}
                 </div>
             </div>
         </div>

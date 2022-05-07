@@ -121,7 +121,7 @@ export default function Utilisateurs() {
                                 user.UserSubscription?.find((s) => s.status === 'active')?.Subscription?.name ??
                                 'Aucun',
                         }))}
-                        editCallback={console.log}
+                        editCallback={(id) => router.push(`/details-utilisateurs?id=${id}`)}
                         deleteCallback={console.log}
                     />
                 </div>

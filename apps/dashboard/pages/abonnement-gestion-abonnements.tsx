@@ -50,6 +50,13 @@ export default function AbonnementGestionAbonnements() {
                             <i className="fa fa-upload"></i> <span>Export CSV</span>
                         </button> */}
                     </div>
+                    <div className="table-header">
+                        <div>
+                            <a href={'/abonnement-creer-un-abonnement'}>
+                                <button className={'bg_green'}>Créer un abonnement</button>
+                            </a>
+                        </div>
+                    </div>
                     <DataTable
                         headers={[
                             {
@@ -84,7 +91,6 @@ export default function AbonnementGestionAbonnements() {
                             refreshRate: subscription.refreshRate as any,
                             isBestValue: subscription.isBestValue as any,
                             hidden: subscription.hidden as any,
-                            
                         }))}
                         editCallback={console.log}
                         deleteCallback={console.log}

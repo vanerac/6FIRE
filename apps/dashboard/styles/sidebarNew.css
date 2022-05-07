@@ -77,7 +77,7 @@ body {
 
 .test {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
 }
 
 .page-wrapper .theme {
