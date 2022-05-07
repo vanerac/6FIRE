@@ -4707,6 +4707,13 @@ body.scrollOff {
 
 /* Responsive */
 @media screen and (max-width: 1023px) {
+    .trade-inner-header.nosTrades-header .container{
+        align-items: flex-start;
+        display: block;
+    }
+    .profile-card{
+        margin-top: 25px;
+    }
     .trading-circle-block .circle{
         display: none;
     }
@@ -4723,6 +4730,7 @@ body.scrollOff {
     }
     .trade-inner-header{
         height: 100%;
+        margin-top: 120px;
     }
     .round-text-wrap .icon{
         position: relative;
@@ -4752,4 +4760,30 @@ body.scrollOff {
         border-radius: 50%;
     }
     .hideDesktop{display: block; height: 115px;}
+}
+
+
+/* nosTrades-header */
+.nosTrades-header.trade-inner-header:before{
+    background: #0e0f11;
+}
+.nosTrades-header.trade-inner-header{
+    height: calc(100vh - 166px);
+    position: relative;
+}
+.profile-card {color: #111;background: #fff;padding: 15px;border-radius: 10px;max-width: 390px;width: 100%;display: flex;align-items: center;text-align: left;}
+
+.profile-card .big-letter {background: #f4cb71;color: #fff;height: 45px;width: 45px;border-radius: 50%;display: flex;align-items: center;justify-content: center;font-size: 24px;font-weight: 700;margin-right: 15px;}
+
+.profile-card .name {font-weight: 700;font-size: 18px;}
+
+.down-arrow-trand {/* background: red; */width: 50px;height: 50px;position: absolute;left: 50%;bottom: 30px;transform: translateX(-50%);display: flex;align-items: center;justify-content: center;padding: 5px;cursor: pointer;}
+
+.down-arrow-trand img {max-width: 25px;}
+
+.nos-trades-wrap{
+    padding: 60px 30px;
+    color: #fff;
+    font-family: var(--font-family-lato);
+    background-color: #000;
 }
