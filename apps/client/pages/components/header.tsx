@@ -188,7 +188,8 @@ const Header = (props: any) => {
                                 </a>
                             </div>
                             <div className="right-nav-items">
-                                <div className="dark-light">
+                                {/* Hidden For WebSite Launching */}
+                                {/* <div className="dark-light">
                                     <div className="light-icon">
                                         <Image layout="fill" src="/img/icon-ionic-ios-moon-1@1x.png" />
                                     </div>
@@ -196,7 +197,7 @@ const Header = (props: any) => {
                                         <input type="checkbox" />
                                         <span className="slider round"></span>
                                     </label>
-                                </div>
+                                </div> */}
 
                                 {/* <a href="/compte" className="my-account">
                                     Mon compte
@@ -215,7 +216,16 @@ const Header = (props: any) => {
                                 <div className="nav-item-wrap">
                                     <ul id="visible-only-mobile">
                                         <li>
-                                            <a href="#">{isMoney}</a>
+                                            {/* <a href="#">{isMoney}</a> */}
+                                            <Link href={isMoney == 'Nos Trades' ? '/accueil' : '/trading'}>
+                                                <a className="espace">
+                                                    {isMoney == 'Nos Trades' ? (
+                                                        <p>Nos Trades</p>
+                                                    ) : (
+                                                        <p>Espace Trading &amp; Crypto</p>
+                                                    )}
+                                                </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                     <ul>
@@ -362,15 +372,7 @@ const Header = (props: any) => {
                                     Trading &amp; Crypto
                                 </a> */}
                                 <Link href={isMoney == 'Nos Trades' ? '/accueil' : '/trading'}>
-                                    <a
-                                        className="espace"
-                                        onClick={() => {
-                                            if (isMoney == 'Nos Trades') {
-                                                setisMoney('Espace Trading & Crypto');
-                                            } else {
-                                                setisMoney('Nos Trades');
-                                            }
-                                        }}>
+                                    <a className="espace">
                                         {isMoney == 'Nos Trades' ? (
                                             <p>Nos Trades</p>
                                         ) : (

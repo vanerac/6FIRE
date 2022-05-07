@@ -181,18 +181,6 @@ const Trading: NextPage = () => {
                         <img src="/img/icon/right-arrow.png" alt="" />
                     </div>
                 </a>
-                <a href="#" className="primary-button bg-blue">
-                    <span>CRÉER UN COMPTE PUPRIME</span>
-                    <div className="right-arrow">
-                        <img src="/img/icon/right-arrow.png" alt="" />
-                    </div>
-                </a>
-                <a href="#" className="primary-button bg-yellow">
-                    <span>CRÉER UN COMPTE BINANCE</span>
-                    <div className="right-arrow">
-                        <img src="/img/icon/right-arrow.png" alt="" />
-                    </div>
-                </a>
             </div>
             {/* circel button group END */}
 

@@ -128,7 +128,7 @@ const BotTrading: NextPage = ($props: any) => {
                             </h3>
                         </div>
                         <p>
-                            Retrouvez sur la page Traders différents profiles Binance et leurs résultats. Vous pouvez
+                            Retrouvez sur la page Traders différents profils Binance et leurs résultats. Vous pouvez
                             suivre jusqu’à 3 profils, une fois que vous avez sélectionné de un jusqu’à 3 traders vous
                             recevrez automatiquement leurs alertes sur Telegram grâce au Bot.
                         </p>
@@ -167,7 +167,7 @@ const BotTrading: NextPage = ($props: any) => {
                             <h3 className="title">Où prendre les Trades ? Contactez-nous !</h3>
                         </div>
                         <p>
-                            Contactez nous pour passer à l’étape suivant et obtenir les explications. Nous vous
+                            Contactez nous pour passer à l’étape suivante et obtenir les explications. Nous vous
                             expliquerons où et comment prendre les Trades en direct.
                         </p>
 
