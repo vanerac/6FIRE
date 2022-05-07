@@ -115,7 +115,7 @@ export default class AuthController {
                 },
             });
 
-            const token = generateToken(user);
+            const token = generateToken({ id: user.id, isAdmin: user.isAdmin });
 
             return res.cookie('API_TOKEN', token, { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3) }).json({
                 token,
@@ -158,6 +158,7 @@ export default class AuthController {
                     verifiedEmail: true,
                     verifiedPhone: true,
                     telephone: true,
+                    isAdmin: true,
                 },
             });
             console.log(user);
@@ -417,6 +418,7 @@ export default class AuthController {
             await passwordResetCode(user.id);
             res.sendStatus(200);
         } catch (e) {
+            console.log(e);
             next(e);
         }
     }

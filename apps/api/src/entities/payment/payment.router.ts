@@ -5,7 +5,7 @@
 // --------------------------------------------------------------
 // Crud payments
 
-import { Router } from 'express';
+import express, { Router } from 'express';
 import PaymentController from './payment.controller';
 import { isAdmin, parseAdmin, verifyToken } from '../../tools/auth.tools';
 
@@ -21,8 +21,10 @@ router.get('/payment/:id', verifyToken, parseAdmin, isAdmin, PaymentController.g
 router.post('/refund/:id', verifyToken, parseAdmin, isAdmin, PaymentController.createRefund);
 
 // webhooks
-router.post('/webhook/mollie', PaymentController.mollieWebhooksStatus);
-router.get('/webhook/mollie', PaymentController.redirectMollie);
+// router.post('/webhook/mollie', PaymentController.mollieWebhooksStatus);
+// router.get('/webhook/mollie', PaymentController.redirectMollie);
+router.post('/webhook/stripe', express.raw({ type: 'application/json' }), PaymentController.stripeWebhooksStatus);
+router.get('/webhook/stripe', PaymentController.redirectStripe);
 router.post('/webhook/payline', PaymentController.paylineWebhooksStatus);
 
 export default router;

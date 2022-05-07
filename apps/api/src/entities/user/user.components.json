@@ -83,6 +83,9 @@
         },
         "telephone": {
           "type": "string"
+        },
+        "isAdmin": {
+          "type": "boolean"
         }
       }
     },

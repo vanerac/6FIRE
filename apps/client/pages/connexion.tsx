@@ -68,7 +68,7 @@ const Connexion: NextPage = () => {
     };
 
     // if (cookies['API_TOKEN']) {
-    //     router.push('/articlesPage');
+    //     router.push('/accueil');
     // }
 
     const create_account = () => {
@@ -139,7 +139,7 @@ const Connexion: NextPage = () => {
                     setCookie('API_TOKEN', response.token, { domain: 'localhost' });
                     setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
                     setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
-                    router.push('/articlesPage');
+                    router.push('/accueil');
                 }
             })
             .catch((error: ApiError) => {

@@ -56,6 +56,7 @@ resource "aws_db_instance" "default" {
   password                = var.rds_master_password
   port                    = 5432
   allocated_storage       = 15
+  apply_immediately       = true
   skip_final_snapshot     = false
   max_allocated_storage   = 200
   publicly_accessible     = true

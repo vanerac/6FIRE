@@ -306,6 +306,7 @@ export class UserController implements CRUDController {
                     firstName: true,
                     lastName: true,
                     telephone: true,
+                    isAdmin: true,
                 },
             });
             res.json(user);
