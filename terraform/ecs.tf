@@ -17,8 +17,8 @@ resource "aws_cloudwatch_log_group" "bot" {
 
 // Auto Scalling policies
 resource "aws_appautoscaling_target" "api_autoscaling_target" {
-  max_capacity       = 10
-  min_capacity       = 1
+  max_capacity       = 15
+  min_capacity       = 2
   resource_id        = "service/${aws_ecs_cluster.default.name}/${aws_ecs_service.api.name}"
   scalable_dimension = "ecs:service:DesiredCount"
   service_namespace  = "ecs"
@@ -26,7 +26,7 @@ resource "aws_appautoscaling_target" "api_autoscaling_target" {
 
 resource "aws_appautoscaling_target" "client_autoscaling_target" {
   max_capacity       = 10
-  min_capacity       = 1
+  min_capacity       = 2
   resource_id        = "service/${aws_ecs_cluster.default.name}/${aws_ecs_service.client.name}"
   scalable_dimension = "ecs:service:DesiredCount"
   service_namespace  = "ecs"
@@ -34,7 +34,7 @@ resource "aws_appautoscaling_target" "client_autoscaling_target" {
 
 resource "aws_appautoscaling_target" "dashboard_autoscaling_target" {
   max_capacity       = 5
-  min_capacity       = 1
+  min_capacity       = 2
   resource_id        = "service/${aws_ecs_cluster.default.name}/${aws_ecs_service.dashboard.name}"
   scalable_dimension = "ecs:service:DesiredCount"
   service_namespace  = "ecs"
@@ -574,7 +574,7 @@ resource "aws_ecs_service" "api" {
   name            = "${var.ecs_service_name}-api"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.api.arn
-  desired_count   = 5
+  desired_count   = 10
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -603,7 +603,7 @@ resource "aws_ecs_service" "client" {
   name            = "${var.ecs_service_name}-client"
   cluster         = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.client.arn
-  desired_count   = 3
+  desired_count   = 5
   launch_type     = "FARGATE"
 
   network_configuration {

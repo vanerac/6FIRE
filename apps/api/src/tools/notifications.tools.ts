@@ -73,13 +73,11 @@ export async function sendSMS({ phoneNumber, message }: { phoneNumber: string; m
             key: 'smsTrigger',
         },
     });
-    if (!smsConfig) {
-        throw new Error('SMS config not found');
-    }
-
-    const { value: smsTrigger } = smsConfig;
-    if (!smsTrigger) {
-        throw new Error('SMS disabled');
+    if (smsConfig) {
+        const { value: smsTrigger } = smsConfig;
+        if (!smsTrigger) {
+            throw new Error('SMS disabled');
+        }
     }
 
     const isValidName = configuration.SMS_SENDER.length >= 3 && configuration.SMS_SENDER.length <= 11;
@@ -87,9 +85,9 @@ export async function sendSMS({ phoneNumber, message }: { phoneNumber: string; m
         apiKey: configuration.SMS_API_KEY,
         phoneNumbers: phoneNumber,
         sender: isValidName ? configuration.SMS_SENDER : undefined,
-        gamme: 2, // 2 = standard, 1 = premium
+        gamme: 1, // 2 = standard, 1 = premium
         message: message,
-        sandbox: process.env.NODE_ENV === 'development',
+        // sandbox: process.env.NODE_ENV !== 'production',
     };
 
     await axios.post(route, body);

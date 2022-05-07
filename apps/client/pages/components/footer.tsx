@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import router from 'next/router';
 // import router from 'next/router';
 
 const Footer = (props: any) => {
     console.log(props);
+    const [isFooterWarning, setIsFooterWarning] = useState(true);
+
+    useEffect(() => {
+        if (router.pathname == '/') setIsFooterWarning(false);
+    }, []);
 
     return (
         <div>
             <footer id="footer_block">
-                <div className="footer-text">
-                    <p>
-                        Les investissements sont risqués. Les investissements sont risqués par nature, les utilisateurs
-                        doivent faire leurs propres recherches avant d’entreprendre toute action et n’investir que dans
-                        les limites de leurs capacités financières. Cet article ne constitue pas un conseil en
-                        investissement.
-                    </p>
-                </div>
+                {isFooterWarning == true ? (
+                    <div className="footer-text">
+                        <p>
+                            <strong>Tout investissement comporte un risque.</strong> Les utilisateurs doivent faire
+                            leurs propres recherches et n’investir que dans les limites de leurs capacités financières.
+                            Notre contenu est à titre pédagogique et ne confère aucun conseil professionnel en
+                            investissement.
+                        </p>
+                    </div>
+                ) : null}
                 <div className="footer-menu-wrapper">
                     <div className="footer-logo">
                         <Link href="./">
@@ -46,9 +54,6 @@ const Footer = (props: any) => {
                             </li>
                             <li>
                                 <Link href="/politiqueConfidentialite">Politique de confidentialité</Link>
-                            </li>
-                            <li>
-                                <Link href="#">Contact</Link>
                             </li>
                         </ul>
                     </div>
