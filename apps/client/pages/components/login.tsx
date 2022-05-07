@@ -223,7 +223,7 @@ const LoginPopup = (props: any) => {
                         <div className="forget_pass_overlay forget-open-password">
                             <div className="forget-div">
                                 <div className="title lato-light-white-16px">mot de pass oublie?</div>
-                                <p className="text-lg lato-light-white-16px">
+                                <p className="lato-light-white-16px px-10">
                                     Veuillez saisir votre numero de telephone lors de votre inscription. Vous recevrez
                                     un code pour modifier votre mot de passe.
                                 </p>
@@ -244,14 +244,16 @@ const LoginPopup = (props: any) => {
                         {/* Get Email code popup */}
                         <div className="forget_pass_overlay get-email-code">
                             <div className="forget-div">
-                                <div className="title">mot de pass oublie?</div>
-                                <p>Un code vous a ete envoye par email</p>
+                                <div className="title lato-light-white-16px">mot de pass oublie?</div>
+                                <p className="lato-light-white-16px">Un code vous a ete envoye par email</p>
                                 <form action="">
                                     <div className="custom-input-code">
                                         <input type="number" placeholder="*Code" />
                                         <span className="write-code">Renvoyer un code</span>
                                     </div>
-                                    <button id="pass_submit" className="confirm-password-btn">
+                                    <button
+                                        id="pass_submit"
+                                        className="confirm-password-btn hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
                                     </button>
                                 </form>
@@ -264,8 +266,8 @@ const LoginPopup = (props: any) => {
                         {/* Update new password */}
                         <div className="forget_pass_overlay confirm-password-open">
                             <div className="forget-div">
-                                <div className="title">modification de votre mot de pass</div>
-                                <p>
+                                <div className="title lato-light-white-16px">modification de votre mot de pass</div>
+                                <p className="lato-light-white-16px">
                                     Votre mot de passe doit contenir au moins 8 caracteres escape avec des letters, au
                                     moinus un chiffre. une majuscule, et un caractere special.
                                 </p>
@@ -282,7 +284,11 @@ const LoginPopup = (props: any) => {
                                             <img src="/img/icon/eye-pass.svg" alt="" />
                                         </span>
                                     </div>
-                                    <button id="pass_submit">Valider</button>
+                                    <button
+                                        id="pass_submit"
+                                        className="hover:bg-white hover:text-inherit transiition linear duration-300 ">
+                                        Valider
+                                    </button>
                                 </form>
                                 <div id="return_login" className="return-code">
                                     Retour
