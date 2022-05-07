@@ -112,7 +112,7 @@ export class UserController implements CRUDController {
         try {
             const { id } = req.params;
             const {
-                body: { firstName, email, lastName, telephone, verifiedEmail },
+                body: { firstName, email, lastName, telephone, verifiedEmail, note },
             } = req;
             const user = await prisma.user.update({
                 where: {
@@ -124,6 +124,8 @@ export class UserController implements CRUDController {
                     lastName,
                     telephone,
                     verifiedEmail,
+                    note,
+                    updatedAt: new Date(),
                 },
             });
             res.json(user);
