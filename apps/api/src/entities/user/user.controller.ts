@@ -12,7 +12,6 @@ export class UserController implements CRUDController {
         try {
             const users = await prisma.user.findMany({
                 select: {
-                    password: false,
                     id: true,
                     email: true,
                     firstName: true,
@@ -49,7 +48,6 @@ export class UserController implements CRUDController {
                     id: +id,
                 },
                 select: {
-                    password: false,
                     id: true,
                     email: true,
                     firstName: true,

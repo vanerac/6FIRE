@@ -137,4 +137,22 @@ export default class AdminController {
             next(e);
         }
     }
+
+    static async isAdmin(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { isAdmin } = req.user;
+
+            if (isAdmin) {
+                res.status(200).json({
+                    message: 'Admin',
+                });
+            } else {
+                res.status(403).json({
+                    message: 'Not admin',
+                });
+            }
+        } catch (e) {
+            next(e);
+        }
+    }
 }

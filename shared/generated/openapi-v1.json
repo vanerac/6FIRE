@@ -3643,6 +3643,23 @@
         }
       }
     },
+    "/admin/isAdmin": {
+      "get": {
+        "description": "Check if the user is an admin",
+        "operationId": "isAdmin",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "403": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
     "/upload": {
       "post": {
         "tags": [

@@ -70,4 +70,19 @@ export class AdminService {
         });
     }
 
+    /**
+     * Check if the user is an admin
+     * @returns any Successful response
+     * @throws ApiError
+     */
+    public isAdmin(): CancelablePromise<any> {
+        return this.httpRequest.request({
+            method: 'GET',
+            url: '/admin/isAdmin',
+            errors: {
+                403: `Bad request`,
+            },
+        });
+    }
+
 }
