@@ -17,7 +17,7 @@ import '../css/crypto-wallet.css';
 import '../css/nos-trades.css';
 import '../css/header.css';
 import '../css/footer.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Sidebar from './components/sideBar';
 
 import Head from 'next/head';
@@ -33,7 +33,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     const [$cookies, setCookies] = useCookies(['API_TOKEN']);
     setCookies('API_TOKEN', 'OK', { path: '/' });
 
-    ReactGA.initialize(''); // TODO
+    ReactGA.initialize('G-9F2GZK3GCX');
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    });
+
     return (
         <>
             <Head>
