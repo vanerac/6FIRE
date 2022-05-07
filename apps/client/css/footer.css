@@ -49,7 +49,6 @@
     padding: 0 3%;
     border-bottom: 1px solid #707070;
     padding-bottom: calc(15px + (35 - 15) * ((100vw - 320px) / (1920 - 320)));
-    margin: 0 5%;
 }
 #footer_block .footer-menu-wrapper .footer-nav-items{display: flex; align-items: center; margin-top: 15px;}
 #footer_block .footer-menu-wrapper .footer-nav-items li{padding: 5px 15px;}
@@ -57,7 +56,7 @@
 #footer_block .footer-menu-wrapper .footer-nav-items li a{color: #fff; display: inline-block; color: #747474;}
 #footer_block .footer-menu-wrapper .footer-nav-items li a:hover{color: #b30f10;}
 
-/* Footer responsive 
+/* Footer responsive
 **********************/
 @media screen and (max-width: 850px) {
     #footer_block .footer-menu-wrapper{flex-direction: column; text-align: center;}
