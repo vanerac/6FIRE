@@ -24,23 +24,48 @@ const Footer = (props: any) => {
                         </p>
                     </div>
                 ) : null}
-                <div className="footer-menu-wrapper">
+                <div className="flex footer-menu-wrapper">
                     <div className="footer-logo">
                         <Link href="./">
-                            <img src="/img/logo/6fire-footer.png" alt="Footer Logo" />
+                            <img
+                                src="/img/logo/6fire-footer.png"
+                                alt="Footer Logo"
+                                className="invisible hidden md:block md:visible"
+                            />
                         </Link>
                     </div>
                     <div className="footer-nav">
-                        <div className="social">
-                            <Link href="https://www.instagram.com/6fireinvest/">
-                                <img src="/img/fontawsome--instagram--1@1x.png" alt="social icon" />
+                        <div className="grid grid-cols-2">
+                            <Link href="./">
+                                <img
+                                    src="/img/logo/6fire-footer.png"
+                                    alt="Footer Logo"
+                                    className="md:invisible md:hidden block visible"
+                                />
                             </Link>
-                            <Link href="https://t.me/+qLDAoR3i3v43Mjdk">
-                                <img src="/img/icon-awesome-telegram-plane-9@1x.png" alt="social icon" />
-                            </Link>
-                            <Link href="https://www.tiktok.com/@haik.13?lang=fr">
-                                <img src="/img/icon-simple-tiktok-1@1x.png" alt="social icon" />
-                            </Link>
+                            <div className="social flex pl-[15px] grow justify-end items-center md:col-span-2">
+                                <Link href="https://www.instagram.com/6fireinvest/">
+                                    <img
+                                        src="/img/fontawsome--instagram--1@1x.png"
+                                        alt="social icon"
+                                        className="w-[21px] h-[21px]"
+                                    />
+                                </Link>
+                                <Link href="https://t.me/+qLDAoR3i3v43Mjdk">
+                                    <img
+                                        src="/img/icon-awesome-telegram-plane-9@1x.png"
+                                        alt="social icon"
+                                        className="w-[21px] h-[21px]"
+                                    />
+                                </Link>
+                                <Link href="https://www.tiktok.com/@haik.13?lang=fr">
+                                    <img
+                                        src="/img/icon-simple-tiktok-1@1x.png"
+                                        alt="social icon"
+                                        className="w-[21px] h-[21px]"
+                                    />
+                                </Link>
+                            </div>
                         </div>
                         <ul className="footer-nav-items">
                             <li>
