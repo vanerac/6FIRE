@@ -31,10 +31,18 @@ if (typeof window !== 'undefined') {
 -------------------------------------*/
 if (typeof window !== 'undefined') {
     $('.menu__btn').click(function () {
-        if ($('body').hasClass('scrollOff')) {
+        if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
             $('body').removeClass('scrollOff');
         } else {
             $('body').addClass('scrollOff');
+        }
+    });
+}
+
+if (typeof window !== 'undefined') {
+    $('.scrollRemove, .register_btn').click(function () {
+        if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
+            $('body').removeClass('scrollOff');
         }
     });
 }
@@ -89,6 +97,14 @@ const LoginPopup = (props: any) => {
     const [isCookie, setIsCookie] = useState();
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [emailRecovering, setEmailRecovering] = useState<string>('');
+    const [reset, setReset] = useState<
+        Partial<{
+            code: string | null;
+            newPassword: string | null;
+            confirmNewPassword: string | null;
+        }>
+    >({});
 
     useEffect(() => {
         setIsCookie(cookies['API_TOKEN']);
@@ -140,6 +156,14 @@ const LoginPopup = (props: any) => {
                 });
         }
         // console.log(mail, password);
+    };
+
+    const sendRecovering = () => {
+        apiClient.auth.forgotPassword({ email: emailRecovering });
+    };
+
+    const resetPassword = (code: string, newPassword: string, confirmNewPassword: string) => {
+        apiClient.auth.resetPassword({ code: code, newPasswoerd: newPassword, confirmPassword: confirmNewPassword });
     };
 
     return (
@@ -243,9 +267,9 @@ const LoginPopup = (props: any) => {
                                 </a>
                             </div>
                             {error && <span style={{ color: 'red' }}>{error}</span>}
-                            <div className="item-center ">
+                            <div className="item-center">
                                 <input
-                                    className="hover:bg-white hover:text-inherit transiition linear duration-300 "
+                                    className="scrollRemove hover:bg-white hover:text-inherit transiition linear duration-300 "
                                     onClick={handleSubmit}
                                     type="submit"
                                     value={'Me connecter'}
@@ -262,10 +286,17 @@ const LoginPopup = (props: any) => {
                                     inscription. Vous recevrez un code pour modifier votre mot de passe.
                                 </p>
                                 <form action="">
-                                    <input type="email" placeholder="*Email" />
+                                    <input
+                                        type="email"
+                                        placeholder="*Email"
+                                        onChange={(event) => setEmailRecovering(event.target.value)}
+                                    />
                                     <button
+                                        onClick={() => {
+                                            sendRecovering();
+                                        }}
                                         id="pass_submit"
-                                        className="get-validator-code hover:bg-white hover:text-inherit transiition linear duration-300 ">
+                                        className="get-validator-code scrollRemove hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
                                     </button>
                                 </form>
@@ -284,12 +315,19 @@ const LoginPopup = (props: any) => {
                                 </p>
                                 <form action="">
                                     <div className="custom-input-code">
-                                        <input type="number" placeholder="*Code" />
+                                        <input
+                                            type="number"
+                                            placeholder="*Code"
+                                            name="code"
+                                            onChange={(e) => {
+                                                setReset({ ...reset, [e.target.name]: e.target.value });
+                                            }}
+                                        />
                                         <span className="write-code">Renvoyer un code</span>
                                     </div>
                                     <button
                                         id="pass_submit"
-                                        className="confirm-password-btn hover:bg-white hover:text-inherit transiition linear duration-300 ">
+                                        className="confirm-password-btn scrollRemove hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
                                     </button>
                                 </form>
@@ -309,19 +347,40 @@ const LoginPopup = (props: any) => {
                                 </p>
                                 <form action="">
                                     <div className="custom-input-code">
-                                        <input type="number" placeholder="*Nouveau mot de passe" />
+                                        <input
+                                            type="password"
+                                            placeholder="*Nouveau mot de passe"
+                                            name="newPassword"
+                                            onChange={(e) => {
+                                                setReset({ ...reset, [e.target.name]: e.target.value });
+                                            }}
+                                        />
                                         <span className="write-code">
                                             <img src="/img/icon/eye-pass.svg" alt="" />
                                         </span>
                                     </div>
                                     <div className="custom-input-code">
-                                        <input type="number" placeholder="*Confirmation du nouveau mot de passe" />
+                                        <input
+                                            type="password"
+                                            placeholder="*Confirmation du nouveau mot de passe"
+                                            name="confirmNewPassword"
+                                            onChange={(e) => {
+                                                setReset({ ...reset, [e.target.name]: e.target.value });
+                                            }}
+                                        />
                                         <span className="write-code">
                                             <img src="/img/icon/eye-pass.svg" alt="" />
                                         </span>
                                     </div>
                                     <button
                                         id="pass_submit"
+                                        onClick={() => {
+                                            resetPassword(
+                                                reset.code ?? '',
+                                                reset.newPassword ?? '',
+                                                reset.confirmNewPassword ?? '',
+                                            );
+                                        }}
                                         className="hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
                                     </button>

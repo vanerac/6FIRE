@@ -17,7 +17,7 @@ export default {
     SMS_SENDER: process.env.SMS_SENDER ?? '6FIREINVEST',
     UPLOAD_DIR: process.env.UPLOAD_DIR ?? '../../data/uploads',
     NODE_ENV: process.env.NODE_ENV || 'development',
-    BACKEND_URL: process.env.BACKEND_URL ?? 'http://localhost:3333',
+    BACKEND_URL: process.env.BACKEND_URL ?? 'http://localhost:3333/api',
     PAYLINE_MERCHANT_ID: process.env.PAYLINE_MERCHANT_ID ?? '',
     PAYLINE_SECRET_KEY: process.env.PAYLINE_SECRET_KEY ?? '',
     PAYLINE_CONTRACT_NUMBER: process.env.PAYLINE_CONTRACT_NUMBER ?? '',
