@@ -124,14 +124,14 @@ const LoginPopup = (props: any) => {
             setPasswordError('Votre mot de passe doit contenir au moins 8 caractères');
         }
         if (mail === '') {
-            setMailError('Votre mail est obligatoire');
+            setMailError('Votre e-mail est obligatoire');
             isValid = false;
         } else if (
             !mail.match(
                 /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
             )
         ) {
-            setMailError("Votre mail n'est pas valide");
+            setMailError("Votre e-mail n'est pas valide");
             isValid = false;
         }
         if (isValid) {
@@ -151,7 +151,6 @@ const LoginPopup = (props: any) => {
                     }
                 })
                 .catch((error: ApiError) => {
-                    console.log(error.body.i18n);
                     setError(error.body.i18n);
                 });
         }
@@ -205,7 +204,7 @@ const LoginPopup = (props: any) => {
                                     setMailError('');
                                     setMail(event.target.value);
                                 }}
-                                className="input_item"
+                                className="text-white focus:text-white active:text-white input_item"
                                 style={
                                     mailError ? { borderBottom: '1px solid red' } : { borderBottom: '1px solid #fff' }
                                 }
@@ -223,7 +222,7 @@ const LoginPopup = (props: any) => {
                                         : { borderBottom: '1px solid #fff' }
                                 }>
                                 <input
-                                    className="input_item"
+                                    className="text-white input_item"
                                     onChange={(event) => {
                                         setPasswordError('');
                                         setPassword(event.target.value);
@@ -280,7 +279,7 @@ const LoginPopup = (props: any) => {
                         {/* forget pass overlay */}
                         <div className="forget_pass_overlay forget-open-password">
                             <div className="forget-div">
-                                <div className="title lato-light-white-16px">mot de pass oublie?</div>
+                                <div className="title lato-light-white-16px">mot de passE oubli&Eacute; ?</div>
                                 <p className="lato-light-white-16px px-10">
                                     Veuillez saisir votre num&eacute;ro de t&eacute;l&eacute;phone lors de votre
                                     inscription. Vous recevrez un code pour modifier votre mot de passe.
@@ -309,9 +308,9 @@ const LoginPopup = (props: any) => {
                         {/* Get Email code popup */}
                         <div className="forget_pass_overlay get-email-code">
                             <div className="forget-div">
-                                <div className="title lato-light-white-16px">mot de pass oublie?</div>
+                                <div className="title lato-light-white-16px">mot de passE oubli&Eacute; ?</div>
                                 <p className="lato-light-white-16px">
-                                    Un code vous &agrave; &eacute;t&eacute; envoy&eacute; par e-mail
+                                    Un code vous a &eacute;t&eacute; envoy&eacute; par e-mail
                                 </p>
                                 <form action="">
                                     <div className="custom-input-code">
@@ -340,10 +339,10 @@ const LoginPopup = (props: any) => {
                         {/* Update new password */}
                         <div className="forget_pass_overlay confirm-password-open">
                             <div className="forget-div">
-                                <div className="title lato-light-white-16px">modification de votre mot de pass</div>
+                                <div className="title lato-light-white-16px">modification de votre mot de passe</div>
                                 <p className="lato-light-white-16px">
                                     Votre mot de passe doit contenir au moins 8 caract&eacute;res sans espace avec des
-                                    lettres, au moins un chiffre. une majuscule, et un caract&egrave;re sp&eacute;cial.
+                                    lettres, au moins un chiffre, une majuscule, et un caract&egrave;re sp&eacute;cial.
                                 </p>
                                 <form action="">
                                     <div className="custom-input-code">

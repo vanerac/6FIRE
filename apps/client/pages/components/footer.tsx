@@ -48,21 +48,21 @@ const Footer = (props: any) => {
                                     <img
                                         src="/img/fontawsome--instagram--1@1x.png"
                                         alt="social icon"
-                                        className="w-[21px] h-[21px]"
+                                        className="md:w-[21px] md:h-[21px] w-[18px] h-[18px]"
                                     />
                                 </Link>
                                 <Link href="https://t.me/+qLDAoR3i3v43Mjdk">
                                     <img
                                         src="/img/icon-awesome-telegram-plane-9@1x.png"
                                         alt="social icon"
-                                        className="w-[21px] h-[21px]"
+                                        className="md:w-[21px] md:h-[21px] w-[18px] h-[18px]"
                                     />
                                 </Link>
                                 <Link href="https://www.tiktok.com/@haik.13?lang=fr">
                                     <img
                                         src="/img/icon-simple-tiktok-1@1x.png"
                                         alt="social icon"
-                                        className="w-[21px] h-[21px]"
+                                        className="md:w-[21px] md:h-[21px] w-[18px] h-[18px]"
                                     />
                                 </Link>
                             </div>

@@ -68,7 +68,7 @@ const Compte: NextPage = (props: any) => {
             )
         ) {
             isValid = false;
-            setErrorInputFieldMail("Votre mail n'est pas valide");
+            setErrorInputFieldMail("Votre e-mail n'est pas valide");
         }
 
         if (data.telephone.length > 0 && data.telephone.length < 10) {

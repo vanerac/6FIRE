@@ -1274,7 +1274,7 @@ input#menu__toggle{display: none;}
 @media screen and (max-width: 1023px) {
     .secondary-nav-top{
         height: 60px;
-        margin-right: 75px;
+        margin-right: 90px;
     }
 }
 

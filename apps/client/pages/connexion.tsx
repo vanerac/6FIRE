@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
 // import Link from 'next/link';
 import router from 'next/router';
@@ -76,7 +77,7 @@ const Connexion: NextPage = () => {
         setError('');
 
         if (userName === '') {
-            setErrorUserName("Votre nom d'utilisateur est obligatoire");
+            setErrorUserName('Votre nom est obligatoire');
             isValid = false;
         }
         if (password === '') {
@@ -84,7 +85,7 @@ const Connexion: NextPage = () => {
             isValid = false;
         }
         if (userSurName === '') {
-            setErrorUserSurName('Votre nom est obligatoire');
+            setErrorUserSurName('Votre prénom est obligatoire');
             isValid = false;
         }
         if (userMail === '') {
@@ -95,7 +96,7 @@ const Connexion: NextPage = () => {
                 /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
             )
         ) {
-            setErrorUserMail("Votre mail n'est pas valide");
+            setErrorUserMail("Votre e-mail n'est pas valide");
             isValid = false;
         }
 
@@ -173,9 +174,11 @@ const Connexion: NextPage = () => {
                 />
                 <div className="background-WxaGAS"></div>
                 <div className="logo-WxaGAS">
-                    <div onClick={() => router.push('/')} style={{ cursor: 'pointer' }} className="effect-ReYaAa">
-                        <Image layout="fill" src="/img/effect-1@1x.png" />
-                    </div>
+                    <Link href="/">
+                        <a className="effect-ReYaAa cursor-pointer">
+                            <Image layout="fill" src="/img/effect-1@1x.png" alt="logo 6fire" />
+                        </a>
+                    </Link>
                 </div>
                 <div className="crer-votre-compte-sur-6-firecom-WxaGAS">Créer votre compte sur 6FIRE.com</div>
                 <div className="rejoignez-6-fire-club-priv-dinvestisseur-WxaGAS">
