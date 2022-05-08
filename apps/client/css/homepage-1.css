@@ -4758,6 +4758,9 @@ body.scrollOff {
         grid-gap: 15px;
         align-items: flex-start;
     }
+    .trading-circle-block .left-col{
+        align-items: flex-start;
+    }
     .round-text-wrap .icon{
         height: 100%;
         background-color: transparent;
