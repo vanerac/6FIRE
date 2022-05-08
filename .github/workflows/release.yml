@@ -8,8 +8,6 @@ env:
   AWS_SECRET_ACCESS_KEY: ${secrets.AWS_SECRET_ACCESS_KEY}
   AWS_ROLE_ARN: ${secrets.AWS_ROLE_ARN}
   SENTRY_AUTH_TOKEN: ${secrets.SENTRY_AUTH_TOKEN}
-  ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-  ECR_REPOSITORY: 6fire-${{ matrix.directories }}
   IMAGE_TAG: ${{ github.sha }}
   API_SENTRY_DSN: ${{ secrets.API_SENTRY_DSN }}
   SMS_API_KEY: ${{ secrets.SMS_API_KEY }}
