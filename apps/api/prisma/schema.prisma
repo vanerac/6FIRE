@@ -61,7 +61,7 @@ model PasswordReset {
   token     String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationCodes {
@@ -107,7 +107,7 @@ model UserSubscription {
   extSubscriptionId String?      // external subscription id
   status           String       // updated external status
   paymentProdvider String       //  payment provider
-  User             User         @relation(fields: [userId], references: [id])
+  User             User         @relation(fields: [userId], references: [id], onDelete: Cascade)
   Subscription     Subscription @relation(fields: [subscriptionId], references: [id])
 }
 
@@ -126,8 +126,8 @@ model OfferUsage {
   offerId Int
   userId  Int
   date    DateTime @default(now())
-  Offer   Offer    @relation(fields: [offerId], references: [id])
-  User    User     @relation(fields: [userId], references: [id])
+  Offer   Offer    @relation(fields: [offerId], references: [id], onDelete: Cascade)
+  User    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Theme {
