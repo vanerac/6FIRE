@@ -127,7 +127,7 @@ export default function ThemesArticlesCreation() {
             .createTheme({
                 name: title,
                 iconUrl: iconUrl,
-                subscriptionLevel: +selectedSubscriptionId ?? 0,
+                subscriptionLevel: +(selectedSubscriptionId as unknown as string) ?? 0,
             })
             .then(
                 (res) => {
