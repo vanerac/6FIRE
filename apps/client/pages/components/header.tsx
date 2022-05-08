@@ -28,7 +28,7 @@ const Header = (props: any) => {
     const [isMoney, setisMoney] = useState('');
     const [isCookie, setIsCookie] = useState('');
     const [isMobileView, setIsMobileView] = useState(false);
-    const [subscriptionLevel, setSubscriptionLevel] = useState<any>();
+    const [$subscriptionLevel, $setSubscriptionLevel] = useState<any>();
     const [$error, setError] = useState(false);
 
     /* Hamburger toggle script */
@@ -123,23 +123,21 @@ const Header = (props: any) => {
                     setisMoney('Espace trading & crypto');
                 } else {
                     console.log('res', res.isAdmin);
-                    if (subscriptionLevel >= 2 || res.isAdmin == true) {
-                        setisMoney('Nos Trades');
-                    } else {
-                        setisMoney('Espace trading & crypto');
-                        router.push('/pricePage');
-                    }
+                    apiClient.user.getMySubscriptions().then((sub) => {
+                        console.log('sub', sub);
+                        if (!sub) {
+                            router.replace('/');
+                        } else {
+                            console.log('inside');
+                            if ((res as any)[0]?.Subscription?.level >= 2 || res.isAdmin == true) {
+                                setisMoney('Nos Trades');
+                            } else {
+                                setisMoney('Espace trading & crypto');
+                                router.push('/pricePage');
+                            }
+                        }
+                    });
                 }
-            })
-            .catch((error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-            });
-
-        apiClient.subscription
-            .getSubscriptions()
-            .then((subscriptions) => {
-                console.log('ici header => ', subscriptions[0].level);
-                setSubscriptionLevel(subscriptions[0].level);
             })
             .catch((error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
@@ -247,7 +245,7 @@ const Header = (props: any) => {
                                                                 ? router.push({
                                                                       pathname: theme.url,
                                                                       query: {
-                                                                          themeId: theme.id,
+                                                                          themeName: theme.name,
                                                                       },
                                                                   })
                                                                 : router.push(theme.url);
