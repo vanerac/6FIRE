@@ -75,8 +75,11 @@ const Header = (props: any) => {
         } else {
             const response = await apiClient.themes.getThemes();
             console.log(response);
-            const slicedThemes = [...response].slice(0, 5) as Theme[];
-            const slicedThemesDropDown = [...response].slice(5) as Theme[];
+
+            const themes = response.filter((theme: Theme) => theme.name !== 'Formations' && theme.name !== 'Forex');
+
+            const slicedThemes = [...themes].slice(0, 5) as Theme[];
+            const slicedThemesDropDown = [...themes].slice(5) as Theme[];
             setThemes(slicedThemes as any);
             setThemesDropDown(slicedThemesDropDown);
         }
