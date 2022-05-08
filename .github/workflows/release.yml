@@ -88,7 +88,7 @@ jobs:
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           STRIPE_PK: ${{ secrets.STRIPE_PK }}
           STRIPE_SK: ${{ secrets.STRIPE_SK }}
-          run: |
+        run: |
             docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
               --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN \
               --build-arg SENTRY_DSN=$API_SENTRY_DSN \
