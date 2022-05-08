@@ -9,6 +9,7 @@ import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import Head from 'next/head';
 import { PaylineHead } from 'react-payline';
+import PaymentWrapper from './components/payline';
 
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -16,6 +17,7 @@ const PricePage: NextPage = (props: any) => {
     const [$subscriptions, setSubscriptions] = useState<Subscription[]>([]);
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
+    const [paylineToken, setPaylineToken] = useState();
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -31,6 +33,15 @@ const PricePage: NextPage = (props: any) => {
             .catch((error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
+            });
+        apiClient.payment
+            .createPayment({
+                provider: 'payline',
+                subscriptionId: '2',
+            })
+            .then((res: any) => {
+                console.log(res);
+                if (res.token) setPaylineToken(res.token);
             });
     }, []);
 
@@ -67,7 +78,8 @@ const PricePage: NextPage = (props: any) => {
         <div>
             <Head>
                 <title>Abonnement Prix - Crypto Trader</title>
-                <PaylineHead production />
+                <PaylineHead />
+                <link href="https://homologation-payment.cdn.payline.com/cdn/styles/widget-min.css" rel="stylesheet" />
             </Head>
             <input type="hidden" id="anPageName" name="page" value="prices-page" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
@@ -78,6 +90,14 @@ const PricePage: NextPage = (props: any) => {
                         <img src="img/mask-group-331@1x.png" alt="" />
                     </div>
 
+                    {paylineToken ? (
+                        <PaymentWrapper
+                            token={paylineToken}
+                            successCb={() => console.log('success')}
+                            errorCb={(v) => console.log(v)}
+                            show={!!paylineToken}
+                        />
+                    ) : null}
                     <div className="section_container">
                         <div className="text">
                             <h2 className="title">VOTRE LICENCE 6FIRE INVEST </h2>

@@ -26,5 +26,6 @@ router.post('/refund/:id', verifyToken, parseAdmin, isAdmin, PaymentController.c
 router.post('/webhook/stripe', express.raw({ type: 'application/json' }), PaymentController.stripeWebhooksStatus);
 router.get('/webhook/stripe', PaymentController.redirectStripe);
 router.post('/webhook/payline', PaymentController.paylineWebhooksStatus);
+router.get('/webhook/payline', PaymentController.paylineTest);
 
 export default router;

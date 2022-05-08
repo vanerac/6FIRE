@@ -358,7 +358,12 @@ export class UserController implements CRUDController {
                     telephone,
                 },
             });
-            res.json(user);
+            res.json({
+                firstName: user.firstName,
+                email: user.email,
+                lastName: user.lastName,
+                telephone: user.telephone,
+            });
         } catch (error) {
             next(error);
         }

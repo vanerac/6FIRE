@@ -7,7 +7,7 @@ import {
     generateOrderCancelledEmail,
     generateOrderFailedEmail,
 } from '../../templates/email';
-import PaylineService from '../../tools/payment/payline.service';
+import PaylineService, { paylineWebService } from '../../tools/payment/payline.service';
 import { PaymentService, PaymentType } from '../../tools/payment/payment.service';
 import configuration from '../../../configuration';
 
@@ -76,6 +76,7 @@ export default class PaymentController implements CRUDController {
     static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const { subscriptionId, provider } = req.body;
+            console.log(req.body);
 
             const subscription = await prisma.subscription.findFirst({
                 where: {
@@ -94,25 +95,25 @@ export default class PaymentController implements CRUDController {
                 throw new Error('Subscription not found');
             }
 
-            const existingSubscription = await prisma.userSubscription.findFirst({
-                where: {
-                    userId: +req.user.id,
-                    status: {
-                        in: ['active', 'pending'],
-                    },
-                },
-                select: {
-                    Subscription: true,
-                },
-            });
+            // const existingSubscription = await prisma.userSubscription.findFirst({
+            //     where: {
+            //         userId: +req.user.id,
+            //         status: {
+            //             in: ['active', 'pending'],
+            //         },
+            //     },
+            //     select: {
+            //         Subscription: true,
+            //     },
+            // });
 
-            if (existingSubscription) {
-                throw new ApiError({
-                    status: 409,
-                    message: 'Subscription already exists',
-                    i18n: 'error.subscription.alreadyExists',
-                });
-            }
+            // if (existingSubscription) {
+            //     throw new ApiError({
+            //         status: 409,
+            //         message: 'Subscription already exists',
+            //         i18n: 'error.subscription.alreadyExists',
+            //     });
+            // }
 
             if (subscription.paymentProvider && subscription.paymentProvider !== provider) {
                 throw new ApiError({
@@ -321,6 +322,7 @@ export default class PaymentController implements CRUDController {
 
     //paylineWebhooksStatus
     static async paylineWebhooksStatus(req: Request, res: Response) {
+        console.log(req.body);
         res.sendStatus(501);
 
         // const paylineWebService = new PaylineWeb(paylineConfig);
@@ -355,7 +357,7 @@ export default class PaymentController implements CRUDController {
     //     res.redirect('https://6fireinvest.com/articlesPage');
     // }
 
-    static async stripeWebhooksStatus(req: Request, res: Response, next: NextFunction) {
+    static async stripeWebhooksStatus(req: Request, res: Response) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         let event = req.body;
@@ -465,6 +467,57 @@ export default class PaymentController implements CRUDController {
     static async redirectStripe(req: Request, res: Response) {
         // Todo: on success stripe
         res.redirect('https://6fireinvest.com/accueil');
+    }
+
+    static async paylineTest(req: Request, res: Response, next: NextFunction) {
+        try {
+            console.log(req.params, req.query);
+            //req.query
+            // {
+            //   notificationType: 'WEBTRS',
+            //   token: '12odVr52YmqH2Uyux2671651855854941',
+            //   paymentEndpoint: '1'
+            // }
+
+            const { $notificationType, token, paymentEndpoint } = req.query;
+
+            const details = await paylineWebService.getWebPaymentDetails({
+                token: token as string,
+                version: +paymentEndpoint,
+            });
+
+            const userSub = await prisma.userSubscription.findFirst({
+                where: {
+                    paymentId: token as string,
+                },
+            });
+
+            if (!userSub) {
+                throw new ApiError({
+                    status: 404,
+                    message: 'Subscription not found',
+                    i18n: 'error.subscription.notFound',
+                });
+            }
+
+            console.log(details);
+
+            if (details.result.shortMessage == 'CANCELLED') {
+                // Todo ? action failed, not order cancelled
+                await prisma.userSubscription.update({
+                    where: {
+                        id: userSub.id,
+                    },
+                    data: {
+                        status: 'failed',
+                    },
+                });
+            }
+
+            res.send('ok');
+        } catch (e) {
+            next(e);
+        }
     }
 
     private static async handleSubscriptionUpdate(

@@ -16,15 +16,18 @@ const paylineConfig = new Payline(
     configuration.PAYLINE_SECRET_KEY,
     configuration.PAYLINE_CONTRACT_NUMBER,
     {}, // Options
-    true,
+    process.env.NODE_ENV === 'production',
     true,
 );
 
-const paylineWebService = new PaylineWeb(paylineConfig);
+export const paylineWebService = new PaylineWeb(paylineConfig);
 
 export default class PaylineService implements PaymentService {
     public static async getCustomer(user: User) {
         // create wallet ?
+        return {
+            id: user.id.toString(),
+        };
     }
 
     public static async createPaymentIntent(opts: PaymentOptions, cbs: CallbackConfig) {
@@ -36,9 +39,9 @@ export default class PaylineService implements PaymentService {
             .setAmount(opts.amount, PaylineCurrency.EUR);
 
         // Todo: ?? is this needed ?
-        if (opts.clientId) {
-            paymentRequest.setWalletId(opts.clientId);
-        }
+        // if (opts.clientId) {
+        //     paymentRequest.setWalletId(opts.clientId);
+        // }
         if (opts.paymentType == PaymentType.SUBSCRIPTION)
             paymentRequest.setPaymentDetails(PaylineAction.AuthCaptureRecurring, PaylineMode.RECURRING);
         else if (opts.paymentType == PaymentType.ONETIME)
