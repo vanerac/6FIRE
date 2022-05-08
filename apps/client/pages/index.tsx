@@ -45,7 +45,7 @@ const HomePage: NextPage = ($props: any) => {
                     </div>
                     <div className="mb-equal position-bottom" id="video_trigger">
                         <p className="big-text">Visionner la vidéo obligatoire pour comprendre le club privé 6FIRE</p>
-                        <div className="scroll-icon">
+                        <div className="scroll-icon flex grow justify-center">
                             <img src="img/icon-material-keyboard-arrow-down@1x.png" alt="" />
                         </div>
                     </div>

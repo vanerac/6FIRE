@@ -39,7 +39,7 @@ const IndexHeader = ($props: any) => {
                 <span></span>
             </label>
 
-            <div className={`secondary-nav-top 2xl:mr-[7%] lg:mr-[120px]`}>
+            <div className={`2xl:mr-[7%] lg:mr-[120px] secondary-nav-top`}>
                 <a href="./connexion">Club Privé</a>
             </div>
         </div>
