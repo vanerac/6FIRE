@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
 // import Link from 'next/link';
 import router from 'next/router';
@@ -37,7 +38,7 @@ const Connexion: NextPage = () => {
     const [errorUserSurName, setErrorUserSurName] = useState('');
     const [errorUserMail, setErrorUserMail] = useState('');
     const [errorUserPhone, setErrorUserPhone] = useState('');
-    const [showPassword, setShowPassword] = useState('password');
+    const [showPassword, setShowPassword] = useState<boolean>(false);
     const [cguChecked, setCguChecked] = useState(false);
     const [errorCgu, setErrorCgu] = useState('');
     const [error, setError] = useState('');
@@ -68,7 +69,7 @@ const Connexion: NextPage = () => {
     };
 
     // if (cookies['API_TOKEN']) {
-    //     router.push('/articlesPage');
+    //     router.push('/accueil');
     // }
 
     const create_account = () => {
@@ -76,7 +77,7 @@ const Connexion: NextPage = () => {
         setError('');
 
         if (userName === '') {
-            setErrorUserName("Votre nom d'utilisateur est obligatoire");
+            setErrorUserName('Votre nom est obligatoire');
             isValid = false;
         }
         if (password === '') {
@@ -84,18 +85,18 @@ const Connexion: NextPage = () => {
             isValid = false;
         }
         if (userSurName === '') {
-            setErrorUserSurName('Votre nom est obligatoire');
+            setErrorUserSurName('Votre prénom est obligatoire');
             isValid = false;
         }
         if (userMail === '') {
-            setErrorUserMail('Votre mail est obligatoire');
+            setErrorUserMail('Votre e-mail est obligatoire');
             isValid = false;
         } else if (
             !userMail.match(
                 /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
             )
         ) {
-            setErrorUserMail("Votre mail n'est pas valide");
+            setErrorUserMail("Votre e-mail n'est pas valide");
             isValid = false;
         }
 
@@ -139,7 +140,7 @@ const Connexion: NextPage = () => {
                     setCookie('API_TOKEN', response.token, { domain: 'localhost' });
                     setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
                     setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
-                    router.push('/articlesPage');
+                    router.push('/accueil');
                 }
             })
             .catch((error: ApiError) => {
@@ -173,9 +174,11 @@ const Connexion: NextPage = () => {
                 />
                 <div className="background-WxaGAS"></div>
                 <div className="logo-WxaGAS">
-                    <div onClick={() => router.push('/')} style={{ cursor: 'pointer' }} className="effect-ReYaAa">
-                        <Image layout="fill" src="/img/effect-1@1x.png" />
-                    </div>
+                    <Link href="/">
+                        <a className="effect-ReYaAa cursor-pointer">
+                            <Image layout="fill" src="/img/effect-1@1x.png" alt="logo 6fire" />
+                        </a>
+                    </Link>
                 </div>
                 <div className="crer-votre-compte-sur-6-firecom-WxaGAS">Créer votre compte sur 6FIRE.com</div>
                 <div className="rejoignez-6-fire-club-priv-dinvestisseur-WxaGAS">
@@ -310,20 +313,35 @@ const Connexion: NextPage = () => {
                             setPassword(event.target.value);
                         }}
                         className="nom-Ay5Yag lato-normal-white-14px"
-                        type={showPassword}
+                        type={showPassword ? 'text' : 'password'}
                     />
 
                     <div
                         onClick={() => {
-                            console.log('showPassword', showPassword);
-                            if (showPassword == 'password') {
-                                setShowPassword('text');
-                            } else {
-                                setShowPassword('password');
-                            }
+                            setShowPassword(!showPassword);
                         }}
                         className="icon-ionic-md-eye-off-YId6x8">
-                        <Image layout="fill" src="/img/icon-ionic-md-eye-off-1@1x.png" />
+                        {showPassword ? (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="18px"
+                                viewBox="0 0 24 24"
+                                width="24px"
+                                fill="#FFFFFF">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z" />
+                            </svg>
+                        ) : (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="18px"
+                                viewBox="0 0 24 24"
+                                width="24px"
+                                fill="#FFFFFF">
+                                <path d="M0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none" />
+                                <path d="M12 6c3.79 0 7.17 2.13 8.82 5.5-.59 1.22-1.42 2.27-2.41 3.12l1.41 1.41c1.39-1.23 2.49-2.77 3.18-4.53C21.27 7.11 17 4 12 4c-1.27 0-2.49.2-3.64.57l1.65 1.65C10.66 6.09 11.32 6 12 6zm-1.07 1.14L13 9.21c.57.25 1.03.71 1.28 1.28l2.07 2.07c.08-.34.14-.7.14-1.07C16.5 9.01 14.48 7 12 7c-.37 0-.72.05-1.07.14zM2.01 3.87l2.68 2.68C3.06 7.83 1.77 9.53 1 11.5 2.73 15.89 7 19 12 19c1.52 0 2.98-.29 4.32-.82l3.42 3.42 1.41-1.41L3.42 2.45 2.01 3.87zm7.5 7.5l2.61 2.61c-.04.01-.08.02-.12.02-1.38 0-2.5-1.12-2.5-2.5 0-.05.01-.08.01-.13zm-3.4-3.4l1.75 1.75c-.23.55-.36 1.15-.36 1.78 0 2.48 2.02 4.5 4.5 4.5.63 0 1.23-.13 1.77-.36l.98.98c-.88.24-1.8.38-2.75.38-3.79 0-7.17-2.13-8.82-5.5.7-1.43 1.72-2.61 2.93-3.53z" />
+                            </svg>
+                        )}
                     </div>
                 </div>
                 <div onClick={create_account} className="button-sign-in-WxaGAS">
@@ -503,15 +521,30 @@ const Connexion: NextPage = () => {
                 <div className="mot-de-passe-qfTrnm">
                     <div
                         onClick={() => {
-                            console.log('showPassword', showPassword);
-                            if (showPassword == 'password') {
-                                setShowPassword('text');
-                            } else {
-                                setShowPassword('password');
-                            }
+                            setShowPassword(!showPassword);
                         }}
-                        className="icon-ionic-md-eye-off-WPm9xl">
-                        <Image layout="fill" src="/img/icon-ionic-md-eye-off-1@1x.png" />
+                        className="icon-ionic-md-eye-off-YId6x8">
+                        {showPassword ? (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="18px"
+                                viewBox="0 0 24 24"
+                                width="24px"
+                                fill="#FFFFFF">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z" />
+                            </svg>
+                        ) : (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="18px"
+                                viewBox="0 0 24 24"
+                                width="24px"
+                                fill="#FFFFFF">
+                                <path d="M0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none" />
+                                <path d="M12 6c3.79 0 7.17 2.13 8.82 5.5-.59 1.22-1.42 2.27-2.41 3.12l1.41 1.41c1.39-1.23 2.49-2.77 3.18-4.53C21.27 7.11 17 4 12 4c-1.27 0-2.49.2-3.64.57l1.65 1.65C10.66 6.09 11.32 6 12 6zm-1.07 1.14L13 9.21c.57.25 1.03.71 1.28 1.28l2.07 2.07c.08-.34.14-.7.14-1.07C16.5 9.01 14.48 7 12 7c-.37 0-.72.05-1.07.14zM2.01 3.87l2.68 2.68C3.06 7.83 1.77 9.53 1 11.5 2.73 15.89 7 19 12 19c1.52 0 2.98-.29 4.32-.82l3.42 3.42 1.41-1.41L3.42 2.45 2.01 3.87zm7.5 7.5l2.61 2.61c-.04.01-.08.02-.12.02-1.38 0-2.5-1.12-2.5-2.5 0-.05.01-.08.01-.13zm-3.4-3.4l1.75 1.75c-.23.55-.36 1.15-.36 1.78 0 2.48 2.02 4.5 4.5 4.5.63 0 1.23-.13 1.77-.36l.98.98c-.88.24-1.8.38-2.75.38-3.79 0-7.17-2.13-8.82-5.5.7-1.43 1.72-2.61 2.93-3.53z" />
+                            </svg>
+                        )}
                     </div>
                     <div className="ligne-7-WPm9xl">
                         {errorPassword !== '' ? (
@@ -530,7 +563,7 @@ const Connexion: NextPage = () => {
                             setErrorPassword('');
                             setPassword(event.target.value);
                         }}
-                        type={showPassword}
+                        type={showPassword ? 'text' : 'password'}
                         className="nom-vdEIbT lato-normal-white-14px"
                     />
                 </div>

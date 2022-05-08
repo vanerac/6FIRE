@@ -16,8 +16,8 @@ export class TradersService {
      * @throws ApiError
      */
     public getTraderCuration(): CancelablePromise<Array<(Trader & {
-        isFollowing?: boolean;
-    })>> {
+isFollowing?: boolean;
+})>> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/trader/curation',
@@ -33,13 +33,13 @@ export class TradersService {
 
     /**
      * Update curation
-     * @param requestBody
+     * @param requestBody 
      * @returns Trader Success
      * @throws ApiError
      */
     public updateTraderCuration(
-        requestBody?: Array<Trader>,
-    ): CancelablePromise<Trader> {
+requestBody?: Array<Trader>,
+): CancelablePromise<Trader> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/trader/curation',
@@ -62,8 +62,8 @@ export class TradersService {
      * @throws ApiError
      */
     public getTraderById(
-        id: number,
-    ): CancelablePromise<Trader> {
+id: number,
+): CancelablePromise<Trader> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/trader/{id}',
@@ -83,12 +83,12 @@ export class TradersService {
     /**
      * Delete a trader by ID
      * @param id Trader ID
-     * @returns void
+     * @returns void 
      * @throws ApiError
      */
     public deleteTraderById(
-        id: number,
-    ): CancelablePromise<void> {
+id: number,
+): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/trader/{id}',
@@ -108,14 +108,14 @@ export class TradersService {
     /**
      * Update a trader by ID
      * @param id Trader ID
-     * @param requestBody
+     * @param requestBody 
      * @returns Trader Success
      * @throws ApiError
      */
     public updateTraderById(
-        id: number,
-        requestBody?: Trader,
-    ): CancelablePromise<Trader> {
+id: number,
+requestBody?: Trader,
+): CancelablePromise<Trader> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/trader/{id}',
@@ -136,13 +136,13 @@ export class TradersService {
 
     /**
      * Create a new trader
-     * @param requestBody
+     * @param requestBody 
      * @returns Trader Success
      * @throws ApiError
      */
     public createTrader(
-        requestBody?: Trader,
-    ): CancelablePromise<Trader> {
+requestBody?: Trader,
+): CancelablePromise<Trader> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/trader',
@@ -165,8 +165,8 @@ export class TradersService {
      * @throws ApiError
      */
     public followTrader(
-        id: number,
-    ): CancelablePromise<Trader> {
+id: number,
+): CancelablePromise<Trader> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/trader/trader/{id}/follow',
@@ -190,8 +190,8 @@ export class TradersService {
      * @throws ApiError
      */
     public unfollowTrader(
-        id: number,
-    ): CancelablePromise<Trader> {
+id: number,
+): CancelablePromise<Trader> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/trader/trader/{id}/follow',
@@ -234,8 +234,8 @@ export class TradersService {
      * @throws ApiError
      */
     public getTraderFollowers(
-        id: number,
-    ): CancelablePromise<Array<Trader>> {
+id: number,
+): CancelablePromise<Array<Trader>> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/trader/trader/{id}/followers',

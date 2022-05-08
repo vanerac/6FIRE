@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { checkPassword, generateToken, hashPassword } from '../../tools/auth.tools';
 import { AWSsendEmail, sendSMS } from '../../tools/notifications.tools';
-import { generateResetPasswordEmail, generateVerifyEmail } from '../../templates/email';
+import { generatePasswordResetCodeEmail, generateVerifyEmail } from '../../templates/email';
 import configuration from '../../../configuration';
 import { ApiError } from '../../types';
 
@@ -35,10 +35,7 @@ const passwordResetCode = async (userId) => {
     const sms = user.telephone;
     const smsMessage = `Your password reset code is ${code}`;
 
-    const emailBody = generateResetPasswordEmail({
-        reset_link: configuration.BACKEND_URL + '/api/auth/password/reset?code=' + code,
-        email,
-    });
+    const emailBody = generatePasswordResetCodeEmail({ name: user.firstName, code: `${code}` });
     return Promise.all([
         AWSsendEmail({
             email,
@@ -66,7 +63,7 @@ const createVerificationCode = async (
     });
 
     const messageTemplate = generateVerifyEmail({
-        confirmation_link: `${configuration.BACKEND_URL}/api/auth/verify?code=${code}`,
+        confirmation_link: `${configuration.BACKEND_URL}/auth/verify?code=${code}`,
         email: user.email,
     });
 
@@ -115,7 +112,8 @@ export default class AuthController {
                 },
             });
 
-            const token = generateToken({ id: user.id });
+            const token = generateToken({ id: user.id, isAdmin: user.isAdmin });
+
 
             return res.cookie('API_TOKEN', token, { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3) }).json({
                 token,
@@ -158,6 +156,7 @@ export default class AuthController {
                     verifiedEmail: true,
                     verifiedPhone: true,
                     telephone: true,
+                    isAdmin: true,
                 },
             });
             console.log(user);
@@ -272,7 +271,7 @@ export default class AuthController {
                 },
             });
 
-            res.sendStatus(200);
+            res.redirect('https://6fireinvest.com/connexion');
         } catch (error) {
             next(error);
         }
@@ -405,18 +404,19 @@ export default class AuthController {
                     }),
                 );
             }
-            if (!user.verifiedEmail) {
-                return next(
-                    new ApiError({
-                        status: 400,
-                        message: 'User not verified',
-                        i18n: 'error.user.email.not_verified',
-                    }),
-                );
-            }
+            // if (!user.verifiedEmail) {
+            //     return next(
+            //         new ApiError({
+            //             status: 400,
+            //             message: 'User not verified',
+            //             i18n: 'error.user.email.not_verified',
+            //         }),
+            //     );
+            // }
             await passwordResetCode(user.id);
             res.sendStatus(200);
         } catch (e) {
+            console.log(e);
             next(e);
         }
     }

@@ -39,6 +39,9 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
+                orderBy: {
+                    createdAt: 'desc',
+                },
             };
             if (isAdmin) {
                 delete args.where;
@@ -66,7 +69,7 @@ export default class ArticleController implements CRUDController {
                 );
             }
 
-            const where = {
+            let where = {
                 id: +articleId,
                 hidden: false,
                 Theme: {
@@ -75,21 +78,10 @@ export default class ArticleController implements CRUDController {
                     },
                 },
             };
-            if (!isAdmin) {
-                Object.assign(where, {
-                    Theme: {
-                        subscriptionLevel: {
-                            lte: userSubscriptionLevel,
-                        },
-                    },
-                    hidden: false,
-                });
-                where.hidden = false;
-                where.Theme = {
-                    subscriptionLevel: {
-                        lte: userSubscriptionLevel,
-                    },
-                };
+            if (isAdmin) {
+                where = {
+                    id: +articleId,
+                } as any;
             }
 
             const article = await prisma.article.findFirst({
@@ -103,6 +95,7 @@ export default class ArticleController implements CRUDController {
                     themeId: true,
                     headerUrl: true,
                     bannerUrl: true,
+                    podcastUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -185,12 +178,13 @@ export default class ArticleController implements CRUDController {
                 financement,
                 bannerUrl,
                 headerUrl,
+                podcastUrl
             } = req.body;
             const article = await prisma.article.create({
                 data: {
                     title,
                     content,
-                    themeId: +themeId,
+                    themeId: themeId,
                     hidden: false,
                     bannerUrl,
                     headerUrl,
@@ -202,9 +196,10 @@ export default class ArticleController implements CRUDController {
                     utilisateurs,
                     necessiteAudicance,
                     financement,
+                    podcastUrl
                 },
             });
-            if (recommendedArticleIds.length > 0) {
+            if (recommendedArticleIds?.length) {
                 await Promise.all(
                     recommendedArticleIds.map(async (recommendedArticleId) => {
                         let recommandedId = recommendedArticleId;
@@ -342,16 +337,25 @@ export default class ArticleController implements CRUDController {
             const { id: userId, isAdmin } = req.user;
 
             const userSubscriptionLevel = await getSubscriptionLevel(userId);
-            const args: any = {
-                where: {
-                    hidden: false,
-                    themeId: +themeId,
-                    Theme: {
-                        subscriptionLevel: {
-                            lte: userSubscriptionLevel,
-                        },
+            const where = {
+                themeId: +themeId,
+                Theme: {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
                     },
                 },
+                hidden: false,
+            };
+            if (isAdmin) {
+                where.hidden = false;
+                where.Theme = {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
+                    },
+                };
+            }
+            const args: any = {
+                where,
                 skip: Math.max(0, +page - 1) * +limit,
                 take: +limit,
                 select: {
@@ -389,6 +393,9 @@ export default class ArticleController implements CRUDController {
                             },
                         },
                     },
+                },
+                orderBy: {
+                    createdAt: 'desc',
                 },
             };
             if (isAdmin) {

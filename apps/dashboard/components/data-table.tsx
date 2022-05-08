@@ -53,7 +53,7 @@ export default function DataTable({
                                             </td>
                                         );
                                     })}
-                                    <td className="text-center">
+                                    <td style={{ cursor: 'pointer' }} className="text-center">
                                         <img
                                             src="/img/icon/edit.svg"
                                             alt=""
@@ -62,7 +62,7 @@ export default function DataTable({
                                             style={{ width: '20px', height: '20px' }}
                                         />
                                     </td>
-                                    <td className="text-center">
+                                    <td style={{ cursor: 'pointer' }} className="text-center">
                                         <img
                                             src="/img/icon/close-red.svg"
                                             alt=""

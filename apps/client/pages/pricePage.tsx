@@ -64,12 +64,13 @@ const PricePage: NextPage = (props: any) => {
     //     apiClient.payment
     //         .createPayment({
     //             subscriptionId: subscriptionId.toString(),
-    //             provider: 'payline',
+    //             provider: 'stripe',
     //         })
     //         .then((payment) => {
-    //             return (
-    //                 <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
-    //             );
+    //             router.push((payment as { url: string }).url as string);
+    //             // return (
+    //             //     <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
+    //             // );
     //         });
     // };
 

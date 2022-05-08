@@ -20,8 +20,8 @@ export class ArticleService {
      * @throws ApiError
      */
     public createArticle(
-        requestBody: (Article | ArticlePro),
-    ): CancelablePromise<(Article | ArticlePro) | Error> {
+requestBody: (Article | ArticlePro),
+): CancelablePromise<(Article | ArticlePro) | Error> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/article/',
@@ -39,9 +39,9 @@ export class ArticleService {
      * @throws ApiError
      */
     public getArticles(
-        page?: number,
-        limit?: number,
-    ): CancelablePromise<Array<(Article | ArticlePro)> | Error> {
+page?: number,
+limit?: number,
+): CancelablePromise<Array<(Article | ArticlePro)> | Error> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/article/',
@@ -60,8 +60,8 @@ export class ArticleService {
      * @throws ApiError
      */
     public getArticleById(
-        id: number,
-    ): CancelablePromise<(Article | ArticlePro) | Error> {
+id: number,
+): CancelablePromise<(Article | ArticlePro) | Error> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/article/{id}',
@@ -80,9 +80,9 @@ export class ArticleService {
      * @throws ApiError
      */
     public updateArticleById(
-        id: number,
-        requestBody: (Article | ArticlePro),
-    ): CancelablePromise<(Article | ArticlePro) | Error> {
+id: number,
+requestBody: (Article | ArticlePro),
+): CancelablePromise<(Article | ArticlePro) | Error> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/article/{id}',
@@ -101,8 +101,8 @@ export class ArticleService {
      * @throws ApiError
      */
     public deleteArticleById(
-        id: number,
-    ): CancelablePromise<Error> {
+id: number,
+): CancelablePromise<Error> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/article/{id}',
@@ -122,10 +122,10 @@ export class ArticleService {
      * @throws ApiError
      */
     public getArticlesByTheme(
-        id: number,
-        page?: number,
-        limit?: number,
-    ): CancelablePromise<Array<(Article | ArticlePro)> | Error> {
+id: number,
+page?: number,
+limit?: number,
+): CancelablePromise<Array<(Article | ArticlePro)> | Error> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/article/theme/{id}',

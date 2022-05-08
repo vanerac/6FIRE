@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import getAPIClient from '@shared/tools/apiClient';
+import { useCookies } from 'react-cookie';
 
 export default function Topbar() {
     // Todo: Add search functionally
     // Todo: Add dropdown functionality
+    const [cookies] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
+    const [userInfo, setUserInfo] = useState('');
+
+    useEffect(() => {
+        // fecth data from a user
+        apiClient.user.getMyStats().then((res) => {
+            console.log(res);
+            setUserInfo(res.firstName as any);
+        });
+    }, []);
+
     return (
         <div>
             <div className="top_navigation">
@@ -17,7 +31,7 @@ export default function Topbar() {
                         <ul>
                             <li>
                                 <img src="img/image-11@1x.png" alt="" />
-                                <span className="name">Elodie</span>
+                                <span className="name">{userInfo}</span>
                             </li>
                         </ul>
                     </div>

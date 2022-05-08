@@ -405,6 +405,10 @@ export default class PaymentController implements CRUDController {
             },
         });
 
+        if (!userSubscription) {
+            return res.sendStatus(400);
+        }
+
         // 'checkout.session.completed',
         //     'checkout.session.async_payment_succeeded',
         //     'checkout.session.async_payment_failed',
@@ -462,7 +466,7 @@ export default class PaymentController implements CRUDController {
 
     static async redirectStripe(req: Request, res: Response) {
         // Todo: on success stripe
-        res.redirect('6fireinvest.com/articlesPage');
+        res.redirect('https://6fireinvest.com/accueil');
     }
 
     static async paylineTest(req: Request, res: Response, next: NextFunction) {

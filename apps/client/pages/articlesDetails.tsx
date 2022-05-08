@@ -9,6 +9,7 @@ import getAPIClient from '@shared/tools/apiClient';
 import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
 import draftToHtml from 'draftjs-to-html';
+import Podcast from './components/articles/podcast/podcast';
 
 const convertDate = (date: string) => {
     const date_unix = new Date(date).getTime() / 1000;
@@ -72,9 +73,26 @@ const HomePage: NextPage = (props: any) => {
         console.log('query', query);
         // if (!query.articleId) {
         //     console.log('no articleId');
-        //     router.replace('/articlesPage');
+        //     router.replace('/accueil');
         //     return;
         // }
+
+        if (query.member == 'true') {
+            apiClient.user.getMyStats().then((user) => {
+                apiClient.user.getMySubscriptions().then((res) => {
+                    // if (res[0].lenght == 0 || res[0].Subscription.level < 2) {
+                    //     router.replace('/accueil');
+                    // }
+                    console.log('resULT -> ', res[0]?.Subscription?.level);
+                    if (user.isAdmin == false) {
+                        if (res.length == 0 || (res as any)[0]?.Subscription?.level < 2) {
+                            router.replace('/accueil');
+                        }
+                    }
+                    console.log('out');
+                });
+            });
+        }
 
         setLoading(true);
         apiClient.article
@@ -110,7 +128,7 @@ const HomePage: NextPage = (props: any) => {
             return `${seconds} secondes`;
         }
     };
-
+    console.log($articles);
     return (
         <div>
             <Head>
@@ -144,8 +162,6 @@ const HomePage: NextPage = (props: any) => {
                                     <div className="category lato-bold-white-16px">
                                         {$articles?.Theme?.name ?? 'Theme Name'}
                                     </div>
-                                    {/*`DD-MM-YYYY`*/}
-                                    {/*<div className="date lato-normal-manatee-14px">{`${$articles.}`}</div>*/}
                                     <div className="date lato-normal-manatee-14px">
                                         Il y a {$convertDate($articles?.createdAt as string)}
                                     </div>
@@ -163,88 +179,19 @@ const HomePage: NextPage = (props: any) => {
                                 className="article_text lato-normal-white-16px imgbox"
                                 dangerouslySetInnerHTML={{ __html: content }}
                             />
-                            {/*<div className="article_text lato-normal-white-16px">*/}
-                            {/*    <p>*/}
-                            {/*        Attention : Vous devez faire vos propres recherches avant tout investissement. Ce*/}
-                            {/*        document ne peut en aucun cas être considéré comme un conseil en investissement.*/}
-                            {/*    </p>*/}
-
-                            {/*    <p>*/}
-                            {/*        Précédemment utilisés par une population d’initiés, la cryptomonnaie et le trading se*/}
-                            {/*        démocratisent et attirent aujourd’hui un grand nombre d’investisseurs. Les monnaies*/}
-                            {/*        virtuelles font parler d’elles et attirent les investisseurs néophytes. Cependant, pour*/}
-                            {/*        réussir son investissement crypto monnaie sans éviter*/}
-                            {/*    </p>*/}
-
-                            {/*    <ol>*/}
-                            {/*        <li>Ne pas suffisamment protéger ses comptes</li>*/}
-                            {/*        <li>Ne pas comprendre dans quoi on investit</li>*/}
-                            {/*        <li>Se tromper d’adresse</li>*/}
-                            {/*        <li>Mettre tous ses oeufs dans le même panier</li>*/}
-                            {/*        <li>Utiliser des effets de levier</li>*/}
-                            {/*    </ol>*/}
-
-                            {/*    <p>*/}
-                            {/*        Le sondage montre aussi quelles sont les erreurs les plus courantes commises par les*/}
-                            {/*        investisseurs des États-Unis. Sans grande surprise, 38 % des personnes interrogées*/}
-                            {/*        regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies au lieu de patienter*/}
-                            {/*        jusqu’à ce que les cours grimpent. 32 % regrettent également d’avoir « tout investi sur*/}
-                            {/*        un seul type de coin ».*/}
-                            {/*    </p>*/}
-
-                            {/*    <p>*/}
-                            {/*        La troisième erreur la plus courante, est le manque de compréhension des marchés de*/}
-                            {/*        cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on trouve à la*/}
-                            {/*        quatrième place des erreurs les plus courantes les investisseurs qui ont envoyé leurs*/}
-                            {/*        cryptomonnaies avant d’avoir la certitude de recevoir un paiement en retour. La*/}
-                            {/*        cinquième place est occupée par ceux qui ont acheté au plus haut… Pour revendre au plus*/}
-                            {/*        bas*/}
-                            {/*    </p>*/}
-                            {/*</div>*/}
-
-                            {/*<div className="imgbox">*/}
-                            {/*    <Image src="/img/image-878-1@1x.png" layout="fill" />*/}
-                            {/*</div>*/}
-
-                            {/*<div className="article_text lato-normal-white-16px">*/}
-                            {/*    <p>*/}
-                            {/*        Attention : Vous devez faire vos propres recherches avant tout investissement. Ce*/}
-                            {/*        document ne peut en aucun cas être considéré comme un conseil en investissement.*/}
-                            {/*    </p>*/}
-
-                            {/*    <p>*/}
-                            {/*        Précédemment utilisés par une population d’initiés, la cryptomonnaie et le trading se*/}
-                            {/*        démocratisent et attirent aujourd’hui un grand nombre d’investisseurs. Les monnaies*/}
-                            {/*        virtuelles font parler d’elles et attirent les investisseurs néophytes. Cependant, pour*/}
-                            {/*        réussir son investissement crypto monnaie sans éviter*/}
-                            {/*    </p>*/}
-
-                            {/*    <ol>*/}
-                            {/*        <li>Ne pas suffisamment protéger ses comptes</li>*/}
-                            {/*        <li>Ne pas comprendre dans quoi on investit</li>*/}
-                            {/*        <li>Se tromper d’adresse</li>*/}
-                            {/*        <li>Mettre tous ses oeufs dans le même panier</li>*/}
-                            {/*        <li>Utiliser des effets de levier</li>*/}
-                            {/*    </ol>*/}
-
-                            {/*    <p>*/}
-                            {/*        Le sondage montre aussi quelles sont les erreurs les plus courantes commises par les*/}
-                            {/*        investisseurs des États-Unis. Sans grande surprise, 38 % des personnes interrogées*/}
-                            {/*        regrettent d’avoir cédé à la panique et vendu leurs cryptomonnaies au lieu de patienter*/}
-                            {/*        jusqu’à ce que les cours grimpent. 32 % regrettent également d’avoir « tout investi sur*/}
-                            {/*        un seul type de coin ».*/}
-                            {/*    </p>*/}
-
-                            {/*    <p>*/}
-                            {/*        La troisième erreur la plus courante, est le manque de compréhension des marchés de*/}
-                            {/*        cryptomonnaies : elle concerne 27 % des personnes interrogées. Enfin, on trouve à la*/}
-                            {/*        quatrième place des erreurs les plus courantes les investisseurs qui ont envoyé leurs*/}
-                            {/*        cryptomonnaies avant d’avoir la certitude de recevoir un paiement en retour. La*/}
-                            {/*        cinquième place est occupée par ceux qui ont acheté au plus haut… Pour revendre au plus*/}
-                            {/*        bas*/}
-                            {/*    </p>*/}
-                            {/*</div>*/}
                         </div>
+
+                        {$articles.podcastUrl && (
+                            <div className="max-w-[1200px] m-auto p-[30px] relative">
+                                <Podcast
+                                    track={{
+                                        title: $articles.title ?? 'PODCAST',
+                                        audioSrc: $articles.podcastUrl ?? '',
+                                        image: ($articles?.bannerUrl as string) ?? '/img/mask-group-326-1@1x.png',
+                                    }}
+                                />
+                            </div>
+                        )}
 
                         {/* More article you would love to reaa */}
 
@@ -253,21 +200,6 @@ const HomePage: NextPage = (props: any) => {
 
                             <div className="more_articles">
                                 <div className="grid">
-                                    {/* single article */}
-                                    {/*<div className="single_article">*/}
-                                    {/*    <div className="artitle_thum">*/}
-                                    {/*        <Image layout="fill" src="/img/mask-group-321-2@1x.png" />*/}
-                                    {/*    </div>*/}
-                                    {/*    <div className="cat_and_date">*/}
-                                    {/*        <div className="category">*/}
-                                    {/*            <p className="lato-normal-milano-red-12px line">Play to Earn</p>*/}
-                                    {/*            <p className="article_date lato-light-manatee-12px">Il y a 2 heures</p>*/}
-                                    {/*        </div>*/}
-                                    {/*    </div>*/}
-                                    {/*    <div className="article_title">*/}
-                                    {/*        <h4 className="title">Axie Infinity, jeu Play to Earn</h4>*/}
-                                    {/*    </div>*/}
-                                    {/*</div>*/}
                                     {$articles?.ArticleRecommandation?.map((a, index) => {
                                         const article = a?.Recommandation?.Article;
 
@@ -352,9 +284,11 @@ const HomePage: NextPage = (props: any) => {
                                         <li>+ Canal privé Telegram</li>
                                     </ul>
                                 </div>
-
                                 <div className="btnBox">
-                                    <button type="submit" className="primary-button">
+                                    <button
+                                        type="submit"
+                                        onClick={() => router.push('/pricePage')}
+                                        className="primary-button">
                                         <span>Rejoindre</span>
                                         <div className="right-arrow">
                                             <img src="/img/icon/right-arrow.png" alt="" />

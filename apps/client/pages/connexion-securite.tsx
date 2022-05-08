@@ -30,7 +30,7 @@ const Compte: NextPage = (props: any) => {
         apiClient = getAPIClient(cookies['API_TOKEN']);
     }, []);
 
-    const $flushPasswordFields = () => {
+    const flushPasswordFields = () => {
         setOldPassword('');
         setNewPassword('');
         setConfirmPassword('');
@@ -38,7 +38,6 @@ const Compte: NextPage = (props: any) => {
 
     const updatePassword = () => {
         setLoading(true);
-        console.log('update password');
 
         // if (newPassword !== confirmPassword) {
         //     setErrorNewPassword('Les mots de passe ne correspondent pas');
@@ -56,6 +55,7 @@ const Compte: NextPage = (props: any) => {
                 alert('Votre mot de passe a été modifié avec succès');
                 setLoading(false);
                 setError('');
+                flushPasswordFields();
             })
             .catch((error) => {
                 setLoading(false);

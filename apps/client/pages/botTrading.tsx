@@ -106,13 +106,13 @@ const BotTrading: NextPage = ($props: any) => {
                     <div className="wrap">
                         <div className="question">
                             <div className="number">3</div>
-                            <h3 className="title">Comment accéder au Bot Telegram ?</h3>
+                            <h3 className="title">Confirmer votre identifiant</h3>
                         </div>
                         <p>
-                            Vous avez reçu un mail de confirmation suite à l’envoi de votre identifiant au Bot Telegram
-                            lors de l’étape 2.
+                            Vous avez collé votre identifiant sur le Bot Telegram, celui-ci va vous confirmer que vous
+                            êtes bien connecté.
                         </p>
-                        <p>Cliquez sur le bouton «Confirmer mon accès au Bot» sur le mail.</p>
+                        {/*<p>Cliquez sur le bouton «Confirmer mon accès au Bot» sur le mail.</p>*/}
                         <p>
                             <strong>Votre accès au Bot est maintenant confirmé !</strong>
                         </p>
@@ -128,7 +128,7 @@ const BotTrading: NextPage = ($props: any) => {
                             </h3>
                         </div>
                         <p>
-                            Retrouvez sur la page Traders différents profiles Binance et leurs résultats. Vous pouvez
+                            Retrouvez sur la page Traders différents profils Binance et leurs résultats. Vous pouvez
                             suivre jusqu’à 3 profils, une fois que vous avez sélectionné de un jusqu’à 3 traders vous
                             recevrez automatiquement leurs alertes sur Telegram grâce au Bot.
                         </p>
@@ -167,7 +167,7 @@ const BotTrading: NextPage = ($props: any) => {
                             <h3 className="title">Où prendre les Trades ? Contactez-nous !</h3>
                         </div>
                         <p>
-                            Contactez nous pour passer à l’étape suivant et obtenir les explications. Nous vous
+                            Contactez nous pour passer à l’étape suivante et obtenir les explications. Nous vous
                             expliquerons où et comment prendre les Trades en direct.
                         </p>
 

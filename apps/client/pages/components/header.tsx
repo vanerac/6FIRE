@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 // import router from 'next/router';
 import $ from 'jquery';
 import LoginPopup from './login';
@@ -28,7 +28,7 @@ const Header = (props: any) => {
     const [isMoney, setisMoney] = useState('');
     const [isCookie, setIsCookie] = useState('');
     const [isMobileView, setIsMobileView] = useState(false);
-    const [subscriptionLevel, setSubscriptionLevel] = useState<any>();
+    const [$subscriptionLevel, $setSubscriptionLevel] = useState<any>();
     const [$error, setError] = useState(false);
 
     /* Hamburger toggle script */
@@ -52,32 +52,34 @@ const Header = (props: any) => {
                     iconUrl: '/img/icon/formations.png',
                 },
                 // articles forex id
-                // {
-                //     id: 2,
-                //     name: 'Forex',
-                //     url: '/tradingFormationForex',
-                //     iconUrl: '/img/icon/forex.png',
-
-                // },
-                // {
-                //     id: 3,
-                //     name: 'Crypto Wallet',
-                //     url: '/cryptoWallet',
-                //     iconUrl: '/img/icon/Cryptowallet.png',
-                // },
-                // {
-                //     id: 3,
-                //     name: 'Bot Trading',
-                //     url: '/botTrading',
-                //     iconUrl: '/img/icon/bottrading.png',
-                // },
+                {
+                    id: 2,
+                    name: 'Forex',
+                    url: '/tradingFormationForex',
+                    iconUrl: '/img/icon/forex.png',
+                },
+                {
+                    id: 3,
+                    name: 'Crypto Wallet',
+                    url: '/cryptoWallet',
+                    iconUrl: '/img/icon/Cryptowallet.png',
+                },
+                {
+                    id: 3,
+                    name: 'Bot Trading',
+                    url: '/botTrading',
+                    iconUrl: '/img/icon/bottrading.png',
+                },
             ];
             setThemes(themes);
         } else {
             const response = await apiClient.themes.getThemes();
             console.log(response);
-            const slicedThemes = [...response].slice(0, 5) as Theme[];
-            const slicedThemesDropDown = [...response].slice(5) as Theme[];
+
+            const themes = response.filter((theme: Theme) => theme.name !== 'Formations' && theme.name !== 'Forex');
+
+            const slicedThemes = [...themes].slice(0, 5) as Theme[];
+            const slicedThemesDropDown = [...themes].slice(5) as Theme[];
             setThemes(slicedThemes as any);
             setThemesDropDown(slicedThemesDropDown);
         }
@@ -104,41 +106,45 @@ const Header = (props: any) => {
             fetchThemes();
         }
 
-        apiClient.subscription
-            .getSubscriptions()
-            .then((subscriptions) => {
-                console.log('ici header => ', subscriptions[0].level);
-                setSubscriptionLevel(subscriptions[0].level);
+        apiClient.user
+            .getMyStats()
+            .then((res) => {
+                if (
+                    router.pathname === '/articlesDetails' ||
+                    router.pathname === '/accueil' ||
+                    router.pathname === '/cgv' ||
+                    router.pathname === '/cgu' ||
+                    router.pathname === '/mentionsLegales' ||
+                    router.pathname === '/politiqueConfidentialite' ||
+                    router.pathname === '/404' ||
+                    router.pathname === '/compte' ||
+                    router.pathname === '/connexion-securite' ||
+                    router.pathname === '/infosPersonelles' ||
+                    router.pathname === '/pricePage' ||
+                    router.pathname === '/abonnement'
+                ) {
+                    setisMoney('Espace trading & crypto');
+                } else {
+                    console.log('res', res.isAdmin);
+                    apiClient.user.getMySubscriptions().then((sub) => {
+                        console.log('sub', sub);
+                        if (!sub) {
+                            router.replace('/');
+                        } else {
+                            console.log('inside');
+                            if ((res as any)[0]?.Subscription?.level >= 2 || res.isAdmin == true) {
+                                setisMoney('Nos Trades');
+                            } else {
+                                setisMoney('Espace trading & crypto');
+                                router.push('/pricePage');
+                            }
+                        }
+                    });
+                }
             })
             .catch((error) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
             });
-
-        if (
-            router.pathname === '/articlesDetails' ||
-            router.pathname === '/articlesPage' ||
-            router.pathname === '/cgv' ||
-            router.pathname === '/cgu' ||
-            router.pathname === '/mentionsLegales' ||
-            router.pathname === '/politiqueConfidentialite' ||
-            router.pathname === '/404' ||
-            router.pathname === '/compte' ||
-            router.pathname === '/connexion-securite' ||
-            router.pathname === '/infosPersonelles' ||
-            router.pathname === '/pricePage' ||
-            router.pathname === '/abonnement'
-        ) {
-            setisMoney('Espace trading & crypto');
-        } else {
-            console.log('LA => ', subscriptionLevel);
-            // if user has the entry level subscription, redirect to the price page
-            if (subscriptionLevel >= 2) {
-                setisMoney('Nos Trades');
-            } else {
-                setisMoney('Espace trading & crypto');
-                router.push('/pricePage');
-            }
-        }
     }, []);
 
     return (
@@ -178,12 +184,13 @@ const Header = (props: any) => {
                     <div className="main-nav">
                         <div className="top-nav">
                             <div className="logo">
-                                <a href={isCookie ? '/articlesPage' : '/'}>
+                                <a href={isCookie ? '/accueil' : '/'}>
                                     <img src="/img/logo/logo.svg" alt="" />
                                 </a>
                             </div>
                             <div className="right-nav-items">
-                                <div className="dark-light">
+                                {/* Hidden For WebSite Launching */}
+                                {/* <div className="dark-light">
                                     <div className="light-icon">
                                         <Image layout="fill" src="/img/icon-ionic-ios-moon-1@1x.png" />
                                     </div>
@@ -191,7 +198,7 @@ const Header = (props: any) => {
                                         <input type="checkbox" />
                                         <span className="slider round"></span>
                                     </label>
-                                </div>
+                                </div> */}
 
                                 {/* <a href="/compte" className="my-account">
                                     Mon compte
@@ -210,7 +217,16 @@ const Header = (props: any) => {
                                 <div className="nav-item-wrap">
                                     <ul id="visible-only-mobile">
                                         <li>
-                                            <a href="#">{isMoney}</a>
+                                            {/* <a href="#">{isMoney}</a> */}
+                                            <Link href={isMoney == 'Nos Trades' ? '/accueil' : '/trading'}>
+                                                <a className="espace">
+                                                    {isMoney == 'Nos Trades' ? (
+                                                        <p>Nos Trades</p>
+                                                    ) : (
+                                                        <p>Espace Trading &amp; Crypto</p>
+                                                    )}
+                                                </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                     <ul>
@@ -222,7 +238,7 @@ const Header = (props: any) => {
                                                         {
                                                             props.isEspaceTradingCrypto == false
                                                                 ? router.push({
-                                                                      pathname: '/articlesPage',
+                                                                      pathname: '/accueil',
                                                                       query: {
                                                                           themeId: theme.id,
                                                                       },
@@ -232,7 +248,7 @@ const Header = (props: any) => {
                                                                 ? router.push({
                                                                       pathname: theme.url,
                                                                       query: {
-                                                                          themeId: theme.id,
+                                                                          themeName: theme.name,
                                                                       },
                                                                   })
                                                                 : router.push(theme.url);
@@ -295,7 +311,7 @@ const Header = (props: any) => {
                                                                 onClick={() => {
                                                                     console.log('theme', theme);
                                                                     router.push({
-                                                                        pathname: '/articlesPage',
+                                                                        pathname: '/accueil',
                                                                         query: {
                                                                             themeId: theme.id,
                                                                         },
@@ -356,19 +372,8 @@ const Header = (props: any) => {
                                     Espace <br />
                                     Trading &amp; Crypto
                                 </a> */}
-                                <Link
-                                    href={
-                                        isMoney == 'Nos Trades' ? '/articlesPage' : '/tradingFormationForex?themeId=1'
-                                    }>
-                                    <a
-                                        className="espace"
-                                        onClick={() => {
-                                            if (isMoney == 'Nos Trades') {
-                                                setisMoney('Espace Trading & Crypto');
-                                            } else {
-                                                setisMoney('Nos Trades');
-                                            }
-                                        }}>
+                                <Link href={isMoney == 'Nos Trades' ? '/accueil' : '/trading'}>
+                                    <a className="espace">
                                         {isMoney == 'Nos Trades' ? (
                                             <p>Nos Trades</p>
                                         ) : (

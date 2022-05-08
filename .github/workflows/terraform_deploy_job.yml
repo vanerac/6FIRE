@@ -1,4 +1,6 @@
-on: workflow_call
+on:
+  - workflow_call
+  - workflow_dispatch
 name: Terraform Apply All Job
 
 jobs:
@@ -16,51 +18,9 @@ jobs:
         with:
           role-to-assume: 'arn:aws:iam::339518963654:role/GithubActionsOIDC-Role-S7MH0TQ1SC7H'
           aws-region: eu-west-3
-      - name: Terraform state cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            ./terraform/terraform.tfstate
-            ./terraform/terraform.tfstate.backup
-          key: $GITHUB_REPOSITORY
       - run: terraform init
         working-directory: terraform/
         name: terraform init
-      - name: Refresh state
-        working-directory: terraform/
-        run: terraform apply -refresh-only
-      - name: Import API ECR
-        working-directory: terraform/
-        run: terraform import aws_ecr_repository.api 6fire-api
-        continue-on-error: true
-      - name: Import Dashboard ECR
-        working-directory: terraform/
-        run: terraform import aws_ecr_repository.dashboard 6fire-dashboard
-        continue-on-error: true
-      - name: Import Client ECR
-        working-directory: terraform/
-        run: terraform import aws_ecr_repository.client 6fire-client
-        continue-on-error: true
-      - name: Import RDS
-        working-directory: terraform/
-        run: terraform import aws_rds_cluster.default rds-6fire-cluster
-        continue-on-error: true
-      - name: Import ECS Cluster
-        working-directory: terraform/
-        run: terraform import aws_ecs_cluster.default 6fire-ecs-cluster
-        continue-on-error: true
-      - name: Import ECS Client Service
-        working-directory: terraform/
-        run: terraform import aws_ecs_service.client 6fire-ecs-cluster/6fire-ecs-service-client
-        continue-on-error: true
-      - name: Import ECS API Service
-        working-directory: terraform/
-        run: terraform import aws_ecs_service.api 6fire-ecs-cluster/6fire-ecs-service-api
-        continue-on-error: true
-      - name: Import ECS Dashboard Service
-        working-directory: terraform/
-        run: terraform import aws_ecs_service.dashboard 6fire-ecs-cluster/6fire-ecs-service-dashboard
-        continue-on-error: true
       - name: Plan deployement
         working-directory: terraform/
         run: terraform plan -out=plan.file -input=false

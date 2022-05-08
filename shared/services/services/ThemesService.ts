@@ -13,13 +13,13 @@ export class ThemesService {
     /**
      * Create theme
      * Create theme
-     * @param requestBody
+     * @param requestBody 
      * @returns Theme successful operation
      * @throws ApiError
      */
     public createTheme(
-        requestBody: Theme,
-    ): CancelablePromise<Theme> {
+requestBody: Theme,
+): CancelablePromise<Theme> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/theme',
@@ -60,8 +60,8 @@ export class ThemesService {
      * @throws ApiError
      */
     public getTheme(
-        id: number,
-    ): CancelablePromise<Theme> {
+id: number,
+): CancelablePromise<Theme> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/theme/{id}',
@@ -79,14 +79,14 @@ export class ThemesService {
      * Update theme
      * Update theme
      * @param id ID of user to fetch
-     * @param requestBody
+     * @param requestBody 
      * @returns Theme successful operation
      * @throws ApiError
      */
     public updateTheme(
-        id: number,
-        requestBody: Theme,
-    ): CancelablePromise<Theme> {
+id: number,
+requestBody: Theme,
+): CancelablePromise<Theme> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/theme/{id}',
@@ -110,8 +110,8 @@ export class ThemesService {
      * @throws ApiError
      */
     public deleteTheme(
-        id: number,
-    ): CancelablePromise<any> {
+id: number,
+): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/theme/{id}',

@@ -17,14 +17,14 @@ export default function ThemesArticlesCreation() {
     const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
 
     const [title, setTitle] = useState('');
-    const [selectedSubscriptionId, setSelectedSubscriptionId] = useState<Subscription>();
+    const [selectedSubscriptionId, setSelectedSubscriptionId] = useState();
     const [iconUrl, setIconUrl] = useState('img/image-1-1@1x.png');
     const { query } = useRouter();
     const { id } = query; // TODO
 
-    useEffect(() => {
-        console.log('selectedSubscription', selectedSubscriptionId);
-    }, [selectedSubscriptionId]);
+    // useEffect(() => {
+    //     console.log('selectedSubscription', selectedSubscriptionId);
+    // }, [selectedSubscriptionId]);
 
     async function uploadImage(file: File) {
         const host: string = process.env.NEXT_PUBLIC_API_ROUTE || 'http://localhost:3333/api';
@@ -75,6 +75,7 @@ export default function ThemesArticlesCreation() {
         apiClient.subscription.getSubscriptions().then(
             (res) => {
                 setSubscriptions(res);
+                console.log('subscriptions => ', res);
                 setLoading(false);
             },
             (error) => {
@@ -121,11 +122,12 @@ export default function ThemesArticlesCreation() {
     };
 
     const createTheme = () => {
+        console.log('createTheme => ', selectedSubscriptionId);
         apiClient.themes
             .createTheme({
                 name: title,
                 iconUrl: iconUrl,
-                subscriptionLevel: selectedSubscriptionId?.level ?? 0,
+                subscriptionLevel: +(selectedSubscriptionId as unknown as string) ?? 0,
             })
             .then(
                 (res) => {
@@ -197,15 +199,10 @@ export default function ThemesArticlesCreation() {
                                     <select
                                         name=""
                                         id=""
-                                        onChange={(event) => setSelectedSubscriptionId(event.target.value as never)}>
-                                        <option value="" disabled>
-                                            Selectionnez un abonnement
-                                        </option>
+                                        onChange={(event) => setSelectedSubscriptionId(event.target.value as any)}>
+                                        <option value="">Selectionnez un abonnement</option>
                                         {subscriptions.map((subscription) => (
-                                            <option
-                                                key={subscription.id}
-                                                value={subscription.id}
-                                                selected={selectedSubscriptionId?.id == subscription.id}>
+                                            <option key={subscription.id} value={subscription.id}>
                                                 {subscription.name} - {subscription.price}€ (Niveau {subscription.level}
                                                 )
                                             </option>
