@@ -39,6 +39,10 @@ const PricePage: NextPage = (props: any) => {
             });
     }, []);
 
+    const onSuccess = () => {
+        console.log('uii');
+    };
+
     const instantiatePayment = (_subId: string, paymentProvider: 'stripe' | 'payline') => {
         apiClient.payment
             .createPayment({
@@ -52,8 +56,9 @@ const PricePage: NextPage = (props: any) => {
                 return (
                     <PaymentWidget
                         token={(payment as { url: string }).url}
-                        onSuccess={'console.log'}
-                        onError={console.log}
+                        successCb={onSuccess}
+                        errorCb={console.log}
+                        show={true}
                     />
                 );
             });
@@ -106,7 +111,7 @@ const PricePage: NextPage = (props: any) => {
                                             onStartSubscription={instantiatePayment}
                                             subName={subscription.subDesc}
                                             isBestSeller={subscription.isBestValue}
-                                            limited={subscription.limited}
+                                            limited={subscription.limited.toString()}
                                             subscriptionType={subscription.subscriptionType}
                                             level={subscription.level}
                                             paymentProvider={subscription.paymentProvider}
@@ -133,7 +138,7 @@ const PricePage: NextPage = (props: any) => {
                                                 onStartSubscription={instantiatePayment}
                                                 subName={subscription.subDesc}
                                                 isBestSeller={subscription.isBestValue}
-                                                limited={subscription.limited}
+                                                limited={subscription.limited.toString()}
                                                 subscriptionType={subscription.subscriptionType}
                                                 level={subscription.level}
                                                 paymentProvider={subscription.paymentProvider}

@@ -12,6 +12,8 @@ export type Subscription = {
     level: number;
     hidden?: boolean;
     isBestValue?: boolean;
+    subDesc: string,
+    limited: number,
     hasFreeTrial?: boolean;
     paymentProvider: "stripe" | "payline";
     freeTrialDays?: number;
