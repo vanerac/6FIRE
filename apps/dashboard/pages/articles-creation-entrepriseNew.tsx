@@ -356,65 +356,51 @@ export default function ArticlesCreation() {
                             <div className="row-1 inline-flex">
                                 <div className="single-item width-100">
                                     <label className="small_title" htmlFor="">
-                                    Description
+                                        Description
                                     </label>
-                                    <textarea className='width-100 custom-text' name="" id="">
-
-                                    </textarea>
+                                    <textarea className="width-100 custom-text" name="" id=""></textarea>
                                 </div>
                             </div>
 
                             <div className="row-1 inline-flex col-1-3">
                                 <div className="single-item width-100">
                                     <label className="small_title" htmlFor="">
-                                    Salaire moyen
+                                        Salaire moyen
                                     </label>
-                                    <textarea className='width-100 custom-text' name="" id="">
-
-                                    </textarea>
+                                    <textarea className="width-100 custom-text" name="" id=""></textarea>
                                 </div>
 
                                 <div className="single-item width-100">
                                     <label className="small_title" htmlFor="">
-                                    Tarification de la plateforme
+                                        Tarification de la plateforme
                                     </label>
-                                    <textarea className='width-100 custom-text' name="" id="">
-
-                                    </textarea>
+                                    <textarea className="width-100 custom-text" name="" id=""></textarea>
                                 </div>
-
                             </div>
 
                             <div className="row-1 inline-flex col-1-3">
                                 <div className="single-item width-100">
                                     <label className="small_title" htmlFor="">
-                                    Utilisateurs générants des revenus sur la plateforme
+                                        Utilisateurs générants des revenus sur la plateforme
                                     </label>
-                                    <textarea className='width-100 custom-text' name="" id="">
-
-                                    </textarea>
+                                    <textarea className="width-100 custom-text" name="" id=""></textarea>
                                 </div>
 
                                 <div className="col-2">
                                     <div className="single-item width-100">
                                         <label className="small_title" htmlFor="">
-                                        Financement
+                                            Financement
                                         </label>
-                                        <textarea className='width-100 custom-text' name="" id="">
-
-                                        </textarea>
+                                        <textarea className="width-100 custom-text" name="" id=""></textarea>
                                     </div>
 
                                     <div className="single-item width-100">
                                         <label className="small_title" htmlFor="">
-                                        Nécessite une audience
+                                            Nécessite une audience
                                         </label>
-                                        <textarea className='width-100 custom-text' name="" id="">
-
-                                        </textarea>
+                                        <textarea className="width-100 custom-text" name="" id=""></textarea>
                                     </div>
                                 </div>
-
                             </div>
 
                             <div className="row-1 inline-flex">
