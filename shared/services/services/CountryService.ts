@@ -34,8 +34,8 @@ export class CountryService {
      * @throws ApiError
      */
     public createCountry(
-requestBody: Country,
-): CancelablePromise<Country> {
+        requestBody: Country,
+    ): CancelablePromise<Country> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/country',
@@ -56,8 +56,8 @@ requestBody: Country,
      * @throws ApiError
      */
     public getCountryById(
-id: string,
-): CancelablePromise<Country> {
+        id: string,
+    ): CancelablePromise<Country> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/country/{id}',
@@ -81,9 +81,9 @@ id: string,
      * @throws ApiError
      */
     public updateCountryById(
-id: string,
-requestBody: Country,
-): CancelablePromise<Country> {
+        id: string,
+        requestBody: Country,
+    ): CancelablePromise<Country> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/country/{id}',
@@ -104,12 +104,12 @@ requestBody: Country,
     /**
      * Delete country by ID
      * @param id The ID of a country
-     * @returns void 
+     * @returns void
      * @throws ApiError
      */
     public deleteCountryById(
-id: string,
-): CancelablePromise<void> {
+        id: string,
+    ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/country/{id}',

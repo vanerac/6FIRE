@@ -18,9 +18,9 @@ export type User = {
     banned?: boolean;
     note?: string;
     UserSubscription?: Array<{
-Subscription?: {
-name?: string;
-};
-status?: string;
-}>;
+        Subscription?: {
+            name?: string;
+        };
+        status?: string;
+    }>;
 };

@@ -15,13 +15,13 @@ export class CryptoService {
      * @throws ApiError
      */
     public getAllCrypto(): CancelablePromise<{
-cryptos: Array<CryptoHolding>;
-messages: {
-id: number;
-message: string;
-date: string;
-};
-}> {
+        cryptos: Array<CryptoHolding>;
+        messages: {
+            id: number;
+            message: string;
+            date: string;
+        };
+    }> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/crypto',
@@ -36,13 +36,13 @@ date: string;
     }
 
     /**
-     * @param requestBody 
+     * @param requestBody
      * @returns CryptoHolding A successful response.
      * @throws ApiError
      */
     public setCryptos(
-requestBody: Array<CryptoHolding>,
-): CancelablePromise<Array<CryptoHolding>> {
+        requestBody: Array<CryptoHolding>,
+    ): CancelablePromise<Array<CryptoHolding>> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/crypto/cryptos',
@@ -59,17 +59,17 @@ requestBody: Array<CryptoHolding>,
     }
 
     /**
-     * @param requestBody 
+     * @param requestBody
      * @returns any A successful response.
      * @throws ApiError
      */
     public setMessage(
-requestBody: {
-message?: string;
-},
-): CancelablePromise<{
-message?: string;
-}> {
+        requestBody: {
+            message?: string;
+        },
+    ): CancelablePromise<{
+        message?: string;
+    }> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/crypto/message',
@@ -91,8 +91,8 @@ message?: string;
      * @throws ApiError
      */
     public searchCrypto(
-query: string,
-): CancelablePromise<Array<CryptoHolding>> {
+        query: string,
+    ): CancelablePromise<Array<CryptoHolding>> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/crypto/searchCoin',
@@ -115,10 +115,10 @@ query: string,
      * @throws ApiError
      */
     public getCoinValue(
-id: string,
-): CancelablePromise<{
-value?: string;
-}> {
+        id: string,
+    ): CancelablePromise<{
+        value?: string;
+    }> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/crypto/{id}/value',
@@ -141,10 +141,10 @@ value?: string;
      * @throws ApiError
      */
     public getCryptoImage(
-id: string,
-): CancelablePromise<{
-image?: string;
-}> {
+        id: string,
+    ): CancelablePromise<{
+        image?: string;
+    }> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/crypto/coinImg/{id}',

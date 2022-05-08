@@ -4021,6 +4021,9 @@
           },
           "updatedAt": {
             "type": "string"
+          },
+          "subscriptionProvider": {
+            "type": "string"
           }
         },
         "required": [

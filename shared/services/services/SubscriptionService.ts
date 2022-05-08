@@ -17,8 +17,8 @@ export class SubscriptionService {
      * @throws ApiError
      */
     public createSubscription(
-requestBody: Subscription,
-): CancelablePromise<Subscription> {
+        requestBody: Subscription,
+    ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/subscription/',
@@ -46,8 +46,8 @@ requestBody: Subscription,
      * @throws ApiError
      */
     public getSubscriptionById(
-id: number,
-): CancelablePromise<Subscription> {
+        id: number,
+    ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/subscription/{id}',
@@ -65,9 +65,9 @@ id: number,
      * @throws ApiError
      */
     public updateSubscriptionById(
-id: number,
-requestBody: Subscription,
-): CancelablePromise<Subscription> {
+        id: number,
+        requestBody: Subscription,
+    ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/subscription/{id}',
@@ -82,12 +82,12 @@ requestBody: Subscription,
     /**
      * Delete a subscription by id
      * @param id Subscription id
-     * @returns void 
+     * @returns void
      * @throws ApiError
      */
     public deleteSubscriptionById(
-id: number,
-): CancelablePromise<void> {
+        id: number,
+    ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/subscription/{id}',

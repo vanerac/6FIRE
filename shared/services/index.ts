@@ -26,23 +26,6 @@ export type { UserStatus } from './models/UserStatus';
 export type { UserSub } from './models/UserSub';
 export type { UserSubscription } from './models/UserSubscription';
 
-export { $Affiliation } from './schemas/$Affiliation';
-export { $Article } from './schemas/$Article';
-export { $ArticlePro } from './schemas/$ArticlePro';
-export { $Broker } from './schemas/$Broker';
-export { $Country } from './schemas/$Country';
-export { $CryptoHolding } from './schemas/$CryptoHolding';
-export { $Error } from './schemas/$Error';
-export { $Offer } from './schemas/$Offer';
-export { $OfferUsage } from './schemas/$OfferUsage';
-export { $Subscription } from './schemas/$Subscription';
-export { $Theme } from './schemas/$Theme';
-export { $Trader } from './schemas/$Trader';
-export { $User } from './schemas/$User';
-export { $UserStatus } from './schemas/$UserStatus';
-export { $UserSub } from './schemas/$UserSub';
-export { $UserSubscription } from './schemas/$UserSubscription';
-
 export { AdminService } from './services/AdminService';
 export { AffiliationService } from './services/AffiliationService';
 export { ArticleService } from './services/ArticleService';

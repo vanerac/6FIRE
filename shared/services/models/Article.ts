@@ -13,29 +13,29 @@ export type Article = {
     recommendedArticleIds?: Array<number>;
     podcastUrl?: string;
     ArticleRecommandation?: Array<{
-Recommandation?: {
-Article?: {
-id?: number;
-title?: string;
-content?: string;
-createdAt?: string;
-updatedAt?: string;
-themeId?: number;
-bannerUrl?: string;
-headerUrl?: string;
-Theme?: {
-id?: number;
-name?: string;
-iconUrl?: string;
-};
-};
-};
-}>;
+        Recommandation?: {
+            Article?: {
+                id?: number;
+                title?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                themeId?: number;
+                bannerUrl?: string;
+                headerUrl?: string;
+                Theme?: {
+                    id?: number;
+                    name?: string;
+                    iconUrl?: string;
+                };
+            };
+        };
+    }>;
     Theme?: {
-id?: number;
-name?: string;
-iconUrl?: string;
-};
+        id?: number;
+        name?: string;
+        iconUrl?: string;
+    };
     bannerUrl?: string;
     headerUrl?: string;
 };

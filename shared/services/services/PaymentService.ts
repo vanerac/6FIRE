@@ -81,8 +81,8 @@ export class PaymentService {
      * @throws ApiError
      */
     public getPaymentById(
-id: number,
-): CancelablePromise<UserSubscription> {
+        id: number,
+    ): CancelablePromise<UserSubscription> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/payment/{id}',
@@ -106,18 +106,18 @@ id: number,
      * @throws ApiError
      */
     public updatePayment(
-id: number,
-requestBody: {
-/**
- * Subscription ID
- */
-subscriptionId?: string;
-/**
- * Offer ID
- */
-offerId?: string;
-},
-): CancelablePromise<UserSubscription> {
+        id: number,
+        requestBody: {
+            /**
+             * Subscription ID
+             */
+            subscriptionId?: string;
+            /**
+             * Offer ID
+             */
+            offerId?: string;
+        },
+    ): CancelablePromise<UserSubscription> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/payment/{id}',
@@ -137,18 +137,13 @@ offerId?: string;
 
     /**
      * Delete a subscription
-<<<<<<< HEAD
      * @param id User Subscription ID
      * @returns void
-=======
-     * @param id Subscription ID
-     * @returns void
->>>>>>> d016050 (Create basic component for podcast)
      * @throws ApiError
      */
     public deletePayment(
-id: number,
-): CancelablePromise<void> {
+        id: number,
+    ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/payment/{id}',
@@ -171,8 +166,8 @@ id: number,
      * @throws ApiError
      */
     public fetchPaymentById(
-id: string,
-): CancelablePromise<any> {
+        id: string,
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/payment/payment/{id}',

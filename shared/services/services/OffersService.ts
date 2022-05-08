@@ -29,13 +29,13 @@ export class OffersService {
 
     /**
      * Create offer
-     * @param requestBody 
+     * @param requestBody
      * @returns Offer Offer created
      * @throws ApiError
      */
     public createOffer(
-requestBody: Offer,
-): CancelablePromise<Offer> {
+        requestBody: Offer,
+    ): CancelablePromise<Offer> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/offer/',
@@ -56,8 +56,8 @@ requestBody: Offer,
      * @throws ApiError
      */
     public getOfferById(
-id: number,
-): CancelablePromise<Offer> {
+        id: number,
+    ): CancelablePromise<Offer> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/offer/{id}',
@@ -76,14 +76,14 @@ id: number,
     /**
      * Update offer by id
      * @param id Offer ID
-     * @param requestBody 
+     * @param requestBody
      * @returns Offer Offer
      * @throws ApiError
      */
     public updateOfferById(
-id: number,
-requestBody: Offer,
-): CancelablePromise<Offer> {
+        id: number,
+        requestBody: Offer,
+    ): CancelablePromise<Offer> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/offer/{id}',
@@ -104,12 +104,12 @@ requestBody: Offer,
     /**
      * Delete offer by id
      * @param id Offer ID
-     * @returns void 
+     * @returns void
      * @throws ApiError
      */
     public deleteOfferById(
-id: number,
-): CancelablePromise<void> {
+        id: number,
+    ): CancelablePromise<void> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/offer/{id}',

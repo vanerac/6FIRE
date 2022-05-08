@@ -14,13 +14,13 @@ export class UserService {
     constructor(public readonly httpRequest: BaseHttpRequest) {}
 
     /**
-     * @param requestBody 
+     * @param requestBody
      * @returns User successful operation
      * @throws ApiError
      */
     public createUser(
-requestBody: User,
-): CancelablePromise<User> {
+        requestBody: User,
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/user/',
@@ -55,8 +55,8 @@ requestBody: User,
      * @throws ApiError
      */
     public getUser(
-id: number,
-): CancelablePromise<User> {
+        id: number,
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/user/{id}',
@@ -73,14 +73,14 @@ id: number,
 
     /**
      * @param id ID of user to fetch
-     * @param requestBody 
+     * @param requestBody
      * @returns User successful operation
      * @throws ApiError
      */
     public updateUser(
-id: number,
-requestBody: User,
-): CancelablePromise<User> {
+        id: number,
+        requestBody: User,
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/user/{id}',
@@ -102,8 +102,8 @@ requestBody: User,
      * @throws ApiError
      */
     public deleteUser(
-id: number,
-): CancelablePromise<User> {
+        id: number,
+    ): CancelablePromise<User> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/user/{id}',
@@ -124,8 +124,8 @@ id: number,
      * @throws ApiError
      */
     public getUserSubscription(
-id: number,
-): CancelablePromise<Subscription> {
+        id: number,
+    ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/user/id/{id}/subscription',
@@ -142,14 +142,14 @@ id: number,
     /**
      * update user subscription
      * @param id ID of the user to subscribe
-     * @param requestBody 
+     * @param requestBody
      * @returns Subscription successful operation
      * @throws ApiError
      */
     public updateUserSubscription(
-id: number,
-requestBody: Subscription,
-): CancelablePromise<Subscription> {
+        id: number,
+        requestBody: Subscription,
+    ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/user/id/{id}/subscription',
@@ -172,8 +172,8 @@ requestBody: Subscription,
      * @throws ApiError
      */
     public deleteUserSubscription(
-id: number,
-): CancelablePromise<Subscription> {
+        id: number,
+    ): CancelablePromise<Subscription> {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/user/id/{id}/subscription',
@@ -205,13 +205,13 @@ id: number,
 
     /**
      * update the current user stats
-     * @param requestBody 
+     * @param requestBody
      * @returns UserStatus successful operation
      * @throws ApiError
      */
     public updateMyStats(
-requestBody: UserStatus,
-): CancelablePromise<UserStatus> {
+        requestBody: UserStatus,
+    ): CancelablePromise<UserStatus> {
         return this.httpRequest.request({
             method: 'PUT',
             url: '/user/me/infos',
@@ -246,8 +246,8 @@ requestBody: UserStatus,
      * @throws ApiError
      */
     public getLinkingCode(): CancelablePromise<{
-code?: string;
-}> {
+        code?: string;
+    }> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/user/me/getLinkingCode',

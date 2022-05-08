@@ -11,18 +11,18 @@ export class AuthService {
     /**
      * Login
      * Login
-     * @param requestBody 
+     * @param requestBody
      * @returns any Successful operation
      * @throws ApiError
      */
     public login(
-requestBody: {
-email: string;
-password: string;
-},
-): CancelablePromise<{
-token?: string;
-}> {
+        requestBody: {
+            email: string;
+            password: string;
+        },
+    ): CancelablePromise<{
+        token?: string;
+    }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/auth/login',
@@ -44,13 +44,13 @@ token?: string;
      * @throws ApiError
      */
     public loginAdmin(
-requestBody: {
-email: string;
-password: string;
-},
-): CancelablePromise<{
-token: string;
-}> {
+        requestBody: {
+            email: string;
+            password: string;
+        },
+    ): CancelablePromise<{
+        token: string;
+    }> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/auth/login/admin',
@@ -84,21 +84,21 @@ token: string;
     /**
      * Register
      * Register
-     * @param requestBody 
+     * @param requestBody
      * @returns any User created
      * @throws ApiError
      */
     public register(
-requestBody: {
-email: string;
-password: string;
-firstName: string;
-lastName: string;
-telephone: string;
-countryId?: number;
-CGU: boolean;
-},
-): CancelablePromise<any> {
+        requestBody: {
+            email: string;
+            password: string;
+            firstName: string;
+            lastName: string;
+            telephone: string;
+            countryId?: number;
+            CGU: boolean;
+        },
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/auth/register',
@@ -120,8 +120,8 @@ CGU: boolean;
      * @throws ApiError
      */
     public verify(
-code: string,
-): CancelablePromise<any> {
+        code: string,
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/auth/verify',
@@ -144,8 +144,8 @@ code: string,
      * @throws ApiError
      */
     public verifyNew(
-type: 'EMAIL' | 'PHONE',
-): CancelablePromise<any> {
+        type: 'EMAIL' | 'PHONE',
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/auth/verifyNewUser',
@@ -163,13 +163,13 @@ type: 'EMAIL' | 'PHONE',
     /**
      * ForgotPassword
      * Forgot password
-     * @param requestBody 
+     * @param requestBody
      * @returns any OK
      * @throws ApiError
      */
     public forgotPassword(
-requestBody?: any,
-): CancelablePromise<any> {
+        requestBody?: any,
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/auth/password/forgot',
@@ -190,8 +190,8 @@ requestBody?: any,
      * @throws ApiError
      */
     public resetPassword(
-requestBody: any,
-): CancelablePromise<any> {
+        requestBody: any,
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/auth/password/reset',
@@ -212,12 +212,12 @@ requestBody: any,
      * @throws ApiError
      */
     public changePassword(
-requestBody: {
-oldPassword: string;
-newPassword: string;
-confirmPassword: string;
-},
-): CancelablePromise<any> {
+        requestBody: {
+            oldPassword: string;
+            newPassword: string;
+            confirmPassword: string;
+        },
+    ): CancelablePromise<any> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/auth/password/change',
