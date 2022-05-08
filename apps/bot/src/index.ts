@@ -38,6 +38,7 @@ const formatMessage = (traderName: string, oldPositions: Position[], newPosition
 };
 
 async function handleUpdate(trader: Trader, data: Position[]) {
+    console.log('handleUpdate', trader.name);
     const cache = await Cache.getInstance();
     const oldPositionsState = await cache.getPositions(trader.clientId);
     await cache.setTrader(trader.clientId, data);
@@ -83,13 +84,13 @@ async function updateListeners() {
             handleUpdate(trader, data);
         });
     });
-
-    bot.listenMessageQueue(await Cache.getInstance());
 }
 
-setInterval(updateListeners, 1000 * 60 * 5); // every 5m
-
-updateListeners();
+Cache.getInstance().then(async (cache) => {
+    await bot.listenMessageQueue(cache);
+    await updateListeners();
+    setInterval(updateListeners, 1000 * 60 * 5); // every 5m
+});
 
 process.on('unhandledRejection', (reason, p) => {
     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);

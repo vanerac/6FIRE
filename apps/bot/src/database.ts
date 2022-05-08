@@ -21,6 +21,7 @@ export default class Database {
             select: {
                 id: true,
                 clientId: true,
+                name: true,
                 TraderFollows: {
                     select: {
                         userId: true,

@@ -24,7 +24,7 @@ export default class TelegramBot {
         slimbot.startPolling();
 
         slimbot.on('message', async (message) => {
-            if (message.text.match(/^\/start .{36}$/)) {
+            if (message.text.match(/^\/start .*}$/)) {
                 const [$commande, code] = message.text.split(' ');
                 try {
                     const user = await Database.setUpdateChatId(code, message.chat.id);
@@ -56,9 +56,16 @@ export default class TelegramBot {
     }
 
     private set lock(value) {
+        if (value === this._lock) {
+            console.log('lock already set');
+            return;
+        }
+
         if (value !== true) {
+            console.log('Locking');
             this._lockUpdate.emit('locked');
         } else {
+            console.log('unLocking');
             this._lockUpdate.emit('unlocked');
         }
         this._lock = value;

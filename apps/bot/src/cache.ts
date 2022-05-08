@@ -29,7 +29,9 @@ export default class Cache extends EventEmitter {
         if (!this.instance) {
             this.instance = new Cache();
 
-            await this.instance.client.connect();
+            await this.instance.client.connect().catch(() => {
+                // Dont care
+            });
         }
         return this.instance;
     }
