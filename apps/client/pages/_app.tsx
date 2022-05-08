@@ -23,6 +23,7 @@ import { useEffect } from 'react';
 import Head from 'next/head';
 
 import { CookiesProvider } from 'react-cookie';
+import { PaylineHead } from 'react-payline';
 import ReactGA from 'react-ga';
 
 // import { PaylineProvider, withPayline } from 'react-payline';
@@ -43,13 +44,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
             <Head>
                 <link rel="shortcut icon" href="/logo-single.png" />
-                {/*<PaylineHead production />*/}
+                <PaylineHead production />
             </Head>
-            {/*<PaylineProvider>*/}
+
             <CookiesProvider>
                 <Component {...pageProps} />
             </CookiesProvider>
-            {/*</PaylineProvider>*/}
         </>
     );
 }

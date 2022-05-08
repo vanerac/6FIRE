@@ -2687,7 +2687,10 @@
                           "type": "string",
                           "description": "Checkout URL"
                         }
-                      }
+                      },
+                      "required": [
+                        "url"
+                      ]
                     },
                     {
                       "type": "object",
@@ -2696,7 +2699,10 @@
                           "type": "string",
                           "description": "Payline token"
                         }
-                      }
+                      },
+                      "required": [
+                        "token"
+                      ]
                     }
                   ]
                 }

@@ -53,12 +53,12 @@ export class PaymentService {
         /**
          * Checkout URL
          */
-        url?: string;
+        url: string;
     } | {
         /**
          * Payline token
          */
-        token?: string;
+        token: string;
     })> {
         return this.httpRequest.request({
             method: 'POST',

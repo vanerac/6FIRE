@@ -15,4 +15,13 @@ Sentry.init({
     // `release` value here - use the environment variable `SENTRY_RELEASE`, so
     // that it will also get attached to your source maps
     environment: process.env.NEXT_PUBLIC_NODE_ENV || 'development',
+    integrations: [
+        new Sentry.Integrations.BrowserTracing({
+            tracingOrigins: [
+                process.env.NEXT_PUBLIC_URL,
+                process.env.NEXT_PUBLIC_BACKEND_URL,
+                process.env.NEXT_PUBLIC_MATOMO_URL,
+            ],
+        }),
+    ],
 });
