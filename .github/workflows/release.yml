@@ -16,6 +16,9 @@ env:
   JWT_SECRET: ${{ secrets.JWT_SECRET }}
   STRIPE_PK: ${{ secrets.STRIPE_PK }}
   STRIPE_SK: ${{ secrets.STRIPE_SK }}
+permissions:
+  id-token: write
+  contents: read
 jobs:
   install:
     name: Install dependencies
@@ -89,21 +92,21 @@ jobs:
           STRIPE_PK: ${{ secrets.STRIPE_PK }}
           STRIPE_SK: ${{ secrets.STRIPE_SK }}
         run: |
-            docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
-              --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN \
-              --build-arg SENTRY_DSN=$API_SENTRY_DSN \
-              --build-arg AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
-              --build-arg AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
-              --build-arg SMS_API_KEY=$SMS_API_KEY \
-              --build-arg MOLLIE_API_KEY=$MOLLIE_API_KEY \
-              --build-arg COINMARKETCAP_API_KEY=$COINMARKETCAP_API_KEY \
-              --build-arg JWT_SECRET=$JWT_SECRET \
-              --build-arg STRIPE_PK=$STRIPE_PK \
-              --build-arg STRIPE_SK=$STRIPE_SK
-            
-            docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
-            docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-            docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker build . --file docker/${{ matrix.directories }}/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN \
+            --build-arg SENTRY_DSN=$API_SENTRY_DSN \
+            --build-arg AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
+            --build-arg AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
+            --build-arg SMS_API_KEY=$SMS_API_KEY \
+            --build-arg MOLLIE_API_KEY=$MOLLIE_API_KEY \
+            --build-arg COINMARKETCAP_API_KEY=$COINMARKETCAP_API_KEY \
+            --build-arg JWT_SECRET=$JWT_SECRET \
+            --build-arg STRIPE_PK=$STRIPE_PK \
+            --build-arg STRIPE_SK=$STRIPE_SK
+          
+          docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
   terraform_deploy:
     needs: [ test, compile, docker_build ]
