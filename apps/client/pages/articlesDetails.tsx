@@ -78,15 +78,19 @@ const HomePage: NextPage = (props: any) => {
         // }
 
         if (query.member == 'true') {
-            apiClient.user.getMySubscriptions().then((res) => {
-                // if (res[0].lenght == 0 || res[0].Subscription.level < 2) {
-                //     router.replace('/accueil');
-                // }
-                console.log('resULT -> ', res[0]?.Subscription?.level);
-                if (res.length == 0 || (res as any)[0]?.Subscription?.level < 2) {
-                    router.replace('/accueil');
-                }
-                console.log('out');
+            apiClient.user.getMyStats().then((user) => {
+                apiClient.user.getMySubscriptions().then((res) => {
+                    // if (res[0].lenght == 0 || res[0].Subscription.level < 2) {
+                    //     router.replace('/accueil');
+                    // }
+                    console.log('resULT -> ', res[0]?.Subscription?.level);
+                    if (user.isAdmin == false) {
+                        if (res.length == 0 || (res as any)[0]?.Subscription?.level < 2) {
+                            router.replace('/accueil');
+                        }
+                    }
+                    console.log('out');
+                });
             });
         }
 
