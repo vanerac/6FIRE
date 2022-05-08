@@ -2,6 +2,9 @@ on: [ workflow_call, workflow_dispatch ]
 name: Validate Terraform Job
 jobs:
   validate:
+    permissions:
+      id-token: write
+      contents: read
     name: Validate Terraform
     runs-on: ubuntu-latest
     steps:
