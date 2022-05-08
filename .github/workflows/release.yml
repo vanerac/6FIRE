@@ -39,5 +39,5 @@ jobs:
     needs: [ test, compile ]
     uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
   terraform_deploy:
-    needs: [ terraform_apply_ecr, test, compile, docker_build ]
+    needs: [ test, compile, docker_build ]
     uses: vanerac/6FIRE/.github/workflows/terraform_deploy_job.yml@main
