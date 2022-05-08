@@ -1,4 +1,6 @@
-on: release
+on:
+  - release
+  - workflow_dispatch
 name: Release CI/CD
 
 env:
