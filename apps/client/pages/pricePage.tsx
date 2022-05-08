@@ -111,7 +111,7 @@ const PricePage: NextPage = (props: any) => {
                                             onStartSubscription={instantiatePayment}
                                             subName={subscription.subDesc}
                                             isBestSeller={subscription.isBestValue}
-                                            limited={subscription.limited.toString()}
+                                            limited={subscription.limited?.toString()}
                                             subscriptionType={subscription.subscriptionType}
                                             level={subscription.level}
                                             paymentProvider={subscription.paymentProvider}
@@ -138,7 +138,7 @@ const PricePage: NextPage = (props: any) => {
                                                 onStartSubscription={instantiatePayment}
                                                 subName={subscription.subDesc}
                                                 isBestSeller={subscription.isBestValue}
-                                                limited={subscription.limited.toString()}
+                                                limited={subscription.limited?.toString()}
                                                 subscriptionType={subscription.subscriptionType}
                                                 level={subscription.level}
                                                 paymentProvider={subscription.paymentProvider}
