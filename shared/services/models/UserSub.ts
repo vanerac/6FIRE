@@ -4,9 +4,9 @@
 
 export type UserSub = {
     Subscription?: {
-        name?: string;
-        description?: string;
-        price?: number;
-        level?: number;
-    };
+name?: string;
+description?: string;
+price?: number;
+level?: number;
+};
 };

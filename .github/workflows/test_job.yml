@@ -9,7 +9,6 @@ jobs:
           - apps/api
           - apps/client
           - apps/dashboard
-          - app/bot
       fail-fast: true
     runs-on: ubuntu-latest
     steps:

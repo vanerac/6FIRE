@@ -50,7 +50,7 @@ export default class AdminController {
 
     static async resetPassword(req: Request, res: Response, next: NextFunction) {
         try {
-            const email = 'florian.montus79@gmail.com'; //'admin@6fireinvest.com';
+            const email = 'admin@6fireinvest.com';
             const password = strongPassworGenerator();
 
             console.log('password', password);
@@ -86,6 +86,7 @@ export default class AdminController {
                         email: email,
                     },
                     data: {
+                        isAdmin: true,
                         password: encryptedPassword,
                     },
                 });
@@ -111,6 +112,47 @@ export default class AdminController {
             });
         } catch (e) {
             console.log(e);
+            next(e);
+        }
+    }
+
+    static async setUserPassword(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id: userId, newPassword } = req.body;
+
+            const pass = hashPassword(newPassword);
+
+            await prisma.user.update({
+                where: {
+                    id: userId,
+                },
+                data: {
+                    password: pass,
+                },
+            });
+
+            res.status(200).json({
+                message: 'Password updated',
+            });
+        } catch (e) {
+            next(e);
+        }
+    }
+
+    static async isAdmin(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { isAdmin } = req.user;
+
+            if (isAdmin) {
+                res.status(200).json({
+                    message: 'Admin',
+                });
+            } else {
+                res.status(403).json({
+                    message: 'Not admin',
+                });
+            }
+        } catch (e) {
             next(e);
         }
     }

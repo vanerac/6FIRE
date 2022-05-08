@@ -12,7 +12,6 @@ export class UserController implements CRUDController {
         try {
             const users = await prisma.user.findMany({
                 select: {
-                    password: false,
                     id: true,
                     email: true,
                     firstName: true,
@@ -49,15 +48,52 @@ export class UserController implements CRUDController {
                     id: +id,
                 },
                 select: {
-                    password: false,
+                    id: true,
+                    email: true,
+                    firstName: true,
+                    lastName: true,
+                    telephone: true,
+                    createdAt: true,
+                    updatedAt: true,
+                    verifiedEmail: true,
+                    note: true,
+                    UserSubscription: {
+                        select: {
+                            Subscription: {
+                                select: {
+                                    name: true,
+                                    price: true,
+                                    description: true,
+                                    id: true,
+                                    createdAt: true,
+                                    updatedAt: true,
+                                    level: true,
+                                    paymentProvider: true,
+                                },
+                            },
+                            status: true,
+                            price: true,
+                            id: true,
+                            lastPaymentDate: true,
+                            endDate: true,
+                            createdAt: true,
+                            updatedAt: true,
+                            customerId: true,
+                            extSubscriptionId: true,
+                            paymentId: true,
+                            paymentProdvider: true,
+                        },
+                    },
                 },
             });
+
             res.json(user);
         } catch (error) {
             next(error);
         }
     }
 
+    // @deprecated
     public static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const { body } = req;
@@ -75,17 +111,26 @@ export class UserController implements CRUDController {
     public static async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
-            const { body } = req;
+            const {
+                body: { firstName, email, lastName, telephone, verifiedEmail, note },
+            } = req;
             const user = await prisma.user.update({
                 where: {
                     id: +id,
                 },
                 data: {
-                    ...body,
+                    firstName,
+                    email,
+                    lastName,
+                    telephone,
+                    verifiedEmail,
+                    note,
+                    updatedAt: new Date(),
                 },
             });
             res.json(user);
         } catch (error) {
+            console.log(error);
             next(error);
         }
     }
@@ -171,6 +216,7 @@ export class UserController implements CRUDController {
                     paymentId: '',
                     status: 'active',
                     price: 0,
+                    paymentProdvider: 'admin',
                 },
             });
             res.json(userSub);
@@ -260,6 +306,7 @@ export class UserController implements CRUDController {
                     firstName: true,
                     lastName: true,
                     telephone: true,
+                    isAdmin: true,
                 },
             });
             res.json(user);
@@ -291,6 +338,27 @@ export class UserController implements CRUDController {
                 },
             });
             res.json(user?.UserSubscription ?? []);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    static async updateInfos(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { id } = req.user;
+            const { firstName, lastName, telephone, email } = req.body;
+            const user = await prisma.user.update({
+                where: {
+                    id: +id,
+                },
+                data: {
+                    firstName,
+                    email,
+                    lastName,
+                    telephone,
+                },
+            });
+            res.json(user);
         } catch (error) {
             next(error);
         }

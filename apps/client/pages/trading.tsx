@@ -41,7 +41,7 @@ const Trading: NextPage = () => {
             <Head>
                 <title>Trading - Crypto Trader</title>
             </Head>
-            <Header />
+            <Header isEspaceTradingCrypto={true} />
 
             {/* Tread inner */}
             <div className="trade-inner-header">
@@ -59,11 +59,13 @@ const Trading: NextPage = () => {
                     </div>
                     <div className="button-right">
                         <div className="btn-group">
-                            <button className="primary-button">
+                            <button
+                                onClick={() => router.push('https://t.me/sixfiresupport')}
+                                className="primary-button">
                                 <img className="telegram" src="/img/icon/telegram.svg" alt="" />
                                 <span>Support Telegram</span>
                             </button>
-                            <button className="primary-button">
+                            <button onClick={() => router.push('http://wa.me/33787706356')} className="primary-button">
                                 <img src="/img/icon/whatsapp.svg" alt="" />
                                 <span>Support WhatsApp</span>
                             </button>
@@ -169,18 +171,6 @@ const Trading: NextPage = () => {
 
             {/* circel button group */}
             <div className="circle-btn-group">
-                <a href="#" className="primary-button bg-blue">
-                    <span>CRÉER UN COMPTE PUPRIME</span>
-                    <div className="right-arrow">
-                        <img src="/img/icon/right-arrow.png" alt="" />
-                    </div>
-                </a>
-                <a href="#" className="primary-button bg-yellow">
-                    <span>CRÉER UN COMPTE BINANCE</span>
-                    <div className="right-arrow">
-                        <img src="/img/icon/right-arrow.png" alt="" />
-                    </div>
-                </a>
                 <a href="#" className="primary-button bg-blue">
                     <span>CRÉER UN COMPTE PUPRIME</span>
                     <div className="right-arrow">

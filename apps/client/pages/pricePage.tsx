@@ -8,6 +8,7 @@ import { useCookies } from 'react-cookie';
 import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import Head from 'next/head';
+import { PaylineHead } from 'react-payline';
 
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -33,28 +34,40 @@ const PricePage: NextPage = (props: any) => {
             });
     }, []);
 
-    const $subcribe = (subscriptionId: string) => {
+    const $subcribe = ($subscriptionId: string) => {
+        // Todo: get subscription method
+        //     apiClient.payment
+        //         .createPayment({
+        //             subscriptionId: subscriptionId.toString(),
+        //             provider: '',
+        //         })
+        //         .then((payment) => {
+        //             return (
+        //                 <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
+        //             );
+        //         });
         setLoading(true);
-        apiClient.payment
-            .createPayment({
-                subscriptionId,
-                // OfferId ??
-            })
-            .then((payment) => {
-                setLoading(false);
-                // Todo a popup instead ?
-                router.push(payment.paymentUrl as string);
-            })
-            .catch((error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-                setLoading(false);
-            });
     };
+
+    // const instantiatePayment = (subscriptionId: number) => {
+    //     apiClient.payment
+    //         .createPayment({
+    //             subscriptionId: subscriptionId.toString(),
+    //             provider: 'stripe',
+    //         })
+    //         .then((payment) => {
+    //             router.push((payment as { url: string }).url as string);
+    //             // return (
+    //             //     <PaymentWidget token={payment.paymentUrl as string} onSuccess={console.log} onError={console.log} />
+    //             // );
+    //         });
+    // };
 
     return (
         <div>
             <Head>
                 <title>Abonnement Prix - Crypto Trader</title>
+                <PaylineHead production />
             </Head>
             <input type="hidden" id="anPageName" name="page" value="prices-page" />
             <Header isOpenSideBar={props.useStateOpenSideBar} isEspaceTradingCrypto={false} />
@@ -87,7 +100,10 @@ const PricePage: NextPage = (props: any) => {
                                         49,99€ <span>/mois</span>
                                     </div>
 
-                                    <button type="submit" className="primary-button">
+                                    <button
+                                        // onClick={() => instantiatePayment(1)}
+                                        type="submit"
+                                        className="primary-button">
                                         <span>Commencer</span>
                                         <div className="right-arrow">
                                             <img src="/img/icon/right-arrow.png" alt="" />
@@ -128,7 +144,7 @@ const PricePage: NextPage = (props: any) => {
                                 <div className="price_head">
                                     <div className="title">
                                         <h3>
-                                            INTERMÉDIAIRE <span>(Pour les ambitieux, qui veulent trader)</span>
+                                            INTERMÉDIAIRE <span>{/*(Pour les ambitieux, qui veulent trader)*/}</span>
                                         </h3>
                                     </div>
                                     <div className="price">
@@ -148,40 +164,60 @@ const PricePage: NextPage = (props: any) => {
                                                 <img src="/img/icon/check.png" alt="" />
                                                 Accès aux options de la Licence Novice
                                             </li>
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès au BOT TRADING permettant d’obtenir les alertes des meilleurs*/}
+                                            {/*    traders du monde sur Binance*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès à nos analyses sur les marchés*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès à notre portefeuille Crypto et nos choix en temps réel pour le*/}
+                                            {/*    long terme*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès aux signaux FOREX & CRYPTO permettant de voir en temps réel les*/}
+                                            {/*    positions que nous prenons sur les marchés*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès à nos résultats*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Accès à nos outils d’analyses secrets sur les marchés financiers*/}
+                                            {/*</li>*/}
+                                            {/*<li>*/}
+                                            {/*    <img src="/img/icon/plus.png" alt="" />*/}
+                                            {/*    Challenge 1K to 10K*/}
+                                            {/*</li>*/}
                                             <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès au BOT TRADING permettant d’obtenir les alertes des meilleurs
-                                                traders du monde sur Binance
+                                                <img src="/img/icon/check.png" alt="" /> Accès à tous les articles pour
+                                                comprendre le monde de l’investissement
                                             </li>
                                             <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès à nos analyses sur les marchés
+                                                <img src="/img/icon/check.png" alt="" /> Accès aux Bons Plans
                                             </li>
                                             <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès à notre portefeuille Crypto et nos choix en temps réel pour le
-                                                long terme
+                                                <img src="/img/icon/check.png" alt="" /> Accès aux articles permettant
+                                                de se lancer dans le monde de l’investissement sans budget à travers des
+                                                dizaines d’opportunités
                                             </li>
                                             <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès aux signaux FOREX & CRYPTO permettant de voir en temps réel les
-                                                positions que nous prenons sur les marchés
-                                            </li>
-                                            <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès à nos résultats
-                                            </li>
-                                            <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Accès à nos outils d’analyses secrets sur les marchés financiers
-                                            </li>
-                                            <li>
-                                                <img src="/img/icon/plus.png" alt="" />
-                                                Challenge 1K to 10K
+                                                <img src="/img/icon/check.png" alt="" />
+                                                Accès aux rencontres et événements privés des membres en France
                                             </li>
                                             <li>
                                                 <img src="/img/icon/plus.png" alt="" />
                                                 Support 24h/24 et 7j/7 pour les membres
+                                            </li>
+                                            <li>
+                                                <img src="/img/icon/plus.png" alt="" />
+                                                Présentation des cryptomonnaies chaque semaine
                                             </li>
                                         </ul>
                                     </div>

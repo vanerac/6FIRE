@@ -19,13 +19,26 @@ export function generateEmail({
     // read file email.html
     const emailTemplate = fs.readFileSync(path.resolve(__dirname, 'email.html'));
 
+    let r;
+    if (refresh === '365') {
+        r = 'an';
+    } else if (refresh === '30') {
+        r = 'mois';
+    } else {
+        r = 'jours';
+    }
+
+    console.log('date', orderDate);
+
+    console.log('email', emailTemplate);
+
     // replace all placeholders
     return emailTemplate
         .toString()
         .replace('{{name}}', name)
-        .replace('{{orderDate}}', orderDate)
+        .replace('{{order_date}}', orderDate)
         .replace('{{subscription}}', subscription)
         .replace('{{price}}', price)
-        .replace('{{refresh}}', refresh)
+        .replace('{{refresh}}', r)
         .replace('{{email}}', email);
 }

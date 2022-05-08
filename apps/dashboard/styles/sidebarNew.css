@@ -44,7 +44,7 @@
 
 body {
     font-size: 0.9rem;
-    font-family: "Lato", sans-serif !important;
+    font-family: 'Lato', sans-serif !important;
     margin: 0%;
     padding: 0;
     background-color: #f4f7fc;
@@ -73,6 +73,11 @@ body {
 .page-wrapper {
     height: 100vh;
     display: flex;
+}
+
+.test {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 .page-wrapper .theme {
@@ -269,9 +274,9 @@ body {
 }
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: "\f105";
+    content: '\f105';
     font-style: normal;
     display: inline-block;
     font-style: normal;
@@ -296,8 +301,8 @@ body {
 }
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
-    content: "\f111";
-    font-family: "Font Awesome 5 Free";
+    content: '\f111';
+    font-family: 'Font Awesome 5 Free';
     font-weight: 400;
     font-style: normal;
     display: inline-block;
@@ -364,7 +369,7 @@ body {
 }
 
 .badge-sonar:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -437,11 +442,10 @@ body {
     background: transparent;
 }
 
-
 /*-----------------------------chiller-theme-------------------------------------------------*/
 
 .chiller-theme .sidebar-wrapper {
-    background: #31353D;
+    background: #31353d;
 }
 
 .chiller-theme .sidebar-wrapper .sidebar-header,
@@ -514,7 +518,6 @@ body {
 .chiller-theme .sidebar-footer > a:last-child {
     border-right: none;
 }
-
 
 /* Main page style
 ********************/
@@ -615,7 +618,8 @@ body {
     width: 255px;
 }
 
-.table-content input, .table-content select {
+.table-content input,
+.table-content select {
     border: 0;
     border-bottom: 1px solid #222;
     padding: 10px 20px;
@@ -733,7 +737,8 @@ button {
     align-items: center;
 }
 
-.table-filter input, .table-filter select {
+.table-filter input,
+.table-filter select {
     border: 0;
     outline: 0;
     padding: 10px 25px;
@@ -836,7 +841,6 @@ table tr:nth-child(even) {
     background-color: #fff;
     color: #111;
     border-color: #111;
-
 }
 
 .forget-pass {
@@ -868,3 +872,71 @@ table tr:nth-child(even) {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 45px;
 }
+
+input.checkBox-item{
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Toggle button */
+.toggle input[type="checkbox"] {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    background: #bdc3c7;
+    -webkit-appearance: none;
+    border-radius: 20px;
+    outline: none;
+    transition: .4s;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border: 0;
+  }
+  
+  .toggle input:checked[type="checkbox"] {
+    background: #3498db;
+  }
+  
+  .toggle input[type="checkbox"]::before {
+    z-index: 2;
+    position: absolute;
+    content: "";
+    left: 5px;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border-radius: 50%;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: .4s;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .toggle input:checked[type="checkbox"]::before {
+    left: 60px;
+  }
+  
+  .toggle {
+    position: relative;
+    display: inline;
+  }
+  
+  .toggle label {
+    position: absolute;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    pointer-events: none;
+  }
+  
+  .toggle .onbtn {
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .toggle .ofbtn {
+    bottom: 15px;
+    right: 14px;
+    color: #34495e;
+  }

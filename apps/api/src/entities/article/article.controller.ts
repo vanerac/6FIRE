@@ -1,6 +1,7 @@
 import { ApiError, CRUDController } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+import { getSubscriptionLevel } from '../../tools/subscription.tool';
 
 const prisma = new PrismaClient();
 
@@ -10,24 +11,13 @@ export default class ArticleController implements CRUDController {
             const { id: userId, isAdmin } = req.user;
             const { page = 0, limit = 20 } = req.query;
 
-            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                where: {
-                    userId,
-                },
-                select: {
-                    Subscription: {
-                        select: {
-                            level: true,
-                        },
-                    },
-                },
-            });
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
             const args: any = {
                 where: {
                     hidden: false,
                     Theme: {
                         subscriptionLevel: {
-                            lte: userSubscriptionLevel?.Subscription.level,
+                            lte: userSubscriptionLevel,
                         },
                     },
                 },
@@ -49,6 +39,9 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                 },
+                orderBy: {
+                    createdAt: 'desc',
+                },
             };
             if (isAdmin) {
                 delete args.where;
@@ -65,18 +58,7 @@ export default class ArticleController implements CRUDController {
         try {
             const { id: articleId } = req.params;
             const { id: userId, isAdmin } = req.user;
-            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                where: {
-                    userId,
-                },
-                select: {
-                    Subscription: {
-                        select: {
-                            level: true,
-                        },
-                    },
-                },
-            });
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
             if (!userSubscriptionLevel && !isAdmin) {
                 next(
                     new ApiError({
@@ -87,30 +69,23 @@ export default class ArticleController implements CRUDController {
                 );
             }
 
-            const where = {
+            let where = {
                 id: +articleId,
-                hidden: undefined,
-                Theme: undefined,
-            };
-            if (!isAdmin) {
-                where.hidden = false;
-                where.Theme = {
+                hidden: false,
+                Theme: {
                     subscriptionLevel: {
-                        lte: userSubscriptionLevel?.Subscription.level,
+                        lte: userSubscriptionLevel,
                     },
-                };
+                },
+            };
+            if (isAdmin) {
+                where = {
+                    id: +articleId,
+                } as any;
             }
 
             const article = await prisma.article.findFirst({
-                where: {
-                    id: +articleId,
-                    hidden: false,
-                    Theme: {
-                        subscriptionLevel: {
-                            lte: userSubscriptionLevel?.Subscription.level,
-                        },
-                    },
-                },
+                where,
                 select: {
                     id: true,
                     title: true,
@@ -120,6 +95,7 @@ export default class ArticleController implements CRUDController {
                     themeId: true,
                     headerUrl: true,
                     bannerUrl: true,
+                    podcastUrl: true,
                     Theme: {
                         select: {
                             name: true,
@@ -127,6 +103,17 @@ export default class ArticleController implements CRUDController {
                         },
                     },
                     ArticleRecommandation: {
+                        // where: {
+                        //     Recommandation: {
+                        //         Article: {
+                        //             Theme: {
+                        //                 subscriptionLevel: {
+                        //                     lte: userSubscriptionLevel,
+                        //                 },
+                        //             },
+                        //         },
+                        //     },
+                        // },
                         select: {
                             // id: false,
                             // recommandedArticleId: false,
@@ -191,12 +178,13 @@ export default class ArticleController implements CRUDController {
                 financement,
                 bannerUrl,
                 headerUrl,
+                podcastUrl
             } = req.body;
             const article = await prisma.article.create({
                 data: {
                     title,
                     content,
-                    themeId: +themeId,
+                    themeId: themeId,
                     hidden: false,
                     bannerUrl,
                     headerUrl,
@@ -208,9 +196,10 @@ export default class ArticleController implements CRUDController {
                     utilisateurs,
                     necessiteAudicance,
                     financement,
+                    podcastUrl
                 },
             });
-            if (recommendedArticleIds.length > 0) {
+            if (recommendedArticleIds?.length) {
                 await Promise.all(
                     recommendedArticleIds.map(async (recommendedArticleId) => {
                         let recommandedId = recommendedArticleId;
@@ -347,28 +336,26 @@ export default class ArticleController implements CRUDController {
             const { page = 0, limit = 20 } = req.query;
             const { id: userId, isAdmin } = req.user;
 
-            const userSubscriptionLevel = await prisma.userSubscription.findFirst({
-                where: {
-                    userId,
-                },
-                select: {
-                    Subscription: {
-                        select: {
-                            level: true,
-                        },
+            const userSubscriptionLevel = await getSubscriptionLevel(userId);
+            const where = {
+                themeId: +themeId,
+                Theme: {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
                     },
                 },
-            });
+                hidden: false,
+            };
+            if (isAdmin) {
+                where.hidden = false;
+                where.Theme = {
+                    subscriptionLevel: {
+                        lte: userSubscriptionLevel,
+                    },
+                };
+            }
             const args: any = {
-                where: {
-                    hidden: false,
-                    themeId: +themeId,
-                    Theme: {
-                        subscriptionLevel: {
-                            lte: userSubscriptionLevel?.Subscription.level,
-                        },
-                    },
-                },
+                where,
                 skip: Math.max(0, +page - 1) * +limit,
                 take: +limit,
                 select: {
@@ -406,6 +393,9 @@ export default class ArticleController implements CRUDController {
                             },
                         },
                     },
+                },
+                orderBy: {
+                    createdAt: 'desc',
                 },
             };
             if (isAdmin) {

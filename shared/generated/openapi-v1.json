@@ -439,6 +439,55 @@
             }
           }
         }
+      },
+      "put": {
+        "description": "update the current user stats",
+        "operationId": "updateMyStats",
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserStatus"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserStatus"
+                }
+              }
+            },
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid user supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/user/me/subscription": {
@@ -2603,11 +2652,23 @@
                     "type": "string",
                     "description": "Subscription ID"
                   },
+                  "provider": {
+                    "type": "string",
+                    "description": "Provider",
+                    "enum": [
+                      "payline",
+                      "stripe"
+                    ]
+                  },
                   "offerId": {
                     "type": "string",
                     "description": "Offer ID"
                   }
-                }
+                },
+                "required": [
+                  "subscriptionId",
+                  "provider"
+                ]
               }
             }
           }
@@ -2618,16 +2679,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
+                  "anyOf": [
                     {
-                      "$ref": "#/components/schemas/UserSubscription"
+                      "type": "object",
+                      "properties": {
+                        "url": {
+                          "type": "string",
+                          "description": "Checkout URL"
+                        }
+                      }
                     },
                     {
                       "type": "object",
                       "properties": {
-                        "paymentUrl": {
+                        "token": {
                           "type": "string",
-                          "description": "Payment URL"
+                          "description": "Payline token"
                         }
                       }
                     }
@@ -2656,7 +2723,7 @@
         {
           "name": "id",
           "in": "path",
-          "description": "Subscription ID",
+          "description": "User Subscription ID",
           "required": true,
           "schema": {
             "type": "number"
@@ -3483,7 +3550,7 @@
     "/admin/reset": {
       "get": {
         "description": "Regenerate the admin password and send it by email, can be done every 12 hours",
-        "operationId": "resetPassword",
+        "operationId": "resetAdminPassword",
         "tags": [
           "Admin"
         ],
@@ -3527,6 +3594,67 @@
             "description": "Successful response"
           },
           "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/admin/setUserPassword": {
+      "post": {
+        "description": "Set the password of a user",
+        "operationId": "setUserPassword",
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "password"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "User is not an admin"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/admin/isAdmin": {
+      "get": {
+        "description": "Check if the user is an admin",
+        "operationId": "isAdmin",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "403": {
             "description": "Bad request"
           }
         }
@@ -3692,16 +3820,13 @@
           "id": {
             "type": "number"
           },
-          "name": {
-            "type": "string"
-          },
-          "symbol": {
+          "token": {
             "type": "string"
           },
           "amount": {
             "type": "number"
           },
-          "price_usd": {
+          "price": {
             "type": "number"
           }
         }
@@ -3767,6 +3892,9 @@
             "items": {
               "type": "number"
             }
+          },
+          "podcastUrl": {
+            "type": "string"
           },
           "ArticleRecommandation": {
             "type": "array",
@@ -4052,6 +4180,9 @@
           },
           "telephone": {
             "type": "string"
+          },
+          "isAdmin": {
+            "type": "boolean"
           }
         }
       },
@@ -4137,6 +4268,9 @@
             "items": {
               "type": "number"
             }
+          },
+          "podcastUrl": {
+            "type": "string"
           },
           "ArticleRecommandation": {
             "type": "array",

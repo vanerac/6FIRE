@@ -13,6 +13,7 @@ router.delete('/:id', isAdmin, UserController.delete);
 // router.get('/me', UserController.me);
 router.get('/me/getLinkingCode', UserController.getLinkingCode);
 router.get('/me/infos', UserController.getInfos);
+router.put('/me/infos', UserController.updateInfos);
 router.get('/me/subscription', UserController.getSubscriptions);
 
 router.get('id/:id/subscription', isAdmin, UserController.getSubscription);

@@ -11,17 +11,17 @@ export class UploadService {
     /**
      * Upload file
      * Upload file
-     * @param formData
+     * @param formData 
      * @returns any Successful operation
      * @throws ApiError
      */
     public uploadFile(
-        formData?: {
-            file?: Blob;
-        },
-    ): CancelablePromise<{
-        url?: string;
-    }> {
+formData?: {
+file?: Blob;
+},
+): CancelablePromise<{
+url?: string;
+}> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/upload',

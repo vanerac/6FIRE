@@ -30,6 +30,9 @@
             "type": "number"
           }
         },
+        "podcastUrl": {
+          "type": "string"
+        },
         "ArticleRecommandation": {
           "type": "array",
           "items": {
@@ -167,6 +170,9 @@
           "items": {
             "type": "number"
           }
+        },
+        "podcastUrl": {
+          "type": "string"
         },
         "ArticleRecommandation": {
           "type": "array",

@@ -18,27 +18,40 @@ import '../css/nos-trades.css';
 import '../css/header.css';
 import '../css/footer.css';
 
+import { useEffect } from 'react';
+
 import Head from 'next/head';
 
 import { CookiesProvider } from 'react-cookie';
+import ReactGA from 'react-ga';
+
+// import { PaylineProvider, withPayline } from 'react-payline';
 
 // import Cookies from 'universal-cookie';
+ReactGA.initialize('G-9F2GZK3GCX');
 
 function MyApp({ Component, pageProps }: AppProps) {
     // set a cookie to avoid the user to be redirected to the login page in developpement mode
     // const [$cookies, setCookies] = useCookies(['API_TOKEN']);
     // setCookies('API_TOKEN', 'OK', { path: '/' });
 
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    });
+
     return (
         <>
             <Head>
                 <link rel="shortcut icon" href="/logo-single.png" />
+                {/*<PaylineHead production />*/}
             </Head>
+            {/*<PaylineProvider>*/}
             <CookiesProvider>
                 <Component {...pageProps} />
             </CookiesProvider>
+            {/*</PaylineProvider>*/}
         </>
     );
 }
 
-export default MyApp;
+export default MyApp as any;

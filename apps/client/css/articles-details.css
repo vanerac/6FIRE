@@ -2581,18 +2581,18 @@ body{
   width: calc(100.00% - 73px);
 }
 @media screen and (max-width: 1365px) {
-  .screen.articles-details { 
+  .screen.articles-details {
     display: none;
    }
 }
 @media screen and (min-width: 1366px) {
-  .screen.articles-details-mobile { 
+  .screen.articles-details-mobile {
     display: none;
    }
 }
 
 
-/* Article Detisl New Style (by Zihad) 
+/* Article Detisl New Style (by Zihad)
 =======================================*/
 .article_details_wrapper{
   margin-top: 145px;
@@ -2720,6 +2720,7 @@ body{
   cursor: pointer;
 }
 .more_articles .grid .single_article .artitle_thum span{
+  border-radius: 10px;
   position: relative !important;
 }
 .more_articles .grid .single_article .artitle_thum span img{
@@ -2738,21 +2739,21 @@ body{
   justify-content: flex-start;
   gap: 0;
   padding: 15px 0;
-} 
+}
 .more_articles .grid .single_article .cat_and_date .category p {
   margin: 0;
-} 
+}
 .more_articles .grid .single_article .cat_and_date .category .line {
   border-right: 1px solid #555;
   padding-right: 15px;
   margin-right: 15px ;
-} 
+}
 .more_articles .grid .single_article .article_title .title {
   margin: 0;
   color: #fff;
   font-family: var(--font-family-lato);
   font-size: calc(17px + (21 - 17) * ((100vw - 320px) / (1920 - 320)));
-} 
+}
 
 /* Responsive */
 @media screen and (max-width: 1230px) {
@@ -2779,7 +2780,7 @@ body{
 }
 
 
-/* Treading Block 
+/* Treading Block
 *******************/
 .treading-wrapper{
   max-width: 1200px;
@@ -2845,5 +2846,5 @@ body{
   .tread-container .primary-button{
     margin-top: 15px;
   }
-  
+
 }
