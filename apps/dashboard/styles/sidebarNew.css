@@ -851,6 +851,28 @@ table tr:nth-child(even) {
 .forget-pass:hover {
     text-decoration: underline;
 }
+
+/* Article creation entreprisen */
+.width-100{
+    width: 100% !important;
+}
+.custom-text{
+    min-height: 35px;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #222;
+}
+.col-1-3{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 45px;
+}
+.col-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 45px;
+}
+
 input.checkBox-item{
     width: auto;
     margin-right: 10px;

@@ -31,10 +31,18 @@ if (typeof window !== 'undefined') {
 -------------------------------------*/
 if (typeof window !== 'undefined') {
     $('.menu__btn').click(function () {
-        if ($('body').hasClass('scrollOff')) {
+        if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
             $('body').removeClass('scrollOff');
         } else {
             $('body').addClass('scrollOff');
+        }
+    });
+}
+
+if (typeof window !== 'undefined') {
+    $('.scrollRemove, .register_btn').click(function () {
+        if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
+            $('body').removeClass('scrollOff');
         }
     });
 }
@@ -243,9 +251,9 @@ const LoginPopup = (props: any) => {
                                 </a>
                             </div>
                             {error && <span style={{ color: 'red' }}>{error}</span>}
-                            <div className="item-center ">
+                            <div className="item-center">
                                 <input
-                                    className="hover:bg-white hover:text-inherit transiition linear duration-300 "
+                                    className="scrollRemove hover:bg-white hover:text-inherit transiition linear duration-300 "
                                     onClick={handleSubmit}
                                     type="submit"
                                     value={'Me connecter'}
@@ -265,7 +273,7 @@ const LoginPopup = (props: any) => {
                                     <input type="email" placeholder="*Email" />
                                     <button
                                         id="pass_submit"
-                                        className="get-validator-code hover:bg-white hover:text-inherit transiition linear duration-300 ">
+                                        className="get-validator-code scrollRemove hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
                                     </button>
                                 </form>
@@ -289,7 +297,7 @@ const LoginPopup = (props: any) => {
                                     </div>
                                     <button
                                         id="pass_submit"
-                                        className="confirm-password-btn hover:bg-white hover:text-inherit transiition linear duration-300 ">
+                                        className="confirm-password-btn scrollRemove hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
                                     </button>
                                 </form>
@@ -322,7 +330,7 @@ const LoginPopup = (props: any) => {
                                     </div>
                                     <button
                                         id="pass_submit"
-                                        className="hover:bg-white hover:text-inherit transiition linear duration-300 ">
+                                        className="scrollRemove hover:bg-white hover:text-inherit transiition linear duration-300 ">
                                         Valider
                                     </button>
                                 </form>
