@@ -22,9 +22,9 @@ export default function ThemesArticlesCreation() {
     const { query } = useRouter();
     const { id } = query; // TODO
 
-    useEffect(() => {
-        console.log('selectedSubscription', selectedSubscriptionId);
-    }, [selectedSubscriptionId]);
+    // useEffect(() => {
+    //     console.log('selectedSubscription', selectedSubscriptionId);
+    // }, [selectedSubscriptionId]);
 
     async function uploadImage(file: File) {
         const host: string = process.env.NEXT_PUBLIC_API_ROUTE || 'http://localhost:3333/api';
@@ -123,23 +123,23 @@ export default function ThemesArticlesCreation() {
 
     const createTheme = () => {
         console.log('createTheme => ', selectedSubscriptionId);
-        // apiClient.themes
-        //     .createTheme({
-        //         name: title,
-        //         iconUrl: iconUrl,
-        //         subscriptionLevel: selectedSubscriptionId?.level ?? 0,
-        //     })
-        //     .then(
-        //         (res) => {
-        //             alert('Theme created');
-        //             router.push('/themes-articles-creationNew?id=' + res.id);
-        //         },
-        //         (error) => {
-        //             setError(error.i18n ?? error.message ?? 'Unknown error');
-        //             setLoading(false);
-        //             alert('Echec de la creation, verifiez les champs');
-        //         },
-        //     );
+        apiClient.themes
+            .createTheme({
+                name: title,
+                iconUrl: iconUrl,
+                subscriptionLevel: +selectedSubscriptionId ?? 0,
+            })
+            .then(
+                (res) => {
+                    alert('Theme created');
+                    router.push('/themes-articles-creationNew?id=' + res.id);
+                },
+                (error) => {
+                    setError(error.i18n ?? error.message ?? 'Unknown error');
+                    setLoading(false);
+                    alert('Echec de la creation, verifiez les champs');
+                },
+            );
     };
 
     const save = () => {

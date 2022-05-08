@@ -41,7 +41,7 @@ const HomePage: NextPage = (props: any) => {
 
     const fetchData = async (themeId: string | string[] | undefined) => {
         console.log('need to fetch articles with id => ', themeId);
-        if (themeId)
+        if (themeId) {
             setArticles(
                 (await apiClient.article.getArticlesByTheme(
                     +(themeId as string),
@@ -49,7 +49,19 @@ const HomePage: NextPage = (props: any) => {
                     pagination.limit,
                 )) as Article[],
             );
-        else setArticles((await apiClient.article.getArticles(pagination.page, pagination.limit)) as Article[]);
+        } else {
+            let data = (await apiClient.article.getArticles(pagination.page, pagination.limit)) as Article[];
+
+            console.log('res avant => ', data);
+
+            // remove articles with themeName != 'Forex' or 'Formation' from the data array
+
+            data = data.filter((article: Article) => {
+                return article?.Theme?.name != 'Formations' && article?.Theme?.name != 'Forex';
+            });
+
+            setArticles(data);
+        }
         // const article: Article = response[0]
         // article.Theme?.name
     };
@@ -63,6 +75,7 @@ const HomePage: NextPage = (props: any) => {
     }, []);
 
     useEffect(() => {
+        console.log('need to fetch articles with id => ', query.themeId);
         fetchData(query.themeId);
     }, [query]);
 
@@ -85,6 +98,7 @@ const HomePage: NextPage = (props: any) => {
                                     query: {
                                         articleId: article.id,
                                         themeId: article.themeId,
+                                        member: false,
                                     },
                                 });
                             }}

@@ -39,17 +39,33 @@ const HomePage: NextPage = (props: any) => {
         }
     };
 
-    const $fetchData = async (themeId: string | string[] | undefined) => {
+    const fetchData = async (themeId: string | string[] | undefined) => {
         console.log('need to fetch articles with id => ', themeId);
-        if (themeId)
-            setArticles(
-                (await apiClient.article.getArticlesByTheme(
-                    +(themeId as string),
-                    pagination.page,
-                    pagination.limit,
-                )) as Article[],
-            );
-        else setArticles((await apiClient.article.getArticles(pagination.page, pagination.limit)) as Article[]);
+        apiClient.article.getArticles(pagination.page, pagination.limit).then((res: any) => {
+            // if res[i].Theme.name is equal to 'Forex' or 'Formation' add it to the articles array
+            const articles = res.map((article: any) => {
+                if (article.Theme.name === query.themeName) {
+                    if (article !== undefined) {
+                        return article;
+                    }
+                }
+            });
+            const data = articles.filter(function (element: undefined) {
+                return element !== undefined;
+            });
+            setArticles(data);
+
+            console.log('res => ', data);
+        });
+        // if (themeId)
+        //     setArticles(
+        //         (await apiClient.article.getArticlesByTheme(
+        //             +(themeId as string),
+        //             pagination.page,
+        //             pagination.limit,
+        //         )) as Article[],
+        //     );
+        // else setArticles((await apiClient.article.getArticles(pagination.page, pagination.limit)) as Article[]);
         // const article: Article = response[0]
         // article.Theme?.name
     };
@@ -65,7 +81,7 @@ const HomePage: NextPage = (props: any) => {
     useEffect(() => {
         // TODO
         // const idFormationTheme = ?
-        // fetchData(idFormationTheme);
+        fetchData(query.themeName);
     }, [query]);
 
     return (
@@ -87,6 +103,7 @@ const HomePage: NextPage = (props: any) => {
                                     query: {
                                         articleId: article.id,
                                         themeId: article.themeId,
+                                        member: true,
                                     },
                                 });
                             }}
