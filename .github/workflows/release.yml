@@ -32,11 +32,11 @@ jobs:
   terraform_plan:
     needs: [ terraform ]
     uses: vanerac/6FIRE/.github/workflows/terraform_plan_job.yml@main
-  terraform_apply_ecr:
-    needs: [ terraform_plan ]
-    uses: vanerac/6FIRE/.github/workflows/terraform_ecr_job.yml@main
+  #  terraform_apply_ecr:
+  #    needs: [ terraform_plan ]
+  #    uses: vanerac/6FIRE/.github/workflows/terraform_ecr_job.yml@main
   docker_build:
-    needs: [ terraform_apply_ecr, test, compile ]
+    needs: [ test, compile ]
     uses: vanerac/6FIRE/.github/workflows/build_docker_job.yml@main
   terraform_deploy:
     needs: [ terraform_apply_ecr, test, compile, docker_build ]
