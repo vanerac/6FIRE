@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') {
     });
 }
 
-const NosTrades: NextPage = (props: any) => {
+const NosTrades: NextPage = () => {
     const [cookies] = useCookies(['API_TOKEN']);
     let $apiClient = getAPIClient(cookies['API_TOKEN']);
 
@@ -45,20 +45,25 @@ const NosTrades: NextPage = (props: any) => {
             <div className="trade-inner-header nosTrades-header">
                 <div className="container">
                     <div className="content-left box-text">
-                        <h2 className="title">
-                            REJOIGNEZ NOTRE CANAL PRIVÉ TELEGRAM
-                        </h2>
+                        <h2 className="title">REJOIGNEZ NOTRE CANAL PRIVÉ TELEGRAM</h2>
                         <p>
-                        L’équipe de 6FIRE INVEST utilise un outil d’analyse particulier lui permettant de prendre des dizaines de trades sur les marchés financiers classNameiques et crypto. Nous prenons des positions court et long terme, selon les tendances de marchés.
+                            L’équipe de 6FIRE INVEST utilise un outil d’analyse particulier lui permettant de prendre
+                            des dizaines de trades sur les marchés financiers classNameiques et crypto. Nous prenons des
+                            positions court et long terme, selon les tendances de marchés.
                         </p>
-                        <p>Vous pouvez retrouver notre outil d’analyse dans nos vidéos TikTok, dans notre canal Telegram et dans nos stories Instagram. Cependant pour voir nos décisions, nos positions et surtout nos Trades, il faut rejoindre le canal privé Telegram des membres confirmés.</p>
-                        <p>Vous aurez accès à toutes nos positions crypto & forex en temps réel, nos points d’entrés, de sortis, nos analyses et notre stratégie.</p>
+                        <p>
+                            Vous pouvez retrouver notre outil d’analyse dans nos vidéos TikTok, dans notre canal
+                            Telegram et dans nos stories Instagram. Cependant pour voir nos décisions, nos positions et
+                            surtout nos Trades, il faut rejoindre le canal privé Telegram des membres confirmés.
+                        </p>
+                        <p>
+                            Vous aurez accès à toutes nos positions crypto & forex en temps réel, nos points d’entrés,
+                            de sortis, nos analyses et notre stratégie.
+                        </p>
                     </div>
                     <div className="button-right">
                         <div className="profile-card">
-                            <div className="big-letter">
-                                E
-                            </div>
+                            <div className="big-letter">E</div>
                             <div className="tiems">
                                 <div className="name">Elo</div>
                                 <span>Extract de comptes.pdf</span>
@@ -74,23 +79,23 @@ const NosTrades: NextPage = (props: any) => {
             {/* Nos Tread inner END */}
 
             <div className="text-box bg-light-black nos-trades-wrap">
-                    <div className="wrap">
-                        <div className="question">
-                            <h3 className="title">CONTACTEZ NOUS POUR REJOINDRE LE CANAL PRIVÉ</h3>
-                        </div>
+                <div className="wrap">
+                    <div className="question">
+                        <h3 className="title">CONTACTEZ NOUS POUR REJOINDRE LE CANAL PRIVÉ</h3>
+                    </div>
 
-                        <div className="btn-group">
-                            <button className="primary-button bg-light-blue">
-                                <img className="telegram" src="/img/icon/telegram.svg" alt="" />
-                                <span>Support Telegram</span>
-                            </button>
-                            <button className="primary-button bg-ligh-green">
-                                <img src="/img/icon/whatsapp.svg" alt="" />
-                                <span>Support WhatsApp</span>
-                            </button>
-                        </div>
+                    <div className="btn-group">
+                        <button className="primary-button bg-light-blue">
+                            <img className="telegram" src="/img/icon/telegram.svg" alt="" />
+                            <span>Support Telegram</span>
+                        </button>
+                        <button className="primary-button bg-ligh-green">
+                            <img src="/img/icon/whatsapp.svg" alt="" />
+                            <span>Support WhatsApp</span>
+                        </button>
                     </div>
                 </div>
+            </div>
 
             <Footer />
         </div>

@@ -43,7 +43,7 @@ if (typeof window !== 'undefined') {
     $('.scrollRemove, .register_btn').click(function () {
         if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
             $('body').removeClass('scrollOff');
-        } 
+        }
     });
 }
 
@@ -217,7 +217,12 @@ const LoginPopup = (props: any) => {
                             </div>
                             {error && <span style={{ color: 'red' }}>{error}</span>}
                             <div className="item-center">
-                                <input className='scrollRemove' onClick={handleSubmit} type="submit" value={'Me connecter'} />
+                                <input
+                                    className="scrollRemove"
+                                    onClick={handleSubmit}
+                                    type="submit"
+                                    value={'Me connecter'}
+                                />
                             </div>
                         </form>
 
@@ -282,7 +287,9 @@ const LoginPopup = (props: any) => {
                                             <img src="/img/icon/eye-pass.svg" alt="" />
                                         </span>
                                     </div>
-                                    <button id="pass_submit" className='scrollRemove'>Valider</button>
+                                    <button id="pass_submit" className="scrollRemove">
+                                        Valider
+                                    </button>
                                 </form>
                                 <div id="return_login" className="return-code">
                                     Retour
