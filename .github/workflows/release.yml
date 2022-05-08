@@ -8,6 +8,16 @@ env:
   AWS_SECRET_ACCESS_KEY: ${secrets.AWS_SECRET_ACCESS_KEY}
   AWS_ROLE_ARN: ${secrets.AWS_ROLE_ARN}
   SENTRY_AUTH_TOKEN: ${secrets.SENTRY_AUTH_TOKEN}
+  ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+  ECR_REPOSITORY: 6fire-${{ matrix.directories }}
+  IMAGE_TAG: ${{ github.sha }}
+  API_SENTRY_DSN: ${{ secrets.API_SENTRY_DSN }}
+  SMS_API_KEY: ${{ secrets.SMS_API_KEY }}
+  MOLLIE_API_KEY: ${{ secrets.MOLLIE_API_KEY }}
+  COINMARKETCAP_API_KEY: ${{ secrets.COINMARKETCAP_API_KEY }}
+  JWT_SECRET: ${{ secrets.JWT_SECRET }}
+  STRIPE_PK: ${{ secrets.STRIPE_PK }}
+  STRIPE_SK: ${{ secrets.STRIPE_SK }}
 jobs:
   install:
     name: Install dependencies
