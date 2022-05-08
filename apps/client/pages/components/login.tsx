@@ -149,7 +149,7 @@ const LoginPopup = (props: any) => {
                     <ul>
                         <li>
                             <Link href="/compte">
-                                <a>Mes donnees personnelles</a>
+                                <a>Mes données personnelles</a>
                             </Link>
                         </li>
                         <li>
