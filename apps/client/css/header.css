@@ -1191,14 +1191,18 @@ ul{
         left: 0;
         width: 100%;
         height: 100vh;
-        z-index: 10;
+        z-index: 99;
         background: #161a1a;
         transform: translateX(100%);
         transition: all 1s ease;
         justify-content: flex-end;
         padding-right: calc(30px + (60 - 30) * ((100vw - 320px) / (1024 - 320)));
         padding-left: calc(30px + (60 - 30) * ((100vw - 320px) / (1024 - 320)));
+        padding-right: 60px;
+        padding-top: 50px;
+        display: block;
     }
+
     .main-nav-bar .nav-item-wrap.open{
         transform: translateX(0%);
         overflow-y: scroll;

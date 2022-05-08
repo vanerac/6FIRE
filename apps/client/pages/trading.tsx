@@ -144,7 +144,7 @@ const Trading: NextPage = () => {
                         </div>
                         <div className="text">
                             <h3 className="title">CRYPTO WALLET</h3>
-                            <p>
+                            <p className='pb-30'>
                                 Sur cette page, tu peux voir en temps réel comment se compose notre portefeuille
                                 cryptomonnaie. Ainsi, tu peux savoir quand est ce qu’on achète du BTC, de l’ETH ou quand
                                 est ce qu’on revend la totalité pour se mettre en USDT et atteindre la fin de l’orage.
