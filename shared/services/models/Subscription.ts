@@ -13,6 +13,7 @@ export type Subscription = {
     hidden?: boolean;
     isBestValue?: boolean;
     hasFreeTrial?: boolean;
+    paymentProvider: "stripe" | "payline";
     freeTrialDays?: number;
     createdAt?: string;
     updatedAt?: string;

@@ -9,9 +9,10 @@ import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import Head from 'next/head';
 import { PaylineHead } from 'react-payline';
-import PaymentWrapper from './components/payline';
+import PaymentWrapper from './components/price-page/payline';
 
 import Abonnement from './components/price-page/abonnement';
+import PaymentWidget from './components/price-page/payline';
 
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -19,7 +20,7 @@ const PricePage: NextPage = (props: any) => {
     const [$subscriptions, setSubscriptions] = useState<Subscription[]>([]);
     const [$loading, setLoading] = useState(true);
     const [$error, setError] = useState('');
-    const [paylineToken, setPaylineToken] = useState();
+    const [paylineToken, setPaylineToken] = useState<string>();
 
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
@@ -36,25 +37,25 @@ const PricePage: NextPage = (props: any) => {
                 setError(error.i18n ?? error.message ?? 'Unknown error');
                 setLoading(false);
             });
-        apiClient.payment
-            .createPayment({
-                provider: 'payline',
-                subscriptionId: '2',
-            })
-            .then((res: any) => {
-                console.log(res);
-                if (res.token) setPaylineToken(res.token);
-            });
     }, []);
 
-    const instantiatePayment = (_subId: string) => {
+    const instantiatePayment = (_subId: string, paymentProvider: 'stripe' | 'payline') => {
         apiClient.payment
             .createPayment({
                 subscriptionId: _subId.toString(),
-                provider: 'stripe',
+                provider: paymentProvider ?? 'stripe',
             })
             .then((payment) => {
-                return <PaymentWidget token={payment.url as string} onSuccess={console.log} onError={console.log} />;
+                if (paymentProvider === 'payline') {
+                    setPaylineToken((payment as { token: string }).token);
+                }
+                return (
+                    <PaymentWidget
+                        token={(payment as { url: string }).url}
+                        onSuccess={'console.log'}
+                        onError={console.log}
+                    />
+                );
             });
         setLoading(true);
     };
@@ -103,10 +104,12 @@ const PricePage: NextPage = (props: any) => {
                                             name={subscription.name}
                                             price={subscription.price.toString()}
                                             onStartSubscription={instantiatePayment}
-                                            subName={subscription.subName}
-                                            isBestSeller={subscription.isBestSeller}
+                                            subName={subscription.subDesc}
+                                            isBestSeller={subscription.isBestValue}
                                             limited={subscription.limited}
                                             subscriptionType={subscription.subscriptionType}
+                                            level={subscription.level}
+                                            paymentProvider={subscription.paymentProvider}
                                         />
                                     </div>
                                 );
@@ -117,84 +120,30 @@ const PricePage: NextPage = (props: any) => {
 
                 {/* Pricing table 2 */}
                 <div className="pricing_second_block">
-                    <div className="pricing_table">
-                        {/* single table */}
-                        <div className="single_table">
-                            <div className="price_head">
-                                <div className="title">
-                                    <h3>
-                                        Novice <span>(Pour les débutants/frileux)</span>
-                                    </h3>
-                                </div>
-                                <div className="price">
-                                    49,99€ <span>/mois</span>
-                                </div>
-
-                                <div className="small-des">
-                                    <p>Économisez 50 euros en prenant la licence novice d’un an !</p>
-                                </div>
-
-                                <button type="submit" className="primary-button">
-                                    <span>Commencer</span>
-                                    <div className="right-arrow">
-                                        <img src="/img/icon/right-arrow.png" alt="" />
-                                    </div>
-                                </button>
-                            </div>
+                    {$subscriptions.filter((sub) => sub.subscriptionType === 'ONETIME').length !== 0 && (
+                        <div className="pricing_table">
+                            {$subscriptions.map((subscription, index) => {
+                                if (subscription.subscriptionType === 'ONETIME') {
+                                    return (
+                                        <div key={subscription.id}>
+                                            <Abonnement
+                                                isMain={index === 2 ? true : false}
+                                                name={subscription.name}
+                                                price={subscription.price.toString()}
+                                                onStartSubscription={instantiatePayment}
+                                                subName={subscription.subDesc}
+                                                isBestSeller={subscription.isBestValue}
+                                                limited={subscription.limited}
+                                                subscriptionType={subscription.subscriptionType}
+                                                level={subscription.level}
+                                                paymentProvider={subscription.paymentProvider}
+                                            />
+                                        </div>
+                                    );
+                                }
+                            })}
                         </div>
-
-                        {/* single table */}
-                        <div className="single_table active_seller">
-                            <div className="price_head">
-                                <div className="title">
-                                    <h3>
-                                        INTERMÉDIAIRE <span>(Pour les ambitieux, qui veulent trader)</span>
-                                    </h3>
-                                    <button className="best-seller">BEST SELLER</button>
-                                </div>
-                                <div className="price">
-                                    99,99€ <span>/mois</span>
-                                </div>
-
-                                <div className="small-des">
-                                    <p>Économisez 600 euros en prenant la licence intermédiaire d’un an !</p>
-                                </div>
-
-                                <button type="submit" className="primary-button">
-                                    <span>Commencer</span>
-                                    <div className="right-arrow">
-                                        <img src="/img/icon/right-arrow.png" alt="" />
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* single table */}
-                        <div className="single_table active_seller">
-                            <div className="price_head">
-                                <div className="title">
-                                    <h3>
-                                        PARTENAIRE <span>Licence annuelle</span>
-                                    </h3>
-                                    <button className="best-seller">BEST SELLER</button>
-                                </div>
-                                <div className="price">
-                                    199,99€ <span>/mois</span>
-                                </div>
-
-                                <div className="small-des">
-                                    <p>Économisez 1600 euros en prenant la licence intermédiaire d’un an !</p>
-                                </div>
-
-                                <button type="submit" className="primary-button">
-                                    <span>Commencer</span>
-                                    <div className="right-arrow">
-                                        <img src="/img/icon/right-arrow.png" alt="" />
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    )}
                 </div>
             </div>
 
