@@ -270,7 +270,7 @@ export default class AuthController {
                 },
             });
 
-            res.sendStatus(200);
+            res.redirect('https://6fireinvest.com/connexion');
         } catch (error) {
             next(error);
         }
