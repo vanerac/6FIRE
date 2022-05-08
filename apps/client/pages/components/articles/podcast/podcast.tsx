@@ -24,8 +24,8 @@ const Podcast = ({ track }: IPodcast) => {
 
     const currentPercentage = duration ? `${(trackProgress / duration) * 100}%` : '0%';
     const trackStyling = `
-    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #B30F10), color-stop(${currentPercentage}, #313131))
-  `;
+-webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #B30F10), color-stop(${currentPercentage}, #313131))
+`;
 
     const startTimer = () => {
         // Clear any timers already running

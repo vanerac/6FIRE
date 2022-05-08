@@ -106,13 +106,13 @@ const BotTrading: NextPage = ($props: any) => {
                     <div className="wrap">
                         <div className="question">
                             <div className="number">3</div>
-                            <h3 className="title">Comment accéder au Bot Telegram ?</h3>
+                            <h3 className="title">Confirmer votre identifiant</h3>
                         </div>
                         <p>
-                            Vous avez reçu un mail de confirmation suite à l’envoi de votre identifiant au Bot Telegram
-                            lors de l’étape 2.
+                            Vous avez collé votre identifiant sur le Bot Telegram, celui-ci va vous confirmer que vous
+                            êtes bien connecté.
                         </p>
-                        <p>Cliquez sur le bouton «Confirmer mon accès au Bot» sur le mail.</p>
+                        {/*<p>Cliquez sur le bouton «Confirmer mon accès au Bot» sur le mail.</p>*/}
                         <p>
                             <strong>Votre accès au Bot est maintenant confirmé !</strong>
                         </p>
