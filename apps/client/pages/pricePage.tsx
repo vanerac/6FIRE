@@ -10,7 +10,6 @@ import { Subscription } from '@shared/services';
 import Head from 'next/head';
 import { PaylineHead } from 'react-payline';
 import PaymentWrapper from './components/price-page/payline';
-import PaymentWidget from './components/price-page/payline';
 
 import Abonnement from './components/price-page/abonnement';
 
@@ -52,15 +51,17 @@ const PricePage: NextPage = (props: any) => {
             .then((payment) => {
                 if (paymentProvider === 'payline') {
                     setPaylineToken((payment as { token: string }).token);
+                } else {
+                    router.push((payment as { url: string }).url);
                 }
-                return (
-                    <PaymentWidget
-                        token={(payment as { url: string }).url}
-                        successCb={onSuccess}
-                        errorCb={console.log}
-                        show={true}
-                    />
-                );
+                // return (
+                //     <PaymentWidget
+                //         token={(payment as { url: string }).url}
+                //         successCb={onSuccess}
+                //         errorCb={console.log}
+                //         show={true}
+                //     />
+                // );
             });
         setLoading(true);
     };
@@ -87,7 +88,7 @@ const PricePage: NextPage = (props: any) => {
                         <PaymentWrapper
                             token={paylineToken}
                             successCb={() => console.log('success')}
-                            errorCb={(v) => console.log(v)}
+                            errorCb={onSuccess}
                             show={!!paylineToken}
                         />
                     ) : null}
@@ -108,7 +109,7 @@ const PricePage: NextPage = (props: any) => {
                                             subscriptionId={subscription.id as number}
                                             isMain={index === 2 ? true : false}
                                             name={subscription.name}
-                                            price={subscription.price.toString()}
+                                            price={(subscription.price / 100).toFixed(2)}
                                             onStartSubscription={instantiatePayment}
                                             subName={subscription.subDesc}
                                             isBestSeller={subscription.isBestValue}
@@ -136,7 +137,7 @@ const PricePage: NextPage = (props: any) => {
                                                 subscriptionId={subscription.id as number}
                                                 isMain={index === 2 ? true : false}
                                                 name={subscription.name}
-                                                price={subscription.price.toString()}
+                                                price={(subscription.price / 100).toFixed(2)}
                                                 onStartSubscription={instantiatePayment}
                                                 subName={subscription.subDesc}
                                                 isBestSeller={subscription.isBestValue}
