@@ -130,6 +130,7 @@ export default class PaymentController implements CRUDController {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             const customer = await service.getCustomer(req.user);
+            console.log(customer);
 
             // const ngrok = require('ngrok');
 
@@ -156,6 +157,8 @@ export default class PaymentController implements CRUDController {
                 },
             );
             console.log(paymentIntent);
+
+            console.log(customer);
 
             await prisma.userSubscription.create({
                 data: {

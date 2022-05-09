@@ -21,14 +21,24 @@ export default class StripeService extends PaymentService {
             select: {
                 customerId: true,
                 id: true,
+                User: {
+                    select: {
+                        email: true,
+                    },
+                },
             },
         });
 
         if (dbUser?.customerId) {
             console.log('Existing stripe customer', dbUser.customerId);
-            customer = await stripe.customers.search({
-                query: dbUser.customerId,
+            console.log(dbUser.customerId);
+            const customers = await stripe.customers.search({
+                query: `email:'${dbUser.User.email}'`,
             });
+
+            console.log('Customers', customers);
+            [customer] = customers.data;
+            console.log(customer);
             console.log('Fetched stripe customer', customer.id);
         }
 
@@ -49,7 +59,9 @@ export default class StripeService extends PaymentService {
         // create a product
         // define payment mode
         // Get product
+        console.log('Creating payment intent');
         const prices = await StripeService.getPrices(opts.subscription.id);
+        console.log('Prices', prices);
 
         const params = {
             billing_address_collection: 'auto',
@@ -75,8 +87,13 @@ export default class StripeService extends PaymentService {
             });
         }
 
+        console.log(params);
+
         const session = await stripe.checkout.sessions.create(params as any);
+
+        console.log('Created session', session);
         await StripeService.verifyWebhook(cbs.statusUrl);
+        console.log('Verified webhook');
 
         return { ...session, getCheckoutUrl: () => session.url };
     }
