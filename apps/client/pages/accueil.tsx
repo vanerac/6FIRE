@@ -103,7 +103,7 @@ const HomePage: NextPage = (props: any) => {
                                     },
                                 });
                             }}
-                            className="single_article">
+                            className="single_article col-span-1">
                             <div className="artitle_thum">
                                 <img className="frontImg" src={article.headerUrl ?? '/img/mask-group-321-2@1x.png'} />
                                 <img className="hoverImg" src={article.bannerUrl ?? '/img/mask-group-321-2@1x.png'} />
