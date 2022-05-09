@@ -139,7 +139,7 @@ export default class PaymentController implements CRUDController {
             const paymentIntent = await service.createPaymentIntent(
                 {
                     paymentType:
-                        subscription.subscriptionType === 'SUBSCRIPTION'
+                        subscription.subscriptionType == 'SUBSCRIPTION'
                             ? PaymentType.SUBSCRIPTION
                             : PaymentType.ONETIME,
                     subscription: subscription as any,
@@ -183,6 +183,7 @@ export default class PaymentController implements CRUDController {
             if (provider === 'payline')
                 res.json({
                     token: paymentIntent.id,
+                    url: paymentIntent.url,
                 });
             else
                 res.json({
@@ -484,16 +485,16 @@ export default class PaymentController implements CRUDController {
             //   paymentEndpoint: '1'
             // }
 
-            const { $notificationType, token, paymentEndpoint } = req.query;
+            const { $notificationType, paylinetoken, $paymentEndpoint } = req.query;
 
             const details = await paylineWebService.getWebPaymentDetails({
-                token: token as string,
-                version: +paymentEndpoint,
+                token: paylinetoken as string,
+                version: 2,
             });
 
             const userSub = await prisma.userSubscription.findFirst({
                 where: {
-                    paymentId: token as string,
+                    paymentId: paylinetoken as string,
                 },
             });
 
