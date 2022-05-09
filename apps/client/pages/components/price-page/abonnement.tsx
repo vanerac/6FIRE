@@ -7,12 +7,12 @@ interface IAbonnement {
     isBestSeller?: boolean;
     price: string;
     // eslint-disable-next-line no-unused-vars
-    onStartSubscription: (_subId: string, paymentProvider: 'stripe' | 'payline') => void;
+    onStartSubscription: (_subId: string, paymentProvider: 'stripe' | 'payline' | undefined) => void;
     description?: string;
     limited?: string;
     subscriptionType: string;
     level: number;
-    paymentProvider: 'stripe' | 'payline';
+    paymentProvider?: 'stripe' | 'payline';
 }
 
 const parser = (desc: string) => {

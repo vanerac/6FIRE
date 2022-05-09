@@ -10,9 +10,9 @@ import { Subscription } from '@shared/services';
 import Head from 'next/head';
 import { PaylineHead } from 'react-payline';
 import PaymentWrapper from './components/price-page/payline';
+import PaymentWidget from './components/price-page/payline';
 
 import Abonnement from './components/price-page/abonnement';
-import PaymentWidget from './components/price-page/payline';
 
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);
@@ -43,7 +43,7 @@ const PricePage: NextPage = (props: any) => {
         console.log('uii');
     };
 
-    const instantiatePayment = (_subId: string, paymentProvider: 'stripe' | 'payline') => {
+    const instantiatePayment = (_subId: string, paymentProvider: 'stripe' | 'payline' | undefined) => {
         apiClient.payment
             .createPayment({
                 subscriptionId: _subId.toString(),
@@ -114,7 +114,7 @@ const PricePage: NextPage = (props: any) => {
                                             limited={subscription.limited?.toString()}
                                             subscriptionType={subscription.subscriptionType}
                                             level={subscription.level}
-                                            paymentProvider={subscription.paymentProvider}
+                                            paymentProvider={subscription.subscriptionProvider}
                                         />
                                     </div>
                                 );
@@ -141,7 +141,7 @@ const PricePage: NextPage = (props: any) => {
                                                 limited={subscription.limited?.toString()}
                                                 subscriptionType={subscription.subscriptionType}
                                                 level={subscription.level}
-                                                paymentProvider={subscription.paymentProvider}
+                                                paymentProvider={subscription.subscriptionProvider}
                                             />
                                         </div>
                                     );

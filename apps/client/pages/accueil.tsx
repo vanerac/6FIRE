@@ -123,7 +123,11 @@ const HomePage: NextPage = (props: any) => {
                     ))}
                 </div>
                 <div className="flex justify-center items-center pt-10">
-                    <Button getMorePages={() => {}} />
+                    <Button
+                        getMorePages={() => {
+                            // Pagination
+                        }}
+                    />
                 </div>
             </div>
             <Footer />
