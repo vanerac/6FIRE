@@ -115,7 +115,9 @@ export default class PaymentController implements CRUDController {
             //     });
             // }
 
-            if (subscription.paymentProvider && subscription.paymentProvider !== provider) {
+            console.log(subscription.paymentProvider, provider);
+
+            if (subscription.paymentProvider && subscription.paymentProvider != provider) {
                 throw new ApiError({
                     status: 400,
                     message: 'Subscription already has a payment provider',

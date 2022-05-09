@@ -105,6 +105,7 @@ const PricePage: NextPage = (props: any) => {
                                 return (
                                     <div key={subscription.id}>
                                         <Abonnement
+                                            subscriptionId={subscription.id as number}
                                             isMain={index === 2 ? true : false}
                                             name={subscription.name}
                                             price={subscription.price.toString()}
@@ -114,7 +115,7 @@ const PricePage: NextPage = (props: any) => {
                                             limited={subscription.limited?.toString()}
                                             subscriptionType={subscription.subscriptionType}
                                             level={subscription.level}
-                                            paymentProvider={subscription.subscriptionProvider}
+                                            paymentProvider={subscription.paymentProvider}
                                         />
                                     </div>
                                 );
@@ -132,6 +133,7 @@ const PricePage: NextPage = (props: any) => {
                                     return (
                                         <div key={subscription.id}>
                                             <Abonnement
+                                                subscriptionId={subscription.id as number}
                                                 isMain={index === 2 ? true : false}
                                                 name={subscription.name}
                                                 price={subscription.price.toString()}
@@ -141,7 +143,7 @@ const PricePage: NextPage = (props: any) => {
                                                 limited={subscription.limited?.toString()}
                                                 subscriptionType={subscription.subscriptionType}
                                                 level={subscription.level}
-                                                paymentProvider={subscription.subscriptionProvider}
+                                                paymentProvider={subscription.paymentProvider}
                                             />
                                         </div>
                                     );

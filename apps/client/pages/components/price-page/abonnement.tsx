@@ -2,6 +2,7 @@ import React from 'react';
 
 interface IAbonnement {
     isMain: boolean;
+    subscriptionId: number;
     name: string;
     subName?: string;
     isBestSeller?: boolean;
@@ -31,6 +32,7 @@ const parser = (desc: string) => {
 const Abonnement = ({
     isMain,
     name,
+    subscriptionId,
     subName = '',
     isBestSeller = false,
     price,
@@ -59,7 +61,7 @@ const Abonnement = ({
 
                 <button
                     onClick={() => {
-                        onStartSubscription(subscriptionType, paymentProvider);
+                        onStartSubscription(subscriptionId.toString(), paymentProvider);
                     }}
                     type="submit"
                     className="primary-button">
