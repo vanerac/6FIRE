@@ -20,7 +20,6 @@ import Link from 'next/link';
 } */
 
 const Header = (props: any) => {
-    console.log(props);
     const [cookies, $setCookie, removeCookie] = useCookies(['API_TOKEN']);
     const [themes, setThemes] = useState<(Theme & { url: string })[]>([]);
     const [themesDropDown, setThemesDropDown] = useState<Theme[]>([]);
