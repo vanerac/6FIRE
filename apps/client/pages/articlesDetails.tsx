@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from '../components/header';
+import Footer from '../components/footer';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import router, { useRouter } from 'next/router';
@@ -9,7 +9,7 @@ import getAPIClient from '@shared/tools/apiClient';
 import { Article, ArticlePro } from '@shared/services';
 import { useCookies } from 'react-cookie';
 import draftToHtml from 'draftjs-to-html';
-import Podcast from './components/articles/podcast/podcast';
+import Podcast from '../components/articles/podcast/podcast';
 
 const convertDate = (date: string) => {
     const date_unix = new Date(date).getTime() / 1000;

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import router from 'next/router';
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from '../components/header';
+import Footer from '../components/footer';
 // import checkAuth from './components/checkAuth';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';

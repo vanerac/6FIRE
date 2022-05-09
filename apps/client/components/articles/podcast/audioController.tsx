@@ -1,5 +1,5 @@
 import React from 'react';
-import { BreakSvg, PlaySvg } from '../../../../svg';
+import { BreakSvg, PlaySvg } from '../../../svg';
 
 interface IAudioController {
     title: string;

@@ -8,13 +8,13 @@ import { useEffect, useState } from 'react';
 import { ApiError } from '@shared/services';
 // import checkAuth from './components/checkAuth';
 import $ from 'jquery';
-import LoginPopup from './components/login';
+import LoginPopup from '../components/login';
 import getAPIClient from '@shared/tools/apiClient';
 import { useCookies } from 'react-cookie';
 // import translate from '@shared/translation'
 import Head from 'next/head';
 import Script from 'next/script';
-import IndexHeader from './components/header_inext';
+import IndexHeader from '../components/header_inext';
 
 /* scroll off */
 /* if (typeof window !== 'undefined') {

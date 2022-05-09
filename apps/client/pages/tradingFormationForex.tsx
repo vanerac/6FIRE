@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 // import Image from 'next/image';
 import router, { useRouter } from 'next/router';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from '../components/footer';
+import Header from '../components/header';
 import getAPIClient from '@shared/tools/apiClient';
 import { useEffect, useState } from 'react';
 import { Article } from '@services/index';

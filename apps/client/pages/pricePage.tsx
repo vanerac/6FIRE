@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from '../components/footer';
+import Header from '../components/header';
 // import checkAuth from './components/checkAuth';
 import router from 'next/router';
 import { useEffect, useState } from 'react';
@@ -9,9 +9,9 @@ import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import Head from 'next/head';
 import { PaylineHead } from 'react-payline';
-import PaymentWrapper from './components/price-page/payline';
+import PaymentWrapper from '../components/price-page/payline';
 
-import Abonnement from './components/price-page/abonnement';
+import Abonnement from '../components/price-page/abonnement';
 
 const PricePage: NextPage = (props: any) => {
     const [cookies] = useCookies(['API_TOKEN']);

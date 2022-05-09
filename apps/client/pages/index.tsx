@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import Footer from './components/footer';
+import Footer from '../components/footer';
 import Head from 'next/head';
 import $ from 'jquery';
-import IndexHeader from './components/header_inext';
+import IndexHeader from '../components/header_inext';
 /* scroll off */
 
 if (typeof window !== 'undefined') {

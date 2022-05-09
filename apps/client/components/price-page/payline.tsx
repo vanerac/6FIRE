@@ -23,9 +23,11 @@ export default function PaymentWrapper({
     }, [show, paylineApi]);
 
     return (
-        <PaylineProvider>
-            <Payment token={token} successCb={successCb} errorCb={errorCb} />,
-        </PaylineProvider>
+        window && (
+            <PaylineProvider>
+                <Payment token={token} successCb={successCb} errorCb={errorCb} />,
+            </PaylineProvider>
+        )
     );
 }
 
@@ -46,21 +48,23 @@ export function Payment({
     }, [token]);
 
     return (
-        <PaylineWidget
-            token={token}
-            template="lightbox"
-            embeddedRedirectionAllowed={true}
-            onFinalStateHasBeenReached={
-                (({ state }: { state: any }) => {
-                    if (state === 'PAYMENT_SUCCESS') {
-                        successCb();
-                        return true;
-                    } else {
-                        errorCb(state);
-                        return false;
-                    }
-                }) as any
-            }
-        />
+        window && (
+            <PaylineWidget
+                token={token}
+                template="lightbox"
+                embeddedRedirectionAllowed={true}
+                onFinalStateHasBeenReached={
+                    (({ state }: { state: any }) => {
+                        if (state === 'PAYMENT_SUCCESS') {
+                            successCb();
+                            return true;
+                        } else {
+                            errorCb(state);
+                            return false;
+                        }
+                    }) as any
+                }
+            />
+        )
     );
 }

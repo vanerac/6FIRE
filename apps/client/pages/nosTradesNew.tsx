@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from '../components/footer';
+import Header from '../components/header';
 // import checkAuth from './components/checkAuth';
 import { useEffect } from 'react';
 import $ from 'jquery';

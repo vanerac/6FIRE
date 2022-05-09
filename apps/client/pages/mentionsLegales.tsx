@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 // import router from 'next/router';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from '../components/footer';
+import Header from '../components/header';
 import Head from 'next/head';
 
 const MentionsLegales: NextPage = (props: any) => {
