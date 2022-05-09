@@ -185,7 +185,7 @@ const Header = (props: any) => {
                         <div className="top-nav">
                             <div className="logo">
                                 <a href={isCookie ? '/accueil' : '/'}>
-                                    <img src="/img/logo/logo.svg" alt="" />
+                                    <img src="/img/logo/logo.svg" alt="" className="w-20" />
                                 </a>
                             </div>
                             <div className="right-nav-items">
