@@ -45,7 +45,26 @@ export default function CreerUnAbonnement() {
         // );
     }, []);
 
+    useEffect(() => {
+        console.log(subscriptionPrice);
+    }, [subscriptionPrice]);
+
     const submit = () => {
+        // Price is a string that can he of format int or float
+        // The api accepts only a price in cents, in int format
+        // It must be parsed to int before sending to the api
+        // Its are assume as raw price (not cents) and must be parsed to cents
+        // Floats must be parsed to int before sending to the api
+
+        if (subscriptionPrice.includes('.') || subscriptionPrice.includes(',')) {
+            const price = parseFloat(subscriptionPrice.replace(',', '.'));
+            const priceInCents = price * 100;
+            setSubscriptionPrice(priceInCents.toString());
+        } else {
+            const price = parseInt(subscriptionPrice);
+            setSubscriptionPrice((price * 100).toString());
+        }
+
         const newAbonnement = {
             // subscriptionName,
             // subscriptionPrice,
@@ -58,9 +77,9 @@ export default function CreerUnAbonnement() {
             // isBestSeller,
             name: subscriptionName,
             description: descriptionLine,
-            refreshRate: 1,
-            subscriptionType: 'SUBSCRIPTION',
-            price: +subscriptionPrice,
+            refreshRate: $subscriptionTime,
+            subscriptionType: $subscriptionTimeType,
+            price: parseInt(subscriptionPrice),
             level: +level,
             hidden: isHidden,
             isBestValue: isBestSeller,
@@ -136,10 +155,10 @@ export default function CreerUnAbonnement() {
                                         onChange={(e) => {
                                             setSubscriptionTimeType(e.target.value);
                                         }}>
-                                        <option value="Mensuel">Mensuel</option>
-                                        <option value="Trimestriel">Trimestriel</option>
-                                        <option value="Semestriel">Semestriel</option>
-                                        <option value="Annuel">Annuel</option>
+                                        <option value="SUBCRIPTION">Mensuel</option>
+                                        <option value="SUBCRIPTION">Trimestriel</option>
+                                        <option value="SUBCRIPTION">Semestriel</option>
+                                        <option value="ONETIME">Annuel</option>
                                     </select>
                                 </div>
                             </div>
@@ -204,7 +223,8 @@ export default function CreerUnAbonnement() {
                                     </label>
                                     <select onChange={(e) => setPayementPlatform(e.target.value)} name="" id="">
                                         <option value="">Plateforme</option>
-                                        <option value="Stripe">Stripe</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="payline">payline</option>
                                     </select>
                                 </div>
                             </div>
