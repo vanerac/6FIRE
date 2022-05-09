@@ -3020,6 +3020,19 @@ body{
     min-width: calc(220px + (350 - 220) * ((100vw - 320px) / (1920 - 320)));
 }
 
+@-webkit-keyframes autofill {
+    0%,100% {
+        color: #fff;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
 .login_popup_wrapper form input[type="submit"] {
     border: 1px solid #3a3a3d;
     color: #3a3a3d;

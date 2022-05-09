@@ -201,7 +201,7 @@ const LoginPopup = (props: any) => {
                                 SE CONNECTER <span>Pour accéder à votre compte</span>
                             </div>
                         </div>
-                        <form action="#">
+                        <form action="#" autoComplete='off'>
                             <input
                                 onChange={(event) => {
                                     setMailError('');
@@ -287,7 +287,7 @@ const LoginPopup = (props: any) => {
                                     Veuillez saisir votre num&eacute;ro de t&eacute;l&eacute;phone lors de votre
                                     inscription. Vous recevrez un code pour modifier votre mot de passe.
                                 </p>
-                                <form action="">
+                                <form action="" autoComplete='off'>
                                     <input
                                         type="email"
                                         placeholder="*Email"
@@ -315,7 +315,7 @@ const LoginPopup = (props: any) => {
                                 <p className="lato-light-white-16px">
                                     Un code vous a &eacute;t&eacute; envoy&eacute; par e-mail
                                 </p>
-                                <form action="">
+                                <form action="" autoComplete='off'>
                                     <div className="custom-input-code">
                                         <input
                                             type="number"
@@ -347,7 +347,7 @@ const LoginPopup = (props: any) => {
                                     Votre mot de passe doit contenir au moins 8 caract&eacute;res sans espace avec des
                                     lettres, au moins un chiffre, une majuscule, et un caract&egrave;re sp&eacute;cial.
                                 </p>
-                                <form action="">
+                                <form action="" autoComplete='off'>
                                     <div className="custom-input-code">
                                         <input
                                             type="password"
