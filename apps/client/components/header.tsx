@@ -400,7 +400,7 @@ const Header = (props: any) => {
                                         {isMoney == 'Nos Trades' ? (
                                             <p>Nos Trades</p>
                                         ) : (
-                                            <p>Espace Tradsssing &amp; Crypto</p>
+                                            <p>Espace Trading &amp; Crypto</p>
                                         )}
                                     </a>
                                 </Link>
