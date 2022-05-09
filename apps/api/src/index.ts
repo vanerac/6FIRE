@@ -216,33 +216,33 @@ app.listen(3333, async () => {
 // });
 
 // upsert
-prisma.subscription
-    .upsert({
-        where: {
-            id: 1,
-        },
-        create: {
-            hidden: false,
-            name: 'test',
-            description: 'test',
-            level: 1,
-            refreshRate: 1,
-            subscriptionType: 'SUBSCRIPTION',
-            price: 1,
-        },
-        update: {
-            hidden: false,
-            name: 'test',
-            description: 'test',
-            level: 1,
-            refreshRate: 1,
-            subscriptionType: 'SUBSCRIPTION',
-            price: 1000,
-        },
-    })
-    .then((result) => {
-        console.log(result);
-    });
+// prisma.subscription
+//     .upsert({
+//         where: {
+//             id: 1,
+//         },
+//         create: {
+//             hidden: false,
+//             name: 'test',
+//             description: 'test',
+//             level: 1,
+//             refreshRate: 1,
+//             subscriptionType: 'SUBSCRIPTION',
+//             price: 1,
+//         },
+//         update: {
+//             hidden: false,
+//             name: 'test',
+//             description: 'test',
+//             level: 1,
+//             refreshRate: 1,
+//             subscriptionType: 'SUBSCRIPTION',
+//             price: 1000,
+//         },
+//     })
+//     .then((result) => {
+//         console.log(result);
+//     });
 
 process.on('unhandledRejection', (reason, p) => {
     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);

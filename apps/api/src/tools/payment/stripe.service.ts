@@ -24,6 +24,8 @@ export default class StripeService extends PaymentService {
                 User: {
                     select: {
                         email: true,
+                        firstName: true,
+                        lastName: true,
                     },
                 },
             },
@@ -45,8 +47,8 @@ export default class StripeService extends PaymentService {
         if (!customer) {
             console.log('Creating new stripe customer');
             customer = await stripe.customers.create({
-                name: user.firstName + ' ' + user.lastName,
-                email: user.email,
+                name: dbUser.User.firstName + ' ' + dbUser.User.lastName,
+                email: dbUser.User.email,
             });
             console.log('Created stripe customer', customer.id);
         }
@@ -70,7 +72,7 @@ export default class StripeService extends PaymentService {
             line_items: [
                 {
                     // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    price: prices.data[0].id,
+                    price: prices.id,
                     quantity: 1,
                 },
             ],
@@ -179,7 +181,13 @@ export default class StripeService extends PaymentService {
 
     private static async getProduct(productKey: string) {
         console.log('Fetching product', productKey);
-        const product = await stripe.products.retrieve(productKey).catch(() => console.log('Product not found'));
+
+        const products = await stripe.products.list({});
+
+        console.log('Found products', products.data);
+
+        const product = products.data.find((p) => p.name === productKey);
+        // const product = await stripe.products.retrieve(productKey).catch(() => console.log('Product not found'));
 
         if (!product) {
             console.log('Creating product', productKey);
@@ -189,8 +197,7 @@ export default class StripeService extends PaymentService {
             });
             console.log('Created product', product.id);
             return product;
-        }
-        return product;
+        } else return product;
     }
 
     private static async getPrices(subscriptionId: number) {
@@ -200,22 +207,25 @@ export default class StripeService extends PaymentService {
             },
         });
 
-        console.log('Fetching prices for subscription', subscription.id);
-
+        // Todo: add price in case they change the price
         const prices = await stripe.prices.list({
-            lookup_keys: [subscription.name],
+            lookup_keys: [subscription.name + '_' + subscription.price],
             expand: ['data.product'],
         });
 
         console.log('Fetched prices', prices.data);
 
-        if (!prices.data.length) {
+        const selectedPrice = prices.data.find((price) => price.unit_amount == subscription.price);
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        if (!selectedPrice) {
             console.log('Creating new price');
             const product = await StripeService.getProduct(subscription.name);
             const params = {
                 active: true,
                 currency: 'eur',
-                lookup_key: subscription.name,
+                lookup_key: subscription.name + '_' + subscription.price,
                 unit_amount: subscription.price,
                 product: product.id,
             };
@@ -230,15 +240,10 @@ export default class StripeService extends PaymentService {
                 });
             }
 
-            await stripe.prices.create(params);
-
-            return stripe.prices.list({
-                lookup_keys: [subscription.name],
-                expand: ['data.product'],
-            });
+            return await stripe.prices.create(params);
         } else {
-            console.log('Found price', prices.data[0].id);
-            return prices;
+            console.log('Found price', selectedPrice.id);
+            return selectedPrice;
         }
     }
 }

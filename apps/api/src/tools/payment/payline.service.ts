@@ -43,7 +43,7 @@ export default class PaylineService implements PaymentService {
         //     paymentRequest.setWalletId(opts.clientId);
         // }
         if (opts.paymentType == PaymentType.SUBSCRIPTION)
-            paymentRequest.setPaymentDetails(PaylineAction.AuthCaptureRecurring, PaylineMode.RECURRING);
+            paymentRequest.setPaymentDetails(PaylineAction.AuthRecurringFirst, PaylineMode.RECURRING);
         else if (opts.paymentType == PaymentType.ONETIME)
             paymentRequest.setPaymentDetails(PaylineAction.AuthCapture, PaylineMode.FULL);
 
@@ -51,6 +51,8 @@ export default class PaylineService implements PaymentService {
             const v = await paylineWebService.doWebPayment(paymentRequest);
             return {
                 id: v.token,
+                url: v.redirectURL,
+                getCheckoutUrl: () => v.redirectURL,
             };
         } catch (e) {
             console.log(e);
