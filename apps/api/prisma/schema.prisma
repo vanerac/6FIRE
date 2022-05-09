@@ -82,6 +82,8 @@ model Subscription {
   subscriptionType PaymentType
   price            Int
   paymentProvider  String?
+  subDescription   String?
+  limited          Int?
   hidden           Boolean            @default(false)
   isBestValue      Boolean            @default(false)
   hasFreeTrial     Boolean            @default(false)

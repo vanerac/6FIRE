@@ -4029,7 +4029,17 @@
             "type": "string"
           },
           "subscriptionProvider": {
+            "type": "string",
+            "enum": [
+              "stripe",
+              "payline"
+            ]
+          },
+          "subDesc": {
             "type": "string"
+          },
+          "limited": {
+            "type": "number"
           }
         },
         "required": [
