@@ -13,16 +13,16 @@ export function generateEmail({
     orderDate: string;
     subscription: string;
     price: string;
-    refresh: string;
+    refresh: number;
     email: string;
 }) {
     // read file email.html
     const emailTemplate = fs.readFileSync(path.resolve(__dirname, 'email.html'));
 
     let r;
-    if (refresh === '365') {
+    if (refresh >= 365) {
         r = 'an';
-    } else if (refresh === '30') {
+    } else if (refresh >= 30) {
         r = 'mois';
     } else {
         r = 'jours';

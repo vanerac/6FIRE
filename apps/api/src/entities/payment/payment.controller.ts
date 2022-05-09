@@ -115,7 +115,9 @@ export default class PaymentController implements CRUDController {
             //     });
             // }
 
-            if (subscription.paymentProvider && subscription.paymentProvider !== provider) {
+            console.log(subscription.paymentProvider, provider);
+
+            if (subscription.paymentProvider && subscription.paymentProvider != provider) {
                 throw new ApiError({
                     status: 400,
                     message: 'Subscription already has a payment provider',
@@ -128,6 +130,7 @@ export default class PaymentController implements CRUDController {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             const customer = await service.getCustomer(req.user);
+            console.log(customer);
 
             // const ngrok = require('ngrok');
 
@@ -154,6 +157,8 @@ export default class PaymentController implements CRUDController {
                 },
             );
             console.log(paymentIntent);
+
+            console.log(customer);
 
             await prisma.userSubscription.create({
                 data: {
@@ -565,8 +570,8 @@ export default class PaymentController implements CRUDController {
                 subject: '6FIRE - Confirmation commande',
                 htmlMessage: generateConfirmationEmail({
                     name: userSubscription.User.firstName,
-                    price: userSubscription.price.toString(), // format might not be right
-                    refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                    price: (userSubscription.price / 100).toFixed(2), // format might not be right
+                    refresh: userSubscription.Subscription.refreshRate, // Format might not be right
                     subscription: userSubscription.Subscription.name,
                     orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
                     email: userSubscription.User.email,
@@ -581,8 +586,8 @@ export default class PaymentController implements CRUDController {
                 subject: '6FIRE - Confirmation commande',
                 htmlMessage: generateConfirmationEmail({
                     name: userSubscription.User.firstName,
-                    price: userSubscription.price.toString(), // format might not be right
-                    refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                    price: (userSubscription.price / 100).toFixed(2), // format might not be right
+                    refresh: userSubscription.Subscription.refreshRate, // Format might not be right
                     subscription: userSubscription.Subscription.name,
                     orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
                     email: userSubscription.User.email,

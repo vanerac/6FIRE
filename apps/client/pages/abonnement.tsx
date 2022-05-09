@@ -53,7 +53,7 @@ const Abonnement: NextPage = (props: any) => {
     //             setLoading(false);
     //         });
     // };
-
+    console.log($subscriptions);
     return (
         <div>
             <Head>

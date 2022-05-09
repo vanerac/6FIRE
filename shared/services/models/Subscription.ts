@@ -16,7 +16,7 @@ export type Subscription = {
     freeTrialDays?: number;
     createdAt?: string;
     updatedAt?: string;
-    subscriptionProvider?: 'stripe' | 'payline';
+    paymentProvider?: 'stripe' | 'payline';
     subDesc?: string;
     limited?: number;
 };

@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 // import Image from 'next/image';
 import router, { useRouter } from 'next/router';
 import Footer from './components/footer';
+import Button from './components/articles/feed/button';
 import Header from './components/header';
 import getAPIClient from '@shared/tools/apiClient';
 import { useEffect, useState } from 'react';
@@ -120,6 +121,13 @@ const HomePage: NextPage = (props: any) => {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className="flex justify-center items-center pt-10">
+                    <Button
+                        getMorePages={() => {
+                            // Pagination
+                        }}
+                    />
                 </div>
             </div>
             <Footer />

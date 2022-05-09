@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import { PaymentType, PrismaClient } from '@prisma/client';
 import { CRUDController } from '../../types';
+
+// import { PaymentType } from '../../tools/payment/payment.service';
 
 const prisma = new PrismaClient();
 // const mollieClient = createMollieClient({ apiKey: configuration.MOLLIE_API_KEY });
@@ -52,9 +54,12 @@ export default class SubscriptionController extends CRUDController {
     static async create(req: Request, res: Response, next: NextFunction) {
         try {
             const { body } = req;
+            const { subscriptionType, ...params } = body;
             const subscription = await prisma.subscription.create({
                 data: {
-                    ...body,
+                    ...params,
+                    subscriptionType:
+                        subscriptionType === 'SUBSCRIPTION' ? PaymentType.SUBSCRIPTION : PaymentType.ONETIME,
                 },
             });
 

@@ -4028,7 +4028,7 @@
           "updatedAt": {
             "type": "string"
           },
-          "subscriptionProvider": {
+          "paymentProvider": {
             "type": "string",
             "enum": [
               "stripe",
