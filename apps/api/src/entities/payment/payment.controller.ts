@@ -570,8 +570,8 @@ export default class PaymentController implements CRUDController {
                 subject: '6FIRE - Confirmation commande',
                 htmlMessage: generateConfirmationEmail({
                     name: userSubscription.User.firstName,
-                    price: userSubscription.price.toString(), // format might not be right
-                    refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                    price: (userSubscription.price / 100).toFixed(2), // format might not be right
+                    refresh: userSubscription.Subscription.refreshRate, // Format might not be right
                     subscription: userSubscription.Subscription.name,
                     orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
                     email: userSubscription.User.email,
@@ -586,8 +586,8 @@ export default class PaymentController implements CRUDController {
                 subject: '6FIRE - Confirmation commande',
                 htmlMessage: generateConfirmationEmail({
                     name: userSubscription.User.firstName,
-                    price: userSubscription.price.toString(), // format might not be right
-                    refresh: userSubscription.Subscription.refreshRate.toString(), // Format might not be right
+                    price: (userSubscription.price / 100).toFixed(2), // format might not be right
+                    refresh: userSubscription.Subscription.refreshRate, // Format might not be right
                     subscription: userSubscription.Subscription.name,
                     orderDate: new Date(userSubscription.createdAt).toLocaleDateString(), // format might not be right
                     email: userSubscription.User.email,
