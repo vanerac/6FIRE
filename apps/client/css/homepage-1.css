@@ -4811,3 +4811,125 @@ body.scrollOff {
     font-family: var(--font-family-lato);
     background-color: #000;
 }
+
+
+/* Payment configuration style 
+-------------------------------*/
+.payment-inner-wrap{
+    font-family: var(--font-family-lato);
+    color: #fff;
+    min-height: 50vh;
+    margin-top: 138px;
+    padding-top: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+    padding-bottom: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+}
+.payment-inner-wrap .title-wrap{
+    text-align: center;
+}
+.payment-inner-wrap .title-wrap .title{
+    font-size: 14px;
+}
+.payment-inner-wrap .title-wrap .title .main-title{
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.payment-form{
+    max-width: 470px;
+    margin: 25px auto 0;
+}
+.payment-input-wrap{
+    background-color: #0e0f11;
+    padding: 30px;
+}
+.payment-input-wrap .single-input label{ display: block; line-height: 1; color: #fff; opacity: 0.5; font-size: 14px;}
+.payment-input-wrap .single-input input{outline: none; appearance: none; border: 0; border-bottom: 1px solid #dddddd; width: 100%; line-height: 1; padding: 10px 5px; font-size: 16px;}
+.payment-input-wrap .single-input:not(:last-child){margin-bottom: 25px;}
+.payment-input-wrap .single-input{}
+.price-wrap{
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    color: #0e0f11;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.price-wrap .price{
+    font-size: 16px;
+    font-weight: 600;
+    color: #020202;
+}
+.price-wrap .price span{
+    display: block;
+    font-weight: normal;
+}
+.price-wrap .change{
+    color: #b30f10;
+    font-weight: 600;
+}
+.payment-btn{
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px 25px;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.payment-btn:hover{
+    background-color: #b30f10;
+    border-color: #b30f10;
+}
+.payment-text{
+    margin: 25px auto;
+}
+.payment-text p{
+    color: #c9c9c9;
+    font-size: 14px;
+}
+.payment-text p a{
+    text-decoration: underline;
+}
+.payment-btn.active-licene-btn{
+    background-color: #b30f10;
+    border-color: #b30f10;
+}
+.payment-btn.active-licene-btn:hover{
+    background-color: #801010;
+    border-color: #801010;
+}
+
+.promo-code-wrap {margin-top: 25px;}
+.offer-validation{
+    display: none;
+}
+.offer-validation.show{
+    display: block;
+}
+
+.promo-code-wrap .code-box {display: grid;align-items: center;grid-template-columns: auto 1fr auto;grid-gap: 15px;margin-bottom: 10px;}
+
+.promo-code-wrap .code-box .code {background: #c9c9c9;border-radius: 10px;padding: 5px 15px;color: #111;}
+.promo-code-wrap .code-box .code input {
+    background-color: transparent;
+    width: 100%;
+    outline: 0;
+    appearance: none;
+}
+
+.code-box .confirm-code {border-radius: 10px;border: 1px solid #fff;padding: 5px 15px; display: flex; align-items: center; width: 110px; justify-content: center; cursor: pointer;}
+.code-box .confirm-code .check-mark{width: 0;}
+.code-box .confirm-code.checked{
+    background-color: #fff;
+    color: #020202;
+}
+.code-box .confirm-code.checked .check-mark{width: auto; margin-left: 6px;}
+@media screen and (max-width: 600px) {
+    .payment-inner-wrap{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
