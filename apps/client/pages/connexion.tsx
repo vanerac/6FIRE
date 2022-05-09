@@ -136,10 +136,12 @@ const Connexion: NextPage = () => {
             .then((response) => {
                 console.log(response);
                 if (response.token) {
-                    setCookie('API_TOKEN', response.token, { path: '/' });
-                    setCookie('API_TOKEN', response.token, { domain: 'localhost' });
-                    setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
-                    setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
+                    const date = new Date();
+                    date.setDate(date.getDate() + 2);
+                    setCookie('API_TOKEN', response.token, { path: '/', expires: date });
+                    setCookie('API_TOKEN', response.token, { domain: 'localhost', expires: date });
+                    setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.com', expires: date });
+                    setCookie('API_TOKEN', response.token, { domain: '.6fireinvest.fr', expires: date });
                     router.push('/accueil');
                 }
             })

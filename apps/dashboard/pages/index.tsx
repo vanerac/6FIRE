@@ -34,8 +34,11 @@ export default function Index() {
             .login({ email, password })
             .then(
                 (res) => {
+                    const date = new Date();
+                    date.setDate(date.getDate() + 2);
+                    console.log('will delete in ', date);
                     if (!res.token) throw new Error('No token returned from login');
-                    setCookie('API_TOKEN', res.token, { path: '/' });
+                    setCookie('API_TOKEN', res.token, { path: '/', expires: date });
                     alert('Login successful');
                     // router.replace('/home');
                 },

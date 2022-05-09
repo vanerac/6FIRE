@@ -141,12 +141,15 @@ const LoginPopup = (props: any) => {
                     password: password,
                 })
                 .then((response: any) => {
+                    // console.log(new Date(Date.now()+2592000));
                     // console.log(response);
                     if (response.token) {
-                        setCookies('API_TOKEN', response.token, { path: '/' });
-                        setCookies('API_TOKEN', response.token, { domain: 'localhost' });
-                        setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.com' });
-                        setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.fr' });
+                        const date = new Date();
+                        date.setDate(date.getDate() + 2);
+                        setCookies('API_TOKEN', response.token, { path: '/', expires: date });
+                        setCookies('API_TOKEN', response.token, { domain: 'localhost', expires: date });
+                        setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.com', expires: date });
+                        setCookies('API_TOKEN', response.token, { domain: '.6fireinvest.fr', expires: date });
                         router.push('/accueil');
                     }
                 })
