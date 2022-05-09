@@ -37,9 +37,9 @@ export default class StripeService extends PaymentService {
             });
 
             console.log('Customers', customers);
-            [customer] = customers.data;
+            if (customers.data.length > 0) [customer] = customers.data;
             console.log(customer);
-            console.log('Fetched stripe customer', customer.id);
+            console.log('Fetched stripe customer', customer?.id);
         }
 
         if (!customer) {
