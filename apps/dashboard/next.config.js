@@ -9,6 +9,10 @@ const nextConfig = {
     experimental: {
         externalDir: true,
     },
+    // env: {
+    //     // NEXT_PUBLIC_API_ROUTE: 'https://api.6fireinvest.com/api',
+    //     NEXT_PUBLIC_API_ROUTE: 'http://localhost:3333/api',
+    // },
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },

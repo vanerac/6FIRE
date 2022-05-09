@@ -1,6 +1,9 @@
 import React from 'react';
 import $ from 'jquery';
 import Link from 'next/link';
+import { useCookies } from 'react-cookie';
+import getAPIClient from '@shared/tools/apiClient';
+import router from 'next/router';
 
 if (typeof window !== 'undefined') {
     $('.sidebar-dropdown > a').click(function () {
@@ -19,6 +22,8 @@ if (typeof window !== 'undefined') {
 export default function useSideBar() {
     // Todo: Add search functionally
     // Todo: Add dropdown functionality
+    const [cookies, setCookies, removeCookie] = useCookies(['API_TOKEN']);
+    const apiClient = getAPIClient(cookies['API_TOKEN']);
 
     return (
         <div className="mainSideBar">
@@ -86,6 +91,16 @@ export default function useSideBar() {
                                             <span>Abonnements</span>
                                         </a>
                                     </Link>
+                                    <button
+                                        onClick={() => {
+                                            removeCookie('API_TOKEN', { path: '/' });
+                                            removeCookie('API_TOKEN', { domain: 'localhost' });
+                                            removeCookie('API_TOKEN', { domain: '.6fireinvest.com' });
+                                            removeCookie('API_TOKEN', { domain: '.6fireinvest.fr' });
+                                            router.push('/');
+                                        }}>
+                                        Déconnexion
+                                    </button>
                                 </li>
 
                                 {/*<li*/}
