@@ -11,6 +11,9 @@ const nextConfig = {
     images: {
         domains: ['localhost:3333', '6fireinvest.com', '6fireinvest.fr'],
     },
+    env: {
+        NEXT_PUBLIC_API_ROUTE: 'http://localhost:3333/api',
+    },
     async headers() {
         return [
             {

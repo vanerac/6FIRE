@@ -199,20 +199,23 @@ const LoginPopup = (props: any) => {
                             </div>
                         </div>
                         <form action="#">
-                            <input
-                                onChange={(event) => {
-                                    setMailError('');
-                                    setMail(event.target.value);
-                                }}
-                                className="text-white focus:text-white active:text-white input_item"
+                            <div
                                 style={
                                     mailError ? { borderBottom: '1px solid red' } : { borderBottom: '1px solid #fff' }
-                                }
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="* Email"
-                            />
+                                }>
+                                <input
+                                    onChange={(event) => {
+                                        setMailError('');
+                                        setMail(event.target.value);
+                                    }}
+                                    className="text-white input_item"
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="*Email"
+                                />
+                            </div>
+
                             {mailError && <span style={{ color: 'red' }}>{mailError}</span>}
                             <div
                                 className="flex items-center"

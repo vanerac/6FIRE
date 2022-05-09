@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 // import Image from 'next/image';
 // import router from 'next/router';
 import $ from 'jquery';
@@ -7,7 +8,6 @@ import { useCookies } from 'react-cookie';
 import { Theme } from '@services/index';
 import router from 'next/router';
 import getAPIClient from '@shared/tools/apiClient';
-import Link from 'next/link';
 
 /* if (typeof window !== 'undefined') {
     $('.scroll_off').on('click', function () {
@@ -29,6 +29,7 @@ const Header = (props: any) => {
     const [isMobileView, setIsMobileView] = useState(false);
     const [$subscriptionLevel, $setSubscriptionLevel] = useState<any>();
     const [$error, setError] = useState(false);
+    const [isHover, setIsHover] = useState(false);
 
     /* Hamburger toggle script */
     const handleForm = () => {
@@ -229,6 +230,29 @@ const Header = (props: any) => {
                                         </li>
                                     </ul>
                                     <ul>
+                                        <li>
+                                            <Link href="/accueil">
+                                                <a
+                                                    className="cursor-pointer mr-[25px]"
+                                                    onMouseEnter={() => setIsHover(true)}
+                                                    onMouseLeave={() => setIsHover(false)}>
+                                                    <span className="icon">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            height="24px"
+                                                            viewBox="0 0 24 24"
+                                                            width="24px"
+                                                            className={`${
+                                                                isHover ? 'text-white' : 'text-black'
+                                                            } fill-current transition duration-500 ease`}>
+                                                            <path d="M0 0h24v24H0z" fill="none" />
+                                                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                                                        </svg>
+                                                    </span>
+                                                    <span className="nav-item">Accueil</span>
+                                                </a>
+                                            </Link>
+                                        </li>
                                         {themes.map((theme, index) => (
                                             <li key={index}>
                                                 <a
