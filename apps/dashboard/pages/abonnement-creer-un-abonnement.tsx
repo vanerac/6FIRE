@@ -77,7 +77,7 @@ export default function CreerUnAbonnement() {
             // isBestSeller,
             name: subscriptionName,
             description: descriptionLine,
-            refreshRate: $subscriptionTime,
+            refreshRate: +$subscriptionTime ?? 0,
             subscriptionType: $subscriptionTimeType,
             price: parseInt(subscriptionPrice),
             level: +level,
@@ -155,9 +155,9 @@ export default function CreerUnAbonnement() {
                                         onChange={(e) => {
                                             setSubscriptionTimeType(e.target.value);
                                         }}>
-                                        <option value="SUBCRIPTION">Mensuel</option>
-                                        <option value="SUBCRIPTION">Trimestriel</option>
-                                        <option value="SUBCRIPTION">Semestriel</option>
+                                        <option value="SUBSCRIPTION">Mensuel</option>
+                                        <option value="SUBSCRIPTION">Trimestriel</option>
+                                        <option value="SUBSCRIPTION">Semestriel</option>
                                         <option value="ONETIME">Annuel</option>
                                     </select>
                                 </div>
