@@ -396,11 +396,11 @@ const Header = (props: any) => {
                                     Trading &amp; Crypto
                                 </a> */}
                                 <Link href={isMoney == 'Nos Trades' ? '/accueil' : '/trading'}>
-                                    <a className="espace">
+                                    <a className="hover:bg-[#9A0402] bg-[#b30f10] text-white h-[50px] px-4 transition duration-500 ease flex items-center lato-normal-white-16px">
                                         {isMoney == 'Nos Trades' ? (
                                             <p>Nos Trades</p>
                                         ) : (
-                                            <p>Espace Trading &amp; Crypto</p>
+                                            <p>Espace Tradsssing &amp; Crypto</p>
                                         )}
                                     </a>
                                 </Link>
