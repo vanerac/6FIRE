@@ -4,6 +4,7 @@ import Head from 'next/head';
 import $ from 'jquery';
 import IndexHeader from '../components/header_inext';
 /* scroll off */
+import SwipeableTemporaryDrawer from '../components/muiSideBar';
 
 if (typeof window !== 'undefined') {
     $('#video_trigger').click(function () {
@@ -31,6 +32,7 @@ const HomePage: NextPage = ($props: any) => {
                     <div className="index-logo mb-equal">
                         <img src="/img/logo/logo-home-6fire.png" alt="" />
                         <p>Rejoindre le club d’investisseur</p>
+                        <SwipeableTemporaryDrawer />
                     </div>
                     {/* <div className="mb-equal">
                         <p>Rejoindre le club d’investisseur</p>

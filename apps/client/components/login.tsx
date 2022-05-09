@@ -20,69 +20,69 @@ import Link from 'next/link';
 } */
 
 /* toggle overlay */
-if (typeof window !== 'undefined') {
-    $('.nav-close-btn').click(function () {
-        $('.nav-item-wrap').removeClass('open');
-        $('body').removeClass('scrollOff');
-    });
-}
+// if (typeof window !== 'undefined') {
+//     $('.nav-close-btn').click(function () {
+//         $('.nav-item-wrap').removeClass('open');
+//         $('body').removeClass('scrollOff');
+//     });
+// }
 
-/* body scroll off when overlay active
--------------------------------------*/
-if (typeof window !== 'undefined') {
-    $('.menu__btn').click(function () {
-        if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
-            $('body').removeClass('scrollOff');
-        } else {
-            $('body').addClass('scrollOff');
-        }
-    });
-}
+// /* body scroll off when overlay active
+// -------------------------------------*/
+// if (typeof window !== 'undefined') {
+//     $('.menu__btn').click(function () {
+//         if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
+//             $('body').removeClass('scrollOff');
+//         } else {
+//             $('body').addClass('scrollOff');
+//         }
+//     });
+// }
 
-if (typeof window !== 'undefined') {
-    $('.scrollRemove, .register_btn').click(function () {
-        if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
-            $('body').removeClass('scrollOff');
-        }
-    });
-}
+// if (typeof window !== 'undefined') {
+//     $('.scrollRemove, .register_btn').click(function () {
+//         if ($('.login_popup_wrapper, .nav-item-wrap').hasClass('open')) {
+//             $('body').removeClass('scrollOff');
+//         }
+//     });
+// }
 
-/* Forget password overlay wrapper
--------------------------------------*/
-if (typeof window !== 'undefined') {
-    $('.reset_password').click(function () {
-        $('.forget-open-password').addClass('show');
-    });
-    $('.return').click(function () {
-        $('.forget-open-password').removeClass('show');
-    });
-}
+// /* Forget password overlay wrapper
+// -------------------------------------*/
+// if (typeof window !== 'undefined') {
+//     $('.reset_password').click(function () {
+//         $('.forget-open-password').addClass('show');
+//     });
+//     $('.return').click(function () {
+//         $('.forget-open-password').removeClass('show');
+//     });
+// }
 
-/* Get email for forget password
--------------------------------------*/
-if (typeof window !== 'undefined') {
-    $('.get-validator-code').click(function () {
-        $('.get-email-code').addClass('show');
-    });
-    $('.return-email').click(function () {
-        $('.get-email-code').removeClass('show');
-    });
-}
+// /* Get email for forget password
+// -------------------------------------*/
+// if (typeof window !== 'undefined') {
+//     $('.get-validator-code').click(function () {
+//         $('.get-email-code').addClass('show');
+//     });
+//     $('.return-email').click(function () {
+//         $('.get-email-code').removeClass('show');
+//     });
+// }
 
-/* Get email for forget password
--------------------------------------*/
-if (typeof window !== 'undefined') {
-    $('.confirm-password-btn').click(function () {
-        $('.confirm-password-open').addClass('show');
-    });
-    $('.return-code').click(function () {
-        $('.confirm-password-open').removeClass('show');
-    });
-}
+// /* Get email for forget password
+// -------------------------------------*/
+// if (typeof window !== 'undefined') {
+//     $('.confirm-password-btn').click(function () {
+//         $('.confirm-password-open').addClass('show');
+//     });
+//     $('.return-code').click(function () {
+//         $('.confirm-password-open').removeClass('show');
+//     });
+// }
 
-const handleForm = () => {
-    $('.login_popup_wrapper, .nav-item-wrap').toggleClass('open');
-};
+// const handleForm = () => {
+//     $('.login_popup_wrapper, .nav-item-wrap').toggleClass('open');
+// };
 
 const LoginPopup = (props: any) => {
     console.log(props);
@@ -399,7 +399,7 @@ const LoginPopup = (props: any) => {
                             {/* close side bar */}
                             <a
                                 onClick={() => {
-                                    handleForm();
+                                //    handleForm();
                                     router.push('/connexion');
                                 }}
                                 className="register_btn"

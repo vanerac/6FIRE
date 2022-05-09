@@ -27,7 +27,7 @@ const $mobileToggle = () => {
 const IndexHeader = ($props: any) => {
     return (
         <div className="secondary-Nav-wrapper">
-            <LoginPopup />
+            {/* <LoginPopup /> */}
 
             <input id="menu__toggle" type="checkbox" />
             <label
