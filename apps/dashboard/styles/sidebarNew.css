@@ -826,6 +826,9 @@ table tr:nth-child(even) {
     color: #fff;
     margin-right: 30px;
 }
+.flex-grow-1{
+    flex-grow: 1;
+}
 
 /* Home page style
 ------------------------*/

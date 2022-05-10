@@ -4,30 +4,28 @@ import getAPIClient from '@shared/tools/apiClient';
 import { Subscription } from '@shared/services';
 import router from 'next/router';
 import { useCookies } from 'react-cookie';
+import SideBar from '../components/sidebarNew';
 
-export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
+export default function CreerUnAbonnement() {
     const [cookies] = useCookies(['API_TOKEN']);
     const apiClient = getAPIClient(cookies['API_TOKEN']);
 
-    const [$loading, setLoading] = useState(true);
-    const [$error, setError] = useState('');
-    const [subscription, setSubscription] = useState<Subscription>();
+    const [$loading, $setLoading] = useState(true);
+    const [$error, $setError] = useState('');
+    const [$subscription, $setSubscription] = useState<Subscription>();
 
-    const [name, $setName] = useState('');
-    const [price, $setPrice] = useState('');
-    const [duration, $setDuration] = useState(''); // days
-    const [description, $setDescription] = useState('');
+    const [subscriptionName, setSubscriptionName] = useState('');
+    const [subscriptionPrice, setSubscriptionPrice] = useState('');
+    const [$subscriptionTime, setSubscriptionTime] = useState('');
+    const [$subscriptionTimeType, setSubscriptionTimeType] = useState('');
+    const [$payementPlatform, setPayementPlatform] = useState('');
+    const [descriptionLine, setDescriptionLine] = useState('');
+    const [isTryingSession, setIsTryingSession] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const [isBestSeller, setIsBestSeller] = useState(false);
+    const [level, setLevel] = useState('');
 
-    const [type, $setType] = useState(''); // subscriotion or one time
-    const [visible, $setVisible] = useState(false);
-    const [isBestSeller, $setIsBestSeller] = useState(false);
-
-    const [hasFreeTrial, $setHasFreeTrial] = useState(false);
-    const [freeTrialDuration, $setFreeTrialDuration] = useState('');
-
-    const [subscriptionLevel, $setSubscriptionLevel] = useState<number>();
-
-    const id = 1;
+    // const id = 1;
     useEffect(() => {
         if (!cookies['API_TOKEN']) {
             console.log('no token');
@@ -35,238 +33,152 @@ export default function AbonnementEssaiGratuitCreerEssaiGratuit() {
             return;
         }
 
-        apiClient.subscription.getSubscriptionById(id).then(
-            (res) => {
-                setSubscription(res);
-                setLoading(false);
-            },
-            (error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-                setLoading(false);
-            },
-        );
+        // apiClient.subscription.getSubscriptionById(id).then(
+        //     (res) => {
+        //         setSubscription(res);
+        //         setLoading(false);
+        //     },
+        //     (error) => {
+        //         setError(error.i18n ?? error.message ?? 'Unknown error');
+        //         setLoading(false);
+        //     },
+        // );
     }, []);
 
-    const updateSubscription = () => {
-        const newSubscription: Subscription = {
-            level: subscriptionLevel as number,
-            name: name,
-            price: price as unknown as number, // this will break
-            refreshRate: duration as unknown as number, // this will break
-            description: description,
-            subscriptionType: type,
-            hidden: visible,
+    const submit = () => {
+        const newAbonnement = {
+            // subscriptionName,
+            // subscriptionPrice,
+            // subscriptionTime,
+            // subscriptionTimeType,
+            // payementPlatform,
+            // descriptionLine,
+            // isTryingSession,
+            // isHidden,
+            // isBestSeller,
+            name: subscriptionName,
+            description: descriptionLine,
+            refreshRate: 1,
+            subscriptionType: 'SUBSCRIPTION',
+            price: +subscriptionPrice,
+            level: +level,
+            hidden: isHidden,
             isBestValue: isBestSeller,
-            hasFreeTrial: hasFreeTrial,
-            freeTrialDays: +freeTrialDuration,
+            // hasFreeTrial?: boolean;
+            // freeTrialDays?: number;
         };
 
-        apiClient.subscription
-            .updateSubscriptionById(subscription?.id as any, { ...newSubscription, ...(subscription as Subscription) })
-            .then(
-                (res) => {
-                    setSubscription(res);
-                    setLoading(false);
-                },
-                (error) => {
-                    setError(error.i18n ?? error.message ?? 'Unknown error');
-                    setLoading(false);
-                },
-            );
-    };
-
-    const createSubscription = () => {
-        const newSubscription: Subscription = {
-            level: subscriptionLevel as number,
-            name: name,
-            price: price as unknown as number, // this will break
-            refreshRate: duration as unknown as number, // this will break
-            description: description,
-            subscriptionType: type,
-            hidden: visible,
-            isBestValue: isBestSeller,
-            hasFreeTrial: hasFreeTrial,
-            freeTrialDays: +freeTrialDuration,
-        };
-
-        apiClient.subscription.createSubscription({ ...newSubscription, ...(subscription as Subscription) }).then(
-            (res) => {
-                setSubscription(res);
-                setLoading(false);
-            },
-            (error) => {
-                setError(error.i18n ?? error.message ?? 'Unknown error');
-                setLoading(false);
-            },
-        );
-    };
-
-    const $save = () => {
-        if (subscription) {
-            updateSubscription();
-        } else {
-            createSubscription();
-        }
+        apiClient.subscription.createSubscription(newAbonnement as any).then((res) => {
+            console.log('res', res);
+        });
+        // alert('feature coming soon');
     };
 
     return (
-        <>
-            <input type="hidden" id="anPageName" name="page" value="abonnement-essai-gratuit-creer-essai-gratuit" />
-            <div className="container-center-horizontal">
-                <div className="abonnement-essai-gratuit-creer-essai-gratuit screen">
-                    <div className="analytics-06U2bs poppins-semibold-semi-bold-mirage-24px">
-                        Créer Essai Gratuit (unique)
+        <div>
+            <Topbar />
+            <input type="hidden" id="anPageName" name="page" value="themes-articles-creation" />
+
+            {/* Commone header wrapper */}
+
+            <div className="inner-page-setup">
+                <SideBar />
+
+                <div className="inner-wrapper">
+                    <div className="header">
+                        <h2 className="title">Créer Essai Gratuit (unique) </h2>
                     </div>
-                    <div className="sidebar-06U2bs">
-                        <div className="shape-4Da1p5"></div>
-                        <div className="settings-4Da1p5">
-                            <div className="name-24iIxS poppins-medium-mirage-14px">Settings</div>
-                            <div className="icons-navigation-icon-12-states-24iIxS">
-                                <img className="ic_setting-TFRxUZ" src="img/ic-setting-11@1x.png" />
-                            </div>
-                        </div>
-                        <div className="broker-4Da1p5">
-                            <div className="name-l9vx7G poppins-medium-mirage-14px">Broker</div>
-                            <img className="font-awsome-handshake-l9vx7G" src="img/fontawsome--handshake--10@1x.png" />
-                        </div>
-                        <div className="crypto-wallet-4Da1p5">
-                            <div className="name-J1oXgQ poppins-medium-mirage-14px">Crypto Wallet</div>
-                            <img className="font-awsome-bitcoin-J1oXgQ" src="img/fontawsome--bitcoin--11@1x.png" />
-                        </div>
-                        <div className="trading-crypto-4Da1p5">
-                            <div className="name-Gx9ajr poppins-medium-mirage-14px">Trading &amp; Crypto</div>
-                            <img className="font-awsome-pen-Gx9ajr" src="img/fontawsome--pen--10@1x.png" />
-                        </div>
-                        <div className="thmes-articles-4Da1p5">
-                            <div className="name-dMCarJ poppins-medium-mirage-14px">Thèmes articles</div>
-                            <div className="icons-navigation-icon-12-states-dMCarJ">
-                                <img
-                                    className="font-awsome-bookmark-nkfslN"
-                                    src="img/fontawsome--bookmark--10@1x.png"
-                                />
-                            </div>
-                        </div>
-                        <div className="customers-4Da1p5">
-                            <div className="name-feQPmZ poppins-medium-mirage-14px">Utilisateurs</div>
-                            <div className="icons-navigation-icon-12-states-feQPmZ">
-                                <img className="ic_users-AEsoR4" src="img/ic-users-11@1x.png" />
-                            </div>
-                        </div>
-                        <div className="home-4Da1p5">
-                            <div className="name-WBKB2P poppins-medium-mirage-14px">Home</div>
-                            <div className="icons-navigation-icon-12-states-WBKB2P">
-                                <img className="ic_home-PbDE0g" src="img/ic-home-10@1x.png" />
-                            </div>
-                        </div>
-                        <div className="articles-4Da1p5">
-                            <div className="name-i86BPw poppins-medium-mirage-14px">Articles</div>
-                            <div className="icons-navigation-icon-12-states-i86BPw">
-                                <img className="ic_invoice-2TtxlG" src="img/ic-invoice-10@1x.png" />
-                            </div>
-                            <img
-                                className="icon-ionic-ios-arrow-down-i86BPw"
-                                src="img/icon-ionic-ios-arrow-down-10@1x.png"
-                            />
-                        </div>
-                        <div className="bot-trading-4Da1p5">
-                            <div className="name-bAs6Hj poppins-medium-mirage-14px">Bot Trading</div>
-                            <img className="font-awsome-robot-bAs6Hj" src="img/fontawsome--robot--10@1x.png" />
-                        </div>
-                        <div className="pays-4Da1p5">
-                            <div className="name-eNcLbL poppins-medium-mirage-14px">Pays</div>
-                            <img
-                                className="font-awsome-globe-europe-eNcLbL"
-                                src="img/fontawsome--globe-europe--10@1x.png"
-                            />
-                        </div>
-                        <div className="abonnement-4Da1p5">
-                            <img className="frame-22En3k" src="img/frame-12@1x.png" />
-                            <div className="line-22En3k"></div>
-                            <div className="name-22En3k poppins-medium-blue-ribbon-14px">Abonnement</div>
-                            <img className="icon-material-payment-22En3k" src="img/icon-material-payment-15@1x.png" />
-                            <div className="gestion-abonnements-22En3k">
-                                <div className="frame-62GKqO"></div>
-                                <div className="name-62GKqO poppins-medium-blue-ribbon-14px">Gestion Abonnements</div>
-                            </div>
-                            <div className="code-promo-22En3k">
-                                <div className="frame-LNlyg1"></div>
-                                <div className="name-LNlyg1 poppins-medium-blue-ribbon-14px">Code promo</div>
-                            </div>
-                            <div className="essai-gratuit-22En3k">
-                                <img className="frame-szB0tG" src="img/frame-11@1x.png" />
-                                <div className="name-szB0tG poppins-medium-blue-ribbon-14px">Essai gratuit</div>
-                            </div>
-                            <div className="code-gratuit-22En3k">
-                                <img className="frame-mwuqnH" src="img/frame-11@1x.png" />
-                                <div className="name-mwuqnH poppins-medium-blue-ribbon-14px">Code gratuit</div>
-                            </div>
-                            <img
-                                className="icon-ionic-ios-arrow-down-22En3k"
-                                src="img/icon-ionic-ios-arrow-down-10@1x.png"
-                            />
+
+                    <div onClick={submit} className="table-header">
+                        <div>
+                            <button className="bg_green">Creer un abonnement</button>
                         </div>
                     </div>
 
-                    <Topbar />
-                    <div className="buttons-btn-text-icon-06U2bs">
-                        <div className="type-DkTLSP"></div>
-                        <div className="groupe-393-DkTLSP">
-                            <div className="text-OuFySU poppins-normal-white-14px">Créer essai gratuit</div>
+                    <div className="table-wrapper">
+                        <div className="table-title bg_blue">
+                            <span>Informations</span>
                         </div>
-                    </div>
-                    <div className="informations-06U2bs">
-                        <div className="rectangle-632-QfiZtN"></div>
-                        <div className="titre-QfiZtN">
-                            <div className="rectangle-633-UxiYDf"></div>
-                            <div className="analytics-UxiYDf poppins-semibold-semi-bold-white-14px">Informations</div>
-                        </div>
-                        <div className="prix-QfiZtN">
-                            <img className="ligne-6-6xQ2vz" src="img/ligne-6-1@1x.png" />
-                            <div className="x0-6xQ2vz poppins-normal-tundora-12px">0</div>
-                            <div className="prix-6xQ2vz lato-normal-comet-10px">Prix</div>
-                        </div>
-                        <div className="dure-QfiZtN">
-                            <img className="ligne-6-zbvUim" src="img/ligne-6-1@1x.png" />
-                            <div className="x30-zbvUim poppins-normal-tundora-12px">30</div>
-                            <div className="dure-dessai-zbvUim lato-normal-comet-10px">Durée d’essai</div>
-                        </div>
-                        <div className="filtre-QfiZtN"></div>
-                        <div className="visible-QfiZtN">
-                            <div className="actif-8bCr9V poppins-normal-tundora-12px">Actif</div>
-                            <div className="rectangle-634-8bCr9V border-2px-tundora"></div>
-                        </div>
-                        <div className="type-QfiZtN">
-                            <img className="ligne-6-DdxyWZ" src="img/ligne-6-46@1x.png" />
-                            <div className="mensuel-DdxyWZ poppins-normal-tundora-12px">Mensuel</div>
-                            <div className="type-DdxyWZ lato-normal-comet-10px">Type</div>
-                            <img
-                                className="font-awsome-chevron-down-DdxyWZ"
-                                src="img/fontawsome--chevron-down--10@1x.png"
-                            />
-                        </div>
-                        <div className="abonnement-QfiZtN">
-                            <div className="abonnement-SdrZCw">
-                                <img className="ligne-6-UACUya" src="img/ligne-6-46@1x.png" />
-                                <div className="choisir-UACUya poppins-normal-tundora-12px">Choisir</div>
-                                <div className="slectionner-abonnement-UACUya lato-normal-comet-10px">
-                                    Sélectionner Abonnement
+
+                        {/* table content */}
+                        <div className="table-content">
+                            <div className="row-1 inline-flex">
+                                <div className="single-item mr-30 flex-grow-1">
+                                    <label className="small_title" htmlFor="">
+                                        Nom de la campagne (Essai gratuit)
+                                    </label>
+                                    <input type="text" onChange={(e) => setSubscriptionName(e.target.value)} />
                                 </div>
-                                <img
-                                    className="font-awsome-chevron-down-UACUya"
-                                    src="img/fontawsome--chevron-down--10@1x.png"
-                                />
                             </div>
-                        </div>
-                        <div className="prix-9cvhIh">
-                            <img className="ligne-6-jZxSqa" src="img/ligne-6-1@1x.png" />
-                            <div className="broker-30j-jZxSqa poppins-normal-tundora-12px">Broker (30j)</div>
-                            <div className="nom-de-la-campagne-essai-gratuit-jZxSqa lato-normal-comet-10px">
-                                Nom de la campagne (Essai gratuit)
+
+                            <div className="row-1 inline-flex">
+                                <div className="single-item mr-30 flex-grow-1">
+                                    <label className="small_title" htmlFor="">
+                                    Sélectionner Abonnement
+                                    </label>
+                                    <select
+                                        className='width-100'
+                                        name=""
+                                        id=""
+                                        onChange={(e) => {
+                                            setSubscriptionTimeType(e.target.value);
+                                        }}>
+                                        <option value="Mensuel">Mensuel</option>
+                                        <option value="Trimestriel">Trimestriel</option>
+                                        <option value="Semestriel">Semestriel</option>
+                                        <option value="Annuel">Annuel</option>
+                                    </select>
+                                </div>
+                                <div className="single-item mr-30 flex-grow-1">
+                                    <label className="small_title" htmlFor="">
+                                        Prix
+                                    </label>
+                                    <input type="text" className='width-100' onChange={(e) => setSubscriptionName(e.target.value)} />
+                                </div>
+                                <div className="single-item mr-30 flex-grow-1">
+                                    <label className="small_title" htmlFor="">
+                                        Durée d’essai
+                                    </label>
+                                    <input type="text" className='width-100' onChange={(e) => setSubscriptionPrice(e.target.value)} />
+                                </div>
+                                <div className="single-item flex-grow-1">
+                                    <label className="small_title" htmlFor="">
+                                        Type
+                                    </label>
+                                    <select
+                                        className='width-100'
+                                        name=""
+                                        id=""
+                                        onChange={(e) => {
+                                            setSubscriptionTimeType(e.target.value);
+                                        }}>
+                                        <option value="Mensuel">Mensuel</option>
+                                        <option value="Trimestriel">Trimestriel</option>
+                                        <option value="Semestriel">Semestriel</option>
+                                        <option value="Annuel">Annuel</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="row-1 inline-flex">
+                                <div className="single-item mr-30">
+                                    <div className="icon-box">
+                                        <input
+                                            checked={isBestSeller}
+                                            onChange={() => setIsBestSeller(!isBestSeller)}
+                                            type="checkbox"
+                                            className="checkBox-item"
+                                            name="Select file"
+                                        />
+
+                                        <label htmlFor="test">Actif</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
