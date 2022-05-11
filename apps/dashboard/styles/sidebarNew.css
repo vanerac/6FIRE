@@ -983,3 +983,31 @@ input.checkBox-item{
     right: 14px;
     color: #34495e;
   }
+
+  .grid-system {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.grid-system .left-col{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.grid-system .rigth-col{
+    width: 300px;
+    margin-top: 30px;
+    text-align: right;
+}
+.primary-button{
+    padding: 10px 25px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+.bg-orange{
+    background-color: #fca500;
+}
+.crypto-button{
+    color: #fff;
+}
